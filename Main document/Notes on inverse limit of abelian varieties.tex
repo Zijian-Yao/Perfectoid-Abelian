@@ -259,17 +259,94 @@ Now we are ready to prove that $E_\infty$ becomes perfectoid.
 
 
 
-
-
-
-
-
-
 \newpage
 
 \section{Tilt of perfectoid abelian varieties}
 
+In this section, we describe the tilt of the perfectoid space $A_\infty$ constructed in the previous section. Our goal is to prove the following:
 
+\begin{lemma} \label{lemma:A_tilt}
+Let $A$, $A_\infty$, $K$ be defined as in Lemma \ref{main_lemma}, let $A_s$ be the special fiber of the N\'eron model of $A$. Then there exists a perfectoid space $A_{s,\infty}$ over $K^\flat$ such that $A_{s,\infty} \sim \displaystyle\varprojlim_{\times p} A_s$ and $A_\infty^\flat=A_{s,\infty}$.
+\end{lemma} 
+
+Our proof follows the same general outline as the previous one. Taking the inverse limit of the Raynaud extension, we have a short exact sequence of perfectoid spaces
+$$ 0\rightarrow (\mathbb G_{m,\infty})^d\rightarrow E_\infty \rightarrow B_\infty\rightarrow 0$$ ({\color{purple} I guess we have to be worried about if this is literally an exact sequence or if there are $\sim$s in the background...}) and "a way to move from $E_\infty$ to $A_\infty$". ({\color{purple} is this just quotienting by (the inverse limit of) a lattice? Probably once we fully write up Lemma \ref{lemma:reduction_to_E} it will be clear what exactly to write here}.) 
+
+We first show that the tilts of $\mathbb G_{m,\infty}$ and $B_\infty$ are the inverse limits of the special fibers, use this to show that the same is true for $E_\infty$, then use this to conclude the same for $A_\infty$.
+
+\begin{lemma}\label{lemma:GB_tilt}
+The tilts of $\mathbb G_{m,\infty}$ and $B_\infty$ are as expected.
+\end{lemma}
+
+\begin{proof}
+{\color{purple} Insert proof}
+\end{proof}
+
+\begin{lemma}\label{lemma:E_tilt}
+The tilt of $E_\infty$ is the inverse limit of the special fibers.
+\end{lemma}
+
+\begin{proof}
+We have the exact sequence
+$$0\rightarrow (\mathbb G_m)^d\rightarrow E\xrightarrow{\pi} B\rightarrow 0$$ and a good understanding of the perfectoid spaces and tilts corresponding to the outer elements, so the goal is to "carry around copies of $E$ sitting between $(\mathbb G_m)^d$ and $B$ while we are tilting them" ({\color{purple} think of a more precise way to say this}). This is achieved by the following lemma from algebraic geometry.
+
+\begin{lemma}\label{lemma:ext_to_pic}
+Extensions of $B$ by $(\mathbb G_m)^d$ correspond {\color{purple} "functorially"} to homomorphisms $\mathbb{Z}^d\rightarrow \operatorname{Pic}^0(B)$. 
+\end{lemma}
+
+\begin{proof}
+A full proof is given in \cite[Lemma 6.7.2]{FvdP}, we will just give the construction. For any extension $E$, the corresponding short exact sequence locally admits sections {\color{purple} same worry about analytic topology as Lemma \ref{lemma:E_is_perfectoid} maybe?} so we can fix an open cover $\{ U_i\}$ of $B$ such that there are isomorphisms $s_i:\pi^{-1}(U_i)\cong  U_i\times (\mathbb G_m)^d$. Keeping track of the differences of $s_i$ and $s_j$ when restricted to $U_i\cap U_j$ is (after some work) equivalent to a homomorphism from the character group of $(\mathbb G_m)^d=\mathbb{Z}^d$ into $\operatorname{Pic}^0(B)$. 
+
+Conversely, given $\tau:\mathbb{Z}^d\rightarrow\operatorname{Pic}^0(B)$, we choose a "coherent" family of line bundles $\{\mathcal O_\chi|\chi\in \mathbb{Z}^d\}$ and define $E$ as $\underline{\operatorname{Spec}}(\oplus \mathcal O_\chi)$. Here $\oplus \mathcal O_\chi$ is a quasi-coherent sheaf of $\mathcal O_B$-algebras, so we can apply the construction of \cite[Exercise II.5.17c]{Hartshorne}.
+
+{\color{purple} I haven't thought about this yet, but this interpretation might simplify the proof that $E_\infty$ is perfectoid - or at least should be equivalent.}
+\end{proof}
+
+So we can write $E=\underline{\operatorname{Spec}}(\oplus \mathcal O_\chi)$ and define $E_s:=\underline{\operatorname{Spec}}(\oplus (\mathcal O_\chi)_s)$ {\color{purple} Maybe should say more here: the point is that $B$ has comes from an abelian scheme $\mathcal B$ over $\mathcal O_K$, so $\operatorname{Pic}^0(B)(K)=\operatorname{Pic}^0(\mathcal B)(\mathcal O_K)$ and so now taking the special fiber actually makes sense. Also, I don't actually know if $E_s$ is the N\'eron model of $E$, it seems like it should be... But this shouldn't matter at all for the proof.} This gives the following commutative diagram: 
+
+\[
+\begin{tikzcd}
+(\mathbb G_m)^d_s \arrow{r}{} \arrow{d}{} & \underline{\operatorname{Spec}}(\oplus (\mathcal O_\chi)_s) \arrow{r}{}  \arrow{d}{} & B_s  \arrow{d}{} \\ 
+(\mathbb G_m)^d  \arrow{r}{} & \underline{\operatorname{Spec}}(\oplus \mathcal O_\chi) \arrow{r}{} & B. 
+\end{tikzcd}
+\]
+The top sequence is exact by Lemma \ref{lemma:ext_to_pic} as $E_s$ comes from a coherent family of elements of $\operatorname{Pic}^0(B_s)$, the diagram commutes {\color{purple} by functoriality}. The key claim is that we can {\color{purple} "put another copy of this diagram above this with all vertical maps multiplication by $p$ and get a commutative diagram", I'll make a 3d commutative diagram when I'm feeling ambitious}. The map $E\xrightarrow{p} E$ corresponds to the map $\oplus \mathcal O_\chi^p\leftarrow \oplus \mathcal O_\chi$ as $p^*\mathcal L\approx \mathcal L^p$ for $L\in \operatorname{Pic}^0(B)$. So the commutativity of the center square 
+
+\[
+\begin{tikzcd}
+E_{s,1} \arrow{r}{}  \arrow{d}{p} & E_1  \arrow{d}{p} \\ 
+E_{s,0} \arrow{r}{} & E_0
+\end{tikzcd}
+\]
+
+follows from the commutativity of the diagram
+
+\[
+\begin{tikzcd}
+\oplus (\mathcal O_\chi)^p_s  & \oplus \mathcal (O_\chi)^p \arrow{l}{}  \\ 
+\oplus (\mathcal O_\chi)_s \arrow{u}{p^*} & \oplus \mathcal O_\chi   \arrow{l}{}  \arrow{u}{p^*}  
+\end{tikzcd}
+\]
+
+and the commutativity of the rest of the diagram follows similarly. We can therefore take the inverse limit of the diagram to get 
+
+\[
+\begin{tikzcd}
+(\mathbb G_m)^d_{s,\infty} \arrow{r}{} \arrow{d}{} & E_{s,\infty} \arrow{r}{}  \arrow{d}{} & B_{s,\infty}  \arrow{d}{} \\ 
+(\mathbb G_m)^d_\infty  \arrow{r}{} & E_\infty \arrow{r}{} & B_\infty 
+\end{tikzcd}
+\]
+
+where the rows are exact by the arguments of the previous section ({\color{purple} eventually...}) and the vertical arrows come from the universal property of inverse limits. That is, have a coherent set of maps from $E_{s,\infty}$ to all the $E_{s,i}$, giving a coherent set of maps from $E_{s,\infty}$ to all the $E_i$ and therefore the desired map $E_{s,\infty}\rightarrow E_\infty$. The same is true for the other two maps, {\color{purple} maybe the correct place to make this argument is in the category of short exact sequences, is this a nice place?}
+
+Combining the facts $B_\infty^\flat=B_{s,\infty}$, $((\mathbb G_m)^d_{\infty})^\flat=(\mathbb G_m)^d_{s,\infty}$, and the local sections of the map $E_{s,\infty}\rightarrow B_{s,\infty}$, we get that $E_{s,\infty}$ is locally the tilt of $E_\infty$. More precisely, there are affinoid perfectoid covers $\{U_{i,\infty}\}$ and $\{U_{s,i,\infty}\}$ of $E_\infty$ and $E_{s,\infty}$ such that $U_{i,\infty}^\flat\cong U_{s,i,\infty}$. Restricting the map $E_{s,\infty}\rightarrow E_\infty$ to $U_{s,i,\infty}$ recovers the homeomorphism of adic spaces $\operatorname{Spa}(U_{i,\infty}^\flat,U_{i,\infty}^{\flat+})\cong \operatorname{Spa}(U_{i,\infty},U_{i,\infty}^+)$ of \cite[Theorem 2.5.1]{Kedlaya}. As these homeomorphisms identify rational subspaces, they extend to the desired homeomorphism $E_\infty^\flat\rightarrow E_\infty$.
+
+{\color{purple} Obviously this is still too sketchy. Another way to state all this is that there should be a bijection $\operatorname{Ext}^1((\mathbb G_m)^d_\infty,B_\infty)\rightarrow \operatorname{Ext}^1((\mathbb G_m)^d_{s,\infty},B_{s,\infty}$ sending an extension to its tilt. This should come out of a bijection $\operatorname{Pic}^0(B_\infty)\rightarrow\operatorname{Pic}^0(B_{s,\infty})$, which should itself come out of chasing line bundles around inverse limits as above. Really this isn't saying anything new, but maybe it's a nicer way to think about things?}
+\end{proof}
+
+\begin{proof}[Proof of \ref{lemma:A_tilt}]
+{\color{purple} Insert proof}
+\end{proof}
 
 \newpage
 
@@ -374,6 +451,19 @@ Arizona Winter School Notes, 2017.
 Bosch
 \textit{Degenerating abelian varieties}. 
 Arizona Winter School Notes, 2017.
+
+\bibitem{FvdP}
+Jean Fresnel, Marius van der Put
+\textit{Rigid Analytic Geometry and its Applications}
+
+\bibitem{Hartshorne}
+Robin Hartshorne
+\textit{Algebraic Geometry}
+
+\bibitem{Kedlaya}
+Kiran Kedlaya
+\textit{Sheaves, Stacks, and Shtukas}.
+Arizona Winter School Notes, 2017
 
 \bibitem{perfectoid} 
 Peter Scholze
