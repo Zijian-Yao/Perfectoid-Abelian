@@ -418,9 +418,9 @@
 	The last Lemma suggest that instead of considering Raynaud extensions from the abelian category viewpoint, one should consider them as fibre bundles of formal schemes with structure group $T$, or more precisely as principal $T$-bundles of formal schemes, which are also called torsors. This is the language we want to use in the following: We will work with fibre bundles of formal schemes, rigid spaces and schemes. The main technical tool we will need is the associated fibre construction in these settings. For a rigorous  treatment of these we refer to the Appendix {\color{red} which should be replaced by a link to the relevant literature}.
 	
 	First of all, we note that the sequence~(\ref{formal Raynaud extension}) from the last section gives rise to a principal $\overline{T}$-bundle
-	$\overline{E}\rightarrow \overline{B}$. The fact that $E$ is obtained from $\overline{E}$ via push-out from $\overline{T}\rightarrow T$ can now conveniently be expressed in terms of the associated fibre bundle by saying that $E = T\times_{\overline{T}}\overline{E}$ in the sense of Definition~\ref{definition of Borel construction}. We moreover have the following description of $[p]$:
+	$\overline{E}\rightarrow \overline{B}$. The fact that $E$ is obtained from $\overline{E}$ via push-out from $\overline{T}\rightarrow T$ can now conveniently be expressed in terms of the associated fibre bundle by saying that $E = T\times^{\overline{T}}\overline{E}$ in the sense of Definition~\ref{definition of Borel construction}. We moreover have the following description of $[p]$:
 	\begin{lemma}\label{p-multiplication is induced from Borel construction}
-		The map $[p]:E\rightarrow E$ coincides with the morphism $T\times_{\overline{T}}\overline{E}\rightarrow T\times_{\overline{T}}\overline{E}$ induced by
+		The map $[p]:E\rightarrow E$ coincides with the morphism $T\times^{\overline{T}}\overline{E}\rightarrow T\times^{\overline{T}}\overline{E}$ induced by
 		Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor}.
 	\end{lemma}
 	\begin{proof}
@@ -442,12 +442,12 @@
 	We now want to prove step-by-step that $E$ admits a $[p]$-$F$-tower model, which implies that there is a perfectoid tilde-limit $E_\infty$ of the $p$-multiplication tower on $E$.
 	The first step is to construct a family of formal models for $E$. We do this by using the formal models $\mathfrak T_q$.
 	\begin{proposition}
-	Let $q\in K^\times$ with $|q|<1$. Let $\mathfrak T_q$ be the formal model from Corollary~\ref{torus has formal models}. Then there is a formal scheme $\mathfrak E_q :=\mathfrak T_q \times_{\overline{T}}\overline{E}$ that is a formal model of the rigid space $E$. Furthermore, there exists a morphism
-	\[\mathfrak E_q :=\mathfrak T_q \times_{\overline{T}} \overline{E} \rightarrow B \]
+	Let $q\in K^\times$ with $|q|<1$. Let $\mathfrak T_q$ be the formal model from Corollary~\ref{torus has formal models}. Then there is a formal scheme $\mathfrak E_q :=\mathfrak T_q \times^{\overline{T}}\overline{E}$ that is a formal model of the rigid space $E$. Furthermore, there exists a morphism
+	\[\mathfrak E_q :=\mathfrak T_q \times^{\overline{T}} \overline{E} \rightarrow B \]
 	which is a fibre bundle and a formal model of $E\rightarrow B$.
 	\end{proposition}
 	\begin{proof}
-		Recall from Proposition~\ref{action on formal model of torus} that $\mathfrak T_q$ has a $\overline{T}$-action that is a model of the $\overline{T}$-action on $T$. In particular, the associated fibre construction for the principal $\overline{T}$-bundle $\overline{E}$ gives a fibre bundle $\mathfrak E_q :=\mathfrak T_q \times_{\overline{T}} \overline{E} \rightarrow B$. Since $\mathfrak T_q$ is a formal model of $T$, this is a formal model of $T\times_{\overline{T}}\overline{E}$ which by definition is equal to $E$.
+		Recall from Proposition~\ref{action on formal model of torus} that $\mathfrak T_q$ has a $\overline{T}$-action that is a model of the $\overline{T}$-action on $T$. In particular, the associated fibre construction for the principal $\overline{T}$-bundle $\overline{E}$ gives a fibre bundle $\mathfrak E_q :=\mathfrak T_q \times^{\overline{T}} \overline{E} \rightarrow B$. Since $\mathfrak T_q$ is a formal model of $T$, this is a formal model of $T\times^{\overline{T}}\overline{E}$ which by definition is equal to $E$.
 	\end{proof}
 	Next we want to construct a model for the $[p]$-multiplication map. Here we can use again that $[p]$ exists on $\overline{E}$ and on $\mathfrak T_{q^{1/p}}$.
 	\begin{proposition}\label{formal model of p-multiplication on E}
@@ -469,7 +469,7 @@
 			\begin{equation}\label{formal model of p-multiplication cube}
 			\begin{tikzcd}[column sep={1.3cm,between origins},row sep={1.3cm,between origins}]
 				& \mathfrak T_{q} \arrow[rr] &  & \mathfrak E_q \\
-				\mathfrak T_{q^{1/p}} \arrow[ru, "{[\mathfrak p]}"] \arrow[rr] &  & \mathfrak T_{q^{1/p}}\times_{\overline{T}}\overline{E} \arrow[ru, "\exists", dotted] &  \\
+				\mathfrak T_{q^{1/p}} \arrow[ru, "{[\mathfrak p]}"] \arrow[rr] &  & \mathfrak T_{q^{1/p}}\times^{\overline{T}}\overline{E} \arrow[ru, "\exists", dotted] &  \\
 				& \overline{T} \arrow[uu] \arrow[rr] &  & \overline{E} \arrow[uu] \\
 				\overline{T} \arrow[uu] \arrow[rr] \arrow[ru, "{[p]}"] &  & \overline{E} \arrow[uu] \arrow[ru, "{[p]}"] & 
 			\end{tikzcd}
@@ -509,7 +509,7 @@
 		
 	Recall that $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ was constructed using the $[p]$-multiplication cube in diagram~(\ref{formal model of p-multiplication cube}) and functoriality of the associated bundle. 	
 	Also recall that all statements we have used about fibre bundles also hold when we replace formal schemes over $R$ by schemes over $R/p$, and formation of the associated bundle commutes with this reduction. In particular,
-	\[\tilde{\mathfrak{E}}_q = \tilde{\mathfrak T}_q\times_{\tilde{T}}\tilde E.\]
+	\[\tilde{\mathfrak{E}}_q = \tilde{\mathfrak T}_q\times^{\tilde{T}}\tilde E.\]
 	By  Corollary~\ref{torus has formal models}, the multiplication map $[\mathfrak p]:\tilde{\mathfrak T}_{q^{1/p}} \rightarrow \tilde{\mathfrak T}_{q}$ reduces to relative Frobenius over $p$. In particular, we have 
 	\[\tilde{\mathfrak T}_{q^{1/p}}^{(p)} = \tilde{\mathfrak T}_{q}.\]
 	
@@ -529,9 +529,9 @@
 	\end{center}
 	
 	By Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor} we thus obtain a natural morphism
-	\[F_{\tilde{\mathfrak{T}}}\times_{F_{\tilde{T}}} F_{\tilde
-		E}:\tilde{\mathfrak T}_{q^{1/p}}\times_{\tilde T}\tilde E \rightarrow \tilde{\mathfrak T}_{q}\times_{\tilde T^{(p)}}\tilde E^{(p)}. \]
-	Using the explicit description of $F_{\tilde{\mathfrak{T}}}\times_{F_{\tilde{T}}} F_{\tilde
+	\[F_{\tilde{\mathfrak{T}}}\times^{F_{\tilde{T}}} F_{\tilde
+		E}:\tilde{\mathfrak T}_{q^{1/p}}\times^{\tilde T}\tilde E \rightarrow \tilde{\mathfrak T}_{q}\times^{\tilde T^{(p)}}\tilde E^{(p)}. \]
+	Using the explicit description of $F_{\tilde{\mathfrak{T}}}\times^{F_{\tilde{T}}} F_{\tilde
 		E}$ in the proof of Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor}, we easily check that this morphism is just the relative Frobenius of $\tilde{\mathfrak{E}}_{q^{1/p}}$: This is a consequence of the fact that relative Frobenius on the fibre product $\tilde{T}\times \tilde{U}$ for any $\tilde{U}\subseteq \tilde{B}$ is just the product of the relative Frobenius morphisms of $\tilde T$ and $\tilde U$, and thus the morphisms $\theta_i$ from Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles} are all trivial. 
 	
 	But this means that again by Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor}, the reduction of the formal model of the $p$-multiplication cube in diagram~\ref{formal model of p-multiplication cube} admits the following factorisation:
@@ -546,7 +546,7 @@
 			\tilde{T} \arrow[rrr] \arrow[uuu] \arrow[rru, "\, F"'] &  &  & \tilde{E} \arrow[rru, "\, F"'] \arrow[uuu] &  &  &  & 
 				\end{tikzcd}
 	\end{center}
-	Since the composed maps $\tilde{E}\rightarrow \tilde{E}$ on the bottom left, $\tilde{T}\rightarrow \tilde{T}$ on the bottom right and  $\tilde{\mathfrak T}_{q^{1/p}}\rightarrow \tilde{\mathfrak T}_{q}$ on the upper right by construction are the reductions of the respective $p$-multiplication maps $[p]$, the functoriality of the associated bundle construction in Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor} implies that the two maps on the upper left compose to the reduction of $[\mathfrak p]\times_{[p]}[p]$. But $[\mathfrak p]\times_{[p]}[p]$ is equal to $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ by definition of the latter. 	This completes the proof that the reduction of $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ factors through the relative Frobenius on $\tilde{\mathfrak E}_{q^{1/p}}$.
+	Since the composed maps $\tilde{E}\rightarrow \tilde{E}$ on the bottom left, $\tilde{T}\rightarrow \tilde{T}$ on the bottom right and  $\tilde{\mathfrak T}_{q^{1/p}}\rightarrow \tilde{\mathfrak T}_{q}$ on the upper right by construction are the reductions of the respective $p$-multiplication maps $[p]$, the functoriality of the associated bundle construction in Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor} implies that the two maps on the upper left compose to the reduction of $[\mathfrak p]\times^{[p]}[p]$. But $[\mathfrak p]\times^{[p]}[p]$ is equal to $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ by definition of the latter. 	This completes the proof that the reduction of $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ factors through the relative Frobenius on $\tilde{\mathfrak E}_{q^{1/p}}$.
 	
 	The conclusion that $E_\infty$ exists and is perfectoid then follows from Proposition~\ref{existence of p-F-model tower implies perfectoid}.
 	\end{proof}
@@ -662,30 +662,30 @@
 	\end{proof}
 	
 	\begin{definition}\label{definition of Borel construction}
-		Let $\pi:E\rightarrow B$ be a principial $T$-bundle. Let $F$ be a formal scheme with an action by $T$. Since the data in the equivalent characterisation of Lemma~\ref{equivalent characterisation of principal $T$-bundle} is completely independent of the fibre, the morphisms $\psi_{ij}:U_{ij}\rightarrow T$ by Lemma~\ref{equivalent characterisation of principal $T$-bundle} define a fibre bundle with fibre $F$ and structure group $T$ that we denote by $F\times_T E$. This is called the \textbf{associated bundle} or Borel-Weil construction.
+		Let $\pi:E\rightarrow B$ be a principial $T$-bundle. Let $F$ be a formal scheme with an action by $T$. Since the data in the equivalent characterisation of Lemma~\ref{equivalent characterisation of principal $T$-bundle} is completely independent of the fibre, the morphisms $\psi_{ij}:U_{ij}\rightarrow T$ by Lemma~\ref{equivalent characterisation of principal $T$-bundle} define a fibre bundle with fibre $F$ and structure group $T$ that we denote by $F\times^T E$. This is called the \textbf{associated bundle} or Borel-Weil construction.
 	\end{definition}
 	
-	Note that despite the notation, $F\times_T E$ is not a fibre product. In fact it behaves more like a pushout, for instance in the case that $E$ comes from a short exact sequence.
+	Note that in many authors in differential geometry and topology denote the associated bundle by "$F\times^T E$" instead of $F\times^T E$. In our setting, however, this is slightly confusing since we often have natural maps from $T$ to $F$ and $E$, but $F\times^T E$ is usually \textit{not} their fibre product. In fact it behaves more like a pushout, for instance in the case that $E$ comes from a short exact sequence.
 	
 	\begin{proposition}\label{associated bundle construction is bifunctor}
-		The associated bundle construction is a bifunctor \[-\times_T-:\mathbf{FormAct}_T\times \mathbf{FormPrinBun}_T\rightarrow \mathbf{FormFibBun}_T\] 
+		The associated bundle construction is a bifunctor \[-\times^T-:\mathbf{FormAct}_T\times \mathbf{FormPrinBun}_T\rightarrow \mathbf{FormFibBun}_T\] 
 		from the categories of formal schemes with $T$-action $\times$ the category of principal $T$-bundles to the category of fibre bundles with structure group $T$.
 	\end{proposition}
 	\begin{proof}
-		Let $E$ and $E'$ be principal $T$-bundles and let $f:E'\rightarrow E$ be a morphism of $T$-bundles. Let $F$ and $F'$ be formal schemes with $T$-action and let $\gamma:F'\rightarrow F$ be a $T$-equivariant morphism. Then we can find compatible covers $\mathfrak U'$ of $E'$ and $\mathfrak U$ of $E$ such that locally we have diagrams like in Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles}. Then locally $F\times_T E$ and $F'\times_T E'$ are of the form $F\times U_i$ and $F'\times U'_i$ such that we obtain a natural map
-		\[F'\times U'_i\xrightarrow{(\lambda\times_T\pi)} F\times U_i, \quad (f,u)\mapsto (\lambda(f)\theta_i(u),\pi(u))\]
+		Let $E$ and $E'$ be principal $T$-bundles and let $f:E'\rightarrow E$ be a morphism of $T$-bundles. Let $F$ and $F'$ be formal schemes with $T$-action and let $\gamma:F'\rightarrow F$ be a $T$-equivariant morphism. Then we can find compatible covers $\mathfrak U'$ of $E'$ and $\mathfrak U$ of $E$ such that locally we have diagrams like in Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles}. Then locally $F\times^T E$ and $F'\times^T E'$ are of the form $F\times U_i$ and $F'\times U'_i$ such that we obtain a natural map
+		\[F'\times U'_i\xrightarrow{(\lambda\times^T\pi)} F\times U_i, \quad (f,u)\mapsto (\lambda(f)\theta_i(u),\pi(u))\]
 		(of course this description is just a short hand for a diagram of maps, and not a description in terms of "points"). These maps glue together over the cover, since on intersection Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles} implies that we have a commutative diagram
 		\begin{center}
 			\begin{tikzcd}
-				F'\times U'_{ij} \arrow[r, "\lambda\times_T\pi"] & F\times U_{ij} \\
-				F'\times U'_{ij} \arrow[u, "\psi'_{ij}\times \operatorname{id}"] \arrow[r, "\lambda\times_T\pi"] & F\times U_{ij} \arrow[u, "\psi_{ij}\times \operatorname{id}"'].
+				F'\times U'_{ij} \arrow[r, "\lambda\times^T\pi"] & F\times U_{ij} \\
+				F'\times U'_{ij} \arrow[u, "\psi'_{ij}\times \operatorname{id}"] \arrow[r, "\lambda\times^T\pi"] & F\times U_{ij} \arrow[u, "\psi_{ij}\times \operatorname{id}"'].
 			\end{tikzcd}
 		\end{center}
 		One easily checks that this is functorial in both components.
 	\end{proof}
 	
 	\begin{lemma}
-		Let $S$ be another formal group scheme that receives an action of $T$ from a group homomorphism $g:T\rightarrow S$. Then for any principal $T$-bundle $E$, the Borel construction $S\times_T E$ is a principal $S$-bundle.
+		Let $S$ be another formal group scheme that receives an action of $T$ from a group homomorphism $g:T\rightarrow S$. Then for any principal $T$-bundle $E$, the Borel construction $S\times^T E$ is a principal $S$-bundle.
 	\end{lemma}
 	\begin{proof}
 		This follows from Lemma~\ref{equivalent characterisation of principal $T$-bundle}. The only thing we need to check is that the cocycle condition from diagram (\ref{cocycle condition of fibre bundle}) also holds with respect to $S$. But $g$ is a homomorphism and therefore the following diagram commutes:
@@ -701,7 +701,7 @@
 	
 	
 	\begin{lemma}\label{change of fibre is functorial}
-		The Borel construction is a functor $S\times_T -$ from principal $T$-bundles to principal $S$-bundles.
+		The Borel construction is a functor $S\times^T -$ from principal $T$-bundles to principal $S$-bundles.
 	\end{lemma}
 	\begin{proof}
 		This is a consequence of Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles}. One obtains the necessary data by composing the morphisms $\theta':U_i'\rightarrow T$ with the morphism $T\rightarrow S$. These morphisms glue together because the second diagram of Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles} commutes, as one easily sees from the fact that $T\rightarrow S$ is a morphism of formal groups. 
@@ -709,7 +709,7 @@
 	
 	The Borel construction satisfies the following universal property:
 	\begin{lemma}\label{universal property of associated fibre construction for principal bundles}
-		Let $g:T\rightarrow S$ be a homomorphism of formal group schemes and let $E\rightarrow B$ be a principal $T$-bundle. Let $X$ be any principle $S$-bundle. Note that $X$ receives a $T$-action from $g$. Then there is a functorial one-to-one correspondence between $T$-linear morphisms $E\rightarrow X$ and morphism of principal $S$-bundles $S\times_T E\rightarrow X$.
+		Let $g:T\rightarrow S$ be a homomorphism of formal group schemes and let $E\rightarrow B$ be a principal $T$-bundle. Let $X$ be any principle $S$-bundle. Note that $X$ receives a $T$-action from $g$. Then there is a functorial one-to-one correspondence between $T$-linear morphisms $E\rightarrow X$ and morphism of principal $S$-bundles $S\times^T E\rightarrow X$.
 	\end{lemma}
 	
 	\subsection{The semi-linear case}
@@ -761,26 +761,26 @@
 	\begin{proposition}\label{associated bundle construction in the semi-linear case is a sort of fibered bifunctor}
 		
 		Given any homomorphism of group schemes $g:T'\rightarrow T$ and a $g$-linear homomorphism $h:F'\rightarrow F$ of formal schemes with $T'$ and $T$-actions respectively, and a homomorphism $f:E'\rightarrow E$ of principal $T'$ and $T$-bundles over $g$, one obtains a morphism
-		\[h\times_g f : F'\times_{T'}E'\rightarrow F\times_T E\]
+		\[h\times^g f : F'\times^{T'}E'\rightarrow F\times^T E\]
 		of fibre bundles over $g$, in a way that is functorial in $h,g,f$. 
 		More precisely, the associated bundle construction is a fibered bifunctor
-		\[-\times_{-}-: \mathbf{FormAct} \times_{\mathbf{FormGrp}} \mathbf{FormPrinBun}\rightarrow \mathbf{FormBun}. \]
+		\[-\times^{-}-: \mathbf{FormAct} \times^{\mathbf{FormGrp}} \mathbf{FormPrinBun}\rightarrow \mathbf{FormBun}. \]
 	\end{proposition}
 	\begin{proof}
 		Let ($E$,$B$,$\pi$,$T$) and ($E'$,$B'$,$\pi'$,$T'$) be principal bundles. Let $F$ and $F'$ be formal schemes with $T$-action and $T'$ action respectively. Let $g:T\rightarrow T'$ be a group homomorphism and let $h:F'\rightarrow F$ be a $g$-equivariant morphism.
 		Let $f:E'\rightarrow E$ be a morphism of principle fibre bundles over $g$.
-		Then we can find compatible covers $\mathfrak U'$ of $E'$ and $\mathfrak U$ of $E$ such that locally we have diagrams like in Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles}. Then locally $F\times_T E$ and $F'\times_T E'$ are of the form $F\times U_i$ and $F'\times U'_i$ such that we obtain a natural map
-		\[F'\times U'_i\xrightarrow{(h\times_T\pi)} F\times U_i, \quad (f,u)\mapsto (h(f)\theta_i(u),\pi(u))\]
+		Then we can find compatible covers $\mathfrak U'$ of $E'$ and $\mathfrak U$ of $E$ such that locally we have diagrams like in Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles}. Then locally $F\times^T E$ and $F'\times^T E'$ are of the form $F\times U_i$ and $F'\times U'_i$ such that we obtain a natural map
+		\[F'\times U'_i\xrightarrow{(h\times^T\pi)} F\times U_i, \quad (f,u)\mapsto (h(f)\theta_i(u),\pi(u))\]
 		(as before this description is just a short hand for a diagram of maps, and not a description in terms of "points"). These maps glue together over the cover, since on intersection Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles} implies that we have a commutative diagram
 		\begin{center}
 			\begin{tikzcd}
-				F'\times U'_{ij} \arrow[r, "h\times_T\pi"] & F\times U_{ij} \\
-				F'\times U'_{ij} \arrow[u, "\psi'_{ij}\times \operatorname{id}"] \arrow[r, "h\times_T\pi"] & F\times U_{ij} \arrow[u, "\psi_{ij}\times \operatorname{id}"'].
+				F'\times U'_{ij} \arrow[r, "h\times^T\pi"] & F\times U_{ij} \\
+				F'\times U'_{ij} \arrow[u, "\psi'_{ij}\times \operatorname{id}"] \arrow[r, "h\times^T\pi"] & F\times U_{ij} \arrow[u, "\psi_{ij}\times \operatorname{id}"'].
 			\end{tikzcd}
 		\end{center}
 		More precisely, by $g$-linearity of $h$ one has
 		\[h(x\cdot\psi_{ij}'(u))\cdot \theta_j(u)  =  h(x)\cdot g(\psi_{ij}'(u))\cdot \theta_j(u)  \stackrel{(\ref{shorthand for description of semi-linear morphism of fibre  bundles})}{=} h(x)\cdot \psi_{ij}(f(u))\cdot \theta_i(u).\]
-		This shows that the maps glue to a morphism $h\times_g f$ as desired.
+		This shows that the maps glue to a morphism $h\times^g f$ as desired.
 		
 		By refining covers, one easily checks that this is functorial in both components.
 	\end{proof}
@@ -788,7 +788,7 @@
 	All that we have done in this chapter can be done in completely the same way with formal schemes replaced by rigid spaces (covers being replaced by admissible covers) and also for schemes. In particular by functoriality of fibre products there are natural functors from formal principal $T$-bundles over $R$ to rigid principal $T_\eta$-bundles over $K$ on the generic fibre, and to principal $\overline{T}$-bundles on the reduction $R/p$. Moreover, these generic fibre and reduction functors commute with the associated fibre construction:
 	\begin{lemma}
 		Let $T$ be a formal group scheme and let $\pi:E\rightarrow B$ be a principial $T$-bundle. Let $F$ be a formal scheme with an action by $T$. Then
-		\[(E\times_T B)_\eta = E_\eta\times_{T_\eta} B_\eta \]
+		\[(E\times^T B)_\eta = E_\eta\times^{T_\eta} B_\eta \]
 	\end{lemma}
 	\begin{proof}
 		This can be checked locally on any trivialising cover, where it is clear.
