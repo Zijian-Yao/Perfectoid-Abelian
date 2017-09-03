@@ -80,20 +80,25 @@
 	\end{abstract}
 	\tableofcontents
 
-	\section{Tilde limits via formal models}
-	Let $K$ be a complete non-archimedean field. Denote by $R$ the ring of integers. Throughout we will study rigid analytic spaces over $K$. If such a space is obtained from a $K$-scheme $X$ via rigid-analytification $X\mapsto X^{\operatorname{an}}$, we will often denote both by the same symbol $X$. Also, we will make no distinction between rigid analytic spaces and their corresponding adic spaces.
+	\section{Tilde limits of rigid groups}
+	
+	Let $p$ be a prime. Let $K$ be a complete non-archimedean field that is either an extension of $\mathbb Q_p$ or of characteristic $p$. Denote by $R$ the ring of integers and let $\pi$ denote a pseudo-uniformiser. Throughout we will study rigid analytic spaces over $K$. If such a space is obtained from a $K$-scheme $X$ via rigid-analytification $X\mapsto X^{\operatorname{an}}$, we will often denote both by the same symbol $X$. Also, we will make no distinction between rigid analytic spaces and their corresponding adic spaces.
+	
+	Often we start with a topologically finite type formal scheme $\mathfrak X$ over $\operatorname{Spf} R$ where $\mathfrak X$ has a $\pi$-adic topology. We then obtain a rigid space on the rigid generic fibre that we denote by $\mathfrak X_\eta \rightarrow \operatorname {Sp} K$. If we work with adic spaces, this is actually the fibre product of $\mathfrak X$ with the morphism $\operatorname{Spa}(K,R)\rightarrow \operatorname{Spa}(R,R)$. We also consider the reduction of $\mathfrak X$ mod $\pi$ that we denote by $\tilde{X}=\mathfrak X\times_{\operatorname{Spf}R}\operatorname{Spf}R/\pi$ that we usually consider as a scheme over $\operatorname{Spec}R/\pi$.
 
-	Let $G$ be a rigid group variety, for instance obtained by analytification from a torus $T$ over $K$, or from an abelian variety $A$, or $G=E$ the covering space in the sense of Raynaud of an abelian variety over $K$ with semi-stable reduction. We want to discuss the following:
+	Let $G$ be a rigid group, that is a group object in the category of rigid space. For instance, we obtain rigid groups from analytification of finite type group schemes over $K$: We will be most interested in analytifications of an abelian variety $A$, but other important cases are the analytifications  $\mathbb G_a^{\operatorname{an}}$ of $\mathbb G_a$ and $\mathbb G_m^{\operatorname{an}}$ of $\mathbb G_m$, or more generally of tori $T$ over $K$. A second source of rigid groups are topologically finite type formal group schemes via the rigid generic fibre. A third important case is that of $E$ the covering space in the sense of Raynaud of an abelian variety over $K$ with semi-stable reduction.
+	
+	This note is concerned with the following question:
 	
 	\begin{framed}
 	\begin{question}
-		Given a rigid group variety $G$, when is there an adic space $G_\infty$ such that \[G_\infty \sim  \varprojlim_{[p]} G\] in the sense of \cite{SW}? If it exists, and $K$ is perfectoid, when is $G_\infty$ perfectoid?
+		Given a rigid group $G$, when is there an adic space $G_\infty$ such that \[G_\infty \sim  \varprojlim_{[p]} G\] in the sense of \cite{SW}? If it exists, and $K$ is perfectoid, when is $G_\infty$ perfectoid?
 	\end{question}
 	\end{framed}
 	
 	The following example shows that the second question certainly doesn't have an affirmative answer for all rigid group varieties:
 	\begin{example}
-		For the additive group $\mathbb G_a$, we now that $[p]$ is an isomorphism (on the level of schemes, hence also after rigid analytification) and therefore $\varprojlim_{[p]} \mathbb G_a=\mathbb G_a$ exists (even as an honest limit!) but is certainly not perfectoid.
+		For the additive group $\mathbb G_a^{\operatorname{an}}$, we know that $[p]$ is an isomorphism (on the level of schemes, hence also after rigid analytification) and therefore $\varprojlim_{[p]} \mathbb G_a=\mathbb G_a$ exists (even as an actual limit in the category of adic spaces!) but is certainly not perfectoid.
 	\end{example}
 	\subsection{A condition ensuring that the tilde-limit exists}
 	But what about the first question? Should one expect a limit $G_\infty$ to always exist? There is a chance that this is actually true, for the following reason: $\sim$-limits can be constructed from formal schemes, and rigid spaces can be studied via formal models via the strategy of "Raynaud's viewpoint".
@@ -105,7 +110,7 @@
 	\begin{proof}
 		I can't find a reference for this at the moment, but one should be able to do this like in the scheme case: In the affine case, if the inverse system is $\operatorname{Spf} A_i$, take $A$ to be the $p$-adic completion of $\varinjlim A_i$, then one shows that $\operatorname{Spf} A$ is the inverse limit of the $\operatorname{Spf}A_i$. In the general case, use that the transition maps are affine to reduce to the affine case.
 	\end{proof}
-	In the situation of the lemma, and passing to adic spaces, it is clear from the construction that $\mathfrak X$ is also the tilde-limit, $\mathfrak X\sim \varprojlim \mathfrak X_i$. However, the situation is even better because this remains true after passing to the generic fibre $\operatorname{Spa}(K,R)\rightarrow \operatorname{Spa}(R,R)$.
+	In the situation of the lemma, since the transition maps are affine and hence quasi-compact and quasi-separated, it is clear from the construction that after passing to adic spaces, $\mathfrak X$ is also the tilde-limit  $\mathfrak X\sim \varprojlim \mathfrak X_i$ in the sense of \cite{SW}. However, the situation is even better because this remains true after passing to the generic fibre $\operatorname{Spa}(K,R)\rightarrow \operatorname{Spa}(R,R)$.
 	\begin{lemma}\label{tilde-limit from adic generic fibre of formal schemes}
 		Let $(\mathfrak X_i,\phi_{ij})_{i\in I}$ be an inverse system of formal schemes $\mathfrak X_i$ over $R$ with affine transition maps $\phi_{ij}$ and let $\mathfrak X=\varprojlim_{\phi_j} \mathfrak X_i$ be the limit. Let $\mathcal X_i =(\mathfrak X_i)_\eta$ and  $\mathcal X = (\mathfrak X)_\eta$ be the adic generic fibres. Then
 		\[\mathcal X \sim \varprojlim \mathcal X_i.\]
@@ -133,19 +138,30 @@
 	\end{definition}	
 	Given a rigid space, how does one find formal models? In our applications we will always deal with explicit formal models, but there is a general theory of how this can be done. The following is merely there to further motivate the use of formal models, we won't use it in the rest of this write-up:
 	
-	The theory of Raynaud's formal models explains under which circumstances formal models of rigid spaces and their maps exist. The main result is:
+	The theory of Raynaud's formal models explains under which circumstances formal models of rigid spaces and their maps exist. We need the following definition:
 	
-	\begin{theorem}[\cite{Bosch lectures}, section 8.4]
+	\begin{definition}[\cite{Bosch lectures}, Def 8.2.12]
+	A topological (resp G-topological) space $X$ is called \textbf{quasi-paracompact} if there exists an open (resp admissible open) cover $\mathfrak U$ of $X$ such that
+	\begin{itemize}
+		\item each $U\in \mathfrak U$ is quasi-compact and
+		\item the cover $\mathfrak U$ is of finite type, that is for each $U_i \in \mathfrak U$ there are only finitely many $U_j \in \mathfrak U$ such that $U_i\cap U_j\ne\emptyset$.
+	\end{itemize}
+	For instance, the spaces $\mathbb G_a^{\operatorname{an}}$ and $\mathbb G_m^{\operatorname{an}}$ are not quasi-compact, but they are quasi-paracompact since they can be covered using families of annuli that are admissible covers of finite type. Similarly, one should be able to show (replacing annuli by intersections of Laurent domains and Weierstrass domains) that if $X$ is any quasi-compact space and $S\subseteq X$ is a Zariski-closed subset, then $X\setminus S$ is quasi-paracompact.
+	\end{definition}
+		
+	The main result of Raynaud's theory of formal models is then:
+	
+	\begin{theorem}[\cite{Bosch lectures}, section 8.4]\label{Raynaud theory main theorem}
 		\leavevmode
 		\begin{enumerate}
 			
 			\item Let $X$ be a quasi-separated quasi-paracompact rigid space over $K$. Then there exist an admissible quasi-paracompact formal scheme $\mathfrak X$ over $R$ such that $X=\mathfrak X_\eta$.
 			\item If $\mathfrak X'\rightarrow \mathfrak X$ is an admissible blow-up of admissible formal schemes, then its generic fibre is an isomorphism $\mathfrak X'_\eta \xrightarrow{\sim} \mathfrak X_\eta$.
-			\item Let $\mathfrak X$ and $\mathfrak Y$ be admissible quasi-paracompact formal schemes over $R$ and let $f:\mathfrak X_\eta \rightarrow \mathfrak Y_\eta$ be a morphism of their associated rigid spaces. Then there exist an admissible blow-up $\mathfrak X'\rightarrow \mathfrak X$ and a map $\mathfrak f:\mathfrak X'\rightarrow \mathfrak Y$ such that $\mathfrak f_\eta = f$.
+			\item Let $\mathfrak X$ and $\mathfrak Y$ be admissible quasi-paracompact formal schemes over $R$ and let $f:\mathfrak X_\eta \rightarrow \mathfrak Y_\eta$ be a morphism of their associated rigid spaces. Then there exist an admissible blow-up $\pi:\mathfrak X'\rightarrow \mathfrak X$ and a map $\mathfrak f:\mathfrak X'\rightarrow \mathfrak Y$ such that $\mathfrak f_\eta = f\circ \pi_\eta$.
 			\begin{center}
 				
 			\begin{tikzcd}
-				\mathfrak X' \arrow[d] \arrow[rrd, "\mathfrak f"] &  &  &  & \mathfrak X'_\eta \arrow[d, "\cong"] \arrow[rrd, "\mathfrak f_\eta"] &  &  \\
+				\mathfrak X' \arrow[d,"\pi"] \arrow[rrd, "\mathfrak f"] &  &  &  & \mathfrak X'_\eta \arrow[d, "\cong","\pi_\eta"'] \arrow[rrd, "\mathfrak f_\eta"] &  &  \\
 				\mathfrak X &  & \mathfrak Y &  & \mathfrak X_\eta \arrow[rr, "f"] &  & \mathfrak Y_\eta
 			\end{tikzcd}
 			\end{center}
@@ -174,7 +190,7 @@
 	
 	As a motivation for this question, and for what follows, let us revisit the case of $G=A$ an abelian variety with good reduction. The proof generalises to the following setting:
 	\begin{proposition}\label{limit exists and is perfectoid: commutative formal group case}
-		Assume that $K$ is perfectoid. Let $\mathfrak G$ be a flat commutative formal group scheme over $R$ for which the p-multiplication map $[p]:\mathfrak G\rightarrow \mathfrak G$ is an affine morphism. Let $G = \mathfrak G_\eta$ be the rigid group obtained on the generic fibre. Then $G_\infty$ exists and is perfectoid.
+		Assume that $K$ is perfectoid. Let $\mathfrak G$ be a flat commutative formal group scheme of topologically finite type over $R$ for which the p-multiplication map $[p]:\mathfrak G\rightarrow \mathfrak G$ is an affine morphism. Let $G = \mathfrak G_\eta$ be the rigid group obtained on the generic fibre. Then $G_\infty$ exists and is perfectoid.
 	\end{proposition}
 	\begin{proof}
 		We use the approach of the preceding section and work with the flat formal model $\mathfrak G$ of $G$. We are then in the nice situation that the map $[p]:\mathfrak G\rightarrow \mathfrak G$ is a formal model of the map $[p]:G\rightarrow G$. By Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} we therefore have 
@@ -208,9 +224,28 @@
 	\begin{corollary}
 		Let $A$ be an abelian variety of good reduction over a perfectoid field $K$. Then $A_\infty$ exists and is perfectoid.
 	\end{corollary}
+	Before we proceed, we would like to mention two illustrative examples:
+	\begin{example}
+		Let $\mathfrak G$ be the $p$-adic completion of the affine group scheme $\mathbb G_m$ over $R$, that is the formal scheme of $\mathfrak G$ is $\operatorname {Spf} S$ where $S=R\langle X \rangle$.  It is clear that $\mathbb G$ satisfies the conditions of Proposition~\ref{limit exists and is perfectoid: commutative formal group case}, so for the generic fibre $G=\mathfrak G_\eta$ we obtain a perfectoid tilde-limit $G_\infty = \varprojlim_{[p]} G$. More precisely, the $[p]$-multiplication map corresponds to the homomorphism
+		\[[p]:R\langle X \rangle\rightarrow  R\langle X \rangle, \quad X\rightarrow X^{p}.\]
+		In the direct limit, we obtain the algebra $S_\infty = (\varinjlim_{[p]} S)^{\wedge} = R\langle X^{1/p^\infty} \rangle$. On the generic fibre we thus obtain
+		\[G_\infty = \operatorname{Spa}(K\langle X^{1/p^\infty} \rangle,R\langle X^{1/p^\infty} \rangle)\]
+		and one can verify by hand that we indeed have $G_\infty = \varprojlim_{[p]} G$.
+	\end{example}
+	\begin{example}
+		An example of a very different flavour is $\mathfrak G$ the $p$-adic completion of the affine group scheme $\mathbb G_a$ over $R$. Note that $G=\mathfrak G_\eta$ is not equal to $\mathbb G_a^{an}$, but is the closed unit disc in the latter.
+		
+		While the underlying formal scheme of $\mathfrak G$ is $\operatorname {Spf} S$ where $S=R\langle X \rangle$ as before, the $[p]$-multiplication is now given by
+		\[[p]:R\langle X \rangle\rightarrow  R\langle X \rangle, \quad X\rightarrow pX.\]
+		In the direct limit, we first obtain the algebra $S'_\infty = \varinjlim_{[p]} S = R\langle \frac{1}{p^\infty}X \rangle$ of power series $f=\sum_{n=0}^\infty  a_nX^n\in R[[X]]$ for which there is $m\in \mathbb Z_{\geq 0}$ such that $|p^{nm}a_n|\to 0$. In order to form $S_\infty$, we need to $p$-adically complete $S'_\infty$. But we have 
+		\[p^nR\langle \frac{1}{p^\infty}X \rangle = p^nR + X R\langle \frac{1}{p^\infty}X \rangle\]
+		and therefore $S'_\infty/p^n=R/p^nR$. Consequently, the completion is $S_\infty = R$ and thus $G_\infty = \operatorname{Spa}(K,R)$ is perfectoid, but just one point!
+		
+		Geometrically, this makes sense: On the level of $K$-points, the formal scheme $\mathbb G_a$ is the closed unit disc and $[p]$ is scaling points by $p$. A $K$-point of $\varprojlim_{[p]} \mathbb G_a(K)$ therefore corresponds to a sequence in the closed unit disc of the form $x,\frac{1}{p}x,\frac{1}{p^2}x,\dots$. But for this to be contained in the closed unit disc, we must have $x=0$. Thus $\varprojlim_{[p]} \mathbb G_a(K)=0$.
+		
+	\end{example}
 	
-	
-	We know would like to see if the same strategy of proof also applies to other situations. For instance, if $A$ is an abelian variety with bad reduction, there is no formal group scheme $\mathfrak G$ giving rise to $A$ on the generic fibre (this follows from the theory the N\'eron model). But can we still employ a similar strategy? When we look at the proof more closely, we see that we didn't actually use the fact that $G$ has a formal model that is also a formal group scheme. In fact, the only thing we needed was a model for the $p$-multiplication morphism $[p]:G\rightarrow G$. Second, we never used that all the $\mathfrak G$ in the tower are copies of the same formal scheme. Weakening these two conditions, we arrive at the following definition:
+	We now would like to see if the same strategy of proof also applies to other situations. For instance, if $A$ is an abelian variety with bad reduction, there is no formal group scheme $\mathfrak G$ giving rise to $A$ on the generic fibre (this follows from the theory the N\'eron model). But can we still employ a similar strategy? When we look at the proof more closely, we see that we didn't actually use the fact that $G$ has a formal model that is also a formal group scheme. In fact, the only thing we needed was a model for the $p$-multiplication morphism $[p]:G\rightarrow G$. Second, we never used that all the $\mathfrak G$ in the tower are copies of the same formal scheme. Weakening these two conditions, we arrive at the following definition:
 	
 	\begin{definition}
 		For a rigid analytic group $G$, we call \textit{$[p]$-$F$-model tower} the data of:
@@ -405,14 +440,10 @@
 	
 	We would like to study properties of $E$ and $\overline{E}$ via $T$ and $B$. An obstacle in doing this is that the categories of formal or rigid groups are not abelian, which makes working with short exact sequences a subtle issue. Another issue is that one cannot direcly study short exact sequences locally on $T$, $E$ or $B$. An important tool is therefore the following Lemma:
 	\begin{lemma}[\cite{BL}, \S 1]\label{formal Raynaud sequence is locally split}
-		The short exact sequence (\ref{formal Raynaud extension}) admits local sections	\footnote{\color{red} What worries me slightly is that I don't quite understand in what category Bosch and L\"utkebohmert are working here: From what they write down they seem to be saying that the map $q:U_i\rightarrow \overline{E}$ exists in the category of formal schemes. But then they say they get an immersion $\overline{T}\times U_i\hookrightarrow \overline{E}$ in the category of "formal rigid spaces". I have tried to look this up, it seems to be a sort of "rigid space which remembers formal structure". Bosch defines it in \cite{Bosch defines formal rigid spaces} where at the very end of chapter 1 he remarks (unfortunately in German) that formal rigid spaces over $K$ form a full subcategory of formal schemes over $R$. There is also a short treatment in \cite{FvdP} where they establish a category equivalence between formal rigid spaces and certain formal schemes in the case that the valuation on $K$ is discrete. 
-			
-		This needs further thought. In any case, it would be good to work out how Bosch and L\"utkebohmert construct the map $s:U\rightarrow E$ to check that is indeed lives in the category of formal schemes. But for now I think it does, also since in fact Bosch and L\"utkebohmert seem to use precisely this on page 656.}
-		, that is there is a cover of $B$ by formal open subschemes $U_i$ such that there exist sections $s:U_i\rightarrow \overline{E}$ of $\pi$. In particular, one can cover $\overline{E}$ by formal open subschemes of the form $\overline{T}\times U_i\hookrightarrow E$.
+		The short exact sequence (\ref{formal Raynaud extension}) admits local sections, that is there is a cover of $B$ by formal open subschemes $U_i$ such that there exist sections $s:U_i\rightarrow \overline{E}$ of $\pi$. In particular, one can cover $\overline{E}$ by formal open subschemes of the form $\overline{T}\times U_i\hookrightarrow E$.
 	\end{lemma}
 	\begin{proof}
-		That sections $s:U_i\rightarrow \overline{E}$ exist is stated in \cite{BL}. They sketch a proof as follows: The result is known for the reduction, somewhere in the SGA, and the result for formal schemes follows from a "lifting procedure". Once 
-		one has sections, they induce maps $T\times U\rightarrow \pi^{-1}(U)$. These can be shown to be isomorphisms using a fibre product argument. 
+		This is proved in Proposition A.2.5 in~\cite{rigid geometry of curves}, in terms of the group $\operatorname{Ext}(B,T)$.
 	\end{proof}
 
 	The last Lemma suggest that instead of considering Raynaud extensions from the abelian category viewpoint, one should consider them as fibre bundles of formal schemes with structure group $T$, or more precisely as principal $T$-bundles of formal schemes, which are also called torsors. This is the language we want to use in the following: We will work with fibre bundles of formal schemes, rigid spaces and schemes. The main technical tool we will need is the associated fibre construction in these settings. For a rigorous  treatment of these we refer to the Appendix {\color{red} which should be replaced by a link to the relevant literature}.
@@ -764,7 +795,7 @@
 		\[h\times^g f : F'\times^{T'}E'\rightarrow F\times^T E\]
 		of fibre bundles over $g$, in a way that is functorial in $h,g,f$. 
 		More precisely, the associated bundle construction is a fibered bifunctor
-		\[-\times^{-}-: \mathbf{FormAct} \times^{\mathbf{FormGrp}} \mathbf{FormPrinBun}\rightarrow \mathbf{FormBun}. \]
+		\[-\times^{-}-: \mathbf{FormAct} \times_{\mathbf{FormGrp}} \mathbf{FormPrinBun}\rightarrow \mathbf{FormBun}. \]
 	\end{proposition}
 	\begin{proof}
 		Let ($E$,$B$,$\pi$,$T$) and ($E'$,$B'$,$\pi'$,$T'$) be principal bundles. Let $F$ and $F'$ be formal schemes with $T$-action and $T'$ action respectively. Let $g:T\rightarrow T'$ be a group homomorphism and let $h:F'\rightarrow F$ be a $g$-equivariant morphism.
@@ -794,6 +825,7 @@
 		This can be checked locally on any trivialising cover, where it is clear.
 	\end{proof}
 	
+	
 	\begin{thebibliography}{9}
 		
 		\bibitem{Bosch lectures} 
@@ -807,11 +839,15 @@
 		\bibitem{BL} 
 		Bosch, L\"utkebohmert
 		\textit{Degenerating abelian varieties}. 
-		Arizona Winter School Notes, 2017.
 		
 		\bibitem{FvdP}
 		Jean Fresnel, Marius van der Put
-		\textit{Rigid Analytic Geometry and its Applications}
+		\textit{Rigid Analytic Geometry and its Applications}.
+		
+		
+		\bibitem{rigid geometry of curves} 
+		Werner L\"utkebohmert
+		\textit{Rigid Geometry of Curves and Their Jacobians}. 
 		
 		\bibitem{perfectoid} 
 		Peter Scholze
