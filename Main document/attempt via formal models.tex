@@ -92,7 +92,7 @@
 	
 	Often we start with a topologically finite type formal scheme $\mathfrak X$ over $\operatorname{Spf} R$ where $\mathfrak X$ has a $\pi$-adic topology. We then obtain a rigid space on the rigid generic fibre that we denote by $\mathfrak X_\eta \rightarrow \operatorname {Sp} K$. If we work with adic spaces, this is actually the fibre product of $\mathfrak X$ with the morphism $\operatorname{Spa}(K,R)\rightarrow \operatorname{Spa}(R,R)$. We also consider the reduction of $\mathfrak X$ mod $\pi$ that we denote by $\tilde{X}=\mathfrak X\times_{\operatorname{Spf}R}\operatorname{Spf}R/\pi$ that we usually consider as a scheme over $\operatorname{Spec}R/\pi$.
 
-	Let $G$ be a rigid group, that is a group object in the category of rigid space. For instance, we obtain rigid groups from analytification of finite type group schemes over $K$: We will be most interested in analytifications of an abelian variety $A$, but other important cases are the analytifications  $\mathbb G_a^{\operatorname{an}}$ of $\mathbb G_a$ and $\mathbb G_m^{\operatorname{an}}$ of $\mathbb G_m$, or more generally of tori $T$ over $K$. A second source of rigid groups are topologically finite type formal group schemes via the rigid generic fibre. A third important case is that of $E$ the covering space in the sense of Raynaud of an abelian variety over $K$ with semi-stable reduction.
+	Let $G$ be a rigid group, that is a group object in the category of rigid spaces. For instance, we obtain rigid groups from analytification of finite type group schemes over $K$: We will be most interested in analytifications of an abelian variety $A$, but other important cases are the analytifications  $\mathbb G_a^{\operatorname{an}}$ of $\mathbb G_a$ and $\mathbb G_m^{\operatorname{an}}$ of $\mathbb G_m$, or more generally of tori $T$ over $K$. A second source of rigid groups are topologically finite type formal group schemes via the rigid generic fibre. A third important case is that of $E$ the covering space in the sense of Raynaud of an abelian variety over $K$ with semi-stable reduction.
 	
 	This note is concerned with the following question:
 	
@@ -128,7 +128,7 @@
 	
 	What this means is that one can always construct the limit of an inverse system of rigid spaces $\mathcal X_i$ if it arises from an inverse system $\mathfrak X_i$ with affine transition maps. This is precisely what Scholze uses in \cite{torsion} in order to construct the space $\mathcal X_{\Gamma_0(p^\infty)}(\epsilon)_a$ (see the proof of Corollary III.2.19 in \cite{torsion}).
 	
-	If one starts with an inverse system of rigid spaces $\mathcal X_i$, a straightforward strategy to construct "the" tilde limit $\varprojlim \mathcal X_i$ is thus to look for formal models $\mathfrak X_i$, that is formal schemes over $\operatorname{Spf} R$ such that $\mathcal X_i = (\mathfrak X_i)_\eta$, as well as affine formal models $\phi_{ji}:\mathfrak X_j\rightarrow X_i$ of the transition maps. If such data exists, Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} produces a tilde-limit $\mathcal X \sim \varprojlim \mathcal X_i$. Here we follow the following standard terminology:
+	If one starts with an inverse system of rigid spaces $\mathcal X_i$, a straightforward strategy to construct "the" tilde limit $\varprojlim \mathcal X_i$ is thus to look for formal models $\mathfrak X_i$, that is formal schemes over $\operatorname{Spf} R$ such that $\mathcal X_i = (\mathfrak X_i)_\eta$, as well as affine formal models $\phi_{ji}:\mathfrak X_j\rightarrow \mathfrak X_i$ of the transition maps. If such data exists, Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} produces a tilde-limit $\mathcal X \sim \varprojlim \mathcal X_i$. Here we follow the following standard terminology:
 	\begin{definition}
 		\begin{enumerate}
 			\item Let $\mathcal X$ be a rigid space over $K$. Then a formal model of $\mathcal X$ is an admissible topologically finite type formal scheme $\mathfrak X$ over $R$ together with an isomorphism of its generic fibre $\mathfrak X_\eta \xrightarrow{\sim} \mathcal X$ (which is often suppressed from notation).
@@ -219,7 +219,7 @@
 		\begin{center}
 			\begin{tikzcd}[row sep = small]
 				& \tilde{G} \arrow[rd, dashed] &  \\
-				\tilde{G} \arrow[ru, "F_{rel}"] \arrow[rr, "{[p]}"] &  & \tilde{G}
+				\tilde{G}^{(p)} \arrow[ru, "F_{rel}"] \arrow[rr, "{[p]}"] &  & \tilde{G}
 			\end{tikzcd}
 		\end{center}
 		
@@ -230,7 +230,7 @@
 				\dots \arrow[r] & \tilde{S}_{n-1} \arrow[rr] \arrow[ru, "V", dashed] &  & \tilde{S}_n \arrow[ru, "V", dashed] \arrow[rr, "{[p]}"] &  & \tilde{S}_{n+1} \arrow[r] & \dots
 			\end{tikzcd}
 		\end{center}
-		From this we can check on elements that relative Frobenius is an isomorphism on $\tilde{S}_\infty := \varinjlim_n \tilde{S}_n$. Since $K$ is perfectoid, we moreover have an isomorphism $R/p^{1/p}\rightarrow R$ from the absolute Frobenius on $R/p$. Therefore absolute Frobenius on $S_\infty/p$ induces an isomorphism
+		From this we can check on elements that relative Frobenius is an isomorphism on $\tilde{S}_\infty := \varinjlim_n \tilde{S}_n$. Since $K$ is perfectoid, we moreover have an isomorphism $R/p^{1/p}\rightarrow R/p$ from the absolute Frobenius on $R/p$. Therefore absolute Frobenius on $S_\infty/p$ induces an isomorphism
 		\[S_\infty/p^{1/p}\xrightarrow{\sim} S_\infty/p.\]
 		Since $\mathfrak G$ is flat, so are the $S_n$ and thus so is $S_\infty$. Thus $S_\infty[1/p]$ is a perfectoid $K$-algebra.
 		Since $G_\infty$ is covered by affinoids of the form $\operatorname{Spf}(S_\infty)_\eta$, this shows that $G_\infty$ is perfectoid.
@@ -240,6 +240,9 @@
 	\begin{corollary}\label{tilde limit exists in the good reduction case}
 		Let $A$ be an abelian variety of good reduction over a perfectoid field $K$. Then $A_\infty$ exists and is perfectoid.
 	\end{corollary}
+	\begin{proof}
+	We just need to check that $A$ satisfies the conditions of Proposition~\ref{limit exists and is perfectoid: commutative formal group case}. But $A$ is flat because it's smooth, and $[p]:A\rightarrow A$ is finite and thus affine.
+	\end{proof}
 	Before we proceed, we would like to mention two illustrative examples:
 	\begin{example}
 		Let $\mathfrak G$ be the $p$-adic completion of the affine group scheme $\mathbb G_m$ over $R$, that is the formal scheme of $\mathfrak G$ is $\operatorname {Spf} S$ where $S=R\langle X \rangle$.  It is clear that $\mathbb G$ satisfies the conditions of Proposition~\ref{limit exists and is perfectoid: commutative formal group case}, so for the generic fibre $G=\mathfrak G_\eta$ we obtain a perfectoid tilde-limit $G_\infty = \varprojlim_{[p]} G$. More precisely, the $[p]$-multiplication map corresponds to the homomorphism
@@ -332,26 +335,29 @@
 	that is an isomorphism of rigid spaces sending the point $1$ to $x$.
 	
 	\subsection{A family of explicit covers}
-	We briefly recall how $\mathbb G_m^{\operatorname{an}}$ is constructed: The following is inspired by \cite{Bosch lectures}, \S 9.2, although we choose slightly different constructions. Let $q \in K^\times$ with $|q|\leq 1$. Consider the annulus $\mathcal B(q,1)$ of radii $|q|$ and $1$ inside $\mathbb A_K^{\operatorname{an}}$:
-	\[\mathcal B(q,1) = \operatorname{Sp}(L_q),\quad \text{ where } L_q = K\langle X,Z\rangle/(XZ-q). \]
+	We briefly recall how $\mathbb G_m^{\operatorname{an}}$ is constructed: The following is inspired by \cite{Bosch lectures}, \S 9.2, although we choose slightly different constructions. Throughout we use the following shorthand notation: for any $a\in K$ we write
+	\[K\langle X,a/X\rangle = K\langle X,Z\rangle/(X\cdot Z - a). \]
+	
+	Let $q \in K^\times$ with $|q|\leq 1$. Consider the annulus $\mathcal B(q,1)$ of radii $|q|$ and $1$ inside $\mathbb A_K^{\operatorname{an}}$:
+	\[\mathcal B(q,1) = \operatorname{Sp}(L_q),\quad \text{ where } L_q = K\langle X,q/X\rangle/a. \]
 	Similarly, for $q\in K^\times$ with $|q|\geq 1$ one constructs the annulus $\mathcal B(1,q)$ by
-	\[\mathcal B(1,q) = \operatorname{Sp}(L_{q}),\quad \text{ where } L_{q} = K\langle q^{-1}X,Z\rangle/(XZ-1)\]
-	where $K\langle q^{-1}X\rangle$ denotes the ring of those power series $f=\sum c_nX^m\in K[[X]]$ for which $|c_n/q|\to 0$ for $n\to \infty$. In particular, we have isomorphisms
-	 \[K\langle X',Z\rangle/(X'Z-q^{-1})\cong K\langle q^{-1}X,Z\rangle/(XZ-1),\quad X'\mapsto q^{-1}X.\]
+	\[\mathcal B(1,q) = \operatorname{Sp}(L_{q}),\quad \text{ where } L_{q} = K\langle X/q,1/X\rangle\]
+	where $K\langle X/q\rangle$ denotes the ring of those power series $f=\sum c_nX^m\in K[[X]]$ for which $|c_n/q|\to 0$ for $n\to \infty$. In particular, we have isomorphisms
+	 \[K\langle X',q^{-1}/X'\rangle\cong K\langle X/q,1/X\rangle,\quad X'\mapsto q^{-1}X.\]
 	One can now construct $\mathbb G_m$ as follows: Choose sequences $a_n,b_n\in K^\times$ with $a_0=1=b_0$ such that $|a_n|<|a_{n-1}|<...<1$ and $|a_n| \to 0$ and similarly $|b_n|>|b_{n-1}|>...>1$ and $|b_n| \to \infty$. Then one can glue the annuli $\mathcal B(a_n,1)$ and $\mathcal B(1,b_n)$ using the following maps:
 	\begin{equation}\label{torus explicit cover glue map 1}
 	\begin{alignedat}{2}
 	\mathcal B(a_{n},1)&\hookleftarrow&& \mathcal B(a_{n-1},1)\\
-	L_{a_n}=K\langle X,Z\rangle/(XZ-a_n)&\rightarrow &&K\langle X,Z\rangle/(XZ-a_{n-1})=L_{a_{n-1}}\\
-	X,Z&\mapsto&& X, \frac{a_{n}}{a_{n-1}}Z
+	L_{a_n}=K\langle X,a_n/X\rangle&\rightarrow &&K\langle X,a_{n-1}/X\rangle=L_{a_{n-1}}\\
+	X,a_{n}/X&\mapsto&& X, \frac{a_{n}}{a_{n-1}}a_{n-1}/X
 	\end{alignedat}
 	\end{equation}
 	and similarly 
 	\begin{equation}\label{torus explicit cover glue map 2}
 	\begin{alignedat}{2}
 	\mathcal B(1,b_n)&\hookleftarrow&& \mathcal B(1,b_{n-1})\\
-	L_{b_n}=K\langle X',Z\rangle/(X'Z-b_{n}^{-1})&\rightarrow &&K\langle X',Z\rangle/(X'Z-b_{n-1}^{-1})=L_{b_{n-1}}\\
-	X',Z&\mapsto&& \frac{b_{n-1}}{b_{n}} X', Z.
+	L_{b_n}=K\langle  X/b_{n},1/X\rangle&\rightarrow &&K\langle X/b_{n-1},1/X\rangle=L_{b_{n-1}}\\
+	X/b_{n},1/X&\mapsto&& \frac{b_{n-1}}{b_{n}} X/b_{n-1}, 1/X.
 	\end{alignedat}
 	\end{equation}
 	
@@ -364,25 +370,25 @@
 	\begin{equation}
 	\begin{alignedat}{2} \label{torus explicit [p] map 1}
 	\mathcal B(q,1)&\xleftarrow{[p]}&& \mathcal B(q^{1/p},1)\\
-	K\langle X,Z\rangle/(XZ-q)&\rightarrow &&K\langle X,Z\rangle/(XZ-q^{1/p})\\
-	X,Z&\mapsto&& X^p, Z^p
+	K\langle X,q/X\rangle&\rightarrow &&K\langle X,q^{1/p}/X\rangle\\
+	X,q/X&\mapsto&& X^p, (q^{1/p}/X)^p
 	\end{alignedat}
 	\end{equation}
 	and similarly, on $\mathcal B(1,q^{-1/p})$ and $\mathcal B(1,q^{-1})$ the map is 
 	\begin{equation}
 	\begin{alignedat}{2} \label{torus explicit [p] map 2}
 	\mathcal B(1,q^{-1})&\xleftarrow{[p]}&& \mathcal B(1,q^{-1/p})\\
-	K\langle X',Z\rangle/(X'Z-q^{-1})&\rightarrow &&K\langle X',Z\rangle/(X'Z-q^{-1/p})\\
-	X',Z&\mapsto&& X'^p, Z^p.
+	K\langle X/q,1/X\rangle&\rightarrow &&K\langle X/q^{1/p},1/X\rangle\\
+	X/q,1/X&\mapsto&& (X/q^{1/p})^p, (1/X)^p.
 	\end{alignedat}
 	\end{equation}
 	The same works for the other affinoid open subspaces $\mathcal B(q^{n},1)\xleftarrow{[p]} \mathcal B(q^{n/p},1)$ and for $\mathcal B(1,q^{-n})\xleftarrow{[p]} \mathcal B(1,q^{-n/p})$.
-	One can then show that the maps~(\ref{torus explicit [p] map 1}) and (\ref{torus explicit [p] map 2}) are compatible with the glue maps~(\ref{torus explicit cover glue map 1}) and~(\ref{torus explicit cover glue map 2}). In the case of~(\ref{torus explicit [p] map 1}) this is basically because $a_n/a_{n-1} = q$ or $a_n/a_{n-1}=q^{1/p}$ depending on whether we work with $\mathfrak U_q$ or $\mathfrak U_{q^{1/p}}$ respectively, and the only thing to check is that 
+	One can then show that the maps~(\ref{torus explicit [p] map 1}) and (\ref{torus explicit [p] map 2}) are compatible with the glue maps~(\ref{torus explicit cover glue map 1}) and~(\ref{torus explicit cover glue map 2}). In the case of~(\ref{torus explicit [p] map 1}) this is basically because $a_n/a_{n-1} = q$ or $a_n/a_{n-1}=q^{1/p}$ depending on whether we work with $\mathfrak U_q$ or $\mathfrak U_{q^{1/p}}$ respectively, and the only thing to check is that the following diagram commutes:
 	\begin{center}
 		\begin{equation}\label{diagram showing that [p]-multiplication on torus glues together}
 		\begin{tikzcd}
-			\mathcal B(q^{n},1) & \mathcal B(q^{n-1},1) \arrow[l, hook'] & Z \arrow[r, maps to] \arrow[d, maps to] & qZ \arrow[d, maps to] \\
-			\mathcal B(q^{n/p},1) \arrow[u, "{[p]}"] & \mathcal B(q^{(n-1)/p},1) \arrow[u, "{[p]}"'] \arrow[l, hook'] & Z^p \arrow[r, maps to] & (q^{1/p}Z)^p=qZ^p.
+			\mathcal B(q^{n},1) & \mathcal B(q^{n-1},1) \arrow[l, hook'] & q^n/X \arrow[r, maps to] \arrow[d, maps to] & q\cdot q^{n-1}/X \arrow[d, maps to] \\
+			\mathcal B(q^{n/p},1) \arrow[u, "{[p]}"] & \mathcal B(q^{(n-1)/p},1) \arrow[u, "{[p]}"'] \arrow[l, hook'] & (q^{n/p}/X)^p \arrow[r, maps to] & q\cdot(q^{(n-1)/p}/X)^p. 
 		\end{tikzcd}
 		\end{equation}
 	\end{center} 
@@ -393,18 +399,18 @@
 	\[L_q^\circ := R\langle X,Z\rangle/(XZ-q).\]
 	This is clearly of topologically finite type over $R$. It is moreover flat as an $R$-algebra (this should follow from Lemma 8.2.1 in \cite{Bosch lectures}). For the same reason (or by $L_{q^{-1}} \cong L_q$) we see that \[L_{q^{-1}}^\circ := R\langle X',Z\rangle/(X'Z-q)\] is a flat topologically finite type $R$-algebra. Consequently, we have flat formal models 
 	\begin{alignat*}{4}
-		\mathfrak \mathcal B(q,1)&:=&& \operatorname{Spf}(L_{q}^\circ), &\quad&\mathfrak \mathcal B(q,1)_\eta &=& \mathcal B(q,1)\\ 
-		\mathfrak \mathcal B(1,q)&:=&& \operatorname{Spf}(L_{q^{-1}}^\circ), &\quad&\mathfrak \mathcal B(1,q)_\eta &=& \mathcal B(1,q)
+		\mathfrak B(q,1)&:=&& \operatorname{Spf}(L_{q}^\circ), &\quad&\mathfrak B(q,1)_\eta &=& \mathcal B(q,1)\\ 
+		\mathfrak B(1,q)&:=&& \operatorname{Spf}(L_{q^{-1}}^\circ), &\quad&\mathfrak  B(1,q)_\eta &=& \mathcal B(1,q)
 	\end{alignat*}
-	For the glueing maps~(\ref{torus explicit cover glue map 1}) and (\ref{torus explicit cover glue map 2}) it is clear from $a_n/a_{n-1} = b_{n-1}/b_n = q$ that these extend to glueing maps $\mathfrak \mathcal B(q^n,1)\hookleftarrow \mathcal B(q^{n-1},1)$ and $\mathfrak \mathcal B(1,q^{-n})\hookleftarrow \mathcal B(1,q^{-(n-1)})$. We conclude:
+	For the glueing maps~(\ref{torus explicit cover glue map 1}) and (\ref{torus explicit cover glue map 2}) it is clear from $a_n/a_{n-1} = b_{n-1}/b_n = q$ that these extend to glueing maps $\mathfrak B(q^n,1)\hookleftarrow \mathfrak B(q^{n-1},1)$ and $\mathfrak B(1,q^{-n})\hookleftarrow \mathfrak B(1,q^{-(n-1)})$. We conclude:
 
 	\begin{lemma}\label{formal model of torus}
-		The affine formal schemes $\mathfrak \mathcal B(q^n,1)$ and $\mathfrak \mathcal B(1,q^n)$ glue together to a flat formal scheme $\mathfrak G_q$ such that $(\mathfrak G_q)_\eta = \mathbb G_m^{\operatorname{an}}$. In other words, $\mathfrak G_q$ is a formal model for $\mathbb G_m^{\operatorname{an}}$.
+		The affine formal schemes $\mathfrak B(q^n,1)$ and $\mathfrak B(1,q^n)$ glue together to a flat formal scheme $\mathfrak G_q$ such that $(\mathfrak G_q)_\eta = \mathbb G_m^{\operatorname{an}}$. In other words, $\mathfrak G_q$ is a formal model for $\mathbb G_m^{\operatorname{an}}$.
 	\end{lemma}
 	\subsection{A family of formal models for $p$-multiplication}
 	As before choose $q\in K^\times$ such that $|q|<1$ and such that there exists a $p$-th root $q^{1/p} \in K$. A closer look at the maps~(\ref{torus explicit [p] map 1}) and~(\ref{torus explicit [p] map 2}) shows that the $[p]$-multiplication extends to a morphism of formal schemes
-	\[\mathfrak \mathcal B(q,1)\xleftarrow{[p]} \mathfrak \mathcal B(q^{1/p},1)\]
-	and similarly for $\mathfrak \mathcal B(1,q^{-1})$. The diagram~(\ref{diagram showing that [p]-multiplication on torus glues together}) shows that these maps glue to a morphism
+	\[\mathfrak B(q,1)\xleftarrow{[p]} \mathfrak B(q^{1/p},1):[\mathfrak p]\]
+	and similarly for $\mathfrak B(1,q^{-1})$. The diagram~(\ref{diagram showing that [p]-multiplication on torus glues together}) shows that these maps glue to a morphism
 	\[[\mathfrak p]: \mathfrak G_{q^{1/p}}\rightarrow  \mathfrak G_q.\]
 	By construction, after tensoring $-\otimes_R K$ all morphisms on algebras coincide with those defined in ~(\ref{torus explicit cover glue map 1}),~(\ref{torus explicit cover glue map 2}),~(\ref{torus explicit [p] map 1}), (\ref{torus explicit [p] map 2}) respectively. We conclude:
 	\begin{proposition}
@@ -429,21 +435,21 @@
 	\begin{equation}
 	\begin{alignedat}{2} \label{torus multiplication map}
 	\mathcal B(a,1)\times \mathcal B(b,1)&\xrightarrow{m}&& \mathcal B(ab,1)\\
-	K\langle X,Z\rangle/(XZ-ab)&\rightarrow &&K\langle X,Z\rangle/(XZ-a)\widehat{\otimes} K\langle X,Z\rangle/(XZ-b)\\
+	K\langle X,ab/X\rangle&\rightarrow &&K\langle X,a/X\rangle\widehat{\otimes} K\langle X,b/X\rangle\\
 	X&\mapsto&& X\otimes X\\
-	Z&\mapsto&& bZ\otimes aZ
+	ab/X&\mapsto&& b/X\otimes a/X
 	\end{alignedat}
 	\end{equation}
 	and similarly on the $\mathcal B(1,a)\times \mathcal B(1,b)$ for $|a|,|b|\geq 1$. Multiplication on the $\mathcal B(a,1)\times \mathcal B(1,b)$ for $|a|< 1 < |b|$ is more difficult to see on the cover that we have chosen.
 	
 	The same arguments as in the last section show that the map described in~(\ref{torus multiplication map}) has a flat formal model
-	\[\mathfrak \mathcal B(a,1)\times \mathfrak \mathcal B(b,1)\rightarrow \mathfrak \mathcal B(ab,1).\]
-	This does \textit{not} mean that multiplication has a formal model $\mathfrak G\times \mathfrak G\rightarrow \mathfrak G$. Indeed, the chosen description has different covers on source and target which in the formal case give rise to different formal schemes (the inversion map $i:\mathbb G_m^{\operatorname{an}}\rightarrow \mathbb G_m^{\operatorname{an}}$ on the other hand does have a formal model). Nevertheless, if we take $a=1$ in the above , we see that we do have an action of the torus $\overline{T}:=\mathfrak \mathcal B(1,1)$ on each of $\mathfrak \mathcal B(b,1)$ and $\mathfrak \mathcal B(1,b)$. Using the formal models from the last section, we conclude:
+	\[\mathfrak B(a,1)\times \mathfrak B(b,1)\rightarrow \mathfrak B(ab,1).\]
+	This does \textit{not} mean that multiplication has a formal model $\mathfrak G\times \mathfrak G\rightarrow \mathfrak G$. Indeed, the chosen description has different covers on source and target which in the formal case give rise to different formal schemes (the inversion map $i:\mathbb G_m^{\operatorname{an}}\rightarrow \mathbb G_m^{\operatorname{an}}$ on the other hand does have a formal model). Nevertheless, if we take $a=1$ in the above , we see that we do have an action of the torus $\overline{T}:=\mathfrak B(1,1)$ on each of $\mathfrak B(b,1)$ and $\mathfrak B(1,b)$. Using the formal models from the last section, we conclude:
 	
 	\begin{proposition}\label{action on formal model of torus}
-		For any $q\in K^\times$ with $|q|<1$, the formal torus $\overline{T}:=\mathfrak \mathcal B(1,1)$ has a natural action on $\mathfrak G_q$ via a map
+		For any $q\in K^\times$ with $|q|<1$, the formal torus $\overline{T}:=\mathfrak B(1,1)$ has a natural action on $\mathfrak G_q$ via a map
 		\[\mathfrak m:\overline{T}\times \mathfrak G_q\rightarrow \mathfrak G_q.\]
-		This map is a formal model of the action of the annulus $\overline{T}=\mathcal B(1,1)$ on $\mathbb G_m^{\operatorname{an}}$. Furthermore, this action is compatible with the models for $[p]$ in the sense that if there is a $p$-th root $q^{1/p}\in K$, then the following diagram commutes.
+		This map is a formal model of the action of the annulus $\mathcal B(1,1)$ on $\mathbb G_m^{\operatorname{an}}$. Furthermore, this action is compatible with the models for $[p]$ in the sense that if there is a $p$-th root $q^{1/p}\in K$, then the following diagram commutes.
 		\begin{center}
 		\begin{tikzcd}
 			\overline{T}\times \mathfrak G_{q^{1/p}} \arrow[d, "{[p]\times [\mathfrak p]}"'] \arrow[r, "\mathfrak m"] & \mathfrak G_{q^{1/p}} \arrow[d, "{[\mathfrak p]}"] \\
@@ -452,13 +458,13 @@
 		\end{center}
 	\end{proposition} 
 	\begin{proof}
-		The existence of $\mathfrak m$ follows from the above consideration concerning the map~(\ref{torus multiplication map}). The rest is clear from the construction: All adic rings we have used in the construction where $R$-subalgebras of the affinoid $K$-algebras used to define $\mathbb G_m^{\operatorname{an}}$, so the equalities hold because they hold for $\mathbb G_m^{\operatorname{an}}$.
+		The existence of $\mathfrak m$ follows from the above consideration concerning the map~(\ref{torus multiplication map}). The rest is clear from the construction: All adic rings we have used in the construction are $R$-subalgebras of the affinoid $K$-algebras used to define $\mathbb G_m^{\operatorname{an}}$, so the equalities hold because they hold for $\mathbb G_m^{\operatorname{an}}$.
 	\end{proof}
 	
 	\subsection{The case of general tori}
 	By taking products everywhere, all of the statements in this section immediately generalises to split tori:
 	\begin{corollary}\label{torus has formal models}
-		Let $T$ be a split torus over $K$ of the form $T=(\mathbb G_m^{\operatorname{an}})^d$. Then for any $q\in K^\times$ with $|q|<1$ the formal scheme $\mathfrak T_q := (\mathfrak G_q)^d$ is a formal model of $T$. If there is a $p$-th root $q^{1/p}\in K$, the $p$-multiplication map has a formal model $[\mathfrak p]:\mathfrak T_{q^{1/p}}\rightarrow \mathfrak T_{q}$ that reduces mod p to the relative Frobenius morphism.
+		Let $T$ be a split torus over $K$ of the form $T=(\mathbb G_m^{\operatorname{an}})^d$. Then for any $q\in K^\times$ with $|q|<1$ the formal scheme $\mathfrak T_q := (\mathfrak G_q)^d$ is a formal model of $T$. If there is a $p$-th root $q^{1/p}\in K$, the $p$-multiplication map has a formal model $[\mathfrak p]:\mathfrak T_{q^{1/p}}\rightarrow \mathfrak T_{q}$ that locally on polyannuli is of the form $[\mathfrak p]:\mathfrak B(q^{1/p},1)^d\rightarrow \mathfrak B(q,1)^d$. Moreover this map reduces mod p to the relative Frobenius morphism.
 	\end{corollary}
 	\begin{corollary}\label{torus has p-F-model tower and has perfectoid tilde-limit}
 		Let $T$ be a split torus over $K$, considered as a rigid space. Then $T$ has a $[p]$-$F$-model tower. In particular, there exists a perfectoid space $T_\infty$ such that $T_\infty \sim \varprojlim_{[p]} T$. 
@@ -467,15 +473,15 @@
 	\begin{corollary}\label{action on formal model of torus}
 		Let $T$ be any split torus over $K$. For any $q\in K^\times$ with $|q|<1$, the formal completion $\overline{T}$ has a natural action on $\mathfrak T_q$ via a map
 		\[\mathfrak m:\overline{T}\times \mathfrak T_q\rightarrow \mathfrak T_q.\]
-		This map is a formal model of the action of the annulus $\overline{T}$ on $T$. Furthermore, this action is compatible with the models for $[p]$ in the sense that if there is a $p$-th root $q^{1/p}\in K$, then the map $\mathfrak m$ is semi-linear with respect to $[p]:\overline{T}\rightarrow{T}$.
+		This map is a formal model of the action of the annulus $\overline{T}$ on $T$. Furthermore, this action is compatible with the models for $[p]$ in the sense that if there is a $p$-th root $q^{1/p}\in K$, then the map $[\mathfrak p]:\mathfrak T_q^{1/p}\rightarrow \mathfrak T_q$ is semi-linear with respect to $[p]:\overline{T}\rightarrow \overline{T}$.
 	\end{corollary} 
 	
 	\section{Raynaud extensions as principal bundles of formal and rigid spaces}
 	In the following we want consider the case of rigid groups arising from the Raynaud extensions associated to semi-stable abelian varieties over a non-archimedean complete field $K$. More precisely, let $A$ be an abelian variety over $K$ of semi-stable reduction. We denote by $N$ the identity component of the N\'eron-model and by $\overline E$ its completion along the special fibre. Then by the theory of Raynaud, $\overline E$ is a formal group that fits into a short exact sequence of formal group schemes
 	\begin{equation}\label{formal Raynaud extension}
-	0\rightarrow \overline T \rightarrow \overline E \xrightarrow{\pi} B\rightarrow 0
+	0\rightarrow \overline T \rightarrow \overline E \xrightarrow{\pi} \overline{B}\rightarrow 0
 	\end{equation}
-	where $B$ is an abelian variety of good reduction, and $\overline{T}$ is the completion of a torus of rank $r$ over $K$.
+	where $\overline{B}$ is the completion of an abelian variety $B$ over $K$ of good reduction (we also denote by $B$ the rigid space associated to it), and $\overline{T}$ is the completion of a torus of rank $r$ over $K$.
 	After passing to a finite extension of $K$, we can always assume that the torus is split. The rigid generic fibre $\overline{T}_\eta$ of the torus $\overline{T}$ canonically extends to the torus $T^{\operatorname{an}}$ which again we simply denote by $T$. One can show that this induces a pushout exact sequence in the category of rigid groups, see \S 1 of \cite{BL}. More precisely, there exists a rigid group variety $E$ such that the following diagram commutes and the left square is a pushout.
 	\begin{center}
 		\begin{equation}
@@ -512,20 +518,21 @@
 	The last Lemma suggest that instead of considering Raynaud extensions from the abelian category viewpoint, one should consider them as fibre bundles of formal schemes with structure group $T$, or more precisely as principal $T$-bundles of formal schemes, which are also called torsors. This is the language we want to use in the following: We will work with fibre bundles of formal schemes, rigid spaces and schemes. The main technical tool we will need is the associated fibre construction in these settings. For a rigorous  treatment of these we refer to the Appendix {\color{red} which should be replaced by a link to the relevant literature}.
 	
 	First of all, we note that the sequence~(\ref{formal Raynaud extension}) from the last section gives rise to a principal $\overline{T}$-bundle
-	$\overline{E}\rightarrow \overline{B}$. The fact that $E$ is obtained from $\overline{E}$ via push-out from $\overline{T}\rightarrow T$ can now conveniently be expressed in terms of the associated fibre bundle by saying that $E = T\times^{\overline{T}}\overline{E}$ in the sense of Definition~\ref{definition of Borel construction}. We moreover have the following description of $[p]$:
+	$\overline{E}\rightarrow \overline{B}$. The fact that $E$ is obtained from $\overline{E}_\eta$ via push-out from $\overline{T}_\eta\rightarrow T$ can now conveniently be expressed in terms of the associated fibre bundle by saying that $E_\eta = T\times^{\overline{T}_\eta}\overline{E}_\eta$ in the sense of Definition~\ref{definition of Borel construction}. We have the following description of $[p]$:
 	\begin{lemma}\label{p-multiplication is induced from Borel construction}
-		The map $[p]:E\rightarrow E$ coincides with the morphism $T\times^{\overline{T}}\overline{E}\rightarrow T\times^{\overline{T}}\overline{E}$ induced by
-		Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor}.
+		The map $[p]:E\rightarrow E$ coincides with the morphism 
+		\[[p]\times^{[p]}[p]: T\times^{\overline{T}_\eta}\overline{E}_\eta\rightarrow T\times^{\overline{T}_\eta}\overline{E}_\eta\]
+		induced by the different $[p]$-multiplication maps by Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor}.
 	\end{lemma}
 	\begin{proof}
-		The universal property of the associated bundle in the principal case, Lemma~\ref{universal property of associated fibre construction for principal bundles} applied to the maps $g:\overline{T}\rightarrow T$ and $\overline{E}\xrightarrow{[p]} \overline{E}\rightarrow E$ says that there is a unique morphism of fibre bundles $E\rightarrow E$ making the following diagram commute:
+		The universal property of the associated bundle in the principal case, Lemma~\ref{universal property of associated fibre construction for principal bundles} applied to the maps $g:\overline{T}_\eta\rightarrow T$ and $\overline{E}_\eta\xrightarrow{[p]} \overline{E}_\eta\rightarrow E$ says that there is a unique morphism of fibre bundles $E\rightarrow E$ making the following diagram commute:
 		\begin{center}
 			\begin{equation}\label{rigid p-multiplication cube}
 			\begin{tikzcd}[row sep = small, column sep = small]
 				& T \arrow[rr] &  & E \\
 				T \arrow[ru, "{[p]}"] \arrow[rr,crossing over] &  & E \arrow[ru, "\exists!", dotted] &  \\
-				& \overline{T} \arrow[uu, hook] \arrow[rr,crossing over] &  & \overline{E} \arrow[uu] \\
-				\overline{T} \arrow[ru, "{[p]}"] \arrow[uu, hook] \arrow[rr] &  & \overline{E} \arrow[ru, "{[p]}"] \arrow[uu] & 
+				& \overline{T}_\eta \arrow[uu, hook] \arrow[rr,crossing over] &  & \overline{E}_\eta \arrow[uu] \\
+				\overline{T}_\eta \arrow[ru, "{[p]}"] \arrow[uu, hook] \arrow[rr] &  & \overline{E}_\eta \arrow[ru, "{[p]}"] \arrow[uu] & 
 			\end{tikzcd}
 			\end{equation}
 		\end{center}
@@ -537,11 +544,11 @@
 	The first step is to construct a family of formal models for $E$. We do this by using the formal models $\mathfrak T_q$.
 	\begin{proposition}
 	Let $q\in K^\times$ with $|q|<1$. Let $\mathfrak T_q$ be the formal model from Corollary~\ref{torus has formal models}. Then there is a formal scheme $\mathfrak E_q :=\mathfrak T_q \times^{\overline{T}}\overline{E}$ that is a formal model of the rigid space $E$. Furthermore, there exists a morphism
-	\[\mathfrak E_q :=\mathfrak T_q \times^{\overline{T}} \overline{E} \rightarrow B \]
+	\[\mathfrak E_q :=\mathfrak T_q \times^{\overline{T}} \overline{E} \rightarrow \overline{B} \]
 	which is a fibre bundle and a formal model of $E\rightarrow B$.
 	\end{proposition}
 	\begin{proof}
-		Recall from Proposition~\ref{action on formal model of torus} that $\mathfrak T_q$ has a $\overline{T}$-action that is a model of the $\overline{T}$-action on $T$. In particular, the associated fibre construction for the principal $\overline{T}$-bundle $\overline{E}$ gives a fibre bundle $\mathfrak E_q :=\mathfrak T_q \times^{\overline{T}} \overline{E} \rightarrow B$. Since $\mathfrak T_q$ is a formal model of $T$, this is a formal model of $T\times^{\overline{T}}\overline{E}$ which by definition is equal to $E$.
+		Recall from Proposition~\ref{action on formal model of torus} that $\mathfrak T_q$ has a $\overline{T}$-action that is a model of the $\overline{T}_\eta$-action on $T$. In particular, the associated fibre construction for the principal $\overline{T}$-bundle $\overline{E}$ gives a fibre bundle $\mathfrak E_q :=\mathfrak T_q \times^{\overline{T}} \overline{E} \rightarrow \overline{B}$. Since $\mathfrak T_q$ is a formal model of $T$, one sees by Lemma~\ref{associated bundle commutes with generic fibre} that this is a formal model of $T\times^{\overline{T}_\eta}\overline{E}_\eta$ which by definition is equal to $E$.
 	\end{proof}
 	Next we want to construct a model for the $[p]$-multiplication map. Here we can use again that $[p]$ exists on $\overline{E}$ and on $\mathfrak T_{q^{1/p}}$.
 	\begin{proposition}\label{formal model of p-multiplication on E}
@@ -571,8 +578,12 @@
 		\end{center}
 		By Lemma~\ref{p-multiplication is induced from Borel construction} this diagram equals diagram~(\ref{rigid p-multiplication cube}) on the generic fibre. 
 	
-		The morphism $[\mathfrak p]:\mathfrak E_{q^{1/p}} \rightarrow  \mathfrak E_{q}$ is affine because $[p]:\overline{E}\rightarrow \overline{E}$ is affine, the map $[\mathfrak p]:\mathfrak T_{q^{1/p}}\rightarrow \mathfrak T_{q}$ is affine by construction, and the resulting map $\mathfrak E_{q^{1/p}} \rightarrow  \mathfrak E_{q}$ is glued from covers which since $[p]:B\rightarrow B$ is affine we can without loss of generality assume to be affine.
+		To see that the morphism $[\mathfrak p]:\mathfrak E_{q^{1/p}} \rightarrow  \mathfrak E_{q}$ is affine, first note that $[p]:\overline{B}\rightarrow \overline{B}$ is an affine morphism. The map $[\mathfrak p]:\mathfrak T_{q^{1/p}}\rightarrow \mathfrak T_{q}$ is affine by construction, namely by Corollary~\ref{torus has formal models} it is locally on $\mathfrak T_{q}$ of the form $[\mathfrak p]:\mathfrak B(q^{1/p},1)^d\rightarrow \mathfrak B(q,1)^d$. Note that both of these affine open subsets are fixed by the action of $\overline{T}$.
+		We conclude from the construction in the proof of Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor} that the morphism  $[\mathfrak p]:\mathfrak E_{q^{1/p}} \rightarrow  \mathfrak E_{q}$ locally on the target is of the form
+		\[[\mathfrak p]:\mathfrak B(q^{1/p},1)^d \times U' \rightarrow \mathfrak B(q,1)^d \times U\]
+		for an affine open formal subscheme $U\subseteq \overline{B}$ with affine preimage $U'$ under $[p]:\overline{B}\rightarrow \overline{B}$. This shows that the morphism is affine locally on the target, and therefore is affine.
 	\end{proof}
+	
 	We have thus proved the first part of what we want to show about tilde-limits of $E$:
 	\begin{proposition}\label{p-model tower exists for E}
 		Let $K$ be perfectoid. Then $E$ has a $[p]$-model tower of the form
@@ -598,23 +609,23 @@
 	
 	It suffices to prove that for any $q\in K^\times$ with $|q|<1$ and a $p$-th root $q^{1/p}$, the map $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ upon reduction mod $p$ factors through relative Frobenius.
 	
-	In the following we denote reduction of formal scheme by a $\sim$ over the formal scheme, for example the reductions of $\overline{T}$, $\overline{E}$ and $\mathfrak T$ are denoted by $\tilde{T}$, $\tilde{E}$ and $\tilde{\mathfrak{T}}$.
+	In the following we denote reduction of a formal scheme by a $\sim$ over the formal scheme, for example the reductions of $\overline{T}$, $\overline{E}$ and $\mathfrak T$ are denoted by $\tilde{T}$, $\tilde{E}$ and $\tilde{\mathfrak{T}}$.
 	
 		
 	Recall that $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ was constructed using the $[p]$-multiplication cube in diagram~(\ref{formal model of p-multiplication cube}) and functoriality of the associated bundle. 	
 	Also recall that all statements we have used about fibre bundles also hold when we replace formal schemes over $R$ by schemes over $R/p$, and formation of the associated bundle commutes with this reduction. In particular,
 	\[\tilde{\mathfrak{E}}_q = \tilde{\mathfrak T}_q\times^{\tilde{T}}\tilde E.\]
-	By  Corollary~\ref{torus has formal models}, the multiplication map $[\mathfrak p]:\tilde{\mathfrak T}_{q^{1/p}} \rightarrow \tilde{\mathfrak T}_{q}$ reduces to relative Frobenius over $p$. In particular, we have 
+	By  Corollary~\ref{torus has formal models}, the multiplication map $[\mathfrak p]:\mathfrak T_{q^{1/p}} \rightarrow \mathfrak T_{q}$ reduces to relative Frobenius over $p$. In particular, we have 
 	\[\tilde{\mathfrak T}_{q^{1/p}}^{(p)} = \tilde{\mathfrak T}_{q}.\]
 	
-	Since $\tilde{E}$ and $\tilde{T}$ are group schemes, the reduction of $[p]$ on them factors through the relative Frobenius maps $F_E$ and $F_E$ respectively. In particular, we have a commutative diagram
+	Since $\tilde{E}$ and $\tilde{T}$ are group schemes, the reduction of $[p]$ on them factors through the relative Frobenius maps $F_E$ and $F_E$ respectively. By functoriality of relative Frobenius ("Frobenius commutes with any map") we have a commutative diagram
 	\begin{center}
 		\begin{tikzcd}
 			\tilde{E} \arrow[r, "F_{\tilde E}"] &  \tilde{E}^{(p)} \\
 			\tilde{T} \arrow[r, "F_{\tilde T}"] \arrow[u, hook] &  \tilde{T}^{(p)} \arrow[u, hook].
 		\end{tikzcd}
 	\end{center}
-	In other words, $F_{\tilde E}$ is a $F_{\tilde T}$-linear morphism of fibre bundles. By functoriality of relative Frobenius ("Frobenius commutes with any map") we also have a commutative diagram
+	In other words, $F_{\tilde E}$ is a $F_{\tilde T}$-linear morphism of fibre bundles. Again by functoriality of Frobenius we also have a commutative diagram
 	\begin{center}
 	\begin{tikzcd}
 	\tilde{\mathfrak T}_{q^{1/p}} \arrow[r, "F_{\tilde { \mathfrak T}}"]  & \tilde{\mathfrak T}_q \\
@@ -640,7 +651,7 @@
 			\tilde{T} \arrow[rrr] \arrow[uuu] \arrow[rru, "\, F"'] &  &  & \tilde{E} \arrow[rru, "\, F"'] \arrow[uuu] &  &  &  & 
 				\end{tikzcd}
 	\end{center}
-	Since the composed maps $\tilde{E}\rightarrow \tilde{E}$ on the bottom left, $\tilde{T}\rightarrow \tilde{T}$ on the bottom right and  $\tilde{\mathfrak T}_{q^{1/p}}\rightarrow \tilde{\mathfrak T}_{q}$ on the upper right by construction are the reductions of the respective $p$-multiplication maps $[p]$, the functoriality of the associated bundle construction in Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor} implies that the two maps on the upper left compose to the reduction of $[\mathfrak p]\times^{[p]}[p]$. But $[\mathfrak p]\times^{[p]}[p]$ is equal to $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ by definition of the latter. 	This completes the proof that the reduction of $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ factors through the relative Frobenius on $\tilde{\mathfrak E}_{q^{1/p}}$.
+	Since the composed maps $\tilde{E}\rightarrow \tilde{E}$ on the bottom right, $\tilde{T}\rightarrow \tilde{T}$ on the bottom left and  $\tilde{\mathfrak T}_{q^{1/p}}\rightarrow \tilde{\mathfrak T}_{q}$ on the upper left by construction are the reductions of the respective $p$-multiplication maps $[p]$, the functoriality of the associated bundle construction in Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor} implies that the two maps on the upper left compose to the reduction of $[\mathfrak p]\times^{[p]}[p]$. But $[\mathfrak p]\times^{[p]}[p]$ is equal to $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ by definition of the latter. 	This completes the proof that the reduction of $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ factors through the relative Frobenius on $\tilde{\mathfrak E}_{q^{1/p}}$.
 	
 	The conclusion that $E_\infty$ exists and is perfectoid then follows from Proposition~\ref{existence of p-F-model tower implies perfectoid}.
 	\end{proof}
@@ -1281,7 +1292,7 @@
 	
 	The Borel construction satisfies the following universal property:
 	\begin{lemma}\label{universal property of associated fibre construction for principal bundles}
-		Let $g:T\rightarrow S$ be a homomorphism of formal group schemes and let $E\rightarrow B$ be a principal $T$-bundle. Let $X$ be any principle $S$-bundle. Note that $X$ receives a $T$-action from $g$. Then there is a functorial one-to-one correspondence between $T$-linear morphisms $E\rightarrow X$ and morphism of principal $S$-bundles $S\times^T E\rightarrow X$.
+		Let $g:T\rightarrow S$ be a homomorphism of formal group schemes and let $E\rightarrow B$ be a principal $T$-bundle. Let $X$ be any principle $S$-bundle. Note that $X$ receives a $T$-action from $g$. Then there is a functorial one-to-one correspondence between $T$-linear morphisms $E\rightarrow X$ and morphisms of principal $S$-bundles $S\times^T E\rightarrow X$.
 	\end{lemma}
 	
 	\subsection{The semi-linear case}
@@ -1342,7 +1353,7 @@
 		Let ($E$,$B$,$\pi$,$T$) and ($E'$,$B'$,$\pi'$,$T'$) be principal bundles. Let $F$ and $F'$ be formal schemes with $T$-action and $T'$ action respectively. Let $g:T\rightarrow T'$ be a group homomorphism and let $h:F'\rightarrow F$ be a $g$-equivariant morphism.
 		Let $f:E'\rightarrow E$ be a morphism of principle fibre bundles over $g$.
 		Then we can find compatible covers $\mathfrak U'$ of $E'$ and $\mathfrak U$ of $E$ such that locally we have diagrams like in Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles}. Then locally $F\times^T E$ and $F'\times^T E'$ are of the form $F\times U_i$ and $F'\times U'_i$ such that we obtain a natural map
-		\[F'\times U'_i\xrightarrow{(h\times^T\pi)} F\times U_i, \quad (f,u)\mapsto (h(f)\theta_i(u),\pi(u))\]
+		\[F'\times U'_i\xrightarrow{(h\times^T\pi)} F\times U_i, \quad (x,u)\mapsto (h(x)\theta_i(u),f_\pi(u))\]
 		(as before this description is just a short hand for a diagram of maps, and not a description in terms of "points"). These maps glue together over the cover, since on intersection Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles} implies that we have a commutative diagram
 		\begin{center}
 			\begin{tikzcd}
@@ -1358,7 +1369,7 @@
 	\end{proof}
 	
 	All that we have done in this chapter can be done in completely the same way with formal schemes replaced by rigid spaces (covers being replaced by admissible covers) and also for schemes. In particular by functoriality of fibre products there are natural functors from formal principal $T$-bundles over $R$ to rigid principal $T_\eta$-bundles over $K$ on the generic fibre, and to principal $\overline{T}$-bundles on the reduction $R/p$. Moreover, these generic fibre and reduction functors commute with the associated fibre construction:
-	\begin{lemma}
+	\begin{lemma}\label{associated bundle commutes with generic fibre}
 		Let $T$ be a formal group scheme and let $\pi:E\rightarrow B$ be a principial $T$-bundle. Let $F$ be a formal scheme with an action by $T$. Then
 		\[(E\times^T B)_\eta = E_\eta\times^{T_\eta} B_\eta \]
 	\end{lemma}
