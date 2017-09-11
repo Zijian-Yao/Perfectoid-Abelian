@@ -123,7 +123,8 @@
 		\[\mathcal X \sim \varprojlim \mathcal X_i.\]
 	\end{lemma}
 	\begin{proof}
-		This is a consequence of \cite{SW}, Proposition 2.4.2.
+		This is a consequence of \cite{SW}, Proposition 2.4.2: The transition maps in the system are affine, hence quasi-separate quasi-compact. In order to prove the Lemma, we can restrict to an affine open subset $\operatorname{Spf}(A)$ of $\mathfrak X$ that arises as the inverse limit of affine open subsets $\operatorname{Spf}(A_i)\subseteq \mathfrak X_i$. Here all formal schemes are considered with the $\pi$-adic topology and $A$ is the $\pi$-adic completion of $\varinjlim A_i$. 
+		Upon taking the generic fibre, $A_i$ with ideal of definition $I_i=\pi A_i$ is an open subring of definition of $A_i[1/\pi]$. We then clearly have $I_iA_j = A_j$ for any $j\geq i$. This shows that the inverse system satisfies the conditions of \cite{SW}, Proposition 2.4.2, and we conclude that $\operatorname{Spf}(A)_\eta \sim \varprojlim \operatorname{Spf}(A_i)_\eta$ as desired.
 	\end{proof}
 	
 	What this means is that one can always construct the limit of an inverse system of rigid spaces $\mathcal X_i$ if it arises from an inverse system $\mathfrak X_i$ with affine transition maps. This is precisely what Scholze uses in \cite{torsion} in order to construct the space $\mathcal X_{\Gamma_0(p^\infty)}(\epsilon)_a$ (see the proof of Corollary III.2.19 in \cite{torsion}).
@@ -525,7 +526,7 @@
 		induced by the different $[p]$-multiplication maps by Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor}.
 	\end{lemma}
 	\begin{proof}
-		The universal property of the associated bundle in the principal case, Lemma~\ref{universal property of associated fibre construction for principal bundles} applied to the maps $g:\overline{T}_\eta\rightarrow T$ and $\overline{E}_\eta\xrightarrow{[p]} \overline{E}_\eta\rightarrow E$ says that there is a unique morphism of fibre bundles $E\rightarrow E$ making the following diagram commute:
+		The universal property of the associated bundle in the principal case, Lemma~\ref{universal property of associated fibre construction for principal bundles} in light of Remark~\ref{appendix in the case of rigid spaces and schemes} applied to the maps $g:\overline{T}_\eta\rightarrow T$ and $\overline{E}_\eta\xrightarrow{[p]} \overline{E}_\eta\rightarrow E$ says that there is a unique morphism of fibre bundles $E\rightarrow E$ making the following diagram commute:
 		\begin{center}
 			\begin{equation}\label{rigid p-multiplication cube}
 			\begin{tikzcd}[row sep = small, column sep = small]
@@ -1018,8 +1019,9 @@
 	\begin{remark}
 		To illustrate why this phenomenon occurs, consider the following inverse system of abstract groups:
 	\begin{center}
-	\begin{tikzcd}[row sep = {0.75cm,between origins}]
-		& \vdots \arrow[d] & \vdots \arrow[d] & \vdots \arrow[d] &  \\
+	\begin{tikzcd}[row sep = {0.60cm,between origins}]
+		& \arrow[dd,dotted] & \arrow[dd,dotted] & \arrow[dd,dotted] &  \\
+		&&\\
 		0 \arrow[r] & \mathbb Z \arrow[r] \arrow[dd, "{[p]}"] & \mathbb R \arrow[r] \arrow[dd, "{[p]}"] & \mathbb R/\mathbb Z \arrow[dd, "{[p]}"] \arrow[r] & 0 \\
 		&&\\
 		0 \arrow[r] & \mathbb Z \arrow[r] & \mathbb R \arrow[r] & \mathbb R/\mathbb Z \arrow[r] & 0
@@ -1054,7 +1056,7 @@
 		\end{center}
 		Using Lemmas~\ref{compatible cuboid charts for the tower over E/M} and \ref{horizontal map is covering map} we see that the pullback of this diagram to $E_i\subseteq E/M$ is
 		\begin{center}
-			\begin{tikzcd}[row sep = {1cm,between origins}, column sep = {3cm,between origins}]
+			\begin{tikzcd}[row sep = {0.85cm,between origins}, column sep = {3cm,between origins}]
 				\vdots \arrow[d] & \vdots \arrow[d] & \vdots \arrow[d] \\
 				\bigsqcup\limits_{q\in M^{1/p}} q\cdot E_i^{1/p^n} \arrow[dd] \arrow[r] & \bigsqcup\limits_{q\in D_n} E_i^{1/p^n} \arrow[dd] \arrow[r] & E_i^{1/p^n} \arrow[dd] \\
 				&  &  \\
@@ -1065,7 +1067,7 @@
 		In particular, at every level in the tower over $E_i$ the maps are trivial covering maps. This means that in order to understand them we only need to keep track of the maps on index sets, which are
 		\begin{center}
 		\begin{tikzcd}[row sep = {1.5cm,between origins}, column sep = {2cm,between origins}]
-			\vdots \arrow[d,"\cong"'] & \vdots \arrow[d, "{[p]}"] & \vdots \arrow[d] \\
+			 \arrow[d,"\cong"',dotted] &  \arrow[d, "{[p]}",dotted] & \arrow[d,dotted] \\
 			M^{1/p} \arrow[d, "{[p]}","\cong"'] \arrow[r] & M^{1/p}/M \arrow[d, "{[p]}"] \arrow[r] & 1 \arrow[d] \\
 			M \arrow[r] & 1 \arrow[r] & 1
 		\end{tikzcd}
@@ -1132,7 +1134,6 @@
 		
 		The universal property of the pushout then implies that $A_\infty$ has the universal property of the quotient of the diagonal map $M\rightarrow D_\infty\times E_\infty$.
 	\end{proof}
-	
 	
 	\appendix
 	\section{Fibre bundles of formal and rigid spaces}
@@ -1367,8 +1368,10 @@
 		
 		By refining covers, one easily checks that this is functorial in both components.
 	\end{proof}
-	
-	All that we have done in this chapter can be done in completely the same way with formal schemes replaced by rigid spaces (covers being replaced by admissible covers) and also for schemes. In particular by functoriality of fibre products there are natural functors from formal principal $T$-bundles over $R$ to rigid principal $T_\eta$-bundles over $K$ on the generic fibre, and to principal $\overline{T}$-bundles on the reduction $R/p$. Moreover, these generic fibre and reduction functors commute with the associated fibre construction:
+	\begin{remark}\label{appendix in the case of rigid spaces and schemes}
+	All that we have done in this chapter can be done in completely the same way with formal schemes replaced by rigid spaces (covers being replaced by admissible covers) and also for schemes, or in fact for any site. We have preferred to use formal schemes to make things more explicit. 
+	The different categories of fibre bundles are well-behaved with respect to the usual functors between the different categories: For instance, by functoriality of fibre products there are natural rigidification and reduction functors from formal principal $T$-bundles over $R$ to rigid principal $T_\eta$-bundles over $K$ on the generic fibre, and to principal $\overline{T}$-bundles on the reduction $R/p$. Moreover, these generic fibre and reduction functors commute with the associated fibre construction:
+	\end{remark}
 	\begin{lemma}\label{associated bundle commutes with generic fibre}
 		Let $T$ be a formal group scheme and let $\pi:E\rightarrow B$ be a principial $T$-bundle. Let $F$ be a formal scheme with an action by $T$. Then
 		\[(E\times^T B)_\eta = E_\eta\times^{T_\eta} B_\eta \]
