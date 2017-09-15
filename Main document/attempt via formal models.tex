@@ -242,7 +242,7 @@
 		Let $A$ be an abelian variety of good reduction over a perfectoid field $K$. Then $A_\infty$ exists and is perfectoid.
 	\end{corollary}
 	\begin{proof}
-	We just need to check that $A$ satisfies the conditions of Proposition~\ref{limit exists and is perfectoid: commutative formal group case}. But $A$ is flat because it's smooth, and $[p]:A\rightarrow A$ is finite and thus affine.
+	We just need to check that $A$ satisfies the conditions of Proposition~\ref{limit exists and is perfectoid: commutative formal group case}. But $A$ is flat because it's smooth, and $[p]:A\rightarrow A$ is finite (see Proposition 20.7 of \cite{Milne AV in Cornell-Silverman}) and thus affine.
 	\end{proof}
 	Before we proceed, we would like to mention two illustrative examples:
 	\begin{example}
@@ -616,8 +616,9 @@
 	Recall that $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ was constructed using the $[p]$-multiplication cube in diagram~(\ref{formal model of p-multiplication cube}) and functoriality of the associated bundle. 	
 	Also recall that all statements we have used about fibre bundles also hold when we replace formal schemes over $R$ by schemes over $R/p$, and formation of the associated bundle commutes with this reduction. In particular,
 	\[\tilde{\mathfrak{E}}_q = \tilde{\mathfrak T}_q\times^{\tilde{T}}\tilde E.\]
-	By  Corollary~\ref{torus has formal models}, the multiplication map $[\mathfrak p]:\mathfrak T_{q^{1/p}} \rightarrow \mathfrak T_{q}$ reduces to relative Frobenius over $p$. In particular, we have 
-	\[\tilde{\mathfrak T}_{q^{1/p}}^{(p)} = \tilde{\mathfrak T}_{q}.\]
+	By  Corollary~\ref{torus has formal models}, the model of the multiplication map $[\mathfrak p]:\mathfrak T_{q^{1/p}} \rightarrow \mathfrak T_{q}$ reduces to relative Frobenius over $p$. In particular, we have a natural isomorphism
+	\[\tilde{\mathfrak T}_{q^{1/p}}^{(p)} \cong \tilde{\mathfrak T}_{q}\]
+	and we can identify $\tilde{\mathfrak T}_{q^{1/p}}^{(p)} = \tilde{\mathfrak T}_{q}$ in the following. The same is true for $\tilde{T}^{(p)} = \tilde{T}$.
 	
 	Since $\tilde{E}$ and $\tilde{T}$ are group schemes, the reduction of $[p]$ on them factors through the relative Frobenius maps $F_E$ and $F_E$ respectively. By functoriality of relative Frobenius ("Frobenius commutes with any map") we have a commutative diagram
 	\begin{center}
@@ -629,14 +630,14 @@
 	In other words, $F_{\tilde E}$ is a $F_{\tilde T}$-linear morphism of fibre bundles. Again by functoriality of Frobenius we also have a commutative diagram
 	\begin{center}
 	\begin{tikzcd}
-	\tilde{\mathfrak T}_{q^{1/p}} \arrow[r, "F_{\tilde { \mathfrak T}}"]  & \tilde{\mathfrak T}_q \\
+	\tilde{\mathfrak T}_{q^{1/p}} \arrow[r, "F_{\tilde { \mathfrak T}}"]  & \tilde{\mathfrak T}_{q^{1/p}}^{(p)} \\
 	\tilde T \arrow[r, "F_{\tilde T}"] \arrow[u,hook] & \tilde{T}^{(p)} \arrow[u,hook].
 	\end{tikzcd}
 	\end{center}
 	
-	By Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor} we thus obtain a natural morphism
+	By Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor}, we thus obtain a natural morphism
 	\[F_{\tilde{\mathfrak{T}}}\times^{F_{\tilde{T}}} F_{\tilde
-		E}:\tilde{\mathfrak T}_{q^{1/p}}\times^{\tilde T}\tilde E \rightarrow \tilde{\mathfrak T}_{q}\times^{\tilde T^{(p)}}\tilde E^{(p)}. \]
+		E}:\tilde{\mathfrak T}_{q^{1/p}}\times^{\tilde T}\tilde E \rightarrow \tilde{\mathfrak T}_{q^{1/p}}^{(p)}\times^{\tilde T^{(p)}}\tilde E^{(p)}. \]
 	Using the explicit description of $F_{\tilde{\mathfrak{T}}}\times^{F_{\tilde{T}}} F_{\tilde
 		E}$ in the proof of Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor}, we easily check that this morphism is just the relative Frobenius of $\tilde{\mathfrak{E}}_{q^{1/p}}$: This is a consequence of the fact that relative Frobenius on the fibre product $\tilde{T}\times \tilde{U}$ for any $\tilde{U}\subseteq \tilde{B}$ is just the product of the relative Frobenius morphisms of $\tilde T$ and $\tilde U$, and thus the morphisms $\theta_i$ from Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles} are all trivial. 
 	
@@ -645,26 +646,28 @@
 	\begin{center}
 		\begin{tikzcd}[column sep={1cm,between origins},row sep={1cm,between origins}]
 			&  &  &  & \tilde{\mathfrak T}_{q} \arrow[rrr] &  &  & \tilde{\mathfrak E}_{q} \\
-			&  & \tilde{\mathfrak T}_{q} \arrow[rru,equal] \arrow[rrr] &  &  & \tilde{\mathfrak E}^{(p)}_{q^{1/p}} \arrow[rru, dotted] &  &  \\
+			&  & \tilde{\mathfrak T}_{q}^{(p)} \arrow[rru,equal] \arrow[rrr] &  &  & \tilde{\mathfrak E}^{(p)}_{q^{1/p}} \arrow[rru, dotted] &  &  \\
 			\tilde{\mathfrak T}_{q^{1/p}} \arrow[rru, "\, F"'] \arrow[rrr] &  &  & \tilde{\mathfrak E}_{q^{1/p}} \arrow[rru, "\, F"'] &  &  &  &  \\
 			&  &  &  & \tilde{T} \arrow[rrr] \arrow[uuu] &  &  & \tilde{E} \arrow[uuu] \\
-			&  & \tilde{T} \arrow[rrr] \arrow[rru,equal] \arrow[uuu] &  &  & \tilde{E}^{(p)} \arrow[rru] \arrow[uuu] &  &  \\
+			&  & \tilde{T}^{(p)} \arrow[rrr] \arrow[rru,equal] \arrow[uuu] &  &  & \tilde{E}^{(p)} \arrow[rru] \arrow[uuu] &  &  \\
 			\tilde{T} \arrow[rrr] \arrow[uuu] \arrow[rru, "\, F"'] &  &  & \tilde{E} \arrow[rru, "\, F"'] \arrow[uuu] &  &  &  & 
 				\end{tikzcd}
 	\end{center}
-	Since the composed maps $\tilde{E}\rightarrow \tilde{E}$ on the bottom right, $\tilde{T}\rightarrow \tilde{T}$ on the bottom left and  $\tilde{\mathfrak T}_{q^{1/p}}\rightarrow \tilde{\mathfrak T}_{q}$ on the upper left by construction are the reductions of the respective $p$-multiplication maps $[p]$, the functoriality of the associated bundle construction in Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor} implies that the two maps on the upper left compose to the reduction of $[\mathfrak p]\times^{[p]}[p]$. But $[\mathfrak p]\times^{[p]}[p]$ is equal to $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ by definition of the latter. 	This completes the proof that the reduction of $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ factors through the relative Frobenius on $\tilde{\mathfrak E}_{q^{1/p}}$.
+	Since the composed maps $\tilde{E}\rightarrow \tilde{E}$ on the bottom right, $\tilde{T}\rightarrow \tilde{T}$ on the bottom left and  $\tilde{\mathfrak T}_{q^{1/p}}\rightarrow \tilde{\mathfrak T}_{q}$ on the upper left by construction are the reductions of the respective $p$-multiplication maps $[p]$, the functoriality of the associated bundle construction in Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor} implies that the two maps on the upper right compose to the reduction of $[\mathfrak p]\times^{[p]}[p]$. But $[\mathfrak p]\times^{[p]}[p]$ is equal to $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ by definition of the latter. 	This completes the proof that the reduction of $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ factors through the relative Frobenius on $\tilde{\mathfrak E}_{q^{1/p}}$.
 	
 	The conclusion that $E_\infty$ exists and is perfectoid then follows from Proposition~\ref{existence of p-F-model tower implies perfectoid}.
 	\end{proof}
 	
 	\section{The case of abelian varieties with semi-stable reduction}
-	Let $K$ be a complete algebraically closed non-archimedean field with ring of integers $\mathcal O_K$. Let $A$ be an abelian variety over $K$. Recall from Proposition~\ref{Raynaud uniformisation} that associated to $A$ we have a Raynaud extension $E$ which is an extension of a split rigid torus $T$ of rank $r$ by an abelian variety $B$ of good reduction, and there is a lattice $M\subseteq E$ of rank $r$ such that $A=E/M$.
+	Let $K$ be a complete non-archimedean field with ring of integers $\mathcal O_K$. Let $A$ be an abelian variety over $K$. Recall from Proposition~\ref{Raynaud uniformisation} that associated to $A$ we have a Raynaud extension $E$ which is an extension of a rigid torus $T$ of rank $r$ which we assume to be split by an abelian variety $B$ of good reduction. Moreover there is a lattice $M\subseteq E$ of rank $r$ such that $A=E/M$.
 	In this chapter, we want to prove the main result of this write-up:
-		
+	
+	\begin{framed}
 	\begin{theorem}\label{main theorem}
 		There is a perfectoid space $A_\infty$ such that
 				\[A_\infty \sim \varprojlim_{[p]} A.\]
 	\end{theorem}
+	\end{framed}
 	
 	The proof of Theorem~\ref{main theorem} will be completed in several steps over the following sections. Our strategy is to describe the $[p]$-multiplication tower on $E/M$ locally in terms of the $[p]$-multiplication tower of $E$.
 	As a first step towards this goal, in the following section, we want to give a cover of $E/M$ by subspaces of $E$ that behaves well under $[p]$-multiplication.
@@ -678,7 +681,7 @@
 	\[\ell:T(K)=(K^\times)^r\rightarrow \mathbb R^r, \quad x_1,\dots,x_n\mapsto (-\log |x_1|,\dots,-\log |x_n|).\]
 	Note that this map is surjective by our assumption that $K$ is complete algebraically closed.
 	
-		The formal torus $\overline{T}$ on $K$-points corresponds to $\overline{T}(K) = (\mathcal O_K^\times)^r$ and is thus in the kernel of $-\log$. As locally on $U\subseteq B$ we have $E|_U = T\times^{\overline{T}}\overline{E}|_{U}$, the map $\ell$ therefore extends to a group homomorphism 
+		The formal torus $\overline{T}$ on $K$-points corresponds to $\overline{T}_\eta(K) = (\mathcal O_K^\times)^r$ and is thus in the kernel of $-\log$. We can therefore extend $\ell$ to $E(K)$ as follows: Locally over an open subspace $U\subseteq B$ we have $E|_U = T\times^{\overline{T}_\eta}\overline{E}_\eta|_{U}$ and we define $\ell$ by projection from the first factor. The different $E|_U$ are then glued on intersections using the $\overline{T}_\eta$-action on $T$. But since $\ell$ on $T$ is invariant under the $\overline{T}_\eta$-action, the maps glue together to a group homomorphism 
 	\[\ell:E(K)\rightarrow \mathbb R^r.\]
 	
 	Since $A=E/M$ is proper, the lattice $M$ is sent by $-\log$ to an Euclidean lattice $\Lambda \subset \mathbb R^r$ of full rank $r$ (see Proposition 6.1.4 in \cite{rigid geometry of curves}). In particular, this induces an isomorphism of discrete torsionfree groups
@@ -687,30 +690,30 @@
 	The idea is now that one can understand the quotient $E/M$ in terms of the quotient $R/\Lambda$. We are going to make this precise in the following:
 	
 	In the space $\mathbb R^r$, we can now choose a $d\in \mathbb R_{> 0}^r$ and a cuboid with center at the origin
-	\[S_r = \{(x_1,\dots,x_r)\in \mathbb R^r | |x_i|\leq d_i \}\]
+	\[S(d) = \{(x_1,\dots,x_r)\in \mathbb R^r | |x_i|\leq d_i \}\]
 	that intersects $\Lambda$ only in $0\in \Lambda$.
 	Choose now $q_1,\dots,q_r\in K$ such that $|q_i|=\exp(-d_i))$. We denote by $\mathcal B(q,q^{-1})$ the affinoid open multi-annulus $T$ centered at $1$ of radii $|q_i|< 1 < |q_i|^{-1}$ in every direction.
 	
 	\begin{lemma}\label{cube around origin gives local chart for E/M}
-		The inverse image $\ell^{-1}(S_r)\subseteq E(K)$ is the underlying set of the admissible open subset $E(q):=\mathcal B(q,q^{-1})\times^{\overline{T}}\overline{E}$.
+		The inverse image $\ell^{-1}(S(d))\subseteq E(K)$ is the underlying set of the admissible open subset $E(q):=\mathcal B(q,q^{-1})\times^{\overline{T}_\eta}\overline{E}_\eta$.
 	\end{lemma}
 	\begin{proof}
-		One shows this first for the map $T\rightarrow \mathbb R^d$, where it is clear that the preimage is $\mathcal B(q,q^{-1})$. This is also described in \S 6.4 of \cite{FvdP}. The statement for $\mathcal B(q,q^{-1})\times^{\overline{T}}\overline{E}$ follows by direct inspection on local trivialisations $\mathcal B(q,q^{-1})\times U$ for $U\subseteq B$.
+		One shows this first for the map $T\rightarrow \mathbb R^d$, where it is clear that the preimage is $\mathcal B(q,q^{-1})$. This is also described in \S 6.4 of \cite{FvdP}. The statement for $\mathcal B(q,q^{-1})\times^{\overline{T}_\eta}\overline{E}_\eta$ follows by direct inspection on local trivialisations $\mathcal B(q,q^{-1})\times U$ for $U\subseteq B$.
 	\end{proof}
 	
 	
-	Note that the map $\mathbb R^d\rightarrow \mathbb R^d/\Lambda$ maps $S_r$ bijectively onto its image. 
-	Lemma~\ref{cube around origin gives local chart for E/M} says that we can use $\mathcal B(q,q^{-1})\times^{\overline{T}}\overline{E}$ as a chart for $E/M$ around the origin.
+	Note that the map $\mathbb R^d\rightarrow \mathbb R^d/\Lambda$ maps $S(d)$ bijectively onto its image. 
+	Lemma~\ref{cube around origin gives local chart for E/M} says that we can use $\mathcal B(q,q^{-1})\times^{\overline{T}_\eta}\overline{E}_\eta$ as a chart for $E/M$ around the origin.
 	
 	In order to obtain charts around other points of $E/M$, we simply need to consider translations: Recall that for every $c\in T(K)$, the translation map
 	\[T\xrightarrow{\cdot c}T\]
 	is an isomorphism of rigid spaces that sends the unit $1$ to $c$. We denote the image of any admissible open set $U$ under translation by $c\cdot U$.
 	
 	\begin{lemma}\label{cube around point gives local chart for E/M}
-		With notation as before, let $s\in \mathbb R^r$ and let $c \in T(K)$ be any point such that $l(c)=s$. Then the inverse image $\ell^{-1}(s+S_r)\subseteq E(K)$ of the translation of $S_r$ by $s$ is the underlying set of the admissible open subset $E(c,q) := (c\cdot \mathcal B(q,q^{-1}))\times^{\overline{T}}\overline{E} \subseteq E$.
+		With notation as before, let $c \in T(K)$ be any point such that $l(c)=s$. Then the inverse image $\ell^{-1}(s+S(d))\subseteq E(K)$ of the translation of $S(d)$ by $s$ is the underlying set of the admissible open subset $E(c,q) := (c\cdot \mathcal B(q,q^{-1}))\times^{\overline{T}_\eta}\overline{E}_\eta \subseteq E$. We can choose $c\in T(K)$ and $q\in T(K)$ in such a way that they admit arbitrary $p^n$-th roots.
 	\end{lemma}
-	\begin{definition}
-		We call spaces of the form $E(c,q)\subseteq E$ \textbf{cuboids} centered at $c$. Note that more precisely they are locally a cuboid   $\mathcal B(q,q^{-1}))\subseteq T$ times an admissible open subset of the abelian variety $B$.
+	\begin{definition}\label{defininition of cuboid}
+		We call spaces of the form $E(c,q)\subseteq E$ \textbf{cuboids} centered at $c$. More precisely they are locally a cuboid   $c\cdot\mathcal B(q,q^{-1})\subseteq T$ times an admissible open subset of the abelian variety $B$. 
 	\end{definition}
 	
 	\begin{proof}
@@ -721,13 +724,13 @@
 				T(K) \arrow[r, "\ell"] & \mathbb R^r,
 			\end{tikzcd}
 		\end{center}
-		this is an immediate consequence of Lemma~\ref{cube around origin gives local chart for E/M}
+		the first part is an immediate consequence of Lemma~\ref{cube around origin gives local chart for E/M}. For the second, note that for any $c'\in T(K)$ with $l(c')=l(c)$ and $q\in T(K)$ with $l(q')=l(q)$ we have $c\cdot \mathcal B(q,q^{-1}) = c'\cdot \mathcal B(q,q^{-1})$, and thus $E(c,q)=E(c',q')$. The statement therefore follows from $K$ being perfectoid, for instance using $\mathcal O_K^\flat = \varprojlim_{x\mapsto x^p}\mathcal O_K$.
 	\end{proof}
 	 
 	\begin{lemma}\label{an admissible cover of A by cuboids of E}
 	There exist finitely many admissible open cuboids $E_1,\dots,E_k\subseteq E$ which map isomorphically to $A=E/M$ and which cover $A$ admissibly. 
 	
-	One can reconstruct $A$ from any such cover by glueing $E_1,\dots,E_k$ as follows: By construction, for any $E_i$ the translates $q\cdot E_i$ by $q\in M$ are pairwise disjoint and we thus have a canonical projection $\pi$ from the union $\cup_{m\in M} (m\cdot E_i)\subseteq E$ to $E_i$.	Let $E_{ij}:=\cup_{m\in M} (m\cdot E_i) \cap E_j \subseteq E$. Then we glue $E_j$ to $E_i$ via the map
+	One can reconstruct $A$ from any such cover by glueing $E_1,\dots,E_k$ as follows: By construction, for any $E_i$ the translates $q\cdot E_i$ by $q\in M$ are pairwise disjoint and we thus have a canonical projection $\pi$ from the union $\cup_{m\in M} (m\cdot E_i)\subseteq E$ to $E_i$.	Let $E_{ij}:=(\bigcup_{m\in M} m\cdot E_i)\cap E_j \subseteq E$. Then we glue $E_j$ to $E_i$ via the map
 	\[E_{ij}\rightarrow \bigcup_{m\in M} q\cdot E_i \xrightarrow{\pi} E_i.\]
 	
 	\begin{figure}
@@ -739,25 +742,29 @@
 	
 	\end{lemma} 
 	\begin{proof}
-	Since $\mathbb R^d/\Lambda$ is proper, we can find finitely many $s_1,\dots,s_k$ such that $\mathbb R^d/\Lambda$ is covered by the $s_i+S$. When we chose $c_1,\dots,c_k \in T(K)$ as in the Lemma, then the corresponding $E_i:=E(c_i,q)$ are an atlas of $A=E/M$ by admissible open subsets of $E$.
+	Since $\mathbb R^r/\Lambda$ is compact, we can find finitely many $s_1,\dots,s_k$ and $d_1,\dots,d_k \in \mathbb{R}^r_{>0}$ such that $\mathbb R^r/\Lambda$ is covered by the $s_i+S(d_i)$. When we choose corresponding $c_1,\dots,c_k \in T(K)$ and $q_1,\dots,q_k$ as in Lemma~\ref{cube around point gives local chart for E/M}, then the corresponding $E_i:=E(c_i,q_i)$ are an atlas of $A=E/M$ by admissible open subsets of $E$.
 	
 	In order to reconstruct $A$, note that $\cup_{m\in M} q\cdot E_i$ is precisely the preimage of $E_i$ under the projection $E\rightarrow E/M$. In particular, the subspace $E_{ij}$ is precisely the preimage of $E_i$ under the composition $E_j\hookrightarrow E \rightarrow E/M$. In other words, the subspace $E_{ij}\subseteq E_j$ is the intersection of $E_i$ and $E_j$ when considered as subspaces of $A$. This shows that as charts of $A$, the spaces $E_i$ and $E_j$ are glued via $E_{ij}$ as described.
 	\end{proof}
-	Finally, we need some control about what happens to the cubes under $[p]$-multiplication.
+	Finally, we need some control about what happens to the cubes under $[p]$-multiplication. Recall from Lemma~\ref{cube around point gives local chart for E/M} that we can always assume that $c$ admits $p$-th roots.
 	\begin{lemma}\label{pullback of cuboid is cuboid}
 		Let $c^{1/p}$ be a $p$-th root of $c$ and let $q^{1/p}$ be a $p$-th root of $q$ in $(K^\times)^r$. Then under $[p]:E\rightarrow E$, the admissible open $E(c_i,q)$ pulls back to the admissible open $E(c_i^{1/p},q^{1/p})$.
 	\end{lemma}
 	\begin{proof}
 		It is clear that under $[p]:T\rightarrow T$, the admissible open cuboid $c\cdot \mathcal B(q,q^{-1})$ centered at $c$ pulls back to $c^{1/p}\cdot \mathcal B(q^{1/p},q^{-1/p})$. Note that this is independent of the choices of $c^{1/p}$ and $q^{1/p}$. Now recall that in terms of fibre bundles, multiplication $[p]:E\rightarrow E$ is
-		\[[p]\times^{[p]}[p]: T\times^{\overline{T}}\overline{E}\rightarrow T\times^{\overline{T}}\overline{E} \]
-		by Lemma~\ref{p-multiplication is induced from Borel construction}. Thus $(c\cdot \mathcal B(q,q^{-1}))\times^{\overline{T}}\overline{E}$ pulls back to $(c^{1/p}\cdot \mathcal B(q^{1/p},q^{-1/p}))\times^{\overline{T}}\overline{E}$.
+		\[[p]\times^{[p]}[p]: T\times^{\overline{T}_\eta}\overline{E}_\eta\rightarrow T\times^{\overline{T}_\eta}\overline{E}_\eta \]
+		by Lemma~\ref{p-multiplication is induced from Borel construction}. Thus $(c\cdot \mathcal B(q,q^{-1}))\times^{\overline{T}_\eta}\overline{E}_\eta$ pulls back to $(c^{1/p}\cdot \mathcal B(q^{1/p},q^{-1/p}))\times^{\overline{T}_\eta}\overline{E_\eta}$.
 	\end{proof}
 
 	\subsection{The two towers}
 	 We first observe that
-		the $[p]$-multiplication of $A$ can be separated into two different towers, using a factorisation of $[p]$ into characteristic $0$-analogues of the Frobenius and Verschiebung morphisms as follows: Choose a $\Gamma_0(p^\infty)$-level structure on $A$. Such a choice is equivalent to a choice of a $\Gamma_0(p^\infty)$-structure on $B$ and a choice of  lattices 
+		the $[p]$-multiplication of $A$ can be separated into two different towers, using a factorisation of $[p]$ into characteristic $0$-analogues of the Frobenius and Verschiebung morphisms as follows: For all $n\in \mathbb N$ choose lattices $M^{1/p^n}\subseteq E$ of rank $r$ such that we have inclusions
 		\[M\subseteq M^{1/p} \subseteq M^{1/p^2}\subseteq \dots \subseteq  E\]
-		of rank $r$ for all $n\in \mathbb N$ such that $M^{1/p^n}/M\subseteq E/M$ is a finite order $p^{rn}$-subgroup with underlying group isomorphic to $\mathbb Z/p^n\mathbb Z$. In particular, the multiplication $[p^n]$ sends $M^{1/p^n}$ isomorphically to $M$ and $M^{1/p^n}/M \subseteq A[p^n]$ is an \'etale subgroup. In particular, the rigid quotient $E/M^{1/p^n}$ is another abelian variety and the quotient map $E/M\rightarrow E/M^{1/p^n}$ is a degree-$p^n$ isogeny through which  $[p]:A\rightarrow A$ factors: 
+		and such that  $[p]:E\rightarrow E$ restricts to an isomorphism $M^{1/p^{n+1}}\rightarrow M^{1/p^n}$ for all $n$. These conditions imply that the quotient of lattices
+		\[D_n:=M^{1/p^n}/M\subseteq E/M\]
+		is a finite \'etale subgroup of $A[p^n]$ of order  $p^{rn}$ with underlying group isomorphic to $\mathbb Z/p^n\mathbb Z$. Note that we can recover the $M^{1/p^n}$ as the kernel of $E\rightarrow A \rightarrow A/D_n$. We can therefore see the choice of lattices $M^{1/p^n}$ as a "partial anticanonical $\Gamma_0(p^\infty)$-structure" on $A$. Here by partial we mean that for a complete $\Gamma_0(p^\infty)$-structure one would also have to choose a $\Gamma_0(p^\infty)$-structure on the abelian part $B$, and anticanonical means that $D_n$ intersects the subgroup $T[p^n]\subseteq A$ trivially. 
+		
+		The rigid quotient $A/D_n = E/M^{1/p^n}$ is another abelian variety and the quotient map $E/M\rightarrow E/M^{1/p^n}$ is an isogeny of degree $p^{2gn}$  through which  $[p^n]:A\rightarrow A$ factors: 
 		\begin{center}
 			\begin{equation}\label{factorisation of [p] over E/M}
 			\begin{tikzcd}
@@ -772,15 +779,15 @@
 		\begin{equation}\label{p-multiplication tower of E/M splits into vertical and horizontal tower}
 		\begin{tikzcd}[column sep={1.2cm,between origins},row sep={0.8cm,between origins}]
 			\ddots \arrow[rd] &  &  & \vdots \arrow[d] &  & \vdots \arrow[d] \\
-			& E/M \arrow[rr,"v"] \arrow[rrdd, "{[p]}"'] &  & E/M^{1/p} \arrow[rr,"v"] \arrow[dd,"f"] &  & E/M^{1/p^2} \arrow[dd,"f"] \\
+			& E/M \arrow[rr,"v"] \arrow[rrdd, "{[p]}"'] &  & E/M^{1/p} \arrow[rr,"v"] \arrow[dd,"{[p]}"] &  & E/M^{1/p^2} \arrow[dd,"{[p]}"] \\
 			&  &  &  &  &  \\
-			&  &  & E/M \arrow[rrdd, "{[p]}"'] \arrow[rr,"v"] &  & E/M^{1/p} \arrow[dd,"f"] \\
+			&  &  & E/M \arrow[rrdd, "{[p]}"'] \arrow[rr,"v"] &  & E/M^{1/p} \arrow[dd,"{[p]}"] \\
 			&  &  &  &  &  \\.
 			&  &  &  &  & E/M
 		\end{tikzcd}
 		\end{equation}
 		\end{center}
-		Since each quotient $M^{1/p^n}/M$ is a finite \'etale group scheme, all horizontal maps are finite \'etale. The vertical tower on the other hand fits into a second commutative diagram of rigid groups which compares it to the $[p]$- tower of $E$:
+		Since each quotient $M^{1/p^n}/M$ is a finite \'etale group scheme, all horizontal maps are finite \'etale. The vertical tower on the other hand fits into a second commutative diagram of rigid groups which compares it to the $[p]$-tower of $E$:
 		
 		\begin{center}
 		\begin{equation}\label{F-tower for E/M}
@@ -818,11 +825,11 @@
 		\begin{proof}
 		The first part follows because the map on the left of diagram~\ref{F-tower for E/M} is an isomorphism. The second follows from pulling back the $E_i$ along $E/M^{1/p^n}\rightarrow E/M$, using that the diagram commutes.	We thus obtain an admissible cover by cuboids $E_1^{1/p^n},\dots,E_k^{1/p^n}$ of $E/M^{1/p^n}$. The glueing maps that can be used to reconstruct $E/M^{1/p^n}$ by glueing along subspaces $E_{ij}^{1/p^n}$ then exist by the second part of Lemma~\ref{an admissible cover of A by cuboids of E}: Note that we can apply Lemma~\ref{an admissible cover of A by cuboids of E} also to $E/M^{1/p^n}$ because of Assumption~\ref{assumption that points of D_n are defined over K}.
 		
-		Finally, in order to see that one glue together the map $[p]:E/M^{1/p^n}\rightarrow E/M$ from the $E_i^{1/p^n}$, use that intersection of cuboids are again cuboids, and so $E_{ij}^{1/p^n}$ is a disjoint union of cuboids. It then follows from Lemma~\ref{pullback of cuboid is cuboid} that $E_{ij}$ pulls back under $[p]$ to the intersection $E_{ij}^{1/p^n}\subseteq E/M^{1/p^n}$. That $[p]$ commutes with the glueing maps is clear because we know from diagram (\ref{factorisation of [p] over E/M}) that $[p]:E\rightarrow E$ descends to a morphism $[p]:E/M^{1/p^n}\rightarrow E/M$.
+		Finally, in order to see that one can glue together the map $[p]:E/M^{1/p^n}\rightarrow E/M$ from the $E_i^{1/p^n}$, use that intersection of cuboids are again cuboids, and so $E_{ij}^{1/p^n}$ is a disjoint union of cuboids. It then follows from Lemma~\ref{pullback of cuboid is cuboid} that $E_{ij}$ pulls back under $[p]$ to the intersection $E_{ij}^{1/p^n}\subseteq E/M^{1/p^n}$. That $[p]$ commutes with the glueing maps is clear because we know from diagram (\ref{factorisation of [p] over E/M}) that $[p]:E\rightarrow E$ descends to a morphism $[p]:E/M^{1/p^n}\rightarrow E/M$.
 		\end{proof}
 		We are now ready to prove:
 		\begin{proposition}\label{explicit construction of vertical tilde-limit}
-			There is a perfectoid space $E/M^{1/p^\infty}$ such that\[E/M^{1/p^\infty}\sim \varprojlim_{n}E/M^{1/p^n} \]
+			There is a perfectoid space $E/M^{1/p^\infty}$ such that\[E/M^{1/p^\infty}\sim \varprojlim_{n}E/M^{1/p^n}. \]
 		\end{proposition}
 		\begin{proof}
 		 Denote by $E_i^{1/p^\infty}$ the pullback of $E_i\subseteq E$ to $E_\infty$. This is an open subspace of a perfectoid space and hence perfectoid. Moreover, by Proposition 2.4.3 in \cite{SW} we have  \[ E_i^{1/p^\infty}\sim \varprojlim E_i^{1/p^n}.\] 
@@ -838,10 +845,10 @@
 	\begin{proof}
 		By the first part of Lemma~\ref{compatible cuboid charts for the tower over E/M}, we know that the preimage of $E_i^{1/p^n}$ under the projection $E\rightarrow E/M^{1/p^n}$ is a disjoint union of translates of $E_i^{1/p^n}$ by $M^{1/p^{n}}$. The result then follows because $M^{1/p^{n}}/M^{1/p^{m}} = D_n/D_m =  \underline{(\mathbb Z/p\mathbb Z)^r}$.
 	\end{proof}
-	We also record the following immediate consequence (see Figure~\ref{local-glueing-[p]-tikzpicture} for an illustration).
+	We also record the following immediate consequence:
 	
 	\begin{lemma}\label{preimage of E_i under p^n is disjoint copies}
-		The preimage of $E_i$ under $[p^n]:A\rightarrow A$ is isomorphic to $p^{rm}$ disjoint copies of $E_i^{1/p^n}$. More canonically, we can describe the preimage as the isomorphic image of  $D_n \times E_i^{1/p^n}$ under the multiplication $A\times A\rightarrow A$. The situation is thus as in figure 
+		The preimage of $E_i$ under $[p^n]:A\rightarrow A$ is isomorphic to $p^{rm}$ disjoint copies of $E_i^{1/p^n}$. More canonically, we can describe the preimage as the isomorphic image of  $D_n \times E_i^{1/p^n}$ under the multiplication $A\times A\rightarrow A$. The situation is thus as in figure~\ref{figure illustrating how [p] is glued from cover}.
 	\end{lemma}
 	\begin{figure}
 		\includestandalone{local-glueing-[p]-tikzpicture}
@@ -866,17 +873,17 @@
 		This can for instance be checked locally: The admissible open subset $E_i^{1/p^n}\subseteq E/M^{1/p^n}$ from Lemma~\ref{compatible cuboid charts for the tower over E/M} is pulled back to $E_i^{1/p^{n+1}}$ under the vertical map $[p]:E/M^{1/p^{n+1}}\rightarrow E/M^{1/p^n}$. The preimage of $E_i^{1/p^n}$ under the horizontal map $E/M^{1/p^{n-1}}\rightarrow E/M^{1/p^n}$ is $p^r$ disjoint copies of $E_i^{1/p^n}$ by Lemma~\ref{horizontal map is covering map}. The pullback of $E_i^{1/p^n}$ to the upper right is thus $p^r$ disjoint copies of $E_i^{1/p^{n+1}}$, which is clearly the fibre product.
 	\end{proof}
 	\begin{lemma}\label{horizontal etale map pulls back to vertical limit}
-	The horizontal maps in diagram~(\ref{p-multiplication tower of E/M splits into vertical and horizontal tower}) induce a natural finite \'etale morphisms $v:E/M^{1/p^\infty}\rightarrow E/M^{1/p^\infty}$ that fit into a Cartesian diagrams
+	The horizontal maps in diagram~(\ref{p-multiplication tower of E/M splits into vertical and horizontal tower}) induce natural finite \'etale morphisms $v:E/M^{1/p^\infty}\rightarrow E/M^{1/p^\infty}$ that fit into Cartesian diagrams
 	\begin{center}
 		\begin{tikzcd}
 			E/M^{1/p^\infty} \arrow[d, "{}"] \arrow[r,"v^m"] & E/M^{1/p^\infty} \arrow[d, "{}"] \\
-			E/M^{1/p^{n-m}} \arrow[r,"v"] & E/M^{1/p^{n}}
+			E/M^{1/p^{n-m}} \arrow[r,"v^m"] & E/M^{1/p^{n}}
 		\end{tikzcd}
 	\end{center}
 	In particular, the preimage of $E_i^{1/p^\infty}$ under $v^m$ is isomorphic to $p^{rm}$ copies of $E_i^{1/p^\infty}$.
 	\end{lemma}
 	\begin{proof}
-		Since $E/M \rightarrow E/M^{1/p}$ is finite \'etale, the fibre product with $E/M \rightarrow E/M^{1/p}$ exists and is perfectoid by Proposition~7.10 of \cite{perfectoid IHES}.
+		Since $E/M \rightarrow E/M^{1/p}$ is finite \'etale, the fibre product with $E/M^{1/p^\infty} \rightarrow E/M^{1/p}$ exists and is perfectoid by Proposition~7.10 of \cite{perfectoid IHES}.
 		
 		The universal property of the fibre product then gives a unique map 
 		\[E/M^{1/p^\infty}\rightarrow E/M\times_ {E/M^{1/p}}E/M^{1/p^\infty}\]
@@ -910,7 +917,7 @@
 	It is clear from $(E/M^{1/p^\infty})_\infty \sim \varprojlim E/M^{1/p^\infty}$ and $(E/M^{1/p^\infty})\sim \varprojlim E/M^{1/p^n}$ that the underlying topological space is indeed isomorphic to $\varprojlim_{[p]}|E/M|$.
 
 	In order to show that it is a tilde-limit of $\varprojlim_{[p]}E/M$, it thus suffices to give an explicit cover of $(E/M^{1/p^\infty})_\infty$ by open affinoids satisfying the tilde-limit property. To this end,
-	first note that the pro-\'etale system $D_n=M^{1/p^n}/M$ over $M/M=K$ under multiplication maps $[p]$ has a perfectoid tilde limit $D_\infty$ by Lemma~\ref{proetale over perfectoid has perfectoid tilde limit}. Since the $D_n$ are all constant perfectoid groups $\cong \mathbb \underline{(Z/p^r\mathbb Z)^n}$, it is clear that $D_\infty$ is isomorphic to the constant perfectoid group $\underline{\mathbb Z_p^r}$.
+	first note that the pro-\'etale system $D_n=M^{1/p^n}/M$ over $M/M=\operatorname{Sp}K$ under multiplication maps $[p]$ has a perfectoid tilde limit $D_\infty$ by Lemma~\ref{proetale over perfectoid has perfectoid tilde limit}. Since the $D_n$ are all constant perfectoid groups $\cong \mathbb \underline{(Z/p^r\mathbb Z)^n}$, it is clear that $D_\infty$ is isomorphic to the constant perfectoid group $\underline{\mathbb Z_p^r}$.
 	
 	Recall that by construction of $(E/M^{1/p^\infty})$ we have a cover of $E/M$ by open subsets $E_i$ that pull back to perfectoid open subspaces $E_i^{1/p^\infty}$ for which $E_i^{1/p^\infty}\sim \varprojlim E_i^{1/p^n}$. Moreover, by the second part of Proposition~\label{horizontal etale map pulls back to vertical limit} we know that the pullback of $E_i^{1/p^\infty}$ to $(E/M^{1/p^\infty})_\infty$ is the disjoint union of $|\mathbb Z_p^r|$ copies of $E_i^{1/p^\infty}$, which more precisely can be described as $D_\infty \times E_i^{1/p^\infty}$. But it is clear from Lemma~\ref{preimage of E_i under p^n is disjoint copies} that the image of any such isomorphic copy of $E_i^{1/p^\infty}\hookrightarrow   (E/M^{1/p^\infty})_\infty$ in the inverse system $\dots\xrightarrow{[p]}A\xrightarrow{[p]} A$ is isomorphic to the inverse system $\dots\rightarrow E_i^{1/p}\rightarrow E_i$. Since $E_i^{1/p^\infty}\sim \varprojlim E_i^{1/p^n}$, this shows that $(E/M^{1/p^\infty})_\infty$ is locally the tilde limit of the $[p]$-tower on $A$ as desired.
 	
@@ -1019,7 +1026,7 @@
 	\begin{remark}
 		To illustrate why this phenomenon occurs, consider the following inverse system of abstract groups:
 	\begin{center}
-	\begin{tikzcd}[row sep = {0.60cm,between origins}]
+	\begin{tikzcd}[row sep = {0.65cm,between origins}]
 		& \arrow[dd,dotted] & \arrow[dd,dotted] & \arrow[dd,dotted] &  \\
 		&&\\
 		0 \arrow[r] & \mathbb Z \arrow[r] \arrow[dd, "{[p]}"] & \mathbb R \arrow[r] \arrow[dd, "{[p]}"] & \mathbb R/\mathbb Z \arrow[dd, "{[p]}"] \arrow[r] & 0 \\
@@ -1404,6 +1411,11 @@
 		Werner L\"utkebohmert
 		\textit{Rigid Geometry of Curves and Their Jacobians}. 
 		
+		\bibitem{torsion} 
+		James S. Milne
+		\textit{Abelian varieties}.
+		In: Arithmetic Geometry, Gary Cornell and Joseph H Silverman
+			
 		\bibitem{perfectoid} 
 		Peter Scholze
 		\textit{Perfectoid spaces}. 
