@@ -70,7 +70,7 @@
 	\maketitle
 	
 	\begin{abstract}
-		For an abelian variety $A$ of semi-stable reduction over a perfectoid field $K$ we show that there is a perfectoid space $A_\infty$ such that $A\sim\varprojlim_{[p]}A$. 
+		For an abelian variety $A$ over an algebraically closed non-archimedean field $K$ we show that there is a perfectoid space $A_\infty$ such that $A\sim\varprojlim_{[p]}A$. 
 		
 		We first more generally consider a rigid group  $G$ over a non-archimedean field $K$. While inverse limits usually don't exist in the rigid analytic category, limits are much better behaved in formal schemes over the ring of integers $R$ of $K$. One can therefore give a simple criterion in terms of formal models that guarantees that a tilde-limit $G_\infty \sim\varprojlim_{[p]} G$ exists, namely that there is a well-behaved formal model of the $[p]$-multiplication tower.
 		If $K$ is perfectoid, we give a stronger criterion involving a Frobenius factorisation condition, which implies that $G_\infty$ is perfectoid.
@@ -79,13 +79,14 @@
 		
 		Next we consider the case of the Raynaud extension $E$ associated to a semistable abelian variety $A$ over a perfectoid field $K$. One can construct $E$ by extending the rigid fibre of a formal group scheme $\overline{E}$ by a rigid torus $T$ in a certain way. In order to construct a formal model of $E$ one just needs to extend $\overline{E}$ by a formal model of $T$. While this can be done explicitly using affinoid covers, the language of formal and rigid fibre bundles allows for a more conceptual treatment. Using the associated fibre construction we then show that there is a formal model of the $[p]$-multiplication tower of $E$ which satisfies all the necessary criteria to show that $E_\infty$ exists and is perfectoid.  
 		
-		We then construct a tilde limit of $\varprojlim_{[p]} A$ from $E_\infty$: By Raynaud uniformisation, $A$ is naturally isomorphic to the rigid analytic quotient of $E$ by a lattice $M$. After a choice of $\Gamma_0(p^\infty)$-structure, the $[p]$-multiplication tower of $E/M$ factors in a "ramified" and an "\'etale" part. By a careful choice of charts of $E/M$ in terms of subspaces of $E$ that behave well under $[p^n]:E\rightarrow E$, one can then explicitly construct first a perfectoid tilde-limit of the "ramified" tower, and then in a second step the space $A_\infty$. This space is independent of the choice of $\Gamma_0(p^\infty)$-structure but remembers it as a pro-\'etale subgroup $D_\infty \subseteq A_\infty$.
+		We then construct a tilde limit of $\varprojlim_{[p]} A$ from $E_\infty$: By Raynaud uniformisation, $A$ is naturally isomorphic to the rigid analytic quotient of $E$ by a lattice $M$. After a choice of $\Gamma_0(p^\infty)$-structure, the $[p]$-multiplication tower of $E/M$ factors in a "ramified" and an "\'etale" part. By a careful choice of charts of $E/M$ in terms of subspaces of $E$ that behave well under $[p^n]:E\rightarrow E$, one can explicitly construct first a perfectoid tilde-limit of the "ramified" tower, and then in a second step the space $A_\infty$. This space is independent of the choice of $\Gamma_0(p^\infty)$-structure but remembers it as a pro-\'etale subgroup $D_\infty \subseteq A_\infty$. The construction shows that the perfectoid tilde-limit $A_\infty$ still exists under the weaker assumption that $K$ is a perfectoid field over which there exist lattices $M^{1/p^n}$ for all $n$ whose $p^n$-th multiple is $M$.
 		
-		The approach via explicit covers thus gives an explicit description of $A_\infty$ in terms of open subspaces of $E_\infty$ that in the last section we use to study the induced map $E_\infty\rightarrow A_\infty$. We thus obtain a second description of $A_\infty$ as a quotient $(D_\infty\times E_\infty)/M$.
+		The approach via explicit covers finally gives an explicit description of $A_\infty$ in terms of open subspaces of $E_\infty$ which we use in the last section to study the induced map $E_\infty\rightarrow A_\infty$. We show that $E_\infty$ is in fact an open subspace of $A_\infty$ and thus obtain a second description of $A_\infty$ as a quotient group $(D_\infty\times E_\infty)/M$.
 		
 	\end{abstract}
+	
+	\pagebreak
 	\tableofcontents
-
 	\section{Tilde limits of rigid groups}
 	
 	Let $p$ be a prime. Let $K$ be a complete non-archimedean field that is either an extension of $\mathbb Q_p$ or of characteristic $p$. Denote by $R$ the ring of integers and let $\pi$ denote a pseudo-uniformiser. Throughout we will study rigid analytic spaces over $K$. If such a space is obtained from a $K$-scheme $X$ via rigid-analytification $X\mapsto X^{\operatorname{an}}$, we will often denote both by the same symbol $X$. Also, we will make no distinction between rigid analytic spaces and their corresponding adic spaces.
@@ -526,7 +527,7 @@
 		induced by the different $[p]$-multiplication maps by Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor}.
 	\end{lemma}
 	\begin{proof}
-		The universal property of the associated bundle in the principal case, Lemma~\ref{universal property of associated fibre construction for principal bundles} in light of Remark~\ref{appendix in the case of rigid spaces and schemes} applied to the maps $g:\overline{T}_\eta\rightarrow T$ and $\overline{E}_\eta\xrightarrow{[p]} \overline{E}_\eta\rightarrow E$ says that there is a unique morphism of fibre bundles $E\rightarrow E$ making the following diagram commute:
+		Lemma~\ref{universal property of associated fibre construction in the semilinear case} in light of Remark~\ref{appendix in the case of rigid spaces and schemes} applied to the maps $g=[p]:\overline{T}_\eta\rightarrow \overline{T}_\eta$, $h=[p]:T\rightarrow T$ and $f=[p]:\overline{E}_\eta\rightarrow \overline{E}_\eta$ says that there is a unique morphism of fibre bundles $E\rightarrow E$ making the following diagram commute:
 		\begin{center}
 			\begin{equation}\label{rigid p-multiplication cube}
 			\begin{tikzcd}[row sep = small, column sep = small]
@@ -662,12 +663,10 @@
 	Let $K$ be a complete non-archimedean field with ring of integers $\mathcal O_K$. Let $A$ be an abelian variety over $K$. Recall from Proposition~\ref{Raynaud uniformisation} that associated to $A$ we have a Raynaud extension $E$ which is an extension of a rigid torus $T$ of rank $r$ which we assume to be split by an abelian variety $B$ of good reduction. Moreover there is a lattice $M\subseteq E$ of rank $r$ such that $A=E/M$.
 	In this chapter, we want to prove the main result of this write-up:
 	
-	\begin{framed}
 	\begin{theorem}\label{main theorem}
-		There is a perfectoid space $A_\infty$ such that
+		Assume that $A$ admits a constant partial anticanonical $\Gamma_0(p^\infty)$-structure (this will be defined later, but we remark already that this condition is always satisfied if $K$ is algebraically closed). Then there is a perfectoid space $A_\infty$ such that
 				\[A_\infty \sim \varprojlim_{[p]} A.\]
 	\end{theorem}
-	\end{framed}
 	
 	The proof of Theorem~\ref{main theorem} will be completed in several steps over the following sections. Our strategy is to describe the $[p]$-multiplication tower on $E/M$ locally in terms of the $[p]$-multiplication tower of $E$.
 	As a first step towards this goal, in the following section, we want to give a cover of $E/M$ by subspaces of $E$ that behaves well under $[p]$-multiplication.
@@ -757,14 +756,33 @@
 	\end{proof}
 
 	\subsection{The two towers}
-	 We first observe that
-		the $[p]$-multiplication of $A$ can be separated into two different towers, using a factorisation of $[p]$ into characteristic $0$-analogues of the Frobenius and Verschiebung morphisms as follows: For all $n\in \mathbb N$ choose lattices $M^{1/p^n}\subseteq E$ of rank $r$ such that we have inclusions
-		\[M\subseteq M^{1/p} \subseteq M^{1/p^2}\subseteq \dots \subseteq  E\]
-		and such that  $[p]:E\rightarrow E$ restricts to an isomorphism $M^{1/p^{n+1}}\rightarrow M^{1/p^n}$ for all $n$. These conditions imply that the quotient of lattices
-		\[D_n:=M^{1/p^n}/M\subseteq E/M\]
-		is a finite \'etale subgroup of $A[p^n]$ of order  $p^{rn}$ with underlying group isomorphic to $\mathbb Z/p^n\mathbb Z$. Note that we can recover the $M^{1/p^n}$ as the kernel of $E\rightarrow A \rightarrow A/D_n$. We can therefore see the choice of lattices $M^{1/p^n}$ as a "partial anticanonical $\Gamma_0(p^\infty)$-structure" on $A$. Here by partial we mean that for a complete $\Gamma_0(p^\infty)$-structure one would also have to choose a $\Gamma_0(p^\infty)$-structure on the abelian part $B$, and anticanonical means that $D_n$ intersects the subgroup $T[p^n]\subseteq A$ trivially. 
+	In this section we want to separate the $[p]$-multiplication of $A$ into two different towers, which we think of as being a "ramified" tower and an "\'etale" tower. Of course in characteristic $0$ both towers will actually be \'etale, and these words are only meant to describe the behaviour compared to $[p]:E\rightarrow E$.
+	
+	The "ramified" tower only exists under an additional condition, which we want to briefly discuss now:
+	\begin{definition}
+		By a \textbf{partial anticanonical $\Gamma_0(p^\infty)$-structure} on $A$ we mean a choice of subgroups $D_n\subseteq A[p^n]$ of rank $p^{rn}$ for all $n$ such that $pD_{n+1}=D_n$ and $D_n+E[p^n]=A[p^n]$. 
 		
-		The rigid quotient $A/D_n = E/M^{1/p^n}$ is another abelian variety and the quotient map $E/M\rightarrow E/M^{1/p^n}$ is an isogeny of degree $p^{2gn}$  through which  $[p^n]:A\rightarrow A$ factors: 
+		Note that the conditions imply that $D_n$ is necessarily finite \'etale, and after a finite extension of $K$ is isomorphic to the constant group $\underline{(\mathbb Z/p^n\mathbb Z)^{r}}$. We say that a partial anticanonical $\Gamma_0(p^\infty)$-structure is \textbf{constant} if such an isomorphism exists over $K$ for all $n$.
+	\end{definition}
+	The name is chosen because if $B$ admits a canonical subgroup (that is, satisfies a condition on its Hasse invariant), the choice of a (full) anticanonical $\Gamma_0(p^\infty)$-structure on $A$ is equivalent to the choice of a partial anticanonical $\Gamma_0(p^\infty)$-structure on $A$ and an anticanonical $\Gamma_0(p^\infty)$-structure on $B$. Note however that $A$ may have a partial anticanonical subgroup even if $B$ does not have a canonical subgroup. For instance, it is clear that $A$ always has a constant partial anticanonical subgroup if $K$ is algebraically closed.
+	
+	We will use this definition only via the following equivalent description:
+	\begin{lemma}
+		Existence and choice of a constant partial anticanonical $\Gamma_0(p^\infty)$-structure on $A$ are equivalent to existence and choice of lattices $M^{1/p^n}\subseteq E$ defined over $K$ such that $[p]:E\rightarrow E$ restricts to isomorphisms $M^{1/p^{n+1}}\rightarrow M^{1/p^n}$ for all $n$.
+	\end{lemma}
+	\begin{proof}
+		Given lattices $M^{1/p^{n+1}}$ as in the lemma, we obtain a split partial anticanonical $\Gamma_0(p^\infty)$ structure by setting $D_n:=M^{1/p^{n+1}}/M$. This is because any such lattice gives a splitting of the short exact sequence $0\rightarrow E[p^n]\rightarrow A[p^n]\rightarrow M/M^p \rightarrow 0$.
+		
+		Conversely, given subgroups $D_n\subseteq A[p^n]$ that form a partial anticanonical $\Gamma_0(p^\infty)$ structure, we recover $M^{1/p^n}$ as the kernel of $E\rightarrow A\rightarrow A/D_n$. The finite group $M^{1/p^n}/M$ is then constant if and only if $M^{1/p^n}$ is a lattice.
+	\end{proof}
+	
+		
+	\begin{assumption}\label{assumption that points of D_n are defined over K}
+		From now on we will assume that $A$ admits a constant partial anticanonical $\Gamma_0(p^\infty)$-structure. Let us fix a choice of such a structure, that is we choose
+		 lattices $M^{1/p^n}$ defined over $K$ that map isomorphically to $M$ under $[p^n]$.
+	\end{assumption}
+		
+		The quotient $A/D_n = E/M^{1/p^n}$ is then another abelian variety over $K$ and the quotient map $E/M\rightarrow E/M^{1/p^n}$ is an isogeny of degree $p^{2gn}$  through which  $[p^n]:A\rightarrow A$ factors: 
 		\begin{center}
 			\begin{equation}\label{factorisation of [p] over E/M}
 			\begin{tikzcd}
@@ -773,7 +791,7 @@
 			\end{tikzcd}
 			\end{equation}
 		\end{center}
-		We denote the left map by $v$ in order to emphasize the analogy with the Frobenius-Verschiebung factorisation.
+		We think of these maps as being an analogue of Frobenius and Verschiebung, which is why we denote the left map by $v$.
 		Putting everything together, the $[p]$-multiplication tower splits into two towers
 		\begin{center}
 		\begin{equation}\label{p-multiplication tower of E/M splits into vertical and horizontal tower}
@@ -801,9 +819,6 @@
 		\end{center}
 		
 		\subsection{Constructing a limit of the vertical tower}
-		\begin{assumption}\label{assumption that points of D_n are defined over K}
-		In order to explain our approach, let us for simplicity assume for the moment that all points of the lattices $M^{1/p^n}$ are defined over $K$ already. We will later see that this is not necessary to construct $A_\infty$, but it somewhat simplifies the argument.
-		\end{assumption}
 		
 		Our first step is to show that the tower on the right has a perfectoid tilde-limit.
 		Recall from Lemma~\ref{an admissible cover of A by cuboids of E} that $E/M$ can be covered by admissible open subspaces $E_1,\dots,E_k\subseteq E$ which map isomorphically to $E/M$. Denote by $E_i^{1/p^n}\subseteq E$ the pullback along $[p^n]:E\rightarrow E$. Also denote by $E_{ij}^{1/p^n}\subseteq E$ the pullback of $E_{ij}$. Because of our assumption, we can then reconstruct the space $E/M^{1/p^n}$ from the $E_i^{1/p^n}$ as follows:
@@ -848,7 +863,7 @@
 	We also record the following immediate consequence:
 	
 	\begin{lemma}\label{preimage of E_i under p^n is disjoint copies}
-		The preimage of $E_i$ under $[p^n]:A\rightarrow A$ is isomorphic to $p^{rm}$ disjoint copies of $E_i^{1/p^n}$. More canonically, we can describe the preimage as the isomorphic image of  $D_n \times E_i^{1/p^n}$ under the multiplication $A\times A\rightarrow A$. The situation is thus as in figure~\ref{figure illustrating how [p] is glued from cover}.
+		The preimage of $E_i$ under $[p^n]:A\rightarrow A$ is isomorphic to $p^{rm}$ disjoint copies of $E_i^{1/p^n}$. More canonically, we can describe the preimage as the isomorphic image of  $D_n \times E_i^{1/p^n}$ under the multiplication $A\times A\rightarrow A$. The situation is thus as in figure~\ref{local-glueing-[p]-tikzpicture}.
 	\end{lemma}
 	\begin{figure}
 		\includestandalone{local-glueing-[p]-tikzpicture}
@@ -911,37 +926,27 @@
 	In our situation, on the other hand, we can use that we have a good understanding of the local behaviour of the maps in the tower in terms of the cuboids $E_i$ to solve this problem:
 	
 	\begin{proposition}\label{tilde limit of tilde limits of partial towers is tilde limit of whole tower}
-		The perfectoid space  $A_\infty:=(E/M^{1/p^\infty})_\infty$ is a tilde limit of $\varprojlim_{[p]}A$.	It is independent up to unique isomorphism of the choice of $\Gamma_0(p^\infty)$-structure we have made, but it remembers the choice as a pro-finite \'etale closed subgroup $D_\infty \subseteq A_\infty$. 
+		The perfectoid space  $A_\infty:=(E/M^{1/p^\infty})_\infty$ is a tilde limit of $\varprojlim_{[p]}A$.	It is independent up to unique isomorphism of the choice of partial anticanonical $\Gamma_0(p^\infty)$-structure, but it remembers the choice as a pro-finite \'etale closed subgroup $D_\infty \subseteq A_\infty$. 
 	\end{proposition}
 	\begin{proof}
 	It is clear from $(E/M^{1/p^\infty})_\infty \sim \varprojlim E/M^{1/p^\infty}$ and $(E/M^{1/p^\infty})\sim \varprojlim E/M^{1/p^n}$ that the underlying topological space is indeed isomorphic to $\varprojlim_{[p]}|E/M|$.
 
 	In order to show that it is a tilde-limit of $\varprojlim_{[p]}E/M$, it thus suffices to give an explicit cover of $(E/M^{1/p^\infty})_\infty$ by open affinoids satisfying the tilde-limit property. To this end,
-	first note that the pro-\'etale system $D_n=M^{1/p^n}/M$ over $M/M=\operatorname{Sp}K$ under multiplication maps $[p]$ has a perfectoid tilde limit $D_\infty$ by Lemma~\ref{proetale over perfectoid has perfectoid tilde limit}. Since the $D_n$ are all constant perfectoid groups $\cong \mathbb \underline{(Z/p^r\mathbb Z)^n}$, it is clear that $D_\infty$ is isomorphic to the constant perfectoid group $\underline{\mathbb Z_p^r}$.
+	first note that the pro-\'etale system $D_n=M^{1/p^n}/M$ over $M/M=\operatorname{Sp}K$ under multiplication maps $[p]$ has a perfectoid tilde limit $D_\infty$ by Lemma~\ref{proetale over perfectoid has perfectoid tilde limit}. Since the $D_n$ are all constant perfectoid groups $\cong \mathbb \underline{(\mathbb Z/p^r\mathbb Z)^n}$, it is clear that $D_\infty$ is isomorphic to the constant perfectoid group $\underline{\mathbb Z_p^r}$.
 	
 	Recall that by construction of $(E/M^{1/p^\infty})$ we have a cover of $E/M$ by open subsets $E_i$ that pull back to perfectoid open subspaces $E_i^{1/p^\infty}$ for which $E_i^{1/p^\infty}\sim \varprojlim E_i^{1/p^n}$. Moreover, by the second part of Proposition~\label{horizontal etale map pulls back to vertical limit} we know that the pullback of $E_i^{1/p^\infty}$ to $(E/M^{1/p^\infty})_\infty$ is the disjoint union of $|\mathbb Z_p^r|$ copies of $E_i^{1/p^\infty}$, which more precisely can be described as $D_\infty \times E_i^{1/p^\infty}$. But it is clear from Lemma~\ref{preimage of E_i under p^n is disjoint copies} that the image of any such isomorphic copy of $E_i^{1/p^\infty}\hookrightarrow   (E/M^{1/p^\infty})_\infty$ in the inverse system $\dots\xrightarrow{[p]}A\xrightarrow{[p]} A$ is isomorphic to the inverse system $\dots\rightarrow E_i^{1/p}\rightarrow E_i$. Since $E_i^{1/p^\infty}\sim \varprojlim E_i^{1/p^n}$, this shows that $(E/M^{1/p^\infty})_\infty$ is locally the tilde limit of the $[p]$-tower on $A$ as desired.
 	
 	That $A_\infty$ is independent of the $\Gamma_0(p^\infty)$-structure up to unique isomorphism is a consequence of the universal property of the perfectoid tilde limit. That $D_\infty$ can be described as a closed subgroup of $A_\infty$ is then clear from the local description of $A_\infty$ as $D_\infty \times E_i^{1/p^\infty}$.
 	\end{proof}
-	\begin{remark}\label{remark: the case of general perfectoid fields K}
-		We have made Assumption~\ref{assumption that points of D_n are defined over K} for two main reasons: First, it allows us to separate the "ramified part" of the tower from the "\'etale part". Second, we have used implicitly in our arguments involving disjoint unions that the finite \'etale group schemes $D_n = M^{1/p^n}/M \subseteq A[p^n]$ are constant groups. 
-		
-		In order to avoid Assumption~\ref{assumption that points of D_n are defined over K}, one has to argue slightly differently: First, one needs to work with the full tower $A\rightarrow A$ immediately, taking care of "ramification" and "etaleness" at the same time. Second, the pullback of $E_i$ along $[p^n]:A\rightarrow A$ might not be a disjoint union of isomorphic copies of $E_i$ anymore, but rather is isomorphic to the isomorphic image $D_nE_i^{p^n}$ of $D_n \times E_i^{1/p^n}$ under the multiplication $A\times A\rightarrow A$, which becomes isomorphic to a disjoint union of copies of $E_i^{1/p^n}$ after base change to the completion of the algebraic closure. Nevertheless, one obtains an analogue of Lemma~\ref{compatible cuboid charts for the tower over E/M}, namely that one can "reconstruct" $A$ as well as the map $[p]:A\rightarrow A$ in terms of the $D_nE_i^{1/p^n}$ using translations by the lattice $M$ for glueing (instead of using translastion by $M^{1/p^n}$, which might not be defined over $K$).
-		In the limit, one obtains a perfectoid space 
-		\[D_\infty \times E_i^{1/p^\infty} \sim \varprojlim D_nE_i^{1/p^n}.\]
-		These spaces can be glued along the subspaces $D_\infty \times E_{ij}^{1/p^\infty}$ and one obtains a perfectoid space over $K$ which is a tilde-limit of $\varprojlim_{[p]} A$.
-		
-		Upon base change to a complete extension over which all $D_n$ are constant, the open subspaces $D_\infty E_i^{1/p^\infty}$ become isomorphic to $\bigsqcup_{D_\infty} E_i^{1/p^\infty}$ and we obtain an isomorphism to our earlier description of $(E/M)_\infty$.
-	\end{remark}
 	
-	Proposition~\ref{tilde limit of tilde limits of partial towers is tilde limit of whole tower} and Remark~\ref{remark: the case of general perfectoid fields K} complete the proof of Theorem~\ref{main theorem}.
+	This finishes the proof of Theorem~\ref{main theorem}.
 	
 	Note that while the approach via cuboids $E_i$ may look a bit technical on first glance, it has the advantage of giving an explicit description of $(E/M)_\infty$ as being glued from pieces of $E_\infty$ by glueing data that is controlled by the lattices $M^{1/p^n}$. This might be interesting for applications, and in particular for computing the tilt. 
 	
 	
 	\section{Limits of the covering maps}
 	
-	Over the course of the proof, we have used three different towers: The tower $\dots \rightarrow E\xrightarrow{[p]} E$, the tower $\dots \rightarrow E/M^{1/p} \xrightarrow{[p]} E/M$ and the tower $\dots \rightarrow E/M \xrightarrow{[p]} E/M$ (for the latter we also needed the additional Assumption~\ref{assumption that points of D_n are defined over K}). The three are related by covering maps which fit into a commutative diagram of towers
+	Over the course of the proof, we have used three different towers: The tower $\dots \rightarrow E\xrightarrow{[p]} E$, the tower $\dots \rightarrow E/M \xrightarrow{[p]} E/M$ and the tower $\dots \rightarrow E/M^{1/p} \xrightarrow{[p]} E/M$ (for the latter we also needed the additional Assumption~\ref{assumption that points of D_n are defined over K}). The three are related by covering maps which fit into a commutative diagram of towers
 	\begin{center}
 		\begin{tikzcd}
 			E \arrow[d, "{[p]}"] \arrow[r] & E/M \arrow[d, "{[p]}"] \arrow[r] & E/M^{1/p^{n+1}} \arrow[d, "{[p]}"] \\
@@ -1022,7 +1027,7 @@
 		which shows that $A_\infty \rightarrow E/M^{1/p^\infty}$ is a $D_\infty$-torsor. As in the last proof, this implies that the sequence in the Proposition is a short exact sequence.
 	\end{proof}
 	
-	Finally, we consider the case of $\iota:E\rightarrow A=E/M$. While the limits of the last two towers where fibre bundles again, the map $\iota$ shows quite a different behaviour and on the opposite is an injective group homomorphism. While this may seem strange at first, it is actually what one might expect following the intuition of the following example:
+	Finally, we consider the case of $\iota:E\rightarrow A=E/M$. While the limits of the last two towers were fibre bundles again, the map $\iota$ shows quite a different behaviour and on the opposite is an injective group homomorphism. While this may seem strange at first, it is actually what one might expect following the intuition of the following example:
 	\begin{remark}
 		To illustrate why this phenomenon occurs, consider the following inverse system of abstract groups:
 	\begin{center}
@@ -1375,6 +1380,31 @@
 		
 		By refining covers, one easily checks that this is functorial in both components.
 	\end{proof}
+	We obtain a variant of Lemma~\ref{universal property of associated fibre construction for principal bundles} in the semilinear case:
+	
+	\begin{lemma}\label{universal property of associated fibre construction in the semilinear case}
+		Let $E'$ be a principal $T'$ bundle and let $E$ be a principal $T$-bundle. Let $H'$ and $H$ be formal group schemes and assume there is a commutative diagram of group homomorphisms
+		\begin{center}
+			\begin{tikzcd}
+					H' \arrow[r, "h"] & H \\
+					T' \arrow[r, "g"] \arrow[u] & T \arrow[u].
+			\end{tikzcd}
+		\end{center}
+		Let moreover $f:E'\rightarrow E$ be a $g$-linear morphism of fibre bundles.
+		Then the map $h\times^g f$ from Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor} is the unique $h$-linear morphism of fibre bundles making the following diagram commute:
+		\begin{center}
+			\begin{tikzcd}
+				H'\times^{T'}E' \arrow[r, "h\times^{f}g"] & H\times^{T}E \\
+				E' \arrow[r, "f"] \arrow[u] & E \arrow[u].
+			\end{tikzcd}
+		\end{center}
+	\end{lemma}
+	\begin{proof}
+		The morphism exists by Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor}. The vertical maps in the commutative diagram exist by functoriality via $E=T\times^{T}E\rightarrow H\times^{T}E$. 
+		
+		On the other hand, on any compatible trivialisation $T'\times U'\rightarrow T\times U$ of $f:E'\rightarrow E$ there is clearly only one way to extend this to $H'\times U'\rightarrow H\times U$ in a $h$-linear way.
+	\end{proof}
+	
 	\begin{remark}\label{appendix in the case of rigid spaces and schemes}
 	All that we have done in this chapter can be done in completely the same way with formal schemes replaced by rigid spaces (covers being replaced by admissible covers) and also for schemes, or in fact for any site. We have preferred to use formal schemes to make things more explicit. 
 	The different categories of fibre bundles are well-behaved with respect to the usual functors between the different categories: For instance, by functoriality of fibre products there are natural rigidification and reduction functors from formal principal $T$-bundles over $R$ to rigid principal $T_\eta$-bundles over $K$ on the generic fibre, and to principal $\overline{T}$-bundles on the reduction $R/p$. Moreover, these generic fibre and reduction functors commute with the associated fibre construction:
