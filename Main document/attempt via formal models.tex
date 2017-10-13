@@ -69,7 +69,7 @@
 	\maketitle
 	
 	\begin{abstract}
-Let $A$ be an abelian variety over a non-archimedean field $K$, we show that there is a perfectoid space $A_\infty$ such that $A_{\infty}\sim\varprojlim_{[p]}A$. 
+For an abelian variety $A$ over an algebraically closed non-archimedean field, we show that there is a perfectoid space $A_\infty$ such that $A_{\infty}\sim\varprojlim_{[p]}A$. 
 	\end{abstract}
 	
 	
@@ -81,9 +81,25 @@ Let $A$ be an abelian variety over a non-archimedean field $K$, we show that the
 %%      Section 1
 %%%%%%%%%%%%
 	\section{Introduction}
-{\color{red} Rewrite Introduction, summarize main results, outlines, remarks about $GL_n$, etc. } 
+{\color{red} To do: Rewrite Introduction, summarize main results, outline, remarks about $GL_n$, etc.
+	
+Instead of an actual introduction, for now we have the following}
 
-{\color{blue} Definition of tilde limits}
+{\color{blue} Outline:} 
+
+For an abelian variety $A$ over an algebraically closed non-archimedean field we show that there is a perfectoid space $A_\infty$ such that $A\sim\varprojlim_{[p]}A$. 
+
+We first more generally consider a rigid group  $G$ over a non-archimedean field $K$. While inverse limits usually don't exist in the rigid analytic category, limits are much better behaved in formal schemes over the ring of integers $\mathcal O_K$ of $K$. One can therefore give a simple criterion in terms of formal models that guarantees that a tilde-limit $G_\infty \sim\varprojlim_{[p]} G$ exists, namely that there is a well-behaved formal model of the $[p]$-multiplication tower.
+If $K$ is perfectoid, we give a stronger criterion involving a Frobenius factorisation condition, which implies that $G_\infty$ is perfectoid.
+
+In the case of a rigid analytic split torus $T$, one can use a family of explicit covers by affinoids to construct formal models for which both of these conditions are satisfied. 
+
+Next we consider the case of the Raynaud extension $E$ associated to a semistable abelian variety $A$ over a perfectoid field $K$. One can construct $E$ by extending the rigid fibre of a formal group scheme $\overline{E}$ by a rigid torus $T$. In order to construct a formal model of $E$ one therefore just needs to extend $\overline{E}$ by a formal model of $T$. While this can be done explicitly using affinoid covers, the language of formal and rigid fibre bundles allows for a more conceptual treatment. Using the associated fibre construction we then show that there is a formal model of the $[p]$-multiplication tower of $E$ which satisfies all the necessary criteria to show that $E_\infty$ exists and is perfectoid.  
+
+We then construct a tilde-limit of $\varprojlim_{[p]} A$ from $E_\infty$: By Raynaud uniformisation, $A$ is naturally isomorphic to the rigid analytic quotient of $E$ by a lattice $M$. After a choice of $\Gamma_0(p^\infty)$-structure, the $[p]$-multiplication tower of $E/M$ factors in a ``ramified'' and an ``\'etale'' part. By a careful choice of charts of $E/M$ in terms of subspaces of $E$ that behave well under $[p^n]:E\rightarrow E$, one can explicitly construct first a perfectoid tilde-limit of the ``ramified'' tower, and then in a second step the space $A_\infty$. This space is independent of the choice of $\Gamma_0(p^\infty)$-structure but remembers it as a pro-\'etale subgroup $D_\infty \subseteq A_\infty$. The construction shows that the perfectoid tilde-limit $A_\infty$ still exists under the weaker assumption that $K$ is a perfectoid field over which there exist lattices $M^{1/p^n}$ for all $n$ whose $p^n$-th multiple is $M$.
+
+The approach via explicit covers finally gives an explicit description of $A_\infty$ in terms of open subspaces of $E_\infty$ which we use in the last section to study the induced map $E_\infty\rightarrow A_\infty$. We show that $E_\infty$ is in fact an open subspace of $A_\infty$ and thus obtain a second description of $A_\infty$ as a quotient group $(D_\infty\times E_\infty)/M_\infty$.
+
 
 {\color{blue} Notation:} 
 
@@ -91,11 +107,9 @@ Let $A$ be an abelian variety over a non-archimedean field $K$, we show that the
 
 	
 	Throughout we denote by $\mathfrak X$ a topologically finite type formal scheme over $\operatorname{Spf} R$ with the $\pi$-adic topology. Let $\mathfrak X_\eta \rightarrow \operatorname {Sp} K$ be its rigid generic fibre, and let $\tilde{X}=\mathfrak X\times_{\operatorname{Spf}\mathcal O_K}\operatorname{Spf}\mathcal O_K/\pi$ be its special, considered as a scheme over $\operatorname{Spec}\mathcal O_K/\pi$.
-		
-		
-		
-	
-{\color{red} Add acknowledgement}  	
+{\color{red} Add definition of tilde limits}
+
+{\color{red} Add acknowledgements}  	
 	
 
 %%%%%%%%%%%%
@@ -108,7 +122,7 @@ Let $A$ be an abelian variety over a non-archimedean field $K$, we show that the
 	Let $p$ be a prime. Let $K$ be a complete non-archimedean field that is either an extension of $\mathbb Q_p$ or of characteristic $p$. Denote by $\mathcal O_K$ the ring of integers and let $\pi$ denote a pseudo-uniformiser. 
 	
 	
-	Let $G$ be a rigid group, namely a group object in the category of rigid spaces. For instance, we obtain rigid groups from analytification of finite type group schemes over $K$: We will be most interested in analytifications of an abelian variety $A$, but other important cases are the analytifications  $\mathbb G_a^{\operatorname{an}}$ of $\mathbb G_a$ and $\mathbb G_m^{\operatorname{an}}$ of $\mathbb G_m$, or more generally of tori $T$ over $K$. A second source of rigid groups are topologically finite type formal group schemes via the rigid generic fibre. A third important case is that of $E$ the covering space in the sense of Raynaud of an abelian variety over $K$ with semi-stable reduction.
+	Let $G$ be a rigid group, that is a group object in the category of rigid spaces. One way that rigid groups arise is by analytification of finite type group schemes over $K$: We will be most interested in the analytification of an abelian variety $A$, but other important cases are the analytifications  $\mathbb G_a^{\operatorname{an}}$ of $\mathbb G_a$ and $\mathbb G_m^{\operatorname{an}}$ of $\mathbb G_m$, or more generally of tori $T$ over $K$. A second source of rigid groups are generic fibres of topologically finite type formal group schemes over $\mathcal O_K$. A third important example is the covering space $E$ in the sense of Raynaud of an abelian variety with semi-stable reduction.
 	
 	This note is concerned with the following question:
 	
@@ -121,29 +135,29 @@ Let $A$ be an abelian variety over a non-archimedean field $K$, we show that the
 	Our main goal will be to show that this is true for $A$ an abelian variety over a perfectoid field.
 	But before we give proves for examples of rigid groups $G$ for which a perfectoid tilde-limit exists, we first note that the second question certainly doesn't have an affirmative answer for all rigid group varieties:
 	\begin{example}
-		For the additive group $\mathbb G_a^{\operatorname{an}}$, we know that $[p]$ is an isomorphism (on the level of schemes, hence also after rigid analytification) and therefore $\varprojlim_{[p]} \mathbb G_a=\mathbb G_a$ exists (even as an actual limit in the category of adic spaces!) but is certainly not perfectoid.
+		For the additive group $\mathbb G_a^{\operatorname{an}}$, we know that $[p]$ is an isomorphism and therefore $\varprojlim_{[p]} \mathbb G_a=\mathbb G_a$ exists (even as an actual limit in the category of adic spaces) but is certainly not perfectoid.
 	\end{example}
 	\subsection{A condition ensuring that the tilde-limit exists}
   
-	Inverse limits often don't exist in adic spaces, and neither do they in rigid spaces. They do, however, often exist in the category of formal schemes:
+	Inverse limits often don't exist in the category of adic spaces, and neither do they in rigid spaces. They do, however, often exist in the category of formal schemes:
 	\begin{lemma}
 		Let $(\mathfrak X_i,\phi_{ij})_{i\in I}$ be an inverse system of formal schemes $\mathfrak X_i$ over $\mathcal O_K$ with affine transition maps $\phi_{ij}:\mathfrak X_j\rightarrow \mathfrak X_i$. Then the inverse limit $\mathfrak X=\varprojlim \mathfrak X_i$ exists in the category of formal schemes over $\mathcal O_K$. If all the $\mathfrak X_i$ are flat formal schemes, so is $\mathfrak X$.
 	\end{lemma}
 	\begin{proof}
 	In the affine case, if the inverse system is $\operatorname{Spf} A_i$, take $A$ to be the $p$-adic completion of $\varinjlim A_i$, then  $\operatorname{Spf} A$ is the inverse limit of the $\operatorname{Spf}A_i$. In general, we can use the fact that the transition maps are affine to reduce to the affine case. 
 	\end{proof}
-	In the situation of the lemma,  the transition maps are affine and hence quasi-compact and quasi-separated, so after passing to adic spaces, $\mathfrak X$ is also the tilde-limit  $\mathfrak X\sim \varprojlim \mathfrak X_i$ in the sense of \cite{SW}. Even better, this phenomenon remains true after passing to the generic fibre $\operatorname{Spa}(K,\mathcal O_K)\rightarrow \operatorname{Spa}(\mathcal O_K,\mathcal O_K)$.
+	In the situation of the lemma,  the transition maps are affine and hence quasi-compact and quasi-separated, so after passing to adic spaces, $\mathfrak X$ is also the tilde-limit  $\mathfrak X\sim \varprojlim \mathfrak X_i$ in the sense of \cite{SW}. Even better, this remains true after passing to the generic fibre $\operatorname{Spa}(K,\mathcal O_K)\rightarrow \operatorname{Spa}(\mathcal O_K,\mathcal O_K)$.
 	\begin{lemma}\label{tilde-limit from adic generic fibre of formal schemes}
 		Let $(\mathfrak X_i,\phi_{ij})_{i\in I}$ be an inverse system of formal schemes $\mathfrak X_i$ over $\mathcal O_K$ with affine transition maps $\phi_{ij}$ and let $\mathfrak X=\varprojlim_{\phi_j} \mathfrak X_i$ be the limit. Let $\mathcal X_i =(\mathfrak X_i)_\eta$ and  $\mathcal X = (\mathfrak X)_\eta$ be the adic generic fibres. Then
 		\[\mathcal X \sim \varprojlim \mathcal X_i.\]
 	\end{lemma}
 	\begin{proof}
 		This is a consequence of \cite{SW}, Proposition 2.4.2: The transition maps in the system are affine, hence quasi-separated quasi-compact. In order to prove the Lemma, we can restrict to an affine open subset $\operatorname{Spf}(A)$ of $\mathfrak X$ that arises as the inverse limit of affine open subsets $\operatorname{Spf}(A_i)\subseteq \mathfrak X_i$. Here all formal schemes are considered with the $\pi$-adic topology and $A$ is the $\pi$-adic completion of $\varinjlim A_i$. 
-		Upon taking the generic fibre, $A_i$ with ideal of definition $I_i=\pi A_i$ is an open subring of definition of $A_i[1/\pi]$. We then clearly have $I_iA_j = A_j$ for any $j\geq i$. This shows that the inverse system satisfies the conditions of \cite{SW}, Proposition 2.4.2, and we conclude that $\operatorname{Spf}(A)_\eta \sim \varprojlim \operatorname{Spf}(A_i)_\eta$ as desired.
+		On the generic fibre, $A_i$ with ideal of definition $I_i=\pi A_i$ is an open subring of definition of $A_i[1/\pi]$. We then clearly have $I_iA_j = A_j$ for any $j\geq i$. The inverse system therefore satisfies the conditions of \cite{SW}, Proposition 2.4.2, and we conclude that $\operatorname{Spf}(A)_\eta \sim \varprojlim \operatorname{Spf}(A_i)_\eta$ as desired.
 	\end{proof}
 	
 	\begin{remark}
-	What this means is that one can always construct the limit of an inverse system of rigid spaces $\mathcal X_i$ if it arises from an inverse system $\mathfrak X_i$ with affine transition maps. This is precisely what Scholze uses in \cite{torsion} in order to construct the space $\mathcal X_{\Gamma_0(p^\infty)}(\epsilon)_a$ (see the proof of Corollary III.2.19 in \cite{torsion}).
+	This means that one can always construct the limit of an inverse system of rigid spaces $\mathcal X_i$ if it arises from an inverse system of formal schemes $\mathfrak X_i$ with affine transition maps. This is precisely what Scholze uses in \cite{torsion} in order to construct the space $\mathcal X_{\Gamma_0(p^\infty)}(\epsilon)_a$ (see the proof of Corollary III.2.19 in \cite{torsion}).
 	\end{remark}
 	
 	If one starts with an inverse system of rigid spaces $\mathcal X_i$, a straightforward strategy to construct ``the" tilde limit $\varprojlim \mathcal X_i$ is thus to look for formal models $\mathfrak X_i$, that is formal schemes over $\operatorname{Spf} \mathcal O_K$ such that $\mathcal X_i = (\mathfrak X_i)_\eta$, as well as affine formal models $\phi_{ji}:\mathfrak X_j\rightarrow \mathfrak X_i$ of the transition maps. If such data exists, Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} produces a tilde-limit $\mathcal X \sim \varprojlim \mathcal X_i$. Here we follow the following standard terminology:
@@ -223,7 +237,7 @@ Let $A$ be an abelian variety over a non-archimedean field $K$, we show that the
 	
 	First we consider the case where $G=A$ is an abelian variety with good reduction. Slightly more generally, we have
 	\begin{proposition}\label{limit exists and is perfectoid: commutative formal group case}
-		Assume that $K$ is perfectoid. Let $\mathfrak G$ be a flat commutative formal group scheme of topologically finite type over $\mathcal O_K$ for which the p-multiplication map $[p]:\mathfrak G\rightarrow \mathfrak G$ is an affine morphism. Let $G = \mathfrak G_\eta$ be the rigid group obtained on the generic fibre. Then $G_\infty$ exists and is perfectoid.
+		Assume that $K$ is perfectoid. Let $\mathfrak G$ be a flat commutative formal group scheme of topologically finite type over $\mathcal O_K$ for which the p-multiplication map $[p]:\mathfrak G\rightarrow \mathfrak G$ is affine. Let $G = \mathfrak G_\eta$ be the rigid group obtained on the generic fibre. Then $G_\infty$ exists and is perfectoid.
 	\end{proposition}
 	\begin{proof}
 		Following notation from the previous subsection, the map $[p]:\mathfrak G\rightarrow \mathfrak G$ is a formal model of the map $[p]$ on its rigid generic fiber. By Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} we therefore have 
@@ -259,11 +273,11 @@ Let $A$ be an abelian variety over a non-archimedean field $K$, we show that the
 	\end{corollary}
 	 	Before we proceed, we would like to mention two illustrative examples:
 	\begin{example}
-		Let $\mathfrak G$ be the $p$-adic completion of the affine group scheme $\mathbb G_m$ over $\mathcal O_K$, that is the formal scheme of $\mathfrak G$ is $\operatorname {Spf} S$ where $S=\mathcal O_K\langle X \rangle$.  It is clear that $\mathbb G$ satisfies the conditions of Proposition~\ref{limit exists and is perfectoid: commutative formal group case}, so for the generic fibre $G=\mathfrak G_\eta$ we obtain a perfectoid tilde-limit $G_\infty = \varprojlim_{[p]} G$. More precisely, the $[p]$-multiplication map corresponds to the homomorphism
-		\[[p]:\mathcal O_K\langle X \rangle\rightarrow  \mathcal O_K\langle X \rangle, \quad X\rightarrow X^{p}.\]
-		In the direct limit, we obtain the algebra $S_\infty = (\varinjlim_{[p]} S)^{\wedge} = \mathcal O_K\langle X^{1/p^\infty} \rangle$. On the generic fibre we thus obtain
-		\[G_\infty = \operatorname{Spa}(K\langle X^{1/p^\infty} \rangle,\mathcal O_K\langle X^{1/p^\infty} \rangle)\]
-		and one can verify by hand that we indeed have $G_\infty = \varprojlim_{[p]} G$.
+		Let $\mathfrak G$ be the $p$-adic completion of the affine group scheme $\mathbb G_m$ over $\mathcal O_K$, that is the formal scheme of $\mathfrak G$ is $\operatorname {Spf} S$ where $S=\mathcal O_K\langle X^{\pm 1} \rangle$.  It is clear that $\mathbb G$ satisfies the conditions of Proposition~\ref{limit exists and is perfectoid: commutative formal group case}, so for the generic fibre $G=\mathfrak G_\eta$ we obtain a perfectoid tilde-limit $G_\infty = \varprojlim_{[p]} G$. More precisely, the $[p]$-multiplication map corresponds to the homomorphism
+		\[[p]:\mathcal O_K\langle X^{\pm 1} \rangle\rightarrow  \mathcal O_K\langle X^{\pm 1} \rangle, \quad X\rightarrow X^{p}.\]
+		In the direct limit, we obtain the algebra $S_\infty = (\varinjlim_{[p]} S)^{\wedge} = \mathcal O_K\langle  X^{\pm 1/p^\infty} \rangle$. On the generic fibre we thus obtain
+		\[G_\infty = \operatorname{Spa}(K\langle X^{\pm 1/p^\infty} \rangle,\mathcal O_K\langle X^{\pm 1/p^\infty} \rangle)\]
+		and one can verify by hand that we indeed have $G_\infty \sim \varprojlim_{[p]} G$.
 	\end{example}
 	\begin{example}
 		An example of a very different flavour is $\mathfrak G$ the $p$-adic completion of the affine group scheme $\mathbb G_a$ over $\mathcal O_K$. Note that $G=\mathfrak G_\eta$ is not equal to $\mathbb G_a^{an}$, but is the closed unit disc in the latter.
@@ -274,7 +288,7 @@ Let $A$ be an abelian variety over a non-archimedean field $K$, we show that the
 		\[p^n\mathcal O_K\langle \frac{1}{p^\infty}X \rangle = p^n\mathcal O_K + X \mathcal O_K\langle \frac{1}{p^\infty}X \rangle\]
 		and therefore $S'_\infty/p^n=\mathcal O_K/p^n\mathcal O_K$. Consequently, the completion is $S_\infty = \mathcal O_K$ and thus $G_\infty = \operatorname{Spa}(K,\mathcal O_K)$ is perfectoid, but just one point!
 		
-		Geometrically, this makes sense: On the level of $K$-points, the formal scheme $\mathbb G_a$ is the closed unit disc and $[p]$ is scaling points by $p$. A $K$-point of $\varprojlim_{[p]} \mathbb G_a(K)$ therefore corresponds to a sequence in the closed unit disc of the form $x,\frac{1}{p}x,\frac{1}{p^2}x,\dots$. But for this to be contained in the closed unit disc, we must have $x=0$. Thus $\varprojlim_{[p]} \mathbb G_a(K)=0$.
+		Geometrically, this makes sense: On the level of $K$-points, the formal scheme $G$ is the closed unit disc and $[p]$ is scaling points by $p$. A $K$-point in $\varprojlim_{[p]} G(K)$ therefore corresponds to a sequence of $K$-points of the closed unit disc of the form $x,\frac{1}{p}x,\frac{1}{p^2}x,\dots$. But for this to be contained in the closed unit disc, we must have $x=0$. Thus $\varprojlim_{[p]} G(K)=0$.
 		
 	\end{example}
 	
@@ -307,7 +321,7 @@ Let $A$ be an abelian variety over a non-archimedean field $K$, we show that the
 		If $\mathfrak G$ is a flat commutative formal group scheme such that $p$-multiplication is affine, then setting $\mathfrak G_n = \mathfrak G$ and taking for $[\mathfrak p]$ the actual $p$-multiplication maps $[p]$ defines a $[p]$-$F$-model tower for the rigid analytic group $G=\mathfrak G_\eta$.
 	\end{example}
 	
-	 The same proof for Proposition~\ref{limit exists and is perfectoid: commutative formal group case} holds with the weakened conditions: 
+	 The same proof for Proposition~\ref{limit exists and is perfectoid: commutative formal group case} works with the weakened conditions: 
 	\begin{proposition}\label{existence of p-F-model tower implies perfectoid}
 		Let $G$ be a rigid analytic group over a perfectoid field $K$. If $G$ admits a $[p]$-$F$-model, then $G_\infty$ exists and is perfectoid.
 	\end{proposition}
@@ -1026,7 +1040,7 @@ Let $A$ be an abelian variety over a non-archimedean field $K$, we show that the
 	The case of $\iota:A_\infty \rightarrow E/M^{1/p^\infty}$ is similar:
 	\begin{proposition}\label{the morphism A->E/M^{1/p^n} in the limit}
 		The subgroups $D_n= M^{1/p^n}/M\subseteq A$ in the limit give rise to a perfectoid group $D_\infty\sim \varprojlim_{[p]}D_n$ which is a subgroup $D_\infty \subseteq A_\infty$ in a natural way.
-		If we assume Assumption~\ref{assumption that points of D_n are defined over K}, this fits into a short exact sequence
+		If we assume Assumption~\ref{assumption that points of D_n are defined over K}, this fits into a short exact sequence of perfectoid groups
 		\[0\rightarrow D_\infty \rightarrow A_\infty\rightarrow E/M^{1/p^\infty}\rightarrow 0.\]
 	
 	\end{proposition}
@@ -1070,7 +1084,7 @@ Let $A$ be an abelian variety over a non-archimedean field $K$, we show that the
 	
 	For perfectoid groups the homological algebra argument of course doesn't apply in the same way. Nevertheless, if we retain Assumption~\ref{assumption that points of D_n are defined over K}, we can again use the explicit covers of the last section to show that the situation is very similar as in the remark:
 	\begin{proposition}\label{the morphism E->A in the limit}
-		The homomorphism $\iota:E_\infty \rightarrow A_\infty$ is an open and closed immersion. Moreover, there is a natural map $\rho:A_\infty \rightarrow D_\infty/M_\infty$ which is a quotient of $\iota$ in the category of perfectoid groups. Here $D_\infty/M^{p^{-\infty}}$ is a constant group which is uncanonically isomorphic to the constant perfectoid group $\underline{(\mathbb Z_p/\mathbb Z)^r}$. We thus obtain a short exact sequence of perfectoid groups
+		The homomorphism $\iota:E_\infty \rightarrow A_\infty$ is an open and closed immersion. Moreover, there is a natural map $\rho:A_\infty \rightarrow D_\infty/M_\infty$ which is a quotient of $\iota$ in the category of perfectoid groups. Here $D_\infty/M_\infty$ is a constant group which is uncanonically isomorphic to the constant perfectoid group $\underline{(\mathbb Z_p/\mathbb Z)^r}$. We thus obtain a short exact sequence of perfectoid groups
 		\[0\rightarrow E_\infty \rightarrow A_\infty \rightarrow D_\infty/M_\infty\rightarrow 0\]
 		which is uncanonically split on the level of the underlying perfectoid spaces.
 	\end{proposition}
@@ -1104,7 +1118,7 @@ Let $A$ be an abelian variety over a non-archimedean field $K$, we show that the
 			M \arrow[r] & 1 \arrow[r] & 1
 		\end{tikzcd}
 		\end{center}
-		Recall that we have defined $D_\infty = \varprojlim_{[p]} D_n = \varprojlim_{[p]}M^{1/p^n}/M$ and $M_\infty \cong \varprojlim_{[p]}M^{1/p^n} \hookrightarrow E_\infty$. In the limit, the diagram gives rise to a natural map $M_\infty\hookrightarrow D_\infty$. Since $M \cong \underline{ \mathbb Z^r}$ and $\underline{D_\infty} \cong \mathbb Z_p^r$ uncanonically, the quotient $D_\infty/M$ exists and is uncanonically isomorphic to \[D_\infty/M_\infty\cong\underline{(\mathbb Z_p/\mathbb Z)^r}.\]
+		Recall that we have defined $D_\infty = \varprojlim_{[p]} D_n = \varprojlim_{[p]}M^{1/p^n}/M$ and $M_\infty \cong \varprojlim_{[p]}M^{1/p^n} \hookrightarrow E_\infty$. In the limit, the diagram gives rise to a natural map $M_\infty\hookrightarrow D_\infty$. Since $M \cong \underline{ \mathbb Z^r}$ and $D_\infty \cong \underline{\mathbb Z_p^r}$ uncanonically, the quotient $D_\infty/M_\infty$ exists and is uncanonically isomorphic to \[D_\infty/M_\infty\cong\underline{(\mathbb Z_p/\mathbb Z)^r}.\]
 
 		Using the map $M_\infty\hookrightarrow D_\infty$ on indices, we see that the pullback to $E_i\subseteq E/M$ of the morphisms $\iota:E_\infty \rightarrow A_\infty\rightarrow E/M^{1/p^\infty}$ is given by the diagram
 		\begin{center}
@@ -1222,7 +1236,7 @@ Let $A$ be an abelian variety over a non-archimedean field $K$, we show that the
 	
 	The morphism $\phi_{ij}$ from condition (b) is fully determined by the morphism $\psi_{ij}:U_{ij}\rightarrow T$. By a glueing argument, one shows:
 	\begin{lemma}\label{equivalent characterisation of principal $T$-bundle}
-		Suppose we are given formal schemes $F$ and $B$ and a formal group scheme $T$ with an action on $F$. Then fibre bundles $\pi:E\rightarrow B$ with fibre $F$ and structure group $T$ are equivalent to the data (up to refinement) of a cover $\mathfrak U$ by formal open subschemes and morphisms $\psi_{ij}:U_{ij}\rightarrow T$ for all $U_i,U_j\in \mathfrak U$ that satisfy the cocycle condition $\psi_{jk}\cdot \psi_{ij}=\psi_{ik}$, by which we mean that the following diagram commutes:\footnote{One can probably add a remark about $H^1(B,T)$ here, but right now I am not sure how exactly this group is defined in this context.}
+		Suppose we are given formal schemes $F$ and $B$ and a formal group scheme $T$ with an action on $F$. Then fibre bundles $\pi:E\rightarrow B$ with fibre $F$ and structure group $T$ are equivalent to the data (up to refinement) of a cover $\mathfrak U$ by formal open subschemes and morphisms $\psi_{ij}:U_{ij}\rightarrow T$ for all $U_i,U_j\in \mathfrak U$ that satisfy the cocycle condition $\psi_{jk}\cdot \psi_{ij}=\psi_{ik}$, by which we mean that the following diagram commutes:
 		
 		\begin{center}\begin{equation}		\label{cocycle condition of fibre bundle}
 			\begin{tikzcd}
