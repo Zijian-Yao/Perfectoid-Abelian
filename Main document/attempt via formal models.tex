@@ -509,7 +509,10 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 %%      Section 4
 %%%%%%%%%%%%
 	\section{Raynaud extensions as principal bundles of formal and rigid spaces}
-	In the following discussion let $A$ be an abelian variety over $K$ of semi-stable reduction. We denote by $N$ the identity component of the N\'eron-model and by $\overline E$ its completion along the special fibre. Then by the theory of Raynaud, $\overline E$ is a formal group that fits into a short exact sequence of formal group schemes
+	As the next step towards studying the $p$-multiplication tower of an abelian variety, we now look at the case of rigid groups arising from the Raynaud extensions associated to semi-stable abelian varieties over a non-archimedean complete field $K$. For simplicity we will also assume that $K$ is algebraically closed.
+	While we expect that our main theorem still holds over any perfectoid field, it is easier to work in the algebraically closed case since this simplifies the theory of Raynaud uniformisation, in particular Lemma~\ref{formal Raynaud sequence is locally split} below.
+	
+	Let now $A$ be an abelian variety over $K$ of semi-stable reduction. We denote by $N$ the identity component of the N\'eron-model of $A$ and by $\overline E$ its completion along the special fibre. Then by the theory of Raynaud, $\overline E$ is a formal group that fits into a short exact sequence of formal group schemes
 	\begin{equation}\label{formal Raynaud extension}
 	0\rightarrow \overline T \rightarrow \overline E \xrightarrow{\pi} \overline{B}\rightarrow 0
 	\end{equation}
@@ -532,22 +535,22 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	\end{definition}
 	
 	\begin{proposition}\label{Raynaud uniformisation}
-		There exists a lattice $M \subseteq E$ of rank equal to the rank $r$ of the torus for which $E/M$ exists as a rigid space, has a group structure such that $E\rightarrow E/M$ is a rigid group homomorphism, and for which there is a natural isomorphism
+		There exists a lattice $M \subseteq E$ of rank equal to the rank $r$ of the torus for which the quotient $E/M$ exists as a rigid space and has a group structure such that $E\rightarrow E/M$ is a rigid group homomorphism. Moreover, there is a natural isomorphism
 		\[A=E/M.\]
 	\end{proposition}
 	
-	Since $M$ is discrete, the local geometry of $A$ is thus determined by the local geometry of $E$. More precisely, we will first study the $[p]$-multiplication tower of $E$ and deduce properties of the $[p]$-multiplication tower of $A$ later.
+	Since $M$ is discrete, the local geometry of $A$ is thus determined by the local geometry of $E$. More precisely, we will first study the $[p]$-multiplication tower of $E$ and will then deduce properties of the $[p]$-multiplication tower of $A$.
 	
 	In order to do so, we would like to study the local geometry of $E$ and $\overline{E}$ via $T$ and $B$. An obstacle in doing this is that the categories of formal or rigid groups are not abelian, which makes working with short exact sequences a subtle issue. Another issue is that one cannot direcly study short exact sequences locally on $T$, $E$ or $B$. An important tool is therefore the following Lemma:
 
-	\begin{lemma}[\cite{BL}, \S 1]\label{formal Raynaud sequence is locally split}
+	\begin{lemma}\label{formal Raynaud sequence is locally split}
 		The short exact sequence (\ref{formal Raynaud extension}) admits local sections, that is there is a cover of $B$ by formal open subschemes $U_i$ such that there exist sections $s:U_i\rightarrow \overline{E}$ of $\pi$. In particular, one can cover $\overline{E}$ by formal open subschemes of the form $\overline{T}\times U_i\hookrightarrow E$.
 	\end{lemma}
 	\begin{proof}
-		This is proved in Proposition A.2.5 in~\cite{rigid geometry of curves}, in terms of the group $\operatorname{Ext}(B,T)$.
+		This is proved in Proposition A.2.5 in~\cite{rigid geometry of curves}, where it is fomulated in terms of the group $\operatorname{Ext}(B,T)$. Also see \cite{BL}, \S 1.
 	\end{proof}
 	
-	The last Lemma suggest that instead of considering Raynaud extensions from the abelian category viewpoint, one should consider them as fibre bundles of formal schemes with structure group $T$, or more precisely as principal $T$-bundles of formal schemes, which are also called torsors. This is the language we want to use in the following: We will work with fibre bundles of formal schemes, rigid spaces and schemes. The main technical tool we will need is the associated fibre construction in these settings. For a rigorous  treatment of these we refer to the Appendix {\color{red} which should be replaced by a link to the relevant literature}.
+	This Lemma suggest that instead of considering Raynaud extensions from the abelian category viewpoint, one should consider them as fibre bundles of formal schemes with structure group $T$, or more precisely as principal $T$-bundles of formal schemes, which are also called $T$-torsors. This is the language we want to use in the following: We will work with fibre bundles of formal schemes, rigid spaces and schemes. The main technical tool we will need is the associated fibre construction in these settings. For a rigorous  treatment of these we refer to the Appendix {\color{red} which should be replaced by a link to the relevant literature}.
 	
 	First of all, we note that the sequence~(\ref{formal Raynaud extension}) from the last section gives rise to a principal $\overline{T}$-bundle
 	$\overline{E}\rightarrow \overline{B}$. The fact that $E$ is obtained from $\overline{E}_\eta$ via push-out from $\overline{T}_\eta\rightarrow T$ can now conveniently be expressed in terms of the associated fibre bundle by saying that $E_\eta = T\times^{\overline{T}_\eta}\overline{E}_\eta$ in the sense of Definition~\ref{definition of Borel construction}. We have the following description of $[p]$:
@@ -587,10 +590,11 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	\end{proof}
 	Next we want to construct a model for the $[p]$-multiplication map. Here we can use again that $[p]$ exists on $\overline{E}$ and on $\mathfrak T_{q^{1/p}}$.
 	\begin{proposition}\label{formal model of p-multiplication on E}
-		Let $q\in K^\times$ be such that $|q|<1$ and assume there exists a $p$-th root $q^{1/p}\in K$. Then there is an affine morphism
+		Let $q\in K^\times$ be such that $|q|<1$ and let $q^{1/p}\in K$ be a $p$-th root of $q$. Then there is an affine morphism
 		\[[\mathfrak p]:\mathfrak E_{q^{1/p}} \rightarrow  \mathfrak E_{q}\]
 		which is a formal model of $[p]:E\rightarrow E$.
 	\end{proposition}
+		Note that we can always choose a $p$-th root of $q$ in $K$ due to our running assumption that $K$ is algebraically closed.
 	\begin{proof}
 		Recall that the multiplication map $[p]:T\rightarrow T$ has a formal model $[\mathfrak p]:\mathfrak T_{q^{1/p}}\rightarrow \mathfrak T_q$ by Corollary~\ref{torus has formal models}. This fits into a commutative diagram
 		\begin{center}
@@ -631,7 +635,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 		that on the generic fibre equals $\dots\xrightarrow{[p]} E\xrightarrow{[p]} E$. This is the desired $[p]$-model tower.
 	\end{proof}
 	
-	We are now ready to prove the main result of this note, namely that $E_\infty$ is perfectoid.
+	We are now ready to prove the main result of this section, namely that $E_\infty$ is perfectoid.
 	\begin{framed}
 	\begin{theorem}\label{p-F-model tower exists for E}
 		Let $K$ be perfectoid. Then the $[p]$-model tower from Proposition~\ref{p-model tower exists for E}
@@ -689,19 +693,18 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	\end{center}
 	Since the composed maps $\tilde{E}\rightarrow \tilde{E}$ on the bottom right, $\tilde{T}\rightarrow \tilde{T}$ on the bottom left and  $\tilde{\mathfrak T}_{q^{1/p}}\rightarrow \tilde{\mathfrak T}_{q}$ on the upper left by construction are the reductions of the respective $p$-multiplication maps $[p]$, the functoriality of the associated bundle construction in Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor} implies that the two maps on the upper right compose to the reduction of $[\mathfrak p]\times^{[p]}[p]$. But $[\mathfrak p]\times^{[p]}[p]$ is equal to $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ by definition of the latter. 	This completes the proof that the reduction of $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ factors through the relative Frobenius on $\tilde{\mathfrak E}_{q^{1/p}}$.
 	
-	The conclusion that $E_\infty$ exists and is perfectoid then follows from Proposition~\ref{existence of p-F-model tower implies perfectoid}.
+	The conclusion that $E_\infty$ is perfectoid then follows from Proposition~\ref{existence of p-F-model tower implies perfectoid}.
 	\end{proof}
 	
 	\section{The case of abelian varieties with semi-stable reduction}
-	Let $K$ be a complete non-archimedean field with ring of integers $\mathcal O_K$. Let $A$ be an abelian variety over $K$ of dimension $g$. Recall from Proposition~\ref{Raynaud uniformisation} that associated to $A$ we have a Raynaud extension $E$ which is an extension of a rigid torus $T$ of rank $r$ which we assume to be split by an abelian variety $B$ of good reduction. Moreover there is a lattice $M\subseteq E$ of rank $r$ such that $A=E/M$.
-	In this chapter, we want to prove the main result of this write-up:
+	We now want to prove the main result of this work, building on the preceding chapters:
 	
 	\begin{theorem}\label{main theorem}
-		Assume that $A$ admits a constant partial anticanonical $\Gamma_0(p^\infty)$-structure (this will be defined later, but we remark already that this condition is always satisfied if $K$ is algebraically closed). Then there is a perfectoid space $A_\infty$ such that
+		Let $A$ be an abelian variety over a complete perfectoid field $K$. Then there is a perfectoid space $A_\infty$ such that
 				\[A_\infty \sim \varprojlim_{[p]} A.\]
 	\end{theorem}
 	
-	The proof of Theorem~\ref{main theorem} will be completed in several steps over the following sections. Our strategy is to describe the $[p]$-multiplication tower on $E/M$ locally in terms of the $[p]$-multiplication tower of $E$.
+	The proof of Theorem~\ref{main theorem} will be completed in several steps over the following sections.  We first recall some notation:  Let $g$ be the dimension of $A$. Let $E$ be the Raynaud extension associated to $A$ from Proposition~\ref{Raynaud uniformisation}, which is an extension of a split rigid torus $T$ of rank $r$ by an abelian variety $B$ of good reduction. Moreover there is a lattice $M\subseteq E$ of rank $r$ such that $A=E/M$. Our strategy is to describe the $[p]$-multiplication tower of $E/M$ locally in terms of the $[p]$-multiplication tower of $E$.
 	As a first step towards this goal, in the following section, we want to give a cover of $E/M$ by subspaces of $E$ that behaves well under $[p]$-multiplication.
 	
 	\subsection{Covering $A$ by subspaces of $E$}
@@ -711,30 +714,30 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	\[|-|:T(K)=(K^\times)^r\rightarrow (\mathbb R^\times)^r, \quad (x_1,\dots,x_n)\mapsto (|x_1|,\dots,|x_n|)\]
 	Since when working with lattices we prefer additive notation, we also consider the map
 	\[\ell:T(K)=(K^\times)^r\rightarrow \mathbb R^r, \quad x_1,\dots,x_n\mapsto (-\log |x_1|,\dots,-\log |x_n|).\]
-	Note that this map has dense image by our assumption that $K$ is perfectoid.
+	Note that this map has dense image due to our assumptions on $K$.
 	
-		The formal torus $\overline{T}$ on $K$-points corresponds to $\overline{T}_\eta(K) = (\mathcal O_K^\times)^r$ and is thus in the kernel of $-\log$. We can therefore extend $\ell$ to $E(K)$ as follows: Locally over an open subspace $U\subseteq B$ we have $E|_U = T\times^{\overline{T}_\eta}\overline{E}_\eta|_{U}$ and we define $\ell$ by projection from the first factor. The different $E|_U$ are then glued on intersections using the $\overline{T}_\eta$-action on $T$. But since $\ell$ on $T$ is invariant under the $\overline{T}_\eta$-action, the maps glue together to a group homomorphism 
+		The formal torus $\overline{T}$ corresponds on $K$-points to $\overline{T}_\eta(K) = (\mathcal O_K^\times)^r$ and is thus in the kernel of $\ell$. We can therefore extend $\ell$ to $E(K)$ as follows: Locally over an open subspace $U\subseteq B$ we have $E|_U = T\times^{\overline{T}_\eta}\overline{E}_\eta|_{U}$ and we define $\ell$ by projection from the first factor. The different $E|_U$ are then glued on intersections using the $\overline{T}_\eta$-action on $T$. But since $\ell$ on $T$ is invariant under the $\overline{T}_\eta$-action, the maps glue together to a group homomorphism 
 	\[\ell:E(K)\rightarrow \mathbb R^r.\]
 	
-	Since $A=E/M$ is proper, the lattice $M$ is sent by $-\log$ to an Euclidean lattice $\Lambda \subset \mathbb R^r$ of full rank $r$ (see Proposition 6.1.4 in \cite{rigid geometry of curves}). In particular, this induces an isomorphism of discrete torsionfree groups
+	Since $A=E/M$ is proper, the lattice $M$ is sent by $\ell$ to an Euclidean lattice $\Lambda \subset \mathbb R^r$ of full rank $r$ (see Proposition 6.1.4 in \cite{rigid geometry of curves}). In particular, this induces an isomorphism of discrete torsionfree groups
 	\[\ell:M\xrightarrow{\sim} \Lambda\subseteq\mathbb R^r.\]
 	
 	The idea is now that one can understand the quotient $E/M$ in terms of the quotient $\mathbb R^r/\Lambda$. We are going to make this precise in the following:
 	
-	In the space $\mathbb R^r$, we can now choose a $d\in \mathbb R_{> 0}^r$ and a cuboid with center at the origin
+	For any $d\in \mathbb R_{> 0}^r$, consider the cuboid with length $2d$ centered at the origin:
 	\[S(d) = \{(x_1,\dots,x_r)\in \mathbb R^r | |x_i|\leq d_i \}\]
-	that intersects $\Lambda$ only in $0\in \Lambda$ and
-	 $q_1,\dots,q_r\in K$ such that $|q_i|=\exp(-d_i)$. We denote by $\mathcal B(q,q^{-1})$ the affinoid open multi-annulus $T$ centered at $1$ of radii $|q_i|< 1 < |q_i|^{-1}$ in every direction.
+	Choose $d$ small enough such that $S(d)$ intersects $\Lambda$ only in $0\in \Lambda$. Choose
+	 $q_1,\dots,q_r\in K$ such that $|q_i|=\exp(-d_i)$. We denote by $\mathcal B(q,q^{-1})$ the affinoid open rigid multi-annulus $T$ centered at $1$ of radii $|q_i|< 1 < |q_i|^{-1}$ in every direction.
 	
 	\begin{lemma}\label{cube around origin gives local chart for E/M}
 		The inverse image $\ell^{-1}(S(d))\subseteq E(K)$ is the underlying set of the admissible open subset $E(q):=\mathcal B(q,q^{-1})\times^{\overline{T}_\eta}\overline{E}_\eta$.
 	\end{lemma}
 	\begin{proof}
-		One shows this first for the map $T\rightarrow \mathbb R^d$, where it is clear that the preimage is $\mathcal B(q,q^{-1})$. This is also described in \S 6.4 of \cite{FvdP}. The statement for $\mathcal B(q,q^{-1})\times^{\overline{T}_\eta}\overline{E}_\eta$ follows by direct inspection on local trivialisations $\mathcal B(q,q^{-1})\times U$ for $U\subseteq B$.
+		One shows this first for the map $T\rightarrow \mathbb R^r$, where it is clear that the preimage is $\mathcal B(q,q^{-1})$. This is also described in \S 6.4 of \cite{FvdP}. The statement for $\mathcal B(q,q^{-1})\times^{\overline{T}_\eta}\overline{E}_\eta$ follows by direct inspection on local trivialisations $\mathcal B(q,q^{-1})\times U$ for $U\subseteq B$.
 	\end{proof}
 	
 	
-	Note that the map $\mathbb R^d\rightarrow \mathbb R^d/\Lambda$ maps $S(d)$ bijectively onto its image. 
+	Note that by our choice of $d$, the map $\mathbb R^r\rightarrow \mathbb R^r/\Lambda$ maps $S(d)$ bijectively onto its image. 
 	Lemma~\ref{cube around origin gives local chart for E/M} says that we can use $\mathcal B(q,q^{-1})\times^{\overline{T}_\eta}\overline{E}_\eta$ as a chart for $E/M$ around the origin.
 	
 	In order to obtain charts around other points of $E/M$, we simply need to consider translations: Recall that for every $c\in T(K)$, the translation map
@@ -763,8 +766,8 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	\begin{lemma}\label{an admissible cover of A by cuboids of E}
 	There exist finitely many admissible open cuboids $E_1,\dots,E_k\subseteq E$ which map isomorphically to $A=E/M$ and which cover $A$ admissibly. 
 	
-	One can reconstruct $A$ from any such cover by glueing $E_1,\dots,E_k$ as follows: By construction, for any $E_i$ the translates $q\cdot E_i$ by $q\in M$ are pairwise disjoint and we thus have a canonical projection $\pi$ from the union $\cup_{m\in M} (m\cdot E_i)\subseteq E$ to $E_i$.	Let $E_{ij}:=(\bigcup_{m\in M} m\cdot E_i)\cap E_j \subseteq E$. Then we glue $E_j$ to $E_i$ via the map
-	\[E_{ij}\rightarrow \bigcup_{m\in M} q\cdot E_i \xrightarrow{\pi} E_i.\]
+	One can reconstruct $A$ from any such cover by glueing $E_1,\dots,E_k$ as follows: By construction, for any $E_i$ the translates $m\cdot E_i$ by $m\in M$ are pairwise disjoint and we thus have a canonical projection $\pi$ from the union $\cup_{m\in M} (m\cdot E_i)\subseteq E$ to $E_i$.	Let $E_{ij}:=(\bigcup_{m\in M} m\cdot E_i)\cap E_j \subseteq E$. Then we glue $E_j$ to $E_i$ via the map
+	\[E_{ij}\rightarrow \bigcup_{m\in M} m\cdot E_i \xrightarrow{\pi} E_i.\]
 	
 	\begin{figure}
 		\includestandalone[]{glue-cover-tikzpicture}%
@@ -777,7 +780,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	\begin{proof}
 	Since $\mathbb R^r/\Lambda$ is compact, we can find finitely many $s_1,\dots,s_k$ and $d_1,\dots,d_k \in \mathbb{R}^r_{>0}$ such that $\mathbb R^r/\Lambda$ is covered by the $s_i+S(d_i)$. When we choose corresponding $c_1,\dots,c_k \in T(K)$ and $q_1,\dots,q_k$ as in Lemma~\ref{cube around point gives local chart for E/M}, then the corresponding $E_i:=E(c_i,q_i)$ are an atlas of $A=E/M$ by admissible open subsets of $E$.
 	
-	In order to reconstruct $A$, note that $\cup_{m\in M} q\cdot E_i$ is precisely the preimage of $E_i$ under the projection $E\rightarrow E/M$. In particular, the subspace $E_{ij}$ is precisely the preimage of $E_i$ under the composition $E_j\hookrightarrow E \rightarrow E/M$. In other words, the subspace $E_{ij}\subseteq E_j$ is the intersection of $E_i$ and $E_j$ when considered as subspaces of $A$. This shows that as charts of $A$, the spaces $E_i$ and $E_j$ are glued via $E_{ij}$ as described.
+	In order to reconstruct $A$, note that $\cup_{m\in M} m\cdot E_i$ is precisely the preimage of $E_i$ under the projection $E\rightarrow E/M$. In particular, the subspace $E_{ij}$ is precisely the preimage of $E_i$ under the composition $E_j\hookrightarrow E \rightarrow E/M$. In other words, the subspace $E_{ij}\subseteq E_j$ is the intersection of $E_i$ and $E_j$ when considered as subspaces of $A$. This shows that as charts of $A$, the spaces $E_i$ and $E_j$ are glued via $E_{ij}$ as described.
 	\end{proof}
 	Finally, we need some control about what happens to the cubes under $[p]$-multiplication. Recall from Lemma~\ref{cube around point gives local chart for E/M} that we can always assume that $c$ admits $p$-th roots.
 	\begin{lemma}\label{pullback of cuboid is cuboid}
@@ -790,33 +793,22 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	\end{proof}
 
 	\subsection{The two towers}
-	In this section we want to separate the $[p]$-multiplication of $A$ into two different towers, which we think of as being a ``ramified'' tower and an ``\'etale'' tower. Of course in characteristic $0$ both towers will actually be \'etale, and these words are only meant to describe the behaviour compared to $[p]:E\rightarrow E$.
+	In this section we want to separate the $[p]$-multiplication of $A$ into two different towers, which we think of as being a ``ramified'' tower and an ``\'etale'' tower. Of course in characteristic $0$ both towers will actually be \'etale, and these words are only meant to describe the behaviour of the maps relative the the lattice $M$.
 	
-	The ``ramified'' tower only exists under an additional condition, which we want to briefly discuss now:
-	\begin{definition}
-		By a \textbf{partial anticanonical $\Gamma_0(p^\infty)$-structure} on $A$ we mean a choice of subgroups $D_n\subseteq A[p^n]$ of rank $p^{rn}$ for all $n$ such that $pD_{n+1}=D_n$ and $D_n+E[p^n]=A[p^n]$. 
-		
-		Note that the conditions imply that $D_n$ is necessarily finite \'etale, and after a finite extension of $K$ is isomorphic to the constant group $\underline{(\mathbb Z/p^n\mathbb Z)^{r}}$. We say that a partial anticanonical $\Gamma_0(p^\infty)$-structure is \textbf{constant} if such an isomorphism exists over $K$ for all $n$.
-	\end{definition}
-	The name is chosen because if $B$ admits a canonical subgroup (that is, satisfies a condition on its Hasse invariant), the choice of a (full) anticanonical $\Gamma_0(p^\infty)$-structure on $A$ is equivalent to the choice of a partial anticanonical $\Gamma_0(p^\infty)$-structure on $A$ and an anticanonical $\Gamma_0(p^\infty)$-structure on $B$. Note however that $A$ may have a partial anticanonical subgroup even if $B$ does not have a canonical subgroup. For instance, it is clear that $A$ always has a constant partial anticanonical subgroup if $K$ is algebraically closed.
+	For the ramified tower, we first make an auxiliary choice of certain torsion subgroups of $A$: Since $K$ is algebraically closed, we can choose lattices $M^{1/p^n}\subseteq E$ such that $[p]:E\rightarrow E$ restricts to isomorphisms $M^{1/p^{n+1}}\rightarrow M^{1/p^n}$ for all $n$.
 	
-	We will use this definition only via the following equivalent description:
-	\begin{lemma}
-		Existence and choice of a constant partial anticanonical $\Gamma_0(p^\infty)$-structure on $A$ are equivalent to existence and choice of lattices $M^{1/p^n}\subseteq E$ defined over $K$ such that $[p]:E\rightarrow E$ restricts to isomorphisms $M^{1/p^{n+1}}\rightarrow M^{1/p^n}$ for all $n$.
-	\end{lemma}
-	\begin{proof}
-		Given lattices $M^{1/p^{n+1}}$ as in the lemma, we obtain a split partial anticanonical $\Gamma_0(p^\infty)$ structure by setting $D_n:=M^{1/p^{n+1}}/M$. This is because any such lattice gives a splitting of the short exact sequence $0\rightarrow E[p^n]\rightarrow A[p^n]\rightarrow M/M^p \rightarrow 0$.
+	\begin{remark}
+		Such a choice is equivalent to the choice of subgroups $D_n\subseteq A[p^n]$ of rank $p^{rn}$ for all $n$ such that $pD_{n+1}=D_n$ and $D_n+E[p^n]=A[p^n]$. Namely,
+		given the lattices $M^{1/p^{n+1}}$, we obtain torsion subgroups by setting $D_n:=M^{1/p^{n+1}}/M$. This is because any such lattice gives a splitting of the short exact sequence $0\rightarrow E[p^n]\rightarrow A[p^n]\rightarrow M/M^{p^n} \rightarrow 0$.
 		
-		Conversely, given subgroups $D_n\subseteq A[p^n]$ that form a partial anticanonical $\Gamma_0(p^\infty)$ structure, we recover $M^{1/p^n}$ as the kernel of $E\rightarrow A\rightarrow A/D_n$. The finite group $M^{1/p^n}/M$ is then constant if and only if $M^{1/p^n}$ is a lattice.
-	\end{proof}
+		Conversely, given subgroups $D_n\subseteq A[p^n]$ that form a partial anticanonical $\Gamma_0(p^\infty)$ structure, we recover $M^{1/p^n}$ as the kernel of $E\rightarrow A\rightarrow A/D_n$.
+		
+		One might call the choice of $D_n$ for all $n$ a partial anticanonical $\Gamma_0(p^\infty)$-structure, because if $B$ admits a canonical subgroup (that is, satisfies a condition on its Hasse invariant), the choice of a (full) anticanonical $\Gamma_0(p^\infty)$-structure on $A$ is equivalent to the choice of a partial anticanonical $\Gamma_0(p^\infty)$-structure on $A$ and an anticanonical $\Gamma_0(p^\infty)$-structure on $B$. Note however that $A$ always has a partial anticanonical subgroup even if $B$ does not have a canonical subgroup.
+		
+		Note that in the case of $K$ perfectoid but not necessarily algebraically closed, one can still carry out the constructions in the following using partial anticanonical $\Gamma_0(p^\infty)$-structures, whereas the lattices $M^{1/p^n}$ might not be defined over $K$.
+	\end{remark}
 	
-		
-	\begin{assumption}\label{assumption that points of D_n are defined over K}
-		From now on we will assume that $A$ admits a constant partial anticanonical $\Gamma_0(p^\infty)$-structure. Let us fix a choice of such a structure, that is we choose
-		 lattices $M^{1/p^n}$ defined over $K$ that map isomorphically to $M$ under $[p^n]$.
-	\end{assumption}
-		
-		The quotient $A/D_n = E/M^{1/p^n}$ is then another abelian variety over $K$ and the quotient map $E/M\rightarrow E/M^{1/p^n}$ is an isogeny of degree $p^{2gn}$  through which  $[p^n]:A\rightarrow A$ factors: 
+	Following the remark, denote by $D_n$ the torsion subgroup $M^{1/p^n}/M\subseteq A$. The quotient $A/D_n = E/M^{1/p^n}$ is then another abelian variety over $K$ and the quotient map $E/M\rightarrow E/M^{1/p^n}$ is an isogeny of degree $p^{2gn}$  through which  $[p^n]:A\rightarrow A$ factors: 
 		\begin{center}
 			\begin{equation}\label{factorisation of [p] over E/M}
 			\begin{tikzcd}
@@ -855,7 +847,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 		\subsection{Constructing a limit of the vertical tower}
 		
 		Our first step is to show that the tower on the right has a perfectoid tilde-limit.
-		Recall from Lemma~\ref{an admissible cover of A by cuboids of E} that $E/M$ can be covered by admissible open subspaces $E_1,\dots,E_k\subseteq E$ which map isomorphically onto an admissible open via $E\to E/M$. Denote by $E_i^{1/p^n}\subseteq E$ the pullback along $[p^n]:E\rightarrow E$. Also denote by $E_{ij}^{1/p^n}\subseteq E$ the pullback of $E_{ij}$. Because of our assumption, we can then reconstruct the space $E/M^{1/p^n}$ from the $E_i^{1/p^n}$ as follows:
+		Recall from Lemma~\ref{an admissible cover of A by cuboids of E} that $E/M$ can be covered by admissible open subspaces $E_1,\dots,E_k\subseteq E$ which map isomorphically onto an admissible open via $E\to E/M$. Denote by $E_i^{1/p^n}\subseteq E$ the pullback along $[p^n]:E\rightarrow E$. Also denote by $E_{ij}^{1/p^n}\subseteq E$ the pullback of $E_{ij}$. We can then reconstruct the space $E/M^{1/p^n}$ from the $E_i^{1/p^n}$ as follows:
 		\begin{lemma}\label{compatible cuboid charts for the tower over E/M}
 			\leavevmode
 			\begin{enumerate}
@@ -872,7 +864,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 				\label{transform-glue-cover-tikzpicture}
 			\end{figure}
 		\begin{proof}
-		The first part follows because the map on the left of diagram~\ref{F-tower for E/M} is an isomorphism. The second follows from pulling back the $E_i$ along $E/M^{1/p^n}\rightarrow E/M$, using that the diagram commutes.	We thus obtain an admissible cover by cuboids $E_1^{1/p^n},\dots,E_k^{1/p^n}$ of $E/M^{1/p^n}$. The glueing maps that can be used to reconstruct $E/M^{1/p^n}$ by glueing along subspaces $E_{ij}^{1/p^n}$ then exist by the second part of Lemma~\ref{an admissible cover of A by cuboids of E}: Note that we can apply Lemma~\ref{an admissible cover of A by cuboids of E} also to $E/M^{1/p^n}$ because of Assumption~\ref{assumption that points of D_n are defined over K}.
+		The first part follows because the map on the left of diagram~\ref{F-tower for E/M} is an isomorphism. The second follows from pulling back the $E_i$ along $E/M^{1/p^n}\rightarrow E/M$, using that the diagram commutes.	We thus obtain an admissible cover by cuboids $E_1^{1/p^n},\dots,E_k^{1/p^n}$ of $E/M^{1/p^n}$. The glueing maps that can be used to reconstruct $E/M^{1/p^n}$ by glueing along subspaces $E_{ij}^{1/p^n}$ then exist by the second part of Lemma~\ref{an admissible cover of A by cuboids of E} applied to $E/M^{1/p^n}$.
 		
 		Finally, in order to see that one can glue together the map $[p]:E/M^{1/p^n}\rightarrow E/M$ from the $E_i^{1/p^n}$, use that intersection of cuboids are again cuboids, and so $E_{ij}^{1/p^n}$ is a disjoint union of cuboids. It then follows from Lemma~\ref{pullback of cuboid is cuboid} that $E_{ij}$ pulls back under $[p]$ to the intersection $E_{ij}^{1/p^n}\subseteq E/M^{1/p^n}$. That $[p]$ commutes with the glueing maps is clear because we know from diagram (\ref{factorisation of [p] over E/M}) that $[p]:E\rightarrow E$ descends to a morphism $[p]:E/M^{1/p^n}\rightarrow E/M$.
 		\end{proof}
@@ -887,12 +879,12 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 		\end{proof}
 	 
 	\subsection{Constructing a limit of the horizontal tower}
-	In order to construct a tilde-limit for $\varprojlim A$, we can now use that the horizontal maps in diagram~(\ref{p-multiplication tower of E/M splits into vertical and horizontal tower}) are all finite \'etale.
+	In order to construct a tilde-limit for $\varprojlim A$, we can now use that the horizontal maps in diagram~(\ref{p-multiplication tower of E/M splits into vertical and horizontal tower}) are all finite \'etale. They are even finite covering maps, in the following sense:
 	\begin{lemma}\label{horizontal map is covering map}
-		For any $0\leq m\leq n$, the preimage of $E_i^{1/p^n}$ from Lemma~\ref{compatible cuboid charts for the tower over E/M} under the horizontal map $v^m:E/M^{1/p^{m}}\rightarrow E/M^{1/p^n}$ is isomorphic to $p^{r(n-m)}$ disjoint copies of $E_i^{1/p^n}$. More canonically, it can be described as the isomorphic image of $D_n/D_{m}\times E_i^{1/p^n}$ under the multiplication on the abelian variety $E/M^{1/p^n}$.
+		For any $0\leq m\leq n$, the preimage of $E_i^{1/p^n}$ from Lemma~\ref{compatible cuboid charts for the tower over E/M} under the horizontal map $v^m:E/M^{1/p^{m}}\rightarrow E/M^{1/p^n}$ is isomorphic to $p^{r(n-m)}$ disjoint copies of $E_i^{1/p^n}$. More canonically, it can be described as the isomorphic image of $M^{1/p^n}/M^{1/p^m}\times E_i^{1/p^m}$ under the multiplication map $E/M^{1/p^m}\times E/M^{1/p^m}\rightarrow E/M^{1/p^m}$.
 	\end{lemma}
 	\begin{proof}
-		By the first part of Lemma~\ref{compatible cuboid charts for the tower over E/M}, we know that the preimage of $E_i^{1/p^n}$ under the projection $E\rightarrow E/M^{1/p^n}$ is a disjoint union of translates of $E_i^{1/p^n}$ by $M^{1/p^{n}}$. The result then follows because $M^{1/p^{n}}/M^{1/p^{m}} = D_n/D_m =  \underline{(\mathbb Z/p^{n-m}\mathbb Z)^r}$.
+		By the first part of Lemma~\ref{compatible cuboid charts for the tower over E/M}, we know that the preimage of $E_i^{1/p^n}$ under the projection $E\rightarrow E/M^{1/p^n}$ is a disjoint union of translates of $E_i^{1/p^n}$ by $M^{1/p^{n}}$. The result then follows because $M^{1/p^{n}}/M^{1/p^{m}} =  \underline{(\mathbb Z/p^{n-m}\mathbb Z)^r}$.
 	\end{proof}
 	We also record the following immediate consequence:
 	
@@ -943,21 +935,26 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	\begin{equation}\label{proetale tower in the vertical limit}
 	\dots \xrightarrow{v}E/M^{1/p^\infty}\xrightarrow{v} E/M^{1/p^\infty}\xrightarrow{v} E/M^{1/p^\infty}
 	\end{equation}
-	which we think of as being a kind of vertical ``limit'' of diagram~\ref{p-multiplication tower of E/M splits into vertical and horizontal tower}. One can always take the limit of such a tower, as the following Lemma asserts:
-	\begin{lemma}\label{proetale over perfectoid has perfectoid tilde limit}
-		Let $X$ be a perfectoid space and $(X_i)_{i\in I}$ be a pro-\'etale cover of $X$. Then there is a perfectoid space $X_\infty$ such that
-		\[X_\infty \sim \varprojlim_{i \in I}X_i\]
+	which we think of as being a kind of vertical ``limit'' of diagram~\ref{p-multiplication tower of E/M splits into vertical and horizontal tower}. 
+	In characteristic $0$ one can now argue that relative to $A$ this is a pro-\'etale object over the pro-\'etale perfectoid object $E/M^{1/p^\infty}$, and thus again perfectoid by Lemma~4.6 of \cite{p-adic Hodge}. But due to the lemmas, one can give a more elementary argument, that also says something about the local geometry of the limit: 
+	\begin{lemma}
+		There is a perfectoid space $D_\infty$ such that $D_\infty \sim \varprojlim_{[p]} D_n$ is the tilde limit of $\dots \xrightarrow{[p]}D_{n+1}\xrightarrow{[p]}D_n\rightarrow\dots$.   It is uncanonically isomorphic to the constant group $\underline {\mathbb Z_p^r}$
 	\end{lemma}
 	\begin{proof}
-		This follows from Lemma~4.6 of \cite{p-adic Hodge} and the discussion in the paragraph before it.
+		This is clear because all $D_n$ are isomorphic to $\underline {\mathbb Z_p/p^{rn}\mathbb Z}$.
+	\end{proof}
+	\begin{proposition}\label{horizontal limit of vertical limit}
+	There exists a perfectoid space $(E/M^{1/p^\infty})_\infty$ such that $(E/M^{1/p^\infty})_\infty \sim \varprojlim_{v}(E/M^{1/p^\infty})$. Moreover, the projection map $\pi:(E/M^{1/p^\infty})_\infty\rightarrow E/M^{1/p^\infty}$ is an infinite covering map, that is every point of $E/M^{1/p^\infty}$ has an open neighbourhood $U$ such that $\pi^{-1}(U)$ is isomorphic to $D_\infty \times U$,  a disjoint union of infinitely many copies of $U$.
+	\end{proposition}
+	\begin{proof}
+	By Lemma~\ref{horizontal etale map pulls back to vertical limit}, the preimage of $E_i^{1/p^\infty}$ under $v^m$ of $E/M^{1/p^\infty}$ is isomorphic to $D_m\times E_i^{1/p^\infty}$. The restriction of the tower to $E_i^{1/p^\infty}$ therefore has limit $D_\infty \times E_i^{1/p^\infty}$, which is a disjoint union of perfectoid spaces and therefore clearly perfectoid. 
+	
+	One can then glue using the same arguments as in the proof of Proposition~\ref{explicit construction of vertical tilde-limit}.
 	\end{proof}
 	
-	We conclude from this that the tower in equation~\ref{proetale tower in the vertical limit} has a perfectoid limit $(E/M^{1/p^\infty})_\infty$. 
-	
 	\subsection{The diagonal tower: proof of the main theorem}
-	We want to show that this space is in fact a tilde-limit of the $[p]$-multiplication tower. In other words, this says that the horizontal tilde-limit of the vertical tilde-limits in diagram~\ref{p-multiplication tower of E/M splits into vertical and horizontal tower} is also a diagonal tilde-limit.
-	However, while it follows immediately from Proposition~2.4.5 of \cite{SW} that $(E/M^{1/p^\infty})_\infty$ is universal for maps of perfectoid spaces $Y$ into the inverse system $\varprojlim_{[p]}E/M$, it does not follow immediately from the definition that it is also the tilde-limit of this inverse system. The problem is that for a space $X$ to be a tilde-limit $X\sim \varprojlim_{[p]}X_i$, it suffices for $X$ to satisfy a property locally on some affinoid cover. But it is not clear a priori how such affinoid covers of $(E/M^{1/p^\infty})_\infty$ and  $(E/M^{1/p^\infty})$ are related.
-	In our situation, on the other hand, we can use that we have a good understanding of the local behaviour of the maps in the tower in terms of the cuboids $E_i$ to solve this problem:
+	We now want to show that $(E/M^{1/p^\infty})_\infty$ is in fact a tilde-limit of the $[p]$-multiplication tower. In other words, this says that the horizontal tilde-limit of the vertical tilde-limits in diagram~\ref{p-multiplication tower of E/M splits into vertical and horizontal tower} is also a diagonal tilde-limit.
+	This isn't just a formal consequence since tilde-limits aren't limits in the category of adic spaces. But using our understanding of the local geometry of the maps in the tower in terms of cuboids, it is still easy to see:
 	
 	\begin{proposition}\label{tilde limit of tilde limits of partial towers is tilde limit of whole tower}
 		The perfectoid space  $A_\infty:=(E/M^{1/p^\infty})_\infty$ is a tilde-limit of $\varprojlim_{[p]}A$.	It is independent up to unique isomorphism of the choice of partial anticanonical $\Gamma_0(p^\infty)$-structure, but it remembers the choice as a pro-finite \'etale closed subgroup $D_\infty \subseteq A_\infty$. 
@@ -965,10 +962,9 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	\begin{proof}
 	It is clear from $(E/M^{1/p^\infty})_\infty \sim \varprojlim E/M^{1/p^\infty}$ and $(E/M^{1/p^\infty})\sim \varprojlim E/M^{1/p^n}$ that the underlying topological space is indeed isomorphic to $\varprojlim_{[p]}|E/M|$.
 
-	In order to show that it is a tilde-limit of $\varprojlim_{[p]}E/M$, it thus suffices to give an explicit cover of $(E/M^{1/p^\infty})_\infty$ by open affinoids satisfying the tilde-limit property. To this end,
-	first note that the pro-\'etale system $D_n=M^{1/p^n}/M$ over $M/M=\operatorname{Sp}K$ under multiplication maps $[p]$ has a perfectoid tilde-limit $D_\infty$ by Lemma~\ref{proetale over perfectoid has perfectoid tilde limit}. Since the $D_n$ are all constant perfectoid groups $\cong \mathbb \underline{(\mathbb Z/p^r\mathbb Z)^n}$, it is clear that $D_\infty$ is isomorphic to the constant perfectoid group $\underline{\mathbb Z_p^r}$.
+	In order to show that it is a tilde-limit of $\varprojlim_{[p]}E/M$, it thus suffices to give an explicit cover of $(E/M^{1/p^\infty})_\infty$ by open affinoids satisfying the tilde-limit property. 
 	
-	Recall that by construction of $(E/M^{1/p^\infty})$ we have a cover of $E/M$ by open subsets $E_i$ that pull back to perfectoid open subspaces $E_i^{1/p^\infty}$ for which $E_i^{1/p^\infty}\sim \varprojlim E_i^{1/p^n}$. Moreover, by the second part of Proposition~\label{horizontal etale map pulls back to vertical limit} we know that the pullback of $E_i^{1/p^\infty}$ to $(E/M^{1/p^\infty})_\infty$ is the disjoint union of $|\mathbb Z_p^r|$ copies of $E_i^{1/p^\infty}$, which more precisely can be described as $D_\infty \times E_i^{1/p^\infty}$. But it is clear from Lemma~\ref{preimage of E_i under p^n is disjoint copies} that the image of any such isomorphic copy of $E_i^{1/p^\infty}\hookrightarrow   (E/M^{1/p^\infty})_\infty$ in the inverse system $\dots\xrightarrow{[p]}A\xrightarrow{[p]} A$ is isomorphic to the inverse system $\dots\rightarrow E_i^{1/p}\rightarrow E_i$. Since $E_i^{1/p^\infty}\sim \varprojlim E_i^{1/p^n}$, this shows that $(E/M^{1/p^\infty})_\infty$ is locally the tilde-limit of the $[p]$-tower on $A$ as desired.
+	Recall that by construction of $(E/M^{1/p^\infty})$ we have a cover of $E/M$ by open subsets $E_i$ that pull back to perfectoid open subspaces $E_i^{1/p^\infty}$ for which $E_i^{1/p^\infty}\sim \varprojlim E_i^{1/p^n}$. Moreover, by the second part of Proposition~\label{horizontal etale map pulls back to vertical limit} we know that the pullback of $E_i^{1/p^\infty}$ to $(E/M^{1/p^\infty})_\infty$ is $D_\infty \times E_i^{1/p^\infty}$.  But it is clear from Lemma~\ref{preimage of E_i under p^n is disjoint copies} that the image of any such isomorphic copy of $E_i^{1/p^\infty}\hookrightarrow   (E/M^{1/p^\infty})_\infty$ in the inverse system $\dots\xrightarrow{[p]}A\xrightarrow{[p]} A$ is isomorphic to the inverse system $\dots\rightarrow E_i^{1/p}\rightarrow E_i$. Since $E_i^{1/p^\infty}\sim \varprojlim E_i^{1/p^n}$, this shows that $(E/M^{1/p^\infty})_\infty$ is locally the tilde-limit of the $[p]$-tower on $A$ as desired.
 	
 	That $A_\infty$ is independent of the $\Gamma_0(p^\infty)$-structure up to unique isomorphism is a consequence of the universal property of the perfectoid tilde-limit. That $D_\infty$ can be described as a closed subgroup of $A_\infty$ is then clear from the local description of $A_\infty$ as $D_\infty \times E_i^{1/p^\infty}$.
 	\end{proof}
@@ -979,8 +975,9 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	
 	
 	\section{Limits of the covering maps}
+	The aim of this section is to study the geometry of $(E/M)_\infty$. We retain notation and assumptions from the last chapter.
 	
-	Over the course of the proof, we have used three different towers: The tower $\dots \rightarrow E\xrightarrow{[p]} E$, the tower $\dots \rightarrow E/M \xrightarrow{[p]} E/M$ and the tower $\dots \rightarrow E/M^{1/p} \xrightarrow{[p]} E/M$ (for the latter we also needed the additional Assumption~\ref{assumption that points of D_n are defined over K}). The three are related by covering maps which fit into a commutative diagram of towers
+	Over the course of the proof of Theorem~\ref{main theorem}, we have used three different towers: The tower $\dots \rightarrow E\xrightarrow{[p]} E$, the tower $\dots \rightarrow E/M \xrightarrow{[p]} E/M$ and the tower $\dots \rightarrow E/M^{1/p} \xrightarrow{[p]} E/M$. The three are related by covering maps which fit into a commutative diagram of towers
 	\begin{center}
 		\begin{tikzcd}
 			E \arrow[d, "{[p]}"] \arrow[r] & E/M \arrow[d, "{[p]}"] \arrow[r] & E/M^{1/p^{n+1}} \arrow[d, "{[p]}"] \\
@@ -989,7 +986,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	\end{center}
 	As we have seen in the last sections, all three towers have perfectoid tilde-limits, that we have denoted by $E_\infty$, $A_\infty$ and $E/M^{1/p^\infty}$.
 	
-	By Proposition~\ref{perfectoid tilde limit is perfectoid group in a functorial way} the map $\pi:E\rightarrow A=E/M$ in the limit induces a natural group homomorphism $\iota:E_\infty \rightarrow A_\infty$. A similar universal property argument shows that we obtain a natural group homomorphism $A_\infty \rightarrow E/M^{1/p^\infty}$. In this section we want to study these morphisms more closely. Throughout we are going to retain Assumption~\ref{assumption that points of D_n are defined over K}.
+	By Proposition~\ref{perfectoid tilde limit is perfectoid group in a functorial way} the map $\pi:E\rightarrow A=E/M$ in the limit induces a natural group homomorphism $\iota:E_\infty \rightarrow A_\infty$. A similar universal property argument shows that we obtain a natural group homomorphism $A_\infty \rightarrow E/M^{1/p^\infty}$. In this section we want to study these morphisms more closely.
 	
 	We start with the case of $E\rightarrow E/M^{1/p^\infty}$:
 	\begin{proposition}\label{the morphism E->E/M^{1/p^n} in the limit}
@@ -1039,31 +1036,19 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	
 	The case of $\iota:A_\infty \rightarrow E/M^{1/p^\infty}$ is similar:
 	\begin{proposition}\label{the morphism A->E/M^{1/p^n} in the limit}
-		The subgroups $D_n= M^{1/p^n}/M\subseteq A$ in the limit give rise to a perfectoid group $D_\infty\sim \varprojlim_{[p]}D_n$ which is a subgroup $D_\infty \subseteq A_\infty$ in a natural way.
-		If we assume Assumption~\ref{assumption that points of D_n are defined over K}, this fits into a short exact sequence of perfectoid groups
+		The subgroup $D_\infty \subseteq A_\infty$ gives rise to a short exact sequence
 		\[0\rightarrow D_\infty \rightarrow A_\infty\rightarrow E/M^{1/p^\infty}\rightarrow 0.\]
 	
 	\end{proposition}
 	\begin{proof}
-		The tilde-limit $D_\infty$ of the pro-\'etale tower $\varprojlim_{[p]}D_n$ exists by Lemma~\ref{proetale over perfectoid has perfectoid tilde limit}. The group structure and the map to $A_\infty$ follow from the universal property as usual. Under assumption~\ref{assumption that points of D_n are defined over K} is is easy to see that $D_\infty$ is in fact non-canonically isomorphic to the constant group $\underline{\mathbb Z_p^r}$.
-		
-		We can now argue similarly as in the proof of the last Proposition: at finite level we obtain short exact sequences 
-		\begin{center}
-			\begin{tikzcd}
-				D_{n+1} \arrow[equal,r] \arrow[d] & M^{1/p^{n+1}}/M \arrow[r] \arrow[d, "{[p]}"] & E/M \arrow[r] \arrow[d, "{[p]}"] & E/M^{1/p^{n+1}} \arrow[d, "{[p]}"] \\
-				D_n \arrow[r,equal] & M^{1/p^{n}}/M \arrow[r] & E/M \arrow[r] & E/M^{1/p^n}
-			\end{tikzcd}
-		\end{center}
-		The preimages of $E_i$ under these maps are
-		\[D_n\times E_i^{1/p^n}\rightarrow E_i^{1/p^n} \]
-		by Lemma~\ref{preimage of E_i under p^n is disjoint copies}. In the limit the pullback is then
+		By Proposition~\ref{horizontal limit of vertical limit} the pullback of $E_i^{1/p^\infty}$ under $A_\infty \rightarrow E/M^{1/p^\infty}$ is
 		\[D_\infty \times E_i^{1/p^\infty}\rightarrow E_i^{1/p^\infty} \]
-		which shows that $A_\infty \rightarrow E/M^{1/p^\infty}$ is a $D_\infty$-torsor. As in the last proof, this implies that the sequence in the Proposition is a short exact sequence.
+		which shows that $A_\infty\rightarrow E/M^{1/p^\infty}$ is a $D_\infty$-torsor. As in the last proof, this implies that the sequence in the Proposition is a short exact sequence.
 	\end{proof}
 	
-	Finally, we consider the case of $\iota:E\rightarrow A=E/M$. While the limits of the last two towers were fibre bundles again, the map $\iota$ shows quite a different behaviour and on the opposite is an injective group homomorphism. While this may seem strange at first, it is actually what one might expect following the intuition of the following example:
+	Finally, we consider the case of $\iota:E\rightarrow A=E/M$. While the limits of the last two towers were fibre bundles again, the map $\iota$ shows quite a different behaviour and on the opposite is an injective group homomorphism. This may seem strange at first, but it is actually what one might expect following the intuition of the following example:
 	\begin{remark}
-		To illustrate why this phenomenon occurs, consider the following inverse system of abstract groups:
+		Consider the following inverse system of abstract groups:
 	\begin{center}
 	\begin{tikzcd}[row sep = {0.65cm,between origins}]
 		& \arrow[dd,dotted] & \arrow[dd,dotted] & \arrow[dd,dotted] &  \\
@@ -1073,7 +1058,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 		0 \arrow[r] & \mathbb Z \arrow[r] & \mathbb R \arrow[r] & \mathbb R/\mathbb Z \arrow[r] & 0
 	\end{tikzcd}
 	\end{center}
-	While at infinite level the maps on the right are all covering maps, in the inverse limit the homological algebra of $\varprojlim$ produces a long exact sequence
+	While at finite level the maps on the right are all covering maps, in the inverse limit the homological algebra of $\varprojlim$ produces a long exact sequence
 	\begin{center}
 	\begin{tikzcd}
 		0 \arrow[r] & 0 \arrow[r] & \mathbb R \arrow[r] & \varprojlim_{[p]}\mathbb R/\mathbb Z \arrow[r] & \varprojlim^1_{[p]}\mathbb Z = \mathbb Z_p/\mathbb Z\arrow[r] & 0.
@@ -1082,7 +1067,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	So in the limit the covering map becomes the kernel of a map to $\mathbb Z_p/\mathbb Z$.
 	\end{remark}
 	
-	For perfectoid groups the homological algebra argument of course doesn't apply in the same way. Nevertheless, if we retain Assumption~\ref{assumption that points of D_n are defined over K}, we can again use the explicit covers of the last section to show that the situation is very similar as in the remark:
+	For perfectoid groups the homological algebra argument of course doesn't apply in the same way. Nevertheless, we can again use the explicit covers of the last section to show that the situation is very similar as in the remark:
 	\begin{proposition}\label{the morphism E->A in the limit}
 		The homomorphism $\iota:E_\infty \rightarrow A_\infty$ is an open and closed immersion. Moreover, there is a natural map $\rho:A_\infty \rightarrow D_\infty/M_\infty$ which is a quotient of $\iota$ in the category of perfectoid groups. Here $D_\infty/M_\infty$ is a constant group which is uncanonically isomorphic to the constant perfectoid group $\underline{(\mathbb Z_p/\mathbb Z)^r}$. We thus obtain a short exact sequence of perfectoid groups
 		\[0\rightarrow E_\infty \rightarrow A_\infty \rightarrow D_\infty/M_\infty\rightarrow 0\]
@@ -1137,7 +1122,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	\begin{equation}\label{uncanonical splitting map of embedding of E_inf into A_inf}
 	\bigsqcup_{i\in D_\infty/M_\infty} x_i\cdot E_\infty\xrightarrow{\sim} A_\infty
 	\end{equation}
-	which is an isomorphism because it is bijective and each $x_iE_\infty \hookrightarrow A_\infty$ is an open immersion. Moreover, since $\iota:E_\infty\rightarrow A_\infty$ is a group homomorphism, the multiplication $A_\infty\times A_\infty \rightarrow A_\infty$ locally on the left hand side of this isomorphism restricts to a morphism
+	which is an isomorphism because it is bijective on points and each $x_iE_\infty \hookrightarrow A_\infty$ is an open immersion. Moreover, since $\iota:E_\infty\rightarrow A_\infty$ is a group homomorphism, the multiplication $A_\infty\times A_\infty \rightarrow A_\infty$ locally on the left hand side of this isomorphism restricts to a morphism
 	\begin{center}
 	\begin{tikzcd}
 		E_\infty\times E_\infty \arrow[d, "m"] \arrow[r,"{(\cdot x_i,\cdot x_j)}","\sim"'] & x_iE_\infty\times x_jE_\infty \arrow[d] \arrow[r] & A_\infty\times A_\infty \arrow[d, "m"] \\
@@ -1156,7 +1141,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	That the short exact sequence is split on the level of perfectoid spaces follows from the projection maps $\bigsqcup_{i\in D_\infty/M_\infty} x_i\cdot E_\infty \rightarrow E_\infty$, which depend on the uncanonical choice of a set-theoretic section of the map of abstract groups underlying $D_\infty \rightarrow D_\infty/M_\infty$.
 	\end{proof}
 	
-	We summarise all this in the following:
+	We summarise this chapter in the following diagram:
 	\begin{theorem}
 		We have a commutative diagram with short exact rows and columns
 		\begin{center}
@@ -1174,7 +1159,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 		
 	\end{theorem}
 	\begin{proof}
-		The diagram of short exact sequences follow from Proposition~\ref{the morphism E->E/M^{1/p^n} in the limit}, Proposition~\ref{the morphism A->E/M^{1/p^n} in the limit} and Proposition~\ref{the morphism E->A in the limit}.
+		The diagram of short exact sequences follows from Proposition~\ref{the morphism E->E/M^{1/p^n} in the limit}, Proposition~\ref{the morphism A->E/M^{1/p^n} in the limit} and Proposition~\ref{the morphism E->A in the limit}.
 		That the square is Cartesian is an immediate consequence of the universal property of the kernel.
 		That the square satisfies the pushout universal property can be verified using the isomorphism in equation~\ref{uncanonical splitting map of embedding of E_inf into A_inf}.
 		
