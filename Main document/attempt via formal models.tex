@@ -101,18 +101,24 @@ We then construct a tilde-limit of $\varprojlim_{[p]} A$ from $E_\infty$: By Ray
 The approach via explicit covers finally gives an explicit description of $A_\infty$ in terms of open subspaces of $E_\infty$ which we use in the last section to study the induced map $E_\infty\rightarrow A_\infty$. We show that $E_\infty$ is in fact an open subspace of $A_\infty$ and thus obtain a second description of $A_\infty$ as a quotient group $(D_\infty\times E_\infty)/M_\infty$.
 
 
-{\color{blue} Notation:} 
-
-	Throughout we will study rigid analytic spaces over $K$. If such a space is obtained from a $K$-scheme $X$ via rigid-analytification $X\mapsto X^{\operatorname{an}}$, we will often denote both by the same symbol $X$. Also, we will make no distinction between rigid analytic spaces and their corresponding adic spaces.
-
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %some hack to hide the acknowledgements in the toc
+\section*{Notation}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
+	Let $p$ be a prime.
+	Throughout we let $K$ denote a perfectoid field that is either $p$-adic or of characteristic $p$. Let $\mathcal O_K$ be the ring of integers and fix a pseudo-uniformiser $\pi\in \mathcal O_K$.
+	We will work with adic spaces over $(K,\mathcal O_K)$ in the sense of \cite{SW}, and in particular, we use the notion of perfectoid spaces and tilde-limits defined in \S2 of \cite{SW}. Nevertheless, all adic spaces considered will actually be honest adic spaces, and thus adic spaces in the sense of Huber.
 	
-	Throughout we denote by $\mathfrak X$ a topologically finite type formal scheme over $\operatorname{Spf} R$ with the $\pi$-adic topology. Let $\mathfrak X_\eta \rightarrow \operatorname {Sp} K$ be its rigid generic fibre, and let $\tilde{X}=\mathfrak X\times_{\operatorname{Spf}\mathcal O_K}\operatorname{Spf}\mathcal O_K/\pi$ be its special, considered as a scheme over $\operatorname{Spec}\mathcal O_K/\pi$.
-{\color{red} Add definition of tilde limits}
+	When we consider rigid analytic spaces over $K$, we will make no distinction between rigid space and their corresponding adic spaces.
+	In particular, any cover of a rigid space will be a cover as an adic space, and therefore be an admissible cover in the sense of rigid analytic geometry. If a rigid space is obtained from a $K$-scheme $X$ via rigid-analytification $X\mapsto X^{\operatorname{an}}$, we will often denote both by the same symbol $X$.
+
+	For a formal scheme $\mathfrak X$ over $\operatorname{Spf}(\mathcal O_K)$ with the $\pi$-adic topology, we denote by $\mathfrak X_\eta$ its adic generic fibre.
+	We denote by
+	$\tilde{X}=\mathfrak X\times_{\operatorname{Spf}\mathcal O_K}\operatorname{Spf}\mathcal O_K/\pi$ its special fibre, considered as a scheme over $\operatorname{Spec}\mathcal O_K/\pi$.
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %some hack to hide the acknowledgements in the toc
 \section*{Acknowledgements}
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
-This work started as a project group at the Arizona Winter School 2017, and we would like to thank everyone involved for organising such a great conference. In particular, we would like to thank Bhargav Bhatt for setting the project on which this article is based, for his guidance and for his constant encouragement. 
+This work started as a project group at the Arizona Winter School 2017, and we would like to thank everyone involved in organising such a great conference. In particular, we would like to thank Bhargav Bhatt for setting the project on which this article is based, for his guidance and for his constant encouragement. 
 
 This work was supported by the Engineering and Physical Sciences Research Council [EP/L015234/1]. 
 During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Centre for Doctoral Training in Geometry and Number Theory (The London School of Geometry and Number Theory), University College London.
@@ -121,13 +127,7 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 %%      Section 2
 %%%%%%%%%%%%	
 	\section{Tilde-limits of rigid groups}
-	
-	
-
-	Let $p$ be a prime. Let $K$ be a complete non-archimedean field that is either an extension of $\mathbb Q_p$ or of characteristic $p$. Denote by $\mathcal O_K$ the ring of integers and let $\pi$ denote a pseudo-uniformiser. 
-	
-	
-	Let $G$ be a rigid group, that is a group object in the category of rigid spaces. One way that rigid groups arise is by analytification of finite type group schemes over $K$: We will be most interested in the analytification of an abelian variety $A$, but other important cases are the analytifications  $\mathbb G_a^{\operatorname{an}}$ of $\mathbb G_a$ and $\mathbb G_m^{\operatorname{an}}$ of $\mathbb G_m$, or more generally of tori $T$ over $K$. A second source of rigid groups are generic fibres of topologically finite type formal group schemes over $\mathcal O_K$. A third important example is the covering space $E$ in the sense of Raynaud of an abelian variety with semi-stable reduction.
+	Let $G$ be a rigid group over $K$, that is a group object in the category of rigid spaces over $K$. One way that rigid groups arise is by analytification of finite type group schemes over $K$: We will be most interested in the analytification of an abelian variety $A$, but other important cases are the analytifications  $\mathbb G_a^{\operatorname{an}}$ of $\mathbb G_a$ and $\mathbb G_m^{\operatorname{an}}$ of $\mathbb G_m$, or more generally of tori $T$ over $K$. A second source of rigid groups are generic fibres of topologically finite type formal group schemes over $\mathcal O_K$. A third important example is the covering space $E$ in the sense of Raynaud of an abelian variety with semi-stable reduction.
 	
 	This note is concerned with the following question:
 	
@@ -165,7 +165,7 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	This means that one can always construct the limit of an inverse system of rigid spaces $\mathcal X_i$ if it arises from an inverse system of formal schemes $\mathfrak X_i$ with affine transition maps. This is precisely what Scholze uses in \cite{torsion} in order to construct the space $\mathcal X_{\Gamma_0(p^\infty)}(\epsilon)_a$ (see the proof of Corollary III.2.19 in \cite{torsion}).
 	\end{remark}
 	
-	If one starts with an inverse system of rigid spaces $\mathcal X_i$, a straightforward strategy to construct ``the" tilde limit $\varprojlim \mathcal X_i$ is thus to look for formal models $\mathfrak X_i$, that is formal schemes over $\operatorname{Spf} \mathcal O_K$ such that $\mathcal X_i = (\mathfrak X_i)_\eta$, as well as affine formal models $\phi_{ji}:\mathfrak X_j\rightarrow \mathfrak X_i$ of the transition maps. If such data exists, Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} produces a tilde-limit $\mathcal X \sim \varprojlim \mathcal X_i$. Here we follow the following standard terminology:
+	If one starts with an inverse system of rigid spaces $\mathcal X_i$, a straightforward strategy to construct a tilde limit $\varprojlim \mathcal X_i$ is thus to look for formal models $\mathfrak X_i$, that is formal schemes over $\operatorname{Spf} \mathcal O_K$ such that $\mathcal X_i = (\mathfrak X_i)_\eta$, as well as affine formal models $\phi_{ji}:\mathfrak X_j\rightarrow \mathfrak X_i$ of the transition maps. If such data exists, Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} produces a tilde-limit $\mathcal X \sim \varprojlim \mathcal X_i$. Here we follow the following standard terminology:
 	\begin{definition}
 		\begin{enumerate}
 			\item Let $\mathcal X$ be a rigid space over $K$. Then a \textbf{formal model} of $\mathcal X$ is an admissible topologically finite type formal scheme $\mathfrak X$ over $\mathcal O_K$ together with an isomorphism of its generic fibre $\mathfrak X_\eta \xrightarrow{\sim} \mathcal X$ (which is often suppressed from notation).
@@ -181,18 +181,8 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 		
 	\end{definition}	
  
-	The theory of Raynaud's formal models explains under which circumstances formal models of rigid spaces and their maps exist. We need the following definition:
-	
-	\begin{definition}[\cite{Bosch lectures}, Def 8.2.12]
-	A topological (resp G-topological) space $X$ is called \textbf{quasi-paracompact} if there exists an open (resp admissible open) cover $\mathfrak U$ of $X$ such that
-	\begin{itemize}
-		\item each $U\in \mathfrak U$ is quasi-compact and
-		\item the cover $\mathfrak U$ is of finite type, that is for each $U_i \in \mathfrak U$ there are only finitely many $U_j \in \mathfrak U$ such that $U_i\cap U_j\ne\emptyset$.
-	\end{itemize}
-	For instance, the spaces $\mathbb G_a^{\operatorname{an}}$ and $\mathbb G_m^{\operatorname{an}}$ are not quasi-compact, but they are quasi-paracompact since they can be covered using families of annuli that are admissible covers of finite type. Similarly, one should be able to show (replacing annuli by intersections of Laurent domains and Weierstrass domains) that if $X$ is any quasi-compact space and $S\subseteq X$ is a Zariski-closed subset, then $X\setminus S$ is quasi-paracompact.
-	\end{definition}
-		
-	The main result of Raynaud's theory of formal models is then:
+	The theory of Raynaud's formal models says that under the mild assumption that the rigid spaces are quasi-paracompact,
+	one can always find formal models of the spaces, and formal models of morphisms exist after formal blow up of the source:
 	
 	\begin{theorem}[\cite{Bosch lectures}, section 8.4]\label{Raynaud theory main theorem}
 		\leavevmode
@@ -211,7 +201,8 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 		\end{enumerate}
 	\end{theorem}
 	
-	The theorem implies that given an inverse system ($\mathcal X_i,\phi_{ij})$ of rigid spaces, one can always choose formal models $\mathfrak X_i$ and by successive admissible blow-ups while going along the inverse system one can also find models for the $\phi_{ij}$. If it is possible to do this in such a way that transition maps are affine, this way one always obtains a construction of $G_\infty$. More precisely, we can formalise this as follows:
+	The theorem implies that given an inverse system ($\mathcal X_i,\phi_{ij})$ of rigid spaces, one can always choose formal models $\mathfrak X_i$ and by successive admissible blow-ups while going along the inverse system one can also find models for the $\phi_{ij}$. 
+	If it is possible to do this in such a way that transition maps are affine, one thereby obtains a construction of $G_\infty$. More precisely, we can formalise this as follows:
 	
 	\begin{definition}
 		For a rigid analytic group $G$, we call \textbf{$[p]$-model tower} the data of:
@@ -237,10 +228,9 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\begin{proposition}
 		Let $G$ be a rigid analytic group. Then if $G$ has a $[p]$-model tower, there exists a space $G_\infty$ such that $G_\infty \sim \varprojlim_{[p]}G$.
 	\end{proposition}
-	
+	For example, for any formal group $\mathfrak G$ for which $[p]$ is affine, the $[p]$-multiplication tower of $\mathfrak G$ gives rise to a $[p]$-model tower of the generic fibre $\mathfrak G_\eta$. 
 	\subsection{A condition ensuring that the tilde-limit is perfectoid}
-	
-	First we consider the case where $G=A$ is an abelian variety with good reduction. Slightly more generally, we have
+	In order to see what conditions ensure that a $[p]$-model tower is perfectoid, we look at the following example:
 	\begin{proposition}\label{limit exists and is perfectoid: commutative formal group case}
 		Assume that $K$ is perfectoid. Let $\mathfrak G$ be a flat commutative formal group scheme of topologically finite type over $\mathcal O_K$ for which the p-multiplication map $[p]:\mathfrak G\rightarrow \mathfrak G$ is affine. Let $G = \mathfrak G_\eta$ be the rigid group obtained on the generic fibre. Then $G_\infty$ exists and is perfectoid.
 	\end{proposition}
@@ -360,16 +350,16 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 %%%%%%%%%%%%	
 	\section{Formal models for tori}
 	
-	Let $K$ be perfectoid. In this section we want to show that for a split rigid torus $T$ over $K$, a tilde-limit $T_\infty$ exists and is perfectoid. We do this by exhibiting a $[p]$-$F$-model of $T$.
+	In this section we want to show that for a split rigid torus $T$ over $K$, a tilde-limit $T_\infty$ exists and is perfectoid. We do this by exhibiting a $[p]$-$F$-model of $T$.
 	
-	As a preparation, we consider the torus $\mathbb G_m^{\operatorname{an}}$ over $K$. Recall that it arises from rigid analytification of the affine torus $\mathbb G_m$ over $K$. Note however that $\mathbb G_m^{\operatorname{an}}$ is not affinoid (and not even quasi-compact). It contains the generic fibre of the $p$-adic completion of $\mathbb G_m$ as an open subspace. If we see $\mathbb G_m^{\operatorname{an}}$ as the rigid affine line with origin removed, this subspace $\widehat{\mathbb G}_m$ can be identified with the open annulus of radius 1. In other words, on the level of points it corresponds to $\mathcal O_K^\times \subseteq K^\times$.
+	As a preparation, we consider the torus $\mathbb G_m^{\operatorname{an}}$ over $K$. Recall that it arises from rigid analytification of the affine torus $\mathbb G_m$ over $K$. Note however that $\mathbb G_m^{\operatorname{an}}$ is not affinoid (and not even quasi-compact). It contains the generic fibre of the $p$-adic completion of $\mathbb G_m$ as an open subspace. If we see $\mathbb G_m^{\operatorname{an}}$ as the rigid affine line with the origin removed, this subspace $\widehat{\mathbb G}_m$ can be identified with the open annulus of radius 1. In other words, on the level of points it corresponds to $\mathcal O_K^\times \subseteq K^\times$.
 	
 	Finally, recall that for every $x\in K^\times$ we have a translation map
 	\[\mathbb G_m^{\operatorname{an}}\xrightarrow{x\cdot} \mathbb G_m^{\operatorname{an}}\]
 	that is an isomorphism of rigid spaces sending the point $1$ to $x$.
 	
 	\subsection{A family of explicit covers}
-	We briefly recall how $\mathbb G_m^{\operatorname{an}}$ is constructed: The following is inspired by \cite{Bosch lectures}, \S 9.2, although we choose slightly different constructions. Throughout we use the following shorthand notation: for any $a\in K$ we write
+	We briefly recall how $\mathbb G_m^{\operatorname{an}}$ is constructed: The following is inspired by \cite{Bosch lectures}, \S 9.2, although we choose slightly different constructions. Throughout we use the following shorthand notation: For any $a\in K$ we write
 	\[K\langle X,a/X\rangle = K\langle X,Z\rangle/(X\cdot Z - a). \]
 	
 	Let $q \in K^\times$ with $|q|\leq 1$. Consider the annulus $\mathcal B(q,1)$ of radii $|q|$ and $1$ inside $\mathbb A_K^{\operatorname{an}}$:
@@ -378,7 +368,7 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\[\mathcal B(1,q) = \operatorname{Sp}(L_{q}),\quad \text{ where } L_{q} = K\langle X/q,1/X\rangle\]
 	where $K\langle X/q\rangle$ denotes the ring of those power series $f=\sum c_nX^m\in K[[X]]$ for which $|c_n/q|\to 0$ for $n\to \infty$. In particular, we have isomorphisms
 	 \[K\langle X',q^{-1}/X'\rangle\cong K\langle X/q,1/X\rangle,\quad X'\mapsto q^{-1}X.\]
-	One can now construct $\mathbb G_m$ as follows: Choose sequences $a_n,b_n\in K^\times$ with $a_0=1=b_0$ such that $|a_n|<|a_{n-1}|<...<1$ and $|a_n| \to 0$ and similarly $|b_n|>|b_{n-1}|>...>1$ and $|b_n| \to \infty$. Then one can glue the annuli $\mathcal B(a_n,1)$ and $\mathcal B(1,b_n)$ using the following maps:
+	One can now construct $\mathbb G_m^{\operatorname{an}}$ as follows: Choose sequences $a_n,b_n\in K^\times$ with $a_0=1=b_0$ such that $|a_n|<|a_{n-1}|<...<1$ and $|a_n| \to 0$ and similarly $|b_n|>|b_{n-1}|>...>1$ and $|b_n| \to \infty$. Then one can glue the annuli $\mathcal B(a_n,1)$ and $\mathcal B(1,b_n)$ using the following maps:
 	\begin{equation}\label{torus explicit cover glue map 1}
 	\begin{alignedat}{2}
 	\mathcal B(a_{n},1)&\hookleftarrow&& \mathcal B(a_{n-1},1)\\
@@ -429,12 +419,13 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	The case of~(\ref{torus explicit [p] map 2}) is very similar.
 	
 	\subsection{A family of formal models}
-	Recall that we have constructed a cover $\mathfrak U_q$ of $\mathbb G_m^{\operatorname{an}}$ depending on a choice of $q\in K^\times$ with $|q|<1$. The affinoid subspaces $\mathcal B(q^n,1)$ that we have used for this admit natural formal models: Namely, consider the $\mathcal O_K$-algebra
+	At this point we have constructed a cover $\mathfrak U_q$ of $\mathbb G_m^{\operatorname{an}}$ depending on a choice of $q\in K^\times$ with $|q|<1$. 
+	The affinoid subspaces $\mathcal B(q^n,1)$ that we have used for this admit natural formal models: Namely, consider the $\mathcal O_K$-algebra
 	\[L_q^\circ := \mathcal O_K\langle X,Z\rangle/(XZ-q).\]
 	This is clearly of topologically finite type over $\mathcal O_K$. It is moreover flat as an $\mathcal O_K$-algebra (this should follow from Lemma 8.2.1 in \cite{Bosch lectures}). For the same reason (or by $L_{q^{-1}} \cong L_q$) we see that \[L_{q^{-1}}^\circ := \mathcal O_K\langle X',Z\rangle/(X'Z-q)\] is a flat topologically finite type $\mathcal O_K$-algebra. Consequently, we have flat formal models 
 	\begin{alignat*}{4}
 		\mathfrak B(q,1)&:=&& \operatorname{Spf}(L_{q}^\circ), &\quad&\mathfrak B(q,1)_\eta &=& \mathcal B(q,1)\\ 
-		\mathfrak B(1,q)&:=&& \operatorname{Spf}(L_{q^{-1}}^\circ), &\quad&\mathfrak  B(1,q)_\eta &=& \mathcal B(1,q)
+		\mathfrak B(1,q)&:=&& \operatorname{Spf}(L_{q^{-1}}^\circ), &\quad&\mathfrak  B(1,q)_\eta &=& \mathcal B(1,q).
 	\end{alignat*}
 	For the glueing maps~(\ref{torus explicit cover glue map 1}) and (\ref{torus explicit cover glue map 2}) it is clear from $a_n/a_{n-1} = b_{n-1}/b_n = q$ that these extend to glueing maps $\mathfrak B(q^n,1)\hookleftarrow \mathfrak B(q^{n-1},1)$ and $\mathfrak B(1,q^{-n})\hookleftarrow \mathfrak B(1,q^{-(n-1)})$. We conclude:
 
@@ -461,7 +452,8 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\begin{proof}
 		Since $K$ is perfectoid, we can find $q\in K^\times$ such that $|q|<1$ for which there exist arbitrary $p^n$-th roots. We choose such a $q$ and roots $q^{1/p^n}$ for all $n$. Then the two Propositions above combine to show that 
 		\[\dots \xrightarrow{[\mathfrak p]} \mathfrak G_{q^{1/p^2}}\xrightarrow{[\mathfrak p]} \mathfrak G_{q^{1/p}}\xrightarrow{[\mathfrak p]} \mathfrak G_q\]
-		is a $[p]$-$F$-model tower. Proposition~\ref{existence of p-F-model tower implies perfectoid} then gives the desired space $(\mathbb G_m^{\operatorname{an}})_\infty$ and shows that it is perfectoid.
+		is a $[p]$-$F$-model tower.
+		By Proposition~\ref{existence of p-F-model tower implies perfectoid} we obtain a perfectoid space $(\mathbb G_m^{\operatorname{an}})_\infty$ as desired.
 	\end{proof}
 	
 	\subsection{The action of $\overline{T}$}
@@ -478,7 +470,7 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	
 	The same arguments as in the last section show that the map described in~(\ref{torus multiplication map}) has a flat formal model
 	\[\mathfrak B(a,1)\times \mathfrak B(b,1)\rightarrow \mathfrak B(ab,1).\]
-	This does \textit{not} mean that multiplication has a formal model $\mathfrak G\times \mathfrak G\rightarrow \mathfrak G$. Indeed, the chosen description has different covers on source and target which in the formal case give rise to different formal schemes (the inversion map $i:\mathbb G_m^{\operatorname{an}}\rightarrow \mathbb G_m^{\operatorname{an}}$ on the other hand does have a formal model). Nevertheless, if we take $a=1$ in the above , we see that we do have an action of the torus $\overline{T}:=\mathfrak B(1,1)$ on each of $\mathfrak B(b,1)$ and $\mathfrak B(1,b)$. Using the formal models from the last section, we conclude:
+	This does \textit{not} mean that multiplication has a formal model $\mathfrak G\times \mathfrak G\rightarrow \mathfrak G$. Indeed, the chosen description has different covers on source and target which in the formal case give rise to different formal schemes (the inversion map $i:\mathbb G_m^{\operatorname{an}}\rightarrow \mathbb G_m^{\operatorname{an}}$ on the other hand does have a formal model). Nevertheless, if we take $a=1$ in the above, we see that we do have an action of the torus $\overline{T}:=\mathfrak B(1,1)$ on each of $\mathfrak B(b,1)$ and $\mathfrak B(1,b)$. Using the formal models from the last section, we conclude:
 	
 	\begin{proposition}\label{action on formal model of torus}
 		For any $q\in K^\times$ with $|q|<1$, the formal torus $\overline{T}:=\mathfrak B(1,1)$ has a natural action on $\mathfrak G_q$ via a map
@@ -496,7 +488,7 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\end{proof}
 	
 	\subsection{The case of general tori}
-	By taking products everywhere, all of the statements in this section immediately generalises to split tori:
+	By taking products everywhere, all of the statements in this section immediately generalise to split tori:
 	\begin{corollary}\label{torus has formal models}
 		Let $T$ be a split torus over $K$ of the form $T=(\mathbb G_m^{\operatorname{an}})^d$. Then for any $q\in K^\times$ with $|q|<1$ the formal scheme $\mathfrak T_q := (\mathfrak G_q)^d$ is a formal model of $T$. If there is a $p$-th root $q^{1/p}\in K$, the $p$-multiplication map has a formal model $[\mathfrak p]:\mathfrak T_{q^{1/p}}\rightarrow \mathfrak T_{q}$ that locally on polyannuli is of the form $[\mathfrak p]:\mathfrak B(q^{1/p},1)^d\rightarrow \mathfrak B(q,1)^d$. Moreover this map reduces mod p to the relative Frobenius morphism.
 	\end{corollary}
@@ -555,7 +547,7 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 		This is proved in Proposition A.2.5 in~\cite{rigid geometry of curves}, where it is fomulated in terms of the group $\operatorname{Ext}(B,T)$. Also see \cite{BL}, \S 1.
 	\end{proof}
 	
-	This Lemma suggest that instead of considering Raynaud extensions from the abelian category viewpoint, one should consider them as fibre bundles of formal schemes with structure group $T$, or more precisely as principal $T$-bundles of formal schemes, which are also called $T$-torsors. This is the language we want to use in the following: We will work with fibre bundles of formal schemes, rigid spaces and schemes. The main technical tool we will need is the associated fibre construction in these settings. For a rigorous  treatment of these we refer to the Appendix {\color{red} which should be replaced by a link to the relevant literature}.
+	This Lemma suggest that instead of considering Raynaud extensions from the abelian category viewpoint, one should consider them as fibre bundles of formal schemes with structure group $T$, or more precisely as principal $T$-bundles of formal schemes, which are also called $T$-torsors. This is the language we want to use in the following: We will work with fibre bundles of formal schemes, rigid spaces and schemes. The main technical tool we will need is the associated fibre construction in these settings. For a rigorous  treatment of these we refer to the Appendix.
 	
 	First of all, we note that the sequence~(\ref{formal Raynaud extension}) from the last section gives rise to a principal $\overline{T}$-bundle
 	$\overline{E}\rightarrow \overline{B}$. The fact that $E$ is obtained from $\overline{E}_\eta$ via push-out from $\overline{T}_\eta\rightarrow T$ can now conveniently be expressed in terms of the associated fibre bundle by saying that $E_\eta = T\times^{\overline{T}_\eta}\overline{E}_\eta$ in the sense of Definition~\ref{definition of Borel construction}. We have the following description of $[p]$:
