@@ -53,15 +53,15 @@
 
 
 
-\title[perfectoid limits of rigid groups via formal models]{perfectoid limits of rigid groups via formal models} 
+\title[perfectoid covers of abelian varieties]{perfectoid  covers of abelian varieties} 
 %\date{August 2017}
 \author{
 	Clifford Blakestad \and
+	Dami\`an Gvirtz \and
 	Ben Heuer \and 
-	Damian Gvirtz \and
+	Darya Schedrina \and
 	Koji Shimizu \and 
 	Peter Wear \and
-	Daria Schedrina \and
 	Zijian Yao}
 
 \begin{document}
@@ -109,8 +109,13 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	Throughout we denote by $\mathfrak X$ a topologically finite type formal scheme over $\operatorname{Spf} R$ with the $\pi$-adic topology. Let $\mathfrak X_\eta \rightarrow \operatorname {Sp} K$ be its rigid generic fibre, and let $\tilde{X}=\mathfrak X\times_{\operatorname{Spf}\mathcal O_K}\operatorname{Spf}\mathcal O_K/\pi$ be its special, considered as a scheme over $\operatorname{Spec}\mathcal O_K/\pi$.
 {\color{red} Add definition of tilde limits}
 
-{\color{red} Add acknowledgements}  	
-	
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %some hack to hide the acknowledgements in the toc
+\section*{Acknowledgements}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
+This work started as a project group at the Arizona Winter School 2017, and we would like to thank everyone involved for organising such a great conference. In particular, we would like to thank Bhargav Bhatt for setting the project on which this article is based, for his guidance and for his constant encouragement. 
+
+This work was supported by the Engineering and Physical Sciences Research Council [EP/L015234/1]. 
+During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Centre for Doctoral Training in Geometry and Number Theory (The London School of Geometry and Number Theory), University College London.
 
 %%%%%%%%%%%%
 %%      Section 2
@@ -821,7 +826,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 		Putting everything together, the $[p]$-multiplication tower splits into two towers
 		\begin{center}
 		\begin{equation}\label{p-multiplication tower of E/M splits into vertical and horizontal tower}
-		\begin{tikzcd}[column sep={1.2cm,between origins},row sep={0.8cm,between origins}]
+		\begin{tikzcd}[column sep={1.1cm,between origins},row sep={0.7cm,between origins}]
 			\ddots \arrow[rd] &  &  & \vdots \arrow[d] &  & \vdots \arrow[d] \\
 			& E/M \arrow[rr,"v"] \arrow[rrdd, "{[p]}"'] &  & E/M^{1/p} \arrow[rr,"v"] \arrow[dd,"{[p]}"] &  & E/M^{1/p^2} \arrow[dd,"{[p]}"] \\
 			&  &  &  &  &  \\
@@ -1050,7 +1055,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	\begin{remark}
 		Consider the following inverse system of abstract groups:
 	\begin{center}
-	\begin{tikzcd}[row sep = {0.65cm,between origins}]
+	\begin{tikzcd}[row sep = {0.55cm,between origins}]
 		& \arrow[dd,dotted] & \arrow[dd,dotted] & \arrow[dd,dotted] &  \\
 		&&\\
 		0 \arrow[r] & \mathbb Z \arrow[r] \arrow[dd, "{[p]}"] & \mathbb R \arrow[r] \arrow[dd, "{[p]}"] & \mathbb R/\mathbb Z \arrow[dd, "{[p]}"] \arrow[r] & 0 \\
@@ -1078,7 +1083,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 		
 		Recall that the map $\iota:E_\infty \rightarrow A_\infty$ arises by a universal property from the inverse system
 		\begin{center}
-			\begin{tikzcd}[row sep = {0.75cm,between origins}, column sep = {2cm,between origins}]
+			\begin{tikzcd}[row sep = {0.65cm,between origins}, column sep = {2cm,between origins}]
 				\vdots \arrow[d] & \vdots \arrow[d] & \vdots \arrow[d] \\
 				E \arrow[dd, "{[p]}"'] \arrow[r] & A \arrow[dd, "{[p]}"'] \arrow[r, "v"] & E/M^{1/p} \arrow[dd, "f"'] \\
 				&  &  \\
@@ -1087,7 +1092,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 		\end{center}
 		Using Lemmas~\ref{compatible cuboid charts for the tower over E/M} and \ref{horizontal map is covering map} we see that the pullback of this diagram to $E_i\subseteq E/M$ is
 		\begin{center}
-			\begin{tikzcd}[row sep = {0.85cm,between origins}, column sep = {3cm,between origins}]
+			\begin{tikzcd}[row sep = {0.75cm,between origins}, column sep = {3cm,between origins}]
 				\vdots \arrow[d] & \vdots \arrow[d] & \vdots \arrow[d] \\
 				\bigsqcup\limits_{q\in M^{1/p}} q\cdot E_i^{1/p^n} \arrow[dd] \arrow[r] & \bigsqcup\limits_{q\in D_n} E_i^{1/p^n} \arrow[dd] \arrow[r] & E_i^{1/p^n} \arrow[dd] \\
 				&  &  \\
@@ -1097,7 +1102,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 		where recall that we write $D_n$ for the group $M^{1/p^n}/M \subseteq A[p^n]$.
 		In particular, at every level in the tower over $E_i$ the maps are trivial covering maps. This means that in order to understand them we only need to keep track of the maps on index sets, which are
 		\begin{center}
-		\begin{tikzcd}[row sep = {1.5cm,between origins}, column sep = {2cm,between origins}]
+		\begin{tikzcd}[row sep = {1.2cm,between origins}, column sep = {2cm,between origins}]
 			 \arrow[d,"\cong"',dotted] &  \arrow[d, "{[p]}",dotted] & \arrow[d,dotted] \\
 			M^{1/p} \arrow[d, "{[p]}","\cong"'] \arrow[r] & M^{1/p}/M \arrow[d, "{[p]}"] \arrow[r] & 1 \arrow[d] \\
 			M \arrow[r] & 1 \arrow[r] & 1
@@ -1107,7 +1112,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 
 		Using the map $M_\infty\hookrightarrow D_\infty$ on indices, we see that the pullback to $E_i\subseteq E/M$ of the morphisms $\iota:E_\infty \rightarrow A_\infty\rightarrow E/M^{1/p^\infty}$ is given by the diagram
 		\begin{center}
-			\begin{tikzcd}[row sep = {1.4cm,between origins}, column sep = {1.4cm,between origins}]
+			\begin{tikzcd}[row sep = {1.2cm,between origins}, column sep = {1.2cm,between origins}]
 			& E_\infty \arrow[rr,"\iota"] \arrow[dd] &  & A_\infty \arrow[rr] \arrow[dd] &  & E/M^{1/p^\infty} \arrow[dd] \\
 			\bigsqcup\limits_{M_\infty} E_i^{1/p^\infty} \arrow[dd] \arrow[rr] \arrow[ru, hook] &  & \bigsqcup\limits_{D_\infty} E_i^{1/p^\infty} \arrow[dd] \arrow[rr] \arrow[ru, hook] &  & E_i^{1/p^\infty} \arrow[dd] \arrow[ru, hook] &  \\
 			& E \arrow[rr] &  & A \arrow[rr] &  & E/M \\
@@ -1145,7 +1150,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	\begin{theorem}
 		We have a commutative diagram with short exact rows and columns
 		\begin{center}
-			\begin{tikzcd}[column sep = {2cm,between origins}]
+			\begin{tikzcd}[column sep = {1.8cm,between origins}]
 				& 0 \arrow[d] & 0 \arrow[d] &  &  \\
 				0 \arrow[r] & M_\infty \arrow[d] \arrow[d] \arrow[r] & E_\infty \arrow[d] \arrow[r] & E/M^{1/p^\infty} \arrow[d,equal] \arrow[r] & 0 \\
 				0 \arrow[r] & D_\infty \arrow[r] \arrow[d] & A_\infty \arrow[d] \arrow[r] & E/M^{1/p^\infty} \arrow[r] & 0 \\
