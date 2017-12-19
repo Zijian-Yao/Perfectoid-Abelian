@@ -933,7 +933,10 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\dots \xrightarrow{v}E/M^{1/p^\infty}\xrightarrow{v} E/M^{1/p^\infty}\xrightarrow{v} E/M^{1/p^\infty}
 	\end{equation}
 	which we think of as being a kind of vertical ``limit'' of diagram~\ref{p-multiplication tower of E/M splits into vertical and horizontal tower}. 
-	In characteristic $0$ one can now argue that relative to $A$ this is a pro-\'etale object over the pro-\'etale perfectoid object $E/M^{1/p^\infty}$, and thus again perfectoid by Lemma~4.6 of \cite{p-adic Hodge}. But due to the lemmas, one can give a more elementary argument, that also says something about the local geometry of the limit: 
+	
+	It is clear at this point that the limit of this tower exists, even as a categorical limit of adic spaces: Since $\pi$-adically completed direct limit of perfectoid $\mathcal O_K$-algebras are again perfectoid, any affinoid tower of perfectoid spaces has a perfectoid limit. The categorical limit is then in particular a tilde limit (the condition on the underlying sets can be checked using the argument of Lemma 6.13.(ii) in \cite{perfectoid IHES}). The affinoid case implies the result for the above tower by a glueing argument.
+	
+	Nevertheless, we now want to give a slightly more explicit construction of this limit that also says something about its local geometry. We first observe:
 	\begin{lemma}
 		There is a perfectoid space $D_\infty$ such that $D_\infty \sim \varprojlim_{[p]} D_n$ is the tilde limit of $\dots \xrightarrow{[p]}D_{n+1}\xrightarrow{[p]}D_n\rightarrow\dots$.   It is uncanonically isomorphic to the constant group $\underline {\mathbb Z_p^r}$
 	\end{lemma}
@@ -941,7 +944,8 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 		This is clear because all $D_n$ are isomorphic to $\underline {\mathbb Z_p/p^{rn}\mathbb Z}$.
 	\end{proof}
 	\begin{proposition}\label{horizontal limit of vertical limit}
-	There exists a perfectoid space $(E/M^{1/p^\infty})_\infty$ such that $(E/M^{1/p^\infty})_\infty \sim \varprojlim_{v}(E/M^{1/p^\infty})$. Moreover, the projection map $\pi:(E/M^{1/p^\infty})_\infty\rightarrow E/M^{1/p^\infty}$ is an infinite covering map, that is every point of $E/M^{1/p^\infty}$ has an open neighbourhood $U$ such that $\pi^{-1}(U)$ is isomorphic to $D_\infty \times U$,  a disjoint union of infinitely many copies of $U$.
+	There exists a perfectoid space $(E/M^{1/p^\infty})_\infty$ such that \[(E/M^{1/p^\infty})_\infty \sim \varprojlim_{v}(E/M^{1/p^\infty}).\]
+	 Moreover, the projection map $\pi:(E/M^{1/p^\infty})_\infty\rightarrow E/M^{1/p^\infty}$ is an infinite covering map, that is every point of $E/M^{1/p^\infty}$ has an open neighbourhood $U$ such that $\pi^{-1}(U)$ is isomorphic to $D_\infty \times U$,  a disjoint union of infinitely many copies of $U$.
 	\end{proposition}
 	\begin{proof}
 	By Lemma~\ref{horizontal etale map pulls back to vertical limit}, the preimage of $E_i^{1/p^\infty}$ under $v^m$ of $E/M^{1/p^\infty}$ is isomorphic to $D_m\times E_i^{1/p^\infty}$. The restriction of the tower to $E_i^{1/p^\infty}$ therefore has limit $D_\infty \times E_i^{1/p^\infty}$, which is a disjoint union of perfectoid spaces and therefore clearly perfectoid. 
@@ -1450,7 +1454,6 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 		\bibitem{FvdP}
 		Jean Fresnel, Marius van der Put
 		\textit{Rigid Analytic Geometry and its Applications}
-		
 		
 		\bibitem{rigid geometry of curves} 
 		Werner L\"utkebohmert
