@@ -505,7 +505,7 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 %%%%%%%%%%%%
 %%      Section 4
 %%%%%%%%%%%%
-	\section{Raynaud extensions as principal bundles of formal and rigid spaces}
+	\section{Raynaud extensions as principal bundles of formal and rigid spaces}\label{Raynaud extensions as principal bundles of formal and rigid spaces}
 	As the next step towards studying the $p$-multiplication tower of an abelian variety, we now look at the case of rigid groups arising from the Raynaud extensions associated to semi-stable abelian varieties over a non-archimedean complete field $K$. For simplicity we will also assume that $K$ is algebraically closed.
 	While we expect that our main theorem still holds over any perfectoid field, it is easier to work in the algebraically closed case since this simplifies the theory of Raynaud uniformisation, in particular Lemma~\ref{formal Raynaud sequence is locally split} below.
 	
@@ -1204,7 +1204,7 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 			\item For every two $U_i,U_j\in \mathfrak U$ with intersection $U_{ij}$, the commutative diagram
 			\begin{center}
 				\begin{tikzcd}
-					F\times U_{ij} \arrow[r, "\varphi_i"] \arrow[rd, "p_2"] & E|_{U_{ij}} \arrow[d, "\pi"] & F\times U_{ij} \arrow[ld] \arrow[l, "\varphi_j"'] \\
+					F\times U_{ij} \arrow[r, "\varphi_i"] \arrow[rd, "p_2"] & E|_{U_{ij}} \arrow[d, "\pi"] & F\times U_{ij} \arrow[ld, "p_2"] \arrow[l, "\varphi_j"'] \\
 					& U_{ij} & 
 				\end{tikzcd}
 			\end{center}
@@ -1217,12 +1217,12 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\end{definition}
 	
 	\begin{example}
-		For the short exact sequence $0\rightarrow \overline{T}\rightarrow \overline{E}\xrightarrow{\pi} B\rightarrow 0$ from the last section, $\overline{E}\xrightarrow{\pi} B$ defines a principal $\overline{T}$-bundle by Lemma~\ref{formal Raynaud sequence is locally split}. Moreover, for any formal open subscheme $U\subseteq B$, the map $E|_U\rightarrow U$ is still a principal $\overline{T}$-bundle. This is what we mean when we say that the notion of principal $\overline{T}$-bundles is better suited for studying $E$ locally on $B$ than the notion of short exact sequences is.
+		For the short exact sequence $0\rightarrow \overline{T}\rightarrow \overline{E}\xrightarrow{\pi} \overline{B}\rightarrow 0$ from Section~\ref{Raynaud extensions as principal bundles of formal and rigid spaces}, $\overline{E}\xrightarrow{\pi} \overline{B}$ defines a principal $\overline{T}$-bundle by Lemma~\ref{formal Raynaud sequence is locally split}. Moreover, for any formal open subscheme $U\subseteq \overline{B}$, the map $E|_U\rightarrow U$ is still a principal $\overline{T}$-bundle. This is what we mean when we say that the notion of principal $\overline{T}$-bundles is better suited for studying $\overline{E}$ locally on $\overline{B}$ than the notion of short exact sequences.
 	\end{example}
 	
 	The morphism $\phi_{ij}$ from condition (b) is fully determined by the morphism $\psi_{ij}:U_{ij}\rightarrow T$. By a glueing argument, one shows:
 	\begin{lemma}\label{equivalent characterisation of principal $T$-bundle}
-		Suppose we are given formal schemes $F$ and $B$ and a formal group scheme $T$ with an action on $F$. Then fibre bundles $\pi:E\rightarrow B$ with fibre $F$ and structure group $T$ are equivalent to the data (up to refinement) of a cover $\mathfrak U$ by formal open subschemes and morphisms $\psi_{ij}:U_{ij}\rightarrow T$ for all $U_i,U_j\in \mathfrak U$ that satisfy the cocycle condition $\psi_{jk}\cdot \psi_{ij}=\psi_{ik}$, by which we mean that the following diagram commutes:
+		Suppose we are given formal schemes $F$ and $B$ and a formal group scheme $T$ with an action on $F$. Then fibre bundles $\pi:E\rightarrow B$ with fibre $F$ and structure group $T$ are equivalent to the data (up to refinement) of a cover $\mathfrak U$ of $B$ by formal open subschemes and morphisms $\psi_{ij}:U_{ij}\rightarrow T$ for all $U_i,U_j\in \mathfrak U$ that satisfy the cocycle condition $\psi_{jk}\cdot \psi_{ij}=\psi_{ik}$, by which we mean that the following diagram commutes:
 		
 		\begin{center}\begin{equation}		\label{cocycle condition of fibre bundle}
 			\begin{tikzcd}
@@ -1235,7 +1235,7 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	
 	In order to define the category of  fibre bundles, we also need the following:
 	\begin{lemma}
-		Let $E\rightarrow B$ be a fibre bundle with fibre $F$ and structure group $T$. With notations like in Definition~\ref{definition principal T-bundle} we have a natural $T$-actions on $F\times U_{i}$ when we let $T$ act trivially on $U_{i}$. These actions glue together to a $T$-action on $E$.
+		Let $E\rightarrow B$ be a fibre bundle with fibre $F$ and structure group $T$. With notations like in Definition~\ref{definition principal T-bundle} we have a natural $T$-action on $F\times U_{i}$ for each $i$ when we let $T$ act trivially on $U_{i}$. These actions glue together to a $T$-action on $E$.
 	\end{lemma}
 	\begin{proof}
 		This is immediate from condition (b).
@@ -1248,17 +1248,17 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 				E \arrow[r, "\pi"] & B
 			\end{tikzcd}
 		\end{center}
-		in which the morphism $f_E$ is also $T$-linear (we often abbreviate this by writing $f:E'\rightarrow E$). We thus obtain the category of fibre bundles over $T$ that we denote by $\mathbf{FormFibBun}_T$ and the full subcategory of principle $T$-bundles, that we denote by $\mathbf{FormPrinBun}_T$.
+		in which the morphism $f_E$ is also $T$-linear (we often abbreviate this by writing $f:E'\rightarrow E$). We thus obtain the category of fibre bundles over $T$ that we denote by $\mathbf{FormFibBun}_T$ and the full subcategory of principal $T$-bundles, that we denote by $\mathbf{FormPrinBun}_T$.
 	\end{definition}
 	
-	In the case of principal $T$-bundles, this data can be given as follows: Let $\mathfrak U$ be a cover over which $E$ is trivialised. Then we can always refine $U$ in such a way that for all $U\in \mathfrak{U}$ the fibre bundle $E'$ is trivial over $U':=f_B^{-1}(U)$. The induced map $f_E:T\times U\rightarrow T\times U'$ is then $T$-linear and thus can be reconstructed from the induced map
-	\[\theta:U'=1\times U'\hookrightarrow T\times U\xrightarrow{f_E} T\times U\xrightarrow{p_1} T.\]
+	In the case of principal $T$-bundles, this data can be given as follows: Let $\mathfrak U$ be of $B$ a cover over which $E$ is trivialised. Then we can always refine $U$ in such a way that for all $U\in \mathfrak{U}$ the fibre bundle $E'$ is trivial over $U':=f_B^{-1}(U)$. The induced map $f_E:T\times U'\rightarrow T\times U$ is then $T$-linear and thus can be reconstructed from the induced map
+	\[\theta:U'=1\times U'\hookrightarrow T\times U'\xrightarrow{f_E} T\times U\xrightarrow{p_1} T.\]
 	
 	\begin{lemma}\label{equivalent characterisation of morphisms of principal T-bundles}
-		Given a morphism $f_B:B'\rightarrow B$, and using notation as above, the data of a morphism $f=(f_E,f_B)$ of principal $T$-bundles is equivalent to the data of morphisms $\theta_i: U'_i\rightarrow T$ for all $U_i\in \mathfrak U$ such that for all $i,j$ th following diagram commutes:
+		Fix a morphism $f_B:B'\rightarrow B$ and fix notation as above. Then the data of a morphism $f=(f_E,f_B)$ of principal $T$-bundles is equivalent to the data of a cover $\mathfrak{U}$ of $B$ by formal open subschemes $U_i$ and morphisms $\theta_i: U'_i=f_B^{-1}(U_i)\rightarrow T$ such that each $\theta_i$ induces a map $f_{E,i}$ such that for all $i,j$ the following diagram commutes:
 		\begin{center}
 			\begin{tikzcd}
-				T\times U'_{ij} \arrow[d, "f_E"] \arrow[r, "\phi'_{ij}"] & T\times U'_{ij} \arrow[d, "f_E"] \\
+				T\times U'_{ij} \arrow[d, "f_{E,i}"] \arrow[r, "\phi'_{ij}"] & T\times U'_{ij} \arrow[d, "f_{E,j}"] \\
 				T\times U_{ij} \arrow[r, "\phi_{ij}"] & T\times U_{ij}.
 			\end{tikzcd}
 		\end{center}
@@ -1280,20 +1280,20 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 		Let $\pi:E\rightarrow B$ be a principial $T$-bundle. Let $F$ be a formal scheme with an action by $T$. Since the data in the equivalent characterisation of Lemma~\ref{equivalent characterisation of principal $T$-bundle} is completely independent of the fibre, the morphisms $\psi_{ij}:U_{ij}\rightarrow T$ by Lemma~\ref{equivalent characterisation of principal $T$-bundle} define a fibre bundle with fibre $F$ and structure group $T$ that we denote by $F\times^T E$. This is called the \textbf{associated bundle} or Borel-Weil construction.
 	\end{definition}
 	
-	Note that in many authors in differential geometry and topology denote the associated bundle by "$F\times^T E$" instead of $F\times^T E$. In our setting, however, this is slightly confusing since we often have natural maps from $T$ to $F$ and $E$, but $F\times^T E$ is usually \textit{not} their fibre product. In fact it behaves more like a pushout, for instance in the case that $E$ comes from a short exact sequence.
+	Note that in many authors in differential geometry and topology denote the associated bundle by "$F\times_T E$" instead of $F\times^T E$. In our setting, however, this is slightly confusing since we often have natural maps from $T$ to $F$ and $E$, but $F\times^T E$ is usually \textit{not} their fibre product. In fact it behaves more like a pushout, for instance in the case that $E$ comes from a short exact sequence.
 	
 	\begin{proposition}\label{associated bundle construction is bifunctor}
 		The associated bundle construction is a bifunctor \[-\times^T-:\mathbf{FormAct}_T\times \mathbf{FormPrinBun}_T\rightarrow \mathbf{FormFibBun}_T\] 
 		from the categories of formal schemes with $T$-action $\times$ the category of principal $T$-bundles to the category of fibre bundles with structure group $T$.
 	\end{proposition}
 	\begin{proof}
-		Let $E$ and $E'$ be principal $T$-bundles and let $f:E'\rightarrow E$ be a morphism of $T$-bundles. Let $F$ and $F'$ be formal schemes with $T$-action and let $\gamma:F'\rightarrow F$ be a $T$-equivariant morphism. Then we can find compatible covers $\mathfrak U'$ of $E'$ and $\mathfrak U$ of $E$ such that locally we have diagrams like in Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles}. Then locally $F\times^T E$ and $F'\times^T E'$ are of the form $F\times U_i$ and $F'\times U'_i$ such that we obtain a natural map
-		\[F'\times U'_i\xrightarrow{(\lambda\times^T\pi)} F\times U_i, \quad (f,u)\mapsto (\lambda(f)\theta_i(u),\pi(u))\]
-		(of course this description is just a short hand for a diagram of maps, and not a description in terms of "points"). These maps glue together over the cover, since on intersection Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles} implies that we have a commutative diagram
+		Let $E$ and $E'$ be principal $T$-bundles and let $f:E'\rightarrow E$ be a morphism of $T$-bundles. Let $F$ and $F'$ be formal schemes with $T$-action and let $h:F'\rightarrow F$ be a $T$-equivariant morphism. Then we can find compatible covers $\mathfrak U'$ of $B'$ and $\mathfrak U$ of $B$ such that locally we have diagrams like in Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles}. Then locally $F\times^T E$ and $F'\times^T E'$ are of the form $F\times U_i$ and $F'\times U'_i$ such that we obtain a natural map
+		\[F'\times U'_i\xrightarrow{h\times^T f} F\times U_i, \quad (x,u)\mapsto (h(x)\theta_i(u),f_B(u))\]
+		(of course this description is just a short hand for a diagram of maps, and not a description in terms of "points"). These maps glue together over the cover, since on intersections Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles} implies that we have a commutative diagram
 		\begin{center}
 			\begin{tikzcd}
-				F'\times U'_{ij} \arrow[r, "\lambda\times^T\pi"] & F\times U_{ij} \\
-				F'\times U'_{ij} \arrow[u, "\psi'_{ij}\times \operatorname{id}"] \arrow[r, "\lambda\times^T\pi"] & F\times U_{ij} \arrow[u, "\psi_{ij}\times \operatorname{id}"'].
+				F'\times U'_{ij} \arrow[r, "h\times^T f"] & F\times U_{ij} \\
+				F'\times U'_{ij} \arrow[u, "\psi'_{ij}\times \operatorname{id}"] \arrow[r, "h\times^T f"] & F\times U_{ij} \arrow[u, "\psi_{ij}\times \operatorname{id}"'].
 			\end{tikzcd}
 		\end{center}
 		One easily checks that this is functorial in both components.
@@ -1324,11 +1324,11 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	
 	The Borel construction satisfies the following universal property:
 	\begin{lemma}\label{universal property of associated fibre construction for principal bundles}
-		Let $g:T\rightarrow S$ be a homomorphism of formal group schemes and let $E\rightarrow B$ be a principal $T$-bundle. Let $X$ be any principle $S$-bundle. Note that $X$ receives a $T$-action from $g$. Then there is a functorial one-to-one correspondence between $T$-linear morphisms $E\rightarrow X$ and morphisms of principal $S$-bundles $S\times^T E\rightarrow X$.
+		Let $g:T\rightarrow S$ be a homomorphism of formal group schemes and let $E\rightarrow B$ be a principal $T$-bundle. Let $X$ be any principal $S$-bundle. Note that $X$ receives a $T$-action from $g$. Then there is a functorial one-to-one correspondence between $T$-linear morphisms $E\rightarrow X$ and morphisms of principal $S$-bundles $S\times^T E\rightarrow X$.
 	\end{lemma}
 	
 	\subsection{The semi-linear case}
-	We later want to consider morphisms of fibre bundles that are induces from morphisms of short exact sequences. In this situation. in order to describe the morphism of the kernels, we need to incorporate morphisms of the structure group into the notion of morphisms of fibre bundles. For this we need semi-linear group actions.
+	We later want to consider morphisms of fibre bundles that are induced from morphisms of short exact sequences. In this situation, in order to describe the morphism of the kernels, we need to incorporate morphisms of the structure group into the notion of morphisms of fibre bundles. For this we need semi-linear group actions.
 	\begin{definition}
 		Let $T$ and $S$ be formal group schemes and let $g:T\rightarrow S$ be a homomorphism. Let $X$ and $Y$ be formal schemes with actions $m:T\times X\rightarrow X$ and $m:S\times Y\rightarrow Y$ respectively. Then by a $g$-linear morphism $f:X\rightarrow Y$ we mean a morphism of formal schemes such that the following diagram commutes
 		\begin{center}
@@ -1340,19 +1340,19 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\end{definition}
 	
 	\begin{definition}
-		We denote by $\mathbf{FormAct}$ the category of pairs $(T,X)$ where $T$ is a formal group scheme and $X$ is a formal scheme with $T$ action, and morphisms are pairs of $(g,f)$ where $g$ is a group homomorphism and $f$ is a $g$-linear morphism. It has a natural forgetful functor to $
+		We denote by $\mathbf{FormAct}$ the category of pairs $(T,X)$ where $T$ is a formal group scheme and $X$ is a formal scheme with $T$-action, and morphisms are pairs of $(g,f)$ where $g$ is a group homomorphism and $f$ is a $g$-linear morphism. It has a natural forgetful functor to $
 		\mathbf{FormGrp}$, the category of formal group schemes.
 	\end{definition}
 	
 	\begin{definition}
-		Let $g:T'\rightarrow T$ be a homomorphisms of formal group schemes. Let $\pi:E\rightarrow B$ be a fibre bundle with fibre $F$ and structure group $T$ and let $\pi':E'\rightarrow B'$ be a fibre bundle with fibre $F'$ and structure group $T'$ . Then a $g$-linear morphism of principal bundles is a diagram
+		Let $g:T'\rightarrow T$ be a homomorphism of formal group schemes. Let $\pi:E\rightarrow B$ be a fibre bundle with fibre $F$ and structure group $T$ and let $\pi':E'\rightarrow B'$ be a fibre bundle with fibre $F'$ and structure group $T'$ . Then a $g$-linear morphism of principal bundles is a diagram
 		\begin{center}
 			\begin{tikzcd}
 				E' \arrow[d] \arrow[d, "f_E"] \arrow[r, "\pi'"] & B' \arrow[d, "f_B"] \\
 				E \arrow[r, "\pi"] & B
 			\end{tikzcd}
 		\end{center}		
-		such that $f_E$ is $g$-linear. We denote by $\mathbf{ FormPrinBun}$ the category of fibre bundles $(E,B,\pi,T,F)$ with arrows being the morphisms of principal bundles. It has a natural forgetful functor $(E,B,\pi,T,F) \mapsto T$ to the category $\mathbf{FormGrp}$ of formal group schemes
+		such that $f_E$ is $g$-linear. We denote by $\mathbf{ FormFibBun}$ the category of fibre bundles $(E,B,\pi,T,F)$ with arrows being the morphisms of principal bundles. It has a natural forgetful functor $(E,B,\pi,T,F) \mapsto T$ to the category $\mathbf{FormGrp}$. We denote by $\mathbf{FormPrinBun}$ the full subcategory of principal bundles $(E,B,\pi,T)$.
 	\end{definition}
 	We get the natural analogue of Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles}:
 	
@@ -1379,18 +1379,18 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 		\[h\times^g f : F'\times^{T'}E'\rightarrow F\times^T E\]
 		of fibre bundles over $g$, in a way that is functorial in $h,g,f$. 
 		More precisely, the associated bundle construction is a fibered bifunctor
-		\[-\times^{-}-: \mathbf{FormAct} \times_{\mathbf{FormGrp}} \mathbf{FormPrinBun}\rightarrow \mathbf{FormBun}. \]
+		\[-\times^{-}-: \mathbf{FormAct} \times_{\mathbf{FormGrp}} \mathbf{FormPrinBun}\rightarrow \mathbf{FormFibBun}. \]
 	\end{proposition}
 	\begin{proof}
-		Let ($E$,$B$,$\pi$,$T$) and ($E'$,$B'$,$\pi'$,$T'$) be principal bundles. Let $F$ and $F'$ be formal schemes with $T$-action and $T'$ action respectively. Let $g:T\rightarrow T'$ be a group homomorphism and let $h:F'\rightarrow F$ be a $g$-equivariant morphism.
-		Let $f:E'\rightarrow E$ be a morphism of principle fibre bundles over $g$.
-		Then we can find compatible covers $\mathfrak U'$ of $E'$ and $\mathfrak U$ of $E$ such that locally we have diagrams like in Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles}. Then locally $F\times^T E$ and $F'\times^T E'$ are of the form $F\times U_i$ and $F'\times U'_i$ such that we obtain a natural map
-		\[F'\times U'_i\xrightarrow{(h\times^T\pi)} F\times U_i, \quad (x,u)\mapsto (h(x)\theta_i(u),f_\pi(u))\]
+		Let ($E$,$B$,$\pi$,$T$) and ($E'$,$B'$,$\pi'$,$T'$) be principal bundles. Let $F$ and $F'$ be formal schemes with $T$-action and $T'$-action respectively. Let $g:T\rightarrow T'$ be a group homomorphism and let $h:F'\rightarrow F$ be a $g$-equivariant morphism.
+		Let $f:E'\rightarrow E$ be a morphism of principal fibre bundles over $g$.
+		Then we can find compatible covers $\mathfrak U'$ of $B'$ and $\mathfrak U$ of $B$ such that locally we have diagrams like in Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles}. Then locally $F\times^T E$ and $F'\times^T E'$ are of the form $F\times U_i$ and $F'\times U'_i$ such that we obtain a natural map
+		\[F'\times U'_i\xrightarrow{(h\times^g f)} F\times U_i, \quad (x,u)\mapsto (h(x)\theta_i(u),f_B(u))\]
 		(as before this description is just a short hand for a diagram of maps, and not a description in terms of "points"). These maps glue together over the cover, since on intersection Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles} implies that we have a commutative diagram
 		\begin{center}
 			\begin{tikzcd}
-				F'\times U'_{ij} \arrow[r, "h\times^T\pi"] & F\times U_{ij} \\
-				F'\times U'_{ij} \arrow[u, "\psi'_{ij}\times \operatorname{id}"] \arrow[r, "h\times^T\pi"] & F\times U_{ij} \arrow[u, "\psi_{ij}\times \operatorname{id}"'].
+				F'\times U'_{ij} \arrow[r, "h\times^g f"] & F\times U_{ij} \\
+				F'\times U'_{ij} \arrow[u, "\psi'_{ij}\times \operatorname{id}"] \arrow[r, "h\times^g f"] & F\times U_{ij} \arrow[u, "\psi_{ij}\times \operatorname{id}"'].
 			\end{tikzcd}
 		\end{center}
 		More precisely, by $g$-linearity of $h$ one has
@@ -1430,7 +1430,7 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\end{remark}
 	\begin{lemma}\label{associated bundle commutes with generic fibre}
 		Let $T$ be a formal group scheme and let $\pi:E\rightarrow B$ be a principial $T$-bundle. Let $F$ be a formal scheme with an action by $T$. Then
-		\[(E\times^T B)_\eta = E_\eta\times^{T_\eta} B_\eta \]
+		\[(F\times^T E)_\eta = F_\eta\times^{T_\eta} E_\eta \]
 	\end{lemma}
 	\begin{proof}
 		This can be checked locally on any trivialising cover, where it is clear.
