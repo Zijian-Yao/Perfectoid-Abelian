@@ -59,7 +59,7 @@
 	Clifford Blakestad \and
 	Dami\`an Gvirtz \and
 	Ben Heuer \and 
-	Darya Schedrina \and
+	Daria Shchedrina \and
 	Koji Shimizu \and 
 	Peter Wear \and
 	Zijian Yao}
@@ -633,14 +633,14 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\end{proof}
 	
 	We are now ready to prove the main result of this section, namely that $E_\infty$ is perfectoid.
-	\begin{framed}
+	%\begin{framed}
 	\begin{theorem}\label{p-F-model tower exists for E}
 		Let $K$ be perfectoid. Then the $[p]$-model tower from Proposition~\ref{p-model tower exists for E}
 		\[\dots \xrightarrow{[\mathfrak p]} \mathfrak E_{q^{1/p^2}}\xrightarrow{[\mathfrak p]} \mathfrak E_{q^{1/p}}\xrightarrow{[\mathfrak p]} \mathfrak E_q\]
 		 is already a $[p]$-$F$-model tower.
 		In particular, the corresponding space $E_\infty$ is perfectoid.
 	\end{theorem}
-	\end{framed}
+	%\end{framed}
 	\begin{proof}
 	
 	It suffices to prove that for any $q\in K^\times$ with $|q|<1$ and a $p$-th root $q^{1/p}$, the map $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ upon reduction mod $p$ factors through relative Frobenius.
@@ -655,14 +655,14 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\[\tilde{\mathfrak T}_{q^{1/p}}^{(p)} \cong \tilde{\mathfrak T}_{q}\]
 	and we can identify $\tilde{\mathfrak T}_{q^{1/p}}^{(p)} = \tilde{\mathfrak T}_{q}$ in the following. The same is true for $\tilde{T}^{(p)} = \tilde{T}$.
 	
-	Since $\tilde{E}$ and $\tilde{T}$ are group schemes, the reduction of $[p]$ on them factors through the relative Frobenius maps $F_E$ and $F_E$ respectively. By functoriality of relative Frobenius ("Frobenius commutes with any map") we have a commutative diagram
+	Since $\tilde{E}$ and $\tilde{T}$ are group schemes, the reduction of $[p]$ on them factors through the relative Frobenius maps $F_E$ and $F_T$ respectively. By functoriality of relative Frobenius ("Frobenius commutes with any map") we have a commutative diagram
 	\begin{center}
 		\begin{tikzcd}
 			\tilde{E} \arrow[r, "F_{\tilde E}"] &  \tilde{E}^{(p)} \\
 			\tilde{T} \arrow[r, "F_{\tilde T}"] \arrow[u, hook] &  \tilde{T}^{(p)} \arrow[u, hook].
 		\end{tikzcd}
 	\end{center}
-	In other words, $F_{\tilde E}$ is a $F_{\tilde T}$-linear morphism of fibre bundles. Again by functoriality of Frobenius we also have a commutative diagram
+	In other words, $F_{\tilde E}$ is an $F_{\tilde T}$-linear morphism of fibre bundles. Again by functoriality of Frobenius we also have a commutative diagram
 	\begin{center}
 	\begin{tikzcd}
 	\tilde{\mathfrak T}_{q^{1/p}} \arrow[r, "F_{\tilde { \mathfrak T}}"]  & \tilde{\mathfrak T}_{q^{1/p}}^{(p)} \\
@@ -861,7 +861,9 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 				\label{transform-glue-cover-tikzpicture}
 			\end{figure}
 		\begin{proof}
-		The first part follows because the map on the left of diagram~\ref{F-tower for E/M} is an isomorphism. The second follows from pulling back the $E_i$ along $E/M^{1/p^n}\rightarrow E/M$, using that the diagram commutes.	We thus obtain an admissible cover by cuboids $E_1^{1/p^n},\dots,E_k^{1/p^n}$ of $E/M^{1/p^n}$. The glueing maps that can be used to reconstruct $E/M^{1/p^n}$ by glueing along subspaces $E_{ij}^{1/p^n}$ then exist by the second part of Lemma~\ref{an admissible cover of A by cuboids of E} applied to $E/M^{1/p^n}$.
+		The first part follows because the map on the left of diagram~\ref{F-tower for E/M} is an isomorphism. The second follows from pulling back the $E_i$ along $E/M^{1/p^n}\rightarrow E/M$, using that the diagram commutes.
+		We thus obtain an admissible cover by cuboids $E_1^{1/p^n},\dots,E_k^{1/p^n}$ of $E/M^{1/p^n}$.
+		The second part of Lemma~\ref{an admissible cover of A by cuboids of E} applied to $E/M^{1/p^n}$ then shows that $E/M^{1/p^n}$ can be reconstructed by glueing along subspaces $E_{ij}^{1/p^n}$.
 		
 		Finally, in order to see that one can glue together the map $[p]:E/M^{1/p^n}\rightarrow E/M$ from the $E_i^{1/p^n}$, use that intersection of cuboids are again cuboids, and so $E_{ij}^{1/p^n}$ is a disjoint union of cuboids. It then follows from Lemma~\ref{pullback of cuboid is cuboid} that $E_{ij}$ pulls back under $[p]$ to the intersection $E_{ij}^{1/p^n}\subseteq E/M^{1/p^n}$. That $[p]$ commutes with the glueing maps is clear because we know from diagram (\ref{factorisation of [p] over E/M}) that $[p]:E\rightarrow E$ descends to a morphism $[p]:E/M^{1/p^n}\rightarrow E/M$.
 		\end{proof}
@@ -961,7 +963,7 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 		The perfectoid space  $A_\infty:=(E/M^{1/p^\infty})_\infty$ is a tilde-limit of $\varprojlim_{[p]}A$.	It is independent up to unique isomorphism of the choice of partial anticanonical $\Gamma_0(p^\infty)$-structure, but it remembers the choice as a pro-finite \'etale closed subgroup $D_\infty \subseteq A_\infty$. 
 	\end{proposition}
 	\begin{proof}
-	It is clear from $(E/M^{1/p^\infty})_\infty \sim \varprojlim E/M^{1/p^\infty}$ and $(E/M^{1/p^\infty})\sim \varprojlim E/M^{1/p^n}$ that the underlying topological space is indeed isomorphic to $\varprojlim_{[p]}|E/M|$.
+	It is clear from $(E/M^{1/p^\infty})_\infty \sim \varprojlim_v E/M^{1/p^\infty}$ and $(E/M^{1/p^\infty})\sim \varprojlim_{[p]} E/M^{1/p^n}$ that the underlying topological space is indeed isomorphic to $\varprojlim_{[p]}|E/M|$.
 
 	In order to show that it is a tilde-limit of $\varprojlim_{[p]}E/M$, it thus suffices to give an explicit cover of $(E/M^{1/p^\infty})_\infty$ by open affinoids satisfying the tilde-limit property. 
 	
@@ -1070,9 +1072,9 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	
 	For perfectoid groups the homological algebra argument of course doesn't apply in the same way. Nevertheless, we can again use the explicit covers of the last section to show that the situation is very similar as in the remark:
 	\begin{proposition}\label{the morphism E->A in the limit}
-		The homomorphism $\iota:E_\infty \rightarrow A_\infty$ is an open and closed immersion. Moreover, there is a natural map $\rho:A_\infty \rightarrow D_\infty/M_\infty$ which is a quotient of $\iota$ in the category of perfectoid groups. Here $D_\infty/M_\infty$ is a constant group which is uncanonically isomorphic to the constant perfectoid group $\underline{(\mathbb Z_p/\mathbb Z)^r}$. We thus obtain a short exact sequence of perfectoid groups
+		The homomorphism $\iota:E_\infty \rightarrow A_\infty$ is an open and closed immersion. Moreover, there is a natural map $\rho:A_\infty \rightarrow D_\infty/M_\infty$ which is a quotient of $\iota$ in the category of perfectoid groups. Here $D_\infty/M_\infty$ is a constant group which is non-canonically isomorphic to the constant perfectoid group $\underline{(\mathbb Z_p/\mathbb Z)^r}$. We thus obtain a short exact sequence of perfectoid groups
 		\[0\rightarrow E_\infty \rightarrow A_\infty \rightarrow D_\infty/M_\infty\rightarrow 0\]
-		which is uncanonically split on the level of the underlying perfectoid spaces.
+		which is non-canonically split on the level of the underlying perfectoid spaces.
 	\end{proposition}
 	\begin{proof}
 		To see that $\iota$ is open and closed, it suffices to prove this locally. So it suffices to consider the induced map over the preimages of $E_i\subseteq A$ under the projection $A_\infty\rightarrow A$.
