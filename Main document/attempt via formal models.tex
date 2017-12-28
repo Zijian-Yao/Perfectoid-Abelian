@@ -138,7 +138,7 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\end{framed}
 	Note that if a perfectoid tilde-limit exists, it is unique with this property by Proposition~2.4.5 in \cite{SW}.
 	Our main goal will be to show that this is true for $A$ an abelian variety over a perfectoid field.
-	But before we give proves for examples of rigid groups $G$ for which a perfectoid tilde-limit exists, we first note that the second question certainly doesn't have an affirmative answer for all rigid group varieties:
+	But before we give proofs for examples of rigid groups $G$ for which a perfectoid tilde-limit exists, we first note that the second question certainly doesn't have an affirmative answer for all rigid group varieties:
 	\begin{example}
 		For the additive group $\mathbb G_a^{\operatorname{an}}$, we know that $[p]$ is an isomorphism and therefore $\varprojlim_{[p]} \mathbb G_a=\mathbb G_a$ exists (even as an actual limit in the category of adic spaces) but is certainly not perfectoid.
 	\end{example}
@@ -149,7 +149,7 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 		Let $(\mathfrak X_i,\phi_{ij})_{i\in I}$ be an inverse system of formal schemes $\mathfrak X_i$ over $\mathcal O_K$ with affine transition maps $\phi_{ij}:\mathfrak X_j\rightarrow \mathfrak X_i$. Then the inverse limit $\mathfrak X=\varprojlim \mathfrak X_i$ exists in the category of formal schemes over $\mathcal O_K$. If all the $\mathfrak X_i$ are flat formal schemes, so is $\mathfrak X$.
 	\end{lemma}
 	\begin{proof}
-	In the affine case, if the inverse system is $\operatorname{Spf} A_i$, take $A$ to be the $p$-adic completion of $\varinjlim A_i$, then  $\operatorname{Spf} A$ is the inverse limit of the $\operatorname{Spf}A_i$. In general, we can use the fact that the transition maps are affine to reduce to the affine case. 
+	In the affine case, if the inverse system is $\operatorname{Spf} A_i$, take $A$ to be the $\pi$-adic completion of $\varinjlim A_i$, then  $\operatorname{Spf} A$ is the inverse limit of the $\operatorname{Spf}A_i$. In general, we can use the fact that the transition maps are affine to reduce to the affine case. 
 	\end{proof}
 	In the situation of the lemma,  the transition maps are affine and hence quasi-compact and quasi-separated, so after passing to adic spaces, $\mathfrak X$ is also the tilde-limit  $\mathfrak X\sim \varprojlim \mathfrak X_i$ in the sense of \cite{SW}. Even better, this remains true after passing to the generic fibre $\operatorname{Spa}(K,\mathcal O_K)\rightarrow \operatorname{Spa}(\mathcal O_K,\mathcal O_K)$.
 	\begin{lemma}\label{tilde-limit from adic generic fibre of formal schemes}
@@ -165,7 +165,7 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	This means that one can always construct the limit of an inverse system of rigid spaces $\mathcal X_i$ if it arises from an inverse system of formal schemes $\mathfrak X_i$ with affine transition maps. This is precisely what Scholze uses in \cite{torsion} in order to construct the space $\mathcal X_{\Gamma_0(p^\infty)}(\epsilon)_a$ (see the proof of Corollary III.2.19 in \cite{torsion}).
 	\end{remark}
 	
-	If one starts with an inverse system of rigid spaces $\mathcal X_i$, a straightforward strategy to construct a tilde limit $\varprojlim \mathcal X_i$ is thus to look for formal models $\mathfrak X_i$, that is formal schemes over $\operatorname{Spf} \mathcal O_K$ such that $\mathcal X_i = (\mathfrak X_i)_\eta$, as well as affine formal models $\phi_{ji}:\mathfrak X_j\rightarrow \mathfrak X_i$ of the transition maps. If such data exists, Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} produces a tilde-limit $\mathcal X \sim \varprojlim \mathcal X_i$. Here we follow the following standard terminology:
+	If one starts with an inverse system of rigid spaces $\mathcal X_i$, a straightforward strategy to construct a tilde limit $\varprojlim \mathcal X_i$ is thus to look for formal models $\mathfrak X_i$, that is formal schemes over $\operatorname{Spf} \mathcal O_K$ such that $\mathcal X_i = (\mathfrak X_i)_\eta$, as well as affine formal models $\phi_{ji}:\mathfrak X_j\rightarrow \mathfrak X_i$ of the transition maps. If such data exist, Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} produces a tilde-limit $\mathcal X \sim \varprojlim \mathcal X_i$. Here we follow the following standard terminology:
 	\begin{definition}
 		\begin{enumerate}
 			\item Let $\mathcal X$ be a rigid space over $K$. Then a \textbf{formal model} of $\mathcal X$ is an admissible topologically finite type formal scheme $\mathfrak X$ over $\mathcal O_K$ together with an isomorphism of its generic fibre $\mathfrak X_\eta \xrightarrow{\sim} \mathcal X$ (which is often suppressed from notation).
@@ -363,12 +363,12 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\[K\langle X,a/X\rangle = K\langle X,Z\rangle/(X\cdot Z - a). \]
 	
 	Let $q \in K^\times$ with $|q|\leq 1$. Consider the annulus $\mathcal B(q,1)$ of radii $|q|$ and $1$ inside $\mathbb A_K^{\operatorname{an}}$:
-	\[\mathcal B(q,1) = \operatorname{Sp}(L_q),\quad \text{ where } L_q = K\langle X,q/X\rangle/a. \]
+	\[\mathcal B(q,1) = \operatorname{Sp}(L_q),\quad \text{ where } L_q = K\langle X,q/X\rangle. \]
 	Similarly, for $q\in K^\times$ with $|q|\geq 1$ one constructs the annulus $\mathcal B(1,q)$ by
 	\[\mathcal B(1,q) = \operatorname{Sp}(L_{q}),\quad \text{ where } L_{q} = K\langle X/q,1/X\rangle\]
-	where $K\langle X/q\rangle$ denotes the ring of those power series $f=\sum c_nX^m\in K[[X]]$ for which $|c_n/q|\to 0$ for $n\to \infty$. In particular, we have isomorphisms
+	where $K\langle X/q\rangle$ denotes the ring of those power series $f=\sum c_nX^m\in K[[X]]$ for which $|c_nq^n|\to 0$ for $n\to \infty$. In particular, we have isomorphisms
 	 \[K\langle X',q^{-1}/X'\rangle\cong K\langle X/q,1/X\rangle,\quad X'\mapsto q^{-1}X.\]
-	One can now construct $\mathbb G_m^{\operatorname{an}}$ as follows: Choose sequences $a_n,b_n\in K^\times$ with $a_0=1=b_0$ such that $|a_n|<|a_{n-1}|<...<1$ and $|a_n| \to 0$ and similarly $|b_n|>|b_{n-1}|>...>1$ and $|b_n| \to \infty$. Then one can glue the annuli $\mathcal B(a_n,1)$ and $\mathcal B(1,b_n)$ using the following maps:
+	One can now construct $\mathbb G_m^{\operatorname{an}}$ as follows: Choose sequences $a_n,b_n\in K^\times$ with $a_0=1=b_0$ such that $|a_n|<|a_{n-1}|<\cdots<1$ and $|a_n| \to 0$ and similarly $|b_n|>|b_{n-1}|>\cdots>1$ and $|b_n| \to \infty$. Then one can glue the annuli $\mathcal B(a_n,1)$ and $\mathcal B(1,b_n)$ using the following maps:
 	\begin{equation}\label{torus explicit cover glue map 1}
 	\begin{alignedat}{2}
 	\mathcal B(a_{n},1)&\hookleftarrow&& \mathcal B(a_{n-1},1)\\
@@ -761,7 +761,7 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\end{definition}
     
 	\begin{lemma}\label{an admissible cover of A by cuboids of E}
-	There exist finitely many admissible open cuboids $E_1,\dots,E_k\subseteq E$ which map isomorphically to $A=E/M$ and which cover $A$ admissibly. 
+	There exist finitely many admissible open cuboids $E_1,\dots,E_k\subseteq E$ which map isomorphically onto their images in $A=E/M$ and which cover $A$ admissibly. 
 	
 	One can reconstruct $A$ from any such cover by glueing $E_1,\dots,E_k$ as follows: By construction, for any $E_i$ the translates $m\cdot E_i$ by $m\in M$ are pairwise disjoint and we thus have a canonical projection $\pi$ from the union $\cup_{m\in M} (m\cdot E_i)\subseteq E$ to $E_i$.	Let $E_{ij}:=(\bigcup_{m\in M} m\cdot E_i)\cap E_j \subseteq E$. Then we glue $E_j$ to $E_i$ via the map
 	\[E_{ij}\rightarrow \bigcup_{m\in M} m\cdot E_i \xrightarrow{\pi} E_i.\]
@@ -790,7 +790,7 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\end{proof}
 
 	\subsection{The two towers}
-	In this section we want to separate the $[p]$-multiplication of $A$ into two different towers, which we think of as being a ``ramified'' tower and an ``\'etale'' tower. Of course in characteristic $0$ both towers will actually be \'etale, and these words are only meant to describe the behaviour of the maps relative the the lattice $M$.
+	In this section we want to separate the $[p]$-multiplication of $A$ into two different towers, which we think of as being a ``ramified'' tower and an ``\'etale'' tower. Of course in characteristic $0$ both towers will actually be \'etale, and these words are only meant to describe the behaviour of the maps relative to the lattice $M$.
 	
 	For the ramified tower, we first make an auxiliary choice of certain torsion subgroups of $A$: Since $K$ is algebraically closed, we can choose lattices $M^{1/p^n}\subseteq E$ such that $[p]:E\rightarrow E$ restricts to isomorphisms $M^{1/p^{n+1}}\rightarrow M^{1/p^n}$ for all $n$.
 	
@@ -857,15 +857,15 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 		\end{lemma}
 			\begin{figure}
 				\includestandalone{transform-glue-cover-tikzpicture}
-				\caption{Illustration of how $[p]:E/M^{1/p^n}\rightarrow E/M$ can be glued from the maps $E_j^{1/p^n}\rightarrow E_j$. Here $E_j$ on bottom and $E_j^{1/p^n}$ on top are represented by the grey cuboids in the middle. On the left they are embedded into $E$ whereas on the right they are considered as charts for $E/M$ and $E/M^{1/p}$.}
+				\caption{Illustration of how $[p^n]:E/M^{1/p^n}\rightarrow E/M$ can be glued from the maps $E_j^{1/p^n}\rightarrow E_j$. Here $E_j$ on bottom and $E_j^{1/p^n}$ on top are represented by the grey cuboids in the middle. On the left they are embedded into $E$ whereas on the right they are considered as charts for $E/M$ and $E/M^{1/p}$.}
 				\label{transform-glue-cover-tikzpicture}
 			\end{figure}
 		\begin{proof}
-		The first part follows because the map on the left of diagram~\ref{F-tower for E/M} is an isomorphism. The second follows from pulling back the $E_i$ along $E/M^{1/p^n}\rightarrow E/M$, using that the diagram commutes.
+		The first part follows because the map on the left of diagram~\ref{F-tower for E/M} is an isomorphism. The second follows from the pullback of the $E_i$ along $E/M^{1/p^n}\rightarrow E/M$, using that the diagram commutes.
 		We thus obtain an admissible cover by cuboids $E_1^{1/p^n},\dots,E_k^{1/p^n}$ of $E/M^{1/p^n}$.
 		The second part of Lemma~\ref{an admissible cover of A by cuboids of E} applied to $E/M^{1/p^n}$ then shows that $E/M^{1/p^n}$ can be reconstructed by glueing along subspaces $E_{ij}^{1/p^n}$.
 		
-		Finally, in order to see that one can glue together the map $[p]:E/M^{1/p^n}\rightarrow E/M$ from the $E_i^{1/p^n}$, use that intersection of cuboids are again cuboids, and so $E_{ij}^{1/p^n}$ is a disjoint union of cuboids. It then follows from Lemma~\ref{pullback of cuboid is cuboid} that $E_{ij}$ pulls back under $[p]$ to the intersection $E_{ij}^{1/p^n}\subseteq E/M^{1/p^n}$. That $[p]$ commutes with the glueing maps is clear because we know from diagram (\ref{factorisation of [p] over E/M}) that $[p]:E\rightarrow E$ descends to a morphism $[p]:E/M^{1/p^n}\rightarrow E/M$.
+		Finally, in order to see that one can glue together the map $[p^n]:E/M^{1/p^n}\rightarrow E/M$ from the $E_i^{1/p^n}$, use that intersection of cuboids are again cuboids, and so $E_{ij}^{1/p^n}$ is a disjoint union of cuboids. It then follows from Lemma~\ref{pullback of cuboid is cuboid} that $E_{ij}$ pulls back under $[p^n]$ to the intersection $E_{ij}^{1/p^n}\subseteq E/M^{1/p^n}$. That $[p^n]$ commutes with the glueing maps is clear because we know from diagram (\ref{factorisation of [p] over E/M}) that $[p^n]:E\rightarrow E$ induces a morphism $[p^n]:E/M^{1/p^n}\rightarrow E/M$.
 		\end{proof}
 		We are now ready to prove:
 		\begin{proposition}\label{explicit construction of vertical tilde-limit}
@@ -880,7 +880,7 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\subsection{Constructing a limit of the horizontal tower}
 	In order to construct a tilde-limit for $\varprojlim A$, we can now use that the horizontal maps in diagram~(\ref{p-multiplication tower of E/M splits into vertical and horizontal tower}) are all finite \'etale. They are even finite covering maps, in the following sense:
 	\begin{lemma}\label{horizontal map is covering map}
-		For any $0\leq m\leq n$, the preimage of $E_i^{1/p^n}$ from Lemma~\ref{compatible cuboid charts for the tower over E/M} under the horizontal map $v^m:E/M^{1/p^{m}}\rightarrow E/M^{1/p^n}$ is isomorphic to $p^{r(n-m)}$ disjoint copies of $E_i^{1/p^n}$. More canonically, it can be described as the isomorphic image of $M^{1/p^n}/M^{1/p^m}\times E_i^{1/p^m}$ under the multiplication map $E/M^{1/p^m}\times E/M^{1/p^m}\rightarrow E/M^{1/p^m}$.
+		For any $0\leq m\leq n$, the preimage of $E_i^{1/p^n}$ from Lemma~\ref{compatible cuboid charts for the tower over E/M} under the horizontal map $v^{n-m}:E/M^{1/p^{m}}\rightarrow E/M^{1/p^n}$ is isomorphic to $p^{r(n-m)}$ disjoint copies of $E_i^{1/p^n}$. More canonically, it can be described as the isomorphic image of $M^{1/p^n}/M^{1/p^m}\times E_i^{1/p^m}$ under the multiplication map $E/M^{1/p^m}\times E/M^{1/p^m}\rightarrow E/M^{1/p^m}$.
 	\end{lemma}
 	\begin{proof}
 		By the first part of Lemma~\ref{compatible cuboid charts for the tower over E/M}, we know that the preimage of $E_i^{1/p^n}$ under the projection $E\rightarrow E/M^{1/p^n}$ is a disjoint union of translates of $E_i^{1/p^n}$ by $M^{1/p^{n}}$. The result then follows because $M^{1/p^{n}}/M^{1/p^{m}} =  \underline{(\mathbb Z/p^{n-m}\mathbb Z)^r}$.
