@@ -57,7 +57,7 @@
 %\date{August 2017}
 \author{
 	Clifford Blakestad \and
-	Dami\`an Gvirtz \and
+	Dami\'an Gvirtz \and
 	Ben Heuer \and 
 	Daria Shchedrina \and
 	Koji Shimizu \and 
@@ -121,7 +121,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 This work started as a project group at the Arizona Winter School 2017, and we would like to thank everyone involved in organising such a great conference. In particular, we would like to thank Bhargav Bhatt for setting the project on which this article is based, for his guidance and for his constant encouragement. 
 
 This work was supported by the Engineering and Physical Sciences Research Council [EP/L015234/1]. 
-During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Centre for Doctoral Training in Geometry and Number Theory (The London School of Geometry and Number Theory), University College London.
+During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Centre for Doctoral Training in Geometry and Number Theory (The London School of Geometry and Number Theory), University College London.
 
 %%%%%%%%%%%%
 %%      Section 2
@@ -1257,7 +1257,9 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\[\theta:U'=1\times U'\hookrightarrow T\times U'\xrightarrow{f_E} T\times U\xrightarrow{p_1} T.\]
 	
 	\begin{lemma}\label{equivalent characterisation of morphisms of principal T-bundles}
-		Fix a morphism $f_B:B'\rightarrow B$ and fix notation as above. Then the data of a morphism $f=(f_E,f_B)$ of principal $T$-bundles is equivalent to the data of a cover $\mathfrak{U}$ of $B$ by formal open subschemes $U_i$ and morphisms $\theta_i: U'_i=f_B^{-1}(U_i)\rightarrow T$ such that each $\theta_i$ induces a map $f_{E,i}$ such that for all $i,j$ the following diagram commutes:
+		Fix a morphism $f_B:B'\rightarrow B$ and fix notation as above. Then the data of a morphism $f=(f_E,f_B)$ of principal $T$-bundles is equivalent to the data of morphisms $\theta_i: U'_i=f_B^{-1}(U_i)\rightarrow T$ 
+		for some cover $\mathfrak{U}$ of $B$ by formal open subschemes $U_i$ %it might be a bit misleading to say that the cover is part of the data, since there's this whole thing about categories of "trivialised fibre bundles" where one actually adds such covers to the data, which is different to what we do, but that's what I might think of when I hear "the data of a cover + ..."
+		such that each $\theta_i$ induces a map $f_{E,i}$ such that for all $i,j$ the following diagram commutes:
 		\begin{center}
 			\begin{tikzcd}
 				T\times U'_{ij} \arrow[d, "f_{E,i}"] \arrow[r, "\phi'_{ij}"] & T\times U'_{ij} \arrow[d, "f_{E,j}"] \\
@@ -1354,7 +1356,8 @@ During this work Dami\`an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 				E \arrow[r, "\pi"] & B
 			\end{tikzcd}
 		\end{center}		
-		such that $f_E$ is $g$-linear. We denote by $\mathbf{ FormFibBun}$ the category of fibre bundles $(E,B,\pi,T,F)$ with arrows being the morphisms of principal bundles. It has a natural forgetful functor $(E,B,\pi,T,F) \mapsto T$ to the category $\mathbf{FormGrp}$. We denote by $\mathbf{FormPrinBun}$ the full subcategory of principal bundles $(E,B,\pi,T)$.
+		such that $f_E$ is $g$-linear. We denote by $\mathbf{ FormFibBun}$ the category of fibre bundles $(E,B,\pi,T,F)$ with arrows being the morphisms of principal bundles. It has a natural forgetful functor \[(E,B,\pi,T,F) \mapsto T\]
+		to the category $\mathbf{FormGrp}$. We denote by $\mathbf{FormPrinBun}$ the full subcategory of principal bundles.
 	\end{definition}
 	We get the natural analogue of Lemma~\ref{equivalent characterisation of morphisms of principal T-bundles}:
 	
