@@ -263,7 +263,7 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\end{proof}
 	
 	
-	\begin{corollary}\label{tilde limit exists in the good reduction case}
+	\begin{corollary}\label{tilde limit exists and is perfectoid in the good reduction case}
 		Let $A$ be an abelian variety of good reduction over a perfectoid field $K$. Then $A_\infty$ exists and is perfectoid.
 	\end{corollary}
 	 	Before we proceed, we would like to mention two illustrative examples:
@@ -638,7 +638,7 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 		Let $K$ be perfectoid. Then the $[p]$-model tower from Proposition~\ref{p-model tower exists for E}
 		\[\dots \xrightarrow{[\mathfrak p]} \mathfrak E_{q^{1/p^2}}\xrightarrow{[\mathfrak p]} \mathfrak E_{q^{1/p}}\xrightarrow{[\mathfrak p]} \mathfrak E_q\]
 		 is already a $[p]$-$F$-model tower.
-		In particular, the corresponding space $E_\infty$ is perfectoid.
+		In particular, the space $E_\infty$ is perfectoid.
 	\end{theorem}
 	%\end{framed}
 	\begin{proof}
@@ -697,11 +697,13 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	We now want to prove the main result of this work, building on the preceding chapters:
 	
 	\begin{theorem}\label{main theorem}
-		Let $A$ be an abelian variety over a complete perfectoid field $K$. Then there is a perfectoid space $A_\infty$ such that
+		Let $A$ be an abelian variety over a complete algebraically closed perfectoid field $K$. Then there is a perfectoid space $A_\infty$ such that
 				\[A_\infty \sim \varprojlim_{[p]} A.\]
 	\end{theorem}
 	
-	The proof of Theorem~\ref{main theorem} will be completed in several steps over the following sections.  We first recall some notation:  Let $g$ be the dimension of $A$. Let $E$ be the Raynaud extension associated to $A$ from Proposition~\ref{Raynaud uniformisation}, which is an extension of a split rigid torus $T$ of rank $r$ by an abelian variety $B$ of good reduction. Moreover there is a lattice $M\subseteq E$ of rank $r$ such that $A=E/M$. Our strategy is to describe the $[p]$-multiplication tower of $E/M$ locally in terms of the $[p]$-multiplication tower of $E$.
+	We have seen this already for abelian varieties with good reduction in Corollary~\ref{tilde limit exists and perfectoid in the good reduction case}. It thus suffices to deal with the bad reduction case. Since $K$ is algebraically closed, this means that $A$ has semi-stable reduction.
+	
+	The proof of Theorem~\ref{main theorem}  in the case of semi-stable reduction will be completed in several steps over the following sections.  We first recall some notation:  Let $g$ be the dimension of $A$. Let $E$ be the Raynaud extension associated to $A$ from Proposition~\ref{Raynaud uniformisation}, which is an extension of a split rigid torus $T$ of rank $r$ by an abelian variety $B$ of good reduction. Moreover there is a lattice $M\subseteq E$ of rank $r$ such that $A=E/M$. Our strategy is to describe the $[p]$-multiplication tower of $E/M$ locally in terms of the $[p]$-multiplication tower of $E$.
 	As a first step towards this goal, in the following section, we want to give a cover of $E/M$ by subspaces of $E$ that behaves well under $[p]$-multiplication.
 	
 	\subsection{Covering $A$ by subspaces of $E$}
