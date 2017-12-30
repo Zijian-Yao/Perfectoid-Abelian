@@ -1,0 +1,499 @@
+\documentclass[11pt,oneside]{amsart}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb,amscd,epsf,verbatim}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{lscape}
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{colorlinks, citecolor=blue, filecolor=black, linkcolor=red, urlcolor=green}
+\usepackage{epstopdf}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+\usepackage{tikz-cd}
+\usepackage{color}
+\usepackage{geometry}
+\usepackage{multirow}
+
+\newcommand{\dstyle}{\displaystyle}
+
+
+%%%%%%% please do NOT add any new command 
+
+%%%%%%(unless it is absolutely necessary, in which case please send everyone an email about it.
+%%%%%%%
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{outline}{Outline of Proof}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{example}{Example}
+\newtheorem*{notation}{Notation}
+\newtheorem*{exercise}{Exercise}
+\newtheorem*{warning}{Warning}
+\newtheorem{remark}[theorem]{Remark}
+
+
+
+\title[Abelian varieties at infinite level]{Abelian varieties at infinite level} 
+\date{Spring 2017}
+\author{
+Clifford Blakestad \and
+Ben Heuer \and 
+Damian Gvirtz \and
+Koji Shimizu \and 
+Peter Wear \and
+Daria Schedrina \and
+Zijian Yao}
+
+\begin{document}
+	
+\maketitle
+
+\begin{abstract}
+We show that the inverse limit  $A_\infty := ( \cdots \xrightarrow{\times p } A \xrightarrow{\times p } A \xrightarrow{\times p } A )$ of an abelian variety $A$ under the multiplication by $p$ map is perfectoid. (In addition, we identify its tilt and give applications?)
+\end{abstract}
+
+\section{Introduction}
+	
+\subsection{Statement}
+In this short note we show that an abelian variety becomes perfectoid at infinite level under multiplication by $p$. More precisely:
+\begin{lemma} \label{main_lemma}
+Let $K$ be a perfectoid field of characteristic $0$, $A$ an abelian variety over $K$, defined over a discretely valued subfield \footnote{or whatever condition that guarantees the existence of Neron model/Raynaud extension. { \color{red} Kestutis: this can be weakened: do not need Neron mapping properties, so any field should be okay } }. Then  under the multiplication by $p$ map, the (inverse) limit of 
+$$ ... \xrightarrow{\times p} A \xrightarrow{\times p} A \xrightarrow{\times p} A   $$
+becomes perfectoid, namely, there exists a perfectoid space $A_\infty$ over $K$ such that 
+$$A_\infty \sim \lim_{\times p} A$$
+\end{lemma}
+
+
+\begin{remark}
+{\color{red} Kedlaya: suffices to assume semi-stable reduction. Figure out the details } %perfectoid after etale base change implies perfectoid?
+\end{remark}
+
+\begin{remark}
+ Compare this with the much more difficult statement, Shimura varieties of Hodge type becomes perfectoid at infinite level at $p$. Then one can consider the universal abelian varieties, etc. 
+\end{remark}
+
+\subsection{Raynaud extension}
+Before going through the proof, let us set up some notations: following Bosch and Lukterbohmert's notation, we consider the following exact sequence of group schemes, known as Raynaud's extension over $C$: 
+$$ 0 \rightarrow (\mathbb G_m)^d \rightarrow E \rightarrow B \rightarrow 0 $$  where $B$ has good reduction, and $A$ admits p-adic uniformization by $E$: there exists a lattice $M \subset E$ such that 
+$$ E/M = A.$$
+
+{\color{red} okay, $A$ is potentially semistable, and in Raynaud's extension, $T$ may not be split, but let me assume those for now because of Kedlaya's remark. }
+
+
+
+\subsection{Outline}
+Our proof roughly goes through 3 steps, 
+\begin{enumerate}
+\item Show that an abelian variety of good reduction becomes perfectoid at infinite level under multiplication by $p$. 
+\item Show that $E$ becomes perfectoid at infinite level. 
+\item Use step $1$ and $2$ to conclude that $A$ becomes perfectoid at infinite level. 
+\end{enumerate}
+
+The first step is an exercise from Bhatt's Arizona winter school notes: roughly we use the integral model, and show that relative Frobenius becomes an isomorphism at the infinite level. So we explain the remaining two steps. In fact, we first explain step $3$ (which includes the special cases of totally degenerate abelian varieties), then we explain step $2$. 
+
+
+
+\subsection{Acknowledgement}
+
+Thank AWS, Bhargav Bhatt, Kiran Kedlaya, Kai-Wen Lan 
+
+%Experts probably know this already, but since it is not written down anywhere, we take the job to write it down. 
+
+
+
+
+\section{Perfectoid abelian varieties}
+
+\subsection{Reduction to $E_\infty$ being perfectoid}
+
+In this section we show: 
+
+\begin{lemma} \label{lemma:reduction_to_E}
+Notation as above, if $E_\infty$ is perfectoid, then $A_\infty$ is perfectoid.  
+\end{lemma}
+
+
+\begin{proof} 
+
+
+
+After fixing d systems of $p$ power roots of unity (once and for all), we may factor the map 
+$$E/M \xrightarrow{ p} E/M$$ through 
+$$E/M \xrightarrow{\pi} E/\frac{1}{p} M \xrightarrow{ p} E/M $$ where $\pi $ is the natural projection and the factorization requires a choice of $d$ systems of $p^{th}$ roots of unity. Then our choice of $p$ power roots of unities let us realize the tower of $E/M$ under multiplication by $p$ (in the multiplicative language) inside the following diagram: 
+
+
+
+\[
+\begin{tikzcd}
+A_\infty  \\
+\vdots \\ 
+ \arrow[blue]{dd}{p} & & & & {\color{red} E/\frac{1}{p^\infty} M }  \arrow{rd}{\pi_\infty}  \\
+\empty & \empty  \arrow{dd}{p} \arrow{rd}{\pi} & & \reflectbox{$\ddots$}  & &  
+{\color{red} E/\frac{1}{p^\infty} M }  \\
+E/M  \arrow{rd}{\pi}  \arrow[blue]{dd}{p}    & &              E/\frac{1}{p^2}M   \arrow{rd}{\pi} \arrow{dd}{p}  \arrow[red]{ld}{p}  & & \reflectbox{$\ddots$} \\
+ &       E/\frac{1}{p}M   \arrow{dd}{p}    \arrow{rd}{\pi}      \arrow[red]{ld}{p}         &&         E/\frac{1}{p^3}M   \arrow[red]{ld}{p}  \\
+E/M  \arrow[blue]{dd}{p}   \arrow{rd}{\pi}          &&              E/\frac{1}{p^2}M   \arrow[red]{ld}{p} \\
+   &     E/\frac{1}{p}M       \arrow[red]{ld}{p}   && \\
+E/M
+\end{tikzcd}
+\]
+
+
+
+We first claim: 
+\begin{lemma}
+Consider the multiplication by $p$ tower: 
+$$ \cdots \xrightarrow{p}  E/\frac{1}{p^2} M  \xrightarrow{p}    E/\frac{1}{p} M  \xrightarrow{p}   E/M $$
+Then the inverse limit becomes a perfectoid space $E/\frac{1}{p^\infty} M$
+\end{lemma}
+
+\begin{proof} 
+{\color{red} Insert proof}
+\end{proof} 
+
+
+Now we continue to prove Lemma \ref{lemma:reduction_to_E}. We observe that $A_\infty$ can be realized as the inverse limit 
+$$\cdots \xrightarrow{\pi} E/\frac{1}{p^\infty} M  \xrightarrow{\pi} E/\frac{1}{p^\infty} M$$ under the the projection $\pi_\infty$, which is finite etale ({\color{blue} Bhargav: this is some categorical nonsense, but you need to be careful here}). So $A_\infty$ is pro-finite-etale over $E/\frac{1}{p^\infty} M$ in $E_{proet}$, which is perfectoid since  $E/\frac{1}{p^\infty} M$  is.  {\color{red}  Lemma 4.6 in Peter's rigid analytic p-adic Hodge theory paper} 
+
+\end{proof} 
+
+
+
+\subsection{$E_\infty$ is perfectoid}
+
+In this section we prove: 
+
+\begin{lemma} \label{lemma:E_is_perfectoid}
+The inverse limit
+$$ \cdots  \xrightarrow{p} E   \xrightarrow{p} E   \xrightarrow{p} E  $$
+under multiplication by $p$ becomes perfectoid.  
+\end{lemma}
+
+Together with lemma \ref{lemma:reduction_to_E}, this proves lemma \ref{main_lemma}, which is the main claim of this article. 
+
+We use Raynaud's extension 
+$$ 0 \rightarrow (\mathbb G_m)^d \rightarrow E \xrightarrow{\pi} B \rightarrow 0 $$ and our knowledge that both $\mathbb G_{m, \infty}$ and $B_\infty$ becomes perfectoid at inverse limit under multiplication by $p$. We will need the following fact: this short exact sequence locally (in the analytic topology) admits sections, namely locally around every point $y \in B$, there exists open neighborhood  $U \subset B$ of $y$ with a section
+$$s: U \rightarrow \pi^{-1} (U) = V \subset E$$ of the projection $E \rightarrow B$ of group schemes. 
+
+{\color{red} Actually this needs to be justified -- probably reduce to special fiber, use results of SGA3, then lift. There might be some subtlety with analytic topology. I was told to be careful with covering the space with opens, since they might miss the rank two points. }
+
+The key observation is that after quotienting out a certain lattice inside $(\mathbb G_m)^d$, the section $s$ lifts along the multiplication by $p$ map. 
+
+More precisely, let 
+$$\Lambda_n : = \ker ((\mathbb G_m)^d \xrightarrow{p^n} (\mathbb G_m)^d).$$ 
+Write $\Lambda = \Lambda_1$,
+then we have commutative diagram, where the vertical maps $f$ are multiplication by $p$ map: 
+\[
+\begin{tikzcd}
+(\mathbb G_m)^d/\Lambda \arrow{r}{} \arrow{d}{f} & E/\Lambda \arrow{r}{}  \arrow{d}{f } & B  \arrow{d}{f} \\ 
+(\mathbb G_m)^d  \arrow{r}{} & E \arrow{r}{} & B 
+\end{tikzcd}
+\]
+
+\begin{lemma} \label{lemma:lifting}
+Notation as above, where we have local section $s: U \rightarrow V \subset E$. Then the diagram above is Cartesian in the category of adic spaces, namely all squares are pullback squares. In particular, $s$ admits a unique lift to 
+$$\widetilde s : \widetilde U \rightarrow \widetilde V \subset E/V.$$ 
+i.e., let $\widetilde U = f^{-1} (U) $ and $\widetilde V = f^{-1} (V)$, then there exists a unique section $\widetilde s: \widetilde U \rightarrow \widetilde V$ such that the following diagram commutes:
+\[
+\begin{tikzcd}
+ \widetilde V     \arrow{d}{f } & \widetilde U  \arrow{d}{f}  \arrow{l}{\widetilde s}\\ 
+ V   & U  \arrow{l}{s}
+\end{tikzcd}
+\]
+\end{lemma} 
+
+\begin{proof}
+{\color{red} Being cartesian in adic spaces is a bit tricky, also need to show that this passes to proetale category, namely the inverse limit is also cartesian -- this should be categorical nonsense. Maybe Ben should write this part up, and makes sure that nothing funny is happening}
+\end{proof} 
+
+
+\begin{remark} Alternatively we may prove the lifting directly. The point is that in the diagram above, $f$ is finite etale of degree $p^{2g}$ where $g = \dim B$. 
+ 
+Let $x \in \widetilde U$, then $f(x) = x^p \in U$. Look at the image $s(x^p)$ under the section $s$, we know that $S= f^{-1} (s(x^p))$ consists of $p^{2g}$ points. These $p^{2g} $ points go to the set $S'$ of $p^{2g}$ points above $x^p \in U$, namely the translates of $x$ by $p$-torsion points in $B$. The map $\pi$ is bijective on these two sets, since no two points in $S$ can go to the same point in $S'$.
+\end{remark}
+
+Now we can form the following tower: 
+\[
+\begin{tikzcd}
+\vdots  \arrow{d} & \vdots \arrow{d} & \vdots \arrow{d} \\
+(\mathbb G_m)^d/\Lambda_2 \arrow{r}{} \arrow{d}{f} & E/\Lambda_2 \arrow{r}{}  \arrow{d}{f } & B  \arrow{d}{f} \\ 
+(\mathbb G_m)^d/\Lambda_1 \arrow{r}{} \arrow{d}{f} & E/\Lambda_1 \arrow{r}{}  \arrow{d}{f } & B  \arrow{d}{f} \\ 
+(\mathbb G_m)^d  \arrow{r}{} & E \arrow{r}{} & B 
+\end{tikzcd}
+\]
+and by Lemma \ref{lemma:lifting}, we know that the inverse limit 
+$$ E/\Lambda_{\infty} : = ( \cdots \rightarrow E/\Lambda_2 \rightarrow  E/\Lambda_1 \rightarrow E/\Lambda) $$ exists in the category of adic spaces, since it is the base change 
+\[
+\begin{tikzcd}
+E/\Lambda_\infty  \arrow{r}{} \arrow{d}{} & B_\infty \arrow{d}{} \\
+E \arrow{r}{} & B
+\end{tikzcd}
+\]
+{\color{red} Here again need to be careful, $B_\infty$ is not actually the inverse limit, is it??? namely is $B_\infty$ actually the perfectoid space? or its something that is $\sim \lim_{\times p} B$ }
+
+Moreover, there is a unique lifting $s_\infty: U_\infty \rightarrow E/\Lambda_{\infty}$, where $U_\infty$ is the pre-image of $U$ in $B_\infty$, this gives an open subspace $V_\infty$ which is isomorphic to $\mathbb G_m \times U_\infty$. 
+
+Now we are ready to prove that $E_\infty$ becomes perfectoid. 
+
+\begin{proof}[Proof of Lemma \ref{lemma:E_is_perfectoid}]
+
+\end{proof} 
+
+
+
+
+
+\newpage
+
+\section{Tilt of perfectoid abelian varieties}
+
+In this section, we describe the tilt of the perfectoid space $A_\infty$ constructed in the previous section. Our goal is to prove the following:
+
+\begin{lemma} \label{lemma:A_tilt}
+Let $A$, $A_\infty$, $K$ be defined as in Lemma \ref{main_lemma}, let $A_s$ be the special fiber of the N\'eron model of $A$. Then there exists a perfectoid space $A_{s,\infty}$ over $K^\flat$ such that $A_{s,\infty} \sim \displaystyle\varprojlim_{\times p} A_s$ and $A_\infty^\flat=A_{s,\infty}$.
+\end{lemma} 
+
+Our proof follows the same general outline as the previous one. Taking the inverse limit of the Raynaud extension, we have a short exact sequence of perfectoid spaces
+$$ 0\rightarrow (\mathbb G_{m,\infty})^d\rightarrow E_\infty \rightarrow B_\infty\rightarrow 0$$ ({\color{purple} I guess we have to be worried about if this is literally an exact sequence or if there are $\sim$s in the background...}) and "a way to move from $E_\infty$ to $A_\infty$". ({\color{purple} is this just quotienting by (the inverse limit of) a lattice? Probably once we fully write up Lemma \ref{lemma:reduction_to_E} it will be clear what exactly to write here}.) 
+
+We first show that the tilts of $\mathbb G_{m,\infty}$ and $B_\infty$ are the inverse limits of the special fibers, use this to show that the same is true for $E_\infty$, then use this to conclude the same for $A_\infty$.
+
+\begin{lemma}\label{lemma:GB_tilt}
+The tilts of $\mathbb G_{m,\infty}$ and $B_\infty$ are as expected.
+\end{lemma}
+
+\begin{proof}
+{\color{purple} Insert proof}
+\end{proof}
+
+\begin{lemma}\label{lemma:E_tilt}
+The tilt of $E_\infty$ is the inverse limit of the special fibers.
+\end{lemma}
+
+\begin{proof}
+We have the exact sequence
+$$0\rightarrow (\mathbb G_m)^d\rightarrow E\xrightarrow{\pi} B\rightarrow 0$$ and a good understanding of the perfectoid spaces and tilts corresponding to the outer elements, so the goal is to "carry around copies of $E$ sitting between $(\mathbb G_m)^d$ and $B$ while we are tilting them" ({\color{purple} think of a more precise way to say this}). This is achieved by the following lemma from algebraic geometry.
+
+\begin{lemma}\label{lemma:ext_to_pic}
+Extensions of $B$ by $(\mathbb G_m)^d$ correspond {\color{purple} "functorially"} to homomorphisms $\mathbb{Z}^d\rightarrow \operatorname{Pic}^0(B)$. 
+\end{lemma}
+
+\begin{proof}
+A full proof is given in \cite[Lemma 6.7.2]{FvdP}, we will just give the construction. For any extension $E$, the corresponding short exact sequence locally admits sections {\color{purple} same worry about analytic topology as Lemma \ref{lemma:E_is_perfectoid} maybe?} so we can fix an open cover $\{ U_i\}$ of $B$ such that there are isomorphisms $s_i:\pi^{-1}(U_i)\cong  U_i\times (\mathbb G_m)^d$. Keeping track of the differences of $s_i$ and $s_j$ when restricted to $U_i\cap U_j$ is (after some work) equivalent to a homomorphism from the character group of $(\mathbb G_m)^d=\mathbb{Z}^d$ into $\operatorname{Pic}^0(B)$. 
+
+Conversely, given $\tau:\mathbb{Z}^d\rightarrow\operatorname{Pic}^0(B)$, we choose a "coherent" family of line bundles $\{\mathcal O_\chi|\chi\in \mathbb{Z}^d\}$ and define $E$ as $\underline{\operatorname{Spec}}(\oplus \mathcal O_\chi)$. Here $\oplus \mathcal O_\chi$ is a quasi-coherent sheaf of $\mathcal O_B$-algebras, so we can apply the construction of \cite[Exercise II.5.17c]{Hartshorne}.
+
+{\color{purple} I haven't thought about this yet, but this interpretation might simplify the proof that $E_\infty$ is perfectoid - or at least should be equivalent.}
+\end{proof}
+
+So we can write $E=\underline{\operatorname{Spec}}(\oplus \mathcal O_\chi)$ and define $E_s:=\underline{\operatorname{Spec}}(\oplus (\mathcal O_\chi)_s)$ {\color{purple} Maybe should say more here: the point is that $B$ has comes from an abelian scheme $\mathcal B$ over $\mathcal O_K$, so $\operatorname{Pic}^0(B)(K)=\operatorname{Pic}^0(\mathcal B)(\mathcal O_K)$ and so now taking the special fiber actually makes sense. Also, I don't actually know if $E_s$ is the N\'eron model of $E$, it seems like it should be... But this shouldn't matter at all for the proof.} This gives the following commutative diagram: 
+
+\[
+\begin{tikzcd}
+(\mathbb G_m)^d_s \arrow{r}{} \arrow{d}{} & \underline{\operatorname{Spec}}(\oplus (\mathcal O_\chi)_s) \arrow{r}{}  \arrow{d}{} & B_s  \arrow{d}{} \\ 
+(\mathbb G_m)^d  \arrow{r}{} & \underline{\operatorname{Spec}}(\oplus \mathcal O_\chi) \arrow{r}{} & B. 
+\end{tikzcd}
+\]
+The top sequence is exact by Lemma \ref{lemma:ext_to_pic} as $E_s$ comes from a coherent family of elements of $\operatorname{Pic}^0(B_s)$, the diagram commutes {\color{purple} by functoriality}. The key claim is that we can {\color{purple} "put another copy of this diagram above this with all vertical maps multiplication by $p$ and get a commutative diagram", I'll make a 3d commutative diagram when I'm feeling ambitious}. The map $E\xrightarrow{p} E$ corresponds to the map $\oplus \mathcal O_\chi^p\leftarrow \oplus \mathcal O_\chi$ as $p^*\mathcal L\approx \mathcal L^p$ for $L\in \operatorname{Pic}^0(B)$. So the commutativity of the center square 
+
+\[
+\begin{tikzcd}
+E_{s,1} \arrow{r}{}  \arrow{d}{p} & E_1  \arrow{d}{p} \\ 
+E_{s,0} \arrow{r}{} & E_0
+\end{tikzcd}
+\]
+
+follows from the commutativity of the diagram
+
+\[
+\begin{tikzcd}
+\oplus (\mathcal O_\chi)^p_s  & \oplus \mathcal (O_\chi)^p \arrow{l}{}  \\ 
+\oplus (\mathcal O_\chi)_s \arrow{u}{p^*} & \oplus \mathcal O_\chi   \arrow{l}{}  \arrow{u}{p^*}  
+\end{tikzcd}
+\]
+
+and the commutativity of the rest of the diagram follows similarly. We can therefore take the inverse limit of the diagram to get 
+
+\[
+\begin{tikzcd}
+(\mathbb G_m)^d_{s,\infty} \arrow{r}{} \arrow{d}{} & E_{s,\infty} \arrow{r}{}  \arrow{d}{} & B_{s,\infty}  \arrow{d}{} \\ 
+(\mathbb G_m)^d_\infty  \arrow{r}{} & E_\infty \arrow{r}{} & B_\infty 
+\end{tikzcd}
+\]
+
+where the rows are exact by the arguments of the previous section ({\color{purple} eventually...}) and the vertical arrows come from the universal property of inverse limits. That is, have a coherent set of maps from $E_{s,\infty}$ to all the $E_{s,i}$, giving a coherent set of maps from $E_{s,\infty}$ to all the $E_i$ and therefore the desired map $E_{s,\infty}\rightarrow E_\infty$. The same is true for the other two maps, {\color{purple} maybe the correct place to make this argument is in the category of short exact sequences, is this a nice place?}
+
+Combining the facts $B_\infty^\flat=B_{s,\infty}$, $((\mathbb G_m)^d_{\infty})^\flat=(\mathbb G_m)^d_{s,\infty}$, and the local sections of the map $E_{s,\infty}\rightarrow B_{s,\infty}$, we get that $E_{s,\infty}$ is locally the tilt of $E_\infty$. More precisely, there are affinoid perfectoid covers $\{U_{i,\infty}\}$ and $\{U_{s,i,\infty}\}$ of $E_\infty$ and $E_{s,\infty}$ such that $U_{i,\infty}^\flat\cong U_{s,i,\infty}$. Restricting the map $E_{s,\infty}\rightarrow E_\infty$ to $U_{s,i,\infty}$ recovers the homeomorphism of adic spaces $\operatorname{Spa}(U_{i,\infty}^\flat,U_{i,\infty}^{\flat+})\cong \operatorname{Spa}(U_{i,\infty},U_{i,\infty}^+)$ of \cite[Theorem 2.5.1]{Kedlaya}. As these homeomorphisms identify rational subspaces, they extend to the desired homeomorphism $E_\infty^\flat\rightarrow E_\infty$.
+
+{\color{purple} Obviously this is still too sketchy. Another way to state all this is that there should be a bijection $\operatorname{Ext}^1((\mathbb G_m)^d_\infty,B_\infty)\rightarrow \operatorname{Ext}^1((\mathbb G_m)^d_{s,\infty},B_{s,\infty}$ sending an extension to its tilt. This should come out of a bijection $\operatorname{Pic}^0(B_\infty)\rightarrow\operatorname{Pic}^0(B_{s,\infty})$, which should itself come out of chasing line bundles around inverse limits as above. Really this isn't saying anything new, but maybe it's a nicer way to think about things?}
+\end{proof}
+
+\begin{proof}[Proof of \ref{lemma:A_tilt}]
+{\color{purple} Insert proof}
+\end{proof}
+
+\newpage
+
+\section{Applications}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+
+
+\begin{thebibliography}{9}
+
+\bibitem{Bhatt} 
+Bhargav Bhatt
+\textit{The Hodge-Tate decomposition via perfectoid spaces}. 
+Arizona Winter School Notes, 2017.
+
+\bibitem{BL} 
+Bosch
+\textit{Degenerating abelian varieties}. 
+Arizona Winter School Notes, 2017.
+
+\bibitem{FvdP}
+Jean Fresnel, Marius van der Put
+\textit{Rigid Analytic Geometry and its Applications}
+
+\bibitem{Hartshorne}
+Robin Hartshorne
+\textit{Algebraic Geometry}
+
+\bibitem{Kedlaya}
+Kiran Kedlaya
+\textit{Sheaves, Stacks, and Shtukas}.
+Arizona Winter School Notes, 2017
+
+\bibitem{perfectoid} 
+Peter Scholze
+\textit{Perfectoid spaces}. 
+
+
+\bibitem{p-adic} 
+Peter Scholze
+\textit{p-adic Hodge theory for rigid analytic varieties}. 
+
+\bibitem{torsion} 
+Peter Scholze
+\textit{Torsion in cohomology of locally symmetric varieties}.
+
+
+
+
+\end{thebibliography}
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
