@@ -69,66 +69,23 @@
 	\maketitle
 	
 	\begin{abstract}
-For an abelian variety $A$ over an algebraically closed non-archimedean field, we show that there is a perfectoid space $A_\infty$ such that $A_{\infty}\sim\varprojlim_{[p]}A$. 
+For an abelian variety $A$ over an algebraically closed non-archimedean field, we show that there exists a perfectoid space $A_\infty$ such that $A_{\infty}\sim\varprojlim_{[p]}A$. 
 	\end{abstract}
 	
 	
 	\tableofcontents
 	
+\begin{comment}	
 \newpage 
 	
+
 %%%%%%%%%%%%
 %%      Section 1
 %%%%%%%%%%%%
-	\section{Introduction}
-{\color{red} To do: Rewrite Introduction, summarize main results, outline, remarks about $GL_n$, etc.
-	
-Instead of an actual introduction, for now we have the following}
-
-{\color{blue} Outline:} 
-
+	\section{Introduction} 
 For an abelian variety $A$ over an algebraically closed non-archimedean field we show that there is a perfectoid space $A_\infty$ such that $A\sim\varprojlim_{[p]}A$. 
 
-We first more generally consider a rigid group  $G$ over a non-archimedean field $K$. While inverse limits usually don't exist in the rigid analytic category, limits are much better behaved in formal schemes over the ring of integers $\mathcal O_K$ of $K$. One can therefore give a simple criterion in terms of formal models that guarantees that a tilde-limit $G_\infty \sim\varprojlim_{[p]} G$ exists, namely that there is a well-behaved formal model of the $[p]$-multiplication tower.
-If $K$ is perfectoid, we give a stronger criterion involving a Frobenius factorisation condition, which implies that $G_\infty$ is perfectoid.
 
-In the case of a rigid analytic split torus $T$, one can use a family of explicit covers by affinoids to construct formal models for which both of these conditions are satisfied. 
-
-Next we consider the case of the Raynaud extension $E$ associated to a semistable abelian variety $A$ over a perfectoid field $K$. One can construct $E$ by extending the rigid fibre of a formal group scheme $\overline{E}$ by a rigid torus $T$. In order to construct a formal model of $E$ one therefore just needs to extend $\overline{E}$ by a formal model of $T$. While this can be done explicitly using affinoid covers, the language of formal and rigid fibre bundles allows for a more conceptual treatment. Using the associated fibre construction we then show that there is a formal model of the $[p]$-multiplication tower of $E$ which satisfies all the necessary criteria to show that $E_\infty$ exists and is perfectoid.  
-
-We then construct a tilde-limit of $\varprojlim_{[p]} A$ from $E_\infty$: By Raynaud uniformisation, $A$ is naturally isomorphic to the rigid analytic quotient of $E$ by a lattice $M$. After a choice of $\Gamma_0(p^\infty)$-structure, the $[p]$-multiplication tower of $E/M$ factors in a ``ramified'' and an ``\'etale'' part. By a careful choice of charts of $E/M$ in terms of subspaces of $E$ that behave well under $[p^n]:E\rightarrow E$, one can explicitly construct first a perfectoid tilde-limit of the ``ramified'' tower, and then in a second step the space $A_\infty$. This space is independent of the choice of $\Gamma_0(p^\infty)$-structure but remembers it as a pro-\'etale subgroup $D_\infty \subseteq A_\infty$. The construction shows that the perfectoid tilde-limit $A_\infty$ still exists under the weaker assumption that $K$ is a perfectoid field over which there exist lattices $M^{1/p^n}$ for all $n$ whose $p^n$-th multiple is $M$.
-
-The approach via explicit covers finally gives an explicit description of $A_\infty$ in terms of open subspaces of $E_\infty$ which we use in the last section to study the induced map $E_\infty\rightarrow A_\infty$. We show that $E_\infty$ is in fact an open subspace of $A_\infty$ and thus obtain a second description of $A_\infty$ as a quotient group $(D_\infty\times E_\infty)/M_\infty$.
-
-
-\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %some hack to hide the acknowledgements in the toc
-\section*{Notation}
-\addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
-	Let $p$ be a prime.
-	Throughout we let $K$ denote a perfectoid field that is either $p$-adic or of characteristic $p$. Let $\mathcal O_K$ be the ring of integers and fix a pseudo-uniformiser $\pi\in \mathcal O_K$.
-	We will work with adic spaces over $(K,\mathcal O_K)$ in the sense of \cite{SW}, and in particular, we use the notion of perfectoid spaces and tilde-limits defined in \S2 of \cite{SW}. Nevertheless, all adic spaces considered will actually be honest adic spaces, and thus adic spaces in the sense of Huber.
-	
-	When we consider rigid analytic spaces over $K$, we will make no distinction between rigid space and their corresponding adic spaces.
-	In particular, any cover of a rigid space will be a cover as an adic space, and therefore be an admissible cover in the sense of rigid analytic geometry. If a rigid space is obtained from a $K$-scheme $X$ via rigid-analytification $X\mapsto X^{\operatorname{an}}$, we will often denote both by the same symbol $X$.
-
-	For a formal scheme $\mathfrak X$ over $\operatorname{Spf}(\mathcal O_K)$ with the $\pi$-adic topology, we denote by $\mathfrak X_\eta$ its adic generic fibre.
-	We denote by
-	$\tilde{X}=\mathfrak X\times_{\operatorname{Spf}\mathcal O_K}\operatorname{Spf}\mathcal O_K/\pi$ its special fibre, considered as a scheme over $\operatorname{Spec}\mathcal O_K/\pi$.
-
-\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %some hack to hide the acknowledgements in the toc
-\section*{Acknowledgements}
-\addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
-This work started as a project group at the Arizona Winter School 2017, and we would like to thank everyone involved in organising such a great conference. In particular, we would like to thank Bhargav Bhatt for setting the project on which this article is based, for his guidance and for his constant encouragement. 
-
-This work was supported by the Engineering and Physical Sciences Research Council [EP/L015234/1]. 
-During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Centre for Doctoral Training in Geometry and Number Theory (The London School of Geometry and Number Theory), University College London.
-
-%%%%%%%%%%%%
-%%      Section 2
-%%%%%%%%%%%%	
-	\section{Tilde-limits of rigid groups}
-	Let $G$ be a rigid group over $K$, that is a group object in the category of rigid spaces over $K$. One way that rigid groups arise is by analytification of finite type group schemes over $K$: We will be most interested in the analytification of an abelian variety $A$, but other important cases are the analytifications  $\mathbb G_a^{\operatorname{an}}$ of $\mathbb G_a$ and $\mathbb G_m^{\operatorname{an}}$ of $\mathbb G_m$, or more generally of tori $T$ over $K$. A second source of rigid groups are generic fibres of topologically finite type formal group schemes over $\mathcal O_K$. A third important example is the covering space $E$ in the sense of Raynaud of an abelian variety with semi-stable reduction.
-	
 	This note is concerned with the following question:
 	
 	\begin{framed}
@@ -142,9 +99,59 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\begin{example}
 		For the additive group $\mathbb G_a^{\operatorname{an}}$, we know that $[p]$ is an isomorphism and therefore $\varprojlim_{[p]} \mathbb G_a=\mathbb G_a$ exists (even as an actual limit in the category of adic spaces) but is certainly not perfectoid.
 	\end{example}
-	\subsection{A condition ensuring that the tilde-limit exists}
+
+
+We first more generally consider a rigid group  $G$ over a non-archimedean field $K$. While inverse limits usually don't exist in the rigid analytic category, limits are much better behaved in formal schemes over the ring of integers $\mathcal O_K$ of $K$. One can therefore give a simple criterion in terms of formal models that guarantees that a tilde-limit $G_\infty \sim\varprojlim_{[p]} G$ exists, namely that there is a well-behaved formal model of the $[p]$-multiplication tower.
+If $K$ is perfectoid, we give a stronger criterion involving a Frobenius factorisation condition, which implies that $G_\infty$ is perfectoid.
+
+In the case of a rigid analytic split torus $T$, one can use a family of explicit covers by affinoids to construct formal models for which both of these conditions are satisfied. 
+
+Next we consider the case of the Raynaud extension $E$ associated to a semistable abelian variety $A$ over a perfectoid field $K$. One can construct $E$ by extending the rigid fibre of a formal group scheme $\overline{E}$ by a rigid torus $T$. In order to construct a formal model of $E$ one therefore just needs to extend $\overline{E}$ by a formal model of $T$. While this can be done explicitly using affinoid covers, the language of formal and rigid fibre bundles allows for a more conceptual treatment. Using the associated fibre construction we then show that there is a formal model of the $[p]$-multiplication tower of $E$ which satisfies all the necessary criteria to show that $E_\infty$ exists and is perfectoid.  
+
+We then construct a tilde-limit of $\varprojlim_{[p]} A$ from $E_\infty$: By Raynaud uniformisation, $A$ is naturally isomorphic to the rigid analytic quotient of $E$ by a lattice $M$. After a choice of $\Gamma_0(p^\infty)$-structure, the $[p]$-multiplication tower of $E/M$ factors in a ``ramified'' and an ``\'etale'' part. By a careful choice of charts of $E/M$ in terms of subspaces of $E$ that behave well under $[p^n]:E\rightarrow E$, one can explicitly construct first a perfectoid tilde-limit of the ``ramified'' tower, and then in a second step the space $A_\infty$. This space is independent of the choice of $\Gamma_0(p^\infty)$-structure but remembers it as a pro-\'etale subgroup $D_\infty \subseteq A_\infty$. The construction shows that the perfectoid tilde-limit $A_\infty$ still exists under the weaker assumption that $K$ is a perfectoid field over which there exist lattices $M^{1/p^n}$ for all $n$ whose $p^n$-th multiple is $M$.
+
+The approach via explicit covers finally gives an explicit description of $A_\infty$ in terms of open subspaces of $E_\infty$ which we use in the last section to study the induced map $E_\infty\rightarrow A_\infty$. We show that $E_\infty$ is in fact an open subspace of $A_\infty$ and thus obtain a second description of $A_\infty$ as a quotient group $(D_\infty\times E_\infty)/M_\infty$.
+
+\end{comment}
+
+
+
+\newpage
+
+
+
+
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %some hack to hide the acknowledgements in the toc
+\section*{Notation}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
+	Let $p$ be a prime. Let $K$ be a perfectoid field over $\mathbb Q_p$, %that is either $p$-adic or of characteristic $p$. (I don't think we needed char p fields, also does prop 2.8 make sense in char p?) 
+with the ring of integers  $\mathcal O_K$  and  a fixed pseudo-uniformiser $\pi\in \mathcal O_K$.
+	By adic spaces over $\operatorname{Spa}(K,\mathcal O_K)$, we mean honest adic spaces in the sense of \cite{SW}, and we adopt the notion of perfectoid spaces defined in \S2 \textit{\small ibid}.  
+	
+	Throughout the article, we make no distinction between rigid spaces and their corresponding adic spaces. If a rigid space is obtained from a $K$-scheme $X$ via rigid-analytification $X\mapsto X^{\operatorname{an}}$, we will often denote both by the same symbol $X$.
+		%?In particular, any cover of a rigid space will be a cover as an adic space, and therefore be an admissible cover in the sense of rigid analytic geometry.  		{\color{red} I don't understand what this remark means. }
+
+	For a formal scheme $\mathfrak X$ over $\operatorname{Spf}(\mathcal O_K)$ with the $\pi$-adic topology, we denote by $\mathfrak X_\eta$ its adic generic fibre.
+	We denote by
+	$\tilde{X}=\mathfrak X\times_{\operatorname{Spf}\mathcal O_K}\operatorname{Spf}\mathcal O_K/\pi$ its special fibre, considered as a scheme over $\operatorname{Spec}\mathcal O_K/\pi$.
+
+
+%%%%%%%%%%%%
+%%      Section 2
+%%%%%%%%%%%%	
+	\section{Tilde-limits of rigid groups}
+	Let $G$ be a rigid group over $K$, that is, group object in the category of rigid spaces over $K$.
+	We are primarily interested in the following examples 
+\begin{enumerate}	 
+\item Analytifications of finite type group schemes over $K$. Examples include the analytification of an abelian variety $A$ over $K$, of tori $T$ over $K$, \textit{\small etc.}
+\item Generic fibres of topologically finite type formal group schemes over $\mathcal O_K$. 
+\item Raynaud's covering space $E$  of an abelian variety with semi-stable reduction.
+\end{enumerate}
+	
+		\subsection{Existence of tilde-limits via formal models}
   
-	Inverse limits often don't exist in the category of adic spaces, and neither do they in rigid spaces. They do, however, often exist in the category of formal schemes:
+	Inverse limits often don't exist in the category of adic spaces (or even rigid spaces). However, we observe the  following lemma:
 	\begin{lemma}
 		Let $(\mathfrak X_i,\phi_{ij})_{i\in I}$ be an inverse system of formal schemes $\mathfrak X_i$ over $\mathcal O_K$ with affine transition maps $\phi_{ij}:\mathfrak X_j\rightarrow \mathfrak X_i$. Then the inverse limit $\mathfrak X=\varprojlim \mathfrak X_i$ exists in the category of formal schemes over $\mathcal O_K$. If all the $\mathfrak X_i$ are flat formal schemes, so is $\mathfrak X$.
 	\end{lemma}
@@ -165,10 +172,12 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	This means that one can always construct the limit of an inverse system of rigid spaces $\mathcal X_i$ if it arises from an inverse system of formal schemes $\mathfrak X_i$ with affine transition maps. This is precisely what Scholze uses in \cite{torsion} in order to construct the space $\mathcal X_{\Gamma_0(p^\infty)}(\epsilon)_a$ (see the proof of Corollary III.2.19 in \cite{torsion}).
 	\end{remark}
 	
-	If one starts with an inverse system of rigid spaces $\mathcal X_i$, a straightforward strategy to construct a tilde limit $\varprojlim \mathcal X_i$ is thus to look for formal models $\mathfrak X_i$, that is formal schemes over $\operatorname{Spf} \mathcal O_K$ such that $\mathcal X_i = (\mathfrak X_i)_\eta$, as well as affine formal models $\phi_{ji}:\mathfrak X_j\rightarrow \mathfrak X_i$ of the transition maps. If such data exist, Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} produces a tilde-limit $\mathcal X \sim \varprojlim \mathcal X_i$. Here we follow the following standard terminology:
-	\begin{definition}
+	Therefore, one way to construct  a tilde limit $\varprojlim \mathcal X_i$ for an inverse system of rigid spaces $\mathcal X_i$ is to look for formal models $\mathfrak X_i$ of the system with affine transition maps. %If such data exist, Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} produces a tilde-limit $\mathcal X \sim \varprojlim \mathcal X_i$. 
+	Here we follow the following standard terminology:
+	\begin{definition} \indent 
+	
 		\begin{enumerate}
-			\item Let $\mathcal X$ be a rigid space over $K$. Then a \textbf{formal model} of $\mathcal X$ is an admissible topologically finite type formal scheme $\mathfrak X$ over $\mathcal O_K$ together with an isomorphism of its generic fibre $\mathfrak X_\eta \xrightarrow{\sim} \mathcal X$ (which is often suppressed from notation).
+			\item Let $\mathcal X$ be a rigid space over $K$. A \textbf{formal model} of $\mathcal X$ is an admissible topologically finite type formal scheme $\mathfrak X$ over $\mathcal O_K$ together with an isomorphism of its generic fibre $\mathfrak X_\eta \xrightarrow{\sim} \mathcal X$ (which is often suppressed from notation).
 			\item Let $\phi:\mathcal X\rightarrow \mathcal Y$ be a morphism of rigid spaces over $K$. Let $\mathfrak X,\mathfrak Y$ be formal models of $\mathcal X,\mathcal Y$ respectively. Then a morphism of formal schemes $\Phi:\mathfrak X \rightarrow \mathfrak Y$ is a \textbf{formal model} of $\phi$ if the following diagram commutes:
 			\begin{center}
 				\begin{tikzcd}
@@ -182,7 +191,7 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\end{definition}	
  
 	The theory of Raynaud's formal models says that under the mild assumption that the rigid spaces are quasi-paracompact,
-	one can always find formal models of the spaces, and formal models of morphisms exist after formal blow up of the source:
+	one can always find formal models of the spaces, and formal models of morphisms exist after formal blow ups of the source:
 	
 	\begin{theorem}[\cite{Bosch lectures}, section 8.4]\label{Raynaud theory main theorem}
 		\leavevmode
@@ -201,21 +210,13 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 		\end{enumerate}
 	\end{theorem}
 	
-	The theorem implies that given an inverse system ($\mathcal X_i,\phi_{ij})$ of rigid spaces, one can always choose formal models $\mathfrak X_i$ and by successive admissible blow-ups while going along the inverse system one can also find models for the $\phi_{ij}$. 
-	If it is possible to do this in such a way that transition maps are affine, one thereby obtains a construction of $G_\infty$. More precisely, we can formalise this as follows:
+	In particular, given an inverse system ($\mathcal X_i,\phi_{ij})$ of rigid spaces, one can always choose formal models $\mathfrak X_i$ for the $\mathcal X_i$, and by successive admissible blow-ups one can also find models for the $\phi_{ij}$ (which might not be affine morphisms). 
+	%If it is possible to do this in such a way that transition maps are affine, one thereby obtains a construction of $G_\infty$. More precisely, we can formalise this as follows:
 	
 	\begin{definition}
-		For a rigid analytic group $G$, we call \textbf{$[p]$-model tower} the data of:
-		\begin{enumerate}
-			\item a family of formal models $\mathfrak G_n$ of $G$ for $n\in \mathbb N$,
-			\item morphisms of formal schemes $[p]:\mathfrak G_{n+1}\rightarrow \mathfrak G_{n}$ satisfying the following conditions:
-			\begin{enumerate}
-				\item $[p]:\mathfrak G_n\rightarrow \mathfrak G_{n+1}$ is a formal model of $[p]:G\rightarrow G$. 
-				\item $[p]$ is an affine morphism
-			\end{enumerate}
-		\end{enumerate}
+		Let $G$ be a rigid group. A \textbf{$[p]$-formal tower} for $G$ is  a family of formal models $\{\mathfrak G_n\}_{n\in \mathbb N}$ of $G$, together with affine transition maps $[\mathfrak p]_n:\mathfrak G_{n}\rightarrow \mathfrak G_{n-1}$ which are formal models of $[p]:G\rightarrow G$. 
 	\end{definition}
-	More generally, by a $[p]$-model tower of an admissible open subset $U\subseteq G$ we mean the same formal model data for the tower of pull-backs over $U$
+	More generally, by a $[p]$-formal tower of an admissible open subset $U\subseteq G$ we mean the same formal model data for the tower of pull-backs over $U$
 	
 	\begin{center}
 		\begin{tikzcd}
@@ -224,13 +225,43 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 		\end{tikzcd}
 	\end{center}
 	
-	We can summarise our discussion in this chapter by the following Proposition:
-	\begin{proposition}
-		Let $G$ be a rigid analytic group. Then if $G$ has a $[p]$-model tower, there exists a space $G_\infty$ such that $G_\infty \sim \varprojlim_{[p]}G$.
-	\end{proposition}
-	For example, for any formal group $\mathfrak G$ for which $[p]$ is affine, the $[p]$-multiplication tower of $\mathfrak G$ gives rise to a $[p]$-model tower of the generic fibre $\mathfrak G_\eta$. 
-	\subsection{A condition ensuring that the tilde-limit is perfectoid}
-	In order to see what conditions ensure that a $[p]$-model tower is perfectoid, we look at the following example:
+	We now summarise our discussion in this subsection by the following
+	\begin{corollary}
+		Let $G$ be a rigid group. If $G$ admits a $[p]$-formal tower, then there exists a rigid space $G_\infty$ such that $G_\infty \sim \varprojlim_{[p]}G$.
+	\end{corollary}
+	For example, for any formal group $\mathfrak G$ where $[p]$ is affine, the $[p]$-multiplication tower of $\mathfrak G$ gives rise to a $[p]$-formal tower for its generic fibre $\mathfrak G_\eta$. 
+	
+	
+	
+	
+	\subsection{Perfectoidness} 
+
+In light of Remark \ref{remark:good_reduction} we make the following definition
+	
+	\begin{definition}
+		For a rigid analytic group $G$, we call \textbf{$[p]$-$F$-formal tower} the data of:
+		\begin{enumerate}
+			\item a family of flat formal models $\mathfrak G_n$ of $G$ for $n\in \mathbb N$,
+			\item morphisms of formal schemes $[\mathfrak p]:\mathfrak G_{n+1}\rightarrow \mathfrak G_{n}$ satisfying the following conditions:
+			\begin{enumerate}
+				\item the generic fibre of $[\mathfrak p]:\mathfrak G_n\rightarrow \mathfrak G_{n+1}$ coincides with $[p]:G\rightarrow G$. 
+				\item $[\mathfrak p]$ is an affine morphism
+				\item Denote by $\tilde{G}_n$ the reduction of $\mathfrak G_n$ mod $p$. Then $[\mathfrak p]$ factors through the relative Frobenius morphism:
+				\begin{center}
+					\begin{tikzcd}
+						& \tilde G_{n}^{(p)} \arrow[rd, dashed] &  \\
+						\tilde G_{n} \arrow[rr, "{[p]}"] \arrow[ru, "F_{rel}"] &  & \tilde G_{n-1}
+					\end{tikzcd}
+				\end{center}
+				
+			\end{enumerate}
+		\end{enumerate}
+	\end{definition}	
+	
+	 
+	 
+	 
+	 
 	\begin{proposition}\label{limit exists and is perfectoid: commutative formal group case}
 		Assume that $K$ is perfectoid. Let $\mathfrak G$ be a flat commutative formal group scheme of topologically finite type over $\mathcal O_K$ for which the p-multiplication map $[p]:\mathfrak G\rightarrow \mathfrak G$ is affine. Let $G = \mathfrak G_\eta$ be the rigid group obtained on the generic fibre. Then $G_\infty$ exists and is perfectoid.
 	\end{proposition}
@@ -289,35 +320,15 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	
 	Looking closely at  Proposition \ref{limit exists and is perfectoid: commutative formal group case}, all we need is in fact a model for the $p$-multiplication morphism $[p]:G\rightarrow G$, and we never use that all the $\mathfrak G$ in the tower are copies of the same formal scheme. Weakening these two conditions, we arrive at the following definition:
 	
-	\begin{definition}
-		For a rigid analytic group $G$, we call \textbf{$[p]$-$F$-model tower} the data of:
-		\begin{enumerate}
-			\item a family of flat formal models $\mathfrak G_n$ of $G$ for $n\in \mathbb N$,
-			\item morphisms of formal schemes $[\mathfrak p]:\mathfrak G_{n+1}\rightarrow \mathfrak G_{n}$ satisfying the following conditions:
-			\begin{enumerate}
-				\item the generic fibre of $[\mathfrak p]:\mathfrak G_n\rightarrow \mathfrak G_{n+1}$ coincides with $[p]:G\rightarrow G$. 
-				\item $[\mathfrak p]$ is an affine morphism
-				\item Denote by $\tilde{G}_n$ the reduction of $\mathfrak G_n$ mod $p$. Then $[\mathfrak p]$ factors through the relative Frobenius morphism:
-				\begin{center}
-					\begin{tikzcd}
-						& \tilde G_{n}^{(p)} \arrow[rd, dashed] &  \\
-						\tilde G_{n} \arrow[rr, "{[p]}"] \arrow[ru, "F_{rel}"] &  & \tilde G_{n-1}
-					\end{tikzcd}
-				\end{center}
-				
-			\end{enumerate}
-			
-			 
-		\end{enumerate}
-	\end{definition}
-	More generally, as before, we can consider $[p]$-$F$-model towers of admissible open subset $U\subseteq G$ by which we mean the same formal model data for the tower of pull-backs over $U$.
-	
+
+
+
 	\begin{example}
-		If $\mathfrak G$ is a flat commutative formal group scheme such that $p$-multiplication is affine, then setting $\mathfrak G_n = \mathfrak G$ and taking for $[\mathfrak p]$ the actual $p$-multiplication maps $[p]$ defines a $[p]$-$F$-model tower for the rigid analytic group $G=\mathfrak G_\eta$.
+		If $\mathfrak G$ is a flat commutative formal group scheme such that $p$-multiplication is affine, then setting $\mathfrak G_n = \mathfrak G$ and taking for $[\mathfrak p]$ the actual $p$-multiplication maps $[p]$ defines a $[p]$-$F$-formal tower for the rigid analytic group $G=\mathfrak G_\eta$.
 	\end{example}
 	
 	 The same proof for Proposition~\ref{limit exists and is perfectoid: commutative formal group case} works with the weakened conditions: 
-	\begin{proposition}\label{existence of p-F-model tower implies perfectoid}
+	\begin{proposition}\label{existence of p-F-formal tower implies perfectoid}
 		Let $G$ be a rigid analytic group over a perfectoid field $K$. If $G$ admits a $[p]$-$F$-model, then $G_\infty$ exists and is perfectoid.
 	\end{proposition}
  
@@ -344,7 +355,8 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\begin{proof}
 		These are all consequences of the universal property of the perfectoid tilde-limit, cf Proposition~2.4.5 of \cite{SW}, which shows that one can argue like in the case of usual limits.
 	\end{proof}
-	
+
+ 
 %%%%%%%%%%%%
 %%      Section 3
 %%%%%%%%%%%%	
@@ -447,13 +459,13 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\end{proposition}
 	We now have everything together to finish our proof that $(\mathbb G_m^{\operatorname{an}})_\infty$ is perfectoid:
 	\begin{proposition}
-		The space $\mathbb G_m^{\operatorname{an}}$ has a $[p]$-$F$-model tower. In particular, there exists a perfectoid space $(\mathbb G_m^{\operatorname{an}})_\infty$ such that $(\mathbb G_m^{\operatorname{an}})_\infty \sim \varprojlim_{[p]} \mathbb G_m^{\operatorname{an}}$.
+		The space $\mathbb G_m^{\operatorname{an}}$ has a $[p]$-$F$-formal tower. In particular, there exists a perfectoid space $(\mathbb G_m^{\operatorname{an}})_\infty$ such that $(\mathbb G_m^{\operatorname{an}})_\infty \sim \varprojlim_{[p]} \mathbb G_m^{\operatorname{an}}$.
 	\end{proposition}
 	\begin{proof}
 		Since $K$ is perfectoid, we can find $q\in K^\times$ such that $|q|<1$ for which there exist arbitrary $p^n$-th roots. We choose such a $q$ and roots $q^{1/p^n}$ for all $n$. Then the two Propositions above combine to show that 
 		\[\dots \xrightarrow{[\mathfrak p]} \mathfrak G_{q^{1/p^2}}\xrightarrow{[\mathfrak p]} \mathfrak G_{q^{1/p}}\xrightarrow{[\mathfrak p]} \mathfrak G_q\]
-		is a $[p]$-$F$-model tower.
-		By Proposition~\ref{existence of p-F-model tower implies perfectoid} we obtain a perfectoid space $(\mathbb G_m^{\operatorname{an}})_\infty$ as desired.
+		is a $[p]$-$F$-formal tower.
+		By Proposition~\ref{existence of p-F-formal tower implies perfectoid} we obtain a perfectoid space $(\mathbb G_m^{\operatorname{an}})_\infty$ as desired.
 	\end{proof}
 	
 	\subsection{The action of $\overline{T}$}
@@ -492,8 +504,8 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\begin{corollary}\label{torus has formal models}
 		Let $T$ be a split torus over $K$ of the form $T=(\mathbb G_m^{\operatorname{an}})^d$. Then for any $q\in K^\times$ with $|q|<1$ the formal scheme $\mathfrak T_q := (\mathfrak G_q)^d$ is a formal model of $T$. If there is a $p$-th root $q^{1/p}\in K$, the $p$-multiplication map has a formal model $[\mathfrak p]:\mathfrak T_{q^{1/p}}\rightarrow \mathfrak T_{q}$ that locally on polyannuli is of the form $[\mathfrak p]:\mathfrak B(q^{1/p},1)^d\rightarrow \mathfrak B(q,1)^d$. Moreover this map reduces mod p to the relative Frobenius morphism.
 	\end{corollary}
-	\begin{corollary}\label{torus has p-F-model tower and has perfectoid tilde-limit}
-		Let $T$ be a split torus over $K$, considered as a rigid space. Then $T$ has a $[p]$-$F$-model tower. In particular, there exists a perfectoid space $T_\infty$ such that $T_\infty \sim \varprojlim_{[p]} T$. 
+	\begin{corollary}\label{torus has p-F-formal tower and has perfectoid tilde-limit}
+		Let $T$ be a split torus over $K$, considered as a rigid space. Then $T$ has a $[p]$-$F$-formal tower. In particular, there exists a perfectoid space $T_\infty$ such that $T_\infty \sim \varprojlim_{[p]} T$. 
 	\end{corollary}
 	
 	\begin{corollary}\label{action on formal model of torus}
@@ -621,23 +633,23 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\end{proof}
 	
 	We have thus proved the first part of what we want to show about tilde-limits of $E$:
-	\begin{proposition}\label{p-model tower exists for E}
-		Let $K$ be perfectoid. Then $E$ has a $[p]$-model tower of the form
+	\begin{proposition}\label{p-formal tower exists for E}
+		Let $K$ be perfectoid. Then $E$ has a $[p]$-formal tower of the form
 		\[\dots \xrightarrow{[\mathfrak p]} \mathfrak E_{q^{1/p^2}}\xrightarrow{[\mathfrak p]} \mathfrak E_{q^{1/p}}\xrightarrow{[\mathfrak p]} \mathfrak E_q\]
 		for some $q\in K^\times$. In particular, there exists a space $E_\infty$ such that $E_\infty\sim \varprojlim_{[p]}E$.
 	\end{proposition}
 	\begin{proof}
 		By Proposition~\ref{formal model of p-multiplication on E}, any choice of $q\in K^\times$ with $|q|<1$ for which there exists a compatible system of $p^n$-th roots $q^{1/p^n}\in K^\times$ gives a tower
 		\[\dots \xrightarrow{[\mathfrak p]} \mathfrak E_{q^{1/p^2}}\xrightarrow{[\mathfrak p]} \mathfrak E_{q^{1/p}}\xrightarrow{[\mathfrak p]} \mathfrak E_q\]
-		that on the generic fibre equals $\dots\xrightarrow{[p]} E\xrightarrow{[p]} E$. This is the desired $[p]$-model tower.
+		that on the generic fibre equals $\dots\xrightarrow{[p]} E\xrightarrow{[p]} E$. This is the desired $[p]$-formal tower.
 	\end{proof}
 	
 	We are now ready to prove the main result of this section, namely that $E_\infty$ is perfectoid.
 	%\begin{framed}
-	\begin{theorem}\label{p-F-model tower exists for E}
-		Let $K$ be perfectoid. Then the $[p]$-model tower from Proposition~\ref{p-model tower exists for E}
+	\begin{theorem}\label{p-F-formal tower exists for E}
+		Let $K$ be perfectoid. Then the $[p]$-formal tower from Proposition~\ref{p-formal tower exists for E}
 		\[\dots \xrightarrow{[\mathfrak p]} \mathfrak E_{q^{1/p^2}}\xrightarrow{[\mathfrak p]} \mathfrak E_{q^{1/p}}\xrightarrow{[\mathfrak p]} \mathfrak E_q\]
-		 is already a $[p]$-$F$-model tower.
+		 is already a $[p]$-$F$-formal tower.
 		In particular, the space $E_\infty$ is perfectoid.
 	\end{theorem}
 	%\end{framed}
@@ -690,7 +702,7 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\end{center}
 	Since the composed maps $\tilde{E}\rightarrow \tilde{E}$ on the bottom right, $\tilde{T}\rightarrow \tilde{T}$ on the bottom left and  $\tilde{\mathfrak T}_{q^{1/p}}\rightarrow \tilde{\mathfrak T}_{q}$ on the upper left by construction are the reductions of the respective $p$-multiplication maps $[p]$, the functoriality of the associated bundle construction in Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor} implies that the two maps on the upper right compose to the reduction of $[\mathfrak p]\times^{[p]}[p]$. But $[\mathfrak p]\times^{[p]}[p]$ is equal to $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ by definition of the latter. 	This completes the proof that the reduction of $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ factors through the relative Frobenius on $\tilde{\mathfrak E}_{q^{1/p}}$.
 	
-	The conclusion that $E_\infty$ is perfectoid then follows from Proposition~\ref{existence of p-F-model tower implies perfectoid}.
+	The conclusion that $E_\infty$ is perfectoid then follows from Proposition~\ref{existence of p-F-formal tower implies perfectoid}.
 	\end{proof}
 	
 	\section{The case of abelian varieties with semi-stable reduction}
@@ -1442,6 +1454,17 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 	\begin{proof}
 		This can be checked locally on any trivialising cover, where it is clear.
 	\end{proof}
+ 
+
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %some hack to hide the acknowledgements in the toc
+\section*{Acknowledgements}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
+This work started as a group project at the 2017 Arizona Winter School. We would like to thank Bhargav Bhatt for proposing the project, for his guidance and for his constant encouragement. In addition we would like to thank the organizers of the Arizona Winter School for setting up a great environment for us to participate in this project. 
+
+This work was supported by the Engineering and Physical Sciences Research Council [EP/L015234/1]. 
+During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Centre for Doctoral Training in Geometry and Number Theory (The London School of Geometry and Number Theory), University College London. {\color{red} Other grants? or just this one? no NSF? }
+
 	
 	
 	\begin{thebibliography}{9}
