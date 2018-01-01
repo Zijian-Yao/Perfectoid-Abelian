@@ -84,7 +84,7 @@ For an abelian variety $A$ over an algebraically closed non-archimedean field wh
 %%      Section 1
 %%%%%%%%%%%%
 	\section{Introduction} 
-	
+
 Let $p$ be a prime and $K$ a non-archimedean field which is either $p$-adic or characteristic $p$. For simplicity we assume that $K$ is  algebraically closed in this introduction. The primary goal of this article is to show that the ``inverse limit'' of an abelian variety $A$ over $K$ under the multiplication by $p$ map carries a natural structure of perfectoid spaces. %Before we state the precise version of the theorem, we remark that the main assertion already implicitly appeared in [?] [?] without justification. Nevertheless we decide to fill in this gap in the literature, since the proof, despite being straight-forward, is quite subtle to spell out. 
 More precisely, we prove 
 
@@ -92,7 +92,7 @@ More precisely, we prove
 		Let $A$ be an abelian variety over $K$. Then there exists a unique perfectoid space $A_\infty$ over $K$ such that
 				$A_\infty \sim \varprojlim_{[p]} A.$
 	\end{mainthm}
-
+	
 \begin{remark*}	 \label{remark:inverse_limit_adic}
 We will recall the definition of the tilde-limit, namely the meaning of $A_\infty \sim \varprojlim_{[p]} A$, in Section \ref{section:tilde_limit} of the paper. This notion appears in \cite{SW} to remedy the problem that inverse limits rarely exist in the category of adic spaces in the sense of \textit{\small ibid} (even if transition maps are affine).
 {\color{red} We could have used the notion in Scholze's thesis. Explain why we choose to work with this slightly more general notion. }
@@ -149,7 +149,7 @@ In general, tilde-limit for a filtered inverse system of adic spaces (if exists)
 	\begin{example}
 		For the additive group $\mathbb G_a^{\operatorname{an}}$, we know that $[p]$ is an isomorphism and therefore $\varprojlim_{[p]} \mathbb G_a=\mathbb G_a$ exists (even as an actual limit in the category of adic spaces) but is certainly not perfectoid.
 	\end{example}
-	
+
 
 We first more generally consider a rigid group  $G$ over a non-archimedean field $K$. While inverse limits usually don't exist in the rigid analytic category, limits are much better behaved in formal schemes over the ring of integers $\mathcal O_K$ of $K$. One can therefore give a simple criterion in terms of formal models that guarantees that a tilde-limit $G_\infty \sim\varprojlim_{[p]} G$ exists, namely that there is a well-behaved formal model of the $[p]$-multiplication tower.
 If $K$ is perfectoid, we give a stronger criterion involving a Frobenius factorisation condition, which implies that $G_\infty$ is perfectoid.
@@ -161,8 +161,8 @@ Next we consider the case of the Raynaud extension $E$ associated to a semistabl
 We then construct a tilde-limit of $\varprojlim_{[p]} A$ from $E_\infty$: By Raynaud uniformisation, $A$ is naturally isomorphic to the rigid analytic quotient of $E$ by a lattice $M$. After a choice of $\Gamma_0(p^\infty)$-structure, the $[p]$-multiplication tower of $E/M$ factors in a ``ramified'' and an ``\'etale'' part. By a careful choice of charts of $E/M$ in terms of subspaces of $E$ that behave well under $[p^n]:E\rightarrow E$, one can explicitly construct first a perfectoid tilde-limit of the ``ramified'' tower, and then in a second step the space $A_\infty$. This space is independent of the choice of $\Gamma_0(p^\infty)$-structure but remembers it as a pro-\'etale subgroup $D_\infty \subseteq A_\infty$. The construction shows that the perfectoid tilde-limit $A_\infty$ still exists under the weaker assumption that $K$ is a perfectoid field over which there exist lattices $M^{1/p^n}$ for all $n$ whose $p^n$-th multiple is $M$.
 
 The approach via explicit covers finally gives an explicit description of $A_\infty$ in terms of open subspaces of $E_\infty$ which we use in the last section to study the induced map $E_\infty\rightarrow A_\infty$. We show that $E_\infty$ is in fact an open subspace of $A_\infty$ and thus obtain a second description of $A_\infty$ as a quotient group $(D_\infty\times E_\infty)/M_\infty$.
- 
- 
+
+
 \newpage
 
 
@@ -179,22 +179,22 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	If a rigid space is obtained from a $K$-scheme $X$ via rigid-analytification $X\mapsto X^{\operatorname{an}}$, we will often denote both by the same symbol $X$.
 		%?In particular, any cover of a rigid space will be a cover as an adic space, and therefore be an admissible cover in the sense of rigid analytic geometry.  		{\color{red} I don't understand what this remark means. }
 
-	For a formal scheme $\mathfrak X$ over $\operatorname{Spf}(\mathcal O_K)$ with the $\pi$-adic topology, we denote by $\mathfrak X_\eta$ its adic generic fibre. 
+	For a formal scheme $\mathfrak X$ over $\operatorname{Spf}(\mathcal O_K)$ with the $\pi$-adic topology, we denote by $\mathfrak X_\eta$ its adic generic fibre.
 	We denote by $\tilde{X}=\mathfrak X\times_{\operatorname{Spf}\mathcal O_K}\operatorname{Spf}\mathcal O_K/\pi$ its special fibre, considered as a scheme over $\operatorname{Spec}\mathcal O_K/\pi$. 
 	Finally, recall the following standard terminology: 
 		\begin{enumerate}
 			\item Let $X$ be a rigid space over $K$. A \textbf{formal model} of $\mathcal X$ is an admissible topologically finite type formal scheme $\mathfrak X$ over $\mathcal O_K$ together with an isomorphism of its generic fibre $\mathfrak X_\eta \xrightarrow{\sim} X$ (which is often suppressed from notation).
 			\item Let $\phi:  X\rightarrow  Y$ be a morphism of rigid spaces over $K$, with formal models $\mathfrak X$ and $\mathfrak Y$	respectively. A morphism of formal schemes $\Phi:\mathfrak X \rightarrow \mathfrak Y$ is a \textbf{formal model} of $\phi$ if it agrees with $\phi$ on the adic generic fiber. 
 		\end{enumerate}
-		
+
 
 %%%%%%%%%%%%
 %%      Section 2
 %%%%%%%%%%%%	
-
+	
 \numberwithin{theorem}{section}
 	\section{Tilde-limits of rigid groups} \label{section:tilde_limit}
-		
+  
 	
 
 		\subsection{Tilde-limits and formal models} 
@@ -236,12 +236,12 @@ One way to construct tilde-limits is by constructing certain formal models. Firs
 	\end{remark}
 	
 	%Therefore, one way to construct  a tilde limit $\varprojlim \mathcal X_i$ for an inverse system of rigid spaces $\mathcal X_i$ is to look for formal models $\mathfrak X_i$ of the system with affine transition maps. If such data exist, Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} produces a tilde-limit $\mathcal X \sim \varprojlim \mathcal X_i$. 
-
+	
  	\begin{remark} \label{Raynaud theory main theorem}
- 
+			
 	The theory of Raynaud's formal models  says that under the mild assumption that the rigid spaces are quasi-paracompact,
 	one can always find formal models of the spaces, and formal models of morphisms exist after formal blow ups of the source. More precisely, Raynaud's theorem [\cite{Bosch lectures}, section 8.4] states that
-
+		
 		\begin{enumerate}
 			\item Let $X$ be a quasi-separated quasi-paracompact rigid space over $K$. Then there exist an admissible quasi-paracompact formal model $\mathfrak X$ for $X$.
 			\item If $\mathfrak X'\rightarrow \mathfrak X$ is an admissible blow-up of admissible formal schemes, then it induces an isomorphism on the generic fibre  $\mathfrak X'_\eta \xrightarrow{\sim} \mathfrak X_\eta$.
@@ -315,11 +315,11 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 	\begin{remark}
 	uniqueness (since perfectoid)
 	\end{remark} 
-  
+	 
 	\begin{proof}
-	
+	 
 	%Let $\mathfrak G$ be a flat commutative formal group scheme of topologically finite type over $\mathcal O_K$ for which the p-multiplication map $[p]:\mathfrak G\rightarrow \mathfrak G$ is affine. Let $G = \mathfrak G_\eta$ be the rigid group obtained on the generic fibre. Then $G_\infty$ exists and is perfectoid.
-
+	 
 	
 	
 		Following notation from the previous subsection, the map $[p]:\mathfrak G\rightarrow \mathfrak G$ is a formal model of the map $[p]$ on its rigid generic fiber. By Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} we therefore have 
@@ -1008,29 +1008,36 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 	\dots \xrightarrow{v}E/M^{1/p^\infty}\xrightarrow{v} E/M^{1/p^\infty}\xrightarrow{v} E/M^{1/p^\infty}
 	\end{equation}
 	which we think of as being a kind of vertical ``limit'' of diagram~\ref{p-multiplication tower of E/M splits into vertical and horizontal tower}. 
+	\begin{remark}\label{projective limits of perfectoid spaces as adic spaces}
+	It is clear at this point that the limit of this tower exists, even as a categorical limit of honest adic spaces, since limits of affinoid perfectoid spaces exist in honest adic spaces and are affinoid perfectoid:
 	
-	It is clear at this point that the limit of this tower exists, even as a categorical limit of adic spaces: Since $\pi$-adically completed direct limit of perfectoid $\mathcal O_K$-algebras are again perfectoid, any affinoid tower of perfectoid spaces has a perfectoid limit. The categorical limit is then in particular a tilde limit (the condition on the underlying sets can be checked using the argument of Lemma 6.13.(ii) in \cite{perfectoid}). The affinoid case implies the result for the above tower by a glueing argument.
+	If $(\operatorname{Spa}(A_i,A_i^{+}))_{i\in I}$ is an inverse system of affinoid perfectoid spaces, then it is easy to check that for $A^+$ the $\pi$-adic completion of $\varinjlim A_i$ and for $A = A^+[1/\pi]$, the affinoid algebra $(A,A^{+})$ is again perfectoid. It then follows from topological algebra that $\operatorname {Spa}(A,A^{+})$ has the desired universal property for maps from honest adic spaces into the inverse system $(\operatorname{Spa}(A_i,A_i^{+}))_{i\in I}$.
 	
-	Nevertheless, we now want to give a slightly more explicit construction of this limit that also says something about its local geometry. We first observe:
+	From the construction it follows that this tilde limit (the condition on the underlying sets can be checked using the argument of Lemma 6.13.(ii) in \cite{perfectoid IHES}). The affinoid case implies the result for the above tower by a glueing argument.
+	\end{remark}
+	
+	Despite the remark, we now want to give a slightly more explicit construction of this limit that also says something about its local geometry. We first looks at the tower
+	\[\dots \xrightarrow{[p]}D_{n+1}\xrightarrow{[p]}D_n\rightarrow\dots.\]
 	\begin{lemma}
-		There is a perfectoid space $D_\infty$ such that $D_\infty \sim \varprojlim_{[p]} D_n$ is the tilde limit of $\dots \xrightarrow{[p]}D_{n+1}\xrightarrow{[p]}D_n\rightarrow\dots$.   It is uncanonically isomorphic to the constant group $\underline {\mathbb Z_p^r}$
+		There is a perfectoid space $D_\infty$ such that $D_\infty = \varprojlim_{[p]} D_n$ as a limit of adic spaces
 	\end{lemma}
 	\begin{proof}
-		This is clear because all $D_n$ are isomorphic to $\underline {\mathbb Z_p/p^{rn}\mathbb Z}$.
+		The $D_n$ are \'etale over $\operatorname{Spa}(K)$ and thus perfectoid.
+		Like in Remark~\ref{projective limits of perfectoid spaces as adic spaces}, we then obtain a perfectoid space $D_\infty$. More explicitly, since  the $D_n$ is isomorphic to $\underline {\mathbb Z_p/p^{n}\mathbb Z}$, we can write \[D_\infty \cong\operatorname{Spa}(\operatorname{Map}_{\operatorname{cts}}(\mathbb Z_p,K),\operatorname{Map}_{\operatorname{cts}}(\mathbb Z_p,\mathcal O_K)).\]
 	\end{proof}
 	\begin{proposition}\label{horizontal limit of vertical limit}
-	There exists a perfectoid space $(E/M^{1/p^\infty})_\infty$ such that \[(E/M^{1/p^\infty})_\infty \sim \varprojlim_{v}(E/M^{1/p^\infty}).\]
-	 Moreover, the projection map $\pi:(E/M^{1/p^\infty})_\infty\rightarrow E/M^{1/p^\infty}$ is an infinite covering map, that is every point of $E/M^{1/p^\infty}$ has an open neighbourhood $U$ such that $\pi^{-1}(U)$ is isomorphic to $D_\infty \times U$,  a disjoint union of infinitely many copies of $U$.
+	There exists a perfectoid space $(E/M^{1/p^\infty})_\infty$ such that \[(E/M^{1/p^\infty})_\infty= \varprojlim_{v}(E/M^{1/p^\infty}).\]
+	 Moreover, the projection map $\pi:(E/M^{1/p^\infty})_\infty\rightarrow E/M^{1/p^\infty}$ is a profinite covering map, that is every point of $E/M^{1/p^\infty}$ has an open neighbourhood $U$ such that $\pi^{-1}(U)$ is isomorphic to $D_\infty \times U$.
 	\end{proposition}
 	\begin{proof}
-	By Lemma~\ref{horizontal etale map pulls back to vertical limit}, the preimage of $E_i^{1/p^\infty}$ under $v^m$ of $E/M^{1/p^\infty}$ is isomorphic to $D_m\times E_i^{1/p^\infty}$. The restriction of the tower to $E_i^{1/p^\infty}$ therefore has limit $D_\infty \times E_i^{1/p^\infty}$, which is a disjoint union of perfectoid spaces and therefore clearly perfectoid. 
+	By Lemma~\ref{horizontal etale map pulls back to vertical limit}, the preimage of $E_i^{1/p^\infty}$ under $v^m$ of $E/M^{1/p^\infty}$ is isomorphic to $D_m\times E_i^{1/p^\infty}$. Since projective limits commute with products, the restriction of the tower to $E_i^{1/p^\infty}$ therefore has limit $D_\infty \times E_i^{1/p^\infty}$, which is perfectoid as a product of perfectoid spaces. 
 	
 	One can then glue using the same arguments as in the proof of Proposition~\ref{explicit construction of vertical tilde-limit}.
 	\end{proof}
 	
 	\subsection{The diagonal tower: proof of the main theorem}
-	We now want to show that $(E/M^{1/p^\infty})_\infty$ is in fact a tilde-limit of the $[p]$-multiplication tower. In other words, this says that the horizontal tilde-limit of the vertical tilde-limits in diagram~\ref{p-multiplication tower of E/M splits into vertical and horizontal tower} is also a diagonal tilde-limit.
-	This isn't just a formal consequence since tilde-limits aren't limits in the category of adic spaces. But using our understanding of the local geometry of the maps in the tower in terms of cuboids, it is still easy to see:
+	We now want to show that $(E/M^{1/p^\infty})_\infty$ is in fact a tilde-limit of the $[p]$-multiplication tower. In other words, this says that the horizontal limit of the vertical tilde-limits in diagram~\ref{p-multiplication tower of E/M splits into vertical and horizontal tower} is also a diagonal tilde-limit.
+	This isn't just a formal consequence since tilde-limits aren't limits. But using the local geometry of the maps in the tower in terms of cuboids, it is still easy to see:
 	
 	\begin{proposition}\label{tilde limit of tilde limits of partial towers is tilde limit of whole tower}
 		The perfectoid space  $A_\infty:=(E/M^{1/p^\infty})_\infty$ is a tilde-limit of $\varprojlim_{[p]}A$.	It is independent up to unique isomorphism of the choice of partial anticanonical $\Gamma_0(p^\infty)$-structure, but it remembers the choice as a pro-finite \'etale closed subgroup $D_\infty \subseteq A_\infty$. 
@@ -1040,9 +1047,24 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 
 	In order to show that it is a tilde-limit of $\varprojlim_{[p]}E/M$, it thus suffices to give an explicit cover of $(E/M^{1/p^\infty})_\infty$ by open affinoids satisfying the tilde-limit property. 
 	
-	Recall that by construction of $(E/M^{1/p^\infty})$ we have a cover of $E/M$ by open subsets $E_i$ that pull back to perfectoid open subspaces $E_i^{1/p^\infty}$ for which $E_i^{1/p^\infty}\sim \varprojlim E_i^{1/p^n}$. Moreover, by the second part of Proposition~\label{horizontal etale map pulls back to vertical limit} we know that the pullback of $E_i^{1/p^\infty}$ to $(E/M^{1/p^\infty})_\infty$ is $D_\infty \times E_i^{1/p^\infty}$.  But it is clear from Lemma~\ref{preimage of E_i under p^n is disjoint copies} that the image of any such isomorphic copy of $E_i^{1/p^\infty}\hookrightarrow   (E/M^{1/p^\infty})_\infty$ in the inverse system $\dots\xrightarrow{[p]}A\xrightarrow{[p]} A$ is isomorphic to the inverse system $\dots\rightarrow E_i^{1/p}\rightarrow E_i$. Since $E_i^{1/p^\infty}\sim \varprojlim E_i^{1/p^n}$, this shows that $(E/M^{1/p^\infty})_\infty$ is locally the tilde-limit of the $[p]$-tower on $A$ as desired.
+	Recall that by construction of $(E/M^{1/p^\infty})$ we have a cover of $E/M$ by open subsets $E_i$ that pull back to perfectoid open subspaces $E_i^{1/p^\infty}$ for which $E_i^{1/p^\infty}\sim \varprojlim E_i^{1/p^n}$.
+	 Moreover, by the second part of Proposition~\label{horizontal etale map pulls back to vertical limit} we know that the pullback of $E_i^{1/p^\infty}$ to $(E/M^{1/p^\infty})_\infty$ is $D_\infty \times E_i^{1/p^\infty}$.  
 	
-	That $A_\infty$ is independent of the $\Gamma_0(p^\infty)$-structure up to unique isomorphism is a consequence of the universal property of the perfectoid tilde-limit. That $D_\infty$ can be described as a closed subgroup of $A_\infty$ is then clear from the local description of $A_\infty$ as $D_\infty \times E_i^{1/p^\infty}$.
+	 
+	 On the other hand, when we go along the diagonal tower, we obtain the inverse system 
+	 \[\dots\rightarrow D_{n+1}\times E_i^{1/p^{n+1}}\rightarrow D_{n}\times E_i^{1/p^{n}}\rightarrow \dots.\]
+	 We claim that this tower has tilde limit $D_\infty\times E_i^{1/p^\infty} \sim \varprojlim D_n\times E_i^{1/p^n}$.
+	 To see this, cover $E_i^{1/p^\infty}$ by open affinoids $U=\Spa(A,A^{+})$ such that 
+	 \[\varinjlim_{\Spa(A_{j},A_{j}^{+})\subseteq E_i^{1/p^n}} A_{j} \rightarrow A \]
+	 has dense image, where the direct limit runs through all affinoid open subspaces $\Spa(A_{j},A_{j}^{+})\subseteq E_i^{1/p^n}$ for all $n$ through which $U\subseteq E_i^{1/p^\infty}\rightarrow E_i^{1/p^n}$ factors, as in the definition of tilde limits. Then by the construction of products of affinoid perfectoid spaces, the pullback of $U$ to $(E/M^{1/p^\infty})_\infty$ is 
+	\[D_\infty\times U \cong \operatorname{Spa}(\operatorname{Map}_{cts}(\mathbb Z_p,A),\operatorname{Map}_{cts}(\mathbb Z_p,A^+))\]
+	 It thus suffices to show that $\varinjlim \operatorname{Map}(\mathbb Z/p^n\mathbb Z,A_{j})$ is dense in $\operatorname{Map}_{cts}(\mathbb Z_p,A)$.
+	 As a first step, even though in the above limit $n$ depends on $j$, we may write this as two separate limits, 
+	 \[\varinjlim \operatorname{Map}(\mathbb Z/p^n,\mathbb Z,A_{j}) = \varinjlim_{j} \varinjlim_n \operatorname{Map}(\mathbb Z/p^n\mathbb Z,A_{j}).\]
+	 For fixed $j$, we then see that 
+	 \[\varinjlim_{n} \operatorname{Map}(\mathbb Z/p^n\mathbb Z,A_m)=\operatorname{Map}_{lc}(\mathbb Z_p,A_m)\] where the right hand side denotes locally constant morphisms. But it then follows from a pointwise approximation argument that $\varinjlim\operatorname{Map}_{lc}(\mathbb Z_p,A_m)$ has dense image in $\operatorname{Map}_{lc}(\mathbb Z_p,A)$. It is then clear that the latter has dense image in $\operatorname{Map}_{cts}(\mathbb Z_p,A)$. We conclude that $D_\infty\times E_i^{1/p^\infty} \sim \varprojlim D_n\times E_i^{1/p^n}$.
+	 
+	That $A_\infty$ is independent of the $\Gamma_0(p^\infty)$-structure up to unique isomorphism is a consequence of the universal property of the perfectoid tilde-limit. To see that $D_\infty$ is a closed subgroup of $A_\infty$, choose $i$ such that the origin of $E/M$ lies in $E_i$. Then the unit section $\Spa(K,\mathcal O_K)\rightarrow E_i^{1/p^\infty}$ induces a closed immersion $D_\infty\hookrightarrow D_\infty \times E_i^{1/p^\infty}\hookrightarrow A_\infty$.
 	\end{proof}
 	
 	This finishes the proof of Theorem~\ref{main theorem}.
@@ -1064,7 +1086,7 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 	
 	By Proposition~\ref{perfectoid tilde limit is perfectoid group in a functorial way} the map $\pi:E\rightarrow A=E/M$ in the limit induces a natural group homomorphism $\iota:E_\infty \rightarrow A_\infty$. A similar universal property argument shows that we obtain a natural group homomorphism $A_\infty \rightarrow E/M^{1/p^\infty}$. In this section we want to study these morphisms more closely.
 	
-	We start with the case of $E\rightarrow E/M^{1/p^\infty}$:
+	We start with the case of $E_\infty\rightarrow E/M^{1/p^\infty}$:
 	\begin{proposition}\label{the morphism E->E/M^{1/p^n} in the limit}
 		Denote by $M_\infty\cong M$ the perfectoid tilde-limit of the tower
 		\begin{center}
@@ -1523,8 +1545,8 @@ This work started as a group project at the 2017 Arizona Winter School. We would
 
 This work was supported by the Engineering and Physical Sciences Research Council [EP/L015234/1]. 
 During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Centre for Doctoral Training in Geometry and Number Theory (The London School of Geometry and Number Theory), University College London. {\color{red} Other grants? or just this one? no NSF? }
- 
-  
+
+	
 	
 	\begin{thebibliography}{9}
 		
@@ -1557,7 +1579,7 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 		\bibitem{perfectoid} 
 		Peter Scholze
 		\textit{Perfectoid spaces}.  IHES 
-		 
+		
 		\bibitem{torsion} 
 		Peter Scholze
 		\textit{Torsion in cohomology of locally symmetric varieties}.
