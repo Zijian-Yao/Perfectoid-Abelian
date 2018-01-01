@@ -45,7 +45,7 @@
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{notation}[theorem]{Notation}
-\newtheorem*{question}{Question}
+\newtheorem{question}[mainthm]{Question}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem*{example}{Example}
 \newtheorem{remark*}[mainthm]{Remark}
@@ -93,7 +93,7 @@ More precisely, we prove
 				$A_\infty \sim \varprojlim_{[p]} A.$
 	\end{mainthm}
 
-\begin{remark*}	
+\begin{remark*}	 \label{remark:inverse_limit_adic}
 We will recall the definition of the tilde-limit, namely the meaning of $A_\infty \sim \varprojlim_{[p]} A$, in Section \ref{section:tilde_limit} of the paper. This notion appears in \cite{SW} to remedy the problem that inverse limits rarely exist in the category of adic spaces in the sense of \textit{\small ibid} (even if transition maps are affine).
 {\color{red} We could have used the notion in Scholze's thesis. Explain why we choose to work with this slightly more general notion. }
 \end{remark*}
@@ -106,7 +106,7 @@ We will recall the definition of the tilde-limit, namely the meaning of $A_\inft
 In fact, we will achieve (1) and (2) simultaneously. 
 
 \begin{remark*}	\label{remark:good_reduction}
-Let us consider the motivating example of the case of good reduction. This example is generalized from Exercise 4 -- 6 in \cite{Bhatt} and spelt out in details in Subsection \ref{subsection:perfectoid_tilde_limit}. 
+Let us consider the motivating example of the case of good reduction. This example is generalized from Exercise 4 -- 6 in \cite{Bhatt} and spelt out in details in Subsection \ref{subsection:perfectoid_tilde_limit} [Corollary \ref{tilde limit exists and is perfectoid in the good reduction case}]. 
 
 Let $\mathcal A$ be a formal abelian scheme over $\mathcal O_K$ with generic fiber $A$. Then on the mod $p$ special fiber $\mathcal A_s = \mathcal A \times \mathcal O_K/p$,  multiplication by $p$ factors through the relative Frobenius map, forcing the inverse limit $ \varprojlim_{[p]} \mathcal A_s $ (which exists in the category of schemes) to be relatively perfect over $\mathcal O_K/p$. Let $\mathcal A_{\infty} = \varprojlim_{[p]} \mathcal A$ (which exists by Lemma \ref{lemma:inverse_limit_formal}), then its adic generic fiber $A_\infty$ is a tilde-limit of the multiplication by $p$ system of $A$, and is perfectoid.  {\color{red} probably say a little more?}
 \end{remark*}
@@ -127,7 +127,7 @@ Now we describe the content of each section.
 
  
  
-	\begin{question}
+	\begin{question} \label{question_intro}
 	    \begin{enumerate} 
 	    \item		Given a rigid group $G$, when is there an adic space $G_\infty$ such that $G_\infty \sim  \varprojlim_{[p]} G ?$
 	    \item If it exists, and $K$ is perfectoid, when is $G_\infty$ perfectoid?
@@ -179,10 +179,14 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	If a rigid space is obtained from a $K$-scheme $X$ via rigid-analytification $X\mapsto X^{\operatorname{an}}$, we will often denote both by the same symbol $X$.
 		%?In particular, any cover of a rigid space will be a cover as an adic space, and therefore be an admissible cover in the sense of rigid analytic geometry.  		{\color{red} I don't understand what this remark means. }
 
-	For a formal scheme $\mathfrak X$ over $\operatorname{Spf}(\mathcal O_K)$ with the $\pi$-adic topology, we denote by $\mathfrak X_\eta$ its adic generic fibre.
-	We denote by
-	$\tilde{X}=\mathfrak X\times_{\operatorname{Spf}\mathcal O_K}\operatorname{Spf}\mathcal O_K/\pi$ its special fibre, considered as a scheme over $\operatorname{Spec}\mathcal O_K/\pi$.
-
+	For a formal scheme $\mathfrak X$ over $\operatorname{Spf}(\mathcal O_K)$ with the $\pi$-adic topology, we denote by $\mathfrak X_\eta$ its adic generic fibre. 
+	We denote by $\tilde{X}=\mathfrak X\times_{\operatorname{Spf}\mathcal O_K}\operatorname{Spf}\mathcal O_K/\pi$ its special fibre, considered as a scheme over $\operatorname{Spec}\mathcal O_K/\pi$. 
+	Finally, recall the following standard terminology: 
+		\begin{enumerate}
+			\item Let $X$ be a rigid space over $K$. A \textbf{formal model} of $\mathcal X$ is an admissible topologically finite type formal scheme $\mathfrak X$ over $\mathcal O_K$ together with an isomorphism of its generic fibre $\mathfrak X_\eta \xrightarrow{\sim} X$ (which is often suppressed from notation).
+			\item Let $\phi:  X\rightarrow  Y$ be a morphism of rigid spaces over $K$, with formal models $\mathfrak X$ and $\mathfrak Y$	respectively. A morphism of formal schemes $\Phi:\mathfrak X \rightarrow \mathfrak Y$ is a \textbf{formal model} of $\phi$ if it agrees with $\phi$ on the adic generic fiber. 
+		\end{enumerate}
+		
 
 %%%%%%%%%%%%
 %%      Section 2
@@ -190,26 +194,34 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 
 \numberwithin{theorem}{section}
 	\section{Tilde-limits of rigid groups} \label{section:tilde_limit}
-	Let $G$ be a rigid group over $K$, that is, group object in the category of rigid spaces over $K$.
-	We are primarily interested in the following examples 
-\begin{enumerate}	 
-\item Analytifications of finite type group schemes over $K$. Examples include the analytification of an abelian variety $A$ over $K$, of tori $T$ over $K$, \textit{\small etc.}
-\item Generic fibres of topologically finite type formal group schemes over $\mathcal O_K$. 
-\item Raynaud's covering space $E$  of an abelian variety with semi-stable reduction.
-\end{enumerate}
+		
 	
-		\subsection{Existence of tilde-limits via formal models} 
-  
-  
-  
-	Inverse limits often don't exist in the category of adic spaces (or even rigid spaces). However, we observe the  following lemma:
+
+		\subsection{Tilde-limits and formal models} 
+		
+	As we have seen in Remark \ref{remark:inverse_limit_adic} in the introduction, inverse limits often do not exist in the category of adic spaces (in fact not even in rigid spaces in general). Instead we use the notion of tilde-limit from \cite{SW}:
+	
+	\begin{definition} 
+Let $X_i$ be a filtered inverse system of adic spaces with quasi-compact and quasi-separated transition maps, let $X$ be an adic space with a compatible system of morphisms $f_i: X \rightarrow X_i$. We write $X \sim \varprojlim X_i$ ($X$ is a \textbf{tilde-limit} of $X_i$) if the map of underlying topological spaces $|X| \rightarrow \varprojlim |X_i|$ is a homeomorphism, and there exists an open cover of $X$ by affinoids $\operatorname{Spa} (A, A^+) \subset X$ such that the map 
+$$ \varinjlim_{\operatorname{Spa}(A_i, A_i^+) \subset X_i} A_i \rightarrow A$$
+has dense image, where the direct limit runs over all open affinoids $\operatorname{Spa}(A_i, A_i^+) \subset X_i$ containing the image of $\operatorname{Spa}(A, A+) \subset X$.
+	\end{definition}
+	
+	\begin{remark}
+	Not necessarily ``unique''. {\color{red} to do}
+	\end{remark}
+	
+One way to construct tilde-limits is by constructing certain formal models. First observe that inverse limits are much better behaved in the category of formal schemes. 
+
 	\begin{lemma} \label{lemma:inverse_limit_formal}
 		Let $(\mathfrak X_i,\phi_{ij})_{i\in I}$ be an inverse system of formal schemes $\mathfrak X_i$ over $\mathcal O_K$ with affine transition maps $\phi_{ij}:\mathfrak X_j\rightarrow \mathfrak X_i$. Then the inverse limit $\mathfrak X=\varprojlim \mathfrak X_i$ exists in the category of formal schemes over $\mathcal O_K$. If all the $\mathfrak X_i$ are flat formal schemes, so is $\mathfrak X$.
 	\end{lemma}
 	\begin{proof}
 	In the affine case, if the inverse system is $\operatorname{Spf} A_i$, take $A$ to be the $\pi$-adic completion of $\varinjlim A_i$, then  $\operatorname{Spf} A$ is the inverse limit of the $\operatorname{Spf}A_i$. In general, we can use the fact that the transition maps are affine to reduce to the affine case. 
 	\end{proof}
-	In the situation of the lemma,  the transition maps are affine and hence quasi-compact and quasi-separated, so after passing to adic spaces, $\mathfrak X$ is also the tilde-limit  $\mathfrak X\sim \varprojlim \mathfrak X_i$ in the sense of \cite{SW}. Even better, this remains true after passing to the generic fibre $\operatorname{Spa}(K,\mathcal O_K)\rightarrow \operatorname{Spa}(\mathcal O_K,\mathcal O_K)$.
+	
+	In the lemma above, $\mathfrak X$ is also a tilde-limit  $\mathfrak X\sim \varprojlim \mathfrak X_i$. This remains true after passing to the adic generic fibre $\operatorname{Spa}(K,\mathcal O_K)\rightarrow \operatorname{Spa}(\mathcal O_K,\mathcal O_K)$.
+	
 	\begin{lemma}\label{tilde-limit from adic generic fibre of formal schemes}
 		Let $(\mathfrak X_i,\phi_{ij})_{i\in I}$ be an inverse system of formal schemes $\mathfrak X_i$ over $\mathcal O_K$ with affine transition maps $\phi_{ij}$ and let $\mathfrak X=\varprojlim_{\phi_j} \mathfrak X_i$ be the limit. Let $\mathcal X_i =(\mathfrak X_i)_\eta$ and  $\mathcal X = (\mathfrak X)_\eta$ be the adic generic fibres. Then
 		\[\mathcal X \sim \varprojlim \mathcal X_i.\]
@@ -220,50 +232,36 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	\end{proof}
 	
 	\begin{remark}
-	This means that one can always construct the limit of an inverse system of rigid spaces $\mathcal X_i$ if it arises from an inverse system of formal schemes $\mathfrak X_i$ with affine transition maps. This is precisely what Scholze uses in \cite{torsion} in order to construct the space $\mathcal X_{\Gamma_0(p^\infty)}(\epsilon)_a$ (see the proof of Corollary III.2.19 in \cite{torsion}).
+	In particular, one may construct a tilde-limit of an inverse system of rigid spaces $\mathcal X_i$ if it arises from an inverse system of formal schemes $\mathfrak X_i$ with affine transition maps. This is precisely what Scholze uses in \cite{torsion} to construct the space $\mathcal X_{\Gamma_0(p^\infty)}(\epsilon)_a$ (see Corollary III.2.19 in \cite{torsion} and its proof).
 	\end{remark}
 	
-	Therefore, one way to construct  a tilde limit $\varprojlim \mathcal X_i$ for an inverse system of rigid spaces $\mathcal X_i$ is to look for formal models $\mathfrak X_i$ of the system with affine transition maps. %If such data exist, Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} produces a tilde-limit $\mathcal X \sim \varprojlim \mathcal X_i$. 
-	Here we follow the following standard terminology:
-	\begin{definition} \indent 
-	
-		\begin{enumerate}
-			\item Let $\mathcal X$ be a rigid space over $K$. A \textbf{formal model} of $\mathcal X$ is an admissible topologically finite type formal scheme $\mathfrak X$ over $\mathcal O_K$ together with an isomorphism of its generic fibre $\mathfrak X_\eta \xrightarrow{\sim} \mathcal X$ (which is often suppressed from notation).
-			\item Let $\phi:\mathcal X\rightarrow \mathcal Y$ be a morphism of rigid spaces over $K$. Let $\mathfrak X,\mathfrak Y$ be formal models of $\mathcal X,\mathcal Y$ respectively. Then a morphism of formal schemes $\Phi:\mathfrak X \rightarrow \mathfrak Y$ is a \textbf{formal model} of $\phi$ if the following diagram commutes:
-			\begin{center}
-				\begin{tikzcd}
-					\mathcal X \arrow[r, "\phi"] & \mathcal Y \\
-					\mathfrak X_\eta \arrow[u, "\cong"] \arrow[r, "\Phi"] & \mathfrak Y_\eta \arrow[u, "\cong"]
-				\end{tikzcd}
-			\end{center}
-			
-		\end{enumerate}
-		
-	\end{definition}	
+	%Therefore, one way to construct  a tilde limit $\varprojlim \mathcal X_i$ for an inverse system of rigid spaces $\mathcal X_i$ is to look for formal models $\mathfrak X_i$ of the system with affine transition maps. If such data exist, Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} produces a tilde-limit $\mathcal X \sim \varprojlim \mathcal X_i$. 
+
+ 	\begin{remark} \label{Raynaud theory main theorem}
  
-	The theory of Raynaud's formal models says that under the mild assumption that the rigid spaces are quasi-paracompact,
-	one can always find formal models of the spaces, and formal models of morphisms exist after formal blow ups of the source:
-	
-	\begin{theorem}[\cite{Bosch lectures}, section 8.4]\label{Raynaud theory main theorem}
-		\leavevmode
+	The theory of Raynaud's formal models  says that under the mild assumption that the rigid spaces are quasi-paracompact,
+	one can always find formal models of the spaces, and formal models of morphisms exist after formal blow ups of the source. More precisely, Raynaud's theorem [\cite{Bosch lectures}, section 8.4] states that
+
 		\begin{enumerate}
-			
-			\item Let $X$ be a quasi-separated quasi-paracompact rigid space over $K$. Then there exist an admissible quasi-paracompact formal scheme $\mathfrak X$ over $\mathcal O_K$ such that $X=\mathfrak X_\eta$.
-			\item If $\mathfrak X'\rightarrow \mathfrak X$ is an admissible blow-up of admissible formal schemes, then its generic fibre is an isomorphism $\mathfrak X'_\eta \xrightarrow{\sim} \mathfrak X_\eta$.
+			\item Let $X$ be a quasi-separated quasi-paracompact rigid space over $K$. Then there exist an admissible quasi-paracompact formal model $\mathfrak X$ for $X$.
+			\item If $\mathfrak X'\rightarrow \mathfrak X$ is an admissible blow-up of admissible formal schemes, then it induces an isomorphism on the generic fibre  $\mathfrak X'_\eta \xrightarrow{\sim} \mathfrak X_\eta$.
 			\item Let $\mathfrak X$ and $\mathfrak Y$ be admissible quasi-paracompact formal schemes over $\mathcal O_K$ and let $f:\mathfrak X_\eta \rightarrow \mathfrak Y_\eta$ be a morphism of their associated rigid spaces. Then there exist an admissible blow-up $\pi:\mathfrak X'\rightarrow \mathfrak X$ and a map $\mathfrak f:\mathfrak X'\rightarrow \mathfrak Y$ such that $\mathfrak f_\eta = f\circ \pi_\eta$.
-			\begin{center}
-				
-			\begin{tikzcd}
-				\mathfrak X' \arrow[d,"\pi"] \arrow[rrd, "\mathfrak f"] &  &  &  & \mathfrak X'_\eta \arrow[d, "\cong","\pi_\eta"'] \arrow[rrd, "\mathfrak f_\eta"] &  &  \\
-				\mathfrak X &  & \mathfrak Y &  & \mathfrak X_\eta \arrow[rr, "f"] &  & \mathfrak Y_\eta
-			\end{tikzcd}
-			\end{center}
 		\end{enumerate}
-	\end{theorem}
+		In particular, given an inverse system ($\mathcal X_i,\phi_{ij})$ of rigid spaces, one can always choose formal models $\mathfrak X_i$ for the $\mathcal X_i$, and by successive admissible blow-ups one can also find models for the $\phi_{ij}$ (which might not be affine morphisms). 
+		\end{remark}
+
 	
-	In particular, given an inverse system ($\mathcal X_i,\phi_{ij})$ of rigid spaces, one can always choose formal models $\mathfrak X_i$ for the $\mathcal X_i$, and by successive admissible blow-ups one can also find models for the $\phi_{ij}$ (which might not be affine morphisms). 
-	%If it is possible to do this in such a way that transition maps are affine, one thereby obtains a construction of $G_\infty$. More precisely, we can formalise this as follows:
-	
+\subsection{Rigid groups}
+
+Now let $G$ be a rigid group over $K$, that is, a group object in the category of rigid spaces over $K$.
+	We are primarily interested in the following examples 
+\begin{enumerate}	 
+\item Analytifications of finite type group schemes over $K$. Examples include the analytification of an abelian variety $A$ over $K$, of tori $T$ over $K$, \textit{\small etc.}
+\item Generic fibres of topologically finite type formal group schemes over $\mathcal O_K$. 
+\item Raynaud's covering space $E$  of an abelian variety with semi-stable reduction.
+\end{enumerate}
+
+	Lemma \ref{lemma:inverse_limit_formal} and Lemma \ref{tilde-limit from adic generic fibre of formal schemes} motivate the following definition. 
 	\begin{definition}
 		Let $G$ be a rigid group. A \textbf{$[p]$-formal tower} for $G$ is  a family of formal models $\{\mathfrak G_n\}_{n\in \mathbb N}$ of $G$, together with affine transition maps $[\mathfrak p]_n:\mathfrak G_{n}\rightarrow \mathfrak G_{n-1}$ which are formal models of $[p]:G\rightarrow G$. 
 	\end{definition}
@@ -276,7 +274,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 		\end{tikzcd}
 	\end{center}
 	
-	We now summarise our discussion in this subsection by the following
+	We now summarise our discussion in the previous subsection by the following
 	\begin{corollary}
 		Let $G$ be a rigid group. If $G$ admits a $[p]$-formal tower, then there exists a rigid space $G_\infty$ such that $G_\infty \sim \varprojlim_{[p]}G$.
 	\end{corollary}
@@ -287,6 +285,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	
 	\subsection{Perfectoidness}  \label{subsection:perfectoid_tilde_limit}
 
+In this subsection we define a formalism to address part (2) of Question \ref{question_intro}
 In light of Remark \ref{remark:good_reduction} in the introduction we make the following definition
 	
 	\begin{definition}
@@ -309,14 +308,20 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 		\end{enumerate}
 	\end{definition}	
 	
-	 
-	 
-	 
-	 
-	\begin{proposition}\label{limit exists and is perfectoid: commutative formal group case}
-		Assume that $K$ is perfectoid. Let $\mathfrak G$ be a flat commutative formal group scheme of topologically finite type over $\mathcal O_K$ for which the p-multiplication map $[p]:\mathfrak G\rightarrow \mathfrak G$ is affine. Let $G = \mathfrak G_\eta$ be the rigid group obtained on the generic fibre. Then $G_\infty$ exists and is perfectoid.
+	 	\begin{proposition}\label{existence of p-F-formal tower implies perfectoid}
+		Let $G$ be a rigid analytic group over a perfectoid field $K$. If $G$ admits a $[p]$-$F$-formal tower, then $G_\infty$ exists and is perfectoid. 
 	\end{proposition}
+	 
+	\begin{remark}
+	uniqueness (since perfectoid)
+	\end{remark} 
+  
 	\begin{proof}
+	
+	%Let $\mathfrak G$ be a flat commutative formal group scheme of topologically finite type over $\mathcal O_K$ for which the p-multiplication map $[p]:\mathfrak G\rightarrow \mathfrak G$ is affine. Let $G = \mathfrak G_\eta$ be the rigid group obtained on the generic fibre. Then $G_\infty$ exists and is perfectoid.
+
+	
+	
 		Following notation from the previous subsection, the map $[p]:\mathfrak G\rightarrow \mathfrak G$ is a formal model of the map $[p]$ on its rigid generic fiber. By Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} we therefore have 
 		
 		\[G_\infty = (\varprojlim_{[p]}\mathfrak G)_\eta \sim \varprojlim_{[p]}G. \] 
@@ -369,7 +374,7 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 		
 	\end{example}
 	
-	Looking closely at  Proposition \ref{limit exists and is perfectoid: commutative formal group case}, all we need is in fact a model for the $p$-multiplication morphism $[p]:G\rightarrow G$, and we never use that all the $\mathfrak G$ in the tower are copies of the same formal scheme. Weakening these two conditions, we arrive at the following definition:
+ 
 	
 
 
@@ -378,10 +383,6 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 		If $\mathfrak G$ is a flat commutative formal group scheme such that $p$-multiplication is affine, then setting $\mathfrak G_n = \mathfrak G$ and taking for $[\mathfrak p]$ the actual $p$-multiplication maps $[p]$ defines a $[p]$-$F$-formal tower for the rigid analytic group $G=\mathfrak G_\eta$.
 	\end{example}
 	
-	 The same proof for Proposition~\ref{limit exists and is perfectoid: commutative formal group case} works with the weakened conditions: 
-	\begin{proposition}\label{existence of p-F-formal tower implies perfectoid}
-		Let $G$ be a rigid analytic group over a perfectoid field $K$. If $G$ admits a $[p]$-$F$-model, then $G_\infty$ exists and is perfectoid.
-	\end{proposition}
  
 	
 	What we aim to prove in the rest of this write-up is that for a Raynaud extension $0\rightarrow T\rightarrow E\rightarrow B\rightarrow 0$, there is a $[p]$-$F$-model for $T$ which induces a $[p]$-$F$-model for $E$. This will prove that tilde-limits $T_\infty$ and $E_\infty$ exist and are perfectoid if $K$ is perfectoid.
@@ -408,9 +409,7 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 	\end{proof}
 
  
- 
- 
-%%%%%%%%%%%%
+  %%%%%%%%%%%%
 %%      Section 3
 %%%%%%%%%%%%	
 	\section{Formal models for tori}
@@ -1525,6 +1524,7 @@ This work started as a group project at the 2017 Arizona Winter School. We would
 This work was supported by the Engineering and Physical Sciences Research Council [EP/L015234/1]. 
 During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Centre for Doctoral Training in Geometry and Number Theory (The London School of Geometry and Number Theory), University College London. {\color{red} Other grants? or just this one? no NSF? }
  
+  
 	
 	\begin{thebibliography}{9}
 		
