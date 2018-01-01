@@ -36,20 +36,21 @@
 \newtheorem{claim}[theorem]{Claim}
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem*{outline}{Outline of Proof}
+\newtheorem{mainthm}{Theorem} 
+\newtheorem{lemma*}[mainthm]{Lemma}
+\newtheorem{proposition*}[mainthm]{Proposition}
+
+
 
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
-\newtheorem{assumption}[theorem]{Assumption}
-
-\theoremstyle{remark}
-\newtheorem*{theorem*}{Theorem}
-\newtheorem*{lemma*}{Lemma}
-\newtheorem*{example}{Example}
+\newtheorem{notation}[theorem]{Notation}
 \newtheorem*{question}{Question}
-\newtheorem*{notation}{Notation}
-\newtheorem*{exercise}{Exercise}
-\newtheorem*{warning}{Warning}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem*{example}{Example}
+\newtheorem{remark*}[mainthm]{Remark}
+\newtheorem{definition*}[mainthm]{Definition}
+
 
 
 
@@ -69,37 +70,86 @@
 	\maketitle
 	
 	\begin{abstract}
-For an abelian variety $A$ over an algebraically closed non-archimedean field, we show that there exists a perfectoid space $A_\infty$ such that $A_{\infty}\sim\varprojlim_{[p]}A$. 
+For an abelian variety $A$ over an algebraically closed non-archimedean field which is either $p$-adic or characteristic $p$, we show that the inverse limit of $A$ under multiplication by $[p]$ carries a natural structure of perfectoid spaces. 
 	\end{abstract}
 	
+
 	
-	\tableofcontents
 	
-\begin{comment}	
-\newpage 
+%	\tableofcontents
+ 	
 	
 
 %%%%%%%%%%%%
 %%      Section 1
 %%%%%%%%%%%%
 	\section{Introduction} 
-For an abelian variety $A$ over an algebraically closed non-archimedean field we show that there is a perfectoid space $A_\infty$ such that $A\sim\varprojlim_{[p]}A$. 
-
-
-	This note is concerned with the following question:
 	
-	\begin{framed}
+Let $p$ be a prime and $K$ a non-archimedean field which is either $p$-adic or characteristic $p$. For simplicity we assume that $K$ is  algebraically closed in this introduction. The primary goal of this article is to show that the ``inverse limit'' of an abelian variety $A$ over $K$ under the multiplication by $p$ map carries a natural structure of perfectoid spaces. %Before we state the precise version of the theorem, we remark that the main assertion already implicitly appeared in [?] [?] without justification. Nevertheless we decide to fill in this gap in the literature, since the proof, despite being straight-forward, is quite subtle to spell out. 
+More precisely, we prove 
+
+         \begin{mainthm} \label{thm:main_thm_intro}
+		Let $A$ be an abelian variety over $K$. Then there exists a unique perfectoid space $A_\infty$ over $K$ such that
+				$A_\infty \sim \varprojlim_{[p]} A.$
+	\end{mainthm}
+
+\begin{remark*}	
+We will recall the definition of the tilde-limit, namely the meaning of $A_\infty \sim \varprojlim_{[p]} A$, in Section \ref{section:tilde_limit} of the paper. This notion appears in \cite{SW} to remedy the problem that inverse limits rarely exist in the category of adic spaces in the sense of \textit{\small ibid} (even if transition maps are affine).
+{\color{red} We could have used the notion in Scholze's thesis. Explain why we choose to work with this slightly more general notion. }
+\end{remark*}
+
+ To prove the main theorem,  we need to 
+\begin{enumerate}
+\item construct a tilde-limit $A_\infty$ for the system $ \cdots \xrightarrow{[p]} A \xrightarrow{[p]} A \xrightarrow{[p]} A $;
+\item show that the adic space $A_\infty$ is perfectoid. 
+\end{enumerate}
+In fact, we will achieve (1) and (2) simultaneously. 
+
+\begin{remark*}	\label{remark:good_reduction}
+Let us consider the motivating example of the case of good reduction. This example is generalized from Exercise 4 -- 6 in \cite{Bhatt} and spelt out in details in Subsection \ref{subsection:perfectoid_tilde_limit}. 
+
+Let $\mathcal A$ be a formal abelian scheme over $\mathcal O_K$ with generic fiber $A$. Then on the mod $p$ special fiber $\mathcal A_s = \mathcal A \times \mathcal O_K/p$,  multiplication by $p$ factors through the relative Frobenius map, forcing the inverse limit $ \varprojlim_{[p]} \mathcal A_s $ (which exists in the category of schemes) to be relatively perfect over $\mathcal O_K/p$. Let $\mathcal A_{\infty} = \varprojlim_{[p]} \mathcal A$ (which exists by Lemma \ref{lemma:inverse_limit_formal}), then its adic generic fiber $A_\infty$ is a tilde-limit of the multiplication by $p$ system of $A$, and is perfectoid.  {\color{red} probably say a little more?}
+\end{remark*}
+
+Now we explain the outline of the proof of Theorem \ref{thm:main_thm_intro}. Our approach relies on constructing various formal models of relevant objects and take their (adic) generic fibres. 
+
+{\color{red} Explain outline}
+
+\begin{remark*}	
+{\color{red} Remark on Neron models -- why we cannot directly get the results using Neron models and also the problems of existence when $A$ is over $K = \overline K$ etc. }
+\end{remark*}
+
+\vspace*{0.2cm}
+
+
+ 
+Now we describe the content of each section. 
+
+ 
+ 
 	\begin{question}
-		Given a rigid group $G$, when is there an adic space $G_\infty$ such that \[G_\infty \sim  \varprojlim_{[p]} G\] in the sense of \cite{SW}? If it exists, and $K$ is perfectoid, when is $G_\infty$ perfectoid?
+	    \begin{enumerate} 
+	    \item		Given a rigid group $G$, when is there an adic space $G_\infty$ such that $G_\infty \sim  \varprojlim_{[p]} G ?$
+	    \item If it exists, and $K$ is perfectoid, when is $G_\infty$ perfectoid?
+	    \end{enumerate}
 	\end{question}
-	\end{framed}
+ 
+	
+	
+
+In general, tilde-limit for a filtered inverse system of adic spaces (if exists) may not unique. 
+
+
 	Note that if a perfectoid tilde-limit exists, it is unique with this property by Proposition~2.4.5 in \cite{SW}.
 	Our main goal will be to show that this is true for $A$ an abelian variety over a perfectoid field.
+	
+	
+	
 	But before we give proofs for examples of rigid groups $G$ for which a perfectoid tilde-limit exists, we first note that the second question certainly doesn't have an affirmative answer for all rigid group varieties:
 	\begin{example}
 		For the additive group $\mathbb G_a^{\operatorname{an}}$, we know that $[p]$ is an isomorphism and therefore $\varprojlim_{[p]} \mathbb G_a=\mathbb G_a$ exists (even as an actual limit in the category of adic spaces) but is certainly not perfectoid.
 	\end{example}
-
+	
 
 We first more generally consider a rigid group  $G$ over a non-archimedean field $K$. While inverse limits usually don't exist in the rigid analytic category, limits are much better behaved in formal schemes over the ring of integers $\mathcal O_K$ of $K$. One can therefore give a simple criterion in terms of formal models that guarantees that a tilde-limit $G_\infty \sim\varprojlim_{[p]} G$ exists, namely that there is a well-behaved formal model of the $[p]$-multiplication tower.
 If $K$ is perfectoid, we give a stronger criterion involving a Frobenius factorisation condition, which implies that $G_\infty$ is perfectoid.
@@ -111,11 +161,8 @@ Next we consider the case of the Raynaud extension $E$ associated to a semistabl
 We then construct a tilde-limit of $\varprojlim_{[p]} A$ from $E_\infty$: By Raynaud uniformisation, $A$ is naturally isomorphic to the rigid analytic quotient of $E$ by a lattice $M$. After a choice of $\Gamma_0(p^\infty)$-structure, the $[p]$-multiplication tower of $E/M$ factors in a ``ramified'' and an ``\'etale'' part. By a careful choice of charts of $E/M$ in terms of subspaces of $E$ that behave well under $[p^n]:E\rightarrow E$, one can explicitly construct first a perfectoid tilde-limit of the ``ramified'' tower, and then in a second step the space $A_\infty$. This space is independent of the choice of $\Gamma_0(p^\infty)$-structure but remembers it as a pro-\'etale subgroup $D_\infty \subseteq A_\infty$. The construction shows that the perfectoid tilde-limit $A_\infty$ still exists under the weaker assumption that $K$ is a perfectoid field over which there exist lattices $M^{1/p^n}$ for all $n$ whose $p^n$-th multiple is $M$.
 
 The approach via explicit covers finally gives an explicit description of $A_\infty$ in terms of open subspaces of $E_\infty$ which we use in the last section to study the induced map $E_\infty\rightarrow A_\infty$. We show that $E_\infty$ is in fact an open subspace of $A_\infty$ and thus obtain a second description of $A_\infty$ as a quotient group $(D_\infty\times E_\infty)/M_\infty$.
-
-\end{comment}
-
-
-
+ 
+ 
 \newpage
 
 
@@ -125,11 +172,11 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %some hack to hide the acknowledgements in the toc
 \section*{Notation}
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
-	Let $p$ be a prime. Let $K$ be a perfectoid field over $\mathbb Q_p$, %that is either $p$-adic or of characteristic $p$. (I don't think we needed char p fields, also does prop 2.8 make sense in char p?) 
-with the ring of integers  $\mathcal O_K$  and  a fixed pseudo-uniformiser $\pi\in \mathcal O_K$.
-	By adic spaces over $\operatorname{Spa}(K,\mathcal O_K)$, we mean honest adic spaces in the sense of \cite{SW}, and we adopt the notion of perfectoid spaces defined in \S2 \textit{\small ibid}.  
+	We fix the prime $p$.  Let $K$ be a perfectoid field (either $p$-adic or of characteristic $p$), with the ring of integers  $\mathcal O_K$  and  a fixed pseudo-uniformiser $\pi\in \mathcal O_K$. 
 	
-	Throughout the article, we make no distinction between rigid spaces and their corresponding adic spaces. If a rigid space is obtained from a $K$-scheme $X$ via rigid-analytification $X\mapsto X^{\operatorname{an}}$, we will often denote both by the same symbol $X$.
+	By adic spaces over $\operatorname{Spa}(K,\mathcal O_K)$, we mean adic spaces in the sense of \cite{SW}, and we adopt the notion of perfectoid spaces defined in \S2 \textit{\small ibid}. In their language, adic spaces in the sense of Huber are referred to as \textit{honest} adic spaces. Throughout the article, we make no distinction between rigid spaces (resp. formal schemes) and their corresponding honest adic spaces (resp. adic spaces). 
+	
+	If a rigid space is obtained from a $K$-scheme $X$ via rigid-analytification $X\mapsto X^{\operatorname{an}}$, we will often denote both by the same symbol $X$.
 		%?In particular, any cover of a rigid space will be a cover as an adic space, and therefore be an admissible cover in the sense of rigid analytic geometry.  		{\color{red} I don't understand what this remark means. }
 
 	For a formal scheme $\mathfrak X$ over $\operatorname{Spf}(\mathcal O_K)$ with the $\pi$-adic topology, we denote by $\mathfrak X_\eta$ its adic generic fibre.
@@ -140,7 +187,9 @@ with the ring of integers  $\mathcal O_K$  and  a fixed pseudo-uniformiser $\pi\
 %%%%%%%%%%%%
 %%      Section 2
 %%%%%%%%%%%%	
-	\section{Tilde-limits of rigid groups}
+
+\numberwithin{theorem}{section}
+	\section{Tilde-limits of rigid groups} \label{section:tilde_limit}
 	Let $G$ be a rigid group over $K$, that is, group object in the category of rigid spaces over $K$.
 	We are primarily interested in the following examples 
 \begin{enumerate}	 
@@ -149,10 +198,12 @@ with the ring of integers  $\mathcal O_K$  and  a fixed pseudo-uniformiser $\pi\
 \item Raynaud's covering space $E$  of an abelian variety with semi-stable reduction.
 \end{enumerate}
 	
-		\subsection{Existence of tilde-limits via formal models}
+		\subsection{Existence of tilde-limits via formal models} 
+  
+  
   
 	Inverse limits often don't exist in the category of adic spaces (or even rigid spaces). However, we observe the  following lemma:
-	\begin{lemma}
+	\begin{lemma} \label{lemma:inverse_limit_formal}
 		Let $(\mathfrak X_i,\phi_{ij})_{i\in I}$ be an inverse system of formal schemes $\mathfrak X_i$ over $\mathcal O_K$ with affine transition maps $\phi_{ij}:\mathfrak X_j\rightarrow \mathfrak X_i$. Then the inverse limit $\mathfrak X=\varprojlim \mathfrak X_i$ exists in the category of formal schemes over $\mathcal O_K$. If all the $\mathfrak X_i$ are flat formal schemes, so is $\mathfrak X$.
 	\end{lemma}
 	\begin{proof}
@@ -216,8 +267,8 @@ with the ring of integers  $\mathcal O_K$  and  a fixed pseudo-uniformiser $\pi\
 	\begin{definition}
 		Let $G$ be a rigid group. A \textbf{$[p]$-formal tower} for $G$ is  a family of formal models $\{\mathfrak G_n\}_{n\in \mathbb N}$ of $G$, together with affine transition maps $[\mathfrak p]_n:\mathfrak G_{n}\rightarrow \mathfrak G_{n-1}$ which are formal models of $[p]:G\rightarrow G$. 
 	\end{definition}
-	More generally, by a $[p]$-formal tower of an admissible open subset $U\subseteq G$ we mean the same formal model data for the tower of pull-backs over $U$
 	
+	More generally, let $U\subseteq G$ be an admissible open subset, a $[p]$-formal tower for $U \subseteq G$ is a formal model tower for the pullback 
 	\begin{center}
 		\begin{tikzcd}
 			\dots \arrow[r] & \left [p^2\right]^{-1}(U) \arrow[r, "{[p]}"] \arrow[d, hook'] & \left [p\right]^{-1}(U) \arrow[r, "{[p]}"] \arrow[d, hook'] & U \arrow[d, hook'] \\
@@ -234,9 +285,9 @@ with the ring of integers  $\mathcal O_K$  and  a fixed pseudo-uniformiser $\pi\
 	
 	
 	
-	\subsection{Perfectoidness} 
+	\subsection{Perfectoidness}  \label{subsection:perfectoid_tilde_limit}
 
-In light of Remark \ref{remark:good_reduction} we make the following definition
+In light of Remark \ref{remark:good_reduction} in the introduction we make the following definition
 	
 	\begin{definition}
 		For a rigid analytic group $G$, we call \textbf{$[p]$-$F$-formal tower} the data of:
@@ -356,6 +407,8 @@ In light of Remark \ref{remark:good_reduction} we make the following definition
 		These are all consequences of the universal property of the perfectoid tilde-limit, cf Proposition~2.4.5 of \cite{SW}, which shows that one can argue like in the case of usual limits.
 	\end{proof}
 
+ 
+ 
  
 %%%%%%%%%%%%
 %%      Section 3
@@ -705,11 +758,18 @@ In light of Remark \ref{remark:good_reduction} we make the following definition
 	The conclusion that $E_\infty$ is perfectoid then follows from Proposition~\ref{existence of p-F-formal tower implies perfectoid}.
 	\end{proof}
 	
+	
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+%%%  Section 6
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+	
 	\section{The case of abelian varieties with semi-stable reduction}
 	We now want to prove the main result of this work, building on the preceding chapters:
 	
 	\begin{theorem}\label{main theorem}
-		Let $A$ be an abelian variety over a complete algebraically closed perfectoid field $K$. Then there is a perfectoid space $A_\infty$ such that
+		Let $A$ be an abelian variety over a  algebraically closed perfectoid field $K$. Then there is a perfectoid space $A_\infty$ such that
 				\[A_\infty \sim \varprojlim_{[p]} A.\]
 	\end{theorem}
 	
@@ -937,7 +997,7 @@ In light of Remark \ref{remark:good_reduction} we make the following definition
 	In particular, the preimage of $E_i^{1/p^\infty}$ under $v^m$ is isomorphic to $p^{rm}$ copies of $E_i^{1/p^\infty}$.
 	\end{lemma}
 	\begin{proof}
-		Since $E/M \rightarrow E/M^{1/p}$ is finite \'etale, the fibre product with $E/M^{1/p^\infty} \rightarrow E/M^{1/p}$ exists and is perfectoid by Proposition~7.10 of \cite{perfectoid IHES}.
+		Since $E/M \rightarrow E/M^{1/p}$ is finite \'etale, the fibre product with $E/M^{1/p^\infty} \rightarrow E/M^{1/p}$ exists and is perfectoid by Proposition~7.10 of \cite{perfectoid}.
 		
 		The universal property of the fibre product then gives a unique map 
 		\[E/M^{1/p^\infty}\rightarrow E/M\times_ {E/M^{1/p}}E/M^{1/p^\infty}\]
@@ -950,7 +1010,7 @@ In light of Remark \ref{remark:good_reduction} we make the following definition
 	\end{equation}
 	which we think of as being a kind of vertical ``limit'' of diagram~\ref{p-multiplication tower of E/M splits into vertical and horizontal tower}. 
 	
-	It is clear at this point that the limit of this tower exists, even as a categorical limit of adic spaces: Since $\pi$-adically completed direct limit of perfectoid $\mathcal O_K$-algebras are again perfectoid, any affinoid tower of perfectoid spaces has a perfectoid limit. The categorical limit is then in particular a tilde limit (the condition on the underlying sets can be checked using the argument of Lemma 6.13.(ii) in \cite{perfectoid IHES}). The affinoid case implies the result for the above tower by a glueing argument.
+	It is clear at this point that the limit of this tower exists, even as a categorical limit of adic spaces: Since $\pi$-adically completed direct limit of perfectoid $\mathcal O_K$-algebras are again perfectoid, any affinoid tower of perfectoid spaces has a perfectoid limit. The categorical limit is then in particular a tilde limit (the condition on the underlying sets can be checked using the argument of Lemma 6.13.(ii) in \cite{perfectoid}). The affinoid case implies the result for the above tower by a glueing argument.
 	
 	Nevertheless, we now want to give a slightly more explicit construction of this limit that also says something about its local geometry. We first observe:
 	\begin{lemma}
@@ -1464,10 +1524,15 @@ This work started as a group project at the 2017 Arizona Winter School. We would
 
 This work was supported by the Engineering and Physical Sciences Research Council [EP/L015234/1]. 
 During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Centre for Doctoral Training in Geometry and Number Theory (The London School of Geometry and Number Theory), University College London. {\color{red} Other grants? or just this one? no NSF? }
-
-	
+ 
 	
 	\begin{thebibliography}{9}
+		
+					
+		\bibitem{Bhatt} 
+		Bhargav Bhatt
+		\textit{AWS lecture notes}. 
+		
 		
 		\bibitem{Bosch lectures} 
 		Siegfried Bosch
@@ -1489,23 +1554,10 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 		Werner L\"utkebohmert
 		\textit{Rigid Geometry of Curves and Their Jacobians}. 
 		
-		\bibitem{torsion} 
-		James S. Milne
-		\textit{Abelian varieties}.
-		In: Arithmetic Geometry, Gary Cornell and Joseph H Silverman
-			
 		\bibitem{perfectoid} 
 		Peter Scholze
-		\textit{Perfectoid spaces}. 
-		
-		\bibitem{perfectoid IHES} 
-		Peter Scholze
-		\textit{Perfectoid spaces}. The other one, in publications de l'IHES 
-		
-		\bibitem{p-adic Hodge} 
-		Peter Scholze
-		\textit{p-adic Hodge theory for rigid analytic varieties}.
-		
+		\textit{Perfectoid spaces}.  IHES 
+		 
 		\bibitem{torsion} 
 		Peter Scholze
 		\textit{Torsion in cohomology of locally symmetric varieties}.
