@@ -70,7 +70,7 @@
 	\maketitle
 	
 	\begin{abstract}
-For an abelian variety $A$ over an algebraically closed non-archimedean field which is either $p$-adic or characteristic $p$, we show that the inverse limit of $A$ under multiplication by $[p]$ carries a natural structure of perfectoid spaces. 
+For an abelian variety $A$ over an algebraically closed non-archimedean field which is either $p$-adic or of characteristic $p$, we show that there exists a perfectoid space which is the tilde limit of $\varprojlim_{[p]}A$.
 	\end{abstract}
 	
 
@@ -1023,7 +1023,7 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 	\end{lemma}
 	\begin{proof}
 		The $D_n$ are \'etale over $\operatorname{Spa}(K)$ and thus perfectoid.
-		Like in Remark~\ref{projective limits of perfectoid spaces as adic spaces}, we then obtain a perfectoid space $D_\infty$. More explicitly, since  the $D_n$ is isomorphic to $\underline {\mathbb Z_p/p^{n}\mathbb Z}$, we can write \[D_\infty \cong\operatorname{Spa}(\operatorname{Map}_{\operatorname{cts}}(\mathbb Z_p,K),\operatorname{Map}_{\operatorname{cts}}(\mathbb Z_p,\mathcal O_K)).\]
+		Like in Remark~\ref{projective limits of perfectoid spaces as adic spaces}, we then obtain a perfectoid space $D_\infty$. More explicitly, since the $D_n$ are isomorphic to $\underline {(\mathbb Z_p/p^{n}\mathbb Z)^r}$, we can write \[D_\infty \cong\operatorname{Spa}(\operatorname{Map}_{\operatorname{cts}}(\mathbb Z_p^r,K),\operatorname{Map}_{\operatorname{cts}}(\mathbb Z_p^r,\mathcal O_K)).\]
 	\end{proof}
 	\begin{proposition}\label{horizontal limit of vertical limit}
 	There exists a perfectoid space $(E/M^{1/p^\infty})_\infty$ such that \[(E/M^{1/p^\infty})_\infty= \varprojlim_{v}(E/M^{1/p^\infty}).\]
@@ -1043,28 +1043,30 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 		The perfectoid space  $A_\infty:=(E/M^{1/p^\infty})_\infty$ is a tilde-limit of $\varprojlim_{[p]}A$.	It is independent up to unique isomorphism of the choice of partial anticanonical $\Gamma_0(p^\infty)$-structure, but it remembers the choice as a pro-finite \'etale closed subgroup $D_\infty \subseteq A_\infty$. 
 	\end{proposition}
 	\begin{proof}
-	It is clear from $(E/M^{1/p^\infty})_\infty \sim \varprojlim_v E/M^{1/p^\infty}$ and $(E/M^{1/p^\infty})\sim \varprojlim_{[p]} E/M^{1/p^n}$ that the underlying topological space is indeed isomorphic to $\varprojlim_{[p]}|E/M|$.
+	It is clear from $(E/M^{1/p^\infty})_\infty \sim \varprojlim_v E/M^{1/p^\infty}$ and $E/M^{1/p^\infty}\sim \varprojlim_{[p]} E/M^{1/p^n}$ that the underlying topological space of $(E/M^{1/p^\infty})_\infty$ is indeed isomorphic to $\varprojlim_{[p]}|E/M|$.
 
 	In order to show that it is a tilde-limit of $\varprojlim_{[p]}E/M$, it thus suffices to give an explicit cover of $(E/M^{1/p^\infty})_\infty$ by open affinoids satisfying the tilde-limit property. 
 	
 	Recall that by construction of $(E/M^{1/p^\infty})$ we have a cover of $E/M$ by open subsets $E_i$ that pull back to perfectoid open subspaces $E_i^{1/p^\infty}$ for which $E_i^{1/p^\infty}\sim \varprojlim E_i^{1/p^n}$.
-	 Moreover, by the second part of Proposition~\label{horizontal etale map pulls back to vertical limit} we know that the pullback of $E_i^{1/p^\infty}$ to $(E/M^{1/p^\infty})_\infty$ is $D_\infty \times E_i^{1/p^\infty}$.  
-	
+	 Moreover, by the second part of Proposition~\label{horizontal etale map pulls back to vertical limit} we know that the pullback of $E_i^{1/p^\infty}$ to $(E/M^{1/p^\infty})_\infty$ is $D_\infty \times E_i^{1/p^\infty}$. 
 	 
 	 On the other hand, when we go along the diagonal tower, we obtain the inverse system 
 	 \[\dots\rightarrow D_{n+1}\times E_i^{1/p^{n+1}}\rightarrow D_{n}\times E_i^{1/p^{n}}\rightarrow \dots.\]
-	 We claim that this tower has tilde limit $D_\infty\times E_i^{1/p^\infty} \sim \varprojlim D_n\times E_i^{1/p^n}$.
-	 To see this, cover $E_i^{1/p^\infty}$ by open affinoids $U=\Spa(A,A^{+})$ such that 
-	 \[\varinjlim_{\Spa(A_{j},A_{j}^{+})\subseteq E_i^{1/p^n}} A_{j} \rightarrow A \]
-	 has dense image, where the direct limit runs through all affinoid open subspaces $\Spa(A_{j},A_{j}^{+})\subseteq E_i^{1/p^n}$ for all $n$ through which $U\subseteq E_i^{1/p^\infty}\rightarrow E_i^{1/p^n}$ factors, as in the definition of tilde limits. Then by the construction of products of affinoid perfectoid spaces, the pullback of $U$ to $(E/M^{1/p^\infty})_\infty$ is 
-	\[D_\infty\times U \cong \operatorname{Spa}(\operatorname{Map}_{cts}(\mathbb Z_p,A),\operatorname{Map}_{cts}(\mathbb Z_p,A^+))\]
-	 It thus suffices to show that $\varinjlim \operatorname{Map}(\mathbb Z/p^n\mathbb Z,A_{j})$ is dense in $\operatorname{Map}_{cts}(\mathbb Z_p,A)$.
-	 As a first step, even though in the above limit $n$ depends on $j$, we may write this as two separate limits, 
-	 \[\varinjlim \operatorname{Map}(\mathbb Z/p^n,\mathbb Z,A_{j}) = \varinjlim_{j} \varinjlim_n \operatorname{Map}(\mathbb Z/p^n\mathbb Z,A_{j}).\]
-	 For fixed $j$, we then see that 
-	 \[\varinjlim_{n} \operatorname{Map}(\mathbb Z/p^n\mathbb Z,A_m)=\operatorname{Map}_{lc}(\mathbb Z_p,A_m)\] where the right hand side denotes locally constant morphisms. But it then follows from a pointwise approximation argument that $\varinjlim\operatorname{Map}_{lc}(\mathbb Z_p,A_m)$ has dense image in $\operatorname{Map}_{lc}(\mathbb Z_p,A)$. It is then clear that the latter has dense image in $\operatorname{Map}_{cts}(\mathbb Z_p,A)$. We conclude that $D_\infty\times E_i^{1/p^\infty} \sim \varprojlim D_n\times E_i^{1/p^n}$.
+	 More explicitly, after choosing compatible isomorphisms $D_n\cong \underline{(\mathbb Z/p^n\mathbb Z)^r}$ for all $n$, we can for any affinoid open $V=\operatorname{Spa(A_n,A_n^{+})}\subseteq E_i^{1/p^{n}}$ write the affinoid open subset $D_n\times V\subseteq D_n\times E_i^{1/p^{n}}$ as
+	 \[D_{n}\times V \cong \operatorname{Spa}(\operatorname{Map}(\mathbb (\mathbb Z/p^n\mathbb Z)^r,A_n),\operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_n^{+}))\]
 	 
-	That $A_\infty$ is independent of the $\Gamma_0(p^\infty)$-structure up to unique isomorphism is a consequence of the universal property of the perfectoid tilde-limit. To see that $D_\infty$ is a closed subgroup of $A_\infty$, choose $i$ such that the origin of $E/M$ lies in $E_i$. Then the unit section $\Spa(K,\mathcal O_K)\rightarrow E_i^{1/p^\infty}$ induces a closed immersion $D_\infty\hookrightarrow D_\infty \times E_i^{1/p^\infty}\hookrightarrow A_\infty$.
+	 We claim that this tower has tilde limit $D_\infty\times E_i^{1/p^\infty} \sim \varprojlim D_n\times E_i^{1/p^n}$.
+	 To see this, cover $E_i^{1/p^\infty}$ by open affinoids $U=\operatorname{Spa}(A,A^{+})$ such that 
+	 \[\varinjlim_{\operatorname{Spa}(A_{j},A_{j}^{+})\subseteq E_i^{1/p^n}} A_{j} \rightarrow A \]
+	 has dense image, where the direct limit runs through all affinoid open subspaces $\operatorname{Spa}(A_{j},A_{j}^{+})\subseteq E_i^{1/p^n}$ for all $n$ through which $U\subseteq E_i^{1/p^\infty}\rightarrow E_i^{1/p^n}$ factors, as in the definition of tilde limits. Then by the construction of products of affinoid perfectoid spaces, the pullback of $U$ to $(E/M^{1/p^\infty})_\infty$ is 
+	\[D_\infty\times U \cong \operatorname{Spa}(\operatorname{Map}_{cts}(\mathbb Z_p^r,A),\operatorname{Map}_{cts}(\mathbb Z_p^r,A^+))\]
+	 It thus suffices to show that $\varinjlim \operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_{j})$ is dense in $\operatorname{Map}_{cts}(\mathbb Z_p^r,A)$.
+	 As a first step, even though in the above limit $n$ depends on $j$, we may write this as two separate limits, 
+	 \[\varinjlim \operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_{j}) = \varinjlim_{j} \varinjlim_n \operatorname{Map}(\mathbb (\mathbb Z/p^n\mathbb Z)^r,A_{j}).\]
+	 For fixed $j$, we then see that 
+	 \[\varinjlim_{n} \operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_j)=\operatorname{Map}_{lc}(\mathbb Z_p^r,A_j)\] where the right hand side denotes locally constant morphisms. But it then follows from a pointwise approximation argument that $\varinjlim\operatorname{Map}_{lc}(\mathbb Z_p^r,A_j)$ has dense image in $\operatorname{Map}_{lc}(\mathbb Z_p^r,A)$. It is then clear that the latter has dense image in $\operatorname{Map}_{cts}(\mathbb Z_p^r,A)$. We conclude that $D_\infty\times E_i^{1/p^\infty} \sim \varprojlim D_n\times E_i^{1/p^n}$.
+	 
+	That $A_\infty$ is independent of the $\Gamma_0(p^\infty)$-structure up to unique isomorphism is a consequence of the universal property of the perfectoid tilde-limit. To see that $D_\infty$ is a closed subgroup of $A_\infty$, choose $i$ such that the unit section of $E/M$ lies in $E_i$. Then the unit section $\operatorname{Spa}(K,\mathcal O_K)\rightarrow E_i^{1/p^\infty}$ induces a closed immersion $D_\infty\hookrightarrow D_\infty \times E_i^{1/p^\infty}\hookrightarrow A_\infty$.
 	\end{proof}
 	
 	This finishes the proof of Theorem~\ref{main theorem}.
