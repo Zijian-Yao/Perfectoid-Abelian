@@ -94,8 +94,11 @@ More precisely, we prove
 	\end{mainthm}
 	
 \begin{remark*}	 \label{remark:inverse_limit_adic}
-We will recall the definition of the tilde-limit, namely the meaning of $A_\infty \sim \varprojlim_{[p]} A$, in Section \ref{section:tilde_limit} of the paper. This notion appears in \cite{SW} to remedy the problem that inverse limits rarely exist in the category of adic spaces in the sense of \textit{\small ibid} (even if transition maps are affine).
-{\color{red} We could have used the notion in Scholze's thesis. Explain why we choose to work with this slightly more general notion. }
+We will recall the definition of the tilde-limit, namely the meaning of $A_\infty \sim \varprojlim_{[p]} A$, in Section \ref{section:tilde_limit} of the paper. This notion appears in \cite{SW} to remedy the problem that inverse limits rarely exist in the category of adic spaces in the sense of \textit{\small ibid} (even if transition maps are affine). 
+\end{remark*}
+
+\begin{remark*}	 
+{\color{red}  char p case }
 \end{remark*}
 
  To prove the main theorem,  we need to 
@@ -108,7 +111,7 @@ In fact, we will achieve (1) and (2) simultaneously.
 \begin{remark*}	\label{remark:good_reduction}
 Let us consider the motivating example of the case of good reduction. This example is generalized from Exercise 4 -- 6 in \cite{Bhatt} and spelt out in details in Subsection \ref{subsection:perfectoid_tilde_limit} [Corollary \ref{tilde limit exists and is perfectoid in the good reduction case}]. 
 
-Let $\mathcal A$ be a formal abelian scheme over $\mathcal O_K$ with generic fiber $A$. Then on the mod $p$ special fiber $\mathcal A_s = \mathcal A \times \mathcal O_K/p$,  multiplication by $p$ factors through the relative Frobenius map, forcing the inverse limit $ \varprojlim_{[p]} \mathcal A_s $ (which exists in the category of schemes) to be relatively perfect over $\mathcal O_K/p$. Let $\mathcal A_{\infty} = \varprojlim_{[p]} \mathcal A$ (which exists by Lemma \ref{lemma:inverse_limit_formal}), then its adic generic fiber $A_\infty$ is a tilde-limit of the multiplication by $p$ system of $A$, and is perfectoid.  {\color{red} probably say a little more?}
+Let $\mathcal A$ be a formal abelian scheme over $\mathcal O_K$ with generic fiber $A$. Then on the mod $\pi$ special fiber $\mathcal A_s = \mathcal A \times \mathcal O_K/\pi$,  multiplication by $p$ factors through the relative Frobenius map, forcing the inverse limit $ \varprojlim_{[p]} \mathcal A_s $ (which exists in the category of schemes) to be relatively perfect over $\mathcal O_K/\pi$. Let $\mathcal A_{\infty} = \varprojlim_{[p]} \mathcal A$ (which exists by Lemma \ref{lemma:inverse_limit_formal}), then its adic generic fiber $A_\infty$ is a tilde-limit of the multiplication by $p$ system of $A$, and is perfectoid.  {\color{red} probably say a little more?}
 \end{remark*}
 
 Now we explain the outline of the proof of Theorem \ref{thm:main_thm_intro}. Our approach relies on constructing various formal models of relevant objects and take their (adic) generic fibres. 
@@ -178,9 +181,10 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 	
 	If a rigid space is obtained from a $K$-scheme $X$ via rigid-analytification $X\mapsto X^{\operatorname{an}}$, we will often denote both by the same symbol $X$.
 		%?In particular, any cover of a rigid space will be a cover as an adic space, and therefore be an admissible cover in the sense of rigid analytic geometry.  		{\color{red} I don't understand what this remark means. }
+ 
+	For a formal scheme $\mathfrak X$ over $\operatorname{Spf}(\mathcal O_K)$ with the $\pi$-adic topology, we denote by $\mathfrak X_\eta$ its adic generic fibre. 
+	We denote by $\tilde{X}=\mathfrak X\times_{\operatorname{Spf}\mathcal O_K}\operatorname{Spf}\mathcal O_K/\pi$ its mod $\pi$ special fibre, considered as a scheme over $\operatorname{Spec}\mathcal O_K/\pi$. 
 
-	For a formal scheme $\mathfrak X$ over $\operatorname{Spf}(\mathcal O_K)$ with the $\pi$-adic topology, we denote by $\mathfrak X_\eta$ its adic generic fibre.
-	We denote by $\tilde{X}=\mathfrak X\times_{\operatorname{Spf}\mathcal O_K}\operatorname{Spf}\mathcal O_K/\pi$ its special fibre, considered as a scheme over $\operatorname{Spec}\mathcal O_K/\pi$. 
 	Finally, recall the following standard terminology: 
 		\begin{enumerate}
 			\item Let $X$ be a rigid space over $K$. A \textbf{formal model} of $\mathcal X$ is an admissible topologically finite type formal scheme $\mathfrak X$ over $\mathcal O_K$ together with an isomorphism of its generic fibre $\mathfrak X_\eta \xrightarrow{\sim} X$ (which is often suppressed from notation).
@@ -263,16 +267,21 @@ Now let $G$ be a rigid group over $K$, that is, a group object in the category o
 
 	Lemma \ref{lemma:inverse_limit_formal} and Lemma \ref{tilde-limit from adic generic fibre of formal schemes} motivate the following definition. 
 	\begin{definition}
-		Let $G$ be a rigid group. A \textbf{$[p]$-formal tower} for $G$ is  a family of formal models $\{\mathfrak G_n\}_{n\in \mathbb N}$ of $G$, together with affine transition maps $[\mathfrak p]_n:\mathfrak G_{n}\rightarrow \mathfrak G_{n-1}$ which are formal models of $[p]:G\rightarrow G$. 
+		Let $G$ be a rigid group. A \textbf{$[p]$-formal tower} for $G$ is  a family of formal models $\{\mathfrak G_n\}_{n\in \mathbb N}$ of $G$, together with affine transition maps $[\mathfrak p]_{n+1}:\mathfrak G_{n+1}\rightarrow \mathfrak G_{n}$ which are formal models of $[p]:G\rightarrow G$. Sometimes we suppress notation and write $[\mathfrak p]$ for $[\mathfrak p]_{n}$ on $\mathfrak G_n$. 
+		
+		More generally, let $U\subseteq G$ be an admissible open subset, a $[p]$-formal tower for $U \subseteq G$ is a tower of formal models for 
+$$ \cdots \xrightarrow{[p]} [p^2]^{-1} (U)   \xrightarrow{[p]} [p]^{-1} (U)  \xrightarrow{[p]} U. $$ 
 	\end{definition}
 	
-	More generally, let $U\subseteq G$ be an admissible open subset, a $[p]$-formal tower for $U \subseteq G$ is a formal model tower for the pullback 
-	\begin{center}
+
+In particular, a $[p]$-formal tower for $G$ gives rise to a $[p]$-formal tower for $U$ for each admissible open $U \subseteq G$ by pullback. 
+
+\begin{comment}	\begin{center}
 		\begin{tikzcd}
 			\dots \arrow[r] & \left [p^2\right]^{-1}(U) \arrow[r, "{[p]}"] \arrow[d, hook'] & \left [p\right]^{-1}(U) \arrow[r, "{[p]}"] \arrow[d, hook'] & U \arrow[d, hook'] \\
 			\dots \arrow[r, "{[p]}"] & G \arrow[r, "{[p]}"] & G \arrow[r, "{[p]}"] & G
 		\end{tikzcd}
-	\end{center}
+	\end{center}  \end{comment}
 	
 	We now summarise our discussion in the previous subsection by the following
 	\begin{corollary}
@@ -285,27 +294,18 @@ Now let $G$ be a rigid group over $K$, that is, a group object in the category o
 	
 	\subsection{Perfectoidness}  \label{subsection:perfectoid_tilde_limit}
 
-In this subsection we define a formalism to address part (2) of Question \ref{question_intro}
-In light of Remark \ref{remark:good_reduction} in the introduction we make the following definition
+In this subsection we define a formalism to address part (2) of Question \ref{question_intro} in the introduction. In light of Remark \ref{remark:good_reduction}, we first make the following definition
 	
 	\begin{definition}
-		For a rigid analytic group $G$, we call \textbf{$[p]$-$F$-formal tower} the data of:
-		\begin{enumerate}
-			\item a family of flat formal models $\mathfrak G_n$ of $G$ for $n\in \mathbb N$,
-			\item morphisms of formal schemes $[\mathfrak p]:\mathfrak G_{n+1}\rightarrow \mathfrak G_{n}$ satisfying the following conditions:
-			\begin{enumerate}
-				\item the generic fibre of $[\mathfrak p]:\mathfrak G_n\rightarrow \mathfrak G_{n+1}$ coincides with $[p]:G\rightarrow G$. 
-				\item $[\mathfrak p]$ is an affine morphism
-				\item Denote by $\tilde{G}_n$ the reduction of $\mathfrak G_n$ mod $p$. Then $[\mathfrak p]$ factors through the relative Frobenius morphism:
+		Let $G$ be a rigid analytic group, a \textbf{$[p]$-$F$-formal tower} for $G$ is a $[p]$-formal tower 
+		$$(\{\mathfrak G_n\}_{n\in \mathbb N}, [\mathfrak p]_{n+1}:\mathfrak G_{n+1}\rightarrow \mathfrak G_{n})$$ such that each $\mathfrak G_n$ is flat over $\mathcal O_K$, and on the mod $\pi$ special fibre  $\tilde{G}_n$, each   $[\mathfrak p]_{n+1}$ factors through the relative Frobenius:
 				\begin{center}
 					\begin{tikzcd}
-						& \tilde G_{n}^{(p)} \arrow[rd, dashed] &  \\
-						\tilde G_{n} \arrow[rr, "{[p]}"] \arrow[ru, "F_{rel}"] &  & \tilde G_{n-1}
+						& \tilde G_{n+1}^{(p)} \arrow[rd, dashed] &  \\
+						\tilde G_{n+1} \arrow[rr, "{[p]}"] \arrow[ru, "F_{rel}"] &  & \tilde G_{n}
 					\end{tikzcd}
 				\end{center}
-				
-			\end{enumerate}
-		\end{enumerate}
+	 
 	\end{definition}	
 	
 	 	\begin{proposition}\label{existence of p-F-formal tower implies perfectoid}
@@ -319,46 +319,44 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 	\begin{proof}
 	 
 	%Let $\mathfrak G$ be a flat commutative formal group scheme of topologically finite type over $\mathcal O_K$ for which the p-multiplication map $[p]:\mathfrak G\rightarrow \mathfrak G$ is affine. Let $G = \mathfrak G_\eta$ be the rigid group obtained on the generic fibre. Then $G_\infty$ exists and is perfectoid.
-	 
-	
-	
-		Following notation from the previous subsection, the map $[p]:\mathfrak G\rightarrow \mathfrak G$ is a formal model of the map $[p]$ on its rigid generic fiber. By Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} we therefore have 
+ 
+		Let $(\{\mathfrak G_n\}_{n\in \mathbb N}, [\mathfrak p]_{n+1}:\mathfrak G_{n+1}\rightarrow \mathfrak G_{n})$ be a $[p]$-$F$-formal tower for $G$.  By Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} we therefore have 
+		$$G_\infty := (\varprojlim_{[p]}\mathfrak G)_\eta \sim \varprojlim_{[p]}G. $$
+ 
 		
-		\[G_\infty = (\varprojlim_{[p]}\mathfrak G)_\eta \sim \varprojlim_{[p]}G. \] 
+		To see that $G_\infty$ is perfectoid, we proceed as the proof of \cite{torsion}, Corollary III.2.19. It suffices to prove that $\mathfrak G_\infty = \varprojlim_{[p]} \mathfrak G$ can be covered by formal schemes of the form $\operatorname{Spf}(S)$ where $S$ is a flat $\mathcal O_K$-algebra such that the Frobenius map \[S/\pi^{1/p} \rightarrow  S/\pi\] is an isomorphism. Lemma~5.6 of \cite{perfectoid} then shows that $S[1/\pi]$ is perfectoid.
 		
-		To see that $G_\infty$ is perfectoid, we proceed exactly like in the proof of \cite{torsion}, Corollary III.2.19. It suffices to prove that $\mathfrak G_\infty = \varprojlim_{[p]} \mathfrak G$ can be covered by formal schemes of the form $\operatorname{Spf}(S)$ where $S$ is a flat $\mathcal O_K$-algebra such that the Frobenius map \[S/p^{1/p} \rightarrow  S/p\] is an isomorphism. Lemma~5.6 of \cite{perfectoid} then shows that $S[1/p]$ is perfectoid.
-		
-		The key observation here is that upon reduction mod $p$, the $p$-multiplication factors through relative Frobenius. More precisely, denote by $\tilde{G}$ the reduction of $\mathfrak G$ mod $p$. Then $[p]:\tilde{G}\rightarrow \tilde{G}$ factors as 
+		By assumption, on the mod $\pi$ special fibre  $\tilde{G}_n$,  $[\mathfrak p]_{n+1}$ factors through the relative Frobenius. Now take   any affine open subspace $\operatorname{Spf}(S_0) \subseteq \mathfrak G_0$.  Let $[\mathfrak p^i]:   \mathfrak G_i \rightarrow  \mathfrak G_0$ be the composition $[\mathfrak p]_{i} \circ \cdots \circ [\mathfrak p]_{1}$, and let $\operatorname {Spf}S_i \subset \mathfrak G_i$ be the pullback of $\operatorname {Spf}S_0$ via $[p^i]$. Then we have a commutative diagram:
 		\begin{center}
 			\begin{tikzcd}[row sep = small]
-				& \tilde{G} \arrow[rd, dashed] &  \\
-				\tilde{G}^{(p)} \arrow[ru, "F_{rel}"] \arrow[rr, "{[p]}"] &  & \tilde{G}
+				&  & \tilde{S}_{i}^{(p)} \arrow[rd, "F_{rel}"] &  & \tilde{S}_{i+1}^{(p)} \arrow[rd, "F_{rel}"] &  &  \\
+				\dots \arrow[r] & \tilde{S}_{i-1} \arrow[rr] \arrow[ru, "V", dashed] &  & \tilde{S}_i \arrow[ru, "V", dashed] \arrow[rr] &  & \tilde{S}_{i+1} \arrow[r] & \dots
 			\end{tikzcd}
-		\end{center}
+		\end{center} where the horizontal maps are induced from $[\mathfrak p] \mod \pi$. 
 		
-		This has the following consequence: Let $\operatorname{Spf}(S_1)$ be any affine open subspace of $\mathfrak G$ and let $\operatorname {Spf}S_n$ be the pullback via $[p^n]:\mathfrak G\rightarrow \mathfrak G$. Then we have a commutative diagram:
-		\begin{center}
-			\begin{tikzcd}[row sep = small]
-				&  & \tilde{S}_{n}^{(p)} \arrow[rd, "F_{rel}"] &  & \tilde{S}_{n+1}^{(p)} \arrow[rd, "F_{rel}"] &  &  \\
-				\dots \arrow[r] & \tilde{S}_{n-1} \arrow[rr] \arrow[ru, "V", dashed] &  & \tilde{S}_n \arrow[ru, "V", dashed] \arrow[rr, "{[p]}"] &  & \tilde{S}_{n+1} \arrow[r] & \dots
-			\end{tikzcd}
-		\end{center}
-		From this we can check on elements that relative Frobenius is an isomorphism on $\tilde{S}_\infty := \varinjlim_n \tilde{S}_n$. Since $K$ is perfectoid, we moreover have an isomorphism $\mathcal O_K/p^{1/p}\rightarrow \mathcal O_K/p$ from the absolute Frobenius on $\mathcal O_K/p$. Therefore absolute Frobenius on $S_\infty/p$ induces an isomorphism
-		\[S_\infty/p^{1/p}\xrightarrow{\sim} S_\infty/p.\]
-		Since $\mathfrak G$ is flat, so are the $S_n$ and thus so is $S_\infty$. Thus $S_\infty[1/p]$ is a perfectoid $K$-algebra.
+		From this we can check on elements that relative Frobenius is an isomorphism on $\tilde{S}_\infty := \varinjlim_i \tilde{S}_i$. Since $K$ is perfectoid, we moreover have an isomorphism $\mathcal O_K/\pi^{1/p}\rightarrow \mathcal O_K/\pi$ from the absolute Frobenius on $\mathcal O_K/\pi$. Therefore absolute Frobenius on $S_\infty/\pi$ induces an isomorphism
+		\[S_\infty/\pi^{1/p}\xrightarrow{\sim} S_\infty/\pi.\]
+		Since each $\mathfrak G_i$ is flat, so are the $S_i$ and thus so is $S_\infty$. Thus $S_\infty[1/\pi]$ is a perfectoid $K$-algebra.
 		Since $G_\infty$ is covered by affinoids of the form $\operatorname{Spf}(S_\infty)_\eta$, this shows that $G_\infty$ is perfectoid.
 	\end{proof}
 	
-	
+This in particular implies Remark \ref{remark:good_reduction}. 
 	\begin{corollary}\label{tilde limit exists and is perfectoid in the good reduction case}
 		Let $A$ be an abelian variety of good reduction over a perfectoid field $K$. Then $A_\infty$ exists and is perfectoid.
 	\end{corollary}
-	 	Before we proceed, we would like to mention two illustrative examples:
+	 	
+More generally, If $\mathfrak G$ is a flat commutative formal group scheme such that $p$-multiplication is affine, then multiplication by $p$ on $\mathfrak G$ defines a $[p]$-$F$-formal tower for the rigid analytic group $G=\mathfrak G_\eta$, and  $G_\infty := (\varprojlim_{[p]}\mathfrak G)_\eta$ is the perfectoid tilde-limit of $\varprojlim_{[p]} G$. 
+
+%\begin{remark} What we aim to prove in the rest of this write-up is that for a Raynaud extension $0\rightarrow T\rightarrow E\rightarrow B\rightarrow 0$, there is a $[p]$-$F$-model for $T$ which induces a $[p]$-$F$-model for $E$. This will prove that tilde-limits $T_\infty$ and $E_\infty$ exist and are perfectoid if $K$ is perfectoid.  
+%\end{remark}
+		
+\subsection{Examples}				
+		
 	\begin{example}
-		Let $\mathfrak G$ be the $p$-adic completion of the affine group scheme $\mathbb G_m$ over $\mathcal O_K$, that is the formal scheme of $\mathfrak G$ is $\operatorname {Spf} S$ where $S=\mathcal O_K\langle X^{\pm 1} \rangle$.  It is clear that $\mathbb G$ satisfies the conditions of Proposition~\ref{limit exists and is perfectoid: commutative formal group case}, so for the generic fibre $G=\mathfrak G_\eta$ we obtain a perfectoid tilde-limit $G_\infty = \varprojlim_{[p]} G$. More precisely, the $[p]$-multiplication map corresponds to the homomorphism
+		Let $\mathfrak G$ be the $p$-adic completion of the affine group scheme $\mathbb G_m$ over $\mathcal O_K$. The underlying formal scheme of $\mathfrak G$ is $\operatorname {Spf} \mathcal O_K\langle X^{\pm 1} \rangle$.  Multiplication by $p$ on $\mathbb G$ gives a $[p]$-$F$-formal tower for $G$, so for the generic fibre $G=\mathfrak G_\eta$ we obtain the perfectoid tilde-limit $G_\infty := (\mathfrak G_\infty)_{\eta} \sim \varprojlim_{[p]} G$. More precisely,  multiplication by $p$ corresponds to the homomorphism
 		\[[p]:\mathcal O_K\langle X^{\pm 1} \rangle\rightarrow  \mathcal O_K\langle X^{\pm 1} \rangle, \quad X\rightarrow X^{p}.\]
-		In the direct limit, we obtain the algebra $S_\infty = (\varinjlim_{[p]} S)^{\wedge} = \mathcal O_K\langle  X^{\pm 1/p^\infty} \rangle$. On the generic fibre we thus obtain
-		\[G_\infty = \operatorname{Spa}(K\langle X^{\pm 1/p^\infty} \rangle,\mathcal O_K\langle X^{\pm 1/p^\infty} \rangle)\]
+		In the direct limit, we obtain the algebra $   (\varinjlim_{[p]} \mathcal O_K\langle X^{\pm 1} \rangle  )^{\wedge} = \mathcal O_K\langle  X^{\pm 1/p^\infty} \rangle$. On the generic fibre we thus obtain
+		$$G_\infty = \operatorname{Spa}(K\langle X^{\pm 1/p^\infty} \rangle,\mathcal O_K\langle X^{\pm 1/p^\infty} \rangle)$$
 		and one can verify by hand that we indeed have $G_\infty \sim \varprojlim_{[p]} G$.
 	\end{example}
 	\begin{example}
@@ -368,25 +366,18 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 		\[[p]:\mathcal O_K\langle X \rangle\rightarrow  \mathcal O_K\langle X \rangle, \quad X\rightarrow pX.\]
 		In the direct limit, we first obtain the algebra $S'_\infty = \varinjlim_{[p]} S = \mathcal O_K\langle \frac{1}{p^\infty}X \rangle$ of power series $f=\sum_{n=0}^\infty  a_nX^n\in \mathcal O_K[[X]]$ for which there is $m\in \mathbb Z_{\geq 0}$ such that $|p^{nm}a_n|\to 0$. In order to form $S_\infty$, we need to $p$-adically complete $S'_\infty$. But we have 
 		\[p^n\mathcal O_K\langle \frac{1}{p^\infty}X \rangle = p^n\mathcal O_K + X \mathcal O_K\langle \frac{1}{p^\infty}X \rangle\]
-		and therefore $S'_\infty/p^n=\mathcal O_K/p^n\mathcal O_K$. Consequently, the completion is $S_\infty = \mathcal O_K$ and thus $G_\infty = \operatorname{Spa}(K,\mathcal O_K)$ is perfectoid, but just one point!
+		and therefore $S'_\infty/p^n=\mathcal O_K/\pi^n\mathcal O_K$. Consequently, the completion is $S_\infty = \mathcal O_K$ and thus $G_\infty = \operatorname{Spa}(K,\mathcal O_K)$ is perfectoid, but just one point!
 		
 		Geometrically, this makes sense: On the level of $K$-points, the formal scheme $G$ is the closed unit disc and $[p]$ is scaling points by $p$. A $K$-point in $\varprojlim_{[p]} G(K)$ therefore corresponds to a sequence of $K$-points of the closed unit disc of the form $x,\frac{1}{p}x,\frac{1}{p^2}x,\dots$. But for this to be contained in the closed unit disc, we must have $x=0$. Thus $\varprojlim_{[p]} G(K)=0$.
 		
 	\end{example}
 	
  
-	
-
-
-
-	\begin{example}
-		If $\mathfrak G$ is a flat commutative formal group scheme such that $p$-multiplication is affine, then setting $\mathfrak G_n = \mathfrak G$ and taking for $[\mathfrak p]$ the actual $p$-multiplication maps $[p]$ defines a $[p]$-$F$-formal tower for the rigid analytic group $G=\mathfrak G_\eta$.
-	\end{example}
+ 
 	
  
 	
-	What we aim to prove in the rest of this write-up is that for a Raynaud extension $0\rightarrow T\rightarrow E\rightarrow B\rightarrow 0$, there is a $[p]$-$F$-model for $T$ which induces a $[p]$-$F$-model for $E$. This will prove that tilde-limits $T_\infty$ and $E_\infty$ exist and are perfectoid if $K$ is perfectoid.
-	
+		
 	\subsection{A few consequences}
 	
 	One reason why perfectoid limits along group morphisms are particularly interesting is that the perfectoidness ensures that the limit has again a group structure:
@@ -408,6 +399,8 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 		These are all consequences of the universal property of the perfectoid tilde-limit, cf Proposition~2.4.5 of \cite{SW}, which shows that one can argue like in the case of usual limits.
 	\end{proof}
 
+
+ 
  
   %%%%%%%%%%%%
 %%      Section 3
@@ -507,7 +500,7 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 	\end{proposition}
 	We moreover see directly from the construction:
 	\begin{proposition}
-		The map $[\mathfrak p]: \mathfrak G_{q^{1/p}}\rightarrow  \mathfrak G_q$ reduces mod $p$ to the relative Frobenius map.
+		The map $[\mathfrak p]: \mathfrak G_{q^{1/p}}\rightarrow  \mathfrak G_q$ reduces mod $\pi$ to the relative Frobenius map.
 	\end{proposition}
 	We now have everything together to finish our proof that $(\mathbb G_m^{\operatorname{an}})_\infty$ is perfectoid:
 	\begin{proposition}
@@ -707,13 +700,13 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 	%\end{framed}
 	\begin{proof}
 	
-	It suffices to prove that for any $q\in K^\times$ with $|q|<1$ and a $p$-th root $q^{1/p}$, the map $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ upon reduction mod $p$ factors through relative Frobenius.
+	It suffices to prove that for any $q\in K^\times$ with $|q|<1$ and a $p$-th root $q^{1/p}$, the map $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ upon reduction mod $\pi$ factors through relative Frobenius.
 	
 	In the following we denote reduction of a formal scheme by a $\sim$ over the formal scheme, for example the reductions of $\overline{T}$, $\overline{E}$ and $\mathfrak T$ are denoted by $\tilde{T}$, $\tilde{E}$ and $\tilde{\mathfrak{T}}$.
 	
 		
 	Recall that $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ was constructed using the $[p]$-multiplication cube in diagram~(\ref{formal model of p-multiplication cube}) and functoriality of the associated bundle. 	
-	Also recall that all statements we have used about fibre bundles also hold when we replace formal schemes over $\mathcal O_K$ by schemes over $\mathcal O_K/p$, and formation of the associated bundle commutes with this reduction. In particular,
+	Also recall that all statements we have used about fibre bundles also hold when we replace formal schemes over $\mathcal O_K$ by schemes over $\mathcal O_K/\pi$, and formation of the associated bundle commutes with this reduction. In particular,
 	\[\tilde{\mathfrak{E}}_q = \tilde{\mathfrak T}_q\times^{\tilde{T}}\tilde E.\]
 	By  Corollary~\ref{torus has formal models}, the model of the multiplication map $[\mathfrak p]:\mathfrak T_{q^{1/p}} \rightarrow \mathfrak T_{q}$ reduces to relative Frobenius over $p$. In particular, we have a natural isomorphism
 	\[\tilde{\mathfrak T}_{q^{1/p}}^{(p)} \cong \tilde{\mathfrak T}_{q}\]
@@ -1481,7 +1474,7 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 	
 	\begin{remark}\label{appendix in the case of rigid spaces and schemes}
 	All that we have done in this chapter can be done in completely the same way with formal schemes replaced by rigid spaces (covers being replaced by admissible covers) and also for schemes, or in fact for any site. We have preferred to use formal schemes to make things more explicit. 
-	The different categories of fibre bundles are well-behaved with respect to the usual functors between the different categories: For instance, by functoriality of fibre products there are natural rigidification and reduction functors from formal principal $T$-bundles over $\mathcal O_K$ to rigid principal $T_\eta$-bundles over $K$ on the generic fibre, and to principal $\overline{T}$-bundles on the reduction $\mathcal O_K/p$. Moreover, these generic fibre and reduction functors commute with the associated fibre construction:
+	The different categories of fibre bundles are well-behaved with respect to the usual functors between the different categories: For instance, by functoriality of fibre products there are natural rigidification and reduction functors from formal principal $T$-bundles over $\mathcal O_K$ to rigid principal $T_\eta$-bundles over $K$ on the generic fibre, and to principal $\overline{T}$-bundles on the reduction $\mathcal O_K/\pi$. Moreover, these generic fibre and reduction functors commute with the associated fibre construction:
 	\end{remark}
 	\begin{lemma}\label{associated bundle commutes with generic fibre}
 		Let $T$ be a formal group scheme and let $\pi:E\rightarrow B$ be a principial $T$-bundle. Let $F$ be a formal scheme with an action by $T$. Then
@@ -1500,8 +1493,9 @@ This work started as a group project at the 2017 Arizona Winter School. We would
 
 This work was supported by the Engineering and Physical Sciences Research Council [EP/L015234/1]. 
 During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Centre for Doctoral Training in Geometry and Number Theory (The London School of Geometry and Number Theory), University College London. {\color{red} Other grants? or just this one? no NSF? }
-
-	
+ 
+ 
+ 
 	
 	\begin{thebibliography}{9}
 		
