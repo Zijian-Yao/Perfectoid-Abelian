@@ -1041,6 +1041,8 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 	
 	\begin{proposition}\label{tilde limit of tilde limits of partial towers is tilde limit of whole tower}
 		The perfectoid space  $A_\infty:=(E/M^{1/p^\infty})_\infty$ is a tilde-limit of $\varprojlim_{[p]}A$.	It is independent up to unique isomorphism of the choice of partial anticanonical $\Gamma_0(p^\infty)$-structure, but it remembers the choice as a pro-finite \'etale closed subgroup $D_\infty \subseteq A_\infty$. 
+		
+		The preimage of $E_i\subseteq A$ under the projection $A_\infty \rightarrow A$ is isomorphic to $D_\infty \times E_i^{1/p^\infty}$.
 	\end{proposition}
 	\begin{proof}
 	It is clear from $(E/M^{1/p^\infty})_\infty \sim \varprojlim_v E/M^{1/p^\infty}$ and $E/M^{1/p^\infty}\sim \varprojlim_{[p]} E/M^{1/p^n}$ that the underlying topological space of $(E/M^{1/p^\infty})_\infty$ is indeed isomorphic to $\varprojlim_{[p]}|E/M|$.
@@ -1115,9 +1117,8 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 		
 		Let us consider the preimages of $E_i \subseteq E/M$ under these morphisms: By Lemma~\ref{an admissible cover of A by cuboids of E} we see that the pullback to $E$ is $\bigsqcup_{q\in M} qE_i$. We can also see this as the isomorphic image of $M\times E_i$ under the multiplication map $E\times E\rightarrow E$. 
 		
-		The pullback of $E_i$ along $[p^n]:E/M^{1/p^n}\rightarrow E/M$ is $E_i^{1/p^n}$ as we have seen in Lemma~\ref{compatible cuboid charts for the tower over E/M}. The same Lemma shows that the pullback of this to $E$ is $\bigsqcup_{q\in M^{1/p^n}}qE_i^{1/p^n}=M^{1/p^n}\times E_i^{1/p^n}$.
-		
-		We then see that the pullback to $E_\infty$ is $M_\infty\times E_i^{1/p^\infty}$. 
+		The pullback of $E_i$ along $[p^n]:E/M^{1/p^n}\rightarrow E/M$ is $E_i^{1/p^n}$ as we have seen in Lemma~\ref{compatible cuboid charts for the tower over E/M}. The same Lemma shows that the pullback of this along $E\rightarrow E/M^{1/p^n}$ is $\bigsqcup_{q\in M^{1/p^n}}qE_i^{1/p^n}=M^{1/p^n}\times E_i^{1/p^n}$.
+		We conclude that the pullback to $E_\infty$ is $M_\infty\times E_i^{1/p^\infty}$. 
 		By construction of $E/M^{1/p^\infty}$ in the proof of Proposition~\ref{explicit construction of vertical tilde-limit}, the pullback of $E_i$ to $E/M^{1/p^\infty}$ is $E_i^{1/p^\infty}$. All in all, we obtain a pullback diagram
 		\begin{center}
 		\begin{equation}\label{pullback diagram covering map E inf to E/M^1/p^inf }
@@ -1130,7 +1131,7 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 		\end{equation}
 		\end{center}
 		We conclude that $E_\infty \rightarrow E/M^{1/p^\infty}$ is a principal $M_\infty$-torsor of perfectoid groups. It is then clear that $M_\infty$ is the preimage of $0\in E/M^{1/p^\infty}$, from which one easily verifies that $M_\infty\hookrightarrow E_\infty$ has the universal property of the kernel.
-		Similarly, $E_\infty \rightarrow E/M^{1/p^\infty}$ has the universal property of the cokernel: Given any perfectoid group $H$ and a group homomorphism $E_\infty\rightarrow H$ that is trivial on $M_\infty$, the restriction $M_\infty\times E_i^{1/p^\infty}\rightarrow H$ gives a natural map $E_i^{1/p^\infty}\rightarrow H$. Since by construction of $E/M^{1/p^\infty}$ the spaces $E_i^{1/p^\infty}$ and $E_j^{1/p^\infty}$ are glued on $E_{ij}^{1/p^\infty}$ using translation by $M$, these glue together to a morphism of $E/M^{1/p^\infty}$.
+		Similarly, $E_\infty \rightarrow E/M^{1/p^\infty}$ has the universal property of the cokernel: Given any perfectoid group $H$ and a group homomorphism $E_\infty\rightarrow H$ that is trivial on $M_\infty$, the restriction $M_\infty\times E_i^{1/p^\infty}\rightarrow H$ gives a natural map $E_i^{1/p^\infty}\rightarrow H$. Since by construction of $E/M^{1/p^\infty}$ the spaces $E_i^{1/p^\infty}$ and $E_j^{1/p^\infty}$ are glued on $E_{ij}^{1/p^\infty}$ using translation by $M_\infty$, these glue together to the desired morphism of $E/M^{1/p^\infty}$.
 	\end{proof}
 	
 	
@@ -1167,15 +1168,19 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 	So in the limit the covering map becomes the kernel of a map to $\mathbb Z_p/\mathbb Z$.
 	\end{remark}
 	
-	For perfectoid groups the homological algebra argument of course doesn't apply in the same way. Nevertheless, we can again use the explicit covers of the last section to show that the situation is very similar as in the remark:
-	\begin{proposition}\label{the morphism E->A in the limit}
-		The homomorphism $\iota:E_\infty \rightarrow A_\infty$ is an open and closed immersion. Moreover, there is a natural map $\rho:A_\infty \rightarrow D_\infty/M_\infty$ which is a quotient of $\iota$ in the category of perfectoid groups. Here $D_\infty/M_\infty$ is a constant group which is non-canonically isomorphic to the constant perfectoid group $\underline{(\mathbb Z_p/\mathbb Z)^r}$. We thus obtain a short exact sequence of perfectoid groups
-		\[0\rightarrow E_\infty \rightarrow A_\infty \rightarrow D_\infty/M_\infty\rightarrow 0\]
-		which is non-canonically split on the level of the underlying perfectoid spaces.
-	\end{proposition}
+	For perfectoid groups the homological algebra argument of course doesn't apply. Nevertheless, we can again use the explicit covers of the last section to show that the situation is very similar as in the remark. In the following, we use the notion of injective morphism from \cite{etale_cohomology_of_diamonds}, Definition 5.1.
+	\begin{theorem}\label{the morphism E->A in the limit}
+		The map $\iota:E_\infty \rightarrow A_\infty$ is an injective group homomorphism. It fits into a commutative diagram of short exact sequences of perfectoid groups
+		\begin{center}
+			\begin{tikzcd}
+				0 \arrow[r] & M_{\infty} \arrow[r] \arrow[d, hook] & E_\infty \arrow[d, hook] \arrow[r] & E/M^{1/p^\infty} \arrow[d,equal] \arrow[r] & 0 \\
+				0 \arrow[r] & D_\infty \arrow[r] & A_\infty \arrow[r] & E/M^{1/p^\infty} \arrow[r] & 0
+			\end{tikzcd}
+		\end{center}
+		that are locally split: Locally on open subspaces $U\subseteq E/M^{1/p^\infty}$ the morphism $E_\infty\hookrightarrow A_\infty$ is of the form $M_\infty\times U\rightarrow D_\infty \times U$.	In particular, one can describe $A_\infty$ as the associated fibre bundle
+		\[A_\infty = D_\infty\times^{M_\infty}E_\infty.\]
+	\end{theorem}
 	\begin{proof}
-		To see that $\iota$ is open and closed, it suffices to prove this locally. So it suffices to consider the induced map over the preimages of $E_i\subseteq A$ under the projection $A_\infty\rightarrow A$.
-		
 		Recall that the map $\iota:E_\infty \rightarrow A_\infty$ arises by a universal property from the inverse system
 		\begin{center}
 			\begin{tikzcd}[row sep = {0.65cm,between origins}, column sep = {2cm,between origins}]
@@ -1194,76 +1199,24 @@ In light of Remark \ref{remark:good_reduction} in the introduction we make the f
 				\bigsqcup\limits_{q\in M} q\cdot E_i \arrow[r] & E_i \arrow[r,equal] & E_i
 			\end{tikzcd}
 		\end{center}
-		where recall that we write $D_n$ for the group $M^{1/p^n}/M \subseteq A[p^n]$.
-		In particular, at every level in the tower over $E_i$ the maps are trivial covering maps. This means that in order to understand them we only need to keep track of the maps on index sets, which are
-		\begin{center}
-		\begin{tikzcd}[row sep = {1.2cm,between origins}, column sep = {2cm,between origins}]
-			 \arrow[d,"\cong"',dotted] &  \arrow[d, "{[p]}",dotted] & \arrow[d,dotted] \\
-			M^{1/p} \arrow[d, "{[p]}","\cong"'] \arrow[r] & M^{1/p}/M \arrow[d, "{[p]}"] \arrow[r] & 1 \arrow[d] \\
-			M \arrow[r] & 1 \arrow[r] & 1
-		\end{tikzcd}
-		\end{center}
-		Recall that we have defined $D_\infty = \varprojlim_{[p]} D_n = \varprojlim_{[p]}M^{1/p^n}/M$ and $M_\infty \cong \varprojlim_{[p]}M^{1/p^n} \hookrightarrow E_\infty$. In the limit, the diagram gives rise to a natural map $M_\infty\hookrightarrow D_\infty$. Since $M \cong \underline{ \mathbb Z^r}$ and $D_\infty \cong \underline{\mathbb Z_p^r}$ uncanonically, the quotient $D_\infty/M_\infty$ exists and is uncanonically isomorphic to \[D_\infty/M_\infty\cong\underline{(\mathbb Z_p/\mathbb Z)^r}.\]
-
-		Using the map $M_\infty\hookrightarrow D_\infty$ on indices, we see that the pullback to $E_i\subseteq E/M$ of the morphisms $\iota:E_\infty \rightarrow A_\infty\rightarrow E/M^{1/p^\infty}$ is given by the diagram
-		\begin{center}
-			\begin{tikzcd}[row sep = {1.2cm,between origins}, column sep = {1.2cm,between origins}]
-			& E_\infty \arrow[rr,"\iota"] \arrow[dd] &  & A_\infty \arrow[rr] \arrow[dd] &  & E/M^{1/p^\infty} \arrow[dd] \\
-			\bigsqcup\limits_{M_\infty} E_i^{1/p^\infty} \arrow[dd] \arrow[rr] \arrow[ru, hook] &  & \bigsqcup\limits_{D_\infty} E_i^{1/p^\infty} \arrow[dd] \arrow[rr] \arrow[ru, hook] &  & E_i^{1/p^\infty} \arrow[dd] \arrow[ru, hook] &  \\
-			& E \arrow[rr] &  & A \arrow[rr] &  & E/M \\
-			\bigsqcup_{M} E_i \arrow[rr] \arrow[ru, hook] &  & E_i \arrow[rr] \arrow[ru, hook] &  & E_i \arrow[ru, hook] & .
-				\end{tikzcd}
-		\end{center}
-	But since $M_\infty\hookrightarrow D_\infty$ is injective, the map $\iota:\bigsqcup_{M_\infty} E_i^{1/p^\infty} \rightarrow \bigsqcup_{D_\infty} E_i^{1/p^\infty}$ is clearly open and closed. This shows that $\iota:E_\infty \rightarrow A_\infty$ is open and closed.
-	
-	In order to see that $\iota$ has a quotient, note that the last diagram implies that the morphism
-	\[D_\infty\times E_\infty \rightarrow A_\infty\]
-	induced from multiplication on $A_\infty$ is surjective. More precisely, for any point of $x\in D_\infty$, the translate $x\cdot E_\infty$ inside $A_\infty$ is \textit{equal} to $E_\infty$ if $x\in M_\infty \hookrightarrow E_\infty$ and is \textit{disjoint} from $E_\infty$ otherwise. This shows that any choice of a set of coset representatives $(x_i)$ of $D_\infty/M_\infty$ or equivalently a set-theoretic section  $x:D_\infty/M_\infty\rightarrow D_\infty$ gives a morphism of perfectoid spaces
-	\begin{equation}\label{uncanonical splitting map of embedding of E_inf into A_inf}
-	\bigsqcup_{i\in D_\infty/M_\infty} x_i\cdot E_\infty\xrightarrow{\sim} A_\infty
+	We see from this description and from the last part of Proposition~\ref{tilde limit of tilde limits of partial towers is tilde limit of whole tower} that the pullback to infinite level is the sequence 
+	\begin{equation}\label{local description of E_infty to A_infty to E/M_infty}
+	M_\infty \times E_i^{1/p^\infty}\rightarrow D_\infty \times E_i^{1/p^\infty}\rightarrow E_i^{1/p^\infty}.
 	\end{equation}
-	which is an isomorphism because it is bijective on points and each $x_iE_\infty \hookrightarrow A_\infty$ is an open immersion. Moreover, since $\iota:E_\infty\rightarrow A_\infty$ is a group homomorphism, the multiplication $A_\infty\times A_\infty \rightarrow A_\infty$ locally on the left hand side of this isomorphism restricts to a morphism
-	\begin{center}
-	\begin{tikzcd}
-		E_\infty\times E_\infty \arrow[d, "m"] \arrow[r,"{(\cdot x_i,\cdot x_j)}","\sim"'] & x_iE_\infty\times x_jE_\infty \arrow[d] \arrow[r] & A_\infty\times A_\infty \arrow[d, "m"] \\
-		E_\infty \arrow[r,"{\cdot x_ix_j}","\sim"'] & x_ix_jE_\infty \arrow[r] & A_\infty
-	\end{tikzcd}
-	\end{center}
-	commuting with the translation maps.
-	
-	Now since $D_\infty/M_\infty$ is a constant group, there is a natural locally constant morphism
-	\[\bigsqcup_{i\in D_\infty/M_\infty} x_i\cdot E_\infty \rightarrow D_\infty/M_\infty\]
-	which is independent of the choice of the $x_i$.
-	Commutativity of the diagram shows that it moreover composes with equation~\ref{uncanonical splitting map of embedding of E_inf into A_inf} to a group homomorphism $\rho:A_\infty \rightarrow D_\infty/M_\infty$. It is then clear from~\ref{uncanonical splitting map of embedding of E_inf into A_inf} that this map has the universal property of a quotient for $\iota:E_\infty \rightarrow A_\infty$: Given any perfectoid group $H$ and a homomorphism $g:A_\infty\rightarrow H$ such that $g\circ\iota = 0$, the map $g$ must be constant on any $x_iE_\infty$ and thus factors uniquely through the morphism $D_\infty/M_\infty \rightarrow H$, $i\mapsto g(x_i)$.
-	
-	That $\iota$ is the kernel of $\rho$ follows from the fact that $E_\infty$ is the pullback of $0\in D_\infty/M_\infty$ under $\rho$. This shows that the sequence in the Proposition is exact.
-	
-	That the short exact sequence is split on the level of perfectoid spaces follows from the projection maps $\bigsqcup_{i\in D_\infty/M_\infty} x_i\cdot E_\infty \rightarrow E_\infty$, which depend on the uncanonical choice of a set-theoretic section of the map of abstract groups underlying $D_\infty \rightarrow D_\infty/M_\infty$.
+	This shows that the diagram of short exact sequences commutes. Since the $E_i^{1/p^\infty}$ cover $E/M^{1/p^\infty}$ by construction, it also shows the description of $A_\infty$ in terms of the associated fibre bundle.
+	 
+	It remains to prove that $\iota$ is injective: Choose a basis of $M$, and thus a trivialisation of all $D_n$. We then see that the map $M_\infty\rightarrow D_\infty$ on the level of the underlying topological spaces can be described as the inclusion $\mathbb Z^r\hookrightarrow \mathbb Z_p^r$. This shows that $M_\infty\hookrightarrow D_\infty$ is an injective group homomorphism of perfectoid spaces. Thus by equation~(\ref{local description of E_infty to A_infty to E/M_infty}), the morphism $E_\infty\rightarrow A_\infty$ is injective as well.
 	\end{proof}
 	
-	We summarise this chapter in the following diagram:
-	\begin{theorem}
-		We have a commutative diagram with short exact rows and columns
-		\begin{center}
-			\begin{tikzcd}[column sep = {1.8cm,between origins}]
-				& 0 \arrow[d] & 0 \arrow[d] &  &  \\
-				0 \arrow[r] & M_\infty \arrow[d] \arrow[d] \arrow[r] & E_\infty \arrow[d] \arrow[r] & E/M^{1/p^\infty} \arrow[d,equal] \arrow[r] & 0 \\
-				0 \arrow[r] & D_\infty \arrow[r] \arrow[d] & A_\infty \arrow[d] \arrow[r] & E/M^{1/p^\infty} \arrow[r] & 0 \\
-				& D_\infty/M_\infty \arrow[r,equal] \arrow[d] & D_\infty/M_\infty \arrow[d] &  &  \\
-				& 0 & 0 &  & 
-			\end{tikzcd}
-		\end{center}
-		Moreover, the square on the upper right is a pullback as well as a pushout square. In particular, we have a natural short exact sequence of perfectoid groups
+	\begin{corollary}
+		The injection $E_\infty \rightarrow A_\infty$ induces a short exact sequence of perfectoid groups
 		\[0\rightarrow M_\infty\rightarrow D_\infty \times E_\infty \rightarrow A_\infty\rightarrow 0\]
-		where the map on the left is the diagonal embedding of $M_\infty$ into $D_\infty\times E_\infty$. In particular, we can describe $A_\infty$ as the quotient $(D_\infty\times E_\infty)/M_\infty$.
-		
-	\end{theorem}
+		where the map on the left is the diagonal embedding of $M_\infty$ into $D_\infty\times E_\infty$. In particular, we can describe $A_\infty$ as the quotient $(D_\infty\times E_\infty)/M_\infty$ in the category of perfectoid groups.
+	\end{corollary}
 	\begin{proof}
-		The diagram of short exact sequences follows from Proposition~\ref{the morphism E->E/M^{1/p^n} in the limit}, Proposition~\ref{the morphism A->E/M^{1/p^n} in the limit} and Proposition~\ref{the morphism E->A in the limit}.
-		That the square is Cartesian is an immediate consequence of the universal property of the kernel.
-		That the square satisfies the pushout universal property can be verified using the isomorphism in equation~\ref{uncanonical splitting map of embedding of E_inf into A_inf}.
-		
-		The universal property of the pushout then implies that $A_\infty$ has the universal property of the quotient of the diagonal map $M\rightarrow D_\infty\times E_\infty$.
+		The map $D_\infty\times E_\infty \rightarrow A_\infty$ is just the composition of $D_\infty\times E_\infty \hookrightarrow A_\infty\times A_\infty$ with the multiplication of $A_\infty$. It is then clear from the short exact sequences of Theorem~\ref{the morphism E->A in the limit} that $M_\infty$ is the kernel of this map. That $A_\infty$ has the universal property of the cokernel is a consequence of the universal property of the associated fibre bundle construction: Explicitly, this follows from the fact that locally over $U\subseteq E/M^{1/p^\infty}$, the map on the right is the projection
+		\[D_\infty \times M_\infty \times U \rightarrow D_\infty\times U.\]
+		This gives a local splitting, and thus the necessary map in the universal property of the cokernel.
 	\end{proof}
 	
 	\appendix
@@ -1577,6 +1530,11 @@ During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Cent
 		\bibitem{rigid geometry of curves} 
 		Werner L\"utkebohmert
 		\textit{Rigid Geometry of Curves and Their Jacobians}. 
+		
+		
+		\bibitem{etale_cohomology_of_diamonds} 
+		Peter Scholze
+		\textit{\'etale cohomology of diamonds}
 		
 		\bibitem{perfectoid} 
 		Peter Scholze
