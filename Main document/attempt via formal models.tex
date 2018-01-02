@@ -788,9 +788,9 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 	The idea is now that one can understand the quotient $E/M$ in terms of the quotient $\mathbb R^r/\Lambda$. We are going to make this precise in the following:
 	
 	For any $d\in \mathbb R_{> 0}^r$, consider the cuboid with length $2d$ centered at the origin:
-	\[S(d) = \{(x_1,\dots,x_r)\in \mathbb R^r | |x_i|\leq d_i \}\]
+	\[S(d) = \{(s_1,\dots,s_r)\in \mathbb R^r | |s_i|\leq d_i \}\]
 	Choose $d$ small enough such that $S(d)$ intersects $\Lambda$ only in $0\in \Lambda$. Choose
-	 $q_1,\dots,q_r\in K$ such that $|q_i|=\exp(-d_i)$. We denote by $\mathcal B(q,q^{-1})$ the affinoid open rigid multi-annulus $T$ centered at $1$ of radii $|q_i|< 1 < |q_i|^{-1}$ in every direction.
+	 $q_1,\dots,q_r\in K$ such that $|q_i|=\exp(-d_i)$. We denote by $\mathcal B(q,q^{-1})$ the affinoid open rigid multi-annulus in $T$ centered at $1$ of radii $|q_i|< 1 < |q_i|^{-1}$ in every direction.
 	
 	\begin{lemma}\label{cube around origin gives local chart for E/M}
 		The inverse image $\ell^{-1}(S(d))\subseteq E(K)$ is the underlying set of the admissible open subset $E(q):=\mathcal B(q,q^{-1})\times^{\overline{T}_\eta}\overline{E}_\eta$.
@@ -808,7 +808,7 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 	is an isomorphism of rigid spaces that sends the unit $1$ to $c$. We denote the image of any admissible open set $U$ under translation by $c\cdot U$.
 	
 	\begin{lemma}\label{cube around point gives local chart for E/M}
-		With notation as before, let $c \in T(K)$ be any point such that $l(c)=s$. Then the inverse image $\ell^{-1}(s+S(d))\subseteq E(K)$ of the translation of $S(d)$ by $s$ is the underlying set of the admissible open subset $E(c,q) := (c\cdot \mathcal B(q,q^{-1}))\times^{\overline{T}_\eta}\overline{E}_\eta \subseteq E$. We can choose $c\in T(K)$ and $q\in T(K)$ in such a way that they admit arbitrary $p^n$-th roots.
+		With notation as before, let $c \in T(K)$ be any point and let $s=l(c)$. Then the inverse image $\ell^{-1}(s+S(d))\subseteq E(K)$ of the translation of $S(d)$ by $s$ is the underlying set of the admissible open subset $E(c,q) := (c\cdot \mathcal B(q,q^{-1}))\times^{\overline{T}_\eta}\overline{E}_\eta \subseteq E$. We can choose $c\in T(K)$ and $q\in T(K)$ in such a way that they admit arbitrary $p^n$-th roots.
 	\end{lemma}
 	
 	\begin{proof}
@@ -871,12 +871,12 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 		Note that in the case of $K$ perfectoid but not necessarily algebraically closed, one can still carry out the constructions in the following using partial anticanonical $\Gamma_0(p^\infty)$-structures, whereas the lattices $M^{1/p^n}$ might not be defined over $K$.
 	\end{remark}
 	
-	Following the remark, denote by $D_n$ the torsion subgroup $M^{1/p^n}/M\subseteq A$. The quotient $A/D_n = E/M^{1/p^n}$ is then another abelian variety over $K$ and the quotient map $E/M\rightarrow E/M^{1/p^n}$ is an isogeny of degree $p^{2gn}$  through which  $[p^n]:A\rightarrow A$ factors: 
+	Following the remark, denote by $D_n$ the torsion subgroup $M^{1/p^n}/M\subseteq A$. The quotient $A/D_n = E/M^{1/p^n}$ is then another abelian variety over $K$ and the quotient map $v^n:E/M\rightarrow E/M^{1/p^n}$ is an isogeny of degree $p^{2gn}$  through which  $[p^n]:A\rightarrow A$ factors: 
 		\begin{center}
 			\begin{equation}\label{factorisation of [p] over E/M}
 			\begin{tikzcd}
-				& E/M^{1/p} \arrow[rd, "{[p]}"] &  \\
-				E/M \arrow[rr, "{[p]}"] \arrow[ru,"v"] &  & E/M.
+				& E/M^{1/p} \arrow[rd, "{[p^n]}"] &  \\
+				E/M \arrow[rr, "{[p^n]}"] \arrow[ru,"v^n"] &  & E/M.
 			\end{tikzcd}
 			\end{equation}
 		\end{center}
