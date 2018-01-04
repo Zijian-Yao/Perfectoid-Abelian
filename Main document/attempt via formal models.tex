@@ -563,15 +563,16 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 %%      Section 4
 %%%%%%%%%%%%
 	\section{Raynaud extensions as principal bundles of formal and rigid spaces}\label{Raynaud extensions as principal bundles of formal and rigid spaces}
-	As the next step towards studying the $p$-multiplication tower of an abelian variety, we now look at the case of rigid groups arising from the Raynaud extensions associated to semi-stable abelian varieties over a non-archimedean complete field $K$. For simplicity we will also assume that $K$ is algebraically closed.
-	While we expect that our main theorem still holds over any perfectoid field, it is easier to work in the algebraically closed case since this simplifies the theory of Raynaud uniformisation, in particular Lemma~\ref{formal Raynaud sequence is locally split} below.
+	As the next step towards studying the $p$-multiplication tower of an abelian variety, we now look at the case of rigid groups arising from the Raynaud extensions associated to abelian varieties over an algebraically closed non-archimedean complete field $K$.
 	
-	Let now $A$ be an abelian variety over $K$ of semi-stable reduction. We denote by $N$ the identity component of the N\'eron-model of $A$ and by $\overline E$ its completion along the special fibre. Then by the theory of Raynaud, $\overline E$ is a formal group that fits into a short exact sequence of formal group schemes
+	While we expect that our main theorem still holds over any perfectoid field, it is easier to work in the algebraically closed case since this simplifies the theory of Raynaud uniformisation, in particular Lemma~\ref{formal Raynaud sequence is locally split} below.	We sketch the theory here, see \S 5.6 of \cite{rigid geometry of curves} for more details on the setup.
+	
+	Let now $A$ be an abelian variety over $K$. There exists a unique connected open rigid analytic subgroup $\overline A$ of $A$ which extends to a formal smooth $\mathcal O_K$-group scheme $\overline E$ with semi-abelian reduction. Then $\overline E$ fits into a short exact sequence of formal group schemes
 	\begin{equation}\label{formal Raynaud extension}
 	0\rightarrow \overline T \rightarrow \overline E \xrightarrow{\pi} \overline{B}\rightarrow 0
 	\end{equation}
 	where $\overline{B}$ is the completion of an abelian variety $B$ over $K$ of good reduction (we also denote by $B$ the rigid space associated to it), and $\overline{T}$ is the completion of a torus of rank $r$ over $K$.
-	After passing to a finite extension of $K$, we can always assume that the torus is split. The rigid generic fibre $\overline{T}_\eta$ of the torus $\overline{T}$ canonically embeds into the torus $T^{\operatorname{an}}$ which again we simply denote by $T$. One can show that this induces a pushout exact sequence in the category of rigid groups, see \S 1 of \cite{BL}. More precisely, there exists a rigid group variety $E$ such that the following diagram commutes and the left square is a pushout.
+	The rigid generic fibre $\overline{T}_\eta$ of the torus $\overline{T}$ canonically embeds into the torus $T^{\operatorname{an}}$ which again we simply denote by $T$. One can show that this induces a pushout exact sequence in the category of rigid groups. More precisely, there exists a rigid group variety $E$ such that the following diagram commutes and the left square is a pushout.
 	\begin{center}
 		\begin{equation}
 		\begin{tikzcd}
@@ -585,7 +586,7 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 	
 	\begin{definition}
 		A subset $M$ of a rigid space $G$ is called \textbf{discrete} if the intersection of $M$ with any affinoid open subset of $G$ is a finite set of points.
-		Let $G$ be a rigid group, then a \textbf{lattice} in $G$ of rank $r$ is a discrete torsion-free subgroup $M$ of $G$ which is isomorphic to the constant rigid group $\underline{\mathbb Z^r}$. 
+		Let $G$ be a rigid group, then a \textbf{lattice} in $G$ of rank $r$ is a discrete subgroup $M$ of $G$ which is isomorphic to the constant rigid group $\underline{\mathbb Z^r}$. 
 	\end{definition}
 	
 	\begin{proposition}\label{Raynaud uniformisation}
@@ -604,7 +605,7 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 		This is proved in Proposition A.2.5 in~\cite{rigid geometry of curves}, where it is fomulated in terms of the group $\operatorname{Ext}(B,T)$. Also see \cite{BL}, \S 1.
 	\end{proof}
 	
-	This Lemma suggest that instead of considering Raynaud extensions from the abelian category viewpoint, one should consider them as fibre bundles of formal schemes with structure group $T$, or more precisely as principal $T$-bundles of formal schemes, which are also called $T$-torsors. This is the language we want to use in the following: We will work with fibre bundles of formal schemes, rigid spaces and schemes. The main technical tool we will need is the associated fibre construction in these settings. For a rigorous  treatment of these we refer to the Appendix.
+	This Lemma suggests that instead of considering Raynaud extensions from the abelian category viewpoint, one should consider them as fibre bundles of formal schemes with structure group $T$, or more precisely as principal $T$-bundles of formal schemes, which are also called $T$-torsors. This is the language we want to use in the following: We will work with fibre bundles of formal schemes, rigid spaces and schemes. The main technical tool we will need is the associated fibre construction in these settings. For a rigorous  treatment of these we refer to the Appendix.
 	
 	First of all, we note that the sequence~(\ref{formal Raynaud extension}) from the last section gives rise to a principal $\overline{T}$-bundle
 	$\overline{E}\rightarrow \overline{B}$. The fact that $E$ is obtained from $\overline{E}_\eta$ via push-out from $\overline{T}_\eta\rightarrow T$ can now conveniently be expressed in terms of the associated fibre bundle by saying that $E_\eta = T\times^{\overline{T}_\eta}\overline{E}_\eta$ in the sense of Definition~\ref{definition of Borel construction}. We have the following description of $[p]$:
@@ -1006,7 +1007,7 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 	
 	If $(\operatorname{Spa}(A_i,A_i^{+}))_{i\in I}$ is an inverse system of affinoid perfectoid spaces, then it is easy to check that for $A^+$ the $\pi$-adic completion of $\varinjlim A_i$ and for $A = A^+[1/\pi]$, the affinoid algebra $(A,A^{+})$ is again perfectoid. It then follows from topological algebra that $\operatorname {Spa}(A,A^{+})$ has the desired universal property for maps from honest adic spaces into the inverse system $(\operatorname{Spa}(A_i,A_i^{+}))_{i\in I}$.
 	
-	From the construction it follows that this tilde limit (the condition on the underlying sets can be checked using the argument of Lemma 6.13.(ii) in \cite{perfectoid IHES}). The affinoid case implies the result for the above tower by a glueing argument.
+	From the construction it follows that this tilde limit (the condition on the underlying sets can be checked using the argument of Lemma 6.13.(ii) in \cite{perfectoid}). The affinoid case implies the result for the above tower by a glueing argument.
 	\end{remark}
 	
 	Despite the remark, we now want to give a slightly more explicit construction of this limit that also says something about its local geometry. We first looks at the tower
@@ -1493,72 +1494,48 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
 This work started as a group project at the 2017 Arizona Winter School. We would like to thank Bhargav Bhatt for proposing the project, for his guidance and for his constant encouragement. In addition we would like to thank the organizers of the Arizona Winter School for setting up a great environment for us to participate in this project. 
 
-This work was supported by the Engineering and Physical Sciences Research Council [EP/L015234/1]. 
-During this work Dami\'an Gvirtz and Ben Heuer where supported by the EPSRC Centre for Doctoral Training in Geometry and Number Theory (The London School of Geometry and Number Theory), University College London. {\color{red} Other grants? or just this one? no NSF? }
+During this work Dami\'an Gvirtz and Ben Heuer were supported by the Engineering and Physical Sciences Research Council [EP/L015234/1], the EPSRC Centre for Doctoral Training in Geometry and Number Theory (The London School of Geometry and Number Theory), University College London. 
+Peter Wear was supported by NSF grant DMS-1502651 and UCSD and would like to thank Kiran Kedlaya for helpful discussions.
+{\color{red} Other grants?}
+ {\color{green} Can acknowledgements go back to front as soon as edits in \S1 and \S2 are done?}
  
  
- 
+\begin{thebibliography}{99}
 	
-	\begin{thebibliography}{9}
-		
-					
-		\bibitem{Bhatt} 
-		Bhargav Bhatt
-		\textit{AWS lecture notes}. 
-		
-		
-		\bibitem{Bosch lectures} 
-		Siegfried Bosch
-		\textit{Lectures in formal and rigid geometry}.
-		
-		\bibitem{Bosch defines formal rigid spaces} 
-		Siegfried Bosch
-		\textit{Zur Kohomologietheorie rigid analytischer R\"aume }.
-		
-		\bibitem{BL} 
-		Bosch, L\"utkebohmert
-		\textit{Degenerating abelian varieties}.
-		
-		\bibitem{FvdP}
-		Jean Fresnel, Marius van der Put
-		\textit{Rigid Analytic Geometry and its Applications}
-		
-		\bibitem{rigid geometry of curves} 
-		Werner L\"utkebohmert
-		\textit{Rigid Geometry of Curves and Their Jacobians}. 
-		
-		
-		\bibitem{etale_cohomology_of_diamonds} 
-		Peter Scholze
-		\textit{\'etale cohomology of diamonds}
-		
-		\bibitem{perfectoid} 
-		Peter Scholze
-		\textit{Perfectoid spaces}.  IHES 
-		
-		\bibitem{torsion} 
-		Peter Scholze
-		\textit{Torsion in cohomology of locally symmetric varieties}.
-		
-		\bibitem{SW} 
-		Peter Scholze, Jared Weinstein
-		\textit{moduli spaces of p-divisible groups}.
-		
-		
-		
-	\end{thebibliography}
+	\bibitem{Bosch lectures} 
+	Siegfried Bosch,
+	\textit{Lectures on Formal and Rigid Geometry}, Lecture Notes in Mathematics, vol 2015. Springer, Berlin/Heidelberg/New York (2014).
 	
+	\bibitem{BL} 
+	Siegfried Bosch, Werner L\"utkebohmert,
+	\textit{Degenerating abelian varieties}, Topology {\bf 30} (1991), 653-698.
 	
+	\bibitem{FvdP}
+	Jean Fresnel and Marius van der Put,
+	\textit{Rigid Analytic Geometry and its Applications}, Progress in Mathematics, vol. 218. Birkh\"auser Boston, Inc., Boston (2004).
 	
+	\bibitem{rigid geometry of curves} 
+	Werner L\"utkebohmert,
+	\textit{Rigid Geometry of Curves and Their Jacobians}, Springer, Ergeb. 3. Folge, vol. 61. Springer International Publishing (2016). 
 	
+	\bibitem{perfectoid} 
+	Peter Scholze,
+	\textit{Perfectoid spaces}, Publ. Math. de l'IHES {\bf 116} (2012), no. 1, 245-313.
 	
+	\bibitem{p-adic Hodge} 
+	Peter Scholze,
+	\textit{p-adic Hodge theory for rigid analytic varieties}, Forum Math. Pi {\bf 1} (2013), el, 77.
 	
+	\bibitem{torsion} 
+	Peter Scholze,
+	\textit{On torsion in the cohomology of locally symmetric varieties}, Ann. of Math. (2) {\bf 182} (2015), no. 3, 945-1066.
 	
+	\bibitem{SW} 
+	Peter Scholze and Jared Weinstein,
+	\textit{Moduli of p-divisible groups}, Camb. J. Math. {\bf 1} (2013), no. 2, 145-237.
 	
-	
-	
-	
-	
+\end{thebibliography}
+
 	
 	
 \end{document}
