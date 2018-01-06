@@ -201,12 +201,12 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 
 		\subsection{Tilde-limits and formal models} 
 		
-	As we have seen in Remark \ref{remark:inverse_limit_adic} in the introduction, inverse limits often do not exist in the category of adic spaces (in fact not even in rigid spaces in general). Instead we use the notion of tilde-limit from \cite{SW}:
+	As we have seen in Remark \ref{remark:inverse_limit_adic} in the introduction, inverse limits often do not exist in the category of adic spaces (in fact not even in rigid spaces in general). Instead we use the notion of tilde-limits from \cite{SW}:
 	
 	\begin{definition} 
 Let $X_i$ be a filtered inverse system of adic spaces with quasi-compact and quasi-separated transition maps, let $X$ be an adic space with a compatible system of morphisms $f_i: X \rightarrow X_i$. We write $X \sim \varprojlim X_i$ ($X$ is a \textbf{tilde-limit} of $X_i$) if the map of underlying topological spaces $|X| \rightarrow \varprojlim |X_i|$ is a homeomorphism, and there exists an open cover of $X$ by affinoids $\operatorname{Spa} (A, A^+) \subset X$ such that the map 
 $$ \varinjlim_{\operatorname{Spa}(A_i, A_i^+) \subset X_i} A_i \rightarrow A$$
-has dense image, where the direct limit runs over all open affinoids $\operatorname{Spa}(A_i, A_i^+) \subset X_i$ containing the image of $\operatorname{Spa}(A, A^+) \subset X$.
+has dense image. Here the direct limit runs over all open affinoids $\operatorname{Spa}(A_i, A_i^+) \subset X_i$ containing the image of $\operatorname{Spa}(A, A^+) \subset X$.
 	\end{definition}
 	
 	\begin{remark} \label{remark:tilde_limit_non_unique}
@@ -370,7 +370,7 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 		and therefore $S'_\infty/\pi^n=\mathcal O_K/\pi^n\mathcal O_K$. Consequently, the completion is just $S_\infty = \mathcal O_K$ and thus its adic generic fiber is $G_\infty = \operatorname{Spa}(K,\mathcal O_K)$.  This is still perfectoid but is just one point!
 		
 		Let us explain the heuristic geometrically: on the level of $K$-points, the formal scheme $G$ is the closed unit disc and $[p]$ is scaling by $p$. A $K$-point in $\varprojlim_{[p]} G(K)$ therefore corresponds to a sequence of $K$-points of the closed unit disc of the form 
-		$$x,\frac{1}{p}x,\frac{1}{p^2}x,\dots.$$ But for this to be contained in the closed unit disc, we must have $x=0$. 
+		$$ (x,\frac{1}{p}x,\frac{1}{p^2}x,\dots ).$$ But for this to be contained in the closed unit disc, we must have $x=0$. 
 		
 	\end{example}
 	
@@ -380,7 +380,7 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
  
 	
 		
-	\subsection{A few consequences}
+	\subsection{Perfectoid group}
 	
 	One reason why perfectoid limits along group morphisms are particularly interesting is that the perfectoidness ensures that the limit has again a group structure:
 	
@@ -409,24 +409,29 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 %%      Section 3
 %%%%%%%%%%%%	
 	\section{Formal models for tori}
+	 
+	In this section we construct a $[p]$-$F$-formal tower for a split rigid torus $T$ over $K$, therefore proving the existence of the perfectoid tilde-limit $T_\infty$ of $\varprojlim_{[p]} T$. 
 	
-	In this section we want to show that for a split rigid torus $T$ over $K$, a tilde-limit $T_\infty$ exists and is perfectoid. We do this by exhibiting a $[p]$-$F$-model of $T$.
-	
-	As a preparation, we consider the torus $\mathbb G_m^{\operatorname{an}}$ over $K$. Recall that it arises from rigid analytification of the affine torus $\mathbb G_m$ over $K$. Note however that $\mathbb G_m^{\operatorname{an}}$ is not affinoid (and not even quasi-compact). It contains the generic fibre of the $p$-adic completion of $\mathbb G_m$ as an open subspace. If we see $\mathbb G_m^{\operatorname{an}}$ as the rigid affine line with the origin removed, this subspace $\widehat{\mathbb G}_m$ can be identified with the open annulus of radius 1. In other words, on the level of points it corresponds to $\mathcal O_K^\times \subseteq K^\times$.
+	As a preparation, we consider the torus $\mathbb G_m^{\operatorname{an}}$ over $K$. Recall that it arises from rigid analytification of the affine torus $\mathbb G_m$ over $K$. Note however that $\mathbb G_m^{\operatorname{an}}$ is not affinoid (and not even quasi-compact). It contains the generic fibre of the $p$-adic completion of $\mathbb G_m$ as an open subspace. If we see $\mathbb G_m^{\operatorname{an}}$ as the rigid affine line with the origin removed, this subspace $(\widehat{\mathbb G}_m)_{\eta}$ can be identified with the open annulus of radius 1. %In other words, on the level of points it corresponds to $\mathcal O_K^\times \subseteq K^\times$.
 	
 	Finally, recall that for every $x\in K^\times$ we have a translation map
 	\[\mathbb G_m^{\operatorname{an}}\xrightarrow{x\cdot} \mathbb G_m^{\operatorname{an}}\]
-	that is an isomorphism of rigid spaces sending the point $1$ to $x$.
+	which is the isomorphism of rigid spaces sending the point $1$ to $x$.
 	
 	\subsection{A family of explicit covers}
-	We briefly recall how $\mathbb G_m^{\operatorname{an}}$ is constructed: The following is inspired by \cite{Bosch lectures}, \S 9.2, although we choose slightly different constructions. Throughout we use the following shorthand notation: For any $a\in K$ we write
+	We briefly recall how $\mathbb G_m^{\operatorname{an}}$ is constructed: The following is inspired by \cite{Bosch lectures}, \S 9.2, although we choose slightly different constructions which is suitable for constructing a $[p]$-F-formal tower for $\mathbb G_m^{\operatorname{an}}$. 
+	
+	\begin{notation} 
+	Throughout we use the following shorthand notation: For any $a\in K$ we write
 	\[K\langle X,a/X\rangle = K\langle X,Z\rangle/(X\cdot Z - a). \]
 	
 	Let $q \in K^\times$ with $|q|\leq 1$. Consider the annulus $\mathcal B(q,1)$ of radii $|q|$ and $1$ inside $\mathbb A_K^{\operatorname{an}}$:
 	\[\mathcal B(q,1) = \operatorname{Sp}(L_q),\quad \text{ where } L_q = K\langle X,q/X\rangle. \]
 	Similarly, for $q\in K^\times$ with $|q|\geq 1$ one constructs the annulus $\mathcal B(1,q)$ by
 	\[\mathcal B(1,q) = \operatorname{Sp}(L_{q}),\quad \text{ where } L_{q} = K\langle X/q,1/X\rangle\]
-	where $K\langle X/q\rangle$ denotes the ring of those power series $f=\sum c_nX^m\in K[[X]]$ for which $|c_nq^n|\to 0$ for $n\to \infty$. In particular, we have isomorphisms
+	where $K\langle X/q\rangle$ denotes the ring of those power series $f=\sum c_nX^m\in K[[X]]$ for which $|c_nq^n|\to 0$ for $n\to \infty$.
+	\end{notation}
+	 In particular, we have isomorphisms
 	 \[K\langle X',q^{-1}/X'\rangle\cong K\langle X/q,1/X\rangle,\quad X'\mapsto q^{-1}X.\]
 	One can now construct $\mathbb G_m^{\operatorname{an}}$ as follows: Choose sequences $a_n,b_n\in K^\times$ with $a_0=1=b_0$ such that $|a_n|<|a_{n-1}|<\cdots<1$ and $|a_n| \to 0$ and similarly $|b_n|>|b_{n-1}|>\cdots>1$ and $|b_n| \to \infty$. Then one can glue the annuli $\mathcal B(a_n,1)$ and $\mathcal B(1,b_n)$ using the following maps:
 	\begin{equation}\label{torus explicit cover glue map 1}
@@ -565,11 +570,16 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 %%%%%%%%%%%%
 %%      Section 4
 %%%%%%%%%%%%
-	\section{Raynaud extensions as principal bundles of formal and rigid spaces}\label{Raynaud extensions as principal bundles of formal and rigid spaces}
+
+	\section{$p$-$F$-formal tower for Raynaud extensions}\label{Raynaud extensions as principal bundles of formal and rigid spaces}
 	As the next step towards studying the $p$-multiplication tower of an abelian variety, we now look at the case of rigid groups arising from the Raynaud extensions associated to abelian varieties over an algebraically closed non-archimedean complete field $K$.
 	
+	\begin{remark}
 	While we expect that our main theorem still holds over any perfectoid field, it is easier to work in the algebraically closed case since this simplifies the theory of Raynaud uniformisation, in particular Lemma~\ref{formal Raynaud sequence is locally split} below.	We sketch the theory here, see \S 5.6 of \cite{rigid geometry of curves} for more details on the setup.
+	\end{remark}
 	
+	
+	\subsection{Raynaud extensions}
 	Let now $A$ be an abelian variety over $K$. There exists a unique connected open rigid analytic subgroup $\overline A$ of $A$ which extends to a formal smooth $\mathcal O_K$-group scheme $\overline E$ with semi-abelian reduction. Then $\overline E$ fits into a short exact sequence of formal group schemes
 	\begin{equation}\label{formal Raynaud extension}
 	0\rightarrow \overline T \rightarrow \overline E \xrightarrow{\pi} \overline{B}\rightarrow 0
@@ -634,10 +644,10 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 
  
 %%%%%%%%%%%%
-%%      Section 5
+%%      Section 4.5
 %%%%%%%%%%%%	
 	
-	\section{Formal models for $E$}
+	\subsection{Formal models for $E$}
 	In this subsection we prove that $E$ admits a $[p]$-$F$-tower model. The first step is to construct a family of formal models for $E$. We do this by using the formal models $\mathfrak T_q$.
 	\begin{proposition}
 	Let $q\in K^\times$ with $|q|<1$. Let $\mathfrak T_q$ be the formal model from Corollary~\ref{torus has formal models}. Then there is a formal scheme $\mathfrak E_q :=\mathfrak T_q \times^{\overline{T}}\overline{E}$ that is a formal model of the rigid space $E$. Furthermore, there exists a morphism
@@ -758,7 +768,7 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 	
 %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%
-%%%  Section 6
+%%%  Section 5
 %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%
 	
