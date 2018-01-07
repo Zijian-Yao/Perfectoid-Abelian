@@ -71,7 +71,7 @@
 	\maketitle
 	
 	\begin{abstract}
-For an abelian variety $A$ over an algebraically closed non-archimedean field which is either $p$-adic or of characteristic $p$, we show that there exists a perfectoid space which is the tilde limit of $\varprojlim_{[p]}A$.
+For an abelian variety $A$ over an algebraically closed non-archimedean field which is either $p$-adic or of characteristic $p$, we show that there exists a perfectoid space which is the tilde-limit of $\varprojlim_{[p]}A$.
 	\end{abstract}
 	
 
@@ -110,9 +110,9 @@ We will recall the definition of the tilde-limit, namely the meaning of $A_\inft
 In fact, we will achieve (1) and (2) simultaneously. 
 
 \begin{remark*}	\label{remark:good_reduction}
-Let us consider the motivating example of the case of good reduction. This example is generalized from Exercise 4 -- 6 in \cite{Bhatt} and spelt out in details in Subsection \ref{subsection:perfectoid_tilde_limit} [Corollary \ref{tilde limit exists and is perfectoid in the good reduction case}]. 
+Let us consider the motivating example of the case of good reduction. This example is generalized from Exercise 4 -- 6 in \cite{Bhatt} and spelt out in details in Subsection \ref{subsection:perfectoid_tilde_limit} [Corollary \ref{tilde-limit exists and is perfectoid in the good reduction case}]. 
 
-Let $\mathcal A$ be a formal abelian scheme over $\mathcal O_K$ with generic fiber $A$. Then on the mod $\pi$ special fiber $\mathcal A_s = \mathcal A \times \mathcal O_K/\pi$,  multiplication by $p$ factors through the relative Frobenius map, forcing the inverse limit $ \varprojlim_{[p]} \mathcal A_s $ (which exists in the category of schemes) to be relatively perfect over $\mathcal O_K/\pi$. Let $\mathcal A_{\infty} = \varprojlim_{[p]} \mathcal A$ (which exists by Lemma \ref{lemma:inverse_limit_formal}), then its adic generic fiber $A_\infty$ is perfectoid and a tilde limit of $\varprojlim_{[p]}A$.
+Let $\mathcal A$ be a formal abelian scheme over $\mathcal O_K$ with generic fiber $A$. Then on the mod $\pi$ special fiber $\mathcal A_s = \mathcal A \times \mathcal O_K/\pi$,  multiplication by $p$ factors through the relative Frobenius map, forcing the inverse limit $ \varprojlim_{[p]} \mathcal A_s $ (which exists in the category of schemes) to be relatively perfect over $\mathcal O_K/\pi$. Let $\mathcal A_{\infty} = \varprojlim_{[p]} \mathcal A$ (which exists by Lemma \ref{lemma:inverse_limit_formal}), then its adic generic fiber $A_\infty$ is perfectoid and a tilde-limit of $\varprojlim_{[p]}A$.
 \end{remark*}
 
 Now we explain the outline of the proof of Theorem \ref{thm:main_thm_intro}. Our approach relies on constructing various formal models of relevant objects and take their (adic) generic fibres. 
@@ -186,7 +186,7 @@ The approach via explicit covers finally gives an explicit description of $A_\in
 
 	Finally, recall the following standard terminology: 
 		\begin{enumerate}
-			\item Let $X$ be a rigid space over $K$. A \textbf{formal model} of $\mathcal X$ is an admissible topologically finite type formal scheme $\mathfrak X$ over $\mathcal O_K$ together with an isomorphism of its generic fibre $\mathfrak X_\eta \xrightarrow{\sim} X$ (which is often suppressed from notation).
+			\item Let $X$ be a rigid space over $K$. A \textbf{formal model} of $X$ is an admissible topologically finite type formal scheme $\mathfrak X$ over $\mathcal O_K$ together with an isomorphism of its generic fibre $\mathfrak X_\eta \xrightarrow{\sim} X$ (which is often suppressed from notation).
 			\item Let $\phi:  X\rightarrow  Y$ be a morphism of rigid spaces over $K$, with formal models $\mathfrak X$ and $\mathfrak Y$	respectively. A morphism of formal schemes $\Phi:\mathfrak X \rightarrow \mathfrak Y$ is a \textbf{formal model} of $\phi$ if it agrees with $\phi$ on the adic generic fiber. 
 		\end{enumerate}
 
@@ -213,16 +213,16 @@ Peter Wear was supported by NSF grant DMS-1502651 and UCSD and would like to tha
 
 		\subsection{Tilde-limits and formal models} 
 		
-	As we have seen in Remark \ref{remark:inverse_limit_adic} in the introduction, inverse limits often do not exist in the category of adic spaces (in fact not even in rigid spaces in general). Instead we use the notion of tilde-limits from \cite{SW}:
+	As we have seen in Remark \ref{remark:inverse_limit_adic} in the introduction, inverse limits often do not exist in the category of adic spaces (and neither in in rigid spaces). Instead we use the notion of tilde-limits from \cite{SW}:
 	
 	\begin{definition} 
 Let $X_i$ be a filtered inverse system of adic spaces with quasi-compact and quasi-separated transition maps, let $X$ be an adic space with a compatible system of morphisms $f_i: X \rightarrow X_i$. We write $X \sim \varprojlim X_i$ ($X$ is a \textbf{tilde-limit} of $X_i$) if the map of underlying topological spaces $|X| \rightarrow \varprojlim |X_i|$ is a homeomorphism, and there exists an open cover of $X$ by affinoids $\operatorname{Spa} (A, A^+) \subset X$ such that the map 
 $$ \varinjlim_{\operatorname{Spa}(A_i, A_i^+) \subset X_i} A_i \rightarrow A$$
-has dense image. Here the direct limit runs over all open affinoids $\operatorname{Spa}(A_i, A_i^+) \subset X_i$ containing the image of $\operatorname{Spa}(A, A^+) \subset X$.
+has dense image, where the direct limit runs over all open affinoids $\operatorname{Spa}(A_i, A_i^+) \subset X_i$ containing the image of $\operatorname{Spa}(A, A^+) \subset X$.
 	\end{definition}
 	
 	\begin{remark} \label{remark:tilde_limit_non_unique}
-As pointed out after Proposition 2.4.4. of \cite{SW}, tilde-limits (if exist) are in general not unique. For example, consider the inverse system consisting of a single affinoid pre-perfectoid space $X = \operatorname{Spa}(A, A^+)$, then its strong completion $\hat X = \operatorname{Spa}(\hat A,\hat A^+) $ is also a tilde-limit of $X$. 
+As pointed out after Proposition 2.4.4. of \cite{SW}, tilde-limits (if they exist) are in general not unique. For example, consider the inverse system consisting of a single affinoid pre-perfectoid space $X = \operatorname{Spa}(A, A^+)$, then its strong completion $\hat X = \operatorname{Spa}(\hat A,\hat A^+) $ is also a tilde-limit of $X$. 
 	\end{remark}
 	
 One way to construct tilde-limits is by constructing certain formal models. First we observe that inverse limits are much better behaved in the category of formal schemes. 
@@ -246,15 +246,15 @@ One way to construct tilde-limits is by constructing certain formal models. Firs
 	\end{proof}
 	
 	\begin{remark}
-	This lemma essentially says that, one may construct a tilde-limit of an inverse system of rigid spaces $\mathcal X_i$ if it arises from an inverse system of formal schemes $\mathfrak X_i$ with affine transition maps. This is precisely what Scholze uses in \cite{torsion} to construct the space $\mathcal X_{\Gamma_0(p^\infty)}(\epsilon)_a$ (see Corollary III.2.19 in \cite{torsion} and its proof).
+	This lemma essentially says that one may construct a tilde-limit of an inverse system of rigid spaces $\mathcal X_i$ if it arises from an inverse system of formal schemes $\mathfrak X_i$ with affine transition maps. This is precisely what Scholze uses in \cite{torsion} to construct the space $\mathcal X_{\Gamma_0(p^\infty)}(\epsilon)_a$ (see Corollary III.2.19 in \cite{torsion} and its proof).
 	\end{remark}
 	
-	%Therefore, one way to construct  a tilde limit $\varprojlim \mathcal X_i$ for an inverse system of rigid spaces $\mathcal X_i$ is to look for formal models $\mathfrak X_i$ of the system with affine transition maps. If such data exist, Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} produces a tilde-limit $\mathcal X \sim \varprojlim \mathcal X_i$. 
+	%Therefore, one way to construct  a tilde-limit $\varprojlim \mathcal X_i$ for an inverse system of rigid spaces $\mathcal X_i$ is to look for formal models $\mathfrak X_i$ of the system with affine transition maps. If such data exist, Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} produces a tilde-limit $\mathcal X \sim \varprojlim \mathcal X_i$. 
 	
  	\begin{remark} \label{Raynaud theory main theorem}
 			
 	Let us recall Raynaud's theory of formal models: under mild assumptions,
-	one can always find formal models of rigid spaces, and (possibly after formal blow ups) of morphisms between them. More precisely, Raynaud's theorem [\cite{Bosch lectures}, section 8.4] states that
+	one can always find formal models of rigid spaces, and (possibly after formal blow ups) of morphisms between them. More precisely, Raynaud's theorem \cite[section 8.4]{Bosch lectures} states that
 		
 		\begin{enumerate}
 			\item Let $X$ be a quasi-separated quasi-paracompact rigid space over $K$. Then there exist an admissible quasi-paracompact formal model $\mathfrak X$ for $X$.
@@ -325,17 +325,17 @@ In this subsection we define a formalism to address part (2) of Question \ref{qu
 	\end{proposition}
 	 
 	\begin{remark} \label{remark:tilde_limit_unique}
-In contrary to Remark \ref{remark:tilde_limit_non_unique}, by Proposition 2.4.5 of \cite{SW}, if $X \sim \varprojlim X_i$ and $X$ is perfectoid, then $X$ is the unique tilde-limit of $ \varprojlim X_i$ up to unique isomorphism. In such situations we will refer to $X$ by \textit{the} tilde-limit of $ \varprojlim X_i$. 
+In contrast to Remark \ref{remark:tilde_limit_non_unique}, by Proposition 2.4.5 of \cite{SW}, if $X \sim \varprojlim X_i$ and $X$ is perfectoid, then $X$ is the unique perfectoid tilde-limit of $ \varprojlim X_i$ up to unique isomorphism. In such situations we will refer to $X$ by \textit{the} tilde-limit of $ \varprojlim X_i$. 
 	\end{remark} 
 	 
 	\begin{proof}
 	 
  
 		Let $(\{\mathfrak G_n\}_{n\in \mathbb N}, [\mathfrak p]_{n+1}:\mathfrak G_{n+1}\rightarrow \mathfrak G_{n})$ be a $[p]$-$F$-formal tower for $G$.  By Lemma~\ref{tilde-limit from adic generic fibre of formal schemes} we therefore have 
-		$$G_\infty := (\varprojlim_{[p]}\mathfrak G)_\eta \sim \varprojlim_{[p]}G. $$
+		$$G_\infty := (\varprojlim_{[\mathfrak p]}\mathfrak G)_\eta \sim \varprojlim_{[p]}G. $$
  
 		
-		To see that $G_\infty$ is perfectoid, we proceed as the proof of \cite{torsion}, Corollary III.2.19. It suffices to prove that $\mathfrak G_\infty = \varprojlim_{[p]} \mathfrak G$ can be covered by formal schemes of the form $\operatorname{Spf}(S)$ where $S$ is a flat $\mathcal O_K$-algebra such that the Frobenius map \[S/\pi^{1/p} \rightarrow  S/\pi\] is an isomorphism. Lemma~5.6 of \cite{perfectoid} then shows that $S[1/\pi]$ is perfectoid.
+		To see that $G_\infty$ is perfectoid, we proceed as the proof of \cite{torsion}, Corollary III.2.19. It suffices to prove that $\mathfrak G_\infty = \varprojlim_{[\mathfrak p]} \mathfrak G$ can be covered by formal schemes of the form $\operatorname{Spf}(S)$ where $S$ is a flat $\mathcal O_K$-algebra such that the Frobenius map \[S/\pi^{1/p} \rightarrow  S/\pi\] is an isomorphism. Lemma~5.6 of \cite{perfectoid} then shows that $S[1/\pi]$ is perfectoid.
 		
 		By assumption, on the mod $\pi$ special fibre  $\tilde{G}_n$,  $[\mathfrak p]_{n+1}$ factors through the relative Frobenius. Now take   any affine open subspace $\operatorname{Spf}(S_0) \subseteq \mathfrak G_0$.  Let $[\mathfrak p^i]:   \mathfrak G_i \rightarrow  \mathfrak G_0$ be the composition $[\mathfrak p]_{i} \circ \cdots \circ [\mathfrak p]_{1}$, and let $\operatorname {Spf}S_i \subset \mathfrak G_i$ be the pullback of $\operatorname {Spf}S_0$ via $[p^i]$. Then we have a commutative diagram:
 		\begin{center}
@@ -352,7 +352,7 @@ In contrary to Remark \ref{remark:tilde_limit_non_unique}, by Proposition 2.4.5 
 	\end{proof}
 	
 This in particular implies what we promised in Remark \ref{remark:good_reduction}: 
-	\begin{corollary}\label{tilde limit exists and is perfectoid in the good reduction case}
+	\begin{corollary}\label{tilde-limit exists and is perfectoid in the good reduction case}
 		Let $A$ be an abelian variety of good reduction over a perfectoid field $K$. Then $A_\infty$ exists and is perfectoid.
 	\end{corollary}
 	 	
@@ -364,7 +364,7 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 \subsection{Examples}				
 		
 	\begin{example}
-		Let $\mathfrak G$ be the $p$-adic completion of the affine group scheme $\mathbb G_m$ over $\mathcal O_K$. The underlying formal scheme of $\mathfrak G$ is $\operatorname {Spf} \mathcal O_K\langle X^{\pm 1} \rangle$.  Multiplication by $p$ on $\mathbb G$ gives a $[p]$-$F$-formal tower for $G$, so for the generic fibre $G=\mathfrak G_\eta$ we obtain the perfectoid tilde-limit $G_\infty := (\mathfrak G_\infty)_{\eta} \sim \varprojlim_{[p]} G$. More precisely,  multiplication by $p$ corresponds to the homomorphism
+		Let $\mathfrak G$ be the $p$-adic completion of the affine group scheme $\mathbb G_m$ over $\mathcal O_K$. The underlying formal scheme of $\mathfrak G$ is $\operatorname {Spf} \mathcal O_K\langle X^{\pm 1} \rangle$.  Multiplication by $p$ on $\mathbb G_m$ gives a $[p]$-$F$-formal tower for $G$, so for the generic fibre $G=\mathfrak G_\eta$ we obtain the perfectoid tilde-limit $G_\infty := (\mathfrak G_\infty)_{\eta} \sim \varprojlim_{[p]} G$. More precisely,  multiplication by $p$ corresponds to the homomorphism
 		\[[p]:\mathcal O_K\langle X^{\pm 1} \rangle\rightarrow  \mathcal O_K\langle X^{\pm 1} \rangle, \quad X\rightarrow X^{p}.\]
 		In the direct limit, we obtain $   (\varinjlim_{[p]} \mathcal O_K\langle X^{\pm 1} \rangle  )^{\wedge} = \mathcal O_K\langle  X^{\pm 1/p^\infty} \rangle$.  Therefore, taking the generic fiber we get
 		$$G_\infty = \operatorname{Spa}(K\langle X^{\pm 1/p^\infty} \rangle,\mathcal O_K\langle X^{\pm 1/p^\infty} \rangle)$$
@@ -377,12 +377,12 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 		
 		The underlying formal scheme of $\mathfrak G$ is $\operatorname {Spf} S$ with $S=\mathcal O_K\langle X \rangle$, and the $[p]$-multiplication is now given by
 		\[[p]:\mathcal O_K\langle X \rangle\rightarrow  \mathcal O_K\langle X \rangle, \quad X\rightarrow pX.\]
-		In the direct limit, we first obtain the algebra $S'_\infty  = \mathcal O_K\langle \frac{1}{p^\infty}X \rangle$, consisting of power series $f=\sum_{n=0}^\infty  a_nX^n\in \mathcal K[[X]]$ for which there exists an $m\in \mathbb Z_{\geq 0}$ so that $|p^{nm}a_n|\to 0$. Next we need to take the $p$-adic completion to form $S_\infty$. But we have 
+		In the direct limit, we first obtain the algebra $S'_\infty  = \mathcal O_K\langle \frac{1}{p^\infty}X \rangle$, consisting of power series $f=\sum_{n=0}^\infty  a_nX^n\in \mathcal O_K[[X]]$ for which there exists an $m\in \mathbb Z_{\geq 0}$ so that $|p^{nm}a_n|\to 0$. Next we need to take the $p$-adic completion to form $S_\infty$. But we have 
 		\[p^n\mathcal O_K\langle \frac{1}{p^\infty}X \rangle = p^n\mathcal O_K + X \mathcal O_K\langle \frac{1}{p^\infty}X \rangle\]
 		and therefore $S'_\infty/\pi^n=\mathcal O_K/\pi^n\mathcal O_K$. Consequently, the completion is just $S_\infty = \mathcal O_K$ and thus its adic generic fiber is $G_\infty = \operatorname{Spa}(K,\mathcal O_K)$.  This is still perfectoid but is just one point!
 		
 		Let us explain the heuristic geometrically: on the level of $K$-points, the formal scheme $G$ is the closed unit disc and $[p]$ is scaling by $p$. A $K$-point in $\varprojlim_{[p]} G(K)$ therefore corresponds to a sequence of $K$-points of the closed unit disc of the form 
-		$$ (x,\frac{1}{p}x,\frac{1}{p^2}x,\dots ).$$ But for this to be contained in the closed unit disc, we must have $x=0$. 
+		$$(x,\frac{1}{p}x,\frac{1}{p^2}x,\dots).$$ But for this to be contained in the closed unit disc, we must have $x=0$. 
 		
 	\end{example}
 	
@@ -392,7 +392,7 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
  
 	
 		
-	\subsection{Perfectoid groups}
+	\subsection{A few consequences}
 	
 	One reason why perfectoid limits along group morphisms are particularly interesting is that the perfectoidness ensures that the limit has again a group structure:
 	
@@ -402,7 +402,7 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 	
 			Note that the category of perfectoid spaces over $K$ has finite products, so the notion of a group object makes sense. 
 	
-	\begin{proposition}\label{perfectoid tilde limit is perfectoid group in a functorial way}
+	\begin{proposition}\label{perfectoid tilde-limit is perfectoid group in a functorial way}
 		Let $G$ be a rigid group with a perfectoid tilde-limit $G_\infty$. Then
 		\begin{enumerate}
 		\item  there is a unique way to endow $G_\infty$ with the structure of a perfectoid group in such a way that all projections $G_\infty\rightarrow G$ are group homomorphisms
@@ -414,12 +414,12 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 		These are all consequences of the universal property of the perfectoid tilde-limit, cf Proposition~2.4.5 of \cite{SW}, which shows that one can argue like in the case of usual limits.
 	\end{proof}
 
- 
+
   %%%%%%%%%%%%
 %%      Section 3
 %%%%%%%%%%%%	
 	\section{Formal models for tori}
-	 
+ 
 	In this section we construct a $[p]$-$F$-formal tower for a split rigid torus $T$ over $K$, therefore proving the existence of the perfectoid tilde-limit $T_\infty$ of $\varprojlim_{[p]} T$. 
 	
 	As a preparation, we consider the torus $\mathbb G_m^{\operatorname{an}}$ over $K$. Recall that it arises from rigid analytification of the affine torus $\mathbb G_m$ over $K$. Note however that $\mathbb G_m^{\operatorname{an}}$ is not affinoid (and not even quasi-compact). It contains the generic fibre of the $p$-adic completion of $\mathbb G_m$ as an open subspace. If we see $\mathbb G_m^{\operatorname{an}}$ as the rigid affine line with the origin removed, this subspace $(\widehat{\mathbb G}_m)_{\eta}$ can be identified with the open annulus of radius 1. %In other words, on the level of points it corresponds to $\mathcal O_K^\times \subseteq K^\times$.
@@ -587,35 +587,29 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 
         
         \begin{comment}	
-        
+ 
   %%%%%%%%%%%%
 %%      Section 3
 %%%%%%%%%%%%	
 	\section{Formal models for tori}
-	 
-	In this section we construct a $[p]$-$F$-formal tower for a split rigid torus $T$ over $K$, therefore proving the existence of the perfectoid tilde-limit $T_\infty$ of $\varprojlim_{[p]} T$. 
 	
-	As a preparation, we consider the torus $\mathbb G_m^{\operatorname{an}}$ over $K$. Recall that it arises from rigid analytification of the affine torus $\mathbb G_m$ over $K$. Note however that $\mathbb G_m^{\operatorname{an}}$ is not affinoid (and not even quasi-compact). It contains the generic fibre of the $p$-adic completion of $\mathbb G_m$ as an open subspace. If we see $\mathbb G_m^{\operatorname{an}}$ as the rigid affine line with the origin removed, this subspace $(\widehat{\mathbb G}_m)_{\eta}$ can be identified with the open annulus of radius 1. %In other words, on the level of points it corresponds to $\mathcal O_K^\times \subseteq K^\times$.
+	In this section we want to show that for a split rigid torus $T$ over $K$, a tilde-limit $T_\infty$ exists and is perfectoid. We do this by exhibiting a $[p]$-$F$-model of $T$.
+	
+	As a preparation, we consider the torus $\mathbb G_m^{\operatorname{an}}$ over $K$. Recall that it arises from rigid analytification of the affine torus $\mathbb G_m$ over $K$. Note however that $\mathbb G_m^{\operatorname{an}}$ is not affinoid (and not even quasi-compact). It contains the generic fibre of the $p$-adic completion of $\mathbb G_m$ as an open subspace. If we see $\mathbb G_m^{\operatorname{an}}$ as the rigid affine line with the origin removed, this subspace $\widehat{\mathbb G}_m$ can be identified with the open annulus of radius 1. In other words, on the level of points it corresponds to $\mathcal O_K^\times \subseteq K^\times$.
 	
 	Finally, recall that for every $x\in K^\times$ we have a translation map
 	\[\mathbb G_m^{\operatorname{an}}\xrightarrow{x\cdot} \mathbb G_m^{\operatorname{an}}\]
-	which is the isomorphism of rigid spaces sending the point $1$ to $x$.
+	that is an isomorphism of rigid spaces sending the point $1$ to $x$.
 	
 	\subsection{A family of explicit covers}
-	We briefly recall how $\mathbb G_m^{\operatorname{an}}$ is constructed: The following is inspired by \cite{Bosch lectures}, \S 9.2, although we choose slightly different constructions which is suitable for constructing a $[p]$-F-formal tower for $\mathbb G_m^{\operatorname{an}}$. 
-	
-	\begin{notation} 
-          \begin{enumerate}	
-          \item Throughout we use the following notation: For any $a\in K$ we write
+	We briefly recall how $\mathbb G_m^{\operatorname{an}}$ is constructed: The following is inspired by \cite{Bosch lectures}, \S 9.2, although we choose slightly different constructions. Throughout we use the following shorthand notation: For any $a\in K$ we write
 	\[K\langle X,a/X\rangle = K\langle X,Z\rangle/(X\cdot Z - a). \]
-	  \item 	Let $q \in K^\times$ with $|q|\leq 1$. Denote by $\mathcal B(q,1)$ the  annulus of radii $|q|$ and $1$ inside $\mathbb A_K^{\operatorname{an}}$:
+	
+	Let $q \in K^\times$ with $|q|\leq 1$. Consider the annulus $\mathcal B(q,1)$ of radii $|q|$ and $1$ inside $\mathbb A_K^{\operatorname{an}}$:
 	\[\mathcal B(q,1) = \operatorname{Sp}(L_q),\quad \text{ where } L_q = K\langle X,q/X\rangle. \]
-	\item Similarly, for $q\in K^\times$ with $|q|\geq 1$ one constructs the annulus $\mathcal B(1,q)$ by 
+	Similarly, for $q\in K^\times$ with $|q|\geq 1$ one constructs the annulus $\mathcal B(1,q)$ by
 	\[\mathcal B(1,q) = \operatorname{Sp}(L_{q}),\quad \text{ where } L_{q} = K\langle X/q,1/X\rangle\]
-	where $K\langle X/q\rangle$ denotes the ring of those power series $f=\sum c_nX^m\in K[[X]]$ for which $|c_nq^n|\to 0$ for $n\to \infty$.
-	\end{enumerate}
-	\end{notation}
-	 In particular, we have isomorphisms
+	where $K\langle X/q\rangle$ denotes the ring of those power series $f=\sum c_nX^m\in K[[X]]$ for which $|c_nq^n|\to 0$ for $n\to \infty$. In particular, we have isomorphisms
 	 \[K\langle X',q^{-1}/X'\rangle\cong K\langle X/q,1/X\rangle,\quad X'\mapsto q^{-1}X.\]
 	One can now construct $\mathbb G_m^{\operatorname{an}}$ as follows: Choose sequences $a_n,b_n\in K^\times$ with $a_0=1=b_0$ such that $|a_n|<|a_{n-1}|<\cdots<1$ and $|a_n| \to 0$ and similarly $|b_n|>|b_{n-1}|>\cdots>1$ and $|b_n| \to \infty$. Then one can glue the annuli $\mathcal B(a_n,1)$ and $\mathcal B(1,b_n)$ using the following maps:
 	\begin{equation}\label{torus explicit cover glue map 1}
@@ -953,7 +947,7 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 	The conclusion that $E_\infty$ is perfectoid then follows from Proposition~\ref{existence of p-F-formal tower implies perfectoid}.
 	\end{proof}
 	
- 
+	
 %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%
 %%%  Section 5
@@ -964,11 +958,11 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 	We now want to prove the main result of this work, building on the preceding chapters:
 	
 	\begin{theorem}\label{main theorem}
-		Let $A$ be an abelian variety over a  algebraically closed perfectoid field $K$. Then there is a perfectoid space $A_\infty$ such that
+		Let $A$ be an abelian variety over an algebraically closed perfectoid field $K$. Then there is a perfectoid space $A_\infty$ such that
 				\[A_\infty \sim \varprojlim_{[p]} A.\]
 	\end{theorem}
 	
-	We have seen this already for abelian varieties with good reduction in Corollary~\ref{tilde limit exists and perfectoid in the good reduction case}. It thus suffices to deal with the bad reduction case. Since $K$ is algebraically closed, this means that $A$ has semi-stable reduction.
+	We have seen this already for abelian varieties with good reduction in Corollary~\ref{tilde-limit exists and is perfectoid in the good reduction case}. It thus suffices to deal with the bad reduction case. Since $K$ is algebraically closed, this means that $A$ has semi-stable reduction.
 	
 	The proof of Theorem~\ref{main theorem}  in the case of semi-stable reduction will be completed in several steps over the following sections.  We first recall some notation:  Let $g$ be the dimension of $A$. Let $E$ be the Raynaud extension associated to $A$ from Proposition~\ref{Raynaud uniformisation}, which is an extension of a split rigid torus $T$ of rank $r$ by an abelian variety $B$ of good reduction. Moreover there is a lattice $M\subseteq E$ of rank $r$ such that $A=E/M$. Our strategy is to describe the $[p]$-multiplication tower of $E/M$ locally in terms of the $[p]$-multiplication tower of $E$.
 	As a first step towards this goal, in the following section, we want to give a cover of $E/M$ by subspaces of $E$ that behaves well under $[p]$-multiplication.
@@ -985,7 +979,7 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 		The formal torus $\overline{T}$ corresponds on $K$-points to $\overline{T}_\eta(K) = (\mathcal O_K^\times)^r$ and is thus in the kernel of $\ell$. We can therefore extend $\ell$ to $E(K)$ as follows: Locally over an open subspace $U\subseteq B$ we have $E|_U = T\times^{\overline{T}_\eta}\overline{E}_\eta|_{U}$ and we define $\ell$ by projection from the first factor. The different $E|_U$ are then glued on intersections using the $\overline{T}_\eta$-action on $T$. But since $\ell$ on $T$ is invariant under the $\overline{T}_\eta$-action, the maps glue together to a group homomorphism 
 	\[\ell:E(K)\rightarrow \mathbb R^r.\]
 	
-	Since $A=E/M$ is proper, the lattice $M$ is sent by $\ell$ to an Euclidean lattice $\Lambda \subset \mathbb R^r$ of full rank $r$ (see Proposition 6.1.4 in \cite{rigid geometry of curves}). In particular, this induces an isomorphism of discrete torsionfree groups
+	Since $A=E/M$ is proper, the lattice $M$ is sent by $\ell$ to a Euclidean lattice $\Lambda \subset \mathbb R^r$ of full rank $r$ (see Proposition 6.1.4 in \cite{rigid geometry of curves}). In particular, this induces an isomorphism of discrete torsionfree groups
 	\[\ell:M\xrightarrow{\sim} \Lambda\subseteq\mathbb R^r.\]
 	
 	The idea is now that one can understand the quotient $E/M$ in terms of the quotient $\mathbb R^r/\Lambda$. We are going to make this precise in the following:
@@ -1209,13 +1203,13 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 	
 	If $(\operatorname{Spa}(A_i,A_i^{+}))_{i\in I}$ is an inverse system of affinoid perfectoid spaces, then it is easy to check that for $A^+$ the $\pi$-adic completion of $\varinjlim A_i$ and for $A = A^+[1/\pi]$, the affinoid algebra $(A,A^{+})$ is again perfectoid. It then follows from topological algebra that $\operatorname {Spa}(A,A^{+})$ has the desired universal property for maps from honest adic spaces into the inverse system $(\operatorname{Spa}(A_i,A_i^{+}))_{i\in I}$.
 	
-	From the construction it follows that this tilde limit (the condition on the underlying sets can be checked using the argument of Lemma 6.13.(ii) in \cite{perfectoid}). The affinoid case implies the result for the above tower by a glueing argument.
+	From the construction it follows that this is a tilde-limit (the condition on the underlying sets can be checked using the argument of Lemma 6.13.(ii) in \cite{perfectoid}). The affinoid case implies the result for the above tower by a glueing argument.
 	\end{remark}
 	
 	Despite the remark, we now want to give a slightly more explicit construction of this limit that also says something about its local geometry. We first looks at the tower
 	\[\dots \xrightarrow{[p]}D_{n+1}\xrightarrow{[p]}D_n\rightarrow\dots.\]
 	\begin{lemma}
-		There is a perfectoid space $D_\infty$ such that $D_\infty = \varprojlim_{[p]} D_n$ as a limit of adic spaces
+		There is a perfectoid space $D_\infty$ such that $D_\infty = \varprojlim_{[p]} D_n$ as a limit of adic spaces.
 	\end{lemma}
 	\begin{proof}
 		The $D_n$ are \'etale over $\operatorname{Spa}(K)$ and thus perfectoid.
@@ -1235,7 +1229,7 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 	We now want to show that $(E/M^{1/p^\infty})_\infty$ is in fact a tilde-limit of the $[p]$-multiplication tower. In other words, this says that the horizontal limit of the vertical tilde-limits in diagram~\ref{p-multiplication tower of E/M splits into vertical and horizontal tower} is also a diagonal tilde-limit.
 	This isn't just a formal consequence since tilde-limits aren't limits. But using the local geometry of the maps in the tower in terms of cuboids, it is still easy to see:
 	
-	\begin{proposition}\label{tilde limit of tilde limits of partial towers is tilde limit of whole tower}
+	\begin{proposition}\label{tilde-limit of tilde-limits of partial towers is tilde-limit of whole tower}
 		The perfectoid space  $A_\infty:=(E/M^{1/p^\infty})_\infty$ is a tilde-limit of $\varprojlim_{[p]}A$.	It is independent up to unique isomorphism of the choice of partial anticanonical $\Gamma_0(p^\infty)$-structure, but it remembers the choice as a pro-finite \'etale closed subgroup $D_\infty \subseteq A_\infty$. 
 		
 		The preimage of $E_i\subseteq A$ under the projection $A_\infty \rightarrow A$ is isomorphic to $D_\infty \times E_i^{1/p^\infty}$.
@@ -1250,13 +1244,13 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 	 
 	 On the other hand, when we go along the diagonal tower, we obtain the inverse system 
 	 \[\dots\rightarrow D_{n+1}\times E_i^{1/p^{n+1}}\rightarrow D_{n}\times E_i^{1/p^{n}}\rightarrow \dots.\]
-	 More explicitly, after choosing compatible isomorphisms $D_n\cong \underline{(\mathbb Z/p^n\mathbb Z)^r}$ for all $n$, we can for any affinoid open $V=\operatorname{Spa(A_n,A_n^{+})}\subseteq E_i^{1/p^{n}}$ write the affinoid open subset $D_n\times V\subseteq D_n\times E_i^{1/p^{n}}$ as
+	 More explicitly, after choosing compatible isomorphisms $D_n\cong \underline{(\mathbb Z/p^n\mathbb Z)^r}$ for all $n$, we can for any affinoid open $V=\operatorname{Spa}(A_n,A_n^{+})\subseteq E_i^{1/p^{n}}$ write the affinoid open subset $D_n\times V\subseteq D_n\times E_i^{1/p^{n}}$ as
 	 \[D_{n}\times V \cong \operatorname{Spa}(\operatorname{Map}(\mathbb (\mathbb Z/p^n\mathbb Z)^r,A_n),\operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_n^{+}))\]
 	 
-	 We claim that this tower has tilde limit $D_\infty\times E_i^{1/p^\infty} \sim \varprojlim D_n\times E_i^{1/p^n}$.
+	 We claim that this tower has tilde-limit $D_\infty\times E_i^{1/p^\infty} \sim \varprojlim D_n\times E_i^{1/p^n}$.
 	 To see this, cover $E_i^{1/p^\infty}$ by open affinoids $U=\operatorname{Spa}(A,A^{+})$ such that 
 	 \[\varinjlim_{\operatorname{Spa}(A_{j},A_{j}^{+})\subseteq E_i^{1/p^n}} A_{j} \rightarrow A \]
-	 has dense image, where the direct limit runs through all affinoid open subspaces $\operatorname{Spa}(A_{j},A_{j}^{+})\subseteq E_i^{1/p^n}$ for all $n$ through which $U\subseteq E_i^{1/p^\infty}\rightarrow E_i^{1/p^n}$ factors, as in the definition of tilde limits. Then by the construction of products of affinoid perfectoid spaces, the pullback of $U$ to $(E/M^{1/p^\infty})_\infty$ is 
+	 has dense image. Here the direct limit runs through all affinoid open subspaces $\operatorname{Spa}(A_{j},A_{j}^{+})\subseteq E_i^{1/p^n}$ for all $n$ through which $U\subseteq E_i^{1/p^\infty}\rightarrow E_i^{1/p^n}$ factors, as in the definition of tilde-limits. Then by the construction of products of affinoid perfectoid spaces, the pullback of $U$ to $(E/M^{1/p^\infty})_\infty$ is 
 	\[D_\infty\times U \cong \operatorname{Spa}(\operatorname{Map}_{cts}(\mathbb Z_p^r,A),\operatorname{Map}_{cts}(\mathbb Z_p^r,A^+))\]
 	 It thus suffices to show that $\varinjlim \operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_{j})$ is dense in $\operatorname{Map}_{cts}(\mathbb Z_p^r,A)$.
 	 As a first step, even though in the above limit $n$ depends on $j$, we may write this as two separate limits, 
@@ -1284,7 +1278,7 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 	\end{center}
 	As we have seen in the last sections, all three towers have perfectoid tilde-limits, that we have denoted by $E_\infty$, $A_\infty$ and $E/M^{1/p^\infty}$.
 	
-	By Proposition~\ref{perfectoid tilde limit is perfectoid group in a functorial way} the map $\pi:E\rightarrow A=E/M$ in the limit induces a natural group homomorphism $\iota:E_\infty \rightarrow A_\infty$. A similar universal property argument shows that we obtain a natural group homomorphism $A_\infty \rightarrow E/M^{1/p^\infty}$. The composition of these two maps is the morphism $E_\infty\rightarrow E/M^{1/p^\infty}$, which is the limit of the maps $E\rightarrow E/M^{1/p^n}$ in the above diagram.
+	By Proposition~\ref{perfectoid tilde-limit is perfectoid group in a functorial way} the map $\pi:E\rightarrow A=E/M$ in the limit induces a natural group homomorphism $\iota:E_\infty \rightarrow A_\infty$. A similar universal property argument shows that we obtain a natural group homomorphism $A_\infty \rightarrow E/M^{1/p^\infty}$. The composition of these two maps is the morphism $E_\infty\rightarrow E/M^{1/p^\infty}$, which is the limit of the maps $E\rightarrow E/M^{1/p^n}$ in the above diagram.
 	We now want to look at these morphisms more closely one after the other.
 	
 	We start with the case of $E_\infty\rightarrow E/M^{1/p^\infty}$:
@@ -1394,7 +1388,7 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 				\bigsqcup\limits_{q\in M} q\cdot E_i \arrow[r] & E_i \arrow[r,equal] & E_i
 			\end{tikzcd}
 		\end{center}
-	We see from this description and from the last part of Proposition~\ref{tilde limit of tilde limits of partial towers is tilde limit of whole tower} that the pullback to infinite level is the sequence 
+	We see from this description and from the last part of Proposition~\ref{tilde-limit of tilde-limits of partial towers is tilde-limit of whole tower} that the pullback to infinite level is the sequence 
 	\begin{equation}\label{local description of E_infty to A_infty to E/M_infty}
 	M_\infty \times E_i^{1/p^\infty}\rightarrow D_\infty \times E_i^{1/p^\infty}\rightarrow E_i^{1/p^\infty}.
 	\end{equation}
@@ -1690,7 +1684,16 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 	\end{proof}
   
 
- 
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %some hack to hide the acknowledgements in the toc
+\section*{Acknowledgements}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
+This work started as a group project at the 2017 Arizona Winter School. We would like to thank Bhargav Bhatt for proposing the project, for his guidance and for his constant encouragement. In addition we would like to thank the organizers of the Arizona Winter School for setting up a great environment for us to participate in this project. 
+
+During this work Dami\'an Gvirtz and Ben Heuer were supported by the Engineering and Physical Sciences Research Council [EP/L015234/1], the EPSRC Centre for Doctoral Training in Geometry and Number Theory (The London School of Geometry and Number Theory), University College London. 
+Peter Wear was supported by NSF grant DMS-1502651 and UCSD and would like to thank Kiran Kedlaya for helpful discussions.
+{\color{red} Other grants?}
+ {\color{green} Can acknowledgements go back to front as soon as edits in \S1 and \S2 are done? } {\color{red} I have one concern -- namely the list of grants etc. is too long, so I thought maybe keeping it in the end, before the Appendix should be better -- in fact, Appendix should appear after references, and have its own references, no?} 
  
  
 \begin{thebibliography}{99}
