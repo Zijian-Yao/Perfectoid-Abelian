@@ -76,12 +76,7 @@ For an abelian variety $A$ over an algebraically closed non-archimedean field wh
 	
 
 	
-	
- \tableofcontents
- 	
-	
-
-%%%%%%%%%%%%
+	 %%%%%%%%%%%%
 %%      Section 1
 %%%%%%%%%%%%
 	\section{Introduction} 
@@ -110,28 +105,49 @@ We will recall the definition of the tilde-limit, namely the meaning of $A_\inft
 In fact, we will achieve (1) and (2) simultaneously. 
 
 \begin{remark*}	\label{remark:good_reduction}
-Let us consider the motivating example of the case of good reduction. This example is generalized from Exercise 4 -- 6 in \cite{Bhatt} and spelt out in details in Subsection \ref{subsection:perfectoid_tilde_limit} [Corollary \ref{tilde-limit exists and is perfectoid in the good reduction case}]. 
+Let us consider the motivating example of the case of good reduction. This example is generalized from Exercise 4 -- 6 in \cite{Bhatt} {\color{red} Cite Pilloni-Stroh instead (or both? I prefer to also cite Bhatt, the outline there is clear enough)} and spelt out in details in Subsection \ref{subsection:perfectoid_tilde_limit} [Corollary \ref{tilde-limit exists and is perfectoid in the good reduction case}]. 
 
 Let $\mathcal A$ be a formal abelian scheme over $\mathcal O_K$ with generic fiber $A$. Then on the mod $\pi$ special fiber $\mathcal A_s = \mathcal A \times \mathcal O_K/\pi$,  multiplication by $p$ factors through the relative Frobenius map, forcing the inverse limit $ \varprojlim_{[p]} \mathcal A_s $ (which exists in the category of schemes) to be relatively perfect over $\mathcal O_K/\pi$. Let $\mathcal A_{\infty} = \varprojlim_{[p]} \mathcal A$ (which exists by Lemma \ref{lemma:inverse_limit_formal}), then its adic generic fiber $A_\infty$ is perfectoid and a tilde-limit of $\varprojlim_{[p]}A$.
 \end{remark*}
 
-Now we explain the outline of the proof of Theorem \ref{thm:main_thm_intro}. Our approach relies on constructing various formal models of relevant objects and take their (adic) generic fibres. 
+\vspace*{0.2cm}
 
-{\color{red} Explain outline}
+Now we explain the outline of the proof of Theorem \ref{thm:main_thm_intro}. The main strategy is, roughly speaking, to study abelian varieties with good reduction and totally degenerate ones ``separately'', and use the theory of Raynaud extensions to combine the two situations. More precisely, since $A$ is semi-stable ($K$ being algebraically closed), Raynaud's theory provides us with a short exact sequence 
+$$ 0 \rightarrow T \rightarrow E  \rightarrow  B  \rightarrow  0 $$
+of rigid group schemes, where $T = (\mathbb G_m^{\text{an}})^{d}$ is a split rigid tori and $B$ the analytification of an abelian variety with good reduction, such that $A = E/M$ for a discrete lattice $M \subset E$. Our strategy is 
+\begin{enumerate}
+\item Show that there exists a perfectoid tilde-limit $E_\infty$ of $\varprojlim_{[p]} E$;
+\item Use part (1) above to construct the desired perfectoid space $A_\infty$.
+\end{enumerate}
 
-\begin{remark*}	
-{\color{red} Remark on Neron models -- why we cannot directly get the results using Neron models and also the problems of existence when $A$ is over $K = \overline K$ etc. }
-\end{remark*}
+\vspace*{0.2cm}
+Our approach to prove part (1) of in the outline (namely that $E_\infty$ is perfectoid) relies on constructing various formal models of relevant objects and take their (adic) generic fibres. More precisely, the construction of the perfectoid space $E_\infty$ is realized in several mini-steps: 
+\begin{itemize}
+\item Develop a notion of a $[p]$-$F$-formal tower for a rigid group $G$ over $K$ such that, if $G$ admits such a tower, then there exists a unique perfectoid tilde-limit $G_\infty \sim  \varprojlim_{[p]} G$; 
+\item Construct a $[p]$-$F$-formal tower $\mathfrak T$ for $T$;
+\item Use the tower $\mathfrak T$ from above, apply the  associated fibre bundle construction (developed in the Appendix) to construct a $[p]$-$F$-formal tower for $E$. From this we will obtain $E_\infty$
+\end{itemize}
+ 
+ 
+\vspace*{0.2cm}
+Finally, to construct $\varprojlim_{[p]} A$, we will ``separate'' the $[p]$-multiplication tower of $A = E/M$ factors into a ``ramified'' and an ``\'etale'' part. By carefully choosing charts of $A$ in terms of certain subspaces of $E$ that behave well under $[p^n]:E\rightarrow E$, we will 
+\begin{itemize}
+\item explicitly construct a perfectoid tilde-limit of the ``ramified'' tower; 
+\item use this ``ramified tilde-limit'' to construct $A_\infty$. 
+\end{itemize}
+
+ 
+%\begin{remark*}	
+%{\color{red} Remark on Neron models -- why we cannot directly get the results using Neron models and also the problems of existence when $A$ is over $K = \overline K$ etc. }
+%\end{remark*}
 
 \vspace*{0.2cm}
 
 
- 
-Now we describe the content of each section. 
 
+ \begin{comment}
+Now we end the introduction by describing the content of each section. 
 
-
- 
 	\begin{question} \label{question_intro}
 	    \begin{enumerate} 
 	    \item		Given a rigid group $G$, when is there an adic space $G_\infty$ such that $G_\infty \sim  \varprojlim_{[p]} G ?$
@@ -140,35 +156,14 @@ Now we describe the content of each section.
 	\end{question}
  
  
-{\color{red} To finish}
- 
-\begin{comment} 
-	
-	
-	
 	But before we give proofs for examples of rigid groups $G$ for which a perfectoid tilde-limit exists, we first note that the second question certainly doesn't have an affirmative answer for all rigid group varieties:
 	\begin{example}
 		For the additive group $\mathbb G_a^{\operatorname{an}}$, we know that $[p]$ is an isomorphism and therefore $\varprojlim_{[p]} \mathbb G_a=\mathbb G_a$ exists (even as an actual limit in the category of adic spaces) but is certainly not perfectoid.
 	\end{example}
 
-
-We first more generally consider a rigid group  $G$ over a non-archimedean field $K$. While inverse limits usually don't exist in the rigid analytic category, limits are much better behaved in formal schemes over the ring of integers $\mathcal O_K$ of $K$. One can therefore give a simple criterion in terms of formal models that guarantees that a tilde-limit $G_\infty \sim\varprojlim_{[p]} G$ exists, namely that there is a well-behaved formal model of the $[p]$-multiplication tower.
-If $K$ is perfectoid, we give a stronger criterion involving a Frobenius factorisation condition, which implies that $G_\infty$ is perfectoid.
-
-In the case of a rigid analytic split torus $T$, one can use a family of explicit covers by affinoids to construct formal models for which both of these conditions are satisfied. 
-
-Next we consider the case of the Raynaud extension $E$ associated to a semistable abelian variety $A$ over a perfectoid field $K$. One can construct $E$ by extending the rigid fibre of a formal group scheme $\overline{E}$ by a rigid torus $T$. In order to construct a formal model of $E$ one therefore just needs to extend $\overline{E}$ by a formal model of $T$. While this can be done explicitly using affinoid covers, the language of formal and rigid fibre bundles allows for a more conceptual treatment. Using the associated fibre construction we then show that there is a formal model of the $[p]$-multiplication tower of $E$ which satisfies all the necessary criteria to show that $E_\infty$ exists and is perfectoid.  
-
-We then construct a tilde-limit of $\varprojlim_{[p]} A$ from $E_\infty$: By Raynaud uniformisation, $A$ is naturally isomorphic to the rigid analytic quotient of $E$ by a lattice $M$. After a choice of $\Gamma_0(p^\infty)$-structure, the $[p]$-multiplication tower of $E/M$ factors in a ``ramified'' and an ``\'etale'' part. By a careful choice of charts of $E/M$ in terms of subspaces of $E$ that behave well under $[p^n]:E\rightarrow E$, one can explicitly construct first a perfectoid tilde-limit of the ``ramified'' tower, and then in a second step the space $A_\infty$. This space is independent of the choice of $\Gamma_0(p^\infty)$-structure but remembers it as a pro-\'etale subgroup $D_\infty \subseteq A_\infty$. The construction shows that the perfectoid tilde-limit $A_\infty$ still exists under the weaker assumption that $K$ is a perfectoid field over which there exist lattices $M^{1/p^n}$ for all $n$ whose $p^n$-th multiple is $M$.
-
-The approach via explicit covers finally gives an explicit description of $A_\infty$ in terms of open subspaces of $E_\infty$ which we use in the last section to study the induced map $E_\infty\rightarrow A_\infty$. We show that $E_\infty$ is in fact an open subspace of $A_\infty$ and thus obtain a second description of $A_\infty$ as a quotient group $(D_\infty\times E_\infty)/M_\infty$.
-
-
-\newpage
-
-\end{comment}
-
-
+\end{comment} 
+ 
+ 
 
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %some hack to hide the acknowledgements in the toc
@@ -288,12 +283,7 @@ $$ \cdots \xrightarrow{[p]} [p^2]^{-1} (U)   \xrightarrow{[p]} [p]^{-1} (U)  \xr
 
 In particular, a $[p]$-formal tower for $G$ gives rise to a $[p]$-formal tower for $U$ for each admissible open $U \subseteq G$ by pullback. 
 
-\begin{comment}	\begin{center}
-		\begin{tikzcd}
-			\dots \arrow[r] & \left [p^2\right]^{-1}(U) \arrow[r, "{[p]}"] \arrow[d, hook'] & \left [p\right]^{-1}(U) \arrow[r, "{[p]}"] \arrow[d, hook'] & U \arrow[d, hook'] \\
-			\dots \arrow[r, "{[p]}"] & G \arrow[r, "{[p]}"] & G \arrow[r, "{[p]}"] & G
-		\end{tikzcd}
-	\end{center}  \end{comment}
+ 
 	
 	We now summarise our discussion in the previous subsection by the following
 	\begin{corollary}
@@ -595,168 +585,7 @@ It is clear from definition that, after tensoring $-\otimes_{\mathcal O_K} K$ al
 	
 %%%%%%%% Original version -- I edited it so it fits into our specific discussion, feel free to change it back. 
 
-        
-        \begin{comment}	
  
-  %%%%%%%%%%%%
-%%      Section 3
-%%%%%%%%%%%%	
-	\section{Formal models for tori}
-	
-	In this section we want to show that for a split rigid torus $T$ over $K$, a tilde-limit $T_\infty$ exists and is perfectoid. We do this by exhibiting a $[p]$-$F$-model of $T$.
-	
-	As a preparation, we consider the torus $\mathbb G_m^{\operatorname{an}}$ over $K$. Recall that it arises from rigid analytification of the affine torus $\mathbb G_m$ over $K$. Note however that $\mathbb G_m^{\operatorname{an}}$ is not affinoid (and not even quasi-compact). It contains the generic fibre of the $p$-adic completion of $\mathbb G_m$ as an open subspace. If we see $\mathbb G_m^{\operatorname{an}}$ as the rigid affine line with the origin removed, this subspace $\widehat{\mathbb G}_m$ can be identified with the open annulus of radius 1. In other words, on the level of points it corresponds to $\mathcal O_K^\times \subseteq K^\times$.
-	
-	Finally, recall that for every $x\in K^\times$ we have a translation map
-	\[\mathbb G_m^{\operatorname{an}}\xrightarrow{x\cdot} \mathbb G_m^{\operatorname{an}}\]
-	that is an isomorphism of rigid spaces sending the point $1$ to $x$.
-	
-	\subsection{A family of explicit covers}
-	We briefly recall how $\mathbb G_m^{\operatorname{an}}$ is constructed: The following is inspired by \cite{Bosch lectures}, \S 9.2, although we choose slightly different constructions. Throughout we use the following shorthand notation: For any $a\in K$ we write
-	\[K\langle X,a/X\rangle = K\langle X,Z\rangle/(X\cdot Z - a). \]
-	
-	Let $q \in K^\times$ with $|q|\leq 1$. Consider the annulus $\mathcal B(q,1)$ of radii $|q|$ and $1$ inside $\mathbb A_K^{\operatorname{an}}$:
-	\[\mathcal B(q,1) = \operatorname{Sp}(L_q),\quad \text{ where } L_q = K\langle X,q/X\rangle. \]
-	Similarly, for $q\in K^\times$ with $|q|\geq 1$ one constructs the annulus $\mathcal B(1,q)$ by
-	\[\mathcal B(1,q) = \operatorname{Sp}(L_{q}),\quad \text{ where } L_{q} = K\langle X/q,1/X\rangle\]
-	where $K\langle X/q\rangle$ denotes the ring of those power series $f=\sum c_nX^m\in K[[X]]$ for which $|c_nq^n|\to 0$ for $n\to \infty$. In particular, we have isomorphisms
-	 \[K\langle X',q^{-1}/X'\rangle\cong K\langle X/q,1/X\rangle,\quad X'\mapsto q^{-1}X.\]
-	One can now construct $\mathbb G_m^{\operatorname{an}}$ as follows: Choose sequences $a_n,b_n\in K^\times$ with $a_0=1=b_0$ such that $|a_n|<|a_{n-1}|<\cdots<1$ and $|a_n| \to 0$ and similarly $|b_n|>|b_{n-1}|>\cdots>1$ and $|b_n| \to \infty$. Then one can glue the annuli $\mathcal B(a_n,1)$ and $\mathcal B(1,b_n)$ using the following maps:
-	\begin{equation}\label{torus explicit cover glue map 1}
-	\begin{alignedat}{2}
-	\mathcal B(a_{n},1)&\hookleftarrow&& \mathcal B(a_{n-1},1)\\
-	L_{a_n}=K\langle X,a_n/X\rangle&\rightarrow &&K\langle X,a_{n-1}/X\rangle=L_{a_{n-1}}\\
-	X,a_{n}/X&\mapsto&& X, \frac{a_{n}}{a_{n-1}}a_{n-1}/X
-	\end{alignedat}
-	\end{equation}
-	and similarly 
-	\begin{equation}\label{torus explicit cover glue map 2}
-	\begin{alignedat}{2}
-	\mathcal B(1,b_n)&\hookleftarrow&& \mathcal B(1,b_{n-1})\\
-	L_{b_n}=K\langle  X/b_{n},1/X\rangle&\rightarrow &&K\langle X/b_{n-1},1/X\rangle=L_{b_{n-1}}\\
-	X/b_{n},1/X&\mapsto&& \frac{b_{n-1}}{b_{n}} X/b_{n-1}, 1/X.
-	\end{alignedat}
-	\end{equation}
-	
-	Also, via the above maps, the annuli $\mathcal B(a_n,1)$ and $\mathcal B(1,b_m)$ are glued along $\mathcal B(a_0,1)=\mathcal B(1,1)=\mathcal B(1,b_0).$ This gives the desired space $\mathbb{G}_m^{\operatorname{an}}$.
-	
-	Since we are mainly interested in the $p$-multiplication map, we will more precisely use the following cover on which $[p]$ can be seen directly: Choose $q\in K^\times$ with $|q|<1$. Then for the sequences $a_n$ and $b_n$ from above we take $a_n = q^n$, $b_n = q^{-n}$. 
-	We call this cover $\mathfrak U_q$.
-	
-	Assume now that $q$ has a $p$-th root $q^{1/p}$ in $K$. The above then gives a finer cover $\mathfrak U_{q^{1/p}}$ of $\mathbb G_m^{\operatorname{an}}$. Using both covers $\mathfrak U_q$ and $\mathfrak U_{q^{1/p}}$, we can easily see the $[p]$-multiplication $[p]:\mathbb G_m^{\operatorname{an}}\rightarrow \mathbb G_m^{\operatorname{an}}$ as follows: Consider the affinoid open subsets $\mathcal B(q^{1/p},1)$ of the source and  $\mathcal B(q^{1/p},1)$ of the target. Then $[p]$ restricts to
-	\begin{equation}
-	\begin{alignedat}{2} \label{torus explicit [p] map 1}
-	\mathcal B(q,1)&\xleftarrow{[p]}&& \mathcal B(q^{1/p},1)\\
-	K\langle X,q/X\rangle&\rightarrow &&K\langle X,q^{1/p}/X\rangle\\
-	X,q/X&\mapsto&& X^p, (q^{1/p}/X)^p
-	\end{alignedat}
-	\end{equation}
-	and similarly, on $\mathcal B(1,q^{-1/p})$ and $\mathcal B(1,q^{-1})$ the map is 
-	\begin{equation}
-	\begin{alignedat}{2} \label{torus explicit [p] map 2}
-	\mathcal B(1,q^{-1})&\xleftarrow{[p]}&& \mathcal B(1,q^{-1/p})\\
-	K\langle X/q,1/X\rangle&\rightarrow &&K\langle X/q^{1/p},1/X\rangle\\
-	X/q,1/X&\mapsto&& (X/q^{1/p})^p, (1/X)^p.
-	\end{alignedat}
-	\end{equation}
-	The same works for the other affinoid open subspaces $\mathcal B(q^{n},1)\xleftarrow{[p]} \mathcal B(q^{n/p},1)$ and for $\mathcal B(1,q^{-n})\xleftarrow{[p]} \mathcal B(1,q^{-n/p})$.
-	One can then show that the maps~(\ref{torus explicit [p] map 1}) and (\ref{torus explicit [p] map 2}) are compatible with the glue maps~(\ref{torus explicit cover glue map 1}) and~(\ref{torus explicit cover glue map 2}). In the case of~(\ref{torus explicit [p] map 1}) this is basically because $a_n/a_{n-1} = q$ or $a_n/a_{n-1}=q^{1/p}$ depending on whether we work with $\mathfrak U_q$ or $\mathfrak U_{q^{1/p}}$ respectively, and the only thing to check is that the following diagram commutes:
-	\begin{center}
-		\begin{equation}\label{diagram showing that [p]-multiplication on torus glues together}
-		\begin{tikzcd}
-			\mathcal B(q^{n},1) & \mathcal B(q^{n-1},1) \arrow[l, hook'] & q^n/X \arrow[r, maps to] \arrow[d, maps to] & q\cdot q^{n-1}/X \arrow[d, maps to] \\
-			\mathcal B(q^{n/p},1) \arrow[u, "{[p]}"] & \mathcal B(q^{(n-1)/p},1) \arrow[u, "{[p]}"'] \arrow[l, hook'] & (q^{n/p}/X)^p \arrow[r, maps to] & q\cdot(q^{(n-1)/p}/X)^p. 
-		\end{tikzcd}
-		\end{equation}
-	\end{center} 
-	The case of~(\ref{torus explicit [p] map 2}) is very similar.
-	
-	\subsection{A family of formal models}
-	At this point we have constructed a cover $\mathfrak U_q$ of $\mathbb G_m^{\operatorname{an}}$ depending on a choice of $q\in K^\times$ with $|q|<1$. 
-	The affinoid subspaces $\mathcal B(q^n,1)$ that we have used for this admit natural formal models: Namely, consider the $\mathcal O_K$-algebra
-	\[L_q^\circ := \mathcal O_K\langle X,Z\rangle/(XZ-q).\]
-	This is clearly of topologically finite type over $\mathcal O_K$. It is moreover flat as an $\mathcal O_K$-algebra (this should follow from Lemma 8.2.1 in \cite{Bosch lectures}). For the same reason (or by $L_{q^{-1}} \cong L_q$) we see that \[L_{q^{-1}}^\circ := \mathcal O_K\langle X',Z\rangle/(X'Z-q)\] is a flat topologically finite type $\mathcal O_K$-algebra. Consequently, we have flat formal models 
-	\begin{alignat*}{4}
-		\mathfrak B(q,1)&:=&& \operatorname{Spf}(L_{q}^\circ), &\quad&\mathfrak B(q,1)_\eta &=& \mathcal B(q,1)\\ 
-		\mathfrak B(1,q)&:=&& \operatorname{Spf}(L_{q^{-1}}^\circ), &\quad&\mathfrak  B(1,q)_\eta &=& \mathcal B(1,q).
-	\end{alignat*}
-	For the glueing maps~(\ref{torus explicit cover glue map 1}) and (\ref{torus explicit cover glue map 2}) it is clear from $a_n/a_{n-1} = b_{n-1}/b_n = q$ that these extend to glueing maps $\mathfrak B(q^n,1)\hookleftarrow \mathfrak B(q^{n-1},1)$ and $\mathfrak B(1,q^{-n})\hookleftarrow \mathfrak B(1,q^{-(n-1)})$. We conclude:
-
-	\begin{lemma}\label{formal model of torus}
-		The affine formal schemes $\mathfrak B(q^n,1)$ and $\mathfrak B(1,q^n)$ glue together to a flat formal scheme $\mathfrak G_q$ such that $(\mathfrak G_q)_\eta = \mathbb G_m^{\operatorname{an}}$. In other words, $\mathfrak G_q$ is a formal model for $\mathbb G_m^{\operatorname{an}}$.
-	\end{lemma}
-	\subsection{A family of formal models for $p$-multiplication}
-	As before choose $q\in K^\times$ such that $|q|<1$ and such that there exists a $p$-th root $q^{1/p} \in K$. A closer look at the maps~(\ref{torus explicit [p] map 1}) and~(\ref{torus explicit [p] map 2}) shows that the $[p]$-multiplication extends to a morphism of formal schemes
-	\[\mathfrak B(q,1)\xleftarrow{[p]} \mathfrak B(q^{1/p},1):[\mathfrak p]\]
-	and similarly for $\mathfrak B(1,q^{-1})$. The diagram~(\ref{diagram showing that [p]-multiplication on torus glues together}) shows that these maps glue to a morphism
-	\[[\mathfrak p]: \mathfrak G_{q^{1/p}}\rightarrow  \mathfrak G_q.\]
-	By construction, after tensoring $-\otimes_{\mathcal O_K} K$ all morphisms on algebras coincide with those defined in ~(\ref{torus explicit cover glue map 1}),~(\ref{torus explicit cover glue map 2}),~(\ref{torus explicit [p] map 1}), (\ref{torus explicit [p] map 2}) respectively. We conclude:
-	\begin{proposition}
-		The map $[\mathfrak p]: \mathfrak G_{q^{1/p}}\rightarrow  \mathfrak G_q$ is a formal model of $[p]:\mathbb G_m^{\operatorname{an}}\rightarrow \mathbb G_m^{\operatorname{an}}$.
-	\end{proposition}
-	We moreover see directly from the construction:
-	\begin{proposition}
-		The map $[\mathfrak p]: \mathfrak G_{q^{1/p}}\rightarrow  \mathfrak G_q$ reduces mod $\pi$ to the relative Frobenius map.
-	\end{proposition}
-	We now have everything together to finish our proof that $(\mathbb G_m^{\operatorname{an}})_\infty$ is perfectoid:
-	\begin{proposition}
-		The space $\mathbb G_m^{\operatorname{an}}$ has a $[p]$-$F$-formal tower. In particular, there exists a perfectoid space $(\mathbb G_m^{\operatorname{an}})_\infty$ such that $(\mathbb G_m^{\operatorname{an}})_\infty \sim \varprojlim_{[p]} \mathbb G_m^{\operatorname{an}}$.
-	\end{proposition}
-	\begin{proof}
-		Since $K$ is perfectoid, we can find $q\in K^\times$ such that $|q|<1$ for which there exist arbitrary $p^n$-th roots. We choose such a $q$ and roots $q^{1/p^n}$ for all $n$. Then the two Propositions above combine to show that 
-		\[\dots \xrightarrow{[\mathfrak p]} \mathfrak G_{q^{1/p^2}}\xrightarrow{[\mathfrak p]} \mathfrak G_{q^{1/p}}\xrightarrow{[\mathfrak p]} \mathfrak G_q\]
-		is a $[p]$-$F$-formal tower.
-		By Proposition~\ref{existence of p-F-formal tower implies perfectoid} we obtain a perfectoid space $(\mathbb G_m^{\operatorname{an}})_\infty$ as desired.
-	\end{proof}
-	
-	\subsection{The action of $\overline{T}$}
-	The multiplication $\mathbb G_m^{\operatorname{an}}\times \mathbb G_m^{\operatorname{an}}\rightarrow \mathbb G_m^{\operatorname{an}}$ can locally be described in terms of the rigid analytic cover that we have defined above as follows  : Let $a,b \in K^\times$ such that $|a|,|b|\leq 1$, then the multiplication map restricts to
-	\begin{equation}
-	\begin{alignedat}{2} \label{torus multiplication map}
-	\mathcal B(a,1)\times \mathcal B(b,1)&\xrightarrow{m}&& \mathcal B(ab,1)\\
-	K\langle X,ab/X\rangle&\rightarrow &&K\langle X,a/X\rangle\widehat{\otimes} K\langle X,b/X\rangle\\
-	X&\mapsto&& X\otimes X\\
-	ab/X&\mapsto&& b/X\otimes a/X
-	\end{alignedat}
-	\end{equation}
-	and similarly on the $\mathcal B(1,a)\times \mathcal B(1,b)$ for $|a|,|b|\geq 1$. Multiplication on the $\mathcal B(a,1)\times \mathcal B(1,b)$ for $|a|< 1 < |b|$ is more difficult to see on the cover that we have chosen.
-	
-	The same arguments as in the last section show that the map described in~(\ref{torus multiplication map}) has a flat formal model
-	\[\mathfrak B(a,1)\times \mathfrak B(b,1)\rightarrow \mathfrak B(ab,1).\]
-	This does \textit{not} mean that multiplication has a formal model $\mathfrak G\times \mathfrak G\rightarrow \mathfrak G$. Indeed, the chosen description has different covers on source and target which in the formal case give rise to different formal schemes (the inversion map $i:\mathbb G_m^{\operatorname{an}}\rightarrow \mathbb G_m^{\operatorname{an}}$ on the other hand does have a formal model). Nevertheless, if we take $a=1$ in the above, we see that we do have an action of the torus $\overline{T}:=\mathfrak B(1,1)$ on each of $\mathfrak B(b,1)$ and $\mathfrak B(1,b)$. Using the formal models from the last section, we conclude:
-	
-	\begin{proposition}\label{action on formal model of torus}
-		For any $q\in K^\times$ with $|q|<1$, the formal torus $\overline{T}:=\mathfrak B(1,1)$ has a natural action on $\mathfrak G_q$ via a map
-		\[\mathfrak m:\overline{T}\times \mathfrak G_q\rightarrow \mathfrak G_q.\]
-		This map is a formal model of the action of the annulus $\mathcal B(1,1)$ on $\mathbb G_m^{\operatorname{an}}$. Furthermore, this action is compatible with the models for $[p]$ in the sense that if there is a $p$-th root $q^{1/p}\in K$, then the following diagram commutes.
-		\begin{center}
-		\begin{tikzcd}
-			\overline{T}\times \mathfrak G_{q^{1/p}} \arrow[d, "{[p]\times [\mathfrak p]}"'] \arrow[r, "\mathfrak m"] & \mathfrak G_{q^{1/p}} \arrow[d, "{[\mathfrak p]}"] \\
-			\overline{T}\times \mathfrak G_{q} \arrow[r, "\mathfrak m"] & \mathfrak G_{q}.
-		\end{tikzcd}
-		\end{center}
-	\end{proposition} 
-	\begin{proof}
-		The existence of $\mathfrak m$ follows from the above consideration concerning the map~(\ref{torus multiplication map}). The rest is clear from the construction: All adic rings we have used in the construction are $\mathcal O_K$-subalgebras of the affinoid $K$-algebras used to define $\mathbb G_m^{\operatorname{an}}$, so the equalities hold because they hold for $\mathbb G_m^{\operatorname{an}}$.
-	\end{proof}
-	
-	\subsection{The case of general tori}
-	By taking products everywhere, all of the statements in this section immediately generalise to split tori:
-	\begin{corollary}\label{torus has formal models}
-		Let $T$ be a split torus over $K$ of the form $T=(\mathbb G_m^{\operatorname{an}})^d$. Then for any $q\in K^\times$ with $|q|<1$ the formal scheme $\mathfrak T_q := (\mathfrak G_q)^d$ is a formal model of $T$. If there is a $p$-th root $q^{1/p}\in K$, the $p$-multiplication map has a formal model $[\mathfrak p]:\mathfrak T_{q^{1/p}}\rightarrow \mathfrak T_{q}$ that locally on polyannuli is of the form $[\mathfrak p]:\mathfrak B(q^{1/p},1)^d\rightarrow \mathfrak B(q,1)^d$. Moreover this map reduces mod p to the relative Frobenius morphism.
-	\end{corollary}
-	\begin{corollary}\label{torus has p-F-formal tower and has perfectoid tilde-limit}
-		Let $T$ be a split torus over $K$, considered as a rigid space. Then $T$ has a $[p]$-$F$-formal tower. In particular, there exists a perfectoid space $T_\infty$ such that $T_\infty \sim \varprojlim_{[p]} T$. 
-	\end{corollary}
-	
-	\begin{corollary}\label{action on formal model of torus}
-		Let $T$ be any split torus over $K$. For any $q\in K^\times$ with $|q|<1$, the formal completion $\overline{T}$ has a natural action on $\mathfrak T_q$ via a map
-		\[\mathfrak m:\overline{T}\times \mathfrak T_q\rightarrow \mathfrak T_q.\]
-		This map is a formal model of the action of the annulus $\overline{T}$ on $T$. Furthermore, this action is compatible with the models for $[p]$ in the sense that if there is a $p$-th root $q^{1/p}\in K$, then the map $[\mathfrak p]:\mathfrak T_q^{1/p}\rightarrow \mathfrak T_q$ is semi-linear with respect to $[p]:\overline{T}\rightarrow \overline{T}$.
-	\end{corollary} 
-	
-        
-        \end{comment}
 	
 	
 %%%%%%%%%%%%
@@ -1723,6 +1552,7 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	\end{proof}
   
 
+
  
  
 \begin{thebibliography}{99}
@@ -1761,6 +1591,7 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	
 \end{thebibliography}
 
+	
 	
 	
 \end{document}
