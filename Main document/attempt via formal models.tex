@@ -455,7 +455,7 @@ $$a_n = a_{n, q} := q^n, \quad  b_n = b_{n, q} := q^{-n}.$$
 	\end{alignedat}
 	\end{equation}
 induced from 
-$ K\langle X,a_n/X\rangle \rightarrow K\langle X,a_{n-1}/X\rangle $ by sending $X$ to $X$.  Likewise, we glue $\mathcal B(1,b_n)$
+$ K\langle X,a_n/X\rangle \rightarrow K\langle X,a_{n-1}/X\rangle $ by sending $X$ to $X$ (and $a_n/X \mapsto \frac{a_n}{a_{n-1}} a_{n-1}/X$).  Likewise, we glue $\mathcal B(1,b_n)$
 by
 	\begin{equation}\label{torus explicit cover glue map 2}
 	\begin{alignedat}{2}
@@ -513,11 +513,15 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 	Let $q \in K^\times$ be an element which has $|q| < 1$ (and admits all $p$-power roots in $K$). The affine formal schemes $\mathfrak B(q^n,1)$ and $\mathfrak B(1,q^n)$ glue together to form a flat formal scheme $\mathfrak G_q$ over $\operatorname{Spf} \mathcal O_K$ such that $(\mathfrak G_q)_\eta = \mathbb G_m^{\operatorname{an}}$. In other words, $\mathfrak G_q$ is a formal model for $\mathbb G_m^{\operatorname{an}}$.
 	\end{lemma}
 
+\begin{construction}
          A closer look at the maps~(\ref{torus explicit [p] map 1}) and~(\ref{torus explicit [p] map 2}) shows that the $[p]$-multiplication map extends to a morphism of formal schemes 
 	\[ [\mathfrak p] : \mathfrak B(q^{n/p},1)\xrightarrow{[p]} \mathfrak B(q^n,1)\]
 	and similarly for $\mathfrak B(1,q^{-1})$. The diagram~(\ref{diagram showing that [p]-multiplication on torus glues together}) shows that these maps glue to a morphism
 	\[[\mathfrak p]: \mathfrak G_{q^{1/p}}\rightarrow  \mathfrak G_q.\]
-	By construction, after tensoring $-\otimes_{\mathcal O_K} K$ all morphisms on algebras coincide with those defined in ~(\ref{torus explicit cover glue map 1}),~(\ref{torus explicit cover glue map 2}),~(\ref{torus explicit [p] map 1}), (\ref{torus explicit [p] map 2}) respectively; moreover,  after reducing mod $\pi$ it reduces to the relative Frobenius map: 
+\end{construction}
+ 
+It is clear from definition that, after tensoring $-\otimes_{\mathcal O_K} K$ all morphisms on algebras coincide with those defined in ~(\ref{torus explicit cover glue map 1}),~(\ref{torus explicit cover glue map 2}),~(\ref{torus explicit [p] map 1}), (\ref{torus explicit [p] map 2}) respectively; moreover,  after reducing mod $\pi$ it reduces to the relative Frobenius map. 
+	
  
 	\begin{lemma}\indent 
 	
@@ -527,8 +531,9 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
                  \end{enumerate}
 	\end{lemma}
 	We now have everything together to finish our proof that $(\mathbb G_m^{\operatorname{an}})_\infty$ is perfectoid:
-	\begin{proposition}
-		The space $\mathbb G_m^{\operatorname{an}}$ has a $[p]$-$F$-formal tower. In particular, there exists a perfectoid space $(\mathbb G_m^{\operatorname{an}})_\infty$ such that $(\mathbb G_m^{\operatorname{an}})_\infty \sim \varprojlim_{[p]} \mathbb G_m^{\operatorname{an}}$.
+	
+	\begin{proposition} \label{prop:G_m_perfectoid}
+		The space $\mathbb G_m^{\operatorname{an}}$ admits a $[p]$-$F$-formal tower. In particular, there exists a perfectoid space $(\mathbb G_m^{\operatorname{an}})_\infty$ such that $(\mathbb G_m^{\operatorname{an}})_\infty \sim \varprojlim_{[p]} \mathbb G_m^{\operatorname{an}}$.
 	\end{proposition}
 	\begin{proof}
 		Since $K$ is perfectoid, we can find $q\in K^\times$ such that $|q|<1$ for which there exist arbitrary $p^n$-th roots. We choose such a $q$ and roots $q^{1/p^n}$ for all $n$. Then the two Propositions above combine to show that 
@@ -538,25 +543,29 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 	\end{proof}
 	
 	\subsection{The action of $\overline{T}$}
-	The multiplication $\mathbb G_m^{\operatorname{an}}\times \mathbb G_m^{\operatorname{an}}\rightarrow \mathbb G_m^{\operatorname{an}}$ can locally be described in terms of the rigid analytic cover that we have defined above as follows  : Let $a,b \in K^\times$ such that $|a|,|b|\leq 1$, then the multiplication map restricts to
+	The multiplication $\mathbb G_m^{\operatorname{an}}\times \mathbb G_m^{\operatorname{an}}\rightarrow \mathbb G_m^{\operatorname{an}}$ of the rigid group can locally be described in terms of the rigid analytic cover that we have defined above as follows  : Let $a,b \in K^\times$ such that $|a|,|b|\leq 1$, then the multiplication map restricts to
 	\begin{equation}
 	\begin{alignedat}{2} \label{torus multiplication map}
-	\mathcal B(a,1)\times \mathcal B(b,1)&\xrightarrow{m}&& \mathcal B(ab,1)\\
-	K\langle X,ab/X\rangle&\rightarrow &&K\langle X,a/X\rangle\widehat{\otimes} K\langle X,b/X\rangle\\
-	X&\mapsto&& X\otimes X\\
-	ab/X&\mapsto&& b/X\otimes a/X
+	\mathcal B(a,1)\times \mathcal B(b,1)&\xrightarrow{m}&& \mathcal B(ab,1)
 	\end{alignedat}
 	\end{equation}
-	and similarly on the $\mathcal B(1,a)\times \mathcal B(1,b)$ for $|a|,|b|\geq 1$. Multiplication on the $\mathcal B(a,1)\times \mathcal B(1,b)$ for $|a|< 1 < |b|$ is more difficult to see on the cover that we have chosen.
-	
-	The same arguments as in the last section show that the map described in~(\ref{torus multiplication map}) has a flat formal model
+	which is given on the level of algebra by the map
+	$K\langle X,ab/X\rangle \rightarrow K\langle X,a/X\rangle\widehat{\otimes} K\langle X,b/X\rangle$ sending $X \mapsto X \otimes X$ and $ab/X \mapsto a/X \otimes b/X $. We have a similar description of the multiplication map on the $\mathcal B(1,a)\times \mathcal B(1,b)$ for $|a|,|b|\geq 1$. 
+
+\begin{remark}
+	The multiplication on the $\mathcal B(a,1)\times \mathcal B(1,b)$ for $|a|< 1 < |b|$ is more difficult to see on the cover that we have chosen.
+\end{remark}
+\begin{remark}	The map ~(\ref{torus multiplication map}) has a flat formal model
 	\[\mathfrak B(a,1)\times \mathfrak B(b,1)\rightarrow \mathfrak B(ab,1).\]
-	This does \textit{not} mean that multiplication has a formal model $\mathfrak G\times \mathfrak G\rightarrow \mathfrak G$. Indeed, the chosen description has different covers on source and target which in the formal case give rise to different formal schemes (the inversion map $i:\mathbb G_m^{\operatorname{an}}\rightarrow \mathbb G_m^{\operatorname{an}}$ on the other hand does have a formal model). Nevertheless, if we take $a=1$ in the above, we see that we do have an action of the torus $\overline{T}:=\mathfrak B(1,1)$ on each of $\mathfrak B(b,1)$ and $\mathfrak B(1,b)$. Using the formal models from the last section, we conclude:
+	However, this does \textit{not} mean that multiplication has a formal model $\mathfrak G\times \mathfrak G\rightarrow \mathfrak G$. Indeed, the chosen description use different covers on source and target which gives rise to different formal schemes (the inversion map $i:\mathbb G_m^{\operatorname{an}}\rightarrow \mathbb G_m^{\operatorname{an}}$, on the other hand, does admit a formal model). 
+\end{remark}
+	
+	Nevertheless, if we take $a=1$ in the above, we see that we do have an action of the torus $\overline{T}:=\mathfrak B(1,1)$ on each of $\mathfrak B(b,1)$ and $\mathfrak B(1,b)$. Using the formal models from the last section, we conclude:
 	
 	\begin{proposition}\label{action on formal model of torus}
 		For any $q\in K^\times$ with $|q|<1$, the formal torus $\overline{T}:=\mathfrak B(1,1)$ has a natural action on $\mathfrak G_q$ via a map
 		\[\mathfrak m:\overline{T}\times \mathfrak G_q\rightarrow \mathfrak G_q.\]
-		This map is a formal model of the action of the annulus $\mathcal B(1,1)$ on $\mathbb G_m^{\operatorname{an}}$. Furthermore, this action is compatible with the models for $[p]$ in the sense that if there is a $p$-th root $q^{1/p}\in K$, then the following diagram commutes.
+		This map is a formal model of the action of the annulus $\mathcal B(1,1)$ on $\mathbb G_m^{\operatorname{an}}$. Furthermore, this action is compatible with the models for $[p]$ in the sense that, for a $p$-th root $q^{1/p}\in K$, the following diagram commutes.
 		\begin{center}
 		\begin{tikzcd}
 			\overline{T}\times \mathfrak G_{q^{1/p}} \arrow[d, "{[p]\times [\mathfrak p]}"'] \arrow[r, "\mathfrak m"] & \mathfrak G_{q^{1/p}} \arrow[d, "{[\mathfrak p]}"] \\
@@ -571,16 +580,17 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 	\subsection{The case of general tori}
 	By taking products everywhere, all of the statements in this section immediately generalise to split tori:
 	\begin{corollary}\label{torus has formal models}
-		Let $T$ be a split torus over $K$ of the form $T=(\mathbb G_m^{\operatorname{an}})^d$. Then for any $q\in K^\times$ with $|q|<1$ the formal scheme $\mathfrak T_q := (\mathfrak G_q)^d$ is a formal model of $T$. If there is a $p$-th root $q^{1/p}\in K$, the $p$-multiplication map has a formal model $[\mathfrak p]:\mathfrak T_{q^{1/p}}\rightarrow \mathfrak T_{q}$ that locally on polyannuli is of the form $[\mathfrak p]:\mathfrak B(q^{1/p},1)^d\rightarrow \mathfrak B(q,1)^d$. Moreover this map reduces mod p to the relative Frobenius morphism.
+		Let $T$ be a split torus over $K$ of the form $T=(\mathbb G_m^{\operatorname{an}})^d$. Then for any $q\in K^\times$ with $|q|<1$ the formal scheme $\mathfrak T_q := (\mathfrak G_q)^d$ is a formal model of $T$. For a $p$-th root $q^{1/p}\in K$, the $p$-multiplication map has a formal model $[\mathfrak p]:\mathfrak T_{q^{1/p}}\rightarrow \mathfrak T_{q}$ that locally has the form $[\mathfrak p]:\mathfrak B(q^{1/p},1)^d\rightarrow \mathfrak B(q,1)^d$. Moreover this map reduces mod p to the relative Frobenius morphism.
 	\end{corollary}
+	
 	\begin{corollary}\label{torus has p-F-formal tower and has perfectoid tilde-limit}
-		Let $T$ be a split torus over $K$, considered as a rigid space. Then $T$ has a $[p]$-$F$-formal tower. In particular, there exists a perfectoid space $T_\infty$ such that $T_\infty \sim \varprojlim_{[p]} T$. 
+		Let $T$ be a split torus over $K$, considered as a rigid space. Then $T$ admits a $[p]$-$F$-formal tower. In particular, there exists a perfectoid space $T_\infty$ such that $T_\infty \sim \varprojlim_{[p]} T$. 
 	\end{corollary}
 	
 	\begin{corollary}\label{action on formal model of torus}
-		Let $T$ be any split torus over $K$. For any $q\in K^\times$ with $|q|<1$, the formal completion $\overline{T}$ has a natural action on $\mathfrak T_q$ via a map
+	  Let $T$ and $q \in K^\times $ be as above, then the formal completion $\overline{T}$ has a natural action on $\mathfrak T_q$ via a map
 		\[\mathfrak m:\overline{T}\times \mathfrak T_q\rightarrow \mathfrak T_q.\]
-		This map is a formal model of the action of the annulus $\overline{T}$ on $T$. Furthermore, this action is compatible with the models for $[p]$ in the sense that if there is a $p$-th root $q^{1/p}\in K$, then the map $[\mathfrak p]:\mathfrak T_q^{1/p}\rightarrow \mathfrak T_q$ is semi-linear with respect to $[p]:\overline{T}\rightarrow \overline{T}$.
+		This map is a formal model of the action of the annulus $\overline{T}$ on $T$. Furthermore, this action is compatible with the models for $[p]$, namely, the map $[\mathfrak p]:\mathfrak T_q^{1/p}\rightarrow \mathfrak T_q$ is semi-linear with respect to $[p]:\overline{T}\rightarrow \overline{T}$.
 	\end{corollary} 
 	
 %%%%%%%% Original version -- I edited it so it fits into our specific discussion, feel free to change it back. 
@@ -760,14 +770,18 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 %%%%%%%%%%%%
 
 	\section{A $[p]$-$F$-formal tower for Raynaud extensions}\label{Raynaud extensions as principal bundles of formal and rigid spaces}
-	As the next step towards studying the $p$-multiplication tower of an abelian variety, we now look at the case of rigid groups arising from the Raynaud extensions associated to abelian varieties over an algebraically closed non-archimedean complete field $K$.
+	In this section we study the $p$-multiplication tower of the Raynaud extensions associated to abelian varieties over an algebraically closed perfectoid field $K$. The main result of this section is Theorem \ref{p-F-formal tower exists for E}, namely the Raynaud extension $E$ of an abelian variety $A$ over $K$ admits a $[p]$-$F$-formal tower, hence we obtain the perfectoid tilde-limit $E_\infty \sim \varprojlim_{[p]} E$.  
+	
 	
 	\begin{remark}
-	While we expect that our main theorem still holds over any perfectoid field, it is easier to work in the algebraically closed case since this simplifies the theory of Raynaud uniformisation, in particular Lemma~\ref{formal Raynaud sequence is locally split} below.	We sketch the theory here, see \S 5.6 of \cite{rigid geometry of curves} for more details on the setup.
+	While we expect that our main theorem still holds over any perfectoid field, it is easier to work in the algebraically closed case since this simplifies the theory of Raynaud uniformisation, in particular Lemma~\ref{formal Raynaud sequence is locally split} below.
 	\end{remark}
 	
 	
 	\subsection{Raynaud extensions}
+	
+        We briefly sketch the theory of Raynaud extensions here, and refer the readers to  \cite{rigid geometry of curves} for more details on the setup.
+
 	Let now $A$ be an abelian variety over $K$. There exists a unique connected open rigid analytic subgroup $\overline A$ of $A$ which extends to a formal smooth $\mathcal O_K$-group scheme $\overline E$ with semi-abelian reduction. Then $\overline E$ fits into a short exact sequence of formal group schemes
 	\begin{equation}\label{formal Raynaud extension}
 	0\rightarrow \overline T \rightarrow \overline E \xrightarrow{\pi} \overline{B}\rightarrow 0
@@ -796,8 +810,10 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 	\end{proposition}
 	
 	Since $M$ is discrete, the local geometry of $A$ is thus determined by the local geometry of $E$. More precisely, we will first study the $[p]$-multiplication tower of $E$ and will then deduce properties of the $[p]$-multiplication tower of $A$.
-	
-	In order to do so, we would like to study the local geometry of $E$ and $\overline{E}$ via $T$ and $B$. An obstacle in doing this is that the categories of formal or rigid groups are not abelian, which makes working with short exact sequences a subtle issue. Another issue is that one cannot direcly study short exact sequences locally on $T$, $E$ or $B$. An important tool is therefore the following Lemma:
+	\begin{remark}
+	 Our strategy is to study the local geometry of $E$ and $\overline{E}$ via $T$ and $B$. An obstacle in doing this is that the categories of formal or rigid groups are not abelian, which makes working with short exact sequences a subtle issue. Another issue is that one cannot direcly study short exact sequences locally on $T$, $E$ or $B$. 
+	\end{remark}
+	An important tool is therefore the following Lemma:
 
 	\begin{lemma}\label{formal Raynaud sequence is locally split}
 		The short exact sequence (\ref{formal Raynaud extension}) admits local sections, that is there is a cover of $B$ by formal open subschemes $U_i$ such that there exist sections $s:U_i\rightarrow \overline{E}$ of $\pi$. In particular, one can cover $\overline{E}$ by formal open subschemes of the form $\overline{T}\times U_i\hookrightarrow E$.
@@ -806,7 +822,11 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 		This is proved in Proposition A.2.5 in~\cite{rigid geometry of curves}, where it is fomulated in terms of the group $\operatorname{Ext}(B,T)$. Also see \cite{BL}, \S 1.
 	\end{proof}
 	
-	This Lemma suggests that instead of considering Raynaud extensions from the abelian category viewpoint, one should consider them as fibre bundles of formal schemes with structure group $T$, or more precisely as principal $T$-bundles of formal schemes, which are also called $T$-torsors. This is the language we want to use in the following: We will work with fibre bundles of formal schemes, rigid spaces and schemes. The main technical tool we will need is the associated fibre construction in these settings. For a rigorous  treatment of these we refer to the Appendix.
+	This Lemma suggests that instead of considering Raynaud extensions from the abelian category viewpoint, one should consider them as principal $T$-bundles of formal schemes (which are also referred to as $T$-torsors in the article). 
+	
+	\begin{remark}
+	This is the language we use in the rest of the paper: We will work with fibre bundles of formal schemes, rigid spaces and schemes. The main technical tool we need is the associated fibre construction in these settings. For a rigorous  treatment of these we refer to the Appendix.
+	\end{remark}
 	
 	First of all, we note that the sequence~(\ref{formal Raynaud extension}) from the last section gives rise to a principal $\overline{T}$-bundle
 	$\overline{E}\rightarrow \overline{B}$. The fact that $E$ is obtained from $\overline{E}_\eta$ via push-out from $\overline{T}_\eta\rightarrow T$ can now conveniently be expressed in terms of the associated fibre bundle by saying that $E_\eta = T\times^{\overline{T}_\eta}\overline{E}_\eta$ in the sense of Definition~\ref{definition of Borel construction}. We have the following description of $[p]$:
@@ -835,23 +855,24 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 %%      Section 4.5
 %%%%%%%%%%%%	
 	
-	\subsection{Formal models for $E$}
-	In this subsection we prove that $E$ admits a $[p]$-$F$-tower model. The first step is to construct a family of formal models for $E$. We do this by using the formal models $\mathfrak T_q$.
-	\begin{proposition}
+	\subsection{A $[p]$-$F$-formal tower for $E$}
+	In this subsection we prove that $E$ admits a $[p]$-$F$-formal tower. The first step is to construct a family of formal models for $E$. %We do this by using the formal models $\mathfrak T_q$.
+	\begin{lemma}
 	Let $q\in K^\times$ with $|q|<1$. Let $\mathfrak T_q$ be the formal model from Corollary~\ref{torus has formal models}. Then there is a formal scheme $\mathfrak E_q :=\mathfrak T_q \times^{\overline{T}}\overline{E}$ that is a formal model of the rigid space $E$. Furthermore, there exists a morphism
 	\[\mathfrak E_q :=\mathfrak T_q \times^{\overline{T}} \overline{E} \rightarrow \overline{B} \]
 	which is a fibre bundle and a formal model of $E\rightarrow B$.
-	\end{proposition}
+	\end{lemma}
 	\begin{proof}
 		Recall from Proposition~\ref{action on formal model of torus} that $\mathfrak T_q$ has a $\overline{T}$-action that is a model of the $\overline{T}_\eta$-action on $T$. In particular, the associated fibre construction for the principal $\overline{T}$-bundle $\overline{E}$ gives a fibre bundle $\mathfrak E_q :=\mathfrak T_q \times^{\overline{T}} \overline{E} \rightarrow \overline{B}$. Since $\mathfrak T_q$ is a formal model of $T$, one sees by Lemma~\ref{associated bundle commutes with generic fibre} that this is a formal model of $T\times^{\overline{T}_\eta}\overline{E}_\eta$ which by definition is equal to $E$.
 	\end{proof}
-	Next we want to construct a model for the $[p]$-multiplication map. Here we can use again that $[p]$ exists on $\overline{E}$ and on $\mathfrak T_{q^{1/p}}$.
-	\begin{proposition}\label{formal model of p-multiplication on E}
+	
+	Next we construct a model for the $[p]$-multiplication map. Here we can use again that $[p]$ exists on $\overline{E}$ and on $\mathfrak T_{q^{1/p}}$.
+	\begin{lemma}\label{formal model of p-multiplication on E}
 		Let $q\in K^\times$ be such that $|q|<1$ and let $q^{1/p}\in K$ be a $p$-th root of $q$. Then there is an affine morphism
 		\[[\mathfrak p]:\mathfrak E_{q^{1/p}} \rightarrow  \mathfrak E_{q}\]
 		which is a formal model of $[p]:E\rightarrow E$.
-	\end{proposition}
-		Note that we can always choose a $p$-th root of $q$ in $K$ due to our running assumption that $K$ is algebraically closed.
+	\end{lemma}
+		
 	\begin{proof}
 		Recall that the multiplication map $[p]:T\rightarrow T$ has a formal model $[\mathfrak p]:\mathfrak T_{q^{1/p}}\rightarrow \mathfrak T_q$ by Corollary~\ref{torus has formal models}. This fits into a commutative diagram
 		\begin{center}
@@ -864,7 +885,7 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 		Functoriality of the associated fibre construction in the general case, Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor}, applied to the diagram below then gives a natural map $\mathfrak E_{q^{1/p}}\rightarrow \mathfrak E$ making the diagram commute:
 		\begin{center}
 			\begin{equation}\label{formal model of p-multiplication cube}
-			\begin{tikzcd}[column sep={1.3cm,between origins},row sep={1.3cm,between origins}]
+			\begin{tikzcd}[column sep={1.1cm,between origins},row sep={1.1cm,between origins}]
 				& \mathfrak T_{q} \arrow[rr] &  & \mathfrak E_q \\
 				\mathfrak T_{q^{1/p}} \arrow[ru, "{[\mathfrak p]}"] \arrow[rr] &  & \mathfrak T_{q^{1/p}}\times^{\overline{T}}\overline{E} \arrow[ru, "\exists", dotted] &  \\
 				& \overline{T} \arrow[uu] \arrow[rr] &  & \overline{E} \arrow[uu] \\
@@ -881,13 +902,13 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 	\end{proof}
 	
 	We have thus proved the first part of what we want to show about tilde-limits of $E$:
-	\begin{proposition}\label{p-formal tower exists for E}
-		Let $K$ be perfectoid. Then $E$ has a $[p]$-formal tower of the form
+	\begin{lemma}\label{p-formal tower exists for E}
+		 Retain notations from above. $E$ admits a $[p]$-formal tower of the form
 		\[\dots \xrightarrow{[\mathfrak p]} \mathfrak E_{q^{1/p^2}}\xrightarrow{[\mathfrak p]} \mathfrak E_{q^{1/p}}\xrightarrow{[\mathfrak p]} \mathfrak E_q\]
 		for some $q\in K^\times$. In particular, there exists a space $E_\infty$ such that $E_\infty\sim \varprojlim_{[p]}E$.
-	\end{proposition}
+	\end{lemma}
 	\begin{proof}
-		By Proposition~\ref{formal model of p-multiplication on E}, any choice of $q\in K^\times$ with $|q|<1$ for which there exists a compatible system of $p^n$-th roots $q^{1/p^n}\in K^\times$ gives a tower
+		By Lemma ~\ref{formal model of p-multiplication on E}, any choice of $q\in K^\times$ with $|q|<1$ for which there exists a compatible system of $p^n$-th roots $q^{1/p^n}\in K^\times$ gives a tower
 		\[\dots \xrightarrow{[\mathfrak p]} \mathfrak E_{q^{1/p^2}}\xrightarrow{[\mathfrak p]} \mathfrak E_{q^{1/p}}\xrightarrow{[\mathfrak p]} \mathfrak E_q\]
 		that on the generic fibre equals $\dots\xrightarrow{[p]} E\xrightarrow{[p]} E$. This is the desired $[p]$-formal tower.
 	\end{proof}
@@ -903,7 +924,7 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 	%\end{framed}
 	\begin{proof}
 	
-	It suffices to prove that for any $q\in K^\times$ with $|q|<1$ and a $p$-th root $q^{1/p}$, the map $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ upon reduction mod $\pi$ factors through relative Frobenius.
+	It suffices to prove that, the reduction mod $\pi$ of the map $[\mathfrak p]:\mathfrak E_{q^{1/p}}\xrightarrow{} \mathfrak E_q$ factors through relative Frobenius.
 	
 	In the following we denote reduction of a formal scheme by a $\sim$ over the formal scheme, for example the reductions of $\overline{T}$, $\overline{E}$ and $\mathfrak T$ are denoted by $\tilde{T}$, $\tilde{E}$ and $\tilde{\mathfrak{T}}$.
 	
@@ -953,6 +974,7 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 	The conclusion that $E_\infty$ is perfectoid then follows from Proposition~\ref{existence of p-F-formal tower implies perfectoid}.
 	\end{proof}
 	
+	
  
 %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%
@@ -968,12 +990,19 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 				\[A_\infty \sim \varprojlim_{[p]} A.\]
 	\end{theorem}
 	
-	We have seen this already for abelian varieties with good reduction in Corollary~\ref{tilde limit exists and perfectoid in the good reduction case}. It thus suffices to deal with the bad reduction case. Since $K$ is algebraically closed, this means that $A$ has semi-stable reduction.
+	We have seen this already for abelian varieties with good reduction in Corollary~\ref{tilde limit exists and is perfectoid in the good reduction case}. It thus suffices to deal with the bad reduction case. Since $K$ is algebraically closed, this means that $A$ has semi-stable reduction.
 	
-	The proof of Theorem~\ref{main theorem}  in the case of semi-stable reduction will be completed in several steps over the following sections.  We first recall some notation:  Let $g$ be the dimension of $A$. Let $E$ be the Raynaud extension associated to $A$ from Proposition~\ref{Raynaud uniformisation}, which is an extension of a split rigid torus $T$ of rank $r$ by an abelian variety $B$ of good reduction. Moreover there is a lattice $M\subseteq E$ of rank $r$ such that $A=E/M$. Our strategy is to describe the $[p]$-multiplication tower of $E/M$ locally in terms of the $[p]$-multiplication tower of $E$.
-	As a first step towards this goal, in the following section, we want to give a cover of $E/M$ by subspaces of $E$ that behaves well under $[p]$-multiplication.
+Before we proceed with the proof of the main theorem which occupies the rest of the section, let us recall some notation:
+\begin{enumerate} 
+\item  $g$ is the dimension of $A$. 
+\item  $E$ is the Raynaud extension associated to $A$ from Proposition~\ref{Raynaud uniformisation}, which is an extension of a split rigid torus $T$ of rank $r$ by an abelian variety $B$ of good reduction. 
+\item $M\subseteq E$  is a lattice of rank $r$ such that $A=E/M$. 
+\end{enumerate}
+
 	
 	\subsection{Covering $A$ by subspaces of $E$}
+		The first step towards towards the proof is to construct a cover of $A = E/M$ by subspaces of $E$ that behaves well under $[p]$-multiplication.
+	
 	As a first step we recall how to relate the lattice $M$ to a Euclidean lattice in $\mathbb R^r$, cf \S2.7 and \S6.2 in  \cite{rigid geometry of curves}. On the level of points, $\mathbb{G}_m^{\operatorname{an}}$ has an absolute value map
 	\[|-|:\mathbb{G}_m^{\operatorname{an}}(K)=K^\times\rightarrow \mathbb R^\times, \quad x\mapsto |x|\]
 	which induces the following group homomorphism from the torus $T$:
@@ -1417,7 +1446,16 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 		\[0\rightarrow M\rightarrow E\rightarrow A\rightarrow 0.\]
 	In particular, while as a rigid analytic space $A$ is locally isomorphic to open subspaces of $E$, the perfectoid space $A_\infty$ is locally isomorphic to open subspaces of $D_\infty \times E_\infty$.
 	
-	\appendix
+ 
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%  APPENDIX
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	
+	
+		\appendix
 	\section{Fibre bundles of formal and rigid spaces}
 	In this chapter we review the theory of fibre bundles with structure group $T$ and in particular of principal $T$-bundles in the setting of formal and rigid geometry.
 		
@@ -1528,7 +1566,7 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 		One direction is clear. For the other, the first part follows from glueing. The second part is a consequence of all maps in the first diagram being $T$-linear.
 	\end{proof}
 	
-	\begin{definition}\label{definition of Borel construction}
+	\begin{definition} \label{definition of Borel construction}
 		Let $\pi:E\rightarrow B$ be a principial $T$-bundle. Let $F$ be a formal scheme with an action by $T$. Since the data in the equivalent characterisation of Lemma~\ref{equivalent characterisation of principal $T$-bundle} is completely independent of the fibre, the morphisms $\psi_{ij}:U_{ij}\rightarrow T$ by Lemma~\ref{equivalent characterisation of principal $T$-bundle} define a fibre bundle with fibre $F$ and structure group $T$ that we denote by $F\times^T E$. This is called the \textbf{associated bundle} or Borel-Weil construction.
 	\end{definition}
 	
@@ -1689,6 +1727,8 @@ $$\mathfrak B(q^{n-1},1)\hookrightarrow \mathfrak B(q^{n},1), \qquad \mathfrak B
 		This can be checked locally on any trivialising cover, where it is clear.
 	\end{proof}
   
+
+
 
  
  
