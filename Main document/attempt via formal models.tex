@@ -71,7 +71,7 @@
 	\maketitle
 	
 	\begin{abstract}
-For an abelian variety $A$ over an algebraically closed non-archimedean field which is either $p$-adic or of characteristic $p$, we show that there exists a perfectoid space which is the tilde-limit of $\varprojlim_{[p]}A$.
+For an abelian variety $A$ over an algebraically closed non-archimedean field of residue characteristic $p$, we show that there exists a perfectoid space which is the tilde-limit of $\varprojlim_{[p]}A$.
 	\end{abstract}
 	
 
@@ -81,69 +81,52 @@ For an abelian variety $A$ over an algebraically closed non-archimedean field wh
 %%%%%%%%%%%%
 	\section{Introduction} 
 
-Let $p$ be a prime and $K$ a non-archimedean field which is either $p$-adic or characteristic $p$. For simplicity we assume that $K$ is  algebraically closed in this introduction. The primary goal of this article is to show that the ``inverse limit'' of an abelian variety $A$ over $K$ under the multiplication by $p$ map carries a natural structure of perfectoid spaces. %Before we state the precise version of the theorem, we remark that the main assertion already implicitly appeared in [?] [?] without justification. Nevertheless we decide to fill in this gap in the literature, since the proof, despite being straight-forward, is quite subtle to spell out. 
-More precisely, we prove 
+Let $p$ be a prime and let $K$ be a non-archimedean field which is $p$-adic or of characteristic $p$. 
+Let us moreover assume that $K$ is algebraically closed. 
+For an abelian variety $A$ over $K$ let us consider the inverse system of $A$ under the multiplication by $p$ morphism:
+\[\dots\xrightarrow{[p]}A\xrightarrow{[p]}A\xrightarrow{[p]}A\]
+Via the rigid analytification functor, we may see this as an inverse system of analytic adic spaces over $\operatorname{Spa}(K,\mathcal O_K)$.
+The primary goal of this article is to show that the ``inverse limit'' of this tower exists in some way and is a perfectoid space: Since inverse limits rarely exist in the category of adic spaces (even for affinoid spaces), in \cite{SW} the authors introduce the weaker notion of tilde-limit to remedy this problem. This is the notion of "limits" we are going to use. More precisely, we prove 
 
-         \begin{mainthm} \label{thm:main_thm_intro}
-		Let $A$ be an abelian variety over $K$. Then there exists a unique perfectoid space $A_\infty$ over $K$ such that
-				$A_\infty \sim \varprojlim_{[p]} A.$
-	\end{mainthm}
+ %Before we state the precise version of the theorem, we remark that the main assertion already implicitly appeared in [?] [?] without justification. Nevertheless we decide to fill in this gap in the literature, since the proof, despite being straight-forward, is quite subtle to spell out. 
 	
-\begin{remark*}	 \label{remark:inverse_limit_adic}
-We will recall the definition of the tilde-limit, namely the meaning of $A_\infty \sim \varprojlim_{[p]} A$, in Section \ref{section:tilde_limit} of the paper. This notion appears in \cite{SW} to remedy the problem that inverse limits rarely exist in the category of adic spaces in the sense of \textit{\small ibid} (even if transition maps are affine). 
-\end{remark*}
+\begin{mainthm} \label{thm:main_thm_intro}
+	Let $A$ be an abelian variety over $K$, considered as a rigid space. Then there exists a unique perfectoid space $A_\infty$ over $K$ such that
+	$A_\infty \sim \varprojlim_{[p]} A$ is a tilde-limit.
+\end{mainthm}
 
-\begin{remark*}	 
-{\color{red}  char p case }
-\end{remark*}
+The Theorem in the case of abelian varieties $A$ of good reduction appeared already in \cite{Pilloni-Stroh} (Lemme A.16). In order to motivate our strategy for the general case, let us have a look at the proof in the case of good reduction as a motivating example (this example is taken from Exercise 4 -- 6 in \cite{Bhatt} and spelt out in detail in \S \ref{subsection:perfectoid_tilde_limit}, Corollary \ref{tilde-limit exists and is perfectoid in the good reduction case} below):
 
- To prove the main theorem,  we need to 
+Let $A$ be an abelian variety of good reduction over $K$. Let $\mathcal O_K$ be the ring of integers of $K$ and let $\pi\in\mathcal O_K$ be a pseudo-uniformiser. Then we can consider $A$ as an abelian scheme over $\mathcal O_K$. Let $\mathcal A$ be its $\pi$-completion considered as a formal scheme over $\mathcal O_K$, then its adic generic fibre is the rigid analytification of $A$ that we denote by the same letter. The mod $\pi$ special fibre $\mathcal A_s = \mathcal A \times \mathcal O_K/\pi$ is a group scheme over $\mathcal O_K/\pi$, so the map $[p]:\mathcal A_s\rightarrow \mathcal A_s$ factors through the relative Frobenius map. The inverse limit $ \varprojlim_{[p]} \mathcal A_s $ in the category of schemes is therefore relatively perfect over $\mathcal O_K/\pi$. We can similarly form the inverse limit $\mathcal A_{\infty} = \varprojlim_{[p]} \mathcal A$ in the category of formal schemes. Its adic generic fibre $A_\infty$ is a tilde-limit of $\varprojlim_{[p]}A$, and it is perfectoid since $ \varprojlim_{[p]} \mathcal A_s $ is relatively perfect.
+
+This gives the construction of $A_\infty$ in the case of good reduction. The overall strategy of our proof of Theorem \ref{thm:main_thm_intro} is similar: We construct a tilde limit via formal models and show that this tilde-limit is perfectoid using that the special fibre of the formal model factors through the Frobenius map. 
+
+As the case of good reduction is already settled, it remains to do this in the case that $A$ has bad reduction. The assumption that $K$ is algebraically closed assures that $A$ is then semi-stable.
+In this case, Raynaud's theory provides us with a short exact sequence 
+\[ 0 \rightarrow T \rightarrow E  \rightarrow  B  \rightarrow  0\]
+of rigid groups, where $T = (\mathbb G_m^{\text{an}})^{d}$ is a split rigid torus and $B$ is the analytification of an abelian variety with good reduction, such that $A = E/M$ for a discrete lattice $M \subset E$. This short exact sequence is split locally on $B$, allowing us to locally write $E$ as a product of $T$ and an open subspace of $B$.
+Our strategy is now the following:
 \begin{enumerate}
-\item construct a tilde-limit $A_\infty$ for the system $ \cdots \xrightarrow{[p]} A \xrightarrow{[p]} A \xrightarrow{[p]} A $;
-\item show that the adic space $A_\infty$ is perfectoid. 
-\end{enumerate}
-In fact, we will achieve (1) and (2) simultaneously. 
-
-\begin{remark*}	\label{remark:good_reduction}
-Let us consider the motivating example of the case of good reduction. This example is generalized from Exercise 4 -- 6 in \cite{Bhatt} {\color{red} Cite Pilloni-Stroh instead (or both? I prefer to also cite Bhatt, the outline there is clear enough)} and spelt out in details in Subsection \ref{subsection:perfectoid_tilde_limit} [Corollary \ref{tilde-limit exists and is perfectoid in the good reduction case}]. 
-
-Let $\mathcal A$ be a formal abelian scheme over $\mathcal O_K$ with generic fiber $A$. Then on the mod $\pi$ special fiber $\mathcal A_s = \mathcal A \times \mathcal O_K/\pi$,  multiplication by $p$ factors through the relative Frobenius map, forcing the inverse limit $ \varprojlim_{[p]} \mathcal A_s $ (which exists in the category of schemes) to be relatively perfect over $\mathcal O_K/\pi$. Let $\mathcal A_{\infty} = \varprojlim_{[p]} \mathcal A$ (which exists by Lemma \ref{lemma:inverse_limit_formal}), then its adic generic fiber $A_\infty$ is perfectoid and a tilde-limit of $\varprojlim_{[p]}A$.
-\end{remark*}
-
-\vspace*{0.2cm}
-
-Now we explain the outline of the proof of Theorem \ref{thm:main_thm_intro}. The main strategy is, roughly speaking, to study abelian varieties with good reduction and totally degenerate ones ``separately'', and use the theory of Raynaud extensions to combine the two situations. More precisely, since $A$ is semi-stable ($K$ being algebraically closed), Raynaud's theory provides us with a short exact sequence 
-$$ 0 \rightarrow T \rightarrow E  \rightarrow  B  \rightarrow  0 $$
-of rigid group schemes, where $T = (\mathbb G_m^{\text{an}})^{d}$ is a split rigid tori and $B$ the analytification of an abelian variety with good reduction, such that $A = E/M$ for a discrete lattice $M \subset E$. Our strategy is 
-\begin{enumerate}
-\item Show that there exists a perfectoid tilde-limit $E_\infty$ of $\varprojlim_{[p]} E$;
-\item Use part (1) above to construct the desired perfectoid space $A_\infty$.
+\item Use formal models to show that there exists a perfectoid tilde-limit $T_\infty$ of $\varprojlim_{[p]} T$;
+\item Use the formal models from (1) to construct a perfectoid tilde-limit $E_\infty$ of $\varprojlim_{[p]} E$;
+\item Study the projection $E\rightarrow A$ in the limit over $[p]$ to construct the desired space $A_\infty$.
 \end{enumerate}
 
-\vspace*{0.2cm}
-Our approach to prove part (1) of in the outline (namely that $E_\infty$ is perfectoid) relies on constructing various formal models of relevant objects and take their (adic) generic fibres. More precisely, the construction of the perfectoid space $E_\infty$ is realized in several mini-steps: 
-\begin{itemize}
-\item Develop a notion of a $[p]$-$F$-formal tower for a rigid group $G$ over $K$ such that, if $G$ admits such a tower, then there exists a unique perfectoid tilde-limit $G_\infty \sim  \varprojlim_{[p]} G$; 
-\item Construct a $[p]$-$F$-formal tower $\mathfrak T$ for $T$;
-\item Use the tower $\mathfrak T$ from above, apply the  associated fibre bundle construction (developed in the Appendix) to construct a $[p]$-$F$-formal tower for $E$. From this we will obtain $E_\infty$
-\end{itemize}
+More precisely, this article is organised as follows: In \S2 we develop a notion of a $[p]$-$F$-formal tower for a rigid group $G$ over $K$, which is roughly an inverse system of formal models for $[p]:G\rightarrow G$ that factor through the relative Frobenius mod $p$. This is an axiomatisation of the data that one uses in the construction of $A_\infty$ in the case of good reduction. In particular, the same proof shows that if $G$ admits $[p]$-$F$-formal tower, then there exists a unique perfectoid tilde-limit $G_\infty \sim  \varprojlim_{[p]} G$.
  
+In chapter \S3 we give a $[p]$-$F$-formal tower for a  split rigid torus $T$ in terms of a family of formal models $\mathfrak T_{q^{1/n}}$, thus showing that a perfectoid tilde-limit $T_\infty$ of the inverse system of $[p]$ on $T$ exists. Crucially, this tower of formal models has the extra structure of an action by the formal torus $\overline{T}$.
  
-\vspace*{0.2cm}
-Finally, to construct $\varprojlim_{[p]} A$, we will ``separate'' the $[p]$-multiplication tower of $A = E/M$ factors into a ``ramified'' and an ``\'etale'' part. By carefully choosing charts of $A$ in terms of certain subspaces of $E$ that behave well under $[p^n]:E\rightarrow E$, we will 
-\begin{itemize}
-\item explicitly construct a perfectoid tilde-limit of the ``ramified'' tower; 
-\item use this ``ramified tilde-limit'' to construct $A_\infty$. 
-\end{itemize}
+We can therefore in \S4 use the language of formal fibre bundles to construct a  $[p]$-$F$-formal tower for $E$: The Raynaud extension of $A$ arises from a short exact sequence of formal group schemes
+\[0\rightarrow \overline{T}\rightarrow \overline{E}\rightarrow B\rightarrow 0\]
+by taking generic fibres and forming the pushout with respect to the closed immersion $\overline{T}_\eta\rightarrow T$. Equivalently, since the sequence is locally split, we can see $\overline{E}\rightarrow B$ as a principal $\overline{T}$-bundle and formation of $E$ amounts to a change of fibre from $\overline{T}_\eta$ to $T$. Since the formal model tower of \S3 receives a $\overline{T}$-action, we now obtain a $[p]$-$F$-formal tower for $E$ from the formal models of $\S 4$ by the change of fibre from $\overline{T}$ to the formal models $\mathfrak T_{q^{1/n}}$. This gives the desired perfectoid tilde-limit $E_\infty$.
 
+In chapter \S5 we finish the proof of the main theorem by constructing $A_\infty$ from $E_\infty$ as follows. After choosing lattices $M\subseteq M^{1/p^n}\subseteq E$ that are sent to $M$ under $[p]:E\rightarrow E$, the $[p]$-multiplication tower of $A=E/M$ naturally factors into two separate towers: One is the tower of maps $E/M^{1/p^{n+1}}\rightarrow E/M^{1/p^{n}}$ induced from $[p]$-multiplication tower of $E$, the other is induced from the projection maps $E/M\rightarrow E/M^{1/p^n}$. By choosing certain charts of $E$ that give local splittings of the projection $E\rightarrow E/M=A$, we show that the first of these towers has a perfectoid tilde-limit $E/M^{1/p^\infty}$ that is locally isomorphic to open subsets of $E_\infty$. Since the second tower is easy to describe in terms of the chosen charts, it is then straightforward to find the desired space $A_\infty$.
  
-%\begin{remark*}	
-%{\color{red} Remark on Neron models -- why we cannot directly get the results using Neron models and also the problems of existence when $A$ is over $K = \overline K$ etc. }
-%\end{remark*}
+In chapter \S6 we finally use our explicit construction to say something about the local geometry of $A_\infty$. In particular, we describe the perfectoid group homomorphism $E_\infty \rightarrow A_\infty$ in terms of perfectoid principal bundles. The goal of this last section is to give an alternative description of $A_\infty$ in terms of a quotient of perfectoid groups: There are a lattice $M^{1/p^\infty}\subseteq E_\infty$ and a pro-finite perfectoid group $D_\infty$ over $K$ for which there is a short exact sequence of perfectoid groups
+\[0\rightarrow M_\infty\rightarrow D_\infty \times E_\infty \rightarrow A_\infty\rightarrow 0.\]
+This may be seen as an analogue in the limit of the sequence $0\rightarrow M\rightarrow E\rightarrow A\rightarrow 0$.
 
-\vspace*{0.2cm}
-
-
+At the end there is an appendix on fibre bundles and associated fibre bundle constructions in the context of formal, rigid and perfectoid spaces.
 
  \begin{comment}
 Now we end the introduction by describing the content of each section. 
@@ -164,38 +147,39 @@ Now we end the introduction by describing the content of each section.
 \end{comment} 
  
  
+ 
+ \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %some hack to hide the acknowledgements in the toc
+ \section*{Acknowledgements}
+ \addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
+ This work started as a group project at the 2017 Arizona Winter School. We would like to thank Bhargav Bhatt for proposing the project, for his guidance and for his constant encouragement. In addition we would like to thank the organizers of the Arizona Winter School for setting up a great environment for us to participate in this project. 
+ 
+ During this work Dami\'an Gvirtz and Ben Heuer were supported by the Engineering and Physical Sciences Research Council [EP/L015234/1], the EPSRC Centre for Doctoral Training in Geometry and Number Theory (The London School of Geometry and Number Theory), University College London. 
+ Peter Wear was supported by NSF grant DMS-1502651 and UCSD and would like to thank Kiran Kedlaya for helpful discussions.
+ {\color{red} Other grants? Other people?}
+ 
 
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %some hack to hide the acknowledgements in the toc
 \section*{Notation}
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
-	We fix the prime $p$.  Let $K$ be a perfectoid field (either $p$-adic or of characteristic $p$), with the ring of integers  $\mathcal O_K$  and  a fixed pseudo-uniformiser $\pi\in \mathcal O_K$. 
+	We fix a prime $p$.  Let $K$ be a perfectoid field either $p$-adic or of characteristic $p$, with ring of integers  $\mathcal O_K$ and  a fixed pseudo-uniformiser $\pi\in \mathcal O_K$. From \S4 on we are going to assume that $K$ is algebraically closed, but we don't need to make this assumption yet.
 	
-	By adic spaces over $\operatorname{Spa}(K,\mathcal O_K)$, we mean adic spaces in the sense of \cite{SW}, and we adopt the notion of perfectoid spaces defined in \S2 \textit{\small ibid}. In their language, adic spaces in the sense of Huber are referred to as \textit{honest} adic spaces. Throughout the article, we make no distinction between rigid spaces (resp. formal schemes) and their corresponding honest adic spaces (resp. adic spaces). 
+	By adic spaces over $\operatorname{Spa}(K,\mathcal O_K)$, we mean adic spaces in the sense of \cite{SW}, and we adopt the notion of perfectoid spaces defined in \S2 \textit{\small ibid}. In their language, adic spaces in the sense of Huber are referred to as \textit{honest} adic spaces. Throughout the article, we make no distinction between rigid spaces and their corresponding honest adic spaces.
+	In particular, by a cover of a rigid space we shall always mean a cover of the associated adic space, and therefore the cover of the rigid space will automatically be an admissible cover in the sense of rigid analytic geometry. 
+	%{\color{red} I don't understand what this remark means. } The adification functor from rigid to adic is really well-behaved: Open immersions go to open immersions, and a set-theoretic cover by open rigid subspaces is admissible if and only if the induced open immersions of the associated adic spaces give rise to a set-theoretic cover of the adic space. See for instance \S 16 of Conrad's perfectoid seminar, available at http://math.stanford.edu/~conrad/Perfseminar/Notes/L16.pdf
+	If a rigid space is obtained from a $K$-scheme $X$ via rigid-analytification $X\mapsto X^{\operatorname{an}}$, we will often denote both by the same symbol $X$ in order to simplify the notation.
 	
-	If a rigid space is obtained from a $K$-scheme $X$ via rigid-analytification $X\mapsto X^{\operatorname{an}}$, we will often denote both by the same symbol $X$.
-		%?In particular, any cover of a rigid space will be a cover as an adic space, and therefore be an admissible cover in the sense of rigid analytic geometry.  		{\color{red} I don't understand what this remark means. }
- 
+	In a similar spirit, we are often going to see formal schemes as adic spaces via the fully faithful adification functor, and denote both by the same letter. 
+	% I am reluctant to say that we make no distinction between formal schemes and their associated adic spaces, since I think this is much more dangerous for formal schemes than for rigid spaces. For instance, there are morphisms which are open immersions as adic spaces but not as formal schemes, for formal completions the morphisms of the underlying locally ringed spaces are substantially different, etc etc.
 	For a formal scheme $\mathfrak X$ over $\operatorname{Spf}(\mathcal O_K)$ with the $\pi$-adic topology, we denote by $\mathfrak X_\eta$ its adic generic fibre. 
 	We denote by $\tilde{X}=\mathfrak X\times_{\operatorname{Spf}\mathcal O_K}\operatorname{Spf}\mathcal O_K/\pi$ its mod $\pi$ special fibre, considered as a scheme over $\operatorname{Spec}\mathcal O_K/\pi$. 
 
-	Finally, recall the following standard terminology: 
+	Finally, let us recall the following standard terminology: 
 		\begin{enumerate}
 			\item Let $X$ be a rigid space over $K$. A \textbf{formal model} of $X$ is an admissible topologically finite type formal scheme $\mathfrak X$ over $\mathcal O_K$ together with an isomorphism of its generic fibre $\mathfrak X_\eta \xrightarrow{\sim} X$ (which is often suppressed from notation).
-			\item Let $\phi:  X\rightarrow  Y$ be a morphism of rigid spaces over $K$, with formal models $\mathfrak X$ and $\mathfrak Y$	respectively. A morphism of formal schemes $\Phi:\mathfrak X \rightarrow \mathfrak Y$ is a \textbf{formal model} of $\phi$ if it agrees with $\phi$ on the adic generic fiber. 
+			\item Let $\phi:  X\rightarrow  Y$ be a morphism of rigid spaces over $K$, with formal models $\mathfrak X$ and $\mathfrak Y$	respectively. A morphism of formal schemes $\Phi:\mathfrak X \rightarrow \mathfrak Y$ is a \textbf{formal model} of $\phi$ if it agrees with $\phi$ on the adic generic fiber via the identifications $\mathfrak X_\eta \xrightarrow{\sim} X$ and $\mathfrak Y_\eta \xrightarrow{\sim} Y$.
 		\end{enumerate}
 
-
-
-
-\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %some hack to hide the acknowledgements in the toc
-\section*{Acknowledgements}
-\addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
-This work started as a group project at the 2017 Arizona Winter School. We would like to thank Bhargav Bhatt for proposing the project, for his guidance and for his constant encouragement. In addition we would like to thank the organizers of the Arizona Winter School for setting up a great environment for us to participate in this project. 
-
-During this work Dami\'an Gvirtz and Ben Heuer were supported by the Engineering and Physical Sciences Research Council [EP/L015234/1], the EPSRC Centre for Doctoral Training in Geometry and Number Theory (The London School of Geometry and Number Theory), University College London. 
-Peter Wear was supported by NSF grant DMS-1502651 and UCSD and would like to thank Kiran Kedlaya for helpful discussions.
-{\color{red} Other grants?}
 
 %%%%%%%%%%%%
 %%      Section 2
@@ -208,7 +192,7 @@ Peter Wear was supported by NSF grant DMS-1502651 and UCSD and would like to tha
 
 		\subsection{Tilde-limits and formal models} 
 		
-	As we have seen in Remark \ref{remark:inverse_limit_adic} in the introduction, inverse limits often do not exist in the category of adic spaces (and neither in in rigid spaces). Instead we use the notion of tilde-limits from \cite{SW}:
+	Inverse limits often do not exist in the category of adic spaces, and neither do they in rigid spaces. Instead we use the notion of tilde-limits from \cite{SW}:
 	
 	\begin{definition} 
 Let $X_i$ be a filtered inverse system of adic spaces with quasi-compact and quasi-separated transition maps, let $X$ be an adic space with a compatible system of morphisms $f_i: X \rightarrow X_i$. We write $X \sim \varprojlim X_i$ ($X$ is a \textbf{tilde-limit} of $X_i$) if the map of underlying topological spaces $|X| \rightarrow \varprojlim |X_i|$ is a homeomorphism, and there exists an open cover of $X$ by affinoids $\operatorname{Spa} (A, A^+) \subset X$ such that the map 
@@ -217,7 +201,7 @@ has dense image, where the direct limit runs over all open affinoids $\operatorn
 	\end{definition}
 	
 	\begin{remark} \label{remark:tilde_limit_non_unique}
-As pointed out after Proposition 2.4.4. of \cite{SW}, tilde-limits (if they exist) are in general not unique. For example, consider the inverse system consisting of a single affinoid pre-perfectoid space $X = \operatorname{Spa}(A, A^+)$, then its strong completion $\hat X = \operatorname{Spa}(\hat A,\hat A^+) $ is also a tilde-limit of $X$. 
+As pointed out after Proposition 2.4.4. of \cite{SW}, tilde-limits (if they exist) are in general not unique. For example, consider the inverse system consisting of a single affinoid pre-perfectoid space $X = \operatorname{Spa}(A, A^+)$ in the sense of Definition~2.3.4 in \cite{SW}. Then both the space $X$ as well as the strong completion $\hat X = \operatorname{Spa}(\hat A,\hat A^+)$ are tilde-limits of $X$. 
 	\end{remark}
 	
 One way to construct tilde-limits is by constructing certain formal models. First we observe that inverse limits are much better behaved in the category of formal schemes. 
@@ -1511,14 +1495,16 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	\end{proof}
   
 
-
- 
  
 \begin{thebibliography}{99}
 	
 	\bibitem{Bosch lectures} 
 	Siegfried Bosch,
 	\textit{Lectures on Formal and Rigid Geometry}, Lecture Notes in Mathematics, vol 2015. Springer, Berlin/Heidelberg/New York (2014).
+	
+	\bibitem{Bhatt} 
+	Bhargav Bhatt,
+	\textit{The Hodge-Tate decomposition via perfectoid spaces}, Lecture notes from the Arizona Winter School 2017, available at \url{swc.math.arizona.edu/aws/2017/2017BhattNotes.pdf}
 	
 	\bibitem{BL} 
 	Siegfried Bosch, Werner L\"utkebohmert,
@@ -1531,6 +1517,12 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	\bibitem{rigid geometry of curves} 
 	Werner L\"utkebohmert,
 	\textit{Rigid Geometry of Curves and Their Jacobians}, Springer, Ergeb. 3. Folge, vol. 61. Springer International Publishing (2016). 
+	
+	\bibitem{Pilloni-Stroh}
+	Vincent Pilloni and  Benoit Stroh,
+	\textit{Cohomologie coh{\'e}rente et repr{\'e}sentations Galoisiennes} 
+	Annales math{\'e}matiques du Qu{\'e}bec,
+		vol. 40. (2016), 167-202, Springer
 	
 	\bibitem{perfectoid} 
 	Peter Scholze,
