@@ -81,12 +81,12 @@ For an abelian variety $A$ over an algebraically closed non-archimedean field of
 %%%%%%%%%%%%
 	\section{Introduction} 
 
-Let $p$ be a prime and let $K$ be a non-archimedean field which is $p$-adic or of characteristic $p$. 
+Let $p$ be a prime and let $K$ be a non-archimedean field which is either $p$-adic or of characteristic $p$. 
 Let us moreover assume that $K$ is algebraically closed. 
 For an abelian variety $A$ over $K$ let us consider the inverse system of $A$ under the multiplication by $p$ morphism:
 \[\dots\xrightarrow{[p]}A\xrightarrow{[p]}A\xrightarrow{[p]}A\]
 Via the rigid analytification functor, we may see this as an inverse system of analytic adic spaces over $\operatorname{Spa}(K,\mathcal O_K)$.
-The primary goal of this article is to show that the ``inverse limit'' of this tower exists in some way and is a perfectoid space: Since inverse limits rarely exist in the category of adic spaces (even for affinoid spaces), in \cite{SW} the authors introduce the weaker notion of tilde-limit to remedy this problem. This is the notion of "limits" we are going to use. More precisely, we prove 
+The primary goal of this article is to show that the ``inverse limit'' of this tower exists in some way and is a perfectoid space: Since inverse limits rarely exist in the category of adic spaces (even for affinoid spaces), in \cite{SW} the authors introduce the weaker notion of tilde-limits to remedy this problem. This is the notion of "limits" we are going to use. More precisely, we prove 
 
  %Before we state the precise version of the theorem, we remark that the main assertion already implicitly appeared in [?] [?] without justification. Nevertheless we decide to fill in this gap in the literature, since the proof, despite being straight-forward, is quite subtle to spell out. 
 	
@@ -95,30 +95,30 @@ The primary goal of this article is to show that the ``inverse limit'' of this t
 	$A_\infty \sim \varprojlim_{[p]} A$ is a tilde-limit.
 \end{mainthm}
 
-The Theorem in the case of abelian varieties $A$ of good reduction appeared already in \cite{Pilloni-Stroh} (Lemme A.16). In order to motivate our strategy for the general case, let us have a look at the proof in the case of good reduction as a motivating example (this example is taken from Exercise 4 -- 6 in \cite{Bhatt} and spelt out in detail in \S \ref{subsection:perfectoid_tilde_limit}, Corollary \ref{tilde-limit exists and is perfectoid in the good reduction case} below):
+In the case of abelian varieties $A$ with good reduction, this result appeared already in \cite{Pilloni-Stroh} (Lemme A.16). In order to motivate our strategy for the general case, let us sketch the proof in the case of good reduction as a motivating example (we follow Exercise 4 -- 6 in \cite{Bhatt}, the proof is spelt out in detail in \S \ref{subsection:perfectoid_tilde_limit}, Corollary \ref{tilde-limit exists and is perfectoid in the good reduction case} below):
 
 Let $A$ be an abelian variety of good reduction over $K$. Let $\mathcal O_K$ be the ring of integers of $K$ and let $\pi\in\mathcal O_K$ be a pseudo-uniformiser. Then we can consider $A$ as an abelian scheme over $\mathcal O_K$. Let $\mathcal A$ be its $\pi$-completion considered as a formal scheme over $\mathcal O_K$, then its adic generic fibre is the rigid analytification of $A$ that we denote by the same letter. The mod $\pi$ special fibre $\mathcal A_s = \mathcal A \times \mathcal O_K/\pi$ is a group scheme over $\mathcal O_K/\pi$, so the map $[p]:\mathcal A_s\rightarrow \mathcal A_s$ factors through the relative Frobenius map. The inverse limit $ \varprojlim_{[p]} \mathcal A_s $ in the category of schemes is therefore relatively perfect over $\mathcal O_K/\pi$. We can similarly form the inverse limit $\mathcal A_{\infty} = \varprojlim_{[p]} \mathcal A$ in the category of formal schemes. Its adic generic fibre $A_\infty$ is a tilde-limit of $\varprojlim_{[p]}A$, and it is perfectoid since $ \varprojlim_{[p]} \mathcal A_s $ is relatively perfect.
 
 This gives the construction of $A_\infty$ in the case of good reduction. The overall strategy of our proof of Theorem \ref{thm:main_thm_intro} is similar: We construct a tilde limit via formal models and show that this tilde-limit is perfectoid using that the special fibre of the formal model factors through the Frobenius map. 
 
 As the case of good reduction is already settled, it remains to do this in the case that $A$ has bad reduction. The assumption that $K$ is algebraically closed assures that $A$ is then semi-stable.
-In this case, Raynaud's theory provides us with a short exact sequence 
+In this case, the theory of Raynaud extensions provides us with a short exact sequence 
 \[ 0 \rightarrow T \rightarrow E  \rightarrow  B  \rightarrow  0\]
 of rigid groups, where $T = (\mathbb G_m^{\text{an}})^{d}$ is a split rigid torus and $B$ is the analytification of an abelian variety with good reduction, such that $A = E/M$ for a discrete lattice $M \subset E$. This short exact sequence is split locally on $B$, allowing us to locally write $E$ as a product of $T$ and an open subspace of $B$.
 Our strategy is now the following:
 \begin{enumerate}
-\item Use formal models to show that there exists a perfectoid tilde-limit $T_\infty$ of $\varprojlim_{[p]} T$;
-\item Use the formal models from (1) to construct a perfectoid tilde-limit $E_\infty$ of $\varprojlim_{[p]} E$;
-\item Study the projection $E\rightarrow A$ in the limit over $[p]$ to construct the desired space $A_\infty$.
+\item Use formal models to show that there exists a perfectoid tilde-limit $T_\infty\sim\varprojlim_{[p]} T$.
+\item Use the formal models from (1) to construct a perfectoid tilde-limit $E_\infty\sim\varprojlim_{[p]} E$.
+\item Study the quotient map $E\rightarrow A$ in the limit over $[p]$ to construct the desired space $A_\infty$.
 \end{enumerate}
 
-More precisely, this article is organised as follows: In \S2 we develop a notion of a $[p]$-$F$-formal tower for a rigid group $G$ over $K$, which is roughly an inverse system of formal models for $[p]:G\rightarrow G$ that factor through the relative Frobenius mod $p$. This is an axiomatisation of the data that one uses in the construction of $A_\infty$ in the case of good reduction. In particular, the same proof shows that if $G$ admits $[p]$-$F$-formal tower, then there exists a unique perfectoid tilde-limit $G_\infty \sim  \varprojlim_{[p]} G$.
+More precisely, this article is organised as follows: In \S2 we develop a notion of a $[p]$-$F$-formal tower for a rigid group $G$ over $K$, which is roughly an inverse system of formal models for $[p]:G\rightarrow G$ that factor through the relative Frobenius mod $\pi$. This is an axiomatisation of the data that one uses in the construction of $A_\infty$ in the case of good reduction. In particular, the same proof shows that if $G$ admits $[p]$-$F$-formal tower, then there exists a unique perfectoid tilde-limit $G_\infty \sim  \varprojlim_{[p]} G$.
  
 In chapter \S3 we give a $[p]$-$F$-formal tower for a  split rigid torus $T$ in terms of a family of formal models $\mathfrak T_{q^{1/n}}$, thus showing that a perfectoid tilde-limit $T_\infty$ of the inverse system of $[p]$ on $T$ exists. Crucially, this tower of formal models has the extra structure of an action by the formal torus $\overline{T}$.
  
 We can therefore in \S4 use the language of formal fibre bundles to construct a  $[p]$-$F$-formal tower for $E$: The Raynaud extension of $A$ arises from a short exact sequence of formal group schemes
 \[0\rightarrow \overline{T}\rightarrow \overline{E}\rightarrow B\rightarrow 0\]
-by taking generic fibres and forming the pushout with respect to the closed immersion $\overline{T}_\eta\rightarrow T$. Equivalently, since the sequence is locally split, we can see $\overline{E}\rightarrow B$ as a principal $\overline{T}$-bundle and formation of $E$ amounts to a change of fibre from $\overline{T}_\eta$ to $T$. Since the formal model tower of \S3 receives a $\overline{T}$-action, we now obtain a $[p]$-$F$-formal tower for $E$ from the formal models of $\S 4$ by the change of fibre from $\overline{T}$ to the formal models $\mathfrak T_{q^{1/n}}$. This gives the desired perfectoid tilde-limit $E_\infty$.
+by taking generic fibres and forming the pushout with respect to the open immersion $\overline{T}_\eta\rightarrow T$. Equivalently, since the sequence is locally split, we can see $\overline{E}\rightarrow B$ as a principal $\overline{T}$-bundle and formation of $E$ amounts to a change of fibre from $\overline{T}_\eta$ to $T$. Since the formal model tower of \S3 receives a $\overline{T}$-action, we now obtain a $[p]$-$F$-formal tower for $E$ from the formal models of $\S 4$ by the change of fibre from $\overline{T}$ to the formal models $\mathfrak T_{q^{1/n}}$. This gives the desired perfectoid tilde-limit $E_\infty$.
 
 In chapter \S5 we finish the proof of the main theorem by constructing $A_\infty$ from $E_\infty$ as follows. After choosing lattices $M\subseteq M^{1/p^n}\subseteq E$ that are sent to $M$ under $[p]:E\rightarrow E$, the $[p]$-multiplication tower of $A=E/M$ naturally factors into two separate towers: One is the tower of maps $E/M^{1/p^{n+1}}\rightarrow E/M^{1/p^{n}}$ induced from $[p]$-multiplication tower of $E$, the other is induced from the projection maps $E/M\rightarrow E/M^{1/p^n}$. By choosing certain charts of $E$ that give local splittings of the projection $E\rightarrow E/M=A$, we show that the first of these towers has a perfectoid tilde-limit $E/M^{1/p^\infty}$ that is locally isomorphic to open subsets of $E_\infty$. Since the second tower is easy to describe in terms of the chosen charts, it is then straightforward to find the desired space $A_\infty$.
  
@@ -280,7 +280,7 @@ In particular, a $[p]$-formal tower for $G$ gives rise to a $[p]$-formal tower f
 	
 	\subsection{Perfectoidness}  \label{subsection:perfectoid_tilde_limit}
 
-In this subsection we define a formalism to address part (2) of Question \ref{question_intro} in the introduction. In light of Remark \ref{remark:good_reduction}, we first make the following definition
+We now introduce the formalism of $[p]$-$F$-formal towers to axiomatise the approach mentioned in the introduction which shows that $A_\infty$ exists and is perfectoid in the case of good reduction.
 	
 	\begin{definition}
 		Let $G$ be a rigid analytic group, a \textbf{$[p]$-$F$-formal tower} for $G$ is a $[p]$-formal tower 
@@ -325,7 +325,7 @@ In contrast to Remark \ref{remark:tilde_limit_non_unique}, by Proposition 2.4.5 
 		Since $G_\infty$ is covered by affinoids of the form $\operatorname{Spf}(S_\infty)_\eta$, this shows that $G_\infty$ is perfectoid.
 	\end{proof}
 	
-This in particular implies what we promised in Remark \ref{remark:good_reduction}: 
+In particular this shows in more detail the proof of the result that we sketched in the introduction:
 	\begin{corollary}\label{tilde-limit exists and is perfectoid in the good reduction case}
 		Let $A$ be an abelian variety of good reduction over a perfectoid field $K$. Then $A_\infty$ exists and is perfectoid.
 	\end{corollary}
@@ -1535,6 +1535,10 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	\bibitem{torsion} 
 	Peter Scholze,
 	\textit{On torsion in the cohomology of locally symmetric varieties}, Ann. of Math. (2) {\bf 182} (2015), no. 3, 945-1066.
+	
+	\bibitem{etale_cohomology_of_diamonds} 
+	Peter Scholze,
+	\textit{\'etale cohomology of diamonds}, preprint arXiv:1709.07343 (2017)
 	
 	\bibitem{SW} 
 	Peter Scholze and Jared Weinstein,
