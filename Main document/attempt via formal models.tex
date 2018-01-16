@@ -83,19 +83,20 @@ For an abelian variety $A$ over an algebraically closed non-archimedean field of
 
 Let $p$ be a prime and let $K$ be a non-archimedean field which is either $p$-adic or of characteristic $p$. 
 Let us moreover assume that $K$ is algebraically closed. 
-For an abelian variety $A$ over $K$ let us consider the inverse system of $A$ under the multiplication by $p$ morphism:
+For an abelian variety $A$ over $K$ we consider the inverse system of $A$ under the multiplication by $p$ morphism:
 \[\dots\xrightarrow{[p]}A\xrightarrow{[p]}A\xrightarrow{[p]}A\]
 Via the rigid analytification functor, we may see this as an inverse system of analytic adic spaces over $\operatorname{Spa}(K,\mathcal O_K)$.
-The primary goal of this article is to show that the ``inverse limit'' of this tower exists in some way and is a perfectoid space: Since inverse limits rarely exist in the category of adic spaces (even for affinoid spaces), in \cite{SW} the authors introduce the weaker notion of tilde-limits to remedy this problem. This is the notion of "limits" we are going to use. More precisely, we prove 
+The primary goal of this article is to show that the ``inverse limit'' of this tower exists in some way and is a perfectoid space: Since inverse limits rarely exist in the category of adic spaces (even for affinoid spaces), in \cite{SW} the authors introduce the weaker notion of tilde-limits to remedy this problem. This is the notion of "limits" we are going to use. More precisely, we prove:
 
  %Before we state the precise version of the theorem, we remark that the main assertion already implicitly appeared in [?] [?] without justification. Nevertheless we decide to fill in this gap in the literature, since the proof, despite being straight-forward, is quite subtle to spell out. 
-	
+ 
+ % does anyone know a reference to something where this is written down?
 \begin{mainthm} \label{thm:main_thm_intro}
 	Let $A$ be an abelian variety over $K$, considered as a rigid space. Then there exists a unique perfectoid space $A_\infty$ over $K$ such that
 	$A_\infty \sim \varprojlim_{[p]} A$ is a tilde-limit.
 \end{mainthm}
 
-In the case of abelian varieties $A$ with good reduction, this result appeared already in \cite{Pilloni-Stroh} (Lemme A.16). In order to motivate our strategy for the general case, let us sketch the proof in the case of good reduction as a motivating example (we follow Exercise 4 -- 6 in \cite{Bhatt}, the proof is spelt out in detail in \S \ref{subsection:perfectoid_tilde_limit}, Corollary \ref{tilde-limit exists and is perfectoid in the good reduction case} below):
+In the case of abelian varieties $A$ with good reduction, this result appeared already in \cite{Pilloni-Stroh} (Lemme A.16). In order to motivate our strategy for the general case, let us sketch the proof in this case (we follow Exercise 4 -- 6 in \cite{Bhatt}, the proof is spelt out in detail in \S \ref{subsection:perfectoid_tilde_limit}, Corollary \ref{tilde-limit exists and is perfectoid in the good reduction case} below):
 
 Let $A$ be an abelian variety of good reduction over $K$. Let $\mathcal O_K$ be the ring of integers of $K$ and let $\pi\in\mathcal O_K$ be a pseudo-uniformiser. Then we can consider $A$ as an abelian scheme over $\mathcal O_K$. Let $\mathcal A$ be its $\pi$-completion considered as a formal scheme over $\mathcal O_K$, then its adic generic fibre is the rigid analytification of $A$ that we denote by the same letter. The mod $\pi$ special fibre $\mathcal A_s = \mathcal A \times \mathcal O_K/\pi$ is a group scheme over $\mathcal O_K/\pi$, so the map $[p]:\mathcal A_s\rightarrow \mathcal A_s$ factors through the relative Frobenius map. The inverse limit $ \varprojlim_{[p]} \mathcal A_s $ in the category of schemes is therefore relatively perfect over $\mathcal O_K/\pi$. We can similarly form the inverse limit $\mathcal A_{\infty} = \varprojlim_{[p]} \mathcal A$ in the category of formal schemes. Its adic generic fibre $A_\infty$ is a tilde-limit of $\varprojlim_{[p]}A$, and it is perfectoid since $ \varprojlim_{[p]} \mathcal A_s $ is relatively perfect.
 
@@ -122,7 +123,7 @@ by taking generic fibres and forming the pushout with respect to the open immers
 
 In chapter \S5 we finish the proof of the main theorem by constructing $A_\infty$ from $E_\infty$ as follows. After choosing lattices $M\subseteq M^{1/p^n}\subseteq E$ that are sent to $M$ under $[p]:E\rightarrow E$, the $[p]$-multiplication tower of $A=E/M$ naturally factors into two separate towers: One is the tower of maps $E/M^{1/p^{n+1}}\rightarrow E/M^{1/p^{n}}$ induced from $[p]$-multiplication tower of $E$, the other is induced from the projection maps $E/M\rightarrow E/M^{1/p^n}$. By choosing certain charts of $E$ that give local splittings of the projection $E\rightarrow E/M=A$, we show that the first of these towers has a perfectoid tilde-limit $E/M^{1/p^\infty}$ that is locally isomorphic to open subsets of $E_\infty$. Since the second tower is easy to describe in terms of the chosen charts, it is then straightforward to find the desired space $A_\infty$.
  
-In chapter \S6 we finally use our explicit construction to say something about the local geometry of $A_\infty$. In particular, we describe the perfectoid group homomorphism $E_\infty \rightarrow A_\infty$ in terms of perfectoid principal bundles. The goal of this last section is to give an alternative description of $A_\infty$ in terms of a quotient of perfectoid groups: There are a lattice $M^{1/p^\infty}\subseteq E_\infty$ and a pro-finite perfectoid group $D_\infty$ over $K$ for which there is a short exact sequence of perfectoid groups
+In chapter \S6 we finally use our explicit construction to say something about the local geometry of $A_\infty$. In particular, we describe the perfectoid group homomorphism $E_\infty \rightarrow A_\infty$ in terms of perfectoid principal bundles. The goal of this last section is to give an alternative description of $A_\infty$ in terms of a quotient of perfectoid groups: There are a lattice $M_{\infty}\subseteq E_\infty$ and a pro-finite perfectoid group $D_\infty$ over $K$ for which there is a short exact sequence of perfectoid groups
 \[0\rightarrow M_\infty\rightarrow D_\infty \times E_\infty \rightarrow A_\infty\rightarrow 0.\]
 This may be seen as an analogue in the limit of the sequence $0\rightarrow M\rightarrow E\rightarrow A\rightarrow 0$.
 
@@ -195,9 +196,9 @@ Now we end the introduction by describing the content of each section.
 	Inverse limits often do not exist in the category of adic spaces, and neither do they in rigid spaces. Instead we use the notion of tilde-limits from \cite{SW}:
 	
 	\begin{definition} 
-Let $X_i$ be a filtered inverse system of adic spaces with quasi-compact and quasi-separated transition maps, let $X$ be an adic space with a compatible system of morphisms $f_i: X \rightarrow X_i$. We write $X \sim \varprojlim X_i$ ($X$ is a \textbf{tilde-limit} of $X_i$) if the map of underlying topological spaces $|X| \rightarrow \varprojlim |X_i|$ is a homeomorphism, and there exists an open cover of $X$ by affinoids $\operatorname{Spa} (A, A^+) \subset X$ such that the map 
+Let $(X_i)_{i\in I}$ be a filtered inverse system of adic spaces with quasi-compact and quasi-separated transition maps, let $X$ be an adic space with a compatible system of morphisms $f_i: X \rightarrow X_i$. We write $X \sim \varprojlim X_i$ ($X$ is a \textbf{tilde-limit} of the inverse system $(X_i)_{i\in I}$) if the map of underlying topological spaces $|X| \rightarrow \varprojlim |X_i|$ is a homeomorphism, and there exists an open cover of $X$ by affinoids $\operatorname{Spa} (A, A^+) \subset X$ such that the map 
 $$ \varinjlim_{\operatorname{Spa}(A_i, A_i^+) \subset X_i} A_i \rightarrow A$$
-has dense image, where the direct limit runs over all open affinoids $\operatorname{Spa}(A_i, A_i^+) \subset X_i$ containing the image of $\operatorname{Spa}(A, A^+) \subset X$.
+has dense image, where the direct limit runs over all $i\in I$ and all open affinoid subspaces $\operatorname{Spa}(A_i, A_i^+) \subset X_i$ through which the morphism $\operatorname{Spa}(A, A^+) \subseteq X\rightarrow X_i$ factors.
 	\end{definition}
 	
 	\begin{remark} \label{remark:tilde_limit_non_unique}
@@ -240,7 +241,7 @@ One way to construct tilde-limits is by constructing certain formal models. Firs
 			\item If $\mathfrak X'\rightarrow \mathfrak X$ is an admissible blow-up of admissible formal schemes, then it induces an isomorphism on the generic fibre  $\mathfrak X'_\eta \xrightarrow{\sim} \mathfrak X_\eta$.
 			\item Let $\mathfrak X$ and $\mathfrak Y$ be admissible quasi-paracompact formal schemes over $\mathcal O_K$ and let $f:\mathfrak X_\eta \rightarrow \mathfrak Y_\eta$ be a morphism of their associated rigid spaces. Then there exist an admissible blow-up $\pi:\mathfrak X'\rightarrow \mathfrak X$ and a map $\mathfrak f:\mathfrak X'\rightarrow \mathfrak Y$ such that $\mathfrak f_\eta = f\circ \pi_\eta$.
 		\end{enumerate}
-		In particular, given an inverse system ($\mathcal X_i,\phi_{ij})$ of rigid spaces, one can always choose formal models $\mathfrak X_i$ for the $\mathcal X_i$, and by successive admissible blow-ups one can also find models for the transition maps $\phi_{ij}$ (\textit{which might not be affine morphisms}). 
+		In particular, given an inverse system ($\mathcal X_i,\phi_{ij})$ of rigid spaces, one can always choose formal models $\mathfrak X_i$ for the $\mathcal X_i$, and by successive admissible blow-ups one can also find models for the transition maps $\phi_{ij}$ (it might however not be clear that these are affine morphisms). 
 		\end{remark}
 
 	
@@ -380,8 +381,8 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 		Let $G$ be a rigid group with a perfectoid tilde-limit $G_\infty$. Then
 		\begin{enumerate}
 		\item  there is a unique way to endow $G_\infty$ with the structure of a perfectoid group in such a way that all projections $G_\infty\rightarrow G$ are group homomorphisms
-		\item given a rigid group $H$ with perfectoid tilde-limit $H_\infty\sim\varprojlim_{[p]}H$ and a group homomorphism $H\rightarrow G$, there is a unique group homomorphism $H_\infty\rightarrow G_\infty$
-		commuting with all projection maps. In particular, formation of $\varprojlim_{[p]}$ is functorial.
+		\item given another rigid group $H$ with perfectoid tilde-limit $H_\infty\sim\varprojlim_{[p]}H$ and a group homomorphism $H\rightarrow G$, there is a unique group homomorphism $H_\infty\rightarrow G_\infty$
+		commuting with all projection maps. In particular, formation of the perfectoid $\varprojlim_{[p]}$ is functorial.
 	\end{enumerate}
 	\end{proposition}
 	\begin{proof}
@@ -403,36 +404,37 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 	that is an isomorphism of rigid spaces sending the point $1$ to $x$.
 	
 	\subsection{A family of explicit covers}
-	We briefly recall how $\mathbb G_m^{\operatorname{an}}$ is constructed: The following is taken from \cite{Bosch lectures}, \S 9.2 with slightly different notation. Throughout we use the following shorthand notation: For any $a\in K$ we write
-	\[K\langle X,a/X\rangle = K\langle X,Z\rangle/(X\cdot Z - a), \]
-	\[K\langle X/a\rangle = K\langle X,Z\rangle/(X-aZ). \]
-	For any elements $a,b\in K$ with $|a|\leq |b|$, we denote by $\mathcal B(a,b)$ the annulus of radii $|a|$ and $|b|$ inside $\mathbb A_K^{\operatorname{an}}$:
-	\[\mathcal B(a,b) = \operatorname{Sp}(L_{a,b}),\quad \text{ where } L_{a,b} = K\langle X,a/X, X/b\rangle. \]
-	We note that when $|a|<|b|$, the boundary of $\mathcal B(a,b)$ consists of the disjoint affinoid subdomains $\mathcal B(a,a)$ and $\mathcal B(b,b)$. Explicitly, we have
+	We briefly recall how $\mathbb G_m^{\operatorname{an}}$ is constructed: The following is taken from \cite{Bosch lectures}, \S 9.2 with slightly different notation. Throughout we use the following standard shorthand notation: For any $0\ne a,b\in K$ with $|a|\leq |b|$ consider the topologically finite type $K$-algebra
+	\[K\langle X/b\rangle := \left\{\sum_{n=0}^{\infty} c_n (X/b)^n\in K[[X]] \text{ where } c_n\in K \text{ such that } |c_n|\to 0 \right\}\]
+	which is isomorphic to $K\langle X\rangle $ via $X\mapsto X/b$, as well as
+	\[K\langle a/X,X/b\rangle := K\langle X/b\rangle 		\langle Z\rangle/(ZX-a). \]
+	The associated affinoid space $\mathcal B(a,b)$ is the annulus of radii $|a|$ and $|b|$ inside $\mathbb A_K^{\operatorname{an}}$:
+	\[\mathcal B(a,b) = \operatorname{Sp}(L_{a,b}),\quad \text{ where } L_{a,b} := K\langle a/X, X/b\rangle. \]
+	When $|a|<|b|$, then by the boundary of $\mathcal B(a,b)$ we mean the disjoint union of the affinoid subdomains $\mathcal B(a,a)$ and $\mathcal B(b,b)$, which we refer to as the inner and outer boundary, respectively. Explicitly,
 	\begin{equation}\label{torus explicit cover glue map 1}
 	\begin{alignedat}{2}
 	\mathcal B(a,b)&\hookleftarrow&& \mathcal B(a,a)\\
-	L_{a,b}=K\langle X,a/X, X/b\rangle&\rightarrow &&K\langle X,a/X, X/a \rangle=L_{a,a}\\
-	X,a/X, X/a &\mapsto&& X, a/X, \frac{a}{b}(X/a)
+	L_{a,b}=K\langle a/X, X/b\rangle&\rightarrow &&K\langle a/X, X/a \rangle=L_{a,a}\\
+	a/X, X/a &\mapsto&& X, a/X, \frac{a}{b}(X/a)
 	\end{alignedat}
 	\end{equation}
 	and similarly 
 	\begin{equation}\label{torus explicit cover glue map 2}
 	\begin{alignedat}{2}
 	\mathcal B(a,b)&\hookleftarrow&& \mathcal B(b,b)\\
-	L_{a,b}=K\langle  X, a/X, X/b \rangle&\rightarrow &&K\langle X, b/X, X/b \rangle=L_{b,b}\\
-	X, a/X, X/b &\mapsto&& X, \frac{a}{b} (b/X), X/b.
+	L_{a,b}=K\langle  a/X, X/b \rangle&\rightarrow &&K\langle  b/X, X/b \rangle=L_{b,b}\\
+	a/X, X/b &\mapsto&& X, \frac{a}{b} (b/X), X/b.
 	\end{alignedat}
 	\end{equation}
 
-	Since we are mainly interested in the $p$-multiplication map, we will construct a family of covers of $\mathbb G_m^{\operatorname{an}}$ on which $[p]$ can be seen directly. Fix $q \in K^\times$ with $|q|\leq 1$. Then the annuli $\{\mathcal B(q^i,q^{i-1})\}_{i\in\mathbb{Z}}$ form an admissible affinoid covering of $\mathbb G_m^{\operatorname{an}}$ and are glued together by identifying the inner boundary of $\mathcal B(q^i, q^{i-1})$ with the outer boundary of $\mathcal B(q^{i+1},q^i)$. We call this cover $\mathfrak U_q$. 
+	Since we are mainly interested in the $p$-multiplication map, we will construct a family of covers of $\mathbb G_m^{\operatorname{an}}$ on which $[p]$ can be seen directly. Fix $q \in K^\times$ with $|q|< 1$. Then the annuli $\{\mathcal B(q^i,q^{i-1})\}_{i\in\mathbb{Z}}$ form an admissible affinoid covering of $\mathbb G_m^{\operatorname{an}}$ and are glued together by identifying the inner boundary of $\mathcal B(q^i, q^{i-1})$ with the outer boundary of $\mathcal B(q^{i+1},q^i)$. We call this cover $\mathfrak U_q$. 
 
 	Assume now that $q$ has a $p$-th root $q^{1/p}$ in $K$. The above then gives a finer cover $\mathfrak U_{q^{1/p}}$ of $\mathbb G_m^{\operatorname{an}}$. Using both covers $\mathfrak U_q$ and $\mathfrak U_{q^{1/p}}$, we can easily see the $[p]$-multiplication $[p]:\mathbb G_m^{\operatorname{an}}\rightarrow \mathbb G_m^{\operatorname{an}}$ as follows: Consider the affinoid open subsets $\mathcal B(q^{i/p},q^{(i-1/p)})$ of the source and  $\mathcal B(q^i,q^{i-1})$ of the target. Then $[p]$ restricts to
 	\begin{equation}
 	\begin{alignedat}{2} \label{torus explicit [p] map 1}
 	\mathcal B(q^i,q^{i-1})&\xleftarrow{[p]}&& \mathcal B(q^{i/p},q^{(i-1)/p})\\
-	K\langle X,q^i/X,X/q^{i-1}\rangle&\rightarrow &&K\langle X,q^{i/p}/X, X/q^{(i-1)/p}\rangle\\
-	X,q^i/X, X/q^{i-1}&\mapsto&& X^p, (q^{i/p}/X)^p, (X/q^{i-1})^p.
+	K\langle q^i/X,X/q^{i-1}\rangle&\rightarrow &&K\langle q^{i/p}/X, X/q^{(i-1)/p}\rangle\\
+	q^i/X, X/q^{i-1}&\mapsto&& (q^{i/p}/X)^p, (X/q^{i-1})^p.
 	\end{alignedat}
 	\end{equation}
 
@@ -441,16 +443,17 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 		\begin{equation}\label{diagram showing that [p]-multiplication on torus glues together}
 		\begin{tikzcd}
 			\mathcal B(q^i,q^{i-1}) & \mathcal B(q^i,q^i) \arrow[l, hook'] & X/q^{i-1} \arrow[r, maps to] \arrow[d, maps to] & q\cdot (X/q^{i-1})\arrow[d, maps to] \\
-			\mathcal B(q^{i/p},q^{(i-1)/p}) \arrow[u, "{[p]}"] & \mathcal B(q^{i/p},q^{i/p}) \arrow[u, "{[p]}"'] \arrow[l, hook'] & (X/q^{i-1})^p \arrow[r, maps to] & q\cdot (X/q^{i-1})^p. 
+			\mathcal B(q^{i/p},q^{(i-1)/p}) \arrow[u, "{[p]}"] & \mathcal B(q^{i/p},q^{i/p}) \arrow[u, "{[p]}"'] \arrow[l, hook'] & (X/q^{i-1})^p \arrow[r, maps to] & q\cdot (X/q^{i-1})^p,
 		\end{tikzcd}
 		\end{equation}
 	\end{center} 
-	Checking that the above diagram commutes for the elements $X$ and $q^i/X$ is simpler and the case of~(\ref{torus explicit cover glue map 1}) is essentially identical.
+	And similarly for $q^i/X$. The case of~(\ref{torus explicit cover glue map 1}) is essentially identical.
 	
 	\subsection{A family of formal models}
 	At this point we have constructed a cover $\mathfrak U_q$ of $\mathbb G_m^{\operatorname{an}}$ depending on a choice of $q\in K^\times$ with $|q|<1$. 
-	The affinoid subspaces $\mathcal B(q^i,q^{i-1})$ that we have used for this admit natural formal models: Namely, consider the $\mathcal O_K$-algebra
-	\[L_{q^i,q^{i-1}}^\circ :=\mathcal O_K\langle X,q^i/X, X/q^{i-1}\rangle = \mathcal O_K\langle X,Y,Z\rangle/(XY-q^i, X-q^{i-1}Z, YZ-q).\]
+	The affinoid subspaces $\mathcal B(q^i,q^{i-1})$ that we have used for this admit natural formal models: Namely, consider the topologically finite type $\mathcal O_K$-algebras
+	\[\mathcal O_K\langle X/a\rangle = \left\{\sum_{n=0}^{\infty} c_n (X/b)^n\in K[[X]] \text{ where } c_n\in \mathcal O_K \text{ such that } |c_n|\to 0 \right\}\]
+	\[L_{q^i,q^{i-1}}^\circ :=\mathcal O_K\langle q^i/X, X/q^{i-1}\rangle = \mathcal O_K\langle X/q^{i-1}\rangle\langle Z\rangle/(YZ-q^i).\]
 	It is shown in \cite{Bosch lectures} \S 9.2 that this algebra gives rise to a flat formal $\mathcal O_K$-scheme $\mathfrak B(q^i,q^{i-1})=\operatorname{Spf}(L_{q^i,q^{i-1}}^\circ)$ which is a formal $\mathcal O_K$-model of $\mathcal B(q^i,q^{i-1})$. The open formal subschemes 
 	\[\mathfrak B(q^{i-1},q^{i-1})=\mathfrak B(q^i,q^{i-1})((X/q^{i-1})^{-1}),\]
 	\[\mathfrak B(q^{i},q^{i})=\mathfrak B(q^i,q^{i-1})((q^{i}/X)^{-1})\]		
@@ -489,8 +492,7 @@ More generally, If $\mathfrak G$ is a flat commutative formal group scheme such 
 	\begin{equation}
 	\begin{alignedat}{2} \label{torus multiplication map}
 	\mathcal B(q^i,q^{i-1}) &\xleftarrow{m}&& \mathcal B(1,1)\times \mathcal B(q^i,q^{i-1})\\
-	K\langle  X,q^i/X, X/q^{i-1} \rangle&\rightarrow &&K\langle Z, 1/Z\rangle\widehat{\otimes} K\langle  X,q^i/X, X/q^{i-1}\rangle\\
-	X&\mapsto&& Z\otimes X\\
+	K\langle  q^i/X, X/q^{i-1} \rangle&\rightarrow &&K\langle Z, 1/Z\rangle\widehat{\otimes} K\langle  q^i/X, X/q^{i-1}\rangle\\
 	q^i/X &\mapsto&& 1/Z\otimes q^i/X\\
 	X/q^{i-1} &\mapsto&& Z\otimes X/q^{i-1}
 	\end{alignedat}
