@@ -90,13 +90,14 @@ The primary goal of this article is to show that the ``inverse limit'' of this t
 
  %Before we state the precise version of the theorem, we remark that the main assertion already implicitly appeared in [?] [?] without justification. Nevertheless we decide to fill in this gap in the literature, since the proof, despite being straight-forward, is quite subtle to spell out. 
  
- % does anyone know a reference to something where this is written down?
+
+
 \begin{mainthm} \label{thm:main_thm_intro}
 	Let $A$ be an abelian variety over $K$, considered as a rigid space. Then there exists a unique perfectoid space $A_\infty$ over $K$ such that
 	$A_\infty \sim \varprojlim_{[p]} A$ is a tilde-limit.
 \end{mainthm}
 
-In the case of abelian varieties $A$ with good reduction, this result appeared already in \cite{Pilloni-Stroh} (Lemme A.16). In order to motivate our strategy for the general case, let us sketch the proof in this case (we follow Exercise 4 -- 6 in \cite{Bhatt}, the proof is spelt out in detail in \S \ref{subsection:perfectoid_tilde_limit}, Corollary \ref{tilde-limit exists and is perfectoid in the good reduction case} below):
+The possibility of results in this direction is mentioned in \S 7 and \S 13 of \cite{scholzeICMproceedings}, and in the case of abelian varieties $A$ with good reduction, this theorem was proven already in \cite{Pilloni-Stroh} (Lemme A.16).  In order to motivate our strategy for the general case, let us sketch the proof in the good reduction case (we follow Exercise 4 -- 6 in \cite{Bhatt}, the proof is spelt out in detail in \S \ref{subsection:perfectoid_tilde_limit}, Corollary \ref{tilde-limit exists and is perfectoid in the good reduction case} below):
 
 Let $A$ be an abelian variety of good reduction over $K$. Let $\mathcal O_K$ be the ring of integers of $K$ and let $\pi\in\mathcal O_K$ be a pseudo-uniformiser. Then we can consider $A$ as an abelian scheme over $\mathcal O_K$. Let $\mathcal A$ be its $\pi$-completion considered as a formal scheme over $\mathcal O_K$, then its adic generic fibre is the rigid analytification of $A$ that we denote by the same letter. The mod $\pi$ special fibre $\mathcal A_s = \mathcal A \times \mathcal O_K/\pi$ is a group scheme over $\mathcal O_K/\pi$, so the map $[p]:\mathcal A_s\rightarrow \mathcal A_s$ factors through the relative Frobenius map. The inverse limit $ \varprojlim_{[p]} \mathcal A_s $ in the category of schemes is therefore relatively perfect over $\mathcal O_K/\pi$. We can similarly form the inverse limit $\mathcal A_{\infty} = \varprojlim_{[p]} \mathcal A$ in the category of formal schemes. Its adic generic fibre $A_\infty$ is a tilde-limit of $\varprojlim_{[p]}A$, and it is perfectoid since $ \varprojlim_{[p]} \mathcal A_s $ is relatively perfect.
 
@@ -1541,6 +1542,11 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	\bibitem{etale_cohomology_of_diamonds} 
 	Peter Scholze,
 	\textit{\'etale cohomology of diamonds}, preprint arXiv:1709.07343 (2017)
+	
+	\bibitem{scholzeICMproceedings}
+		Peter Scholze,
+		\textit{Perfectoid spaces and their applications},
+		Proceedings of the ICM (2014)
 	
 	\bibitem{SW} 
 	Peter Scholze and Jared Weinstein,
