@@ -203,7 +203,7 @@ has dense image, where the direct limit runs over all $i\in I$ and all open affi
 	\end{definition}
 	
 	\begin{remark} \label{remark:tilde_limit_non_unique}
-As pointed out after Proposition 2.4.4. of \cite{SW}, tilde-limits (if they exist) are in general not unique. For example, consider the inverse system consisting of a single affinoid pre-perfectoid space $X = \operatorname{Spa}(A, A^+)$ in the sense of Definition~2.3.4 in \cite{SW}. Then both the space $X$ as well as its strong completion $\hat X = \operatorname{Spa}(\hat A,\hat A^+)$ are tilde-limits of $X$. 
+As pointed out after Proposition 2.4.4 of \cite{SW}, tilde-limits (if they exist) are in general not unique. For example, consider the inverse system consisting of a single affinoid pre-perfectoid space $X = \operatorname{Spa}(A, A^+)$ in the sense of Definition~2.3.4 in \cite{SW}. Then both the space $X$ as well as its strong completion $\hat X = \operatorname{Spa}(\hat A,\hat A^+)$ are tilde-limits of $X$. However, we'll see in Remark \ref{remark:tilde_limit_unique} that the perfectoid tilde-limits we construct are unique.
 	\end{remark}
 	
 One way to construct tilde-limits is by constructing well-behaved formal models. The reason for this is the combination of the following two Lemmas:
@@ -224,7 +224,7 @@ One way to construct tilde-limits is by constructing well-behaved formal models.
 		\[\mathcal X \sim \varprojlim \mathcal X_i.\]
 	\end{lemma}
 	\begin{proof}
-		This is a consequence of \cite{SW}, Proposition 2.4.2: The transition maps in the system are affine, hence quasi-separated quasi-compact. In order to prove the Lemma, we can restrict to an affine open subset $\operatorname{Spf}(A)$ of $\mathfrak X$ that arises as the inverse limit of affine open subsets $\operatorname{Spf}(A_i)\subseteq \mathfrak X_i$. Here all formal schemes are considered with the $\pi$-adic topology and $A$ is the $\pi$-adic completion of $\varinjlim A_i$. 
+		This is a consequence of \cite{SW}, Proposition 2.4.2: The transition maps in the system are affine, hence quasi-compact quasi-separated. In order to prove the Lemma, we can restrict to an affine open subset $\operatorname{Spf}(A)$ of $\mathfrak X$ that arises as the inverse limit of affine open subsets $\operatorname{Spf}(A_i)\subseteq \mathfrak X_i$. Here all formal schemes are considered with the $\pi$-adic topology and $A$ is the $\pi$-adic completion of $\varinjlim A_i$. 
 		On the generic fibre, $A_i$ with ideal of definition $I_i=\pi A_i$ is an open subring of definition of $A_i[1/\pi]$. We then clearly have $I_iA_j = A_j$ for any $j\geq i$. The inverse system therefore satisfies the conditions of \cite{SW}, Proposition 2.4.2, and we conclude that $\operatorname{Spf}(A)_\eta \sim \varprojlim \operatorname{Spf}(A_i)_\eta$ as desired.
 	\end{proof}
 	
@@ -244,7 +244,7 @@ One way to construct tilde-limits is by constructing well-behaved formal models.
 			\item If $\mathfrak X'\rightarrow \mathfrak X$ is an admissible blow-up of admissible formal schemes, then it induces an isomorphism on the generic fibre  $\mathfrak X'_\eta \xrightarrow{\sim} \mathfrak X_\eta$.
 			\item Let $\mathfrak X$ and $\mathfrak Y$ be admissible quasi-paracompact formal schemes over $\mathcal O_K$ and let $f:\mathfrak X_\eta \rightarrow \mathfrak Y_\eta$ be a morphism of their associated rigid spaces. Then there exist an admissible blow-up $\pi:\mathfrak X'\rightarrow \mathfrak X$ and a map $\mathfrak f:\mathfrak X'\rightarrow \mathfrak Y$ such that $\mathfrak f_\eta = f\circ \pi_\eta$.
 		\end{enumerate}
-		In particular, given an inverse system ($\mathcal X_i,\phi_{ij})$ of rigid spaces, one can always choose formal models $\mathfrak X_i$ for the $\mathcal X_i$, and by successive admissible blow-ups one can also find models for the transition maps $\phi_{ij}$ (it might however not be clear that these are affine morphisms). 
+		In particular, given an inverse system ($\mathcal X_i,\phi_{ij})$ of rigid spaces, one can always choose formal models $\mathfrak X_i$ for the $\mathcal X_i$, and by successive admissible blow-ups one can also find models for the transition maps $\phi_{ij}$. This theorem doesn't immediately allow us to construct a tilde-limit using Lemma \ref{tilde-limit from adic generic fibre of formal schemes} as the morphisms might not be affine.
 		\end{remark}
 
 	
@@ -265,7 +265,7 @@ Let $G$ be a rigid group over $K$, that is, a group object in the category of ri
 	
 	The following Corollary is an immediate consequence of our discussion in the previous subsection:
 	\begin{corollary}
-		Let $G$ be a rigid group. If $G$ admits a $[p]$-formal tower, then there exists a rigid space $G_\infty$ such that $G_\infty \sim \varprojlim_{[p]}G$.
+		Let $G$ be a rigid group. If $G$ admits a $[p]$-formal tower, then there exists an adic space $G_\infty$ such that $G_\infty \sim \varprojlim_{[p]}G$.
 	\end{corollary}
 	For example, for any formal group scheme $\mathfrak G$ for which $[p]$ is affine, the $[p]$-multiplication tower of $\mathfrak G$ gives rise to a $[p]$-formal tower for its generic fibre $\mathfrak G_\eta$. 
 	
