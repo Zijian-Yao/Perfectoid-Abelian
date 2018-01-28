@@ -107,14 +107,14 @@ As the case of good reduction is already settled, it remains to consider the cas
 In this case, the theory of Raynaud extensions provides us with a short exact sequence 
 \[ 0 \rightarrow T \rightarrow E  \rightarrow  B  \rightarrow  0\]
 of rigid groups, where $T = (\mathbb G_m^{\text{an}})^{d}$ is a split rigid torus and $B$ is the analytification of an abelian variety with good reduction, such that $A = E/M$ for a discrete lattice $M \subset E$. This short exact sequence is split locally on $B$, allowing us to locally write $E$ as a product of $T$ and an open subspace of $B$.
-Our strategy is now the following:
+Our strategy, which more generally applies to any abeloid variety over $K$, is now the following:
 \begin{enumerate}
 \item Use formal models to show that there exists a perfectoid tilde-limit $T_\infty\sim\varprojlim_{[p]} T$.
 \item Use the formal models from (1) to construct a perfectoid tilde-limit $E_\infty\sim\varprojlim_{[p]} E$.
 \item Study the quotient map $E\rightarrow A$ in the limit over $[p]$ to construct the desired space $A_\infty$.
 \end{enumerate}
 
-More precisely, this article is organised as follows: In \S2 we develop a notion of a $[p]$-$F$-formal tower for a rigid group $G$ over $K$, which is roughly an inverse system of formal models for $[p]:G\rightarrow G$ that factor through the relative Frobenius mod $\pi$. This is an axiomatisation of the data that one uses in the construction of $A_\infty$ in the case of good reduction. In particular, the same proof shows that if $G$ admits $[p]$-$F$-formal tower, then there exists a unique perfectoid tilde-limit $G_\infty \sim  \varprojlim_{[p]} G$.
+More precisely, this article is organised as follows: In \S2 we develop a notion of a $[p]$-$F$-formal tower for a commutative rigid group $G$ over $K$, which is roughly an inverse system of formal models for $[p]:G\rightarrow G$ that factor through the relative Frobenius mod $\pi$. This is an axiomatisation of the data that one uses to construct $A_\infty$ in the case of good reduction. In particular, the same proof shows that if $G$ admits $[p]$-$F$-formal tower, then there is a unique perfectoid tilde-limit $G_\infty \sim  \varprojlim_{[p]} G$.
  
 In chapter \S3 we give a $[p]$-$F$-formal tower for a  split rigid torus $T$ in terms of a family of formal models $\mathfrak T_{q^{1/n}}$, thus showing that a perfectoid tilde-limit $T_\infty$ of the inverse system of $[p]$ on $T$ exists. Crucially, this tower of formal models has the extra structure of an action by the formal torus $\overline{T}$.
  
@@ -203,7 +203,7 @@ has dense image, where the direct limit runs over all $i\in I$ and all open affi
 	\end{definition}
 	
 	\begin{remark} \label{remark:tilde_limit_non_unique}
-As pointed out after Proposition 2.4.4 of \cite{SW}, tilde-limits (if they exist) are in general not unique. For example, consider the inverse system consisting of a single affinoid pre-perfectoid space $X = \operatorname{Spa}(A, A^+)$ in the sense of Definition~2.3.4 in \cite{SW}. Then both the space $X$ as well as its strong completion $\hat X = \operatorname{Spa}(\hat A,\hat A^+)$ are tilde-limits of $X$. However, we'll see in Remark \ref{remark:tilde_limit_unique} that the perfectoid tilde-limits we construct are unique.
+As pointed out after Proposition 2.4.4 of \cite{SW}, tilde-limits (if they exist) are in general not unique. For example, consider the inverse system consisting of a single affinoid pre-perfectoid space $X = \operatorname{Spa}(A, A^+)$ in the sense of Definition~2.3.4 in \cite{SW}. Then both the space $X$ as well as its strong completion $\hat X = \operatorname{Spa}(\hat A,\hat A^+)$ are tilde-limits of $X$. However, we'll see in Corollary~\ref{corollary: perfectoid tilde limit is unique} that the perfectoid tilde-limits we construct are unique.
 	\end{remark}
 
 Let us recall a few results from \cite{SW}, \S2.4 about the construction of tilde-limits that we will use frequently throughout:
@@ -221,7 +221,7 @@ Let us recall a few results from \cite{SW}, \S2.4 about the construction of tild
 	Let $(X_i)_{i\in I}$ be an inverse system of adic spaces over $(K,\mathcal O_K)$ and assume that there is a perfectoid space $X$ such that $X\sim \varprojlim_{i\in I} X_i$. Then for any perfectoid $(K,\mathcal O_K)$-algebra $(B,B^{+})$, 
 	\[X(B,B^{+})  = \varprojlim_{i\in I}X_i(B,B^{+})\]
 \end{proposition}
-\begin{corollary}
+\begin{corollary}\label{corollary: perfectoid tilde limit is unique}
 	If a perfectoid tilde-limit $X\sim \varprojlim X_i$ exists, it is unique up to unique isomorphism.
 \end{corollary}
 In the situation of the Corollary, we will also refer to $X$ as \textit{the} perfectoid tilde-limit of $ \varprojlim X_i$. Of course perfectoid tilde-limit don't always exists. One case in which this they exist is the following:
@@ -278,8 +278,12 @@ In the situation that the $X_i$ are rigid space, one way to construct tilde-limi
 	
 \subsection{Tilde-limits for rigid groups}
 
-Let $G$ be a rigid group over $K$, that is, a group object in the category of rigid spaces over $K$.
-	We are primarily interested in the following examples:
+Let $G$ be a rigid group over $K$, that is, a group object in the category of rigid spaces over $K$. Throughout we will always consider commutative rigid groups. The main topic of study of this work is the $[p]$-multplication tower
+\[ \dots\xrightarrow{[p]}G\xrightarrow{[p]}G.\]
+\begin{question}
+	When is there a perfectoid space $G_\infty$ such that $G_\infty \sim \varprojlim_{[p]} G$ is a tilde-limit?
+\end{question}
+We are primarily interested in the following examples:
 \begin{enumerate}	 
 \item Analytifications of finite type group schemes over $K$. Examples include the analytification of an abelian variety $A$ over $K$ and of tori $T$ over $K$.
 \item Generic fibres of topologically finite type formal group schemes over $\mathcal O_K$.
@@ -305,12 +309,12 @@ Let $G$ be a rigid group over $K$, that is, a group object in the category of ri
 We now introduce the formalism of $[p]$-$F$-formal towers to axiomatise the approach mentioned in the introduction which shows that $A_\infty$ exists and is perfectoid in the case of good reduction.
 	
 	\begin{definition}
-		Let $G$ be a rigid analytic group, a \textbf{$[p]$-$F$-formal tower} for $G$ is a $[p]$-formal tower 
-		$$(\{\mathfrak G_n\}_{n\in \mathbb N}, [\mathfrak p]_{n+1}:\mathfrak G_{n+1}\rightarrow \mathfrak G_{n})$$ such that each $\mathfrak G_n$ is flat over $\mathcal O_K$, and on the mod $\pi$ special fibre  $\tilde{G}_n$, each   $[\mathfrak p]_{n+1}$ factors through the relative Frobenius morphism:
+		A \textbf{$[p]$-$F$-formal tower} for a rigid analytic group $G$ is a $[p]$-formal tower 
+		$$(\{\mathfrak G_n\}_{n\in \mathbb N}, [\mathfrak p]_{n+1}:\mathfrak G_{n+1}\rightarrow \mathfrak G_{n})$$ such that on the mod $\pi$ special fibre  $\tilde{G}_n$, each   $[\mathfrak p]_{n+1}$ factors through the relative Frobenius map:
 				\begin{center}
 					\begin{tikzcd}
 						& \tilde G_{n+1}^{(p)} \arrow[rd, dashed] &  \\
-						\tilde G_{n+1} \arrow[rr, "{[p]}"] \arrow[ru, "F_{rel}"] &  & \tilde G_{n}
+						\tilde G_{n+1} \arrow[rr, "{[\mathfrak p]_{n+1}}"] \arrow[ru, "F_{rel}"] &  & \tilde G_{n}
 					\end{tikzcd}
 				\end{center}
 	 
@@ -395,7 +399,7 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 			Note that the category of perfectoid spaces over $K$ has finite products, so the notion of a group object makes sense. 
 	
 	\begin{proposition}\label{perfectoid tilde-limit is perfectoid group in a functorial way}
-		Let $G$ be a rigid group with a perfectoid tilde-limit $G_\infty$. Then
+		Let $G$ be a rigid group with a perfectoid tilde-limit $G_\infty\sim \varprojlim_{[p]}G$. Then
 		\begin{enumerate}
 		\item  there is a unique way to endow $G_\infty$ with the structure of a perfectoid group in such a way that all projections $G_\infty\rightarrow G$ are group homomorphisms
 		\item given another rigid group $H$ with perfectoid tilde-limit $H_\infty\sim\varprojlim_{[p]}H$ and a group homomorphism $H\rightarrow G$, there is a unique group homomorphism $H_\infty\rightarrow G_\infty$
@@ -403,7 +407,7 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 	\end{enumerate}
 	\end{proposition}
 	\begin{proof}
-		These are all consequences of the universal property of the perfectoid tilde-limit, cf Proposition~2.4.5 of \cite{SW}, which shows that one can argue like in the case of usual limits.
+		These are all consequences of the universal property of the perfectoid tilde-limit, Proposition~\ref{SW Proposition 2.4.5}, which shows that one can argue like in the case of usual limits.
 	\end{proof}
 
 
@@ -590,19 +594,23 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 		Let $G$ be a rigid group, then a \textbf{lattice} in $G$ of rank $r$ is a discrete subgroup $M$ of $G$ which is isomorphic to the constant rigid group $\underline{\mathbb Z^r}$. 
 	\end{definition}
 	
-	\begin{proposition}\label{Raynaud uniformisation}
+	\begin{theorem}\label{Raynaud uniformisation}
 		There exists a lattice $M \subseteq E$ of rank equal to the rank $r$ of the torus for which the quotient $E/M$ exists as a rigid space and has a group structure such that $E\rightarrow E/M$ is a rigid group homomorphism. Moreover, there is a natural isomorphism
 		\[A=E/M.\]
-	\end{proposition}
+	\end{theorem}
 	
-	Since $M$ is discrete, the local geometry of $A$ is thus determined by the local geometry of $E$. We will therefore first study the $[p]$-multiplication tower of $E$ and will then deduce properties of the $[p]$-multiplication tower of $A$.
-	\begin{remark}
+	The data of the extension~(\ref{formal Raynaud extension}) together with the lattice $M\subseteq E$ is what we refer to as a Raynaud uniformisation of $A$. This will in fact be the only input we need to construct the perfectoid tilde limit $A_\infty$. Consequently, our method generalises to the class of rigid groups which admit Raynaud uniformisation, namely to abeloid varieties:
+	\begin{theorem}[L\"utkebohmert, \cite{lutkebohmert1995structure}, Theorem II]
+		Let $A$ be an abeloid variety, that is a connected smooth proper commutative rigid group over $K$. Then $A$ admits a Raynaud uniformisation.
+	\end{theorem}
+	
+	In the situation of Raynaud uniformisation, since $M$ is discrete, the local geometry of $A$ is determined by the local geometry of $E$. We will therefore first study the $[p]$-multiplication tower of $E$ and will then deduce properties of the $[p]$-multiplication tower of $A$.
+
 	 Our strategy is to study the local geometry of $E$ and $\overline{E}$ via $T$ and $B$. An obstacle in doing this is that the categories of formal or rigid groups are not abelian, which makes working with short exact sequences a subtle issue. Another issue is that one cannot direcly study short exact sequences locally on $T$, $E$ or $B$. 
-	\end{remark}
 	An important tool is therefore the following Lemma:
 
 	\begin{lemma}\label{formal Raynaud sequence is locally split}
-		The short exact sequence (\ref{formal Raynaud extension}) admits local sections, that is there is a cover of $B$ by formal open subschemes $U_i$ such that there exist local sections $s:U_i\rightarrow \overline{E}$ of $\pi$. In particular, one can cover $\overline{E}$ by formal open subschemes of the form $\overline{T}\times U_i\hookrightarrow E$.
+		The short exact sequence (\ref{formal Raynaud extension}) admits local sections, that is there is a cover of $\overline{B}$ by formal open subschemes $U_i$ such that there exist local sections $s:U_i\rightarrow \overline{E}$ of $\pi$. In particular, one can cover $\overline{E}$ by formal open subschemes of the form $\overline{T}\times U_i\hookrightarrow E$.
 	\end{lemma}
 	\begin{proof}
 		This is proved in Proposition A.2.5 in~\cite{rigid geometry of curves}, where it is fomulated in terms of the group $\operatorname{Ext}(B,T)$. Also see \cite{BL}, \S 1.
@@ -767,15 +775,14 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%
 	
-	\section{The case of abelian varieties with semi-stable reduction}
+	\section{The case of abeloid varieties}
 	We now want to prove the main result of this work, building on the preceding chapters:
 	
 	\begin{theorem}\label{main theorem}
-		Let $A$ be an abelian variety over an algebraically closed perfectoid field $K$. Then there is a perfectoid space $A_\infty$ such that
+		Let $A$ be an abeloid variety over an algebraically closed perfectoid field $K$. For instance, we may take $A$ to be an abelian variety. Then there is a perfectoid space $A_\infty$ such that
 				\[A_\infty \sim \varprojlim_{[p]} A.\]
-	\end{theorem}
- 
-We have seen this already for abelian varieties with good reduction in Corollary~\ref{tilde-limit exists and is perfectoid in the good reduction case}. It thus suffices to deal with the bad reduction case. Since $K$ is algebraically closed, this means that $A$ has semi-stable reduction.
+	\end{theorem} 
+
 Before we proceed with the proof of the main theorem which occupies the rest of the section, let us recall some notation:
 
 \begin{enumerate} 
@@ -890,11 +897,11 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 		Note that in the case of $K$ perfectoid but not necessarily algebraically closed, one can still carry out the constructions in the following using partial anticanonical $\Gamma_0(p^\infty)$-structures, whereas the lattices $M^{1/p^n}$ might not be defined over $K$.
 	\end{remark}
 	
-	Following the remark, denote by $D_n$ the torsion subgroup $M^{1/p^n}/M\subseteq A$. The quotient $A/D_n = E/M^{1/p^n}$ is then another abelian variety over $K$ and the quotient map $v^n:E/M\rightarrow E/M^{1/p^n}$ is an isogeny of degree $p^{2gn}$  through which  $[p^n]:A\rightarrow A$ factors: 
+	Following the remark, denote by $D_n$ the torsion subgroup $M^{1/p^n}/M\subseteq A$. The quotient $A/D_n = E/M^{1/p^n}$ is then another abelian variety over $K$ and the quotient map $v^n:E/M\rightarrow E/M^{1/p^n}$ is an isogeny of degree $p^{rn}$  through which  $[p^n]:A\rightarrow A$ factors: 
 		\begin{center}
 			\begin{equation}\label{factorisation of [p] over E/M}
 			\begin{tikzcd}
-				& E/M^{1/p} \arrow[rd, "{[p^n]}"] &  \\
+				& E/M^{1/p^n} \arrow[rd, "{[p^n]}"] &  \\
 				E/M \arrow[rr, "{[p^n]}"] \arrow[ru,"v^n"] &  & E/M.
 			\end{tikzcd}
 			\end{equation}
@@ -957,7 +964,7 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 			There is a perfectoid space $E/M^{1/p^\infty}$ such that\[E/M^{1/p^\infty}\sim \varprojlim_{n}E/M^{1/p^n}. \]
 		\end{proposition}
 		\begin{proof}
-		 Denote by $E_i^{1/p^\infty}$ the pullback of $E_i\subseteq E$ to $E_\infty$. This is an open subspace of a perfectoid space and hence perfectoid. Moreover, by Proposition 2.4.3 in \cite{SW} we have  \[ E_i^{1/p^\infty}\sim \varprojlim E_i^{1/p^n}.\] 
+		 Denote by $E_i^{1/p^\infty}$ the pullback of $E_i\subseteq E$ to $E_\infty$. This is an open subspace of a perfectoid space and hence perfectoid. Moreover, by Proposition~\ref{SW Proposition 2.4.3} we have  \[ E_i^{1/p^\infty}\sim \varprojlim E_i^{1/p^n}.\] 
 		Given two different $E_i$, $E_j$, we know by Lemma~\ref{compatible cuboid charts for the tower over E/M} that at every step in the tower, the pullbacks $E_i^{1/p^n}$ and $E_j^{1/p^n}$ to $E/M^{1/p^n}$ intersect in  $E_{ij}^{1/p^n}$.
 		We can thus glue the $E_i^{1/p^\infty}$ along pullbacks $E_{ij}^{1/p^\infty}$ of the intersections $E_{ij}=E_i\cap E_j$ to $E_\infty$ and thus obtain a perfectoid space $E/M^{1/p^\infty}$. This is a tilde-limit for $\varprojlim_{[p]}E/M^{1/p^n}$ because by construction it is so locally, and the definition of tilde-limits in Definition 2.4.1 of \cite{SW} is local on the source.
 		\end{proof}
@@ -1013,7 +1020,7 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 		The universal property of the fibre product then gives a unique map 
 		\[E/M^{1/p^\infty}\rightarrow E/M\times_ {E/M^{1/p}}E/M^{1/p^\infty}\]
 		making the natural diagrams commute.
-		On the other hand, using Lemma~\ref{squares in double tower are pullbacks} we see that the fibre product has compatible maps into the vertical inverse system over $E/M$. Since by Proposition~2.4.5 of \cite{SW} the perfectoid tilde-limit $E/M^{1/p^\infty}$ is universal for maps from perfectoid spaces to the inverse system, we obtain a unique map into the other direction.
+		On the other hand, using Lemma~\ref{squares in double tower are pullbacks} we see that the fibre product has compatible maps into the vertical inverse system over $E/M$. Since by Proposition~\ref{SW Proposition 2.4.5} the perfectoid tilde-limit $E/M^{1/p^\infty}$ is universal for maps from perfectoid spaces to the inverse system, we obtain a unique map into the other direction.
 	\end{proof}
 	We thus obtain a pro-\'etale tower
 	\begin{equation}\label{proetale tower in the vertical limit}
@@ -1021,13 +1028,14 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	\end{equation}
 	which we think of as being a kind of vertical ``limit'' of diagram~\ref{p-multiplication tower of E/M splits into vertical and horizontal tower}. 
 	
-	We now want to explicitly construct a tilde-limit of this tower. Recall from Remark~\ref{remark: Definition of the D_n} the finite \'etale subgroups $D_n=M^{1/p^n}/M\subseteq E/M=A$ of rank $p^{rn}$. Since $K$ is algebraically closed, they are constant and uncanonically isomorphism to $(\underline{\mathbb Z/p^{n}\mathbb Z})^{r}=\operatorname{Spa}(\operatorname{Map}(\mathbb (\mathbb Z/p^n\mathbb Z)^r,K),\operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,\mathcal O_K))$.
+	We now want to explicitly construct a tilde-limit of this tower. Recall from Remark~\ref{remark: Definition of the D_n} the finite \'etale subgroups $D_n=M^{1/p^n}/M\subseteq E/M=A$. Since $K$ is algebraically closed, they are constant and uncanonically isomorphic to $(\underline{\mathbb Z/p^{n}\mathbb Z})^{r}=\operatorname{Spa}(\operatorname{Map}(\mathbb (\mathbb Z/p^n\mathbb Z)^r,K),\operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,\mathcal O_K))$.
 	The $[p]$-multiplication on $E$ maps $M^{1/p^{n+1}}$ onto $M^{1/p^{n}}$ and therefore the $[p]$-multiplication tower of $E/M$ induces a tower
 	\[\dots \xrightarrow{[p]}D_{n+1}\xrightarrow{[p]}D_n\rightarrow\dots.\]
 	\begin{lemma}\label{lemma: existence and structure of D_infty}
 		There exists a perfectoid space $D_\infty$ such that $D_\infty \sim \varprojlim_{[p]} D_n$. Any choice of compatible isomorphisms $D_n\cong\underline{\mathbb Z/p^{n}\mathbb Z}^{r}$ induces an isomorphism 
 		\[D_\infty = \operatorname {Spa}(\operatorname{Map}_{cts}(\mathbb Z_p^{r},K),\operatorname{Map}_{cts}(\mathbb Z_p^{r},\mathcal O_K)).\]
 	\end{lemma}
+	Such "profinite" perfectoid spaces like $D_\infty$ are mentioned in \cite{berkeley} before Remark 8.2.2.
 	\begin{proof}
 		The $D_n$ are \'etale over $(K,\mathcal O_K)$ and thus affinoid perfectoid. Proposition~\ref{proposition: tilde-limits of perfectoid spaces} then shows that $D_\infty$ exists. Given isomorphisms $D_n=(\underline{\mathbb Z/p^{n}\mathbb Z})^{r}=\operatorname{Spa}(\operatorname{Map}(\mathbb (\mathbb Z/p^n\mathbb Z)^r,K),\operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,\mathcal O_K))$, Proposition~\ref{proposition: tilde-limits of perfectoid spaces} moreover says that the tilde-limit is given by the $\pi$-adic completion of 
 		\[\big(\varinjlim_n \operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,K),\varinjlim_n \operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,\mathcal O_K)\big) = (\operatorname{Map}_{lc}(\mathbb Z_p^r,K),\operatorname{Map}_{lc}(\mathbb Z_p^r,\mathcal O_K))\]
@@ -1035,7 +1043,7 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	\end{proof}
 	
 	\begin{lemma}\label{lemma: tilde-limits of D_n times X_n}
-		Let $(X_n)_{n\in \mathbb N}$ be an inverse system of adic spaces with quasicompact and quasiseparated transition maps over $(K,\mathcal O_K)$ and let $X$ be a perfectoid space such that $X\sim \varprojlim_n X_n$. Then $D_\infty \times X$ is a perfectoid tilde-limit
+		Let $(X_n)_{n\in \mathbb N}$ be an inverse system of adic spaces with quasicompact and quasiseparated transition maps over $(K,\mathcal O_K)$ and let $X$ be a perfectoid space such that $X\sim \varprojlim_n X_n$. Then $D_\infty \times X$ is a perfectoid tilde-limit of the inverse system
 \[D_\infty \times X \sim \varprojlim_{n\in \mathbb N}(D_n\times X_n).\]
 	\end{lemma}
 	\begin{proof}
@@ -1545,6 +1553,13 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	Werner L\"utkebohmert,
 	\textit{Rigid Geometry of Curves and Their Jacobians}, Springer, Ergeb. 3. Folge, vol. 61. Springer International Publishing (2016). 
 	
+	\bibitem{lutkebohmert1995structure} 
+	Werner L\"utkebohmert,
+	\textit{The structure of proper rigid groups},
+	Journal f{\"u}r die reine und angewandte Mathematik, {\bf 468} (1995), 167--219
+		
+
+	
 	\bibitem{Pilloni-Stroh}
 	Vincent Pilloni and  Benoit Stroh,
 	\textit{Cohomologie coh{\'e}rente et repr{\'e}sentations Galoisiennes} 
@@ -1571,6 +1586,10 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 		Peter Scholze,
 		\textit{Perfectoid spaces and their applications},
 		Proceedings of the ICM (2014)
+	
+	\bibitem{berkeley} 
+	Peter Scholze and Jared Weinstein,
+	\textit{Berkeley lectures on p-adic geometry, revised version}, 2017, available at \url{http://www.math.uni-bonn.de/people/scholze/Berkeley.pdf} 
 	
 	\bibitem{SW} 
 	Peter Scholze and Jared Weinstein,
