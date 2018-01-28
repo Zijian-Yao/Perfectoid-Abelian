@@ -205,8 +205,37 @@ has dense image, where the direct limit runs over all $i\in I$ and all open affi
 	\begin{remark} \label{remark:tilde_limit_non_unique}
 As pointed out after Proposition 2.4.4 of \cite{SW}, tilde-limits (if they exist) are in general not unique. For example, consider the inverse system consisting of a single affinoid pre-perfectoid space $X = \operatorname{Spa}(A, A^+)$ in the sense of Definition~2.3.4 in \cite{SW}. Then both the space $X$ as well as its strong completion $\hat X = \operatorname{Spa}(\hat A,\hat A^+)$ are tilde-limits of $X$. However, we'll see in Remark \ref{remark:tilde_limit_unique} that the perfectoid tilde-limits we construct are unique.
 	\end{remark}
-	
-One way to construct tilde-limits is by constructing well-behaved formal models. The reason for this is the combination of the following two Lemmas:
+
+Let us recall a few results from \cite{SW}, \S2.4 about the construction of tilde-limits that we will use frequently throughout:
+
+\begin{proposition}[\cite{SW}, Proposition 2.4.2]\label{SW Proposition 2.4.2}
+	Let $(A_i,A_i^{+})$ be a direct system of affinoids over $(\mathcal O_K,\mathcal O_K)$ with compatible rings of definition $A_{i,0}$ carrying the $\pi$-adic topology. Let $(A,A^{+})=(\varinjlim A_i,\varinjlim A_i^{+})$ be the affinoid algebra equipped with the topology making $\varinjlim A_{i,0}$ with the $\pi$-adic topology a ring of definition. Then
+	\[\operatorname{Spa}(A,A^{+})\sim \varprojlim \operatorname{Spa}(A_i,A_i^{+}).\]
+\end{proposition}
+\begin{proposition}[\cite{SW}, Proposition 2.4.3]\label{SW Proposition 2.4.3}
+	Let $X\sim \varprojlim_{i\in I} X_i$ be a tilde-limit and let $U_i\hookrightarrow X_i$ be an open immersion for some $i\in I$. Let $U_j:=U_i\times_{X_i}X_j$ for $j\geq i$ and $U:=U_i\times_{X_i}X$, then 
+	\[U\sim \varprojlim_{j\geq i} U_j.\]
+\end{proposition}
+
+\begin{proposition}[\cite{SW}, Proposition 2.4.5]\label{SW Proposition 2.4.5}
+	Let $(X_i)_{i\in I}$ be an inverse system of adic spaces over $(K,\mathcal O_K)$ and assume that there is a perfectoid space $X$ such that $X\sim \varprojlim_{i\in I} X_i$. Then for any perfectoid $(K,\mathcal O_K)$-algebra $(B,B^{+})$, 
+	\[X(B,B^{+})  = \varprojlim_{i\in I}X_i(B,B^{+})\]
+\end{proposition}
+\begin{corollary}
+	If a perfectoid tilde-limit $X\sim \varprojlim X_i$ exists, it is unique up to unique isomorphism.
+\end{corollary}
+In the situation of the Corollary, we will also refer to $X$ as \textit{the} perfectoid tilde-limit of $ \varprojlim X_i$. Of course perfectoid tilde-limit don't always exists. One case in which this they exist is the following:
+\begin{proposition}\label{proposition: tilde-limits of perfectoid spaces}
+	Let $(\operatorname{Spa}(A_i,A_i^{+}))_{i\in I}$ be an inverse system of affinoid perfectoid spaces over $(K,\mathcal O_K)$. 
+	Let $(A,A^{+}) = (\varinjlim A_i,\varinjlim A_i^{+})$ be the affinoid algebra endowed with the topology making $A_0=\varinjlim A_i^{\circ}$ with the $\pi$-adic topology an open subring of definition, and denote by $(\hat{A},\hat{A}^+)$ the completion. Then $\operatorname{Spa}(A,A^{+})\sim \varprojlim \operatorname{Spa}(A_i,A_i^{+})$ is a perfectoid tilde-limit.
+\end{proposition}
+\begin{proof}
+	The space $\operatorname{Spa}(A,A^{+})$ is a tilde-limit of $(A,A^{+})$ by Proposition~\ref{SW Proposition 2.4.2}. It is then clear from the definition that this remains true for $(\hat{A},\hat{A}^{+})$. It remains to see that this is a perfectoid $(K,\mathcal O_K)$-algebra: But $\hat{A_0}$ is a flat $\mathcal O_K$-algebra and in the direct limit the Frobenius isomorphisms $A_i^{\circ}/\pi^{1/p}\cong A_i^{\circ}/\pi$ induce an isomorphism
+	\[\hat{A_0}/\pi^{1/p}\cong \hat{A_0}/\pi.\]
+	Thus by Lemma~5.6 in \cite{perfectoid}, $(\hat{A},\hat{A}^+)$ is a perfectoid $(K,\mathcal O_K)$-algebra. 
+\end{proof}
+
+In the situation that the $X_i$ are rigid space, one way to construct tilde-limits is by constructing well-behaved formal models. The reason for this is the combination of the following two Lemmas:
 
 	\begin{lemma} \label{lemma:inverse_limit_formal}
 		Let $(\mathfrak X_i,\phi_{ij})_{i\in I}$ be an inverse system of formal schemes $\mathfrak X_i$ over $\mathcal O_K$ with affine transition maps $\phi_{ij}:\mathfrak X_j\rightarrow \mathfrak X_i$. Then the inverse limit $\mathfrak X=\varprojlim \mathfrak X_i$ exists in the category of formal schemes over $\mathcal O_K$. If all the $\mathfrak X_i$ are flat formal schemes, so is $\mathfrak X$.
@@ -220,12 +249,11 @@ One way to construct tilde-limits is by constructing well-behaved formal models.
 	The proof also shows that in the situation of the Lemma, $\mathfrak X$ is in particular a tilde-limit  $\mathfrak X\sim \varprojlim \mathfrak X_i$ when considered as adic spaces. This remains true after passing to adic generic fibres:
 	
 	\begin{lemma}\label{tilde-limit from adic generic fibre of formal schemes}
-		Let $(\mathfrak X_i,\phi_{ij})_{i\in I}$ be an inverse system of formal schemes $\mathfrak X_i$ over $\mathcal O_K$ with affine transition maps $\phi_{ij}$ and let $\mathfrak X=\varprojlim_{\phi_j} \mathfrak X_i$ be the limit. Let $\mathcal X_i =(\mathfrak X_i)_\eta$ and  $\mathcal X = (\mathfrak X)_\eta$ be the adic generic fibres. Then
-		\[\mathcal X \sim \varprojlim \mathcal X_i.\]
+		Let $(\mathfrak X_i,\phi_{ij})_{i\in I}$ be an inverse system of formal schemes $\mathfrak X_i$ over $\mathcal O_K$ with affine transition maps $\phi_{ij}$ and let $\mathfrak X=\varprojlim_{\phi_j} \mathfrak X_i$ be the limit. Let $\mathcal X_i =(\mathfrak X_i)_\eta$ and  $\mathcal X = (\mathfrak X)_\eta$ be the adic generic fibres. Then $\mathcal X \sim \varprojlim \mathcal X_i$.
 	\end{lemma}
 	\begin{proof}
-		This is a consequence of \cite{SW}, Proposition 2.4.2: The transition maps in the system are affine, hence quasi-compact quasi-separated. In order to prove the Lemma, we can restrict to an affine open subset $\operatorname{Spf}(A)$ of $\mathfrak X$ that arises as the inverse limit of affine open subsets $\operatorname{Spf}(A_i)\subseteq \mathfrak X_i$. Here all formal schemes are considered with the $\pi$-adic topology and $A$ is the $\pi$-adic completion of $\varinjlim A_i$. 
-		On the generic fibre, $A_i$ with ideal of definition $I_i=\pi A_i$ is an open subring of definition of $A_i[1/\pi]$. We then clearly have $I_iA_j = A_j$ for any $j\geq i$. The inverse system therefore satisfies the conditions of \cite{SW}, Proposition 2.4.2, and we conclude that $\operatorname{Spf}(A)_\eta \sim \varprojlim \operatorname{Spf}(A_i)_\eta$ as desired.
+		This is a consequence of Proposition~\ref{SW Proposition 2.4.2}: The transition maps in the system are affine, hence quasi-compact quasi-separated. In order to prove the Lemma, we can restrict to an affine open subset $\operatorname{Spf}(A)$ of $\mathfrak X$ that arises as the inverse limit of affine open subsets $\operatorname{Spf}(A_i)\subseteq \mathfrak X_i$. Here all formal schemes are considered with the $\pi$-adic topology and $A$ is the $\pi$-adic completion of $\varinjlim A_i$. 
+		On the generic fibre, $A_i$ with the $\pi$-adic topology is an open subring of definition of $A_i[1/\pi]$. Therefore, Proposition~\ref{SW Proposition 2.4.2} applies and shows that $\operatorname{Spf}(A)_\eta \sim \varprojlim \operatorname{Spf}(A_i)_\eta$ as desired.
 	\end{proof}
 	
 	\begin{remark}
@@ -291,10 +319,7 @@ We now introduce the formalism of $[p]$-$F$-formal towers to axiomatise the appr
 	 	\begin{proposition}\label{existence of p-F-formal tower implies perfectoid}
 		Let $G$ be a rigid group over a perfectoid field $K$. If $G$ admits a $[p]$-$F$-formal tower, then there exists a perfectoid space $G_\infty$ such that $G_\infty \sim \varprojlim_{[p]}G$.
 	\end{proposition}
-	 
-	\begin{remark} \label{remark:tilde_limit_unique}
-In contrast to Remark \ref{remark:tilde_limit_non_unique}, by Proposition 2.4.5 of \cite{SW}, if $X \sim \varprojlim X_i$ and $X$ is perfectoid, then $X$ is the unique perfectoid tilde-limit of $ \varprojlim X_i$ up to unique isomorphism. In such situations we will refer to $X$ as \textit{the} perfectoid tilde-limit of $ \varprojlim X_i$. 
-	\end{remark} 
+
 	 
 	\begin{proof}
 		
@@ -785,7 +810,7 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	 $q_1,\dots,q_r\in K$ such that $|q_i|=\exp(-d_i)$. We denote by $\mathcal B(q,q^{-1})$ the affinoid open rigid multi-annulus in $T$ centered at $1$ of radii $|q_i|< 1 < |q_i|^{-1}$ in every direction.
 	
 	\begin{lemma}\label{cube around origin gives local chart for E/M}
-		The inverse image $\ell^{-1}(S(d))\subseteq E(K)$ is the underlying set of the admissible open subspace $E(q):=\mathcal B(q,q^{-1})\times^{\overline{T}_\eta}\overline{E}_\eta$of $E$ considered as a rigid space.
+		The inverse image $\ell^{-1}(S(d))\subseteq E(K)$ is the underlying set of the admissible open subspace $E(q):=\mathcal B(q,q^{-1})\times^{\overline{T}_\eta}\overline{E}_\eta$ of $E$ considered as a rigid space.
 	\end{lemma}
 	\begin{proof}
 		One shows this first for the map $T\rightarrow \mathbb R^r$, where it is clear that the preimage is $\mathcal B(q,q^{-1})$. This is also described in \S 6.4 of \cite{FvdP}. The statement for $\mathcal B(q,q^{-1})\times^{\overline{T}_\eta}\overline{E}_\eta$ follows by direct inspection on local trivialisations $\mathcal B(q,q^{-1})\times U$ for $U\subseteq B$.
@@ -854,7 +879,7 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	
 	For the ramified tower, we first make an auxiliary choice of certain torsion subgroups of $A$: Since $K$ is algebraically closed, we can choose lattices $M^{1/p^n}\subseteq E$ such that $[p]:E\rightarrow E$ restricts to isomorphisms $M^{1/p^{n+1}}\rightarrow M^{1/p^n}$ for all $n$.
 	
-	\begin{remark}
+	\begin{remark}\label{remark: Definition of the D_n}
 		Such a choice is equivalent to the choice of subgroups $D_n\subseteq A[p^n]$ of rank $p^{rn}$ for all $n$ such that $pD_{n+1}=D_n$ and $D_n+E[p^n]=A[p^n]$. Namely,
 		given the lattices $M^{1/p^{n+1}}$, we obtain the desired torsion subgroups by setting $D_n:=M^{1/p^{n+1}}/M$. This is because any such lattice gives a splitting of the short exact sequence $0\rightarrow E[p^n]\rightarrow A[p^n]\rightarrow M/M^{p^n} \rightarrow 0$.
 		
@@ -995,31 +1020,48 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	\dots \xrightarrow{v}E/M^{1/p^\infty}\xrightarrow{v} E/M^{1/p^\infty}\xrightarrow{v} E/M^{1/p^\infty}
 	\end{equation}
 	which we think of as being a kind of vertical ``limit'' of diagram~\ref{p-multiplication tower of E/M splits into vertical and horizontal tower}. 
-	\begin{remark}\label{projective limits of perfectoid spaces as adic spaces}
-	It is clear at this point that the limit of this tower exists, even as a categorical limit of honest adic spaces, since limits of affinoid perfectoid spaces exist in honest adic spaces and are affinoid perfectoid:
 	
-	If $(\operatorname{Spa}(A_i,A_i^{+}))_{i\in I}$ is an inverse system of affinoid perfectoid spaces, then it is easy to check that for $A^+$ the $\pi$-adic completion of $\varinjlim A_i$ and for $A = A^+[1/\pi]$, the affinoid algebra $(A,A^{+})$ is again perfectoid. It then follows from topological algebra that $\operatorname {Spa}(A,A^{+})$ has the desired universal property for maps from honest adic spaces into the inverse system $(\operatorname{Spa}(A_i,A_i^{+}))_{i\in I}$.
-	
-	From the construction it follows that this is a tilde-limit (the condition on the underlying sets can be checked using the argument of Lemma 6.13.(ii) in \cite{perfectoid}). The affinoid case implies the result for the above tower by a glueing argument.
-	\end{remark}
-	
-	Despite the remark, we now want to give a slightly more explicit construction of this limit that also says something about its local geometry. We first looks at the tower
+	We now want to explicitly construct a tilde-limit of this tower. Recall from Remark~\ref{remark: Definition of the D_n} the finite \'etale subgroups $D_n=M^{1/p^n}/M\subseteq E/M=A$ of rank $p^{rn}$. Since $K$ is algebraically closed, they are constant and uncanonically isomorphism to $(\underline{\mathbb Z/p^{n}\mathbb Z})^{r}=\operatorname{Spa}(\operatorname{Map}(\mathbb (\mathbb Z/p^n\mathbb Z)^r,K),\operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,\mathcal O_K))$.
+	The $[p]$-multiplication on $E$ maps $M^{1/p^{n+1}}$ onto $M^{1/p^{n}}$ and therefore the $[p]$-multiplication tower of $E/M$ induces a tower
 	\[\dots \xrightarrow{[p]}D_{n+1}\xrightarrow{[p]}D_n\rightarrow\dots.\]
-	\begin{lemma}
-		There is a perfectoid space $D_\infty$ such that $D_\infty = \varprojlim_{[p]} D_n$ as a limit of adic spaces.
+	\begin{lemma}\label{lemma: existence and structure of D_infty}
+		There exists a perfectoid space $D_\infty$ such that $D_\infty \sim \varprojlim_{[p]} D_n$. Any choice of compatible isomorphisms $D_n\cong\underline{\mathbb Z/p^{n}\mathbb Z}^{r}$ induces an isomorphism 
+		\[D_\infty = \operatorname {Spa}(\operatorname{Map}_{cts}(\mathbb Z_p^{r},K),\operatorname{Map}_{cts}(\mathbb Z_p^{r},\mathcal O_K)).\]
 	\end{lemma}
 	\begin{proof}
-		The $D_n$ are \'etale over $\operatorname{Spa}(K)$ and thus perfectoid.
-		Like in Remark~\ref{projective limits of perfectoid spaces as adic spaces}, we then obtain a perfectoid space $D_\infty$. More explicitly, since the $D_n$ are isomorphic to $\underline {(\mathbb Z_p/p^{n}\mathbb Z)^r}$, we can write \[D_\infty \cong\operatorname{Spa}(\operatorname{Map}_{\operatorname{cts}}(\mathbb Z_p^r,K),\operatorname{Map}_{\operatorname{cts}}(\mathbb Z_p^r,\mathcal O_K)).\]
+		The $D_n$ are \'etale over $(K,\mathcal O_K)$ and thus affinoid perfectoid. Proposition~\ref{proposition: tilde-limits of perfectoid spaces} then shows that $D_\infty$ exists. Given isomorphisms $D_n=(\underline{\mathbb Z/p^{n}\mathbb Z})^{r}=\operatorname{Spa}(\operatorname{Map}(\mathbb (\mathbb Z/p^n\mathbb Z)^r,K),\operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,\mathcal O_K))$, Proposition~\ref{proposition: tilde-limits of perfectoid spaces} moreover says that the tilde-limit is given by the $\pi$-adic completion of 
+		\[\big(\varinjlim_n \operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,K),\varinjlim_n \operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,\mathcal O_K)\big) = (\operatorname{Map}_{lc}(\mathbb Z_p^r,K),\operatorname{Map}_{lc}(\mathbb Z_p^r,\mathcal O_K))\]
+		where $\operatorname{Map}_{lc}$ denotes the locally constant morphisms, for the $p$-adic topology on $\mathbb Z_p$. Since the $\pi$-adic completion of these are the continuous morphisms, this proves the Lemma.
 	\end{proof}
+	
+	\begin{lemma}\label{lemma: tilde-limits of D_n times X_n}
+		Let $(X_n)_{n\in \mathbb N}$ be an inverse system of adic spaces with quasicompact and quasiseparated transition maps over $(K,\mathcal O_K)$ and let $X$ be a perfectoid space such that $X\sim \varprojlim_n X_n$. Then $D_\infty \times X$ is a perfectoid tilde-limit
+\[D_\infty \times X \sim \varprojlim_{n\in \mathbb N}(D_n\times X_n).\]
+	\end{lemma}
+	\begin{proof}
+		Since $D_\infty$ is perfectoid, the fibre product $D_\infty\times X$ exists and is perfectoid by \cite{perfectoid}, Proposition~6.18. Since the $D_n$ are just a disjoint union of copies of $\operatorname{Spa}(K,\mathcal O_K)$, the fibre product $D_n\times X_n$ exists as an adic space. Let us choose compatible isomorphisms $D_n\cong (\underline{\mathbb Z/p^n\mathbb Z})^r$, then locally on an affinoid open $\operatorname{Spa}(A_n,A_n^{+})\subseteq X_n$, the fibre product is of the form 
+		\[D_n\times \operatorname{Spa}(A_n,A_n^{+}) = \operatorname{Spa}(\operatorname{Map}( (\mathbb Z/p^n\mathbb Z)^r,A_n),\operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_n^+)).\]
+		Since $X\sim \varprojlim_n X_n$, we may cover $X$ by open affinoids $U=\operatorname{Spa}(A,A^{+})$ such that 
+		\[\varinjlim_{\operatorname{Spa}(A_{j},A_{j}^{+})\subseteq X_n} A_{j} \rightarrow A \]
+		has dense image. Here the direct limit runs through all affinoid open subspaces $\operatorname{Spa}(A_{j},A_{j}^{+})\subseteq X_n$ for all $n$ through which $U\subseteq X\rightarrow X_n$ factors, as in the definition of tilde-limits. Then by Lemma~\ref{lemma: existence and structure of D_infty} and the construction of products of affinoid perfectoid spaces, we have
+		\[D_\infty\times U \cong \operatorname{Spa}(\operatorname{Map}_{cts}(\mathbb Z_p^r,A),\operatorname{Map}_{cts}(\mathbb Z_p^r,A^+)).\]
+		It thus suffices to show that $\varinjlim \operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_{j})$ is dense in $\operatorname{Map}_{cts}(\mathbb Z_p^r,A)$.
+		As a first step, even though in the above limit $n$ depends on $j$, we may write this as two separate limits, 
+		\[\varinjlim \operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_{j}) = \varinjlim_{j} \varinjlim_n \operatorname{Map}(\mathbb (\mathbb Z/p^n\mathbb Z)^r,A_{j}).\]
+		For fixed $j$, we then see that 
+		\[\varinjlim_{n} \operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_j)=\operatorname{Map}_{lc}(\mathbb Z_p^r,A_j),\] where the right hand side denotes locally constant morphisms. But it then follows from a pointwise approximation argument that $\varinjlim_j\operatorname{Map}_{lc}(\mathbb Z_p^r,A_j)$ has dense image in $\operatorname{Map}_{lc}(\mathbb Z_p^r,A)$. It is then clear that the latter has dense image in $\operatorname{Map}_{cts}(\mathbb Z_p^r,A)$. We conclude that $D_\infty\times X \sim \varprojlim D_n\times X_n$.
+	\end{proof}
+	
 	\begin{proposition}\label{horizontal limit of vertical limit}
-	There exists a perfectoid space $(E/M^{1/p^\infty})_\infty$ such that \[(E/M^{1/p^\infty})_\infty= \varprojlim_{v}(E/M^{1/p^\infty}).\]
+	There exists a perfectoid space $(E/M^{1/p^\infty})_\infty$ such that \[(E/M^{1/p^\infty})_\infty\sim \varprojlim_{v}(E/M^{1/p^\infty}).\]
 	 Moreover, the projection map $\pi:(E/M^{1/p^\infty})_\infty\rightarrow E/M^{1/p^\infty}$ is a profinite covering map, namely every point of $E/M^{1/p^\infty}$ has an open neighbourhood $U$ such that $\pi^{-1}(U)$ is isomorphic to $D_\infty \times U$.
 	\end{proposition}
 	\begin{proof}
-	By Lemma~\ref{horizontal etale map pulls back to vertical limit}, the preimage of $E_i^{1/p^\infty}$ under $v^m$ of $E/M^{1/p^\infty}$ is isomorphic to $D_m\times E_i^{1/p^\infty}$. Since projective limits commute with products, the restriction of the tower to $E_i^{1/p^\infty}$ therefore has limit $D_\infty \times E_i^{1/p^\infty}$, which is perfectoid as a product of perfectoid spaces. 
+	By Lemma~\ref{horizontal etale map pulls back to vertical limit}, the preimage of $E_i^{1/p^\infty}$ under $v^m$ of $E/M^{1/p^\infty}$ is isomorphic to $D_m\times E_i^{1/p^\infty}$. By Lemma~\ref{lemma: tilde-limits of D_n times X_n} we then have
+	\[D_\infty \times E_i^{1/p^\infty}\sim \varprojlim_m D_m\times E_i^{1/p^\infty}.\]
+	Alternatively, we could without loss of generality assume that $E_i^{1/p^\infty}$ is affinoid perfectoid, and use Proposition~\ref{proposition: tilde-limits of perfectoid spaces} to see that a perfectoid tilde-limit exists. Using Proposition~\ref{SW Proposition 2.4.5} and the universal property of the product, on then obtains an isomorphism of this tilde-limit to $D_\infty\times E_i^{1/p^\infty}$.
 	
-	One can then glue using the same arguments as in the proof of Proposition~\ref{explicit construction of vertical tilde-limit}.
+	As before, these local tilde-limits glue using Propositions~\ref{SW Proposition 2.4.3} and \ref{SW Proposition 2.4.5}.
 	\end{proof}
 	
 	\subsection{The diagonal tower: proof of the main theorem}
@@ -1041,19 +1083,8 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	 
 	 On the other hand, when we go along the diagonal tower, we obtain the inverse system 
 	 \[\dots\rightarrow D_{n+1}\times E_i^{1/p^{n+1}}\rightarrow D_{n}\times E_i^{1/p^{n}}\rightarrow \dots.\]
-	 More explicitly, after choosing compatible isomorphisms $D_n\cong \underline{(\mathbb Z/p^n\mathbb Z)^r}$ for all $n$, we can for any affinoid open $V=\operatorname{Spa}(A_n,A_n^{+})\subseteq E_i^{1/p^{n}}$ write the affinoid open subset $D_n\times V\subseteq D_n\times E_i^{1/p^{n}}$ as
-	 \[D_{n}\times V \cong \operatorname{Spa}(\operatorname{Map}(\mathbb (\mathbb Z/p^n\mathbb Z)^r,A_n),\operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_n^{+}))\]
 	 
-	 We claim that this tower has tilde-limit $D_\infty\times E_i^{1/p^\infty} \sim \varprojlim D_n\times E_i^{1/p^n}$.
-	 To see this, cover $E_i^{1/p^\infty}$ by open affinoids $U=\operatorname{Spa}(A,A^{+})$ such that 
-	 \[\varinjlim_{\operatorname{Spa}(A_{j},A_{j}^{+})\subseteq E_i^{1/p^n}} A_{j} \rightarrow A \]
-	 has dense image. Here the direct limit runs through all affinoid open subspaces $\operatorname{Spa}(A_{j},A_{j}^{+})\subseteq E_i^{1/p^n}$ for all $n$ through which $U\subseteq E_i^{1/p^\infty}\rightarrow E_i^{1/p^n}$ factors, as in the definition of tilde-limits. Then by the construction of products of affinoid perfectoid spaces, the pullback of $U$ to $(E/M^{1/p^\infty})_\infty$ is 
-	\[D_\infty\times U \cong \operatorname{Spa}(\operatorname{Map}_{cts}(\mathbb Z_p^r,A),\operatorname{Map}_{cts}(\mathbb Z_p^r,A^+)).\]
-	 It thus suffices to show that $\varinjlim \operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_{j})$ is dense in $\operatorname{Map}_{cts}(\mathbb Z_p^r,A)$.
-	 As a first step, even though in the above limit $n$ depends on $j$, we may write this as two separate limits, 
-	 \[\varinjlim \operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_{j}) = \varinjlim_{j} \varinjlim_n \operatorname{Map}(\mathbb (\mathbb Z/p^n\mathbb Z)^r,A_{j}).\]
-	 For fixed $j$, we then see that 
-	 \[\varinjlim_{n} \operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_j)=\operatorname{Map}_{lc}(\mathbb Z_p^r,A_j),\] where the right hand side denotes locally constant morphisms. But it then follows from a pointwise approximation argument that $\varinjlim\operatorname{Map}_{lc}(\mathbb Z_p^r,A_j)$ has dense image in $\operatorname{Map}_{lc}(\mathbb Z_p^r,A)$. It is then clear that the latter has dense image in $\operatorname{Map}_{cts}(\mathbb Z_p^r,A)$. We conclude that $D_\infty\times E_i^{1/p^\infty} \sim \varprojlim D_n\times E_i^{1/p^n}$.
+	By Lemma~\ref{lemma: tilde-limits of D_n times X_n} this inverse system has perfectoid tilde-limit $D_\infty \times E_i^{1/p^\infty}$. These local tilde-limits glue together to give the desired tilde-limit $A_\infty$.
 	 
 	That $A_\infty$ is independent of the $\Gamma_0(p^\infty)$-structure up to unique isomorphism is a consequence of the universal property of the perfectoid tilde-limit. To see that $D_\infty$ is a closed subgroup of $A_\infty$, choose $i$ such that the unit section of $E/M$ lies in $E_i$. Then the unit section $\operatorname{Spa}(K,\mathcal O_K)\rightarrow E_i^{1/p^\infty}$ induces a closed immersion $D_\infty\hookrightarrow D_\infty \times E_i^{1/p^\infty}\hookrightarrow A_\infty$.
 	\end{proof}
