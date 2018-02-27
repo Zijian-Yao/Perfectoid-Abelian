@@ -93,7 +93,7 @@ The primary goal of this article is to show that the ``inverse limit'' of this t
 
 
 \begin{mainthm} \label{thm:main_thm_intro}
-	Let $A$ be an abelian variety over $K$, considered as a rigid space. Then there exists a unique perfectoid space $A_\infty$ over $K$ such that
+	Let $A$ be an abeloid variety over $K$, for instance an abelian variety seen as a rigid space. Then there is a unique perfectoid space $A_\infty$ over $K$ such that
 	$A_\infty \sim \varprojlim_{[p]} A$ is a tilde-limit.
 \end{mainthm}
 
@@ -103,7 +103,7 @@ Let $A$ be an abelian variety of good reduction over $K$. Let $\mathcal O_K$ be 
 
 This gives the construction of $A_\infty$ in the case of good reduction. The overall strategy of our proof of Theorem \ref{thm:main_thm_intro} is similar: We construct tilde-limits of various spaces via formal models and show that these tilde-limits are perfectoid via a Frobenius factorisation property on the special fibre. 
 
-As the case of good reduction is already settled, it remains to consider the case that $A$ has bad reduction. The assumption that $K$ is algebraically closed assures that $A$ is then semi-stable.
+Next, we consider the case that $A$ is an abelian variety with bad reduction. The assumption that $K$ is algebraically closed assures that $A$ is then semi-stable.
 In this case, the theory of Raynaud extensions provides us with a short exact sequence 
 \[ 0 \rightarrow T \rightarrow E  \rightarrow  B  \rightarrow  0\]
 of rigid groups, where $T = (\mathbb G_m^{\text{an}})^{d}$ is a split rigid torus and $B$ is the analytification of an abelian variety with good reduction, such that $A = E/M$ for a discrete lattice $M \subset E$. This short exact sequence is split locally on $B$, allowing us to locally write $E$ as a product of $T$ and an open subspace of $B$.
@@ -560,7 +560,7 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 %%%%%%%%%%%%
 
 	\section{A $[p]$-$F$-formal tower for Raynaud extensions}\label{Raynaud extensions as principal bundles of formal and rigid spaces}
-	In this section we study the $p$-multiplication tower of the Raynaud extensions associated to abelian varieties over an algebraically closed perfectoid field $K$. The main result of this section is Theorem \ref{p-F-formal tower exists for E}, namely the Raynaud extension $E$ of an abelian variety $A$ over $K$ admits a $[p]$-$F$-formal tower, showing that there exists a perfectoid tilde-limit $E_\infty \sim \varprojlim_{[p]} E$.  
+	In this section we study the $p$-multiplication tower of the Raynaud extensions associated to abeloid varieties over an algebraically closed perfectoid field $K$. The main result of this section is Theorem \ref{p-F-formal tower exists for E}, namely the Raynaud extension $E$ of an abeloid variety $A$ over $K$ admits a $[p]$-$F$-formal tower, showing that there exists a perfectoid tilde-limit $E_\infty \sim \varprojlim_{[p]} E$.  
 	
 	
 	\begin{remark}
@@ -599,8 +599,8 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 		\[A=E/M.\]
 	\end{theorem}
 	
-	The data of the extension~(\ref{formal Raynaud extension}) together with the lattice $M\subseteq E$ is what we refer to as a Raynaud uniformisation of $A$. This will in fact be the only input we need to construct the perfectoid tilde limit $A_\infty$. Consequently, our method generalises to the class of rigid groups which admit Raynaud uniformisation, namely to abeloid varieties:
-	\begin{theorem}[L\"utkebohmert, \cite{lutkebohmert1995structure}, Theorem II]
+	The data of the extension~(\ref{formal Raynaud extension}) together with the lattice $M\subseteq E$ is what we refer to as a Raynaud uniformisation of $A$. This will in fact be the only input we need to construct the perfectoid tilde-limit $A_\infty$. Consequently, our method generalises to the class of rigid groups which admit Raynaud uniformisation, namely to abeloid varieties:
+	\begin{theorem}[L\"utkebohmert, \cite{rigid geometry of curves}, Theorem 7.6.4]\label{Raynaud uniformisation for abeloids}
 		Let $A$ be an abeloid variety, that is a connected smooth proper commutative rigid group over $K$. Then $A$ admits a Raynaud uniformisation.
 	\end{theorem}
 	
@@ -787,7 +787,7 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 
 \begin{enumerate} 
 \item  $g$ is the dimension of $A$. 
-\item  $E$ is the Raynaud extension associated to $A$ from Proposition~\ref{Raynaud uniformisation}, which is an extension of a split rigid torus $T$ of rank $r$ by an abelian variety $B$ of good reduction. 
+\item  $E$ is the Raynaud extension associated to $A$ from Proposition~\ref{Raynaud uniformisation for abeloids}, which is an extension of a split rigid torus $T$ of rank $r$ by an abelian variety $B$ of good reduction. 
 \item $M\subseteq E$  is a lattice of rank $r$ such that $A=E/M$. 
 \end{enumerate}
 
@@ -897,7 +897,7 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 		Note that in the case of $K$ perfectoid but not necessarily algebraically closed, one can still carry out the constructions in the following using partial anticanonical $\Gamma_0(p^\infty)$-structures, whereas the lattices $M^{1/p^n}$ might not be defined over $K$.
 	\end{remark}
 	
-	Following the remark, denote by $D_n$ the torsion subgroup $M^{1/p^n}/M\subseteq A$. The quotient $A/D_n = E/M^{1/p^n}$ is then another abelian variety over $K$ and the quotient map $v^n:E/M\rightarrow E/M^{1/p^n}$ is an isogeny of degree $p^{rn}$  through which  $[p^n]:A\rightarrow A$ factors: 
+	Following the remark, denote by $D_n$ the torsion subgroup $M^{1/p^n}/M\subseteq A$. The quotient $A/D_n = E/M^{1/p^n}$ is then another abeloid variety over $K$ and the quotient map $v^n:E/M\rightarrow E/M^{1/p^n}$ is an isogeny of degree $p^{rn}$  through which  $[p^n]:A\rightarrow A$ factors: 
 		\begin{center}
 			\begin{equation}\label{factorisation of [p] over E/M}
 			\begin{tikzcd}
