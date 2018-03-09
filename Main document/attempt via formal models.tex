@@ -418,7 +418,7 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 	
 	In this section we want to show that for a split rigid torus $T$ over $K$, a tilde-limit $T_\infty$ exists and is perfectoid. We do this by exhibiting a $[p]$-$F$-model of $T$.
 	
-	As a preparation, we consider the torus $\mathbb G_m^{\operatorname{an}}$ over $K$. Recall that it arises from rigid analytification of the affine torus $\mathbb G_m$ over $K$. Note however that $\mathbb G_m^{\operatorname{an}}$ is not affinoid (and not even quasi-compact). It contains the generic fibre of the $p$-adic completion of $\mathbb G_m$ as an open subspace. If we see $\mathbb G_m^{\operatorname{an}}$ as the rigid affine line with the origin removed, this subspace $\widehat{\mathbb G}_m$ can be identified with the open annulus of radius 1. In other words, on the level of points it corresponds to $\mathcal O_K^\times \subseteq K^\times$.
+	As a preparation, we consider the torus $\mathbb G_m^{\operatorname{an}}$ over $K$. Recall that it arises from rigid analytification of the affine torus $\mathbb G_m$ over $K$. Note however that $\mathbb G_m^{\operatorname{an}}$ is not affinoid (and not even quasi-compact). It contains the generic fibre of the $p$-adic completion of $\mathbb G_m$ as an open subspace. If we see $\mathbb G_m^{\operatorname{an}}$ as the rigid affine line with the origin removed, this subspace $\widehat{\mathbb G}_m$ can be identified with the unit circle. In other words, on the level of points it corresponds to $\mathcal O_K^\times \subseteq K^\times$.
 	
 	Finally, recall that for every $x\in K^\times$ we have a translation map
 	\[\mathbb G_m^{\operatorname{an}}\xrightarrow{x\cdot} \mathbb G_m^{\operatorname{an}}\]
@@ -469,7 +469,7 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 		\end{tikzcd}
 		\end{equation}
 	\end{center} 
-	and similarly with $q^i/X\mapsto q^i/X$. The case of the inner boundary~(\ref{torus explicit cover glue map 1}) is essentially identical.
+	and similarly with $q^i/X\mapsto (q^i/X)^p$. The case of the inner boundary~(\ref{torus explicit cover glue map 1}) is essentially identical.
 	
 	\subsection{A family of formal models}
 	At this point we have constructed a cover $\mathfrak U_q$ of $\mathbb G_m^{\operatorname{an}}$ depending on a choice of $q\in K^\times$ with $|q|<1$. 
@@ -482,7 +482,7 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 	are formal models for $\mathcal B(q^{i-1},q^{i-1}), \mathcal B(q^i,q^i)$ respectively. We conclude:
 
 	\begin{lemma}\label{formal model of torus}
-		The affine formal schemes $\{\mathfrak B(q^i,q^{i-1})\}_{i\in\mathbb Z}$ glue together to a flat formal scheme $\mathfrak G_q$ such that $(\mathfrak G_q)_\eta = \mathbb G_m^{\operatorname{an}}$. In other words, $\mathfrak G_q$ is a flat formal model for $\mathbb G_m^{\operatorname{an}}$.
+		The affine formal schemes $\{\mathfrak B(q^i,q^{i-1})\}_{i\in\mathbb Z}$ glue together to an $\mathcal O_K$-flat formal scheme $\mathfrak G_q$ such that $(\mathfrak G_q)_\eta = \mathbb G_m^{\operatorname{an}}$. In other words, $\mathfrak G_q$ is a flat formal model for $\mathbb G_m^{\operatorname{an}}$.
 	\end{lemma}
 	
 	\subsection{A family of formal models for $p$-multiplication}
@@ -564,7 +564,7 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 	
 	
 	\begin{remark}
-	While we expect that our main theorem still holds over any perfectoid field, it is easier to work in the algebraically closed case since this simplifies the theory of Raynaud uniformisation, in particular Lemma~\ref{formal Raynaud sequence is locally split} below.
+	While we expect that our main theorem still holds over any perfectoid field, we will need to work over an algebraically closed field in section \ref{The case of abeloid varieties}. We therefore opt to enforce this condition at this point to simplify the exposition. For a general perfectoid field $K$, the diagram \ref{Raynaud diagram} might only be defined after a finite extension; restricting to the algebraically closed case now allows us to ignore this issue. We sketch how to get around this issue using Galois descent in Remark \ref{general fields for E}.
 	\end{remark}
 	
 	
@@ -579,7 +579,7 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 	where $\overline{B}$ is the completion of an abelian variety $B$ over $K$ of good reduction (as usual we also denote by $B$ the rigid space associated to it), and $\overline{T}$ is the completion of a torus $T$ of rank $r$ over $K$.
 	The rigid generic fibre $\overline{T}_\eta$ of the torus $\overline{T}$ canonically embeds into the rigid torus $T^{\operatorname{an}}$ which again we simply denote by $T$. One can show that this induces a pushout exact sequence in the category of rigid groups. More precisely, there exists a rigid group variety $E$ such that the following diagram commutes and the left square is a pushout.
 	\begin{center}
-		\begin{equation}
+		\begin{equation}\label{Raynaud diagram}
 		\begin{tikzcd}
 			0 \arrow[r] & \overline{T}_\eta \arrow[d, hook] \arrow[r] & \overline{E}_\eta \arrow[d, hook] \arrow[r] & \overline{B}_\eta \arrow[d,equal] \arrow[r] & 0 \\
 			0 \arrow[r] & T \arrow[r] & E \arrow[r] & B \arrow[r] & 0
@@ -767,7 +767,9 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 	The conclusion that $E_\infty$ is perfectoid then follows from Proposition~\ref{existence of p-F-formal tower implies perfectoid}.
 	\end{proof}
 	
-	
+	\begin{remark}\label{general fields for E}
+	With some work, the arguments in this section can be extended to any perfectoid base field. The Raynaud uniformisation of Theorem \ref{Raynaud uniformisation} might only be defined after a finite extension of $K$. In this case, our argument gives a perfectoid space over this (necessarily perfectoid) field. We can then use Galois descent to get a perfectoid space over our original field. This uses that the quotient of a perfectoid space by a finite group often remains perfectoid: see Theorem 1.4 of \cite{Hansen quotients} for details. One must also check that Galois descent commutes with tilde-limits: this is true, but we omit the proof as we never use it. 
+	\end{remark}
 
 %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%
@@ -775,7 +777,7 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%
 	
-	\section{The case of abeloid varieties}
+	\section{The case of abeloid varieties}\label{The case of abeloid varieties}
 	We now want to prove the main result of this work, building on the preceding chapters:
 	
 	\begin{theorem}\label{main theorem}
@@ -1521,7 +1523,7 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	The different categories of fibre bundles are well-behaved with respect to the usual functors between the different categories: For instance, by functoriality of fibre products there are natural rigidification and reduction functors from formal principal $T$-bundles over $\mathcal O_K$ to rigid principal $T_\eta$-bundles over $K$ on the generic fibre, and to principal $\overline{T}$-bundles on the reduction $\mathcal O_K/\pi$. Moreover, these generic fibre and reduction functors commute with the associated fibre construction:
 	\end{remark}
 	\begin{lemma}\label{associated bundle commutes with generic fibre}
-		Let $T$ be a formal group scheme and let $\pi:E\rightarrow B$ be a principial $T$-bundle. Let $F$ be a formal scheme with an action by $T$. Then
+		Let $T$ be a formal group scheme and let $\pi:E\rightarrow B$ be a principal $T$-bundle. Let $F$ be a formal scheme with an action by $T$. Then
 		\[(F\times^T E)_\eta = F_\eta\times^{T_\eta} E_\eta \]
 	\end{lemma}
 	\begin{proof}
@@ -1539,8 +1541,6 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	Siegfried Bosch,
 	\textit{Lectures on Formal and Rigid Geometry}, Lecture Notes in Mathematics, vol 2015. Springer, Berlin/Heidelberg/New York (2014).
 	
-
-	
 	\bibitem{BL} 
 	Siegfried Bosch, Werner L\"utkebohmert,
 	\textit{Degenerating abelian varieties}, Topology {\bf 30} (1991), 653-698.
@@ -1549,16 +1549,13 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	Jean Fresnel and Marius van der Put,
 	\textit{Rigid Analytic Geometry and its Applications}, Progress in Mathematics, vol. 218. Birkh\"auser Boston, Inc., Boston (2004).
 	
+	\bibitem{Hansen quotients}
+	David Hansen,
+	\textit{Quotients of adic spaces by finite groups}, Math. Res. Letters, to appear.
+	
 	\bibitem{rigid geometry of curves} 
 	Werner L\"utkebohmert,
 	\textit{Rigid Geometry of Curves and Their Jacobians}, Springer, Ergeb. 3. Folge, vol. 61. Springer International Publishing (2016). 
-	
-	\bibitem{lutkebohmert1995structure} 
-	Werner L\"utkebohmert,
-	\textit{The structure of proper rigid groups},
-	Journal f{\"u}r die reine und angewandte Mathematik, {\bf 468} (1995), 167--219
-		
-
 	
 	\bibitem{Pilloni-Stroh}
 	Vincent Pilloni and  Benoit Stroh,
