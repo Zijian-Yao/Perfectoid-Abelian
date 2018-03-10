@@ -234,6 +234,7 @@ In the situation of the Corollary, we will also refer to $X$ as \textit{the} per
 	\[\hat{A_0}/\pi^{1/p}\cong \hat{A_0}/\pi.\]
 	Thus by Lemma~5.6 in \cite{perfectoid}, $(\hat{A},\hat{A}^+)$ is a perfectoid $(K,\mathcal O_K)$-algebra. 
 \end{proof}
+	
 
 In the situation that the $X_i$ are rigid space, one way to construct tilde-limits is by constructing well-behaved formal models. The reason for this is the combination of the following two Lemmas:
 
@@ -274,7 +275,18 @@ In the situation that the $X_i$ are rigid space, one way to construct tilde-limi
 		\end{enumerate}
 		In particular, given an inverse system ($\mathcal X_i,\phi_{ij})$ of rigid spaces, one can always choose formal models $\mathfrak X_i$ for the $\mathcal X_i$, and by successive admissible blow-ups one can also find models for the transition maps $\phi_{ij}$. This theorem doesn't immediately allow us to construct a tilde-limit using Lemma \ref{tilde-limit from adic generic fibre of formal schemes} as the morphisms might not be affine.
 		\end{remark}
+		
+We will need the following basic lemma later on.
 
+	\begin{lemma}\label{affinoid tilde-limits commute with fibre products}
+		Let $(A_i, A_i^+)$ and $(B_i, B_i^+)$ be direct systems of affinoids over $(K, \mathcal O_K)$ with compatible rings of definition $A_{i,0}$ and $B_{i,0}$ carrying the $\pi$-adic topology. Let $\operatorname{Spa}(A, A^+)\sim \varinjlim \operatorname{Spa}(A_i, A_i^+)$ and $\operatorname{Spa}(B, B^+)\sim \varinjlim \operatorname{Spa}(B_i, B_i^+)$ (note that we are not necessarily using the tilde-limits constructed in Proposition \ref{SW Proposition 2.4.2}). Then \[\operatorname{Spa}(A, A^+)\times\operatorname{Spa}(B, B^+)\sim\varprojlim (\operatorname{Spa}(A_i, A_i^+)\times \operatorname{Spa}(B_i, B_i^+))\]
+	\end{lemma}
+	
+	\begin{proof}
+		The map of underlying topological spaces is a homeomorphism as fibre products of topological spaces commute with inverse limits. We are therefore reduced to checking that if $\varinjlim A_i \rightarrow A$ has dense image and $\varinjlim B_i \rightarrow B$ has dense image, then $\varinjlim (A_i\otimes B_i) \rightarrow A\otimes B$ has dense image. As direct limits commute with tensor products, we have $\varinjlim (A_i\otimes B_i) = (\varinjlim A_i)\otimes (\varinjlim B_i)$. Now density can be checked directly on elements. 
+	\end{proof}
+	
+	As local tilde-limits glue, the above lemma instantly extends to the case where our tilde-limits come from the setup of Lemma \ref{tilde-limit from adic generic fibre of formal schemes}.
 	
 \subsection{Tilde-limits for rigid groups}
 
@@ -1033,10 +1045,11 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	We now want to explicitly construct a tilde-limit of this tower. Recall from Remark~\ref{remark: Definition of the D_n} the finite \'etale subgroups $D_n=M^{1/p^n}/M\subseteq E/M=A$. Since $K$ is algebraically closed, they are constant and uncanonically isomorphic to $(\underline{\mathbb Z/p^{n}\mathbb Z})^{r}=\operatorname{Spa}(\operatorname{Map}(\mathbb (\mathbb Z/p^n\mathbb Z)^r,K),\operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,\mathcal O_K))$.
 	The $[p]$-multiplication on $E$ maps $M^{1/p^{n+1}}$ onto $M^{1/p^{n}}$ and therefore the $[p]$-multiplication tower of $E/M$ induces a tower
 	\[\dots \xrightarrow{[p]}D_{n+1}\xrightarrow{[p]}D_n\rightarrow\dots.\]
-	\begin{lemma}\label{lemma: existence and structure of D_infty}
-		There exists a perfectoid space $D_\infty$ such that $D_\infty \sim \varprojlim_{[p]} D_n$. Any choice of compatible isomorphisms $D_n\cong\underline{\mathbb Z/p^{n}\mathbb Z}^{r}$ induces an isomorphism 
+	
+	\begin{lemma}There exists a perfectoid space $D_\infty$ such that $D_\infty\sim\varprojlim_{[p]} D_n$. Any choice of compatible isomorphisms $D_n\cong\underline{\mathbb Z/p^{n}\mathbb Z}^{r}$ induces an isomorphism 
 		\[D_\infty = \operatorname {Spa}(\operatorname{Map}_{cts}(\mathbb Z_p^{r},K),\operatorname{Map}_{cts}(\mathbb Z_p^{r},\mathcal O_K)).\]
 	\end{lemma}
+	
 	Such "profinite" perfectoid spaces like $D_\infty$ are mentioned in \cite{berkeley} before Remark 8.2.2.
 	\begin{proof}
 		The $D_n$ are \'etale over $(K,\mathcal O_K)$ and thus affinoid perfectoid. Proposition~\ref{proposition: tilde-limits of perfectoid spaces} then shows that $D_\infty$ exists. Given isomorphisms $D_n=(\underline{\mathbb Z/p^{n}\mathbb Z})^{r}=\operatorname{Spa}(\operatorname{Map}(\mathbb (\mathbb Z/p^n\mathbb Z)^r,K),\operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,\mathcal O_K))$, Proposition~\ref{proposition: tilde-limits of perfectoid spaces} moreover says that the tilde-limit is given by the $\pi$-adic completion of 
@@ -1044,32 +1057,13 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 		where $\operatorname{Map}_{lc}$ denotes the locally constant morphisms, for the $p$-adic topology on $\mathbb Z_p$. Since the $\pi$-adic completion of these are the continuous morphisms, this proves the Lemma.
 	\end{proof}
 	
-	\begin{lemma}\label{lemma: tilde-limits of D_n times X_n}
-		Let $(X_n)_{n\in \mathbb N}$ be an inverse system of adic spaces with quasicompact and quasiseparated transition maps over $(K,\mathcal O_K)$ and let $X$ be a perfectoid space such that $X\sim \varprojlim_n X_n$. Then $D_\infty \times X$ is a perfectoid tilde-limit of the inverse system
-\[D_\infty \times X \sim \varprojlim_{n\in \mathbb N}(D_n\times X_n).\]
-	\end{lemma}
-	\begin{proof}
-		Since $D_\infty$ is perfectoid, the fibre product $D_\infty\times X$ exists and is perfectoid by \cite{perfectoid}, Proposition~6.18. Since the $D_n$ are just a disjoint union of copies of $\operatorname{Spa}(K,\mathcal O_K)$, the fibre product $D_n\times X_n$ exists as an adic space. Let us choose compatible isomorphisms $D_n\cong (\underline{\mathbb Z/p^n\mathbb Z})^r$, then locally on an affinoid open $\operatorname{Spa}(A_n,A_n^{+})\subseteq X_n$, the fibre product is of the form 
-		\[D_n\times \operatorname{Spa}(A_n,A_n^{+}) = \operatorname{Spa}(\operatorname{Map}( (\mathbb Z/p^n\mathbb Z)^r,A_n),\operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_n^+)).\]
-		Since $X\sim \varprojlim_n X_n$, we may cover $X$ by open affinoids $U=\operatorname{Spa}(A,A^{+})$ such that 
-		\[\varinjlim_{\operatorname{Spa}(A_{j},A_{j}^{+})\subseteq X_n} A_{j} \rightarrow A \]
-		has dense image. Here the direct limit runs through all affinoid open subspaces $\operatorname{Spa}(A_{j},A_{j}^{+})\subseteq X_n$ for all $n$ through which $U\subseteq X\rightarrow X_n$ factors, as in the definition of tilde-limits. Then by Lemma~\ref{lemma: existence and structure of D_infty} and the construction of products of affinoid perfectoid spaces, we have
-		\[D_\infty\times U \cong \operatorname{Spa}(\operatorname{Map}_{cts}(\mathbb Z_p^r,A),\operatorname{Map}_{cts}(\mathbb Z_p^r,A^+)).\]
-		It thus suffices to show that $\varinjlim \operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_{j})$ is dense in $\operatorname{Map}_{cts}(\mathbb Z_p^r,A)$.
-		As a first step, even though in the above limit $n$ depends on $j$, we may write this as two separate limits, 
-		\[\varinjlim \operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_{j}) = \varinjlim_{j} \varinjlim_n \operatorname{Map}(\mathbb (\mathbb Z/p^n\mathbb Z)^r,A_{j}).\]
-		For fixed $j$, we then see that 
-		\[\varinjlim_{n} \operatorname{Map}((\mathbb Z/p^n\mathbb Z)^r,A_j)=\operatorname{Map}_{lc}(\mathbb Z_p^r,A_j),\] where the right hand side denotes locally constant morphisms. But it then follows from a pointwise approximation argument that $\varinjlim_j\operatorname{Map}_{lc}(\mathbb Z_p^r,A_j)$ has dense image in $\operatorname{Map}_{lc}(\mathbb Z_p^r,A)$. It is then clear that the latter has dense image in $\operatorname{Map}_{cts}(\mathbb Z_p^r,A)$. We conclude that $D_\infty\times X \sim \varprojlim D_n\times X_n$.
-	\end{proof}
-	
 	\begin{proposition}\label{horizontal limit of vertical limit}
 	There exists a perfectoid space $(E/M^{1/p^\infty})_\infty$ such that \[(E/M^{1/p^\infty})_\infty\sim \varprojlim_{v}(E/M^{1/p^\infty}).\]
 	 Moreover, the projection map $\pi:(E/M^{1/p^\infty})_\infty\rightarrow E/M^{1/p^\infty}$ is a profinite covering map, namely every point of $E/M^{1/p^\infty}$ has an open neighbourhood $U$ such that $\pi^{-1}(U)$ is isomorphic to $D_\infty \times U$.
 	\end{proposition}
 	\begin{proof}
-	By Lemma~\ref{horizontal etale map pulls back to vertical limit}, the preimage of $E_i^{1/p^\infty}$ under $v^m$ of $E/M^{1/p^\infty}$ is isomorphic to $D_m\times E_i^{1/p^\infty}$. By Lemma~\ref{lemma: tilde-limits of D_n times X_n} we then have
+	By Lemma~\ref{horizontal etale map pulls back to vertical limit}, the preimage of $E_i^{1/p^\infty}$ under $v^m$ of $E/M^{1/p^\infty}$ is isomorphic to $D_m\times E_i^{1/p^\infty}$. By Lemma~\ref{affinoid tilde-limits commute with fibre products} we then have
 	\[D_\infty \times E_i^{1/p^\infty}\sim \varprojlim_m D_m\times E_i^{1/p^\infty}.\]
-	Alternatively, we could without loss of generality assume that $E_i^{1/p^\infty}$ is affinoid perfectoid, and use Proposition~\ref{proposition: tilde-limits of perfectoid spaces} to see that a perfectoid tilde-limit exists. Using Proposition~\ref{SW Proposition 2.4.5} and the universal property of the product, on then obtains an isomorphism of this tilde-limit to $D_\infty\times E_i^{1/p^\infty}$.
 	
 	As before, these local tilde-limits glue using Propositions~\ref{SW Proposition 2.4.3} and \ref{SW Proposition 2.4.5}.
 	\end{proof}
@@ -1094,7 +1088,7 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	 On the other hand, when we go along the diagonal tower, we obtain the inverse system 
 	 \[\dots\rightarrow D_{n+1}\times E_i^{1/p^{n+1}}\rightarrow D_{n}\times E_i^{1/p^{n}}\rightarrow \dots.\]
 	 
-	By Lemma~\ref{lemma: tilde-limits of D_n times X_n} this inverse system has perfectoid tilde-limit $D_\infty \times E_i^{1/p^\infty}$. These local tilde-limits glue together to give the desired tilde-limit $A_\infty$.
+	By Lemma~\ref{affinoid tilde-limits commute with fibre products} this inverse system has perfectoid tilde-limit $D_\infty \times E_i^{1/p^\infty}$. These local tilde-limits glue together to give the desired tilde-limit $A_\infty$.
 	 
 	That $A_\infty$ is independent of the $\Gamma_0(p^\infty)$-structure up to unique isomorphism is a consequence of the universal property of the perfectoid tilde-limit. To see that $D_\infty$ is a closed subgroup of $A_\infty$, choose $i$ such that the unit section of $E/M$ lies in $E_i$. Then the unit section $\operatorname{Spa}(K,\mathcal O_K)\rightarrow E_i^{1/p^\infty}$ induces a closed immersion $D_\infty\hookrightarrow D_\infty \times E_i^{1/p^\infty}\hookrightarrow A_\infty$.
 	\end{proof}
