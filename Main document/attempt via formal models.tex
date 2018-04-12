@@ -8,8 +8,9 @@
 \usepackage{latexsym}
 \usepackage{standalone}
 \usepackage{lscape}
-\usepackage[colorlinks=true]{hyperref}
-\hypersetup{colorlinks, citecolor=blue, filecolor=black, linkcolor=red, urlcolor=green}
+\usepackage{hyperref}
+%\usepackage[colorlinks=true]{hyperref}
+%\hypersetup{colorlinks, citecolor=blue, filecolor=black, linkcolor=red, urlcolor=green}
 \usepackage{epstopdf}
 \usepackage{tikz}
 \usetikzlibrary{calc}
@@ -560,7 +561,7 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 		Let $T$ be a split torus over $K$, considered as a rigid space. Then $T$ has a $[p]$-$F$-formal tower. In particular, there exists a perfectoid space $T_\infty$ such that $T_\infty \sim \varprojlim_{[p]} T$. 
 	\end{corollary}
 	
-	\begin{corollary}\label{action on formal model of torus}
+	\begin{corollary}\label{action on formal model of torus, case of general tori}
 		Let $T$ be any split torus over $K$. For any $q\in K^\times$ with $|q|<1$, the formal completion $\overline{T}$ has a natural action on $\mathfrak T_q$ via a map
 		\[\mathfrak m:\overline{T}\times \mathfrak T_q\rightarrow \mathfrak T_q.\]
 		This map is a formal model of the action of the annulus $\overline{T}$ on $T$. Furthermore, this action is compatible with the models for $[p]$ in the sense that if there is a $p$-th root $q^{1/p}\in K$, then the map $[\mathfrak p]:\mathfrak T_q^{1/p}\rightarrow \mathfrak T_q$ is semi-linear with respect to $[p]:\overline{T}\rightarrow \overline{T}$.
@@ -660,7 +661,6 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 %%%%%%%%%%%%
 %%      Section 4.5
 %%%%%%%%%%%%	
-	
 	\subsection{A $[p]$-$F$-formal tower for $E$}
 	In this subsection we prove that $E$ admits a $[p]$-$F$-formal tower. The first step is to construct a family of formal models for $E$. %We do this by using the formal models $\mathfrak T_q$.
 	\begin{lemma}
@@ -669,7 +669,7 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 	which is a fibre bundle and a formal model of $E\rightarrow B$.
 	\end{lemma}
 	\begin{proof}
-		Recall from Proposition~\ref{action on formal model of torus} that $\mathfrak T_q$ has a $\overline{T}$-action that is a model of the $\overline{T}_\eta$-action on $T$. In particular, the associated fibre construction for the principal $\overline{T}$-bundle $\overline{E}\rightarrow \overline{B}$ gives a fibre bundle $\mathfrak E_q :=\mathfrak T_q \times^{\overline{T}} \overline{E} \rightarrow \overline{B}$. Since $\mathfrak T_q$ is a formal model of $T$, one sees by Lemma~\ref{associated bundle commutes with generic fibre} that $\mathfrak E_q$ is a formal model of $T\times^{\overline{T}_\eta}\overline{E}_\eta$ which by definition is equal to $E$. Finally, since $\mathfrak T_q$ and $\overline{B}$ are flat, so is $\mathfrak E_q$.
+		Recall from Corollary~\ref{action on formal model of torus, case of general tori} that $\mathfrak T_q$ has a $\overline{T}$-action that is a model of the $\overline{T}_\eta$-action on $T$. In particular, the associated fibre construction for the principal $\overline{T}$-bundle $\overline{E}\rightarrow \overline{B}$ gives a fibre bundle $\mathfrak E_q :=\mathfrak T_q \times^{\overline{T}} \overline{E} \rightarrow \overline{B}$. Since $\mathfrak T_q$ is a formal model of $T$, one sees by Lemma~\ref{associated bundle commutes with generic fibre} that $\mathfrak E_q$ is a formal model of $T\times^{\overline{T}_\eta}\overline{E}_\eta$ which by definition is equal to $E$. Finally, since $\mathfrak T_q$ and $\overline{B}$ are flat, so is $\mathfrak E_q$.
 	\end{proof}
 	
 	Next we construct a model for the $[p]$-multiplication map. Here we can use again that $[p]$ exists on $\overline{E}$ and on $\mathfrak T_{q^{1/p}}$.
@@ -1083,7 +1083,7 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	In order to show that it is a tilde-limit of $\varprojlim_{[p]}E/M$, it thus suffices to give an explicit cover of $(E/M^{1/p^\infty})_\infty$ by open affinoids satisfying the tilde-limit property. 
 	
 	Recall that by construction of $(E/M^{1/p^\infty})$ we have a cover of $E/M$ by open subsets $E_i$ that pull back to perfectoid open subspaces $E_i^{1/p^\infty}$ for which $E_i^{1/p^\infty}\sim \varprojlim E_i^{1/p^n}$.
-	 Moreover, by the second part of Proposition~\label{horizontal etale map pulls back to vertical limit} we know that the pullback of $E_i^{1/p^\infty}$ to $(E/M^{1/p^\infty})_\infty$ is $D_\infty \times E_i^{1/p^\infty}$. 
+	 Moreover, by the second part of Proposition~\ref{horizontal limit of vertical limit} we know that the pullback of $E_i^{1/p^\infty}$ to $(E/M^{1/p^\infty})_\infty$ is $D_\infty \times E_i^{1/p^\infty}$. 
 	 
 	 On the other hand, when we go along the diagonal tower, we obtain the inverse system 
 	 \[\dots\rightarrow D_{n+1}\times E_i^{1/p^{n+1}}\rightarrow D_{n}\times E_i^{1/p^{n}}\rightarrow \dots.\]
