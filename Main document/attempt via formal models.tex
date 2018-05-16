@@ -576,7 +576,7 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 	
 	
 	\begin{remark}\label{Remark on dealing with general perfectoid fields by Galois descent}
-	While we expect that our main theorem still holds over any perfectoid field, we will need to work over an algebraically closed field in section \ref{The case of abeloid varieties}. We therefore opt to enforce this condition at this point to simplify the exposition. For a general perfectoid field $K$, the diagram \ref{Raynaud diagram} might only be defined after a finite extension; restricting to the algebraically closed case now allows us to ignore this issue. We sketch how to get around this issue using Galois descent in Remark \ref{general fields for E}.
+	We are able to prove our main theorem over a general perfectoid field, but we opt to work over an algebraically closed field to simplify the exposition. The essential ideas all appear in this case, and at the end of each section we sketch the changes needed to move to the general case.
 	\end{remark}
 	
 	
@@ -1659,7 +1659,11 @@ Before we proceed with the proof of the main theorem which occupies the rest of 
 	Note that while the approach via cuboids $E_i$ may look a bit technical on first glance, it has the advantage of giving an explicit description of $A_\infty$ as being glued from pieces of $D_\infty\times E_\infty$ by glueing data that is controlled by the lattices $M^{1/p^n}$. This might be interesting for applications.
 	
 	\begin{remark}
-		The approach in this section crucially uses that the subgroups $D_n\subseteq A$ are defined over $K$ in order to build the vertical tower. It therefore does not immediately generalise to not necessarily algebraically closed perfectoid fields unless all the $D_n$ are defined over $K$. We note, however, that in characteristic $p$ this is no problem: Namely, if $K$ is any perfectoid field of characteristic $p$, then instead of the vertical and horizontal tower one can use the Frobenius and Verschiebung tower, respectively, and one can show that $\varprojlim_VA^{\operatorname{perf}}\sim \varprojlim_{[p]}A$ is the desired perfectoid tilde limit.
+		To extend the result to a general perfectoid base field, some changes are necessary as the lattices $M^{1/p^n}$ may no longer be defined over $K$. One approach is to note that as in Lemma~\ref{preimage of E_i under p^n is disjoint copies}, the preimage of a sufficiently small cuboid $E_i$ under $[p^n]:A\rightarrow A$ is isomorphic to $p^{rn}$ disjoint copies of $E_i^{1/p^n}$. Roughly speaking, this is because the cuboid $E(c,q)$ depends only on $|c|$ and $|q|$, so we can change $c$ and $q$ to admit $p$-th roots. Then in the inverse limit, we get profinitely many copies of $E_i^{1/p^\infty}$ above $E_i$. These glue as before to give the perfectoid tilde-limit $A_\infty$. This approach skips over the two towers entirely and is a bit simpler geometrically.
+		
+		Another approach is to define $M^{1/p^n}$ as the pullback of $M$ under $[p^n]:E\rightarrow E$. This may no longer be a lattice, but we can still define $D_n:=M^{1/p^n}/M$ and check that it is the analytification of a finite subgroup scheme of $A[p^n]$. This allows us to construct the vertical and horizontal towers as before, but the arguments are a bit different as the morphisms $E/M\rightarrow E/M^{1/p^n}$ are no longer local coverings. As this approach retains the two towers description, it makes it possible to generalize the results of the following section to a general perfectoid base field.
+		
+		Finally, we note that if $K$ is any perfectoid field of characteristic $p$, then instead of the vertical and horizontal tower one can use the Frobenius and Verschiebung tower, respectively, and one can show that $\varprojlim_VA^{\operatorname{perf}}\sim \varprojlim_{[p]}A$ is the desired perfectoid tilde limit.
 	\end{remark}
 	
 	
