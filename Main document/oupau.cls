@@ -174,6 +174,15 @@
 %    KEY WORDS\hspace*{1.75em}\ignorespaces#1}}
 %\let\@keywords\@empty
 
+\def\received#1{%
+\gdef\@received{Received #1}}
+\newcommand\revised[2][Revised]{%
+\g@addto@macro\@revised{{; #1 #2}}}
+\let\@revised\@empty
+\newcommand\accepted[2][Accepted]{%
+\g@addto@macro\@accepted{{; #1 #2}}}
+\let\@accepted\@empty
+
 \setlength{\skip\footins}{17pt}
 \renewcommand{\footnoterule}{\rule{0pc}{0pt}}
 
@@ -206,8 +215,9 @@
     \fi
     \thispagestyle{title}\label{FirstPage}
     %\@corraddr
-    \@communic
-    \markboth{\@abbauthor}{\@shtitle}
+    %\footnotetext{\@received\@revised\@accepted}
+    %\@communic
+    %\markboth{\@abbauthor}{\@shtitle}
   \endgroup
   %\setcounter{footnote}{0}%
   \global\let\address\relax
@@ -241,6 +251,12 @@
       %
         \authsize\bf\@author
       \par}%
+      \vskip 6pt
+ {\addresssize
+      \lineskip .5em%
+      %
+        {\@address}
+      \par}% 
     \vskip 10pt
     \@correspdetails
     \vskip 48pt%
@@ -284,7 +300,8 @@
     \footnotetext{Communicated by\ #1}}}
 \let\@communic\@empty
 
-
+\gdef\copyrightlineone{\copyright\ The Author \volyear.\ Published by
+Oxford University Press. All rights reserved. For permissions,}
 \gdef\copyrightlinetwo{please e-mail: journals.permissions@oxfordjournals.org.}
 %\def\runningheads#1#2{\markboth{\MakeTextUppercase{#1}}{\MakeTextUppercase{#2}}}
 %\markboth{\MakeTextUppercase{\abbauthor}}{\MakeTextUppercase{\shtitle}}
@@ -292,13 +309,22 @@
 \def\ps@title{%
 \def\@oddhead{\setlength{\fboxsep}{0pt}%
 \begin{tabular}[b]{@{}l@{}}%
-{\footnotesize \habbauthor.\ (\volyear) ``\headtitle ,''}\\[-3pt]
+	
+{\footnotesize \habbauthor. ``\headtitle''}\\[-3pt]
+
+% EDITED FOR SUBMISSION
+%{\footnotesize \journalname,\ Vol.\ \volyear,\ Article ID\ \papID,\ \endpage\ pages.}\\[-3pt]
+%{\footnotesize doi:10.1093/\journalabb/\papID}
 \end{tabular}\hss\hfill}%
 
 \let\@evenhead\@oddhead
 \def\@oddfoot{\setlength{\fboxsep}{0pt}%
 \begin{tabular}[t]{@{}l@{}}%
 \\[-16pt]
+
+%EDITED FOR SUBMISSION
+%\footnotesize\copyrightlineone\\[-1pt]
+%\footnotesize\copyrightlinetwo
 
 \end{tabular}\hss\hfill}%
 %\def\@oddfoot{\parbox[t]{\textwidth}{%
@@ -487,7 +513,7 @@
 
 \newcommand\etal{\emph{et~al.}}
 
-\usepackage[square, numbers]{natbib}
+\usepackage[square,comma,numbers]{natbib}
 
 \pagestyle{oupau}
 \normalsize
