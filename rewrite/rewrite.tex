@@ -47,7 +47,7 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{notation}[theorem]{Notation}
 \newtheorem{construction}[theorem]{Construction}
-\newtheorem{question}[mainthm]{Question}
+\newtheorem{question}[theorem]{Question}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem*{example}{Example}
 \newtheorem{remark*}[mainthm]{Remark}
@@ -109,7 +109,7 @@
 	\maketitle
 	
 	\begin{abstract}
-For an abelian variety $A$ over an algebraically closed non-archimedean field of residue characteristic $p$, we show that there exists a perfectoid space which is the tilde-limit of $\varprojlim_{[p]}A$.
+For an abelian variety $A$ over an algebraically closed non-archimedean field of residue characteristic $p$, we show that there exists a perfectoid space which is the tilde-limit of $\varprojlim_{[p]}A$. Our proof also works for the larger class of abeloid varieties.
 	\end{abstract}
 	
 
@@ -198,18 +198,17 @@ Now we end the introduction by describing the content of each section.
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %some hack to hide the acknowledgements in the toc
 \section*{Notation}
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
-	Let $\mathcal O_K$ be the ring of integers of $K$ and  a fixed pseudo-uniformiser $\pi\in \mathcal O_K$ such that $p\in\pi\mathcal O_K$.
+	Let $\mathcal O_K$ be the ring of integers of $K$. We fix a pseudo-uniformiser $\pi\in \mathcal O_K$ such that $p\in\pi\mathcal O_K$. Let moreover $K^+$ be any open bounded integrally closed subring of $K$, then $K^+\subseteq \mathcal O_K$.
 	
-	By an adic space over $\operatorname{Spa}(K,\mathcal O_K)$, we mean an adic spaces in the sense of \cite{SW}. We use perfectoid spaces in the sense of \S2 \textit{\small ibid}. In their language, adic spaces in the sense of Huber are referred to as \textit{honest} adic spaces. 
+	We will use adic spaces over $\operatorname{Spa}(K,K^+)$ in the sense of Huber, and perfectoid spaces over $\operatorname{Spa}(K,K^+)$ in the sense of Scholze \cite{perfectoid}. We denote by $X\mapsto X^{\an}$ the analytification functor from schemes of finite type over $X$ to analytic adic spaces over $(K,K^+)$. Here the dependence on $K^+$ is suppressed from notation.
 	
-	Throughout the article, we make no distinction between rigid spaces and their corresponding honest adic spaces.
-	In particular, by an open cover of a rigid space we shall always mean a cover of the associated adic space, and therefore the cover of the rigid space will automatically be an admissible cover in the sense of rigid analytic geometry. 
-	If a rigid space is obtained from a $K$-scheme $X$ via rigid-analytification $X\mapsto X^{\operatorname{an}}$, we will often denote both by the same symbol $X$ in order to simplify the notation.
+	By a rigid spaces, we shall always mean an analytic adic space of topologically finite type over $\operatorname{Spa}(K,\mathcal O_K)$. 
+	In particular, by an open cover of a rigid space we shall always mean a cover of the associated adic space, so that we do not need the notion of admissible covers.
 	
-	For a $\pi$-adic formal scheme $\mathfrak X$ over $\operatorname{Spf}(\mathcal O_K)$ with the $\pi$-adic topology, we denote by $\mathfrak X_\eta:=\mathfrak X\times_{\operatorname{Spa}(\mathcal O_K,\mathcal O_K)}\operatorname{Spa}(K,\mathcal O_K)$ its adic generic fibre. 
+	For a $\pi$-adic formal scheme $\mathfrak X$ over $\operatorname{Spf}(\mathcal O_K)$ with the $\pi$-adic topology, we denote by $\mathfrak X_\eta:=\mathfrak X^{\mathrm{ad}}\times_{\operatorname{Spa}(\mathcal O_K,\mathcal O_K)}\operatorname{Spa}(K,\mathcal O_K)$ its adic generic fibre. Here $X^{\mathrm{ad}}$ is the adification in the sense of \cite{SW}.
 	
 	Finally, we recall some standard terminology: If $X$ be a rigid space over $K$, a formal model of $X$ is an admissible topologically finite type formal scheme $\mathfrak X$ over $\mathcal O_K$ together with an isomorphism of its generic fibre $\mathfrak X_\eta \xrightarrow{\sim} X$.
-	If $\phi:  X\rightarrow  Y$ is a morphism of rigid spaces over $K$, with formal models $\mathfrak X$ and $\mathfrak Y$, respectively, then a morphism of formal schemes $\Phi:\mathfrak X \rightarrow \mathfrak Y$ is a formal model of $\phi$ if it agrees with $\phi$ on the adic generic fiber via the identifications $\mathfrak X_\eta \xrightarrow{\sim} X$ and $\mathfrak Y_\eta \xrightarrow{\sim} Y$.
+	If $f:  X\rightarrow  Y$ is a morphism of rigid spaces over $K$, with formal models $\mathfrak X$ and $\mathfrak Y$, respectively, then a morphism of formal schemes $\mathfrak X \rightarrow \mathfrak Y$ is a formal model of $f$ if its generic fibre agrees with $f$ via the identifications $\mathfrak X_\eta \xrightarrow{\sim} X$ and $\mathfrak Y_\eta \xrightarrow{\sim} Y$.
 
 
 %%%%%%%%%%%%
@@ -221,10 +220,10 @@ Now we end the introduction by describing the content of each section.
   
 	
 
-		\subsection{Tilde-limits and formal models} 
-		
-	Inverse limits often do not exist in the category of adic spaces, and neither do they in rigid spaces. Instead we use the notion of tilde-limits from \cite{SW}:
+		\subsection{Tilde-limits} 
+	We begin with some Lemmas on tilde-limits that we will need throughout.
 	
+	Inverse limits often do not exist in the category of adic spaces, and neither do they in rigid spaces. Instead we use the notion of tilde-limits from \cite[Definition 2.4.2]{Hubers-book}:	
 	\begin{definition} 
 Let $(X_i)_{i\in I}$ be a filtered inverse system of adic spaces with quasi-compact and quasi-separated transition maps, let $X$ be an adic space with a compatible system of morphisms $f_i: X \rightarrow X_i$. We write $X \sim \varprojlim X_i$ and say that $X$ is a \textbf{tilde-limit} of the inverse system $(X_i)_{i\in I}$ if the map of underlying topological spaces $|X| \rightarrow \varprojlim |X_i|$ is a homeomorphism, and there exists an open cover of $X$ by affinoids $\operatorname{Spa} (A, A^+) \subset X$ such that the map 
 $$ \varinjlim_{\operatorname{Spa}(A_i, A_i^+) \subset X_i} A_i \rightarrow A$$
@@ -313,10 +312,10 @@ One reason why perfectoid limits along group morphisms are particularly interest
 Note that the category of perfectoid spaces over $K$ has finite products, so the notion of a group object makes sense. 
 
 \begin{proposition}\label{perfectoid tilde-limit is perfectoid group in a functorial way}
-	Let $(G)_{i\in I}$ be a system of adic group with perfectoid tilde-limit $G_\infty\sim \varprojlim_{i\in I}G_i$.
+	Let $(G_i)_{i\in I}$ be an inverse system of adic groups with perfectoid tilde-limit $G_\infty\sim \varprojlim_{i\in I}G_i$.
 	\begin{enumerate}
 		\item  There is a unique way to endow $G_\infty$ with the structure of a perfectoid group in such a way that all projections $G_\infty\rightarrow G$ are group homomorphisms
-		\item Given a morphism of inverse systems of adic groups $(G)_{i\in I}\to (H_j)_{j\in J}$ and a perfectoid tilde-limit $H_\infty\sim\varprojlim_{j\in J}H_j$, there is a unique morphism of perfectoid groups $H_\infty\rightarrow G_\infty$
+		\item Given a morphism of inverse systems of adic groups $(G_i)_{i\in I}\to (H_j)_{j\in J}$ and a perfectoid tilde-limit $H_\infty\sim\varprojlim_{j\in J}H_j$, there is a unique morphism of perfectoid groups $H_\infty\rightarrow G_\infty$
 		commuting with all projection maps.
 	\end{enumerate}
 \end{proposition}
@@ -324,22 +323,46 @@ Note that the category of perfectoid spaces over $K$ has finite products, so the
 	These are all consequences of the universal property of the perfectoid tilde-limit, Proposition~\ref{SW Proposition 2.4.5}, which shows that one can argue like in the case of categorical limits.
 \end{proof}
 
-
-Let $G$ be a rigid group over $K$, that is, a group object in the category of rigid spaces over $K$. Throughout we will always consider commutative rigid groups. The main topic of study of this work is the $[p]$-multiplication tower
+Let $G$ be an adic group locally of finite type over $(K,K^+)$, that is, a group object in the category of adic spaces over $\Spa(K,K^+)$. Throughout we will always consider commutative groups. The main topic of study of this work is the $[p]$-multiplication tower
 \[ \dots\xrightarrow{[p]}G\xrightarrow{[p]}G.\]
 We will usually assume that $G$ is $p$-divisible, i.e.\ that $[p]:G\to G$ is surjective.
-\begin{question}
+\begin{question}\label{qu:tilde-limits-of-adic-groups}
 	When is there a perfectoid space $G_\infty$ such that $G_\infty \sim \varprojlim_{[p]} G$ is a tilde-limit?
 \end{question}
 
 We are primarily interested in the following examples:
 \begin{enumerate}	 
-\item Analytifications of finite type group schemes over $K$. Examples include the analytification of an abelian variety $A$ over $K$ and of tori $T$ over $K$.
-\item Generic fibres of topologically finite type formal group schemes over $\mathcal O_K$.
-\item Raynaud's covering space $E$  of an abelian variety with semi-stable reduction.
+	\item Analytifications over $\Spa(K,K^+)$ of finite type group schemes over $K$. Examples include analytifications of abelian varieties $A$ over $K$ and of tori $T$ over $K$.
+	\item Generic fibres of locally topologically finite type formal group schemes over $\mathcal O_K$.
+	\item Raynaud's covering space $E$  of an abelian variety with semi-stable reduction.
 \end{enumerate}
 
-	Lemma \ref{lemma:inverse_limit_formal} and  \ref{tilde-limit from adic generic fibre of formal schemes} motivate the following definition. 
+The following technical Lemma says that in order to answer Question~\ref{qu:tilde-limits-of-adic-groups}, we may restrict attention to the classical situation that $K^+=\mathcal O_K$, i.e.\ the situation of rigid geometry:
+\begin{lemma}\label{l:perf-tilde-lim-over-K+}
+	Let $(X_i)_{i\in I}$ be an inverse system of adic spaces $X_i$ of finite type over $(K,K^+)$ with finite transition maps. Let $X_{i,\eta}:=X_i\times_{\Spa(K,K^+)}\Spa(K,\mathcal O_K)$. Then the following are equivalent:
+	\begin{enumerate}
+	\item There is a perfectoid tilde-limit $X_{\infty}\sim \varprojlim_{i \in I}X_{i}$. 
+	\item There is a perfectoid tilde-limit $X_{\infty,\eta}\sim \varprojlim_{i \in I}X_{i,\eta}$.
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+	The implication $(1)\Rightarrow (2)$ follows from Proposition~\ref{SW Proposition 2.4.3} since $\Spa(K,\mathcal O_K)\hookrightarrow \Spa(K,K^+)$ is an open immersion, and thus so is each $X_{i,\eta}\hookrightarrow X_i$.
+	
+	For the other direction, we start by arguing as in the proof of \cite[Prop. 2.4.5]{SW}: We may assume without loss of generality assume that the $X_i=\Spa(A,A_i^+)$ are affine, that $X_\infty=\Spa(A_\infty,A_\infty^+)$ is affinoid perfectoid and that $\varinjlim_{i\in I} A_i\to A_\infty$ has dense image. We claim that the natural map
+	\[\varinjlim_{i\in I}A_i^+/\pi= A_\infty^{+}/\pi\]
+	is an isomorphism. To see surjectivity, let $f\in A_\infty^+$. Then $|f(x)|\leq 1$ for all $x\in |X_\infty|$. Let $f_i\in A_i$ be a sequence whose images in $A_\infty$ converge to $f$. Then eventually, we will have $|f_i(x)|\leq 1$ for all  $x\in |X_\infty|$. Since $|X_\infty|=\varprojlim |X_i|$, and the projection map $|X_\infty|\to |X_i|$ is surjective due to the assumption that the transition maps are finite, we see $|f_i(x)|\leq 1$ for all $x\in |X_i|$, and thus $f_i\in A_i^+$.
+	
+	Similarly, the map is injective because $f_i\in A_i^+$ satisfies $|f_i(x)|\leq |\pi|$ for all $x\in X_i$ if and only if its image $f$ in $A_\infty$ satisfies $|f(x)|\leq |\pi|$ for all $x\in X_\infty$. This shows that the map is an isomorphism.
+	
+	
+	Next, we note that since $A_i$ is of finite type over $(K,K^+)$, we have \[X_{i,\eta}=\Spa(A_i,A_i^+)\times_{\Spa(K,K^+)}\Spa(K,\mathcal O_K)=\Spa(A_i,A_i'^+)\]
+	where $A_i'^+$ is the integral closure of $A_i^+\hotimes_{K^+}\mathcal O_K$ in $A_i$. Here the map $K^+\to \mathcal O_K$ has almost zero cokernel, and is thus an almost isomorphism. It follows that the morphism $A_i^+/p\to A_i'^+/p$ is also an almost isomorphism. Taking the limit over $i\in I$, this gives an almost isomorphism of $\mathcal O_K^a/\pi$-algebra
+	\[\varinjlim A_i^{+a}/\pi=\varinjlim A'^{+a}_i/\pi.\]
+	It follows that $\varinjlim A'^{+a}_i/\pi$ is a perfectoid $\mathcal O_K^a/\pi$-algebra. Let now $A'^{+}$ be the $\pi$-adic completion of $\varinjlim A'^+$ and $A':=A'^{+}[1/\pi]$. Then by \cite[Thm. 5.2]{perfectoid}, $(A',A'^+)$ is a perfectoid $K$-algebra. It is now clear from construction that 
+	\[\Spa(A',A'^+)\sim \varprojlim\Spa(A_i,A_i'^+).\qedhere\]
+\end{proof}
+	We shall therefore from now on work exclusively over $(K,\mathcal O_K)$ and consider rigid groups, regarded as analytic adic spaces over $\Spa(K,\mathcal O_K)$. In this setting,
+	Lemma \ref{lemma:inverse_limit_formal} and  \ref{tilde-limit from adic generic fibre of formal schemes} motivate the following: 
 	\begin{definition}
 	Let $G$ be a rigid group. A \textbf{$[p]$-formal tower} for $G$ is  a family of formal models $\{\mathfrak G_n\}_{n\in \mathbb N}$ of $G$, together with affine transition maps $[\mathfrak p]_{n+1}:\mathfrak G_{n+1}\rightarrow \mathfrak G_{n}$ which are formal models of $[p]:G\rightarrow G$. Sometimes we suppress notation and write $[\mathfrak p]$ for $[\mathfrak p]_{n}$ on $\mathfrak G_n$. 
 	\end{definition}
@@ -803,6 +826,13 @@ The $[p]$-multiplication on $E$ maps $M_{n+1}$ onto $M_n$ and therefore the $[p]
 	
 	The first row in 4 is part of Proposition~\ref{M_infty->E_infty->A'_infty}. Part of 5 then follows immediately from 4.
 	\end{proof}
+	\begin{corollary}
+		Let $K^+\subseteq K$ be any open, bounded and integrally closed subring and let $A$ be the analytification over $(K,K^+)$ of an abelian variety over $K$. Then there is a perfectoid group $A_\infty$ over $(K,K^+)$ that is a tilde-limit $A_\infty\sim \varprojlim_{[p]} A$.
+	\end{corollary}
+	\begin{proof}
+		This follows from Lemma~\ref{l:perf-tilde-lim-over-K+} and Theorem~\ref{tilde-limit of tilde-limits of partial towers is tilde-limit of whole tower}.1.
+	\end{proof}
+
 	\begin{remark}
 		When working over a general perfectoid base field, the lattices $M_n$ may no longer be defined over $K$. Instead, one can show that the natural map $A[p^n]\times U_n\to V_n$ is an \'etale $E[p^n]$-torsor for the diagonal action where $V_n$ is the pullback of $U$ along $[p^n]:A\to A$. The point is that this torsor is split when $C$ is algebraically closed.
 	\end{remark}
@@ -988,6 +1018,11 @@ The $[p]$-multiplication on $E$ maps $M_{n+1}$ onto $M_n$ and therefore the $[p]
 	\bibitem{Hansen-blog}
 	David Hansen, \textit{Perfectoid universal covers of curves}, blog entry (2015)
 	\url{https://arithmetica.wordpress.com/2015/09/27/perfectoid-universal-covers-of-curves/}
+	
+	\bibitem{Hubers-book}
+	Roland Huber, \textit{\'Etale cohomology of rigid analytic varieties and adic spaces}, Aspects of Mathematics, E30,
+	Friedr. Vieweg \& Sohn, Braunschweig (1996),
+	
 	
 	\bibitem{rigid geometry of curves} 
 	Werner L\"utkebohmert,
