@@ -21,6 +21,9 @@
 \usepackage{multirow}
 \usepackage{enumitem}
 \usepackage{framed}
+\usepackage{cite}
+
+
 
 \newcommand{\dstyle}{\displaystyle}
 
@@ -47,9 +50,9 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{notation}[theorem]{Notation}
 \newtheorem{construction}[theorem]{Construction}
-\newtheorem{question}[mainthm]{Question}
+\newtheorem{question}[theorem]{Question}
 \newtheorem{remark}[theorem]{Remark}
-\newtheorem*{example}{Example}
+\newtheorem{example}[theorem]{Example}
 \newtheorem{remark*}[mainthm]{Remark}
 \newtheorem{definition*}[mainthm]{Definition}
 
@@ -123,7 +126,7 @@ Let $p$ be a prime and let $K$ be an algebraically closed non-archimedean field 
 For an abelian variety $A$ over $K$ we consider the inverse system of $A$ under the $p$-multiplication morphism:
 \[\dots\xrightarrow{[p]}A\xrightarrow{[p]}A\xrightarrow{[p]}A.\]
 Via the adic analytification functor, we may see this as an inverse system of analytic adic spaces over $\operatorname{Spa}(K,\mathcal O_K)$.
-The primary goal of this article is to show that the ``inverse limit'' of this tower exists in some way and is a perfectoid space: Since inverse limits rarely exist in the category of adic spaces, in \cite{SW} the authors introduce the weaker notion of tilde-limits to remedy this problem. This is the notion of "limits" we are going to use. More precisely, we prove:
+The primary goal of this article is to show that the ``inverse limit'' of this tower exists in some way and is a perfectoid space: Since inverse limits rarely exist in the category of adic spaces, in \cite{SW} the authors introduce the weaker notion of tilde-limits to remedy this problem. This is the notion of ``limits" we are going to use. More precisely, we prove:
 
  %Before we state the precise version of the theorem, we remark that the main assertion already implicitly appeared in [?] [?] without justification. Nevertheless we decide to fill in this gap in the literature, since the proof, despite being straight-forward, is quite subtle to spell out. 
  
@@ -198,7 +201,7 @@ Now we end the introduction by describing the content of each section.
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %some hack to hide the acknowledgements in the toc
 \section*{Notation}
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
-	Let $\mathcal O_K$ be the ring of integers of $K$ and  a fixed pseudo-uniformiser $\pi\in \mathcal O_K$ such that $p\in\pi\mathcal O_K$.
+	Let $K$ be an algebraically closed perfectoid field, let $\mathcal O_K$ be the ring of integers of $K$ and fix a pseudo-uniformiser $\pi\in \mathcal O_K$ such that $p\in\pi\mathcal O_K$.
 	
 	By an adic space over $\operatorname{Spa}(K,\mathcal O_K)$, we mean an adic spaces in the sense of \cite{SW}. We use perfectoid spaces in the sense of \S2 \textit{\small ibid}. In their language, adic spaces in the sense of Huber are referred to as \textit{honest} adic spaces. 
 	
@@ -238,7 +241,7 @@ As pointed out after Proposition 2.4.4 of \cite{SW}, tilde-limits (if they exist
 We recall a few results from \cite{SW}, \S2.4 on tilde-limits that we will use frequently throughout:
 
 \begin{proposition}[\cite{SW}, Proposition 2.4.2]\label{SW Proposition 2.4.2}
-	Let $(A_i,A_i^{+})$ be a direct system of affinoids over $(\mathcal O_K,\mathcal O_K)$ with compatible rings of definition $A_{i,0}$ carrying the $\pi$-adic topology. Let $(A,A^{+})=(\varinjlim A_i,\varinjlim A_i^{+})$ be the affinoid algebra equipped with the topology making $\varinjlim A_{i,0}$ with the $\pi$-adic topology a ring of definition. Then
+	Let $(A_i,A_i^{+})$ be a direct system of affinoids over $(K,\mathcal O_K)$ with compatible rings of definition $A_{i,0}$ carrying the $\pi$-adic topology. Let $(A,A^{+})=(\varinjlim A_i,\varinjlim A_i^{+})$ be the affinoid algebra equipped with the topology making $\varinjlim A_{i,0}$ with the $\pi$-adic topology a ring of definition. Then
 	\[\operatorname{Spa}(A,A^{+})\sim \textstyle\varprojlim \operatorname{Spa}(A_i,A_i^{+}).\]
 \end{proposition}
 \begin{proposition}[\cite{SW}, Proposition 2.4.3]\label{SW Proposition 2.4.3}
@@ -302,7 +305,7 @@ We will need the following basic lemma later on.
 	\end{proof}
 
 
-\subsection{Tilde-limits for rigid groups}
+\subsection{Perfectoid tilde-limits for rigid groups}
 
 One reason why perfectoid limits along group morphisms are particularly interesting is that the perfectoidness ensures that the limit has again a group structure:
 
@@ -339,19 +342,12 @@ We are primarily interested in the following examples:
 \item Raynaud's covering space $E$  of an abelian variety with semi-stable reduction.
 \end{enumerate}
 
-	Lemma \ref{lemma:inverse_limit_formal} and  \ref{tilde-limit from adic generic fibre of formal schemes} motivate the following definition. 
+	We now introduce the formalism of $[p]$-$F$-formal towers to axiomatise the approach mentioned in the introduction which shows that $A_\infty$ exists and is perfectoid in the case of good reduction. Lemma \ref{lemma:inverse_limit_formal} and  \ref{tilde-limit from adic generic fibre of formal schemes} motivate the following definition. 
 	\begin{definition}
 	Let $G$ be a rigid group. A \textbf{$[p]$-formal tower} for $G$ is  a family of formal models $\{\mathfrak G_n\}_{n\in \mathbb N}$ of $G$, together with affine transition maps $[\mathfrak p]_{n+1}:\mathfrak G_{n+1}\rightarrow \mathfrak G_{n}$ which are formal models of $[p]:G\rightarrow G$. Sometimes we suppress notation and write $[\mathfrak p]$ for $[\mathfrak p]_{n}$ on $\mathfrak G_n$. 
 	\end{definition}
 	For example, for any formal group scheme $\mathfrak G$ for which $[p]$ is affine, the $[p]$-multiplication tower of $\mathfrak G$ gives rise to a $[p]$-formal tower for its generic fibre $\mathfrak G_\eta$. 
-	
-	
-	
-	
-	\subsection{Perfectoidness}  \label{subsection:perfectoid_tilde_limit}
-
-We now introduce the formalism of $[p]$-$F$-formal towers to axiomatise the approach mentioned in the introduction which shows that $A_\infty$ exists and is perfectoid in the case of good reduction.
-	
+		
 	\begin{definition}
 		A \textbf{$[p]$-$F$-formal tower} for a rigid analytic group $G$ is a $[p]$-formal tower 
 		$$(\{\mathfrak G_n\}_{n\in \mathbb N}, [\mathfrak p]_{n+1}:\mathfrak G_{n+1}\rightarrow \mathfrak G_{n})$$ such that on the mod $\pi$ special fibre  $\tilde{G}_n$, each   $[\mathfrak p]_{n+1}$ factors through the relative Frobenius map:
@@ -390,8 +386,7 @@ We now introduce the formalism of $[p]$-$F$-formal towers to axiomatise the appr
 		Since each $\mathfrak G_i$ is flat, so are the $S_i$ and thus so is $S_\infty$. Thus $S_\infty[1/\pi]$ is a perfectoid $K$-algebra.
 		Since $G_\infty$ is covered by affinoids of the form $\operatorname{Spf}(S_\infty)_\eta$, this shows that $G_\infty$ is perfectoid.
 	\end{proof}
-	
-\subsection{Examples}	
+
 Prop. \ref{existence of p-F-formal tower implies perfectoid} gives in more detail the proof of the result sketched in the introduction:
 	\begin{corollary}\label{tilde-limit exists and is perfectoid in the good reduction case}
 		Let $A$ be an abelian variety of good reduction over $K$. Then there is a perfectoid tilde-limit $A_\infty\sim \varprojlim A$.
@@ -403,12 +398,11 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 %\end{remark}
 					
 		
-	\begin{example}
-		Let $\mathfrak G$ be the $p$-adic completion of the affine group scheme $\mathbb G_m$ over $\mathcal O_K$. The underlying formal scheme of $\mathfrak G$ is $\operatorname {Spf} \mathcal O_K\langle X^{\pm 1} \rangle$.  Multiplication by $p$ on $\mathbb G_m$ gives a $[p]$-$F$-formal tower for $G$, so for the generic fibre $G=\mathfrak G_\eta$ we obtain the perfectoid tilde-limit $G_\infty := (\mathfrak G_\infty)_{\eta} \sim \varprojlim_{[p]} G$. More precisely,  multiplication by $p$ corresponds to the homomorphism
-		\[[p]:\mathcal O_K\langle X^{\pm 1} \rangle\rightarrow  \mathcal O_K\langle X^{\pm 1} \rangle, \quad X\rightarrow X^{p}.\]
-		In the direct limit, we obtain $   (\varinjlim_{[p]} \mathcal O_K\langle X^{\pm 1} \rangle  )^{\wedge} = \mathcal O_K\langle  X^{\pm 1/p^\infty} \rangle$.  Therefore, taking the generic fiber we get
-		$$G_\infty = \operatorname{Spa}(K\langle X^{\pm 1/p^\infty} \rangle,\mathcal O_K\langle X^{\pm 1/p^\infty} \rangle)$$
-		and one can verify directly that we indeed have $G_\infty \sim \varprojlim_{[p]} G$.
+	\begin{example}\label{tower for Gm}
+		Let $\hat{\mathbb G}_m$ be the $p$-adic completion of the affine group scheme $\mathbb G_m$ over $\mathcal O_K$. The underlying formal scheme of $\hat{\mathbb G}_m$ is $\operatorname {Spf} \mathcal O_K\langle X^{\pm 1} \rangle$.  Multiplication by $p$ on $\hat{\mathbb G}_m$ corresponds to the homomorphism
+		\[[p]:\mathcal O_K\langle X^{\pm 1} \rangle\rightarrow  \mathcal O_K\langle X^{\pm 1} \rangle, \quad X\rightarrow X^{p},\]
+		It therefore gives a $[p]$-$F$-formal tower for the corresponding rigid group $(\hat{\mathbb G}_m)_\eta$, which we'll soon see is the ``rigid unit circle". In the direct limit, we obtain $   (\varinjlim_{[p]} \mathcal O_K\langle X^{\pm 1} \rangle  )^{\wedge} = \mathcal O_K\langle  X^{\pm 1/p^\infty} \rangle$.  Taking the generic fiber, we get the perfectoid tilde-limit
+		\[\operatorname{Spa}(K\langle X^{\pm 1/p^\infty} \rangle,\mathcal O_K\langle X^{\pm 1/p^\infty} \rangle)\sim \varprojlim_{[p]} (\hat{\mathbb G}_m)_\eta\].
 	\end{example}
 	
 	
@@ -432,23 +426,23 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 	
 	In this section we want to show that for a split rigid torus $T$ over $K$, a perfectoid tilde-limit $T_\infty\sim \varprojlim_{[p]}T$ exists. This is easy to see directly, but in order to simplify the argument in the next chapter, we shall formulate the proof in the language of $[p]$-$F$-models.
 	
-	\subsection{A family of explicit covers}
-	As a preparation, we briefly recall how $\mathbb G_m^{\operatorname{an}}$ is constructed: The following is taken from \cite{Bosch lectures}, \S 9.2 with slightly different notation. Throughout we use the following standard shorthand notation: For any $0\ne a,b\in K$ with $|a|\leq |b|$, we write
-	\[K\langle a/X,X/b\rangle := K\langle Z_1,Z_2\rangle/(Z_1Z_2-\tfrac{a}{b})\]
+	
+	As a preparation, we briefly recall how $\mathbb G_m^{\operatorname{an}}$ is constructed: The following is taken from \cite{Boschlectures}, \S 9.2 with slightly different notation. Throughout we use the following standard shorthand notation: For any $0\ne a,b\in K$ with $|a|\leq |b|$, we write
+	\[K\langle a/X,X/b\rangle := K\langle Z_1,Z_2\rangle/(Z_1Z_2-\tfrac{a}{b}),\]
+	\[\mathcal O_K\langle a/X,X/b\rangle:=\mathcal O_K\langle Z_1,Z_2 \rangle/(Z_1Z_2-\tfrac{a}{b})\]
 	and set $X:=Z_2b$.
-	The associated affinoid space $\mathcal B(a,b):=\operatorname{Spa}(K\langle a/X, X/b\rangle)$ is the annulus of inner radius $|a|$ and outer radius $|b|$ inside $\mathbb G_m^{\operatorname{an}}$.
+	The associated affinoid space $\mathcal B(a,b):=\operatorname{Spa}(K\langle a/X, X/b\rangle, \mathcal O_K\langle  a/X,X/b \rangle)$ is the annulus of inner radius $|a|$ and outer radius $|b|$ inside $\mathbb G_m^{\operatorname{an}}$.
 	We have natural open immersions $\mathcal B(a,a)\hookrightarrow B(a,b)$ and $\mathcal B(b,b)\hookrightarrow B(a,b)$, which we regard as the inner and outer ``boundary'', respectively. Explicitly, \[\mathcal B(a,a)=\mathcal B(a,b)(|\tfrac{a}{X}|\geq 1),\quad \mathcal B(b,b)=\mathcal B(a,b)(|\tfrac{X}{b}|\geq 1).\]
 	
-	Let us fix from now a choice of an element $q\in K^{\times}$ with $|q|<1$ such that there is a compatible system of $p^n$-th roots $q^{1/p^n}\in K$. We can always find such a $q$ since $K^{\times}$ is perfectoid.
+
 	
-	We can then construct $\mathbb G_m^{\mathrm{an}}$ by glueing the annuli $\{\mathcal B(q^i,q^{i-1})\}_{i\in\mathbb{Z}}$ along the inner and outer boundary $\mathcal B(q^i,q^i)$ of $\mathcal  B(q^{i+1},q^{i})$ and $\mathcal B(q^{i}, q^{i-1})$, respectively.
+	For any choice of element $q\in K^\times$ with $|q|<1$, we can construct $\mathbb G_m^{\mathrm{an}}$ by glueing the annuli $\{\mathcal B(q^i,q^{i-1})\}_{i\in\mathbb{Z}}$ along the inner and outer boundary $\mathcal B(q^i,q^i)$ of $\mathcal  B(q^{i+1},q^{i})$ and $\mathcal B(q^{i}, q^{i-1})$, respectively.
 	
-	It is clear from this description that the $\mathcal B(a,b)$ as well as the glueing maps admit natural formal models, given by the topologically finite type $\mathcal O_K$-algebras
-	\[\mathfrak B(a,b):=\mathrm{Spf}(\mathcal O_K\langle \tfrac{a}{X},\tfrac{X}{b} \rangle):=\mathrm{Spf}(\mathcal O_K\langle Z_1,Z_2 \rangle/(Z_1Z_2-\tfrac{a}{b})).\]
+	It is clear from this description that the $\mathcal B(a,b)$ as well as the glueing maps admit natural formal models, given by the topologically finite type $\mathcal O_K$-algebras $\mathfrak B(a,b):=\mathrm{Spf}(\mathcal O_K\langle  a/X,X/b \rangle).$
 	This is because the boundary $\mathfrak B(a,a)\subseteq \mathfrak B(a,b)$ is still the open subspace where $\tfrac{a}{X}$ becomes invertible, and similarly for  $\mathfrak B(b,b)\subseteq \mathfrak B(a,b)$. We can use this to construct a formal model of $\mathbb G_m^{\mathrm{an}}$:
 
 	\begin{lemma}\label{formal model of torus}
-		Let $q\in K^\times$ be as before.
+		Let $q\in K^\times$ be as before, let $q^{1/p}$ be any $p$th root of $q$ (recall that we are assuming $K$ to be algebraically closed).
 		\begin{enumerate} 
 		\item 
 		The affine formal schemes $\{\mathfrak B(q^i,q^{i-1})\}_{i\in\mathbb Z}$ glue together to a formal model $\mathfrak G_q$ of $\mathbb G_m^{\operatorname{an}}$.
@@ -471,11 +465,11 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 		The space $\mathbb G_m^{\operatorname{an}}$ has a $[p]$-$F$-formal tower. In particular, there exists a perfectoid space $(\mathbb G_m^{\operatorname{an}})_\infty$ such that $(\mathbb G_m^{\operatorname{an}})_\infty \sim \varprojlim_{[p]} \mathbb G_m^{\operatorname{an}}$.
 	\end{proposition}
 	\begin{proof}
-		This follows from  Proposition~\ref{existence of p-F-formal tower implies perfectoid} as by the Lemma, we have a $[p]$-$F$-formal tower
+		Fix a $q\in K^\times$ with $|q|<1$ along with a compatible system of $p^n$th roots $q^{1/p^n}\in K$. Then this follows from  Proposition~\ref{existence of p-F-formal tower implies perfectoid} as by the Lemma, we have a $[p]$-$F$-formal tower
 		\[\dots \xrightarrow{[\mathfrak p]} \mathfrak G_{q^{1/p^2}}\xrightarrow{[\mathfrak p]} \mathfrak G_{q^{1/p}}\xrightarrow{[\mathfrak p]} \mathfrak G_q.\qedhere \]
 	\end{proof}
 	
-		\subsection{The action of $\overline{T}$}
+		
 	While we do not have a formal model of the multiplication $\mathbb G_m^{\operatorname{an}}\times \mathbb G_m^{\operatorname{an}}\rightarrow \mathbb G_m^{\operatorname{an}}$ in terms of $\mathfrak G_q$, we do have a formal model for the restriction of this multiplication to the action of the open annulus $(\hat{\mathbb G}_m)_{\eta}=\mathcal B(1,1)$ on $\mathbb G_m^{\operatorname{an}}$.
 	
 	\begin{lemma}\label{action on formal model of torus}
@@ -487,13 +481,12 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 		We can write $\mathfrak B(1,1)=\mathrm{Spf}(\mathcal O_K\langle Z^{\pm 1}\rangle)$.
 		The map $\mathfrak m$ can then be glued from the maps
 		\[\mathfrak B(1,1)\times \mathfrak B(q^i,q^{i-1})\to \mathfrak B(q^i,q^{i-1}),\quad Z\cdot \tfrac{a}{X},Z\cdot \tfrac{X}{b} \mapsfrom \tfrac{a}{X},\tfrac{X}{b} \]
-		The statement that $\mathfrak m$ is an action, as well as the semilinearity, can both be expressed in terms of diagrams, which commutes because they do generically.
+		The statement that $\mathfrak m$ is an action, as well as the semilinearity, can both be expressed in terms of diagrams, which commute because they do generically.
 	\end{proof}
 	
 
 
-	
-	\subsection{The case of general tori}
+
 	By taking products everywhere, all of the statements in this section immediately generalise to split tori over $K$: 
 	\begin{corollary}\label{torus has formal models}\label{torus has p-F-formal tower and has perfectoid tilde-limit}\label{action on formal model of torus, case of general tori}
 		Let $T\cong(\mathbb G_m^{\operatorname{an}})^d$ be a split torus over $K$.
@@ -522,7 +515,7 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 	
 	\subsection{Raynaud extensions}
 	
-        We briefly sketch the theory of Raynaud extensions here, and refer the readers to  \cite{rigid geometry of curves} for more details on the setup.
+        We briefly sketch the theory of Raynaud extensions here, and refer the readers to  \cite{Lut} for more details on the setup.
 
 	Let $A$ be an abelian variety over $K$. There exists a unique connected open rigid analytic subgroup $\overline A$ of $A$ which extends to a formal smooth $\mathcal O_K$-group scheme $\overline E$ with semi-abelian reduction. This $\overline E$ fits into a short exact sequence of formal group schemes
 	\begin{equation}\label{formal Raynaud extension}
@@ -546,11 +539,11 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 	
 	\begin{theorem}\label{Raynaud uniformisation}
 		There exists a lattice $M \subseteq E$ of rank equal to the rank $r$ of the torus for which the quotient $E/M$ exists as a rigid space and has a group structure such that $E\rightarrow E/M$ is a rigid group homomorphism. Moreover, there is a natural isomorphism
-		\[A=E/M.\]
+		\[A=E/M.\]Lut
 	\end{theorem}
 	
 	The data of the extension~(\ref{formal Raynaud extension}) together with the lattice $M\subseteq E$ is what we refer to as a Raynaud uniformisation of $A$. This will in fact be the only input we need to construct the perfectoid tilde-limit $A_\infty$. Consequently, our method generalises to the class of rigid groups which admit Raynaud uniformisation, namely to abeloid varieties:
-	\begin{theorem}[L\"utkebohmert, \cite{rigid geometry of curves}, Theorem 7.6.4]\label{Raynaud uniformisation for abeloids}
+	\begin{theorem}[L\"utkebohmert, \cite{Lut}, Theorem 7.6.4]\label{Raynaud uniformisation for abeloids}
 		Let $A$ be an abeloid variety, that is a connected smooth proper commutative rigid group over $K$. Then $A$ admits a Raynaud uniformisation.
 	\end{theorem}
 	
@@ -563,7 +556,7 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 		The short exact sequence (\ref{formal Raynaud extension}) admits local sections, that is there is a cover of $\overline{B}$ by formal open subschemes $U_i$ such that there exist local sections $s:U_i\rightarrow \overline{E}$ of $\pi$. In particular, one can cover $\overline{E}$ by formal open subschemes of the form $\overline{T}\times U_i\hookrightarrow E$.
 	\end{lemma}
 	\begin{proof}
-		This is proved in Proposition A.2.5 in~\cite{rigid geometry of curves}, where it is fomulated in terms of the group $\operatorname{Ext}(B,T)$. Also see \cite{BL}, \S 1.
+		This is proved in Proposition A.2.5 in~\cite{Lut}, where it is fomulated in terms of the group $\operatorname{Ext}(B,T)$. Also see \cite{BL}, \S 1.
 	\end{proof}
 	
 	\begin{remark}
@@ -598,7 +591,7 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 			\begin{equation}\label{formal model of p-multiplication cube}
 			\begin{tikzcd}[column sep={1cm,between origins},row sep={1cm,between origins}]
 				& \mathfrak T_{q} \arrow[rr] &  & \mathfrak E_q \\
-				\mathfrak T_{q^{1/p}} \arrow[ru, "{[\mathfrak p]}"] \arrow[rr] &  & \mathfrak T_{q^{1/p}}\times^{\overline{T}}\overline{E} \arrow[ru, "\exists", dotted] &  \\
+				\mathfrak T_{q^{1/p}} \arrow[ru, "{[\mathfrak p]}"] \arrow[rr] &  & \mathfrak E_{q^{1/p}} \arrow[ru, "\exists", dotted] &  \\
 				& \overline{T} \arrow[uu] \arrow[rr] &  & \overline{E} \arrow[uu] \\
 				\overline{T} \arrow[uu] \arrow[rr] \arrow[ru, "{[p]}"] &  & \overline{E} \arrow[uu] \arrow[ru, "{[p]}"] & 
 			\end{tikzcd}
@@ -654,13 +647,13 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 			\tilde{T} \arrow[rrr] \arrow[uuu] \arrow[rru, "\, F"'] &  &  & \tilde{E} \arrow[rru, "\, F"'] \arrow[uuu] &  &  &  & 
 				\end{tikzcd}
 	\end{center}
-	Since the outer map is the formal model $[\mathfrak p]$ by construction in diagram~\eqref{formal model of p-multiplication on E}, this shows that the reduction of $[\mathfrak p]$ mod $p$ factors through the relative Frobenius, as desired.
+	Since the outer map is the formal model $[\mathfrak p]$ by construction in diagram~\eqref{formal model of p-multiplication cube}, this shows that the reduction of $[\mathfrak p]$ mod $\varpi$ factors through the relative Frobenius, as desired.
 
 	The conclusion that $E_\infty$ is perfectoid then follows from Proposition~\ref{existence of p-F-formal tower implies perfectoid}.
 	\end{proof}
 	
 	\begin{remark}\label{general fields for E}
-	With some work, the arguments in this section can be extended to any perfectoid base field. For instance, the Raynaud uniformisation of Theorem \ref{Raynaud uniformisation} might only be defined over a finite extension $L$ of $K$. Our argument then gives a perfectoid space over the (necessarily perfectoid) field $L$. We can then use Galois descent to get a perfectoid space over our original field $K$. This uses that the quotient of a perfectoid space by a finite group often remains perfectoid: see Theorem 1.4 of \cite{Hansen quotients} for details. Finally, one checks that this Galois descent commutes with tilde-limits. 
+	With some work, the arguments in this section can be extended to any perfectoid base field. For instance, the Raynaud uniformisation of Theorem \ref{Raynaud uniformisation} might only be defined over a finite extension $L$ of $K$. Our argument then gives a perfectoid space over the (necessarily perfectoid) field $L$. We can then use Galois descent to get a perfectoid space over our original field $K$. This uses that the quotient of a perfectoid space by a finite group often remains perfectoid: see Theorem 1.4 of \cite{Hansen_quotients} for details. Finally, one checks that this Galois descent commutes with tilde-limits. 
 	\end{remark}
 
 %%%%%%%%%%%%%%%%%
@@ -670,22 +663,17 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 %%%%%%%%%%%%%%%%%
 	
 	\section{The case of abeloid varieties}\label{The case of abeloid varieties}
-	We now prove the main result, building on the preceding chapters. Let us recall some notation:
+	We now prove the main result, building on the preceding chapters. Recall our setup: $E$ is the Raynaud extension associated to $A$ from Proposition~\ref{Raynaud uniformisation for abeloids}, which is an extension of a split rigid torus $T$ of rank $r$ by an abelian variety $B$ of good reduction, and $M\subseteq E$  is a lattice of rank $r$ such that $A=E/M$. 
 
-\begin{enumerate} 
-\item  $g$ is the dimension of $A$. 
-\item  $E$ is the Raynaud extension associated to $A$ from Proposition~\ref{Raynaud uniformisation for abeloids}, which is an extension of a split rigid torus $T$ of rank $r$ by an abelian variety $B$ of good reduction. 
-\item $M\subseteq E$  is a lattice of rank $r$ such that $A=E/M$. 
-\end{enumerate}
+By Proposition~\ref{Raynaud uniformisation for abeloids}, the quotient map $\pi:E\to A$ is locally split in the analytic topology on $A$: As the action of $M$ on $E$ is totally discontinuous, for every point  $x\in A$ there is an open neighbourhood $U$ of $E$ such that $\pi$ maps isomorphically onto an open $\pi(U)$ containing $x$. We fix from now on a cover $\mathfrak U$ of $A$ by opens $\pi(U)$ of this form.
 
-Recall from [] that the quotient map $\pi:E\to A$ is locally split in the analytic topology on $A$: As the action of $M$ on $E$ is totally discontinuous, for every point  $x\in A$ there is an open neighbourhood $U$ of $E$ that maps $U$ isomorphically onto $x$.
-The pullback of $\pi(U)$ along $[p]:A\to A$, however, will in general be bigger than the pullback of $U$ along $[p]:E\to E$: The first is an \'etale $A[p]$-torsor, whereas  the latter is an \'etale $E[p]$-torsor, and by the Snake Lemma we have a short exact sequence
+The pullback of $\pi(U)$ along $[p]:A\to A$ will in general be bigger than the pullback of $U$ along $[p]:E\to E$: e.g. in characteristic 0, the first is an \'etale $A[p]$-torsor, whereas  the latter is an \'etale $E[p]$-torsor, and by the Snake Lemma we have a short exact sequence
 \[1\to E[p]\to A[p]\to M/M^p\to 1\]
-In order to make it easier to relate these pullbacks, we therefore now subdivide the tower $\cdots A\xrightarrow{[p]}A$ into to partial towers. For this we make some auxiliary choices: Since $K$ is algebraically closed, we can choose lattices $M_n\subseteq E$ such that $M_0=M$ and $[p]:E\rightarrow E$ restricts to isomorphisms $M_{n+1}\rightarrow M_n$ for all $n$.
+In order to make it easier to relate these pullbacks, we therefore now subdivide the tower $\cdots A\xrightarrow{[p]}A$ into two partial towers. For this we make some auxiliary choices: Since $K$ is algebraically closed, we can choose lattices $M_n\subseteq E$ such that $M_0=M$ and $[p]:E\rightarrow E$ restricts to isomorphisms $M_{n+1}\rightarrow M_n$ for all $n$.
 	
 	\begin{remark}\label{remark: Definition of the D_n}
 		Such a choice is equivalent to the choice of subgroups $D_n\subseteq A[p^n]$ of rank $p^{rn}$ for all $n$ such that $pD_{n+1}=D_n$ and $D_n+E[p^n]=A[p^n]$. Namely,
-		given the lattices $M_{n+1}$, we obtain the desired torsion subgroups by setting $D_n:=M_{n+1}/M$. This is because any such lattice gives a splitting of the short exact sequence $0\rightarrow E[p^n]\rightarrow A[p^n]\rightarrow M/M^{p^n} \rightarrow 0$.
+		given the lattices $M_{n}$, we obtain the desired torsion subgroups by setting $D_n:=M_{n}/M$. This is because any such lattice gives a splitting of the short exact sequence $0\rightarrow E[p^n]\rightarrow A[p^n]\rightarrow M/M^{p^n} \rightarrow 0$.
 		
 		Conversely, given subgroups $D_n\subseteq A[p^n]$ with properties as above, we recover $M_n$ as the kernel of $E\rightarrow A\rightarrow A/D_n$.
 		
@@ -696,9 +684,9 @@ In order to make it easier to relate these pullbacks, we therefore now subdivide
 		\begin{equation}\label{p-multiplication tower of E/M splits into vertical and horizontal tower}
 		\begin{tikzcd}[column sep={1.1cm,between origins},row sep={0.5cm,between origins}]
 			\ddots \arrow[rd] &  &  & \vdots &  & \vdots \\
-			& A \arrow[rr,"v"] \arrow[rrdd, "{[p]}"'] &  & A_1 \arrow[rr,"v"] \arrow[dd,"{[p]}"] &  & A_2 \arrow[dd,"{[p]}"] \\
+			& A \arrow[rr,"v"] \arrow[rrdd, "{[p]}"'] &  & A_1 \arrow[rr,"v"] \arrow[dd,"{[p]_E}"] &  & A_2 \arrow[dd,"{[p]_E}"] \\
 			&  &  &  &  &  \\
-			&  &  & A \arrow[rrdd, "{[p]}"'] \arrow[rr,"v"] &  & A_1 \arrow[dd,"{[p]}"] \\
+			&  &  & A \arrow[rrdd, "{[p]}"'] \arrow[rr,"v"] &  & A_1 \arrow[dd,"{[p]_E}"] \\
 			&  &  &  &  &  \\.
 			&  &  &  &  & A
 		\end{tikzcd}
@@ -707,13 +695,13 @@ In order to make it easier to relate these pullbacks, we therefore now subdivide
 		\begin{equation}\label{F-tower for E/M}
 		\begin{tikzcd}[column sep={1.1cm,between origins},row sep={0.5cm,between origins}]
 			&\vdots&\vdots&\vdots&\\
-			0 \arrow[r] & M_1 \arrow[dd, "\cong"] \arrow[r] & E \arrow[dd, "{[p]}"] \arrow[r] & A_1 \arrow[dd, "{[p]}"] \arrow[r] & 0 \\
+			0 \arrow[r] & M_1 \arrow[dd, "\cong"] \arrow[r] & E \arrow[dd, "{[p]}"] \arrow[r] & A_1 \arrow[dd, "{[p]_E}"] \arrow[r] & 0 \\
 			\\
 			0 \arrow[r] & M \arrow[r] & E \arrow[r] & A \arrow[r] & 0.
 		\end{tikzcd}
 		\end{equation}
 		\begin{definition}
-			Let $M_\infty:=\varprojlim M_n$. Since the transition maps are all isomorphisms, the projections $M_\infty\to M$ are isomorphisms as well. By the diagram, we have a natural map $M_\infty\to E_\infty$. 
+			Let $M_\infty:=\varprojlim M_n$. Since the transition maps are all isomorphisms, the projections $M_\infty\to M$ are isomorphisms as well. By the diagram and Proposition \ref{SW Proposition 2.4.5}, we have a natural map $M_\infty\to E_\infty$. 
 		\end{definition}
 		\begin{proposition}\label{M_infty->E_infty->A'_infty}
 			There is a perfectoid tilde-limit $A'_\infty\sim \varprojlim A_n$. It fits into a short exact sequence of perfectoid groups 
@@ -721,15 +709,14 @@ In order to make it easier to relate these pullbacks, we therefore now subdivide
 			that is  locally split in the analytic topology on $A'_\infty\to A$.
 		\end{proposition}
 		\begin{proof}
-			Since the rows in~\eqref{F-tower for E/M} are exact, and the transition maps on the left are isomorphisms, it follows that for each $n\in \mathbb{N}$, the pullback $[p^n]^{-1}(U)$ maps isomorphically onto its image on $A_n$. Write $U_n:=[p^n]^{-1}(U)\subseteq E$, and write $\pi_n:E\to A_n$ for the quotient map. Then~\eqref{F-tower for E/M} is locally of the form
+			We work locally on opens $U\subset E$ mapping isomorphically to $\pi(U)$ in our cover $\mathfrak U$ of $A$. Since the rows in~\eqref{F-tower for E/M} are exact, and the transition maps on the left are isomorphisms, it follows that for each $n\in \mathbb{N}$, the pullback $[p^n]^{-1}(U)$ maps isomorphically onto its image on $A_n$. Write $U_n:=[p^n]^{-1}(U)\subseteq E$, and write $\pi_n:E\to A_n$ for the quotient map. Then~\eqref{F-tower for E/M} is locally of the form
 				\begin{equation}\label{F-tower for E/M-local}
 				\begin{tikzcd}
-				0 \arrow[r] & M_1\arrow[d, "\cong"] \arrow[r] &  M_1\times U_1 \arrow[d, "{[p]}"] \arrow[r] &\pi_1(U_1) \arrow[d, "{[p]}"] \arrow[r] & 0 \\
-				0 \arrow[r] & M \arrow[r] & M\times U \arrow[r] & U \arrow[r] & 0
+				0 \arrow[r] & M_1\arrow[d, "\cong"] \arrow[r] &  M_1\times U_1 \arrow[d, "{[p]}"] \arrow[r] &\pi_1(U_1) \arrow[d, "{[p]_E}"] \arrow[r] & 0 \\
+				0 \arrow[r] & M \arrow[r] & M\times U \arrow[r] & \pi(U) \arrow[r] & 0
 				\end{tikzcd}
 				\end{equation}
-			Let now $U_\infty$ be the pullback of $U$ along $E_\infty\to E$, then we have $U_\infty\sim \varprojlim U_n\cong \varprojlim \pi_n(U_n)$. In particular, the system $(\pi_n(U_n))_{n\in \mathbb{N}}$ has a perfectoid tilde-limit. This shows that $A'_\infty=\varprojlim A_n$ has a perfectoid tilde-limit. 
-			Finally, we obtain the desired short exact sequence in the limit over diagram \eqref{F-tower for E/M} since the transition maps in \eqref{F-tower for E/M-local} respect the splitting.
+			Let now $U_\infty$ be the pullback of $U$ along $E_\infty\to E$, then we have $U_\infty\sim \varprojlim U_n\cong \varprojlim \pi_n(U_n)$. In particular, the system $(\pi_n(U_n))_{n\in \mathbb{N}}$ has a perfectoid tilde-limit. This shows that $A'_\infty=\varprojlim A_n$ has a perfectoid tilde-limit. We can therefore apply Proposition \ref{SW Proposition 2.4.5} to get the desired map $E_\infty\rightarrow A'_\infty$, obtaining the desired short exact sequence in the limit over diagram \eqref{F-tower for E/M} since the transition maps in \eqref{F-tower for E/M-local} respect the splitting. 
 		\end{proof}
 	
 	In order to construct a tilde-limit for $\varprojlim A$, we can now use that the horizontal maps in diagram~(\ref{p-multiplication tower of E/M splits into vertical and horizontal tower}) are all finite \'etale. They are even finite covering maps, in the following sense:
@@ -764,7 +751,7 @@ The $[p]$-multiplication on $E$ maps $M_{n+1}$ onto $M_n$ and therefore the $[p]
 		\begin{enumerate}
 		\item There is a perfectoid space  $A_\infty$ which is a tilde-limit of $\varprojlim_{[p]}A$.
 		\item It is independent up to canonical isomorphism of the auxiliary choice of lattices $M_n$ with $D_n=M_n/M$, but it remembers the choice as a pro-finite \'etale closed subgroup $D_\infty \subseteq A_\infty$. 
-		\item The preimage of $U\subseteq A$ under the projection $A_\infty \rightarrow A$ is isomorphic to $D_\infty \times U_\infty$. 
+		\item The preimage of any $\pi(U)$ in our cover $\mathfrak U$ under the projection $A_\infty \rightarrow A$ is isomorphic to $D_\infty \times U_\infty$. 
 		
 		\item 	We have a commutative diagram of short exact sequences of perfectoid groups		
 		\begin{center}
@@ -811,7 +798,7 @@ The $[p]$-multiplication on $E$ maps $M_{n+1}$ onto $M_n$ and therefore the $[p]
  
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%%%%%%%%%%%  APPENDIX
+	%%%%%%%%%%%  APPLICATIONS
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Applications}
@@ -851,15 +838,48 @@ The $[p]$-multiplication on $E$ maps $M_{n+1}$ onto $M_n$ and therefore the $[p]
 	\end{proof}
 	The point of this result is that while for an affine algebraic variety $X$ over $K$ of dimension $d$, it is a Theorem of Artin and Grothendieck that we have $H_{\et}^i(X,L)=0$ for any constructible $\mathbb F_p$-module $L$ and any $i>d$, the rigid analogue of this statement is false in general. The basic idea is now that an analogue of this statement is true for the pullback of $L$ to $A_\infty$, in the following sense: Consider the morphism of sites $\nu:A_{\proet}\to A_{\et}$. Then by regarding $A_\infty$ as an object in $A_{\proet}$ via the pro-\'etale morphism $A_\infty\to A$, one can show that
 	\[H^i_{\proet}(A_\infty,\nu^{\ast}L)=\varinjlim H^i_{\et}(A,[p^n]^{\ast}L). \]
-	By results from \cite{p-adic Hodge}, the space $A_\infty$ has a ``Stein space''-like property in the sense that $H^j(V,\nu^{\ast}L)=0$ for any affinoid perfectoid $V\subseteq A_\infty$ and any $j>0$. One can use this to reduce to a computation in \v{C}ech cohomology, which shows that the left hand side vanishes for $i>d$.
-	\subsection{covers of curves}
-	As a third application, we describe how one can obtain functorial perfectoid pro-\'etale covers of curves over $K$. This was observed by Hansen \cite{Hansen-blog}:
+	By results from \cite{p-adic_Hodge}, the space $A_\infty$ has a ``Stein space''-like property in the sense that $H^j(V,\nu^{\ast}L)=0$ for any affinoid perfectoid $V\subseteq A_\infty$ and any $j>0$. One can use this to reduce to a computation in \v{C}ech cohomology, which shows that the left hand side vanishes for $i>d$.
+	\section{Perfectoid covers of curves}
+
+As a third application, we describe how one can obtain functorial perfectoid pro-\'etale covers of curves over $K$. This was observed by Hansen \cite{Hansen-blog}:
 	
-	Let $C$ be a smooth projective curve of genus $g\geq 1$ over $K$, which we consider as an analytic adic space. We fix a geometric point $x\in C$ and consider the \'etale fundamental group $\pi_1(C,x)$. This is a profinite group, and for every open subgroup $H\subseteq \pi_1(C,x)$, there is a corresponding finite \'etale morphism $C_H\to C$. For any two open subgroups $H_1\subseteq H_2\subseteq \pi_1(C,x)$, there is a natural morphism $C_{H_1}\to C_{H_2}$. For varying $H$, one therefore has a filtered inverse system $(C_H)_{H\subseteq \pi_1(C,x)}$ which we may regard as an object in $C_{\proet}$.
+	Let $C$ be a smooth projective curve of genus $g\geq 1$ over $K$, which we consider as an analytic adic space. By \cite[Theorem 3.1]{LutRiemann}, GAGA induces an equivalence of categories between finite \'etale covers of the scheme $C$ and finite \'etale covers of the analytified adic space $C$. We can therefore fix a base point $x\in C$ and study the usual \'etale fundamental group $\pi_1(C,x)$ using the language of adic spaces. This is a profinite group, and for every open subgroup $G\subseteq \pi_1(C,x)$, there is a corresponding finite \'etale morphism $C_G\to C$. For any two open subgroups $G_1\subseteq G_2\subseteq \pi_1(C,x)$, there is a natural morphism $C_{G_1}\to C_{G_2}$. For varying $G$, one therefore has a filtered inverse system $(C_G)_{G\subseteq \pi_1(C,x)}$ which we may regard as an object in $C_{\text{pro\'et}}$.
 	\begin{corollary}
-		There is a perfectoid tilde-limit $C_\infty \sim \varprojlim_{H}C_H$ where $H$ ranges over the open subgroups of $ \pi_1(C,x)$.
+		There is a perfectoid tilde-limit $C_\infty \sim \varprojlim_{G}C_G$ where $G$ ranges over the open subgroups of $ \pi_1(C,x)$.
 	\end{corollary}
 	
+\begin{proof}[Sketch]
+We construct $C_\infty$ in two steps. Let $\iota:C\rightarrow A$ be the embedding of $C$ into its Jacobian. Let $C_n$ be the pullback of $C$ along the map $[p^n]:A\rightarrow A$. Combining our main theorem with \cite[Lemma II.2.2]{torsion}, we get a perfectoid space $C'_\infty\sim \varprojlim C_n$ with a Zariski closed embedding $C'_\infty\rightarrow A_\infty$.
+
+We can now use the fact that pro-\'etale covers of perfectoid spaces are again perfectoid to construct a perfectoid cover $C_\infty$ of $C'_\infty$ that packages up the entire \'etale fundamental group of $C$. As we're assuming that $K$ has characteristic 0, the maps $[p^n]:A\rightarrow A$ are finite \'etale, so the induced covers $C_n\rightarrow C$ are finite \'etale. The inverse system 
+\[\cdots \rightarrow C_n \rightarrow \cdots \rightarrow C_1\rightarrow C\] 
+therefore corresponds to a chain of subgroups
+\[\cdots < H_n <\cdots < H_1 < \pi_1(C,x).\]
+
+For any open subgroup $G$ of $\pi_1(C,x)$ corresponding to the finite \'etale cover $C_G\rightarrow C$, we have a decreasing sequence of positive integers 
+
+\[\cdots \leq [H_n:H_n\cap G] \leq \cdots \leq [H_1:H_1\cap G]\leq [\pi_1(C,x):\pi_1(C,x)\cap G].\]
+So there is an integer $d$ such that for $n$ sufficiently large, we have $[H_n:H_n\cap G]=d$. Translating back to the language of finite \'etale covers, we see that for such $n$, the map
+
+\[C_{H_{n+1}\cap G}\rightarrow C_{H_n\cap G}\times_{C_{H_n}} C_{H_{n+1}}\]
+coming from the universal property of fiber product is an isomorphism: both spaces are finite \'etale covers of $C_{H_{n+1}}$ of degree $d$, so the map is a finite \'etale cover of degree 1. This implies that the natural morphism $\varprojlim C_{H_n \cap G}\rightarrow \varprojlim C_{H_n}$ of objects of $C_{\text{pro\'et}}$ is finite \'etale in the sense of \cite[Definition 3.9]{p-adic_Hodge}. To simplify notation, we write this morphism as $C_{G,\infty}\rightarrow C'_\infty$ (one can also think of this as the corresponding map of perfectoid spaces obtained by applying the functor from perfectoid objects of the pro-\'etale site to perfectoid spaces described just after \cite[Lemma 4.5]{p-adic_Hodge}).
+
+We can now rewrite the pro-\'etale object $\displaystyle\varprojlim_{G\rightarrow 1} C_G$ as \[\varprojlim_{G\rightarrow 1}\displaystyle\varprojlim_{n\rightarrow \infty} C_{H_n\cap G}=\varprojlim_{G\rightarrow 1}C_{G,\infty}.\]
+
+As each of the $C_{G,\infty}$ have compatible finite \'etale maps to $C'_\infty$, we obtain a pro-\'etale map (again in the sense of \cite[Definition 3.9]{p-adic_Hodge}) 
+\[\varprojlim_{G\rightarrow 1}C_{G,\infty}\rightarrow C'_\infty.\]
+
+By \cite[Lemma 4.6]{p-adic_Hodge}, pro-\'etale covers of perfectoid objects are again perfectoid, giving us the desired perfectoid space 
+\[ C_\infty\sim\varprojlim_{G\rightarrow 1} C_G.\]
+
+\end{proof}
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%  APPENDIX
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 		\appendix
 	\section{Fibre bundles of formal and rigid spaces}
 	In this chapter we review the theory of fibre bundles in the setting of formal and rigid geometry.
@@ -952,7 +972,7 @@ The $[p]$-multiplication on $E$ maps $M_{n+1}$ onto $M_n$ and therefore the $[p]
 		\end{center}
 	\end{lemma}
 	\begin{proof}
-		 The vertical maps in the diagram exist by functoriality via $E=T\times^{T}E\rightarrow H\times^{T}E$. 
+		 The vertical maps in the diagram exist by functoriality via $E=T\times^{T}E\rightarrow F\times^{T}E$. 
 		On any compatible trivialisation $T'\times U'\rightarrow T\times U$ of $f:E'\rightarrow E$ there is then clearly only one way to extend this to $F'\times U'\rightarrow F\times U$ in a $h$-linear way.
 	\end{proof}
 	
@@ -963,85 +983,10 @@ The $[p]$-multiplication on $E$ maps $M_{n+1}$ onto $M_n$ and therefore the $[p]
 		Let $T$ be a formal group scheme and let $\pi:E\rightarrow B$ be a principal $T$-bundle. Let $F$ be a formal scheme with an action by $T$. Then $(F\times^T E)_\eta = F_\eta\times^{T_\eta} E_\eta$.
 	\end{lemma}
   
+\bibliographystyle{unsrt}
+\bibliography{Arizona}
 
  
-\begin{thebibliography}{99}
-	\bibitem{Bhatt} 
-	Bhargav Bhatt,
-	\textit{The Hodge-Tate decomposition via perfectoid spaces}, Lecture notes from the Arizona Winter School 2017, available at \url{swc.math.arizona.edu/aws/2017/2017BhattNotes.pdf}
-		
-	\bibitem{Bosch lectures} 
-	Siegfried Bosch,
-	\textit{Lectures on Formal and Rigid Geometry}, Lecture Notes in Mathematics, vol 2015. Springer, Berlin/Heidelberg/New York (2014).
-	
-	\bibitem{BL} 
-	Siegfried Bosch, Werner L\"utkebohmert,
-	\textit{Degenerating abelian varieties}, Topology {\bf 30} (1991), 653-698.
-	
-	\bibitem{FvdP}
-	Jean Fresnel and Marius van der Put,
-	\textit{Rigid Analytic Geometry and its Applications}, Progress in Mathematics, vol. 218. Birkh\"auser Boston, Inc., Boston (2004).
-	
-	\bibitem{Hansen quotients}
-	David Hansen,
-	\textit{Quotients of adic spaces by finite groups}, Math. Res. Letters, to appear.
-	\bibitem{Hansen-blog}
-	David Hansen, \textit{Perfectoid universal covers of curves}, blog entry (2015)
-	\url{https://arithmetica.wordpress.com/2015/09/27/perfectoid-universal-covers-of-curves/}
-	
-	\bibitem{rigid geometry of curves} 
-	Werner L\"utkebohmert,
-	\textit{Rigid Geometry of Curves and Their Jacobians}, Springer, Ergeb. 3. Folge, vol. 61. Springer International Publishing (2016). 
-	
-	\bibitem{Pilloni-Stroh}
-	Vincent Pilloni and  Benoit Stroh,
-	\textit{Cohomologie coh{\'e}rente et repr{\'e}sentations Galoisiennes} 
-	Annales math{\'e}matiques du Qu{\'e}bec,
-		vol. 40. (2016), 167-202, Springer
-	
-	\bibitem{Reineke} 
-	Emanuel Reineke,
-	\textit{The cohomology of the moduli space of curves at infinite level}, preprint arXiv:1911.07392 (2019).
-	
-	
-	\bibitem{perfectoid} 
-	Peter Scholze,
-	\textit{Perfectoid spaces}, Publ. Math. de l'IHES {\bf 116} (2012), no. 1, 245-313.
-	
-	\bibitem{survey} 
-	Peter Scholze,
-	\textit{Perfectoid spaces: a survey},
-	Current developments in mathematics (2012), 193-227.
-	
-	\textit{On torsion in the cohomology of locally symmetric varieties}, Ann. of Math. (2) {\bf 182} (2015), no. 3, 945-1066.
-	
-	
-	\bibitem{p-adic Hodge} 
-	Peter Scholze,
-	\textit{p-adic Hodge theory for rigid analytic varieties}, Forum Math. Pi {\bf 1} (2013), el, 77.
-	
-	\bibitem{torsion} 
-	Peter Scholze,
-	\textit{On torsion in the cohomology of locally symmetric varieties}, Ann. of Math. (2) {\bf 182} (2015), no. 3, 945-1066.
-	
-	\bibitem{etale_cohomology_of_diamonds} 
-	Peter Scholze,
-	\textit{\'etale cohomology of diamonds}, preprint arXiv:1709.07343 (2017)
-	
-	\bibitem{scholzeICMproceedings}
-		Peter Scholze,
-		\textit{Perfectoid spaces and their applications},
-		Proceedings of the ICM (2014)
-	
-	\bibitem{berkeley} 
-	Peter Scholze and Jared Weinstein,
-	\textit{Berkeley lectures on p-adic geometry, revised version}, 2017, available at \url{http://www.math.uni-bonn.de/people/scholze/Berkeley.pdf} 
-	
-	\bibitem{SW} 
-	Peter Scholze and Jared Weinstein,
-	\textit{Moduli of p-divisible groups}, Camb. J. Math. {\bf 1} (2013), no. 2, 145-237.
-	
-\end{thebibliography}
 
 	
 	
