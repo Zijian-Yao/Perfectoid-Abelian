@@ -140,7 +140,7 @@ The primary goal of this article is to show that the ``inverse limit'' of this t
 
 The possibility of results in this direction is mentioned in \S 7 and \S 13 of \cite{scholzeICMproceedings}, and in the case of abelian varieties with good reduction, this theorem was proven already in \cite{Pilloni-Stroh} (Lemme A.16).  In order to motivate our strategy for the general case, let us sketch the proof in the good reduction case (we follow Exercise 4 -- 6 in \cite{Bhatt}, the proof is spelt out in detail in \S \ref{subsection:perfectoid_tilde_limit}, Corollary \ref{tilde-limit exists and is perfectoid in the good reduction case} below):
 
-Let $A$ be an abelian variety of good reduction over $K$ and let $A_{\mathcal O_K}$ denote its N\'eron model over $\mathcal O_K$. Let $\pi\in\mathcal O_K$ be a pseudo-uniformiser such that $p\in \pi\mathcal O_K$. Denote by $\mathcal A$ the $\pi$-adic completion of $A_{\mathcal O_K}$, a formal scheme over $\mathcal O_K$. Its adic generic fibre is the rigid analytification of $A$ that we denote by the same letter. The mod $\pi$ special fibre $\tilde{A} = A_{\mathcal O_K}\otimes \mathcal O_K/\pi$ is a group scheme over $\mathcal O_K/\pi$, so the map $[p]\colon\tilde{A}\rightarrow \tilde{A}$ factors through the relative Frobenius map. The inverse limit $ \varprojlim_{[p]} \tilde{A} $ then exists in the category of schemes and one can show that it is relatively perfect over $\mathcal O_K/\pi$. We can similarly form the inverse limit $\mathcal A_{\infty} = \varprojlim_{[p]} \mathcal A$ in the category of formal schemes. Its adic generic fibre $A_\infty$ is a tilde-limit of $\varprojlim_{[p]}A$, and it is perfectoid since $ \varprojlim_{[p]} \tilde{A} $ is relatively perfect.
+Let $A$ be an abelian variety of good reduction over $K$ and let $A_{\mathcal O_K}$ denote its N\'eron model over $\mathcal O_K$. Let $\pi\in\mathcal O_K$ be a pseudo-uniformiser such that $p\in \pi\mathcal O_K$. Denote by $\mathcal A$ the $\pi$-adic completion of $A_{\mathcal O_K}$, a formal scheme over $\mathcal O_K$. Its adic generic fibre is the rigid analytification of $A$ that we denote by the same letter. The mod $\pi$ special fibre $\tilde{A} = A_{\mathcal O_K}\times \Spec(\O_K/\pi)$ is a group scheme over $\mathcal O_K/\pi$, so the map $[p]\colon\tilde{A}\rightarrow \tilde{A}$ factors through the relative Frobenius map. The inverse limit $ \varprojlim_{[p]} \tilde{A} $ then exists in the category of schemes and it is relatively perfect over $\mathcal O_K/\pi$. We can similarly form the inverse limit $\mathcal A_{\infty} = \varprojlim_{[p]} \mathcal A$ in the category of formal schemes. Its adic generic fibre $A_\infty$ is a tilde-limit of $\varprojlim_{[p]}A$, and it is perfectoid since $ \varprojlim_{[p]} \tilde{A} $ is relatively perfect.
 
 If $A$ is an abelian variety with bad reduction, the assumption that $K$ is algebraically closed assures that $A$ has semi-stable reduction.
 In this case, the theory of Raynaud extensions provides us with a short exact sequence 
@@ -167,7 +167,7 @@ In \S5 we finish the proof of Theorem~\ref{thm:main_thm_intro} by constructing $
 \[0\rightarrow M\rightarrow D_\infty \times E_\infty \rightarrow A_\infty\rightarrow 0,\]
 which we regard as an analogue of the sequence $0\rightarrow M\rightarrow E\rightarrow A\rightarrow 0$.
 
-We give three applications of Theorem~\ref{thm:main_thm_intro} in \S 6 and 7. The paper ends with an appendix on fibre bundles and associated fibre bundle constructions in the context of formal, adic and perfectoid spaces.
+We give three applications of Theorem~\ref{thm:main_thm_intro} in \S 6. The paper ends with an appendix on fibre bundles and associated fibre bundle constructions in the context of formal, adic and perfectoid spaces.
 
  \begin{comment}
 Now we end the introduction by describing the content of each section. 
@@ -374,7 +374,7 @@ We will therefore restrict attention to the case of  $K^+=\O_K$ without loss of 
 \end{proof}
 \fi
 	
-	Lemma \ref{lemma:inverse_limit_formal} and  \ref{tilde-limit from adic generic fibre of formal schemes} motivate the following: 
+	Lemmas \ref{lemma:inverse_limit_formal} and  \ref{tilde-limit from adic generic fibre of formal schemes} motivate the following: 
 	\begin{definition}
 	Let $G$ be a rigid group. A \textbf{$[p]$-formal tower} for $G$ is  a family of formal models $\{\mathfrak G_n\}_{n\in \mathbb N}$ of $G$, together with affine transition maps $[\mathfrak p]_{n+1}\colon \mathfrak G_{n+1}\rightarrow \mathfrak G_{n}$ which are formal models of $[p]\colon G\rightarrow G$. Sometimes we suppress notation and write $[\mathfrak p]$ for $[\mathfrak p]_{n}$ on $\mathfrak G_n$. 
 	\end{definition}
@@ -646,12 +646,12 @@ Note that if $A$ is an abelian variety, then so is $B$ (\cite[Theorem 6.4.8]{Lut
 			\end{equation}
 		The generic fibre of $[\mathfrak p]$ is $[p]\colon E\to E$. 
 		Indeed, Lemma~\ref{universal property of associated fibre construction in the semilinear case} and Remark~\ref{appendix in the case of rigid spaces and schemes} say that $[p]\times^{[p]}[p]$ is the unique morphism of fibre bundles $E\rightarrow E$ making the following diagram commute:
-		\begin{equation}\label{rigid p-multiplication cube}
+		\begin{equation*}
 		\begin{tikzcd}
 		1 \arrow[r] & T \arrow[r]                    & E \arrow[r]                   & B \arrow[r]                    & 1 \\
 		1 \arrow[r] & T \arrow[u, "{[p]}"] \arrow[r] & E \arrow[u, dotted] \arrow[r] & B \arrow[u, "{[p]}"] \arrow[r] & 1.
 		\end{tikzcd}
-		\end{equation}
+		\end{equation*}
 		But $[p]\colon E\rightarrow E$ is such a map, and thus coincides with the generic fibre of $[\mathfrak p]$.
 	
 		It remains to see that $[\mathfrak p]\colon\mathfrak E_{q^{1/p}} \rightarrow  \mathfrak E_{q}$ is affine. We first note that $[p]\colon\overline{B}\rightarrow \overline{B}$ is an affine morphism. The map $[\mathfrak p]\colon\mathfrak T_{q^{1/p}}\rightarrow \mathfrak T_{q}$ is affine by construction: by Corollary~\ref{torus has formal models}, it is locally on $\mathfrak T_{q}$ of the form $[\mathfrak p]\colon\prod_{j=1}^d \mathfrak B(q^{i_j/p},q^{(i_j-1)/p})\rightarrow \prod_{j=1}^d \mathfrak B(q^{i_j},q^{i_j-1})$. Note that both of these affine open subsets are fixed by the action of $\overline{T}$.
@@ -732,7 +732,7 @@ into two partial towers. For this we make some auxiliary choices: Since $K$ is a
 		One might call the choice of $D_n$ for all $n$ a partial anticanonical $\Gamma_0(p^\infty)$-structure, because if $B$ admits a canonical subgroup (that is, if it satisfies a condition on its Hasse invariant), the choice of a (full) anticanonical $\Gamma_0(p^\infty)$-structure on $A$ is equivalent to the choice of a partial anticanonical $\Gamma_0(p^\infty)$-structure on $A$ and an anticanonical $\Gamma_0(p^\infty)$-structure on $B$. Note however that $A$ always has a partial anticanonical subgroup even if $B$ does not have a canonical subgroup.
 	\end{remark}
 	
-	Following the remark, denote by $D_n$ the torsion subgroup $M_n/M\subset A$. The quotient $A_n:=A/D_n = E/M_n$ is then another abeloid variety over $K$ and the quotient map $v^n\colon A=E/M\rightarrow A_n=E/M_n$ is an isogeny of degree $p^{rn}$  through which  $[p^n]\colon A\rightarrow A$ factors: The $[p]$-multiplication tower now splits into two towers, one written vertically, the other horizontally:
+	Following the remark, denote by $D_n$ the torsion subgroup $M_n/M\subset A$. The quotient $A_n:=A/D_n = E/M_n$ is then another abeloid variety over $K$ and the quotient map $v^n\colon A=E/M\rightarrow A_n=E/M_n$ is an isogeny of degree $p^{rn}$  through which  $[p^n]\colon A\rightarrow A$ factors. The $[p]$-multiplication tower now splits into two towers, one written vertically, the other horizontally:
 		\begin{equation}\label{p-multiplication tower of E/M splits into vertical and horizontal tower}
 		\begin{tikzcd}[column sep={1.1cm,between origins},row sep={0.5cm,between origins}]
 			\ddots \arrow[rd] &  &  & \vdots &  & \vdots \\
@@ -914,9 +914,9 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	Due to Theorem~\ref{thm:main_thm_intro}, we can apply \cite[Theorem 3.3]{Reineke} to the inverse system $\dots \rightarrow A\xrightarrow{[p]}A$.
 	\end{proof}
 	A theorem of Artin and Grothendieck states if $X$ is an affine algebraic variety over $K$ of dimension $d$, then $H_{\et}^i(X,L)=0$ for any constructible $\mathbb F_p$-module $L$ and any $i>d$. However, the rigid analogue of this statement is false in general. The basic idea for our result is that an analogue of this vanishing statement is true for the pullback of $L$ to $A_\infty$ in the following sense: Consider the morphism of sites $\nu\colon A_{\proet}\to A_{\et}$. Then by regarding $A_\infty$ as an object in $A_{\proet}$ via the pro-\'etale morphism $A_\infty\to A$, one can show that
-	\[H^i_{\proet}(A_\infty,\nu^{\ast}L)=\varinjlim H^i_{\et}(A,[p^n]^{\ast}L). \]
+	\[H^i_{\proet}(A_\infty,\nu^{\ast}L)=\varinjlim_{n\in\N} H^i_{\et}(A,[p^n]^{\ast}L). \]
 	By results from \cite{p-adic_Hodge}, the space $A_\infty$ has a ``Stein space''-like property in the sense that $H^j(V,\nu^{\ast}L)=0$ for any affinoid perfectoid $V\subseteq A_\infty$ and any $j>0$. One can use this to reduce to a computation in \v{C}ech cohomology, which shows that the left hand side vanishes for $i>d$.
-	\section{Perfectoid covers of curves}
+	\subsection{Universal perfectoid covers of curves}
 	
 As a third application, we describe how one can obtain functorial perfectoid pro-\'etale covers of curves over $K$. This was observed by Hansen \cite{Hansen-blog}.
 	
@@ -927,7 +927,7 @@ As a third application, we describe how one can obtain functorial perfectoid pro
 	
 \begin{proof}[Sketch]
 We construct $C_\infty$ in two steps. 
-The choice of the base point $x$ gives $\iota\colon C\rightarrow A$, an embedding of $C$ into its Jacobian. Let $C_n$ be the pullback of $C$ along the map $[p^n]\colon A\rightarrow A$. Combining our main theorem with \cite[Lemma II.2.2]{torsion}, we get a perfectoid space $C'_\infty\sim \varprojlim C_n$ with a Zariski closed embedding $C'_\infty\rightarrow A_\infty$.
+The choice of the base point $x$ gives $\iota\colon C\rightarrow A$, an embedding of $C$ into its Jacobian. Let $C_n$ be the pullback of $C$ along the map $[p^n]\colon A\rightarrow A$. Combining our main theorem with \cite[Lemma II.2.2]{torsion}, we can pull back perfectoid tilde-limits along closed immersions and hence get a perfectoid space $C'_\infty\sim \varprojlim C_n$ with a Zariski closed embedding $C'_\infty\rightarrow A_\infty$.
 
 We can now use the fact that pro-\'etale covers of perfectoid spaces are again perfectoid to construct a perfectoid cover $C_\infty$ of $C'_\infty$ that packages up the entire \'etale fundamental group of $C$. As we are assuming that $K$ has characteristic 0, the maps $[p^n]\colon A\rightarrow A$ are finite \'etale, so the induced covers $C_n\rightarrow C$ are finite \'etale. The inverse system 
 \[\cdots \rightarrow C_n \rightarrow \cdots \rightarrow C_1\rightarrow C\] 
@@ -988,7 +988,7 @@ By \cite[Lemma 4.6]{p-adic_Hodge}, pro-\'etale covers of perfectoid objects are 
 		\end{enumerate}
 	\end{definition}
 	\begin{definition}
-		When $F=T$ with the action on itself by left multiplication, then a fibre bundle $\pi\colon E\rightarrow B$ with fibre $T$ and structure group $T$ is called a $T$-torsor.
+		When $F=T$ with the action on itself by left multiplication, then a fibre bundle $\pi\colon E\rightarrow B$ with fibre $T$ and structure group $T$ is called a \textbf{$T$-torsor}.
 	\end{definition}
 	
 	\begin{example}
