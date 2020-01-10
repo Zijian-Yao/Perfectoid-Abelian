@@ -729,14 +729,14 @@ By \cite[Lemma 4.6]{p-adic_Hodge}, pro-\'etale covers of perfectoid objects are 
 	
 		\appendix
 	\section{Fibre bundles of formal and rigid spaces}
-	In this appendix we review the theory of fibre bundles in the setting of formal and rigid geometry.
+	In this appendix we review the theory of fibre bundles in the setting of analytic adic spaces. We will always implicitly assume that finite products of the adic spaces we work with exist: This is for instance the case when we work with rigid or perfectoid spaces, the cases we are most interested in.
 
 	\begin{notation}
-		In the following, if $\pi\colon E\rightarrow B$ is a morphism of formal schemes, then for a formal open subscheme $U\subseteq B$ we denote $E|_U:=\pi^{-1}(U)\subseteq E$.
+		In the following, if $\pi\colon E\rightarrow B$ is a morphism of adic spaces, then for an open subspace $U\subseteq B$ we denote $E|_U:=\pi^{-1}(U)\subseteq E$.
 	\end{notation}
 	\begin{definition}\label{definition principal T-bundle}
-		Let $T$ be a formal group scheme. Let $F$ be a formal scheme with an action $m\colon T\times F\rightarrow F$.
-		A morphism $\pi\colon E\rightarrow B$ of formal schemes is called a \textbf{fibre bundle with fibre $F$ and structure group $T$} if there is a cover $\mathfrak U$ of $B$ of open formal subschemes $U_i\subseteq B$ with isomorphisms $\varphi_i:F\times U_i \xrightarrow{\sim} E|_{U_i}$ which satisfy the following conditions:
+		Let $T$ be a an adic group. Let $F$ be an adic space with an action $m\colon T\times F\rightarrow F$.
+		A morphism $\pi\colon E\rightarrow B$ of adic spaces is called a \textbf{fibre bundle with fibre $F$ and structure group $T$} if there is a cover $\mathfrak U$ of $B$ of open subspaces $U_i\subseteq B$ with isomorphisms $\varphi_i:F\times U_i \xrightarrow{\sim} E|_{U_i}$ which satisfy the following conditions:
 		\begin{enumerate}[label=(\alph*)]
 			\item For every $U_i\in \mathfrak U$, the following diagram commutes:
 			\begin{center}
@@ -761,12 +761,12 @@ By \cite[Lemma 4.6]{p-adic_Hodge}, pro-\'etale covers of perfectoid objects are 
 	\end{definition}
 	
 	\begin{example}
-		The short exact sequence $0\rightarrow \overline{T}\rightarrow \overline{E}\xrightarrow{\pi} \overline{B}\rightarrow 0$ from \S\ref{Raynaud extensions as principal bundles of formal and rigid spaces} yields a $T$-torsor $\overline{E}\xrightarrow{\pi} \overline{B}$ by Lemma~\ref{formal Raynaud sequence is locally split}. Moreover, for any formal open subscheme $U\subseteq \overline{B}$, the map $E|_U\rightarrow U$ is a $T$-torsor.
+		The short exact sequence $0\rightarrow \overline{T}\rightarrow \overline{E}\xrightarrow{\pi} \overline{B}\rightarrow 0$ from \S\ref{Raynaud extensions as principal bundles of formal and rigid spaces} yields a $T$-torsor $\overline{E}\xrightarrow{\pi} \overline{B}$ by Lemma~\ref{formal Raynaud sequence is locally split}. Moreover, for any open subspace $U\subseteq \overline{B}$, the map $E|_U\rightarrow U$ is a $T$-torsor.
 	\end{example}
 	
 	The $\phi_{ij}$ from condition (b) are determined by the maps $\psi_{ij}\colon U_{ij}\rightarrow T$. By glueing, one sees:
 	\begin{lemma}\label{equivalent characterisation of principal $T$-bundle}
-		Suppose we are given formal schemes $F$ and $B$ and a formal group scheme $T$ with an action on $F$. Then fibre bundles $\pi\colon E\rightarrow B$ with fibre $F$ and structure group $T$ are equivalent to the data (up to refinement) of a cover $\mathfrak U$ of $B$ by formal open subschemes and morphisms $\psi_{ij}\colon U_{ij}\rightarrow T$ for all $U_i,U_j\in \mathfrak U$ that satisfy the cocycle condition $\psi_{jk}|_{U_{ijk}}\cdot \psi_{ij}|_{U_{ijk}}=\psi_{ik}|_{U_{ijk}}$ on the intersection $U_{ijk}:=U_i\cap U_j\cap U_k$.
+		Suppose we are given adic spaces $F$ and $B$ and an adic group $T$ with an action on $F$. Then fibre bundles $\pi\colon E\rightarrow B$ with fibre $F$ and structure group $T$ are equivalent to the data (up to refinement) of a cover $\mathfrak U$ of $B$ by open subspaces and morphisms $\psi_{ij}\colon U_{ij}\rightarrow T$ for all $U_i,U_j\in \mathfrak U$ that satisfy the cocycle condition $\psi_{jk}|_{U_{ijk}}\cdot \psi_{ij}|_{U_{ijk}}=\psi_{ik}|_{U_{ijk}}$ on the intersection $U_{ijk}:=U_i\cap U_j\cap U_k$.
 	\end{lemma}
 	\begin{lemma}
 		Let $E\rightarrow B$ be a fibre bundle with fibre $F$ and structure group $T$. Then the natural $T$-action on $F\times U_{i}$ for each $i$ via the first factor glue to a natural $T$-action on $E$.
@@ -786,50 +786,10 @@ By \cite[Lemma 4.6]{p-adic_Hodge}, pro-\'etale covers of perfectoid objects are 
 	\end{definition}
 
 	\begin{definition} \label{definition of Borel construction}
-		Let $\pi\colon E\rightarrow B$ be a $T$-torsor. Let $F$ be a formal scheme with an action by $T$. Since the data in Lemma~\ref{equivalent characterisation of principal $T$-bundle} are completely independent of the fibre, the morphisms $\psi_{ij}\colon U_{ij}\rightarrow T$ by Lemma~\ref{equivalent characterisation of principal $T$-bundle} define a fibre bundle with fibre $F$ and structure group $T$ that we denote by $F\times^T E$. This is called the \textbf{associated bundle} or Borel-Weil construction.
+		Let $\pi\colon E\rightarrow B$ be a $T$-torsor. Let $F$ be an adic space with an action by $T$. Since the data in Lemma~\ref{equivalent characterisation of principal $T$-bundle} are completely independent of the fibre, the morphisms $\psi_{ij}\colon U_{ij}\rightarrow T$ by Lemma~\ref{equivalent characterisation of principal $T$-bundle} define a fibre bundle with fibre $F$ and structure group $T$ that we denote by $F\times^T E$. This is called the \textbf{associated bundle} or Borel-Weil construction.
 	\end{definition}
-	\subsection{The semi-linear case}
-	\begin{definition}
-		Let $g\colon T'\rightarrow T$ be a homomorphism of formal group schemes. Let $\pi\colon E\rightarrow B$ be a fibre bundle with fibre $F$ and structure group $T$ and let $\pi'\colon E'\rightarrow B'$ be a fibre bundle with fibre $F'$ and structure group $T'$ . Then a $g$-linear morphism of torsors is a diagram
-		\begin{center}
-			\begin{tikzcd}
-				E' \arrow[d] \arrow[d, "f_E"] \arrow[r, "\pi'"] & B' \arrow[d, "f_B"] \\
-				E \arrow[r, "\pi"] & B
-			\end{tikzcd}
-		\end{center}		
-		such that $f_E$ is $g$-linear.
-	\end{definition}
-	For a fixed $f_B\colon B'\rightarrow B$, one can equivalently characterise a morphism of torsors $f_E\colon E'\to E$ over $f_B$ by the data of maps $f_B^{-1}(U_i)\to T'$ on some cover of $B$. Using this description, one sees:
-	\begin{proposition}\label{associated bundle construction in the semi-linear case is a sort of fibered bifunctor}
-		
-		Given any homomorphism of group schemes $g\colon T'\rightarrow T$ and a $g$-linear homomorphism $h\colon F'\rightarrow F$ of formal schemes with $T'$ and $T$-actions respectively, and a homomorphism $f\colon E'\rightarrow E$ of principal $T'$ and $T$-bundles over $g$, one obtains a morphism
-		\[h\times^g f \colon F'\times^{T'}E'\rightarrow F\times^T E\]
-		of fibre bundles over $g$. This makes $-\times^{-}-$ into a fibered bifunctor from the category of pairs $(F,T)$ of formal schemes $F$ with an action by $T$, fibered over the category of formal group schemes $T$ with the category of $T$-torsors $E$, to the category of formal fibre bundles.
-	\end{proposition}
-	The associated bundle construction has the following universal property:
 	
-	\begin{lemma}\label{universal property of associated fibre construction in the semilinear case}
-		In the context of Proposition~\ref{associated bundle construction in the semi-linear case is a sort of fibered bifunctor}, assume moreover that $F',F$ are formal group schemes and that the respective actions come from group homomorphisms $T'\to F'$ and $T\to F$.
-		Then $h\times^g f$ is the unique $h$-linear morphism of fibre bundles making the following diagram commute:
-		\begin{center}
-			\begin{tikzcd}
-				F'\times^{T'}E' \arrow[r, "h\times^{f}g"] & F\times^{T}E \\
-				E' \arrow[r, "f"] \arrow[u] & E \arrow[u].
-			\end{tikzcd}
-		\end{center}
-	\end{lemma}
-	\begin{proof}
-		 The vertical maps in the diagram exist by functoriality via $E=T\times^{T}E\rightarrow F\times^{T}E$. 
-		On any compatible trivialisation $T'\times U'\rightarrow T\times U$ of $f:E'\rightarrow E$ there is then clearly only one way to extend this to $F'\times U'\rightarrow F\times U$ in a $h$-linear way.
-	\end{proof}
-	
-	\begin{remark}\label{appendix in the case of rigid spaces and schemes}
-	All that we have done in this section can be done in completely the same way with formal schemes replaced by rigid or adic spaces. The different categories of fibre bundles are well-behaved with respect to the usual functors between these categories: For instance, by functoriality of fibre products there are natural rigidification and reduction functors from formal principal $T$-bundles over $\mathcal O_K$ to rigid principal $T_\eta$-bundles over $K$ on the generic fibre. Moreover, these generic fibre and reduction functors commute with the associated fibre construction:
-	\end{remark}
-	\begin{lemma}\label{associated bundle commutes with generic fibre}
-		Let $T$ be a formal group scheme and let $\pi\colon E\rightarrow B$ be a principal $T$-bundle. Let $F$ be a formal scheme with an action by $T$. Then $(F\times^T E)_\eta = F_\eta\times^{T_\eta} E_\eta$.
-	\end{lemma}
-  
+ 
 \bibliographystyle{alpha}
 \bibliography{Arizona}
 
