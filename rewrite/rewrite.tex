@@ -127,7 +127,7 @@ Let $p$ be a prime and let $K$ be an algebraically closed non-archimedean field 
 For an abelian variety $A$ over $K$ we consider the inverse system of $A$ under the $p$-multiplication morphism:
 \[\cdots\xrightarrow{[p]}A\xrightarrow{[p]}A\xrightarrow{[p]}A.\]
 Via the adic analytification functor, we may see this as an inverse system of analytic adic spaces over $\operatorname{Spa}(K,\mathcal O_K)$, where $\mathcal O_K$ is the ring of integers of $K$.
-The primary goal of this article is to show that the ``inverse limit'' of this tower exists in some way and is a perfectoid space: Since inverse limits rarely exist in the category of adic spaces, in \cite{SW} the authors introduce the weaker notion of tilde-limits to remedy this problem. This is the notion of ``limits" we are going to use. More precisely, we prove:
+The primary goal of this article is to show that the ``inverse limit'' of this tower exists in some way and is a perfectoid space: Since inverse limits rarely exist in the category of adic spaces, in \cite{huber2013etale} Huber introduced the weaker notion of tilde-limits to remedy this problem. This is the notion of ``limits" we are going to use. More precisely, we prove:
 
  %Before we state the precise version of the theorem, we remark that the main assertion already implicitly appeared in [?] [?] without justification. Nevertheless we decide to fill in this gap in the literature, since the proof, despite being straight-forward, is quite subtle to spell out. 
  
@@ -140,7 +140,7 @@ The primary goal of this article is to show that the ``inverse limit'' of this t
 
 The possibility of results in this direction is mentioned in \S 7 and \S 13 of \cite{scholzeICMproceedings}, and in the case of abelian varieties with good reduction, this theorem was proven already in \cite{Pilloni-Stroh} (Lemme A.16).  In order to motivate our strategy for the general case, let us sketch the proof in the good reduction case (we follow Exercise 4 -- 6 in \cite{Bhatt} and refer to Corollary \ref{tilde-limit exists and is perfectoid in the good reduction case} below for some more details):
 
-Let $A$ be an abelian variety of good reduction over $K$ and let $A_{\mathcal O_K}$ denote its N\'eron model over $\mathcal O_K$. Let $\pi\in\mathcal O_K$ be a pseudo-uniformiser such that $p\in \pi\mathcal O_K$. Denote by $\mathcal A$ the $\pi$-adic completion of $A_{\mathcal O_K}$, a formal scheme over $\mathcal O_K$. Its adic generic fibre is the rigid analytification of $A$ that we denote by the same letter. The mod $\pi$ special fibre $\tilde{A} = A_{\mathcal O_K}\times \Spec(\O_K/\pi)$ is a group scheme over $\mathcal O_K/\pi$, so the map $[p]\colon\tilde{A}\rightarrow \tilde{A}$ factors through the relative Frobenius map. The inverse limit $ \varprojlim_{[p]} \tilde{A} $ then exists in the category of schemes and it is relatively perfect over $\mathcal O_K/\pi$. We can similarly form the inverse limit $\mathcal A_{\infty} = \varprojlim_{[p]} \mathcal A$ in the category of formal schemes. Its adic generic fibre $A_\infty$ is a tilde-limit of $\varprojlim_{[p]}A$, and it is perfectoid since $ \varprojlim_{[p]} \tilde{A} $ is relatively perfect.
+Let $A$ be an abelian variety of good reduction over $K$ and let $A_{\mathcal O_K}$ denote its N\'eron model over $\mathcal O_K$. Let $\varpi\in\mathcal O_K$ be a pseudo-uniformiser such that $p\in \varpi\mathcal O_K$. Denote by $\mathcal A$ the $\varpi$-adic completion of $A_{\mathcal O_K}$, a formal scheme over $\mathcal O_K$. Its adic generic fibre is the rigid analytification of $A$ that we denote by the same letter. The mod $\varpi$ special fibre $\tilde{A} = A_{\mathcal O_K}\times \Spec(\O_K/\varpi)$ is a group scheme over $\mathcal O_K/\varpi$, so the map $[p]\colon\tilde{A}\rightarrow \tilde{A}$ factors through the relative Frobenius map. The inverse limit $ \varprojlim_{[p]} \tilde{A} $ then exists in the category of schemes and it is relatively perfect over $\mathcal O_K/\varpi$. We can similarly form the inverse limit $\mathcal A_{\infty} = \varprojlim_{[p]} \mathcal A$ in the category of formal schemes. Its adic generic fibre $A_\infty$ is a tilde-limit of $\varprojlim_{[p]}A$, and it is perfectoid since $ \varprojlim_{[p]} \tilde{A} $ is relatively perfect.
 
 If $A$ is an abelian variety with bad reduction, the assumption that $K$ is algebraically closed assures that $A$ has semi-stable reduction.
 In this case, the theory of Raynaud extensions provides us with a short exact sequence 
@@ -149,13 +149,13 @@ of rigid groups, where $T = (\mathbb G_m^{\text{an}})^{d}$ is a split rigid toru
 Our strategy for the proof of Theorem \ref{thm:main_thm_intro}, which more generally applies to any abeloid variety over $K$, is now similar to the good reduction case:
 \begin{enumerate}
 \item Construct a perfectoid tilde-limit $T_\infty\sim\varprojlim_{[p]} T$. This is easy.
-\item Use $T_\infty$ to construct a perfectoid tilde-limit $E_\infty\sim\varprojlim_{[p]} E$.
+\item Use $T_\infty$ and $B_\infty$ to construct a perfectoid tilde-limit $E_\infty\sim\varprojlim_{[p]} E$.
 \item Study the quotient map $E\rightarrow A$ in the limit over $[p]$ to construct the desired space $A_\infty$.
 \end{enumerate}
 
-More precisely, this article is organised as follows: In \S3 we use the language of fibre bundles to construct a perfectoid tilde-limit $E_\infty$: The Raynaud extension of $A$ arises from a short exact sequence of formal group schemes
+More precisely, this article is organised as follows: In \S2 we recall the definition of tilde-limits and collect some useful lemmas about tilde-limits and perfectoid spaces. In particular, we construct the perfectoid tilde-limit $T_\infty$. In \S3 we use the language of fibre bundles to construct a perfectoid tilde-limit $E_\infty$: The Raynaud extension of $A$ arises from a short exact sequence of formal group schemes
 \[0\rightarrow \overline{T}\rightarrow \overline{E}\rightarrow \overline{B}\rightarrow 0\]
-by taking generic fibres and forming the pushout with respect to the open immersion $\overline{T}_\eta\rightarrow T$. Since the sequence is locally split, we can see $\overline{E}\rightarrow B$ as a principal $\overline{T}$-bundle and formation of $E$ amounts to a change of fibre from $\overline{T}_\eta$ to $T$. We get the desired tilde-limit by tracing locally splitting through the tower of multiplication by $[p]$. This will also show that there is a short exact sequence of perfectoid groups
+by taking generic fibres and forming the pushout with respect to the open immersion $\overline{T}_\eta\rightarrow T$. Since the sequence is locally split, we can see $\overline{E}\rightarrow \overline{B}$ as a principal $\overline{T}$-bundle and formation of $E$ amounts to a change of fibre from $\overline{T}_\eta$ to $T$. We get the desired tilde-limit by tracing the local splitting through the tower of multiplication by $[p]$. This will also show that there is a short exact sequence of perfectoid groups
 \[ 1\to T_\infty \to E_\infty \to B_\infty \to 1.\]
 
 In \S4 we finish the proof of Theorem~\ref{thm:main_thm_intro} by constructing $A_\infty$ from $E_\infty$ as follows: After choosing lattices $M\subset M_n\subset E$ that map isomorphically to $M$ under $[p^n]\colon E\rightarrow E$, the $[p]$-multiplication tower of $A=E/M$ naturally factors into two separate towers: One is the tower of maps $E/M_{n+1}\rightarrow E/M_n$ induced from $[p]$-multiplication of $E$, and the other is induced from the projection maps $v^n\colon E/M\rightarrow E/M_n$. Using local splittings, one can construct a perfectoid tilde-limit $A'_\infty\sim \varprojlim_n E/M_n$ of the first tower from $E_\infty$. It fits into a short exact sequence
@@ -164,7 +164,7 @@ In \S4 we finish the proof of Theorem~\ref{thm:main_thm_intro} by constructing $
 \[0\rightarrow M\rightarrow D_\infty \times E_\infty \rightarrow A_\infty\rightarrow 0,\]
 which we regard as an analogue of the sequence $0\rightarrow M\rightarrow E\rightarrow A\rightarrow 0$.
 
-We give three applications of Theorem~\ref{thm:main_thm_intro} in \S 6. The paper ends with an appendix on fibre bundles and associated fibre bundle constructions in the context of formal, adic and perfectoid spaces.
+We give three applications of Theorem~\ref{thm:main_thm_intro} in \S 5. The paper ends with an appendix on fibre bundles and associated fibre bundle constructions in the context of adic spaces.
 
  \begin{comment}
 Now we end the introduction by describing the content of each section. 
@@ -200,14 +200,14 @@ During the preparation of this work, Koji Shimizu was partially supported by NSF
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %some hack to hide the acknowledgements in the toc
 \section*{Notation}
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
-	Let $K$ be an algebraically closed non-archimedean field, let $\mathcal O_K$ be the ring of integers of $K$ and fix a pseudo-uniformiser $\pi\in \mathcal O_K$ such that $p\in\pi\mathcal O_K$. 
+	Let $K$ be an algebraically closed non-archimedean field, let $\mathcal O_K$ be the ring of integers of $K$ and fix a pseudo-uniformiser $\varpi\in \mathcal O_K$ such that $p\in\varpi\mathcal O_K$. 
 	
 	We will use adic spaces over $\operatorname{Spa}(K,\O_K)$ in the sense of Huber, and perfectoid spaces over $\operatorname{Spa}(K,\O_K)$ in the sense of Scholze \cite{perfectoid}. We denote by $X\mapsto X^{\an}$ the analytification functor from schemes of finite type over $X$ to analytic adic spaces over $(K,\O_K)$.
 	
-	By a rigid spaces, we shall always mean an analytic adic space of topologically finite type over $\operatorname{Spa}(K,\mathcal O_K)$. 
+	By a rigid space, we shall always mean an analytic adic space of topologically finite type over $\operatorname{Spa}(K,\mathcal O_K)$. 
 	In particular, by an open cover of a rigid space we shall always mean a cover of the associated adic space, so that we do not need the notion of admissible covers.
 	
-	For a $\pi$-adic formal scheme $\mathfrak X$ over $\operatorname{Spf}(\mathcal O_K)$, we denote by $\mathfrak X_\eta:=\mathfrak X^{\mathrm{ad}}\times_{\operatorname{Spa}(\mathcal O_K,\mathcal O_K)}\operatorname{Spa}(K,\mathcal O_K)$ its adic generic fibre. Here $X^{\mathrm{ad}}$ is the adification in the sense of \cite{SW}.
+	For a $\varpi$-adic formal scheme $\mathfrak X$ over $\operatorname{Spf}(\mathcal O_K)$, we denote by $\mathfrak X_\eta:=\mathfrak X^{\mathrm{ad}}\times_{\operatorname{Spa}(\mathcal O_K,\mathcal O_K)}\operatorname{Spa}(K,\mathcal O_K)$ its adic generic fibre. Here $X^{\mathrm{ad}}$ is the adification in the sense of \cite{SW}.
 
 
 %%%%%%%%%%%%
@@ -236,7 +236,7 @@ As pointed out after Proposition 2.4.4 of \cite{SW}, tilde-limits (if they exist
 We recall a few results from \cite{SW}, \S2.4 on tilde-limits that we will use frequently throughout:
 
 \begin{proposition}[\cite{SW}, Proposition 2.4.2]\label{SW Proposition 2.4.2}
-	Let $(A_i,A_i^{+})$ be a direct system of affinoids over $(K,\mathcal O_K)$ with compatible rings of definition $A_{i,0}$ carrying the $\pi$-adic topology. Let $(A,A^{+})=(\varinjlim A_i,\varinjlim A_i^{+})$ be the affinoid algebra equipped with the topology making $\varinjlim A_{i,0}$ with the $\pi$-adic topology a ring of definition. Then
+	Let $(A_i,A_i^{+})$ be a direct system of affinoids over $(K,\mathcal O_K)$ with compatible rings of definition $A_{i,0}$ carrying the $\varpi$-adic topology. Let $(A,A^{+})=(\varinjlim A_i,\varinjlim A_i^{+})$ be the affinoid algebra equipped with the topology making $\varinjlim A_{i,0}$ with the $\varpi$-adic topology a ring of definition. Then
 	\[\operatorname{Spa}(A,A^{+})\sim \textstyle\varprojlim \operatorname{Spa}(A_i,A_i^{+}).\]
 \end{proposition}
 \begin{proposition}[\cite{SW}, Proposition 2.4.3]\label{SW Proposition 2.4.3}
@@ -251,21 +251,21 @@ We recall a few results from \cite{SW}, \S2.4 on tilde-limits that we will use f
 \begin{corollary}\label{corollary: perfectoid tilde limit is unique}
 	Any two perfectoid spaces that are tilde-limits of the same inverse system of adic spaces over $(K,\mathcal O_K)$ are canonically isomorphic.
 \end{corollary}
-In the situation of the corollary, we will also refer to such a perfectoid space as \textit{the} perfectoid tilde-limit of the inverse system. Of course perfectoid tilde-limits do not always exists. An example for a basic situation in which they do is the following:
+In the situation of the corollary, we will also refer to such a perfectoid space as \textit{the} perfectoid tilde-limit of the inverse system. Of course perfectoid tilde-limits do not always exist. An example of a basic situation in which they do is the following:
 \begin{corollary}\label{pro-finite-perfectoid-spaces}
 	Let $(S_i)_{i\in I}$ be an inverse system of finite sets. Let $S=\varprojlim_{i\in I} S_i$. Then the system of constant groups $\underline{S_i}=\mathrm{Spa}(\mathrm{Map}_{\mathrm{cts}}(S_i,K),\mathrm{Map}_{\mathrm{cts}}(S_i,\O_K))$ has a perfectoid tilde-limit	\[\underline{S}:=\mathrm{Spa}(\mathrm{Map}_{\mathrm{cts}}(S,K),\mathrm{Map}_{\mathrm{cts}}(S,\O_K))\sim\textstyle\varprojlim_{i\in I} \underline{S_i}.\]
 \end{corollary}
 \begin{proof}
-	Since $S$ is compact, $\mathrm{Map}_{\mathrm{cts}}(S,K)=\mathrm{Map}_{\mathrm{cts}}(S,\O_K)[\tfrac{1}{\pi}]$. Perfectoidness now follows from $\mathrm{Map}_{\mathrm{cts}}(S,\O_K)/\pi=\mathrm{Map}_{\mathrm{lc}}(S,\O_K/\pi)$. The tilde-limit property follows from Proposition~\ref{SW Proposition 2.4.2}.
+	Since $S$ is compact, $\mathrm{Map}_{\mathrm{cts}}(S,K)=\mathrm{Map}_{\mathrm{cts}}(S,\O_K)[\tfrac{1}{\varpi}]$. Perfectoidness now follows from $\mathrm{Map}_{\mathrm{cts}}(S,\O_K)/\varpi=\mathrm{Map}_{\mathrm{lc}}(S,\O_K/\varpi)$. The tilde-limit property follows from Proposition~\ref{SW Proposition 2.4.2}.
 \end{proof}
 We will need the following basic lemma later on.
 
 	\begin{lemma}\label{affinoid tilde-limits commute with fibre products}
-		Let $(A_i, A_i^+)$ and $(B_i, B_i^+)$ be direct systems of affinoids over $(K, \mathcal O_K)$ with compatible rings of definition $A_{i,0}$ and $B_{i,0}$ carrying the $\pi$-adic topology. Assume that there are perfectoid tilde-limits $\operatorname{Spa}(A, A^+)\sim \varprojlim \operatorname{Spa}(A_i, A_i^+)$ and $\operatorname{Spa}(B, B^+)\sim \varprojlim \operatorname{Spa}(B_i, B_i^+)$. Then \[\operatorname{Spa}(A, A^+)\times_{\operatorname{Spa}(K, \mathcal O_K)}\operatorname{Spa}(B, B^+)\sim\varprojlim (\operatorname{Spa}(A_i, A_i^+)\times_{\operatorname{Spa}(K, \mathcal O_K)} \operatorname{Spa}(B_i, B_i^+))\]
+		Let $(A_i, A_i^+)$ and $(B_i, B_i^+)$ be direct systems of affinoids over $(K, \mathcal O_K)$ with compatible rings of definition $A_{i,0}$ and $B_{i,0}$ carrying the $\varpi$-adic topology. Assume that there are perfectoid tilde-limits $\operatorname{Spa}(A, A^+)\sim \varprojlim \operatorname{Spa}(A_i, A_i^+)$ and $\operatorname{Spa}(B, B^+)\sim \varprojlim \operatorname{Spa}(B_i, B_i^+)$. Then \[\operatorname{Spa}(A, A^+)\times_{\operatorname{Spa}(K, \mathcal O_K)}\operatorname{Spa}(B, B^+)\sim\varprojlim (\operatorname{Spa}(A_i, A_i^+)\times_{\operatorname{Spa}(K, \mathcal O_K)} \operatorname{Spa}(B_i, B_i^+))\]
 		is also a perfectoid tilde-limit.
 	\end{lemma}
 	\begin{proof}
-		The fibre product $\operatorname{Spa}(A, A^+)\times_{\operatorname{Spa}(K, \mathcal O_K)}\operatorname{Spa}(B, B^+)$ exists and is perfectoid by \cite[Prop 6.18]{perfectoid}. In fact, it is represented by $\operatorname{Spa}(C,C^+)$, where $C=A\widehat{\otimes}_KB$ and $C^+$ is the $\pi$-adic completion of the integral closure of the image of $A^+\otimes_{\mathcal O_K}B^+$.
+		The fibre product $\operatorname{Spa}(A, A^+)\times_{\operatorname{Spa}(K, \mathcal O_K)}\operatorname{Spa}(B, B^+)$ exists and is perfectoid by \cite[Prop 6.18]{perfectoid}. In fact, it is represented by $\operatorname{Spa}(C,C^+)$, where $C=A\widehat{\otimes}_KB$ and $C^+$ is the $\varpi$-adic completion of the integral closure of the image of $A^+\otimes_{\mathcal O_K}B^+$.
 		
 		We first check the condition on topological spaces:
 		 Since fibre products commute with limits in the category of sheaves, it follows from Proposition~\ref{SW Proposition 2.4.5} that for any perfectoid field $(D,D^+)$ over $(K,\O_K)$, we have 
@@ -328,16 +328,16 @@ We will therefore restrict attention to the case of  $K^+=\O_K$ without loss of 
 	The implication $(1)\Rightarrow (2)$ follows from Prop.~\ref{SW Proposition 2.4.3} since $\Spa(K,\mathcal O_K)\hookrightarrow \Spa(K,K^+)$ is an open immersion, and thus so is each $X_{i,\eta}\hookrightarrow X_i$.
 	
 	For the other direction, we start by arguing as in the proof of \cite[Prop. 2.4.5]{SW}: We may assume without loss of generality assume that the $X_i=\Spa(A,A_i^+)$ are affine, that $X_\infty=\Spa(A_\infty,A_\infty^+)$ is affinoid perfectoid and that $\varinjlim_{i\in I} A_i\to A_\infty$ has dense image. We claim that the natural map
-	\[\varinjlim_{i\in I}A_i^+/\pi= A_\infty^{+}/\pi\]
+	\[\varinjlim_{i\in I}A_i^+/\varpi= A_\infty^{+}/\varpi\]
 	is an isomorphism. To see surjectivity, let $f\in A_\infty^+$. Then $|f(x)|\leq 1$ for all $x\in |X_\infty|$. Let $f_i\in A_i$ be a sequence whose images in $A_\infty$ converge to $f$. Then eventually, we will have $|f_i(x)|\leq 1$ for all  $x\in |X_\infty|$. Since $|X_\infty|=\varprojlim |X_i|$, and the projection map $|X_\infty|\to |X_i|$ is surjective due to the assumption that the transition maps are finite, we see $|f_i(x)|\leq 1$ for all $x\in |X_i|$, and thus $f_i\in A_i^+$.
 	
-	Similarly, the map is injective because $f_i\in A_i^+$ satisfies $|f_i(x)|\leq |\pi|$ for all $x\in X_i$ if and only if its image $f$ in $A_\infty$ satisfies $|f(x)|\leq |\pi|$ for all $x\in X_\infty$. This shows that the map is an isomorphism.
+	Similarly, the map is injective because $f_i\in A_i^+$ satisfies $|f_i(x)|\leq |\varpi|$ for all $x\in X_i$ if and only if its image $f$ in $A_\infty$ satisfies $|f(x)|\leq |\varpi|$ for all $x\in X_\infty$. This shows that the map is an isomorphism.
 	
 	
 	Next, we note that since $A_i$ is of finite type over $(K,K^+)$, we have \[X_{i,\eta}=\Spa(A_i,A_i^+)\times_{\Spa(K,K^+)}\Spa(K,\mathcal O_K)=\Spa(A_i,A_i'^+)\]
-	where $A_i'^+$ is the integral closure of $A_i^+\hotimes_{K^+}\mathcal O_K$ in $A_i$. Here the map $K^+\to \mathcal O_K$ has almost zero cokernel, and is thus an almost isomorphism. It follows that the morphism $A_i^+/p\to A_i'^+/p$ is also an almost isomorphism. Taking the limit over $i\in I$, this gives an almost isomorphism of $\mathcal O_K^a/\pi$-algebra
-	\[\varinjlim A_i^{+a}/\pi=\varinjlim A'^{+a}_i/\pi.\]
-	It follows that $\varinjlim A'^{+a}_i/\pi$ is a perfectoid $\mathcal O_K^a/\pi$-algebra. Let now $A'^{+}$ be the $\pi$-adic completion of $\varinjlim A'^+$ and $A':=A'^{+}[1/\pi]$. Then by \cite[Thm. 5.2]{perfectoid}, $(A',A'^+)$ is a perfectoid $K$-algebra. It is now clear from construction that 
+	where $A_i'^+$ is the integral closure of $A_i^+\hotimes_{K^+}\mathcal O_K$ in $A_i$. Here the map $K^+\to \mathcal O_K$ has almost zero cokernel, and is thus an almost isomorphism. It follows that the morphism $A_i^+/p\to A_i'^+/p$ is also an almost isomorphism. Taking the limit over $i\in I$, this gives an almost isomorphism of $\mathcal O_K^a/\varpi$-algebra
+	\[\varinjlim A_i^{+a}/\varpi=\varinjlim A'^{+a}_i/\varpi.\]
+	It follows that $\varinjlim A'^{+a}_i/\varpi$ is a perfectoid $\mathcal O_K^a/\varpi$-algebra. Let now $A'^{+}$ be the $\varpi$-adic completion of $\varinjlim A'^+$ and $A':=A'^{+}[1/\varpi]$. Then by \cite[Thm. 5.2]{perfectoid}, $(A',A'^+)$ is a perfectoid $K$-algebra. It is now clear from construction that 
 	\[\Spa(A',A'^+)\sim \varprojlim\Spa(A_i,A_i'^+).\qedhere\]
 \end{proof}
 \fi
@@ -352,7 +352,7 @@ More generally, if $\mathfrak G$ is a flat commutative formal group scheme such 
 	Let $T$ be a torus over $K$. Then there is a perfectoid tilde-limit $T_\infty\sim \varprojlim_{[p]} T$.
 \end{lemma}
 \begin{proof}
-Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\mathbb{G}_m^{\an})^d$ for some $d\in \N$. By Lemma~\ref{affinoid tilde-limits commute with fibre products}, it suffices to consider the case of $d=1$. For this, we may use the open embedding $\mathbb G_m^{\an}= \mathbb P^1\setminus\{\infty\}\subseteq \mathbb P^1$. Sending $(x:y)\mapsto (x^p:y^p)$ defines a morphism $\varphi:\mathbb P^1\to \mathbb P^1$. The pullback of $\varphi$ to $\mathbb G_m^{\an}$ is precisely $[p]:\mathbb G_m^{\an}\to \mathbb G_m^{\an}$.
+Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\mathbb{G}_m^{\an})^d$ for some $d\in \N$. By Lemma~\ref{affinoid tilde-limits commute with fibre products}, it suffices to consider the case of $d=1$. For this, we may use the open embedding $\mathbb G_m^{\an}= \mathbb P^1\setminus\{0, \infty\}\subseteq \mathbb P^1$. Sending $(x:y)\mapsto (x^p:y^p)$ defines a morphism $\varphi:\mathbb P^1\to \mathbb P^1$. The pullback of $\varphi$ to $\mathbb G_m^{\an}$ is precisely $[p]:\mathbb G_m^{\an}\to \mathbb G_m^{\an}$. We can therefore apply Proposition \ref{SW Proposition 2.4.3} to the perfectoid tilde-limit $\mathbb P_1^{\text{perf}}\sim \varprojlim_{\varphi} \mathbb P_1$ introduced in \cite{perfectoid}. 
 \end{proof}
 
 %\begin{remark} What we aim to prove in the rest of this write-up is that for a Raynaud extension $0\rightarrow T\rightarrow E\rightarrow B\rightarrow 0$, there is a $[p]$-$F$-model for $T$ which induces a $[p]$-$F$-model for $E$. This will prove that tilde-limits $T_\infty$ and $E_\infty$ exist and are perfectoid if $K$ is perfectoid.  
@@ -363,7 +363,11 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 	\end{example}
 	
  
- 
+ %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+%%%  Section 3
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
 	
  
 	
@@ -421,7 +425,7 @@ Note that if $A$ is an abelian variety, then so is $B$ (\cite[Theorem 6.4.8]{Lut
 	Instead, we have the following crucial lemma, which says that one may regard Raynaud extensions as $T$-torsors of formal schemes.
 
 	\begin{lemma}\label{formal Raynaud sequence is locally split}
-		The short exact sequence (\ref{formal Raynaud extension}) admits local sections, that is there is a cover of $\overline{B}$ by formal open subschemes $U_i$ such that there exist local sections $s:U_i\rightarrow \overline{E}$ of $\pi$. In particular, one can cover $\overline{E}$ by formal open subschemes of the form $\overline{T}\times U_i\hookrightarrow E$.
+		The short exact sequence (\ref{formal Raynaud extension}) admits local sections, that is there is a cover of $\overline{B}$ by formal open subschemes $\overline{U}_i$ such that there exist local sections $s:\overline{U}_i\rightarrow \overline{E}$ of $\pi$. In particular, one can cover $\overline{E}$ by formal open subschemes of the form $\overline{T}\times \overline{U}_i\hookrightarrow \overline{E}$.
 	\end{lemma}
 	\begin{proof}
 		This is proved in Proposition A.2.5 in~\cite{Lut}, where it is fomulated in terms of the group $\operatorname{Ext}(B,T)$. Also see \cite{BL}, \S 1.
@@ -465,7 +469,7 @@ Note that if $A$ is an abelian variety, then so is $B$ (\cite[Theorem 6.4.8]{Lut
 				To prove the theorem, it suffices to show that this system has a perfectoid tilde-limit.
 				As there is a perfectoid tilde-limit $B_\infty\sim \varprojlim_{[p]} B$, by pullback to $U$ there is also a perfectoid tilde-limit $U_\infty\sim \varprojlim U_n$. Since there is also a perfectoid tilde-limit $T_\infty\sim \varprojlim_{[p]} T$,  Lemma~\ref{affinoid tilde-limits commute with fibre products} says that the above system has perfectoid tilde-limit $T_\infty\times U_\infty$, as desired.
 				
-				By Lemma~\ref{SW Proposition 2.4.5}, the map $T\to E\to B$ in the limit over $[p]$ now produces maps $T_\infty \to E_\infty\to B_\infty$. By the above local description of $E_\infty$, the latter morphism is locally split, which shows that this sequence is exact.
+				By Proposition~\ref{SW Proposition 2.4.5}, the map $T\to E\to B$ in the limit over $[p]$ now produces maps $T_\infty \to E_\infty\to B_\infty$. By the above local description of $E_\infty$, the latter morphism is locally split, which shows that this sequence is exact.
 	\end{proof}
 	
 	\begin{remark}\label{general fields for E}
@@ -474,7 +478,7 @@ Note that if $A$ is an abelian variety, then so is $B$ (\cite[Theorem 6.4.8]{Lut
 
 %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%
-%%%  Section 5
+%%%  Section 4
 %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%
 	
@@ -652,7 +656,7 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	Our first application is a ``$p$-adic uniformisation'' of abelian varieties.
 	Recall that any abelian variety $A$ over $\mathbb C$ of dimension $d$ has a uniformisation in terms of a complex torus $A\cong \mathbb C^d/\Lambda$ for some $2d$-dimensional lattice $\Lambda\subseteq \mathbb C^d$. More canonically, it admits the presentation
 \[
- A\cong \mathrm{Lie} A/H_1(A,\Z).
+ A\cong \operatorname{Lie} A/H_1(A,\Z).
 \]
 	
 	We have the following analogue of this over $K$: Let $A$ be an abeloid variety over $K$ of dimension $d$, considered as a rigid space. Then in the limit over $n$, the short exact sequences
@@ -728,7 +732,7 @@ By \cite[Lemma 4.6]{p-adic_Hodge}, pro-\'etale covers of perfectoid objects are 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 		\appendix
-	\section{Fibre bundles of formal and rigid spaces}
+	\section{Fibre bundles of adic spaces}
 	In this appendix we review the theory of fibre bundles in the setting of analytic adic spaces. We will always implicitly assume that finite products of the adic spaces we work with exist: This is for instance the case when we work with rigid or perfectoid spaces, the cases we are most interested in.
 
 	\begin{notation}
