@@ -480,6 +480,14 @@ Note that if $A$ is an abelian variety, then so is $B$ (\cite[Theorem 6.4.8]{Lut
 				By Proposition~\ref{SW Proposition 2.4.5}, the maps $1\to T\to E\to B\to 1$ in the limit over $[p]$ now produces maps $1\to T_\infty \to E_\infty\to B_\infty\to 1$. By the above local description of $E_\infty$, the latter is an analytic-locally split short exact sequence.
 	\end{proof}
 	
+	\begin{remark}
+		In the case of Raynaud extensions, there is an alternative proof that also constructs a formal model $\mathfrak E_\infty$ of $E_\infty$, like in Lemma~\ref{tilde-limit exists and is perfectoid in the good reduction case}. For this, one first takes a sequence of formal models 
+		\[\cdots \to \mathfrak T_{2}\xrightarrow{[\mathfrak p]_1}\mathfrak T_1\xrightarrow{[\mathfrak p]_1} \mathfrak T_0\]
+		of $\cdots\xrightarrow{[p]} T\xrightarrow{[p]} T$. This can be done in such a way that each $[\mathfrak p]_i$ reduces to the relative Frobenius mod $p$. Then $\mathfrak T_\infty:=\varprojlim_{[\mathfrak p]_i}\mathfrak T_i$ is a formal model of the perfectoid space $T_\infty$ (giving an alternative proof that $T_\infty$ is a perfectoid tilde-limit). When we set $\mathfrak E_i:=\mathfrak T_i\times^{\overline{T}}\overline{E}$, we get an inverse system
+		\[\cdots \to \mathfrak E_{2}\xrightarrow{[\mathfrak p]_1}\mathfrak E_1\xrightarrow{[\mathfrak p]_1} \mathfrak E_0\]
+		with transition maps that factor through the relative Frobenius map mod $p$. Thus the generic fibre of $\mathfrak E_\infty:=\varprojlim_{[\mathfrak p]_i}\mathfrak E_i$ is a perfectoid tilde-limit of $\cdots \xrightarrow{[p]}E\xrightarrow{[p]}E$.
+	\end{remark}
+	
 	\begin{remark}\label{general fields for E}
 	With some work, the arguments in this section can be extended to any perfectoid base field. For instance, the Raynaud uniformisation of Theorem \ref{Raynaud uniformisation} might only be defined over a finite extension $L$ of $K$. Our argument then gives a perfectoid space over the (necessarily perfectoid) field $L$. We can then use Galois descent to get a perfectoid space over our original field $K$. This uses that the quotient of a perfectoid space by a finite group often remains perfectoid: see Theorem 1.4 of \cite{Hansen_quotients} for details. Finally, one checks that this Galois descent commutes with tilde-limits. 
 	\end{remark}
