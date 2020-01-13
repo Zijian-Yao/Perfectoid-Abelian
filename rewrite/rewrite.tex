@@ -138,9 +138,7 @@ The primary goal of this article is to show that the ``inverse limit'' of this t
 	$A_\infty \sim \varprojlim_{[p]} A$ is a tilde-limit.
 \end{mainthm}
 
-The possibility of results in this direction is mentioned in \S 7 and \S 13 of \cite{scholzeICMproceedings}, and in the case of abelian varieties with good reduction, this theorem was proven already in \cite{Pilloni-Stroh} (Lemme A.16).  In order to motivate our strategy for the general case, let us sketch the proof in the good reduction case (we follow Exercise 4 -- 6 in \cite{Bhatt} and refer to Corollary \ref{tilde-limit exists and is perfectoid in the good reduction case} below for some more details):
-
-Let $A$ be an abelian variety of good reduction over $K$ and let $A_{\mathcal O_K}$ denote its N\'eron model over $\mathcal O_K$. Let $\varpi\in\mathcal O_K$ be a pseudo-uniformiser such that $p\in \varpi\mathcal O_K$. Denote by $\mathcal A$ the $\varpi$-adic completion of $A_{\mathcal O_K}$, a formal scheme over $\mathcal O_K$. Its adic generic fibre is the rigid analytification of $A$ that we denote by the same letter. The mod $\varpi$ special fibre $\tilde{A} = A_{\mathcal O_K}\times \Spec(\O_K/\varpi)$ is a group scheme over $\mathcal O_K/\varpi$, so the map $[p]\colon\tilde{A}\rightarrow \tilde{A}$ factors through the relative Frobenius map. The inverse limit $ \varprojlim_{[p]} \tilde{A} $ then exists in the category of schemes and it is relatively perfect over $\mathcal O_K/\varpi$. We can similarly form the inverse limit $\mathcal A_{\infty} = \varprojlim_{[p]} \mathcal A$ in the category of formal schemes. Its adic generic fibre $A_\infty$ is a tilde-limit of $\varprojlim_{[p]}A$, and it is perfectoid since $ \varprojlim_{[p]} \tilde{A} $ is relatively perfect.
+The possibility of results in this direction is mentioned in \S 7 and \S 13 of \cite{scholzeICMproceedings}, and in the case of abelian varieties with good reduction, this theorem was proven already in \cite[Lemme~A.16]{Pilloni-Stroh} (Lemme A.16). We recall the argument in Lemma~\ref{tilde-limit exists and is perfectoid in the good reduction case} below. 
 
 If $A$ is an abelian variety with bad reduction, the assumption that $K$ is algebraically closed assures that $A$ has semi-stable reduction.
 In this case, the theory of Raynaud extensions provides us with a short exact sequence 
@@ -342,12 +340,18 @@ We will therefore restrict attention to the case of  $K^+=\O_K$ without loss of 
 \end{proof}
 \fi
 		
-As we have already mentioned in the introduction, Question~\ref{qu:tilde-limits-of-adic-groups} has an affirmative answer in the case of abelian varieties of good reduction: 
-\begin{proposition}\label{tilde-limit exists and is perfectoid in the good reduction case}
-		Let $A$ be an abelian variety of good reduction over $K$. Then there is a perfectoid tilde-limit $A_\infty\sim \varprojlim A$.
-	\end{proposition}
-	 	
-More generally, if $\mathfrak G$ is a flat commutative formal group scheme such that $[p]$-multiplication is affine, then the same proof shows that $G_\infty := (\varprojlim_{[p]}\mathfrak G)_\eta$ is a perfectoid tilde-limit of $\varprojlim_{[p]} G$. 
+As we have already mentioned in the introduction, Question~\ref{qu:tilde-limits-of-adic-groups} has an affirmative answer in the case of abelian varieties of good reduction by \cite[Lemme~A.16]{Pilloni-Stroh}. More generally:
+\begin{lemma}\label{tilde-limit exists and is perfectoid in the good reduction case}
+		Let $\mathfrak G$ be a flat commutative formal group scheme over $\O_K$ such that $[p]:\mathfrak G\to\mathfrak G$ is affine. Let $G=\mathfrak G^{ad}_{\eta}$ be the adic generic fibre. Then $G_\infty := (\varprojlim_{[p]}\mathfrak G)^{ad}_\eta$ is a perfectoid tilde-limit
+		\[G_\infty\sim \varprojlim_{[p]} G. \]
+		In particular, if $B$ is an abelian variety of good reduction over $K$, there is a perfectoid tilde-limit $B_\infty\sim \varprojlim B$.
+	\end{lemma}
+\begin{proof}
+	This holds by the same proof as in \cite[Lemme~A.16]{Pilloni-Stroh}, (see also Exercise 4 -- 6 in \cite{Bhatt}):
+	 Let $\varpi\in\mathcal O_K$ be a pseudo-uniformiser such that $p\in \varpi\mathcal O_K$. The assumption that $[p]:\mathfrak G\to \mathfrak G$ is affine ensures that the limit $\mathfrak G_{\infty}:=\varprojlim_{[p]}\mathfrak G$ exists.
+	 
+	The mod $\varpi$ special fibre $\tilde{G} = \mathfrak G\times \Spec(\O_K/\varpi)$ is a group scheme over $\mathcal O_K/\varpi$, so the map $[p]\colon\tilde{G}\rightarrow \tilde{G}$ factors through the relative Frobenius map. Consequently, the mod $\varpi$ special fibre $\varprojlim_{[p]}\tilde{G}$ of $\mathfrak G_{\infty}$ is relatively perfect over $\mathcal O_K/\varpi$. This implies that the adic generic fibre of $\mathfrak G_{\infty}$ is perfectoid by \cite[Theorem~5.2]{perfectoid}.
+\end{proof}
 \begin{lemma}
 	Let $T$ be a torus over $K$. Then there is a perfectoid tilde-limit $T_\infty\sim \varprojlim_{[p]} T$.
 \end{lemma}
@@ -430,6 +434,7 @@ Note that if $A$ is an abelian variety, then so is $B$ (\cite[Theorem 6.4.8]{Lut
 	\begin{proof}
 		This is proved in Proposition A.2.5 in~\cite{Lut}, where it is fomulated in terms of the group $\operatorname{Ext}(B,T)$. Also see \cite{BL}, \S 1.
 	\end{proof}
+
 	
 	\begin{remark}
 	In the following, we will freely work with fibre bundles of formal schemes and rigid and perfectoid spaces. For some background material on these we refer to the appendix.
@@ -437,10 +442,13 @@ Note that if $A$ is an abelian variety, then so is $B$ (\cite[Theorem 6.4.8]{Lut
 	
 	The sequence~(\ref{formal Raynaud extension}) gives rise to a principal $\overline{T}$-bundle
 	$\overline{E}\rightarrow \overline{B}$. The fact that $E$ is obtained from $\overline{E}_\eta$ via push-out along $\overline{T}_\eta\rightarrow T$ can be expressed in terms of the associated fibre bundle by saying that $E = T\times^{\overline{T}_\eta}\overline{E}_\eta$ in the sense of Definition~\ref{definition of Borel construction}.
-	We can use this to prove the main result of this section, namely that $E_\infty$ is perfectoid. More generally, we prove:
+	\begin{definition}
+		We call a sequence of adic groups $1\to T\to E\xrightarrow{\pi} B\to 1$ an analytic-locally split short exact sequence if $T$ is the kernel of $\pi$ and $\pi:E\to B$ is a principal $T$-torsor in the analytic topology. This implies that $B$ is the categorial quotient in adic groups of $T\to E$.
+	\end{definition}
+	In particular, any Raynaud extension is an analytic-locally split short exact sequence. We can use this to prove the main result of this section, namely that $E_\infty$ is perfectoid. More generally:
 	\begin{proposition}[Existence of $G_\infty$ closed under extensions]\label{p-F-formal tower exists for E}
 		
-		Let $1\to T\to E\to B\to 1$ be any analytic-locally split short exact sequence of rigid groups over $K$. Assume that there are perfectoid tilde-limits $T_\infty \sim \varprojlim_{[p]} T$ and $B_\infty\sim \varprojlim_{[p]}B$. Then
+		Let $1\to T\to E\to B\to 1$ be any analytic-locally split short exact sequence of adic groups over $K$. Assume that there are perfectoid tilde-limits $T_\infty \sim \varprojlim_{[p]} T$ and $B_\infty\sim \varprojlim_{[p]}B$. Then
 		there is a perfectoid tilde-limit $E_\infty\sim \varprojlim_{[p]}E$. It fits into an analytic-locally split short exact sequence of perfectoid groups 
 		\[1\to T_\infty\to E_\infty\to B_\infty\to 1.\]
 	\end{proposition}
@@ -469,7 +477,7 @@ Note that if $A$ is an abelian variety, then so is $B$ (\cite[Theorem 6.4.8]{Lut
 				To prove the theorem, it suffices to show that this system has a perfectoid tilde-limit.
 				As there is a perfectoid tilde-limit $B_\infty\sim \varprojlim_{[p]} B$, by pullback to $U$ there is also a perfectoid tilde-limit $U_\infty\sim \varprojlim U_n$. Since there is also a perfectoid tilde-limit $T_\infty\sim \varprojlim_{[p]} T$,  Lemma~\ref{affinoid tilde-limits commute with fibre products} says that the above system has perfectoid tilde-limit $T_\infty\times U_\infty$, as desired.
 				
-				By Proposition~\ref{SW Proposition 2.4.5}, the map $T\to E\to B$ in the limit over $[p]$ now produces maps $T_\infty \to E_\infty\to B_\infty$. By the above local description of $E_\infty$, the latter morphism is locally split, which shows that this sequence is exact.
+				By Proposition~\ref{SW Proposition 2.4.5}, the maps $1\to T\to E\to B\to 1$ in the limit over $[p]$ now produces maps $1\to T_\infty \to E_\infty\to B_\infty\to 1$. By the above local description of $E_\infty$, the latter is an analytic-locally split short exact sequence.
 	\end{proof}
 	
 	\begin{remark}\label{general fields for E}
@@ -490,7 +498,7 @@ By Proposition~\ref{Raynaud uniformisation for abeloids}, the quotient map $\pi\
 We fix from now on a cover $\mathfrak U$ of $A$ by opens $U$ of this form.
 
 The pullback of $U'$ along $[p]\colon A\to A$ will in general be bigger than the pullback of $U$ along $[p]:E\to E$: e.g. in characteristic 0, the first is an \'etale $A[p]$-torsor, whereas  the latter is an \'etale $E[p]$-torsor, and by the Snake Lemma we have a short exact sequence
-\[1\to E[p]\to A[p]\to M/M^p\to 1\]
+\[0\to E[p]\to A[p]\to M/pM\to 0\]
 
 To relate the pullbacks, we subdivide the tower 
 \[
@@ -589,14 +597,13 @@ Theorem~\ref{thm:main_thm_intro} is part of the following theorem:
 		\item It is independent up to canonical isomorphism of the auxiliary choice of lattices $M_n$ with $D_n=M_n/M$, but it remembers the choice as a pro-finite \'etale closed subgroup $D_\infty \subseteq A_\infty$. 
 		\item The preimage of any $U\in \mathfrak U$ under the projection $A_\infty \rightarrow A$ is isomorphic to $D_\infty \times U_\infty$. 
 		
-		\item 	We have a commutative diagram of short exact sequences of perfectoid groups		
+		\item 	There is a natural map of analytic-locally split short exact sequences of perfectoid groups		
 		\begin{center}
 			\begin{tikzcd}
 				0 \arrow[r] & M_{\infty} \arrow[r] \arrow[d, hook] & E_\infty \arrow[d, hook] \arrow[r] & A'_\infty \arrow[d,equal] \arrow[r] & 0 \\
-				0 \arrow[r] & D_\infty \arrow[r] & A_\infty \arrow[r] & A'_\infty\arrow[r] & 0
+				0 \arrow[r] & D_\infty \arrow[r] & A_\infty \arrow[r] & A'_\infty\arrow[r] & 0.
 			\end{tikzcd}
 		\end{center}
-		both of which are locally split in the analytic topology.
 		\item One can describe $A_\infty$ as the associated fibre bundle
 		\[A_\infty = D_\infty\times^{M_\infty}E_\infty.\]
 		In particular, we have an analytic-locally split short exact sequence of perfectoid groups
