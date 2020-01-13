@@ -72,6 +72,7 @@
 \newcommand{\cts}{{\operatorname{cts}}}
 \newcommand{\abs}{\mathrm{abs}}
 \newcommand{\an}{\mathrm{an}}
+\newcommand{\ad}{\mathrm{ad}}
 \newcommand{\bal}{{\operatorname{bal}}}
 \newcommand{\rel}{\mathrm{rel}}
 \newcommand{\intcl}{\mathrm{int}}
@@ -342,7 +343,7 @@ We will therefore restrict attention to the case of  $K^+=\O_K$ without loss of 
 		
 As we have already mentioned in the introduction, Question~\ref{qu:tilde-limits-of-adic-groups} has an affirmative answer in the case of abelian varieties of good reduction by \cite[Lemme~A.16]{Pilloni-Stroh}. More generally:
 \begin{lemma}\label{tilde-limit exists and is perfectoid in the good reduction case}
-		Let $\mathfrak G$ be a flat commutative formal group scheme over $\O_K$ such that $[p]:\mathfrak G\to\mathfrak G$ is affine. Let $G=\mathfrak G^{ad}_{\eta}$ be the adic generic fibre. Then $G_\infty := (\varprojlim_{[p]}\mathfrak G)^{ad}_\eta$ is a perfectoid tilde-limit
+		Let $\mathfrak G$ be a flat commutative formal group scheme over $\O_K$ such that $[p]:\mathfrak G\to\mathfrak G$ is affine. Let $G=\mathfrak G^{\ad}_{\eta}$ be the adic generic fibre. Then $G_\infty := (\varprojlim_{[p]}\mathfrak G)^{\ad}_\eta$ is a perfectoid tilde-limit
 		\[G_\infty\sim \varprojlim_{[p]} G. \]
 		In particular, if $B$ is an abelian variety of good reduction over $K$, there is a perfectoid tilde-limit $B_\infty\sim \varprojlim B$.
 	\end{lemma}
@@ -356,14 +357,14 @@ As we have already mentioned in the introduction, Question~\ref{qu:tilde-limits-
 	Let $T$ be a torus over $K$. Then there is a perfectoid tilde-limit $T_\infty\sim \varprojlim_{[p]} T$.
 \end{lemma}
 \begin{proof}
-Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\mathbb{G}_m^{\an})^d$ for some $d\in \N$. By Lemma~\ref{affinoid tilde-limits commute with fibre products}, it suffices to consider the case of $d=1$. For this, we may use the open embedding $\mathbb G_m^{\an}= \mathbb P^1\setminus\{0, \infty\}\subseteq \mathbb P^1$. Sending $(x:y)\mapsto (x^p:y^p)$ defines a morphism $\varphi:\mathbb P^1\to \mathbb P^1$. The pullback of $\varphi$ to $\mathbb G_m^{\an}$ is precisely $[p]:\mathbb G_m^{\an}\to \mathbb G_m^{\an}$. We can therefore apply Proposition \ref{SW Proposition 2.4.3} to the perfectoid tilde-limit $\mathbb P_1^{\text{perf}}\sim \varprojlim_{\varphi} \mathbb P_1$ introduced in \cite{perfectoid}. 
+Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\mathbb{G}_m^{\an})^d$ for some $d\in \N$. By Lemma~\ref{affinoid tilde-limits commute with fibre products}, it suffices to consider the case of $d=1$. For this, we may use the open embedding $\mathbb G_m^{\an}= \mathbb P^{1,\an}\setminus\{0, \infty\}\subseteq \mathbb P^{1,\an}$. Sending $(x:y)\mapsto (x^p:y^p)$ defines a morphism $\varphi:\mathbb P^{1,\an}\to \mathbb P^{1,\an}$. The pullback of $\varphi$ to $\mathbb G_m^{\an}$ is precisely $[p]:\mathbb G_m^{\an}\to \mathbb G_m^{\an}$. We can therefore apply Proposition \ref{SW Proposition 2.4.3} to the perfectoid tilde-limit $\mathbb P_1^{\text{perf}}\sim \varprojlim_{\varphi} \mathbb P^{1,\an}$ introduced in \cite{perfectoid}. 
 \end{proof}
 
 %\begin{remark} What we aim to prove in the rest of this write-up is that for a Raynaud extension $0\rightarrow T\rightarrow E\rightarrow B\rightarrow 0$, there is a $[p]$-$F$-model for $T$ which induces a $[p]$-$F$-model for $E$. This will prove that tilde-limits $T_\infty$ and $E_\infty$ exist and are perfectoid if $K$ is perfectoid.  
 %\end{remark}
 			
 	\begin{example}
-		If $G$ is not $p$-divisible, the tilde-limit of $\varprojlim_{[p]}G$ might exist for trivial reasons: For example, consider the $p$-adic completion  $\mathfrak G_a$  of the affine group scheme $\mathbb G_a$ over $\mathcal O_K$. Then one can check using formal models that the trivial group $\operatorname{Spa}(K,\mathcal O_K)\sim \varprojlim_{[p]}\mathfrak G_a$ is a perfectoid tilde-limit.
+		If $G$ is not $p$-divisible, the tilde-limit of $\varprojlim_{[p]}G$ might exist for trivial reasons: For example, consider the $p$-adic completion  $\mathfrak G_a$  of the affine group scheme $\mathbb G_a$ over $\mathcal O_K$. Then one can check that the trivial group $\operatorname{Spa}(K,\mathcal O_K)\sim \varprojlim_{[p]}(\mathfrak G_a)^{\ad}_{\eta}$ is a perfectoid tilde-limit.
 	\end{example}
 	
  
@@ -525,7 +526,7 @@ into two partial towers. For this we make some auxiliary choices: Since $K$ is a
 	
 	Following the remark, denote by $D_n$ the torsion subgroup $M_n/M\subset A$. The quotient $A_n:=A/D_n = E/M_n$ is then another abeloid variety over $K$ and the quotient map $v^n\colon A=E/M\rightarrow A_n=E/M_n$ is an isogeny of degree $p^{rn}$  through which  $[p^n]\colon A\rightarrow A$ factors. The $[p]$-multiplication tower now splits into two towers, one written vertically, the other horizontally:
 		\begin{equation}\label{p-multiplication tower of E/M splits into vertical and horizontal tower}
-		\begin{tikzcd}[column sep={1.1cm,between origins},row sep={0.5cm,between origins}]
+		\begin{tikzcd}[column sep={1.1cm,between origins},row sep={0.6cm,between origins}]
 			\ddots \arrow[rd] &  &  & \vdots &  & \vdots \\
 			& A \arrow[rr,"v"] \arrow[rrdd, "{[p]}"'] &  & A_1 \arrow[rr,"v"] \arrow[dd,"{[p]_E}"] &  & A_2 \arrow[dd,"{[p]_E}"] \\
 			&  &  &  &  &  \\
@@ -637,8 +638,8 @@ Theorem~\ref{thm:main_thm_intro} is part of the following theorem:
 We keep the notation from the proof of Proposition~\ref{M_infty->E_infty->A'_infty}: We have a cover of $A_n$ by open subsets $U_n$ and a  perfectoid open subspace $U_\infty\subseteq E_\infty$ for which $U_\infty\sim \varprojlim U_n$.
 	 
 By Lemma~\ref{horizontal map is covering map}, the restriction of diagram~(\ref{p-multiplication tower of E/M splits into vertical and horizontal tower}) to the open $U$ of the bottom $A$ becomes
-\begin{center}
-		\begin{tikzcd}[column sep={1.1cm,between origins},row sep={0.5cm,between origins}]
+\begin{equation*}
+		\begin{tikzcd}[column sep={1.1cm,between origins},row sep={0.6cm,between origins}]
 			\ddots  &  &  & \vdots &  & \vdots \\
 			& D_2\times U_2 \arrow[rr,"v"] \arrow[rrdd, "{[p]}"'] &  & v^{-1}(U_2) \arrow[rr,"v"] \arrow[dd,"{[p]_E}"] &  & U_2 \arrow[dd,"{[p]_E}"] \\
 			&  &  &  &  &  \\
@@ -646,7 +647,7 @@ By Lemma~\ref{horizontal map is covering map}, the restriction of diagram~(\ref{
 			&  &  &  &  &  \\
 			&  &  &  &  & U.
 		\end{tikzcd}
-\end{center}
+\end{equation*}
 Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\xrightarrow{[p]}A$ to $U$ becomes the inverse system 
 	 \[\cdots\rightarrow D_{n+1}\times U_{n+1}\rightarrow D_{n}\times U_n\rightarrow \cdots.\]
 	
