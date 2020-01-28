@@ -128,7 +128,7 @@ Let $p$ be a prime and let $K$ be an algebraically closed non-archimedean field 
 For an abelian variety $A$ over $K$ we consider the inverse system of $A$ under the $p$-multiplication morphism:
 \[\cdots\xrightarrow{[p]}A\xrightarrow{[p]}A\xrightarrow{[p]}A.\]
 Via the adic analytification functor, we may see this as an inverse system of analytic adic spaces over $\operatorname{Spa}(K,\mathcal O_K)$, where $\mathcal O_K$ is the ring of integers of $K$.
-The primary goal of this article is to show that the ``inverse limit'' of this tower exists in some way and is a perfectoid space: Since inverse limits rarely exist in the category of adic spaces, in \cite{huber2013etale} Huber introduced the weaker notion of tilde-limits to remedy this problem. This is the notion of ``limits" we are going to use. More precisely, we prove:
+The primary goal of this article is to show that the ``inverse limit'' of this tower exists in some way and is a perfectoid space: Since inverse limits rarely exist in the category of adic spaces, in \cite{huber2013etale} Huber introduced the weaker notion of tilde-limits to remedy this problem. This is the notion of ``limits" we are going to use. More precisely, we prove the following slightly more general result:
 
  %Before we state the precise version of the theorem, we remark that the main assertion already implicitly appeared in [?] [?] without justification. Nevertheless we decide to fill in this gap in the literature, since the proof, despite being straight-forward, is quite subtle to spell out. 
  
@@ -141,7 +141,7 @@ The primary goal of this article is to show that the ``inverse limit'' of this t
 
 The possibility of results in this direction is mentioned in \S 7 and \S 13 of \cite{scholzeICMproceedings}, and in the case of abelian varieties with good reduction, this theorem was proven already in \cite[Lemme~A.16]{Pilloni-Stroh} (Lemme A.16). We recall the argument in Lemma~\ref{tilde-limit exists and is perfectoid in the good reduction case} below. 
 
-If $A$ is an abelian variety with bad reduction, the assumption that $K$ is algebraically closed assures that $A$ has semi-stable reduction.
+On the other hand, if $A$ does not have good reduction, the assumption that $K$ is algebraically closed assures that $A$ has semi-stable reduction.
 In this case, the theory of Raynaud extensions provides us with a short exact sequence 
 \[ 0 \rightarrow T \rightarrow E  \rightarrow  B  \rightarrow  0\]
 of rigid groups, where $T = (\mathbb G_m^{\text{an}})^{d}$ is a split rigid torus and $B$ is the analytification of an abelian variety with good reduction, such that $A = E/M$ for a discrete lattice $M \subset E$. This short exact sequence is split locally on $B$, allowing us to locally write $E$ as a product of $T$ and an open subspace of $B$.
@@ -152,7 +152,7 @@ Our strategy for the proof of Theorem \ref{thm:main_thm_intro}, which more gener
 \item Study the quotient map $E\rightarrow A$ in the limit over $[p]$ to construct the desired space $A_\infty$.
 \end{enumerate}
 
-More precisely, this article is organised as follows: In \S2 we recall the definition of tilde-limits and collect some useful lemmas about tilde-limits and perfectoid spaces. In particular, we construct the perfectoid tilde-limit $T_\infty$. In \S3 we use the language of fibre bundles to construct a perfectoid tilde-limit $E_\infty$: The Raynaud extension of $A$ arises from a short exact sequence of formal group schemes
+More precisely, this article is organised as follows: In \S2 we recall the definition of tilde-limits and collect some useful lemmas about tilde-limits and perfectoid spaces. In particular, we construct the perfectoid tilde-limit $T_\infty$. In \S3 we use the language of fibre bundles to construct a perfectoid tilde-limit $E_\infty$: The Raynaud extension of $A$ mentioned earlier arises from a short exact sequence of formal group schemes over $\O_K$
 \[0\rightarrow \overline{T}\rightarrow \overline{E}\rightarrow \overline{B}\rightarrow 0\]
 by taking generic fibres and forming the pushout with respect to the open immersion $\overline{T}_\eta\rightarrow T$. Since the sequence is locally split, we can see $\overline{E}\rightarrow \overline{B}$ as a principal $\overline{T}$-bundle and formation of $E$ amounts to a change of fibre from $\overline{T}_\eta$ to $T$. We get the desired tilde-limit by tracing the local splitting through the tower of multiplication by $[p]$. This will also show that there is a short exact sequence of perfectoid groups
 \[ 1\to T_\infty \to E_\infty \to B_\infty \to 1.\]
@@ -251,9 +251,9 @@ We recall a few results from \cite{SW}, \S2.4 on tilde-limits that we will use f
 	Any two perfectoid spaces that are tilde-limits of the same inverse system of adic spaces over $(K,\mathcal O_K)$ are canonically isomorphic.
 \end{corollary}
 In the situation of the corollary, we will also refer to such a perfectoid space as \textit{the} perfectoid tilde-limit of the inverse system. Of course perfectoid tilde-limits do not always exist. An example of a basic situation in which they do is the following:
-\begin{corollary}\label{pro-finite-perfectoid-spaces}
+\begin{lemma}\label{l:pro-finite-perfectoid-spaces}
 	Let $(S_i)_{i\in I}$ be an inverse system of finite sets. Let $S=\varprojlim_{i\in I} S_i$. Then the system of constant groups $\underline{S_i}=\mathrm{Spa}(\mathrm{Map}_{\mathrm{cts}}(S_i,K),\mathrm{Map}_{\mathrm{cts}}(S_i,\O_K))$ has a perfectoid tilde-limit	\[\underline{S}:=\mathrm{Spa}(\mathrm{Map}_{\mathrm{cts}}(S,K),\mathrm{Map}_{\mathrm{cts}}(S,\O_K))\sim\textstyle\varprojlim_{i\in I} \underline{S_i}.\]
-\end{corollary}
+\end{lemma}
 \begin{proof}
 	Since $S$ is compact, $\mathrm{Map}_{\mathrm{cts}}(S,K)=\mathrm{Map}_{\mathrm{cts}}(S,\O_K)[\tfrac{1}{\varpi}]$. Perfectoidness now follows from $\mathrm{Map}_{\mathrm{cts}}(S,\O_K)/\varpi=\mathrm{Map}_{\mathrm{lc}}(S,\O_K/\varpi)$. The tilde-limit property follows from Proposition~\ref{SW Proposition 2.4.2}.
 \end{proof}
@@ -283,17 +283,17 @@ One reason why perfectoid tilde-limits along group homomorphisms are particularl
 
 \begin{definition}
 	A \textbf{perfectoid group} is a group object in the category of perfectoid spaces.
-	Note that the category of perfectoid spaces over $K$ has finite products, so this is a well-defined notion.
 \end{definition}
+The category of perfectoid spaces over $K$ has finite products, so this is a well-defined notion.
 
-\begin{proposition}\label{perfectoid tilde-limit is perfectoid group in a functorial way}
-	Let $(G_i)_{i\in I}$ be an inverse system of adic groups with perfectoid tilde-limit $G_\infty\sim \varprojlim_{i\in I}G_i$.
+\begin{lemma}\label{perfectoid tilde-limit is perfectoid group in a functorial way}
+	Let $(G_i)_{i\in I}$ be an inverse system of adic groups such that the transition maps are homomorphisms of adic groups. Assune that there is a perfectoid tilde-limit $G_\infty\sim \varprojlim_{i\in I}G_i$.
 	\begin{enumerate}
 		\item  There is a unique way to endow $G_\infty$ with the structure of a perfectoid group in such a way that all projections $G_\infty\rightarrow G$ are group homomorphisms
 		\item Given a morphism of inverse systems of adic groups $(G_i)_{i\in I}\to (H_j)_{j\in J}$ and a perfectoid tilde-limit $H_\infty\sim\varprojlim_{j\in J}H_j$, there is a unique morphism of perfectoid groups $G_\infty\rightarrow H_\infty$
 		commuting with all projection maps.
 	\end{enumerate}
-\end{proposition}
+\end{lemma}
 \begin{proof}
 	These are all consequences of the universal property of the perfectoid tilde-limit, Proposition~\ref{SW Proposition 2.4.5}, which shows that one can argue like in the case of categorical limits.
 \end{proof}
@@ -324,9 +324,9 @@ We will therefore restrict attention to the case of  $K^+=\O_K$ without loss of 
 \end{remark}
 \iffalse
 \begin{proof}
-	The implication $(1)\Rightarrow (2)$ follows from Prop.~\ref{SW Proposition 2.4.3} since $\Spa(K,\mathcal O_K)\hookrightarrow \Spa(K,K^+)$ is an open immersion, and thus so is each $X_{i,\eta}\hookrightarrow X_i$.
+	The implication $(1)\Rightarrow (2)$ follows from Proposition~\ref{SW Proposition 2.4.3} since $\Spa(K,\mathcal O_K)\hookrightarrow \Spa(K,K^+)$ is an open immersion, and thus so is each $X_{i,\eta}\hookrightarrow X_i$.
 	
-	For the other direction, we start by arguing as in the proof of \cite[Prop. 2.4.5]{SW}: We may assume without loss of generality assume that the $X_i=\Spa(A,A_i^+)$ are affine, that $X_\infty=\Spa(A_\infty,A_\infty^+)$ is affinoid perfectoid and that $\varinjlim_{i\in I} A_i\to A_\infty$ has dense image. We claim that the natural map
+	For the other direction, we start by arguing as in the proof of \cite[Proposition 2.4.5]{SW}: We may assume without loss of generality assume that the $X_i=\Spa(A,A_i^+)$ are affine, that $X_\infty=\Spa(A_\infty,A_\infty^+)$ is affinoid perfectoid and that $\varinjlim_{i\in I} A_i\to A_\infty$ has dense image. We claim that the natural map
 	\[\varinjlim_{i\in I}A_i^+/\varpi= A_\infty^{+}/\varpi\]
 	is an isomorphism. To see surjectivity, let $f\in A_\infty^+$. Then $|f(x)|\leq 1$ for all $x\in |X_\infty|$. Let $f_i\in A_i$ be a sequence whose images in $A_\infty$ converge to $f$. Then eventually, we will have $|f_i(x)|\leq 1$ for all  $x\in |X_\infty|$. Since $|X_\infty|=\varprojlim |X_i|$, and the projection map $|X_\infty|\to |X_i|$ is surjective due to the assumption that the transition maps are finite, we see $|f_i(x)|\leq 1$ for all $x\in |X_i|$, and thus $f_i\in A_i^+$.
 	
@@ -336,7 +336,7 @@ We will therefore restrict attention to the case of  $K^+=\O_K$ without loss of 
 	Next, we note that since $A_i$ is of finite type over $(K,K^+)$, we have \[X_{i,\eta}=\Spa(A_i,A_i^+)\times_{\Spa(K,K^+)}\Spa(K,\mathcal O_K)=\Spa(A_i,A_i'^+)\]
 	where $A_i'^+$ is the integral closure of $A_i^+\hotimes_{K^+}\mathcal O_K$ in $A_i$. Here the map $K^+\to \mathcal O_K$ has almost zero cokernel, and is thus an almost isomorphism. It follows that the morphism $A_i^+/p\to A_i'^+/p$ is also an almost isomorphism. Taking the limit over $i\in I$, this gives an almost isomorphism of $\mathcal O_K^a/\varpi$-algebra
 	\[\varinjlim A_i^{+a}/\varpi=\varinjlim A'^{+a}_i/\varpi.\]
-	It follows that $\varinjlim A'^{+a}_i/\varpi$ is a perfectoid $\mathcal O_K^a/\varpi$-algebra. Let now $A'^{+}$ be the $\varpi$-adic completion of $\varinjlim A'^+$ and $A':=A'^{+}[1/\varpi]$. Then by \cite[Thm. 5.2]{perfectoid}, $(A',A'^+)$ is a perfectoid $K$-algebra. It is now clear from construction that 
+	It follows that $\varinjlim A'^{+a}_i/\varpi$ is a perfectoid $\mathcal O_K^a/\varpi$-algebra. Let now $A'^{+}$ be the $\varpi$-adic completion of $\varinjlim A'^+$ and $A':=A'^{+}[1/\varpi]$. Then by \cite[Theorem  5.2]{perfectoid}, $(A',A'^+)$ is a perfectoid $K$-algebra. It is now clear from construction that 
 	\[\Spa(A',A'^+)\sim \varprojlim\Spa(A_i,A_i'^+).\qedhere\]
 \end{proof}
 \fi
@@ -364,7 +364,8 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 %\end{remark}
 			
 	\begin{example}
-		If $G$ is not $p$-divisible, the tilde-limit of $\varprojlim_{[p]}G$ might exist for trivial reasons: For example, consider the $p$-adic completion  $\mathfrak G_a$  of the affine group scheme $\mathbb G_a$ over $\mathcal O_K$. Then one can check that the trivial group $\operatorname{Spa}(K,\mathcal O_K)\sim \varprojlim_{[p]}(\mathfrak G_a)^{\ad}_{\eta}$ is a perfectoid tilde-limit.
+		Regarding Question~\ref{qu:tilde-limits-of-adic-groups}, we note
+		that if $G$ is not $p$-divisible, $\varprojlim_{[p]}G$ might have a tilde-limit for trivial reasons: For example, let $\mathfrak G_a$  be the $p$-adic completion of the affine group scheme $\mathbb G_a$ over $\mathcal O_K$. Then the trivial group $\operatorname{Spa}(K,\mathcal O_K)\sim \varprojlim_{[p]}(\mathfrak G_a)^{\ad}_{\eta}$ is a perfectoid tilde-limit.
 	\end{example}
 	
  
@@ -421,12 +422,9 @@ making $E\rightarrow E/M=A$ a rigid group homomorphism.
 		Let $A$ be an abeloid variety, that is, a connected smooth proper commutative rigid group over $K$. Then $A$ admits a Raynaud uniformisation.
 	\end{theorem}
 	
-Note that if $A$ is an abelian variety, then so is $B$ (\cite[Theorem 6.4.8]{Lut}).
-
-	
 	In the situation of Raynaud uniformisation, since $M$ is discrete, the local geometry of $A$ is determined by the local geometry of $E$. We will therefore first study the $[p]$-multiplication tower of $E$ in the rest of this section and will then deduce properties of the $[p]$-multiplication tower of $A$ in the next section.
 
-	 Our strategy is to study the local geometry of $E$ and $\overline{E}$ via $T$ and $B$. An obstacle in doing this is that the categories of formal or rigid groups are not abelian, which makes working with short exact sequences a subtle issue. Another issue is that one cannot direcly study short exact sequences locally on $T$, $E$ or $B$. 
+	 Our strategy is to study the local geometry of $E$ and $\overline{E}$ via $T$ and $B$. An obstacle in doing this is that the categories of formal or rigid groups are not abelian, which makes working with short exact sequences a subtle issue. Another issue is that we would like to work locally on $B$, but the notion of short exact sequences does not make sense if we replace $B$ by an open $U\subseteq B$ which might not itself have a group structure.
 	Instead, we have the following crucial lemma, which says that one may regard Raynaud extensions as $T$-torsors of formal schemes.
 
 	\begin{lemma}\label{formal Raynaud sequence is locally split}
@@ -438,7 +436,7 @@ Note that if $A$ is an abelian variety, then so is $B$ (\cite[Theorem 6.4.8]{Lut
 
 	
 	\begin{remark}
-	In the following, we will freely work with fibre bundles of formal schemes and rigid and perfectoid spaces. For some background material on these we refer to the appendix.
+	In the following, we will freely work with fibre bundles of formal schemes and rigid and perfectoid spaces. For some background material on these we refer to Appendix~\ref{s:appendix}.
 	\end{remark}
 	
 	The sequence~(\ref{formal Raynaud extension}) gives rise to a principal $\overline{T}$-bundle
@@ -545,12 +543,13 @@ into two partial towers. For this we make some auxiliary choices: Since $K$ is a
 		\end{tikzcd}
 		\end{equation}
 		\begin{definition}
-			Let $M_\infty:=\varprojlim M_n$. Since the transition maps are all isomorphisms, the projections $M_\infty\to M$ are isomorphisms as well. By Proposition \ref{SW Proposition 2.4.5}, we get a natural map $M_\infty\to E_\infty$. 
+			Let $M_\infty:=\varprojlim_{n\in\N} M_n$ be the limit of the left vertical tower. 
 		\end{definition}
+		We note that $M_\infty$ is an actual limit, not just a tilde-limit, because the transition maps are isomorphisms. In particular, the projection $M_\infty\to M$ is an isomorphism as well. 
+		By Proposition \ref{SW Proposition 2.4.5}, we get a natural map $M_\infty\to E_\infty$. 
 		\begin{proposition}\label{M_infty->E_infty->A'_infty}
-			There is a perfectoid tilde-limit $A'_\infty\sim \varprojlim A_n$. It fits into a short exact sequence of perfectoid groups 
-			\[0\to M_\infty\to E_\infty\to A'_\infty\to 0 \]
-			that is  locally split in the analytic topology on $A'_\infty\to A$.
+			There is a perfectoid tilde-limit $A'_\infty\sim \varprojlim_{n\in\N} A_n$. It fits into an analytic-locally split short exact sequence of perfectoid groups 
+			\[0\to M_\infty\to E_\infty\to A'_\infty\to 0.\]
 		\end{proposition}
 		\begin{proof}
 			We work locally on opens $U'\subset E$ mapping isomorphically to $U$ in our cover $\mathfrak U$ of $A$. Write $\pi_n\colon E\to A_n$ for the quotient map. Since the rows in~\eqref{F-tower for E/M} are exact, and the transition maps on the left are isomorphisms, it follows that for each $n\in \mathbb{N}$, the quotient map $\pi_n$  sends the pullback $U'_n:=[p^n]^{-1}(U')$ isomorphically onto $U_n:=\pi_n(U'_n)\subseteq A_n$. Thus~\eqref{F-tower for E/M} is locally of the form
@@ -595,11 +594,11 @@ We will keep the notation introduced in the above proof: $U'$ is an open of $E$ 
 	\begin{definition}
 The $[p]$-multiplication on $E$ maps $M_{n+1}$ onto $M_n$ and therefore the $[p]$-multiplication tower of $A$ induces a tower
  \[\cdots \xrightarrow{[p]}D_{n+1}=M_{n+1}/M\xrightarrow{[p]}D_n=M_n/M\rightarrow\cdots.\]
-  Since $K$ is algebraically closed, the finite \'etale groups $D_n$ are already constant.  By Lemma~\ref{pro-finite-perfectoid-spaces}, there is a profinite perfectoid group $D_\infty$ such that
+  Since $K$ is algebraically closed, the finite \'etale groups $D_n$ are already constant.  By Lemma~\ref{l:pro-finite-perfectoid-spaces}, there is a profinite perfectoid group $D_\infty$ such that
   \[D_\infty\sim \varprojlim_n D_n.\]
-  The quotient maps $M_n\to D_n=M_n\otimes_\Z \Z/p^n$ in the limit give rise to a closed immersion of perfectoid groups $M_\infty\hookrightarrow D_\infty= M_\infty\otimes_{\Z}\Z_p$.
  \end{definition}
-	
+The quotient maps $M_n\to D_n=M_n\otimes_\Z \Z/p^n$ in the limit give rise to a closed immersion of perfectoid groups $M_\infty\hookrightarrow D_\infty= M_\infty\otimes_{\Z}\Z_p$.
+
 Theorem~\ref{thm:main_thm_intro} is now part of the following theorem:	
 	\begin{theorem}\label{tilde-limit of tilde-limits of partial towers is tilde-limit of whole tower}
 		\begin{enumerate}
@@ -748,7 +747,7 @@ By \cite[Lemma 4.6]{p-adic_Hodge}, pro-\'etale covers of perfectoid objects are 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 		\appendix
-	\section{Fibre bundles of adic spaces}
+	\section{Fibre bundles of adic spaces}\label{s:appendix}
 	In this appendix we review the theory of fibre bundles in the setting of analytic adic spaces. We will always implicitly assume that finite products of the adic spaces we work with exist: This is for instance the case when we work with rigid or perfectoid spaces, the cases we are most interested in.
 
 	\begin{notation}
