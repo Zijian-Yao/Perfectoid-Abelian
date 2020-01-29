@@ -712,7 +712,7 @@ As a third application, we describe how one can obtain functorial perfectoid pro
 	
 	Let $C$ be a smooth projective curve of genus $g\geq 1$ over $K$, which we consider as an analytic adic space. By \cite[Theorem 3.1]{LutRiemann}, GAGA induces an equivalence of categories between finite \'etale covers of the scheme $C$ and finite \'etale covers of the adic space $C$. We can therefore fix a base point $x\in C$ and study the usual \'etale fundamental group $\pi_1(C,x)$ using the language of adic spaces. This is a profinite group, and for every open subgroup $G\subseteq \pi_1(C,x)$, there is a corresponding finite \'etale morphism $C_G\to C$. For any two open subgroups $G_1\subseteq G_2\subseteq \pi_1(C,x)$, there is a natural morphism $C_{G_1}\to C_{G_2}$. For varying $G$, one therefore has a filtered inverse system $(C_G)_{G\subseteq \pi_1(C,x)}$ which we may regard as an object in $C_{\text{pro\'et}}$.
 	\begin{corollary}
-		There is a perfectoid tilde-limit $C_\infty \sim \varprojlim_{G}C_G$ where $G$ ranges over the open subgroups of $ \pi_1(C,x)$.
+		There is a perfectoid tilde-limit $C_\infty \sim \varprojlim_{G}C_G$ where $G$ ranges over the open subgroups of $ \pi_1(C,x)$. This space is a pro-\'etale $\pi_1(C,x)$-torsor over $C$, a pro-universal object for finite \'etale covers of $C$, and a universal object for perfectoid pro-\'etale covers of $C$.
 	\end{corollary}
 	
 \begin{proof}[Sketch]
@@ -736,7 +736,9 @@ As the $C_{G,\infty}$ have compatible finite \'etale maps to $C'_\infty$, we obt
 \[\varprojlim_{G\rightarrow 1}C_{G,\infty}\rightarrow C'_\infty.\]
 
 By \cite[Lemma 4.6]{p-adic_Hodge}, pro-\'etale covers of perfectoid objects are again perfectoid, giving us the desired perfectoid space 
-\[ C_\infty\sim\varprojlim_{G\rightarrow 1} C_G.\qedhere\]
+\[ C_\infty\sim\varprojlim_{G\rightarrow 1} C_G.\]
+
+For every open subgroup $H$ of $\pi_1(C,x)$, $C_H\rightarrow C$ is an $H$-torsor, so we get compatible isomorphisms $C_H\times_C C_H\cong H\times C_H$. By the universal property of perfectoid tilde-limits, these extend to an isomorphism $C_\infty\times_C C_\infty\cong \pi_1(C,x)\times C_\infty$, so $C_\infty$ is a pro-\'etale $\pi_1(C,x)$-torsor over $C$. (Note that $C_\infty\times_C C_\infty$ is a pro-\'etale cover of the perfectoid space $C_\infty$, and therefore exists and is perfectoid.) This is a pro-universal object for finite \'etale covers of $C$ by the definition of tilde-limits: any finite \'etale cover $C_H\rightarrow C$ is in the inverse system defining $C_\infty$, so the map $C_\infty\rightarrow C$ factors through $C_H$. The universality of $C_\infty$ among perfectoid pro-\'etale tilde-limits of $C$ follows from the same argument as was used to construct the map $C_\infty\rightarrow C'_\infty$ above.
 
 \end{proof}
 
