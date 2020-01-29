@@ -777,8 +777,10 @@ To see that $F(X)=\Hom_C(\tilde{C},X)$, we recall that for any Galois cover $C_N
 \[\Hom_C(\tilde{C},X)=\varinjlim_{N}\Hom_C(C_N,X).\]
 But this follows from Lemma~\ref{l:profet-perf-tilde-limit-fully-faithful}.
 
-For (3), write $S=F(X)$, then it suffices to prove that the natural morphism \[\underline{S}\times\tilde{C}\to X\]
-is a pro-finite-\'etale $G$-torsor. Since connected components of $X$ correspond to $G$-orbits of $S$, we may reduce to the case that $X$ is connected and that $G$ acts transitively on $\underline{S}$. By writing $X$ as a system of finite \'etale covers, we may further reduce to the case that $S$ is finite.  Fix $s\in S$ and let $H\subseteq G$ be the stabiliser of $s$, then $X=C_H$. It now suffices to show that for any normal open subgroup $N\subseteq G$ with $N\subseteq H$, the natural morphism
+For (3), write $S=F(X)$, then it suffices to prove that the natural morphism \[\rho:\underline{S}\times\tilde{C}\to X\]
+is a pro-finite-\'etale $G$-torsor for the antidiagonal action. Indeed, this implies that $X$ is the categorical quotient by the action of $G$: This is because the torsor property implies $\O_X = (\rho_{\ast}\O_{\underline{S}\times\tilde{C}})^{G}$ by combining \cite[{Lemma~2.24}]{CHJ} and \cite[{Theorem~8.2.3}]{KedlayaLiu-II}.
+
+ Since connected components of $X$ correspond to $G$-orbits of $S$, we may reduce to the case that $X$ is connected and that $G$ acts transitively on $\underline{S}$. By writing $X$ as a system of finite \'etale covers, we may further reduce to the case that $S$ is finite.  Fix $s\in S$ and let $H\subseteq G$ be the stabiliser of $s$, then $X=C_H$. It now suffices to show that for any normal open subgroup $N\subseteq G$ with $N\subseteq H$, the natural morphism
 \[\pi_1/H\times C_N\to C_H\]
 is a $\pi_1/N$-torsor, as the desired result will follow in the limit $N\to 1$. But this follows by Galois descent from the diagram
 \begin{center}
