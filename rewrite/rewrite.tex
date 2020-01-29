@@ -62,6 +62,7 @@
 \newcommand{\Spf}{\operatorname{Spf}}
 \newcommand{\Sp}{\operatorname{Sp}}
 \newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Hom}{\operatorname{Hom}}
 \newcommand{\Nil}{\operatorname{Nil}}
 \newcommand{\Frac}{\operatorname{Frac}}
 \newcommand{\Res}{\operatorname{Res}}
@@ -83,7 +84,9 @@
 \newcommand{\ok}{\overline{k}}
 \newcommand{\hotimes}{\hat{\otimes}}
 \newcommand{\et}{\operatorname{\acute{e}t}}
+\newcommand{\fet}{\operatorname{f\acute{e}t}}
 \newcommand{\proet}{\operatorname{pro\acute{e}t}}
+\newcommand{\profet}{\operatorname{prof\acute{e}t}}
 \renewcommand{\O}{\mathcal{O}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
@@ -188,7 +191,7 @@ Now we end the introduction by describing the content of each section.
  \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %some hack to hide the acknowledgements in the toc
  \section*{Acknowledgements}
  \addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
- This work started as a group project at the 2017 Arizona Winter School. We would like to thank Bhargav Bhatt for proposing the project, for his guidance and for his constant encouragement, and we would like to thank Matthew Morrow for his help during the Arizona Winter School. In addition we would like to thank the organizers of the Arizona Winter School for setting up a great environment for us to participate in this project. 
+ This work started as a group project at the 2017 Arizona Winter School. We would like to thank Bhargav Bhatt for proposing the project, for his guidance and for his constant encouragement, and we would like to thank Matthew Morrow for his help during the Arizona Winter School. In addition we would like to thank the organizers of the Arizona Winter School for setting up a great environment for us to participate in this project. We would like to thank David Hansen for letting us include Corollary~\ref{c:universal-covers-of-curves} which we learnt from his blog.
  
  During this work Dami\'an Gvirtz and Ben Heuer were supported by the Engineering and Physical Sciences Research Council [EP/L015234/1], the EPSRC Centre for Doctoral Training in Geometry and Number Theory (The London School of Geometry and Number Theory), University College London. 
  During the Arizona Winter School, Daria Shchedrina was supported by Peter Scholze and the DFG.
@@ -708,38 +711,84 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	By results from \cite{p-adic_Hodge}, the space $A_\infty$ has a ``Stein space''-like property in the sense that we have $H^j(V,\nu^{\ast}L)=0$ for any affinoid perfectoid $V\subseteq A_\infty$ and any $j>0$. One can use this to reduce to a computation in \v{C}ech cohomology, which shows that the left hand side vanishes for $i>\dim A$.
 	\subsection{Universal perfectoid covers of curves}
 	
-As a third application, we describe how one can obtain functorial perfectoid pro-\'etale covers of curves over $K$. This was observed by Hansen \cite{Hansen-blog}.
+As a third application, we describe how one can obtain functorial perfectoid pro-\'etale covers of curves over $K$. This was observed by Hansen \cite{Hansen-blog}, and the following corollary is due to him.
 	
-	Let $C$ be a smooth projective curve of genus $g\geq 1$ over $K$, which we consider as an analytic adic space. By \cite[Theorem 3.1]{LutRiemann}, GAGA induces an equivalence of categories between finite \'etale covers of the scheme $C$ and finite \'etale covers of the adic space $C$. We can therefore fix a base point $x\in C$ and study the usual \'etale fundamental group $\pi_1(C,x)$ using the language of adic spaces. This is a profinite group, and for every open subgroup $G\subseteq \pi_1(C,x)$, there is a corresponding finite \'etale morphism $C_G\to C$. For any two open subgroups $G_1\subseteq G_2\subseteq \pi_1(C,x)$, there is a natural morphism $C_{G_1}\to C_{G_2}$. For varying $G$, one therefore has a filtered inverse system $(C_G)_{G\subseteq \pi_1(C,x)}$ which we may regard as an object in $C_{\text{pro\'et}}$.
-	\begin{corollary}
-		There is a perfectoid tilde-limit $C_\infty \sim \varprojlim_{G}C_G$ where $G$ ranges over the open subgroups of $ \pi_1(C,x)$. This space is a pro-\'etale $\pi_1(C,x)$-torsor over $C$, a pro-universal object for finite \'etale covers of $C$, and a universal object for perfectoid pro-\'etale covers of $C$.
+	Let $C$ be a connected smooth projective curve of genus $g\geq 1$ over $K$, which we consider as an analytic adic space. By \cite[Theorem 3.1]{LutRiemann}, GAGA induces an equivalence of categories between finite \'etale covers of the scheme $C$ and finite \'etale covers of the adic space $C$. We can therefore fix a geometric base point $x:\Spa(\overline{K},\O_{\overline{K}})\to C$ and study the usual \'etale fundamental group $\pi_1(C,x)$ using the language of adic spaces. 
+	
+	To prepare our discussion, we recall from \cite[\S3]{p-adic_Hodge} a few facts on the pro-finite-\'etale site $C$: This is the category of small cofiltered inverse systems $(X_i)_{i\in I}$ in the finite \'etale site $C_{\fet}$. An object in $C_{\profet}$ is called perfectoid if there is a perfectoid tilde-limit $X_\infty\sim \varprojlim X_i$. Let $C_{\profet}^{\perf}$ be the full subcategory of perfectoid objects, and let $\mathrm{Perf}_C$ be the category of perfectoid spaces over $C$. Then the argument in the proof of \cite[Lemma 8.2.3]{berkeley} shows:
+\begin{lemma}\label{l:profet-perf-tilde-limit-fully-faithful}
+	The functor
+	\[C_{\profet}^{\perf}\to  \mathrm{Perf}_{C},\quad (X_i)_{i\in I}\mapsto X_\infty\sim \varprojlim_{i\in I} X_i\]
+is fully faithful.	
+\end{lemma}
+	We call the objects $X_\infty \to C$ in the essential image the pro-finite-\'etale covers of $C$.
+	\begin{proposition}[Proposition~3.5, \cite{p-adic_Hodge}]
+		There is an equivalence of categories
+		\[ F:C_{\mathrm{prof\acute{e}t}}\to \pi_{1}(C,x)\mathrm{-pfSets},\quad (Y_i)_{i\in I} \mapsto F(X):=\varprojlim_{i\in I}|Y_i\times_{C}x|=\varprojlim_{i\in I}\Hom_C(x,Y_i)\]
+		from the pro-finite-\'etale site of $C$ to the category of profinite sets with continuous $\pi_{1}(C,x)$-action.
+	\end{proposition}
+	This restricts to an equivalence of finite \'etale covers to finite sets with continuous $\pi_{1}(C,x)$-action. 
+	
+	In particular, for every open subgroup $G\subseteq \pi_1(C,x)$, there is a corresponding finite \'etale morphism $C_G\to C$ from a connected curve $C_G$, considered as an analytic adic space. For any two open subgroups $G_1\subseteq G_2\subseteq \pi_1(C,x)$, there is a natural morphism $C_{G_1}\to C_{G_2}$. For varying $G$, one therefore has a filtered inverse system $(C_G)_{G\subseteq \pi_1(C,x)}$ which we may regard as an object in $C_{\text{pro\'et}}$.
+	\begin{corollary}\label{c:universal-covers-of-curves}
+		\begin{enumerate}
+		\item There is a perfectoid tilde-limit $\tilde{C} \sim \varprojlim_{G}C_G$ where $G$ ranges over the open subgroups of $ \pi_1(C,x)$. 
+		\item The morphism $\tilde{C}\to C$ is a pro-\'etale $\pi_1(C,x)$-torsor. It is universal with this property in the sense that it represents the functor sending	 pro-finite-\'etale perfectoid covers $X\to C$ to the $\pi_1(C,x)$-module $F(X)=\mathrm{Hom}_C(x,X)$.
+		\item For any $X\in C_{\mathrm{prof\acute{e}t}}$, for example for any finite \'etale $X\to C$, there is a natural isomorphism
+		\[ X = \tilde{C}\times^{\pi_1(X,x)}F(X):=(\tilde{C}\times\underline{F(X)})/\pi_1(C,x).\]
+	\end{enumerate}
 	\end{corollary}
+\begin{remark}
+Parts (2) and (3) say that we may reasonably regard $\tilde{C}\to C$ as the ``universal cover'' of $C$, in analogy with this notion in topology.
+For example, if $C=E$ is an elliptic curve, then $\tilde{E}\sim\varprojlim_{[N]}E$ is the tilde-limit over multiplication by $N$ for all $N\in \N$, in contrast to $E_\infty\sim \varprojlim_{[p]} E$.
+\end{remark}
+\begin{proof}
+To ease notation, let us abbreviate $G:=\pi_1(C,x)$.
 	
-\begin{proof}[Sketch]
-We construct $C_\infty$ in two steps. 
-The choice of the base point $x$ gives $\iota\colon C\rightarrow A$, an embedding of $C$ into its Jacobian. Let $C_n$ be the pullback of $C$ along the map $[p^n]\colon A\rightarrow A$. Combining our main theorem with \cite[Lemma II.2.2]{torsion}, we can pull back perfectoid tilde-limits along closed immersions and hence get a perfectoid space $C'_\infty\sim \varprojlim C_n$ with a Zariski closed embedding $C'_\infty\rightarrow A_\infty$.
+We construct $\tilde{C}$ in two steps. 
+The choice of the base point $x$ gives an embedding $\iota\colon C\rightarrow A$ of $C$ into its Jacobian. Let $C_n$ be the pullback of $C$ along the map $[p^n]\colon A\rightarrow A$. Combining our main theorem with \cite[Lemma II.2.2]{torsion}, we can pull back perfectoid tilde-limits along closed immersions and hence get a perfectoid space $C_\infty\sim \varprojlim C_n$ with a Zariski closed embedding $C_\infty\rightarrow A_\infty$.
 
-We can now use the fact that pro-\'etale covers of perfectoid spaces are again perfectoid to construct a perfectoid cover $C_\infty$ of $C'_\infty$ that packages up the entire \'etale fundamental group of $C$. As we are assuming that $K$ has characteristic 0, the maps $[p^n]\colon A\rightarrow A$ are finite \'etale, so the induced covers $C_n\rightarrow C$ are finite \'etale. The inverse system 
+We now use the fact that pro-\'etale covers of perfectoid spaces are again perfectoid to construct a perfectoid cover $\tilde{C}$ of $C_\infty$ that packages up the entire \'etale fundamental group of $C$. As we are assuming that $K$ has characteristic 0, the maps $[p^n]\colon A\rightarrow A$ are finite \'etale, so the induced covers $C_n\rightarrow C$ are finite \'etale. The inverse system 
 \[\cdots \rightarrow C_n \rightarrow \cdots \rightarrow C_1\rightarrow C\] 
 therefore corresponds to a chain of subgroups
-\[\cdots < H_n <\cdots < H_1 < \pi_1(C,x).\]
+\[\cdots < G_n <\cdots < G_1 < G=\pi_1(C,x).\]
 
-For any open subgroup $G$ of $\pi_1(C,x)$ corresponding to the finite \'etale cover $C_G\rightarrow C$, we have a decreasing sequence of positive integers 
-\[\cdots \leq [H_n:H_n\cap G] \leq \cdots \leq [H_1:H_1\cap G]\leq [\pi_1(C,x):\pi_1(C,x)\cap G].\]
-So there is an integer $d$ such that for $n$ sufficiently large, we have $[H_n:H_n\cap G]=d$. Translating back to the language of finite \'etale covers, we see that for such $n$, the map
-\[C_{H_{n+1}\cap G}\rightarrow C_{H_n\cap G}\times_{C_{H_n}} C_{H_{n+1}}\]
-coming from the universal property of fibre product is an isomorphism: Both spaces are finite \'etale covers of $C_{H_{n+1}}$ of degree $d$, so the map is a finite \'etale cover of degree 1. This implies that the natural morphism $\varprojlim C_{H_n \cap G}\rightarrow \varprojlim C_{H_n}$ of objects of $C_{\text{pro\'et}}$ is finite \'etale in the sense of \cite[Definition 3.9]{p-adic_Hodge}. To simplify notation, we write this morphism as $C_{G,\infty}\rightarrow C'_\infty$ (one can also think of this as the corresponding map of perfectoid spaces obtained by applying the functor from perfectoid objects in $C_{\proet}$ to perfectoid spaces described just after \cite[Lemma 4.5]{p-adic_Hodge}).
+For any open subgroup $H$ of $G$ corresponding to the finite \'etale cover $C_H\rightarrow C$, we have a decreasing sequence of positive integers 
+\[\cdots \leq [G_n:G_n\cap H] \leq \cdots \leq [G_1:G_1\cap H]\leq [G:G\cap H]\]
+which stabilises for $n\gg 0$.
+So there is an integer $d$ such that for all $n\gg0 $, we have $[G_n:G_n\cap H]=d$. Translating back to the language of finite \'etale covers, we see that for such $n$, the map
+\[C_{G_{n+1}\cap H}\rightarrow C_{G_n\cap H}\times_{C_{G_n}} C_{G_{n+1}}\]
+coming from the universal property of the fibre product is an isomorphism: Both spaces are finite \'etale covers of $C_{G_{n+1}}$ of degree $d$, so the map is a finite \'etale cover of degree 1. This implies that the natural morphism $\varprojlim C_{G_n \cap H}\rightarrow \varprojlim C_{G_n}$ of objects of $C_{\profet}$ is finite \'etale in the sense of \cite[Definition 3.9]{p-adic_Hodge}. To simplify notation, we write this morphism as $C_{H,\infty}\rightarrow C_\infty$ (via Lemma~\ref{l:profet-perf-tilde-limit-fully-faithful} one can also think of this as the corresponding map of perfectoid spaces).
 
-We can now rewrite the pro-\'etale object $\displaystyle\varprojlim_{G\rightarrow 1} C_G$ as \[\varprojlim_{G\rightarrow 1}\displaystyle\varprojlim_{n\rightarrow \infty} C_{H_n\cap G}=\varprojlim_{G\rightarrow 1}C_{G,\infty}.\]
+We can now rewrite in $C_{\profet}$:
+\[\displaystyle\varprojlim_{H\rightarrow 1} C_H=\varprojlim_{H\rightarrow 1}\displaystyle\varprojlim_{n\rightarrow \infty} C_{G_n\cap H}=\varprojlim_{H\rightarrow 1}C_{H,\infty}.\]
+As the $C_{H,\infty}$ have compatible finite \'etale maps to $C_\infty$, we obtain a morphism in $C_{\profet}$
+\[\varprojlim_{H\rightarrow 1}C_{H,\infty}\rightarrow C_\infty.\]
 
-As the $C_{G,\infty}$ have compatible finite \'etale maps to $C'_\infty$, we obtain a pro-\'etale map (again in the sense of \cite[Definition 3.9]{p-adic_Hodge}) 
-\[\varprojlim_{G\rightarrow 1}C_{G,\infty}\rightarrow C'_\infty.\]
+By \cite[Lemma 4.6]{p-adic_Hodge}, pro-finite-\'etale covers of perfectoid objects are again perfectoid, giving us the desired perfectoid space 
+\[ \tilde{C}\sim\varprojlim_{H\rightarrow 1} C_H.\]
+This completes the construction of $\tilde{C}$, and thus proves part (1).
 
-By \cite[Lemma 4.6]{p-adic_Hodge}, pro-\'etale covers of perfectoid objects are again perfectoid, giving us the desired perfectoid space 
-\[ C_\infty\sim\varprojlim_{G\rightarrow 1} C_G.\]
+To see part (2), we note that we can write $G=\varprojlim_N G/N$ where $N$ ranges through the normal open subgroups. These are precisely the subgroups for which $C_N\to C$ is already a finite \'etale $G/N$-torsor. Concretely, this means that the following natural morphism is already an isomorphism:
+\[G/N\times_C C_N\to C_N\times_CC_N.\]
 
-For every open subgroup $H$ of $\pi_1(C,x)$, $C_H\rightarrow C$ is an $H$-torsor, so we get compatible isomorphisms $C_H\times_C C_H\cong H\times C_H$. By the universal property of perfectoid tilde-limits, these extend to an isomorphism $C_\infty\times_C C_\infty\cong \pi_1(C,x)\times C_\infty$, so $C_\infty$ is a pro-\'etale $\pi_1(C,x)$-torsor over $C$. (Note that $C_\infty\times_C C_\infty$ is a pro-\'etale cover of the perfectoid space $C_\infty$, and therefore exists and is perfectoid.) This is a pro-universal object for finite \'etale covers of $C$ by the definition of tilde-limits: any finite \'etale cover $C_H\rightarrow C$ is in the inverse system defining $C_\infty$, so the map $C_\infty\rightarrow C$ factors through $C_H$. The universality of $C_\infty$ among perfectoid pro-\'etale tilde-limits of $C$ follows from the same argument as was used to construct the map $C_\infty\rightarrow C'_\infty$ above.
+We note that we also have $\tilde{C} \sim \varprojlim_NC_N$, as normal open subgroups are cofinal in the inverse system of all open subgroups. In the limit, this shows that $\tilde{C}$ is a pro-finite-\'etale $G$-torsor.
 
+To see that $F(X)=\Hom_C(\tilde{C},X)$, we recall that for any Galois cover $C_N\to C$ with a finite Galois map $C_N\to X$, we have $F(X)=\Hom_C(C_N,X)$. It therefore suffices to see that
+\[\Hom_C(\tilde{C},X)=\varinjlim_{N}\Hom_C(C_N,X).\]
+But this follows from Lemma~\ref{l:profet-perf-tilde-limit-fully-faithful}.
+
+For (3), write $S=F(X)$, then it suffices to prove that the natural morphism \[\tilde{C}\times\underline{S}\to X\]
+is a pro-finite-\'etale $G$-torsor. Since connected components of $X$ correspond to $G$-orbits of $S$, we may reduce to the case that $X$ is connected and that $G$ acts transitively on $\underline{S}$. By writing $X$ as a system of finite \'etale covers, we may further reduce to the case that $S$ is finite.  Fix $s\in S$ and let $H\subseteq G$ be the stabiliser of $s$, then $X=C_H$. It now suffices to show that for any normal open subgroup $N\subseteq G$ with $N\subseteq H$, the natural morphism
+\[C_N\times \pi_1/H\to C_H\]
+is a $\pi_1/N$-torsor, as the desired result will follow in the limit $N\to 1$. But this follows by Galois descent from the diagram
+\begin{center}
+\begin{tikzcd}
+	C_N\times \pi_1/H \arrow[r]           & C_H           \\
+	C_N\times \pi_1/N \arrow[r] \arrow[u] & C_N \arrow[u]
+\end{tikzcd}
+\end{center}
+which is Cartesian as $C_N\to C_H$ is a finite \'etale $H/N$-torsor.
 \end{proof}
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
