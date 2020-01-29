@@ -727,15 +727,15 @@ is fully faithful.
 		\[ F:C_{\mathrm{prof\acute{e}t}}\to \pi_{1}(C,x)\mathrm{-pfSets},\quad (Y_i)_{i\in I} \mapsto F(X):=\varprojlim_{i\in I}|Y_i\times_{C}x|=\varprojlim_{i\in I}\Hom_C(x,Y_i)\]
 		from the pro-finite-\'etale site of $C$ to the category of profinite sets with continuous $\pi_{1}(C,x)$-action.
 	\end{proposition}
-	This restricts to an equivalence of finite \'etale covers to finite sets with continuous $\pi_{1}(C,x)$-action. 
-	
+	This restricts to the usual equivalence of finite \'etale covers to finite sets with continuous $\pi_{1}(C,x)$-action. 
 	In particular, for every open subgroup $H\subseteq \pi_1(C,x)$, there is a corresponding finite \'etale morphism $C_H\to C$ from a connected curve $C_H$, considered as an analytic adic space. For any two open subgroups $H_1\subseteq H_2\subseteq \pi_1(C,x)$, there is a natural morphism $C_{H_1}\to C_{H_2}$. For varying $H$, one therefore has a filtered inverse system $(C_H)_{H\subseteq \pi_1(C,x)}$ which we may regard as an object in $C_{\text{pro\'et}}$.
 	\begin{corollary}\label{c:universal-covers-of-curves}
 		\begin{enumerate}
-		\item There is a perfectoid tilde-limit $\tilde{C} \sim \varprojlim_{G}C_H$ where $H$ ranges over the open subgroups of $ \pi_1(C,x)$. 
+		\item There is a perfectoid tilde-limit $\tilde{C} \sim \varprojlim_{H}C_H$ where $H$ ranges over the open subgroups of $ \pi_1(C,x)$. 
 		\item The morphism $\tilde{C}\to C$ is a pro-\'etale $\pi_1(C,x)$-torsor. It is universal with this property in the sense that it represents the functor sending	 pro-finite-\'etale perfectoid covers $X\to C$ to the $\pi_1(C,x)$-module $F(X)=\mathrm{Hom}_C(x,X)$.
 		\item For any $X\in C_{\mathrm{prof\acute{e}t}}$, for example for any finite \'etale $X\to C$, there is a natural isomorphism
-		\[ X = \tilde{C}\times^{\pi_1(C,x)}F(X):=(\tilde{C}\times\underline{F(X)})/\pi_1(C,x).\]
+		\[ X = \underline{F(X)}\times^{\pi_1(C,x)}\tilde{C}:=(\underline{F(X)}\times \tilde{C})/\pi_1(C,x).\]
+		Here the right hand side is the categorical quotient in adic spaces for the antidiagonal action.
 	\end{enumerate}
 	\end{corollary}
 \begin{remark}
@@ -777,14 +777,14 @@ To see that $F(X)=\Hom_C(\tilde{C},X)$, we recall that for any Galois cover $C_N
 \[\Hom_C(\tilde{C},X)=\varinjlim_{N}\Hom_C(C_N,X).\]
 But this follows from Lemma~\ref{l:profet-perf-tilde-limit-fully-faithful}.
 
-For (3), write $S=F(X)$, then it suffices to prove that the natural morphism \[\tilde{C}\times\underline{S}\to X\]
+For (3), write $S=F(X)$, then it suffices to prove that the natural morphism \[\underline{S}\times\tilde{C}\to X\]
 is a pro-finite-\'etale $G$-torsor. Since connected components of $X$ correspond to $G$-orbits of $S$, we may reduce to the case that $X$ is connected and that $G$ acts transitively on $\underline{S}$. By writing $X$ as a system of finite \'etale covers, we may further reduce to the case that $S$ is finite.  Fix $s\in S$ and let $H\subseteq G$ be the stabiliser of $s$, then $X=C_H$. It now suffices to show that for any normal open subgroup $N\subseteq G$ with $N\subseteq H$, the natural morphism
-\[C_N\times \pi_1/H\to C_H\]
+\[\pi_1/H\times C_N\to C_H\]
 is a $\pi_1/N$-torsor, as the desired result will follow in the limit $N\to 1$. But this follows by Galois descent from the diagram
 \begin{center}
 \begin{tikzcd}
-	C_N\times \pi_1/H \arrow[r]           & C_H           \\
-	C_N\times \pi_1/N \arrow[r] \arrow[u] & C_N \arrow[u]
+	\pi_1/H\times C_N \arrow[r]           & C_H           \\
+	\pi_1/N \times C_N\arrow[r] \arrow[u] & C_N \arrow[u]
 \end{tikzcd}
 \end{center}
 which is Cartesian as $C_N\to C_H$ is a finite \'etale $H/N$-torsor.
