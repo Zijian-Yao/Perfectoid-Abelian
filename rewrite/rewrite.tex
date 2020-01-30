@@ -699,7 +699,7 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	We note that for two abelian varieties $A$ and $B$ of dimension $d$, the universal covers $A_\infty$ and $B_\infty$ are different in general, so that this is only a ``uniformisation'' in a rather weak sense. However, they are canonically isomorphic if $A$ and $B$ are abelian varieties of good reduction with the same special fibre, or if $A$ and $B$ are $p$-power isogeneous, so that in these cases we can really think of $T_pA$ as a a $2d$-dimension $\mathbb Z_p$-lattice determining $A$.
 	\subsection{Stein property}
 	As a second application, we can combine our main theorem with work of Reineke to deduce the following Artin vanishing result:
-	\begin{corollary}
+	\begin{corollary}[Reineke]
 		Let $A$ be an abeloid variety over $K$. Let $L$ be a constructible sheaf of $\mathbb F_p$-modules on $A_{\et}$. Then for any $i>\dim A$,
 		\[\textstyle\varinjlim_{n\in \mathbb N}H_{\et}^i(A,[p^n]^{\ast}L)=0.\]
 	\end{corollary}
@@ -711,15 +711,14 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	By results from \cite{p-adic_Hodge}, the space $A_\infty$ has a ``Stein space''-like property in the sense that we have $H^j(V,\nu^{\ast}L)=0$ for any affinoid perfectoid $V\subseteq A_\infty$ and any $j>0$. One can use this to reduce to a computation in \v{C}ech cohomology, which shows that the left hand side vanishes for $i>\dim A$.
 	\subsection{Universal perfectoid covers of curves}
 	
-As a third application, we describe how one can obtain universal perfectoid pro-\'etale covers of curves over $K$. This was observed by Hansen \cite{Hansen-blog}, and the following corollary is due to him.
+As a third application, we describe how one can obtain universal perfectoid pro-\'etale covers of curves over $K$. This was first observed by Hansen \cite{Hansen-blog}.
 	
 	Let $C$ be a connected smooth projective curve of genus $g\geq 1$ over $K$, which we consider as an analytic adic space. By \cite[Theorem 3.1]{LutRiemann}, GAGA induces an equivalence of categories between finite \'etale covers of the scheme $C$ and finite \'etale covers of the adic space $C$. We can therefore fix a geometric base point $x:\Spa(\overline{K},\O_{\overline{K}})\to C$ and study the usual \'etale fundamental group $\pi_1(C,x)$ using the language of adic spaces. 
 	
-	To prepare our discussion, we recall from \cite[\S3]{p-adic_Hodge} a few facts on the pro-finite-\'etale site $C$: This is the category of small cofiltered inverse systems $(X_i)_{i\in I}$ in the finite \'etale site $C_{\fet}$. An object in $C_{\profet}$ is called perfectoid if there is a perfectoid tilde-limit $X_\infty\sim \varprojlim X_i$. Let $C_{\profet}^{\perf}$ be the full subcategory of perfectoid objects, and let $\mathrm{Perf}_C$ be the category of perfectoid spaces over $C$. Then the argument in the proof of \cite[Lemma 8.2.3]{berkeley} shows:
+	To prepare our discussion, we recall from \cite[\S3]{p-adic_Hodge} a few facts on the pro-finite-\'etale site of $C$: This is the category $C_{\profet}=\mathrm{pro-}C_{\fet}$ of small cofiltered inverse systems $(X_i)_{i\in I}$ in the finite \'etale site $C_{\fet}$. An object in $C_{\profet}$ is called perfectoid if there is a perfectoid tilde-limit $X_\infty\sim \varprojlim X_i$. Let $C_{\profet}^{\perf}$ be the full subcategory of perfectoid objects, and let $\mathrm{Perf}_C$ be the category of perfectoid spaces over $C$. Then the argument in the proof of \cite[Lemma 8.2.3]{berkeley} shows:
 \begin{lemma}\label{l:profet-perf-tilde-limit-fully-faithful}
-	The functor
-	\[C_{\profet}^{\perf}\to  \mathrm{Perf}_{C},\quad (X_i)_{i\in I}\mapsto X_\infty\sim \varprojlim_{i\in I} X_i\]
-is fully faithful.	
+	Sending perfectoid pro-\'etale objects to their tilde-limits defines a fully faithful functor
+	\[C_{\profet}^{\perf}\to  \mathrm{Perf}_{C},\quad (X_i)_{i\in I}\mapsto X_\infty\sim \varprojlim_{i\in I} X_i.\]
 \end{lemma}
 	We call the objects $X_\infty \to C$ in the essential image the pro-finite-\'etale perfectoid covers of $C$.
 	\begin{proposition}[Proposition~3.5, \cite{p-adic_Hodge}]
@@ -729,7 +728,7 @@ is fully faithful.
 	\end{proposition}
 	This restricts to the usual equivalence of finite \'etale covers to finite sets with continuous $\pi_{1}(C,x)$-action. 
 	In particular, for every open subgroup $H\subseteq \pi_1(C,x)$, there is a corresponding finite \'etale morphism $C_H\to C$ from a connected curve $C_H$, considered as an analytic adic space. For any two open subgroups $H_1\subseteq H_2\subseteq \pi_1(C,x)$, there is a natural morphism $C_{H_1}\to C_{H_2}$. For varying $H$, one therefore has a filtered inverse system $(C_H)_{H\subseteq \pi_1(C,x)}$ which we may regard as an object in $C_{\text{pro\'et}}$.
-	\begin{corollary}\label{c:universal-covers-of-curves}
+	\begin{corollary}[Hansen,\cite{Hansen-blog}]\label{c:universal-covers-of-curves}
 		\begin{enumerate}
 		\item There is a perfectoid tilde-limit $\tilde{C} \sim \varprojlim_{H}C_H$ where $H$ ranges over the open subgroups of $ \pi_1(C,x)$. 
 		\item The morphism $\tilde{C}\to C$ is a pro-\'etale $\pi_1(C,x)$-torsor. It is universal with this property in the sense that it represents the functor sending	 pro-finite-\'etale perfectoid covers $X\to C$ to the $\pi_1(C,x)$-module $F(X)=\mathrm{Hom}_C(x,X)$.
@@ -740,8 +739,10 @@ is fully faithful.
 	\end{corollary}
 \begin{remark}
 Parts (2) and (3) say that we may reasonably regard $\tilde{C}\to C$ as the ``universal cover'' of $C$, in analogy with this notion in topology.
-For example, if $C=E$ is an elliptic curve, then $\tilde{E}\sim\varprojlim_{[N]}E$ is the tilde-limit over multiplication by $N$ for all $N\in \N$, in contrast to $E_\infty\sim \varprojlim_{[p]} E$.
 \end{remark}
+\begin{example}
+If $C=E$ is an elliptic curve, then $\pi_1(C,x)=\varprojlim_{N\in \N} E[N](K)$, and thus \[\tilde{E}\sim\varprojlim_{[N]}E\] is the tilde-limit over multiplication by $N$ for all $N\in \N$, in contrast to $E_\infty\sim \varprojlim_{[p]} E$.
+\end{example}
 \begin{proof}
 To ease notation, let us abbreviate $G:=\pi_1(C,x)$.
 	
