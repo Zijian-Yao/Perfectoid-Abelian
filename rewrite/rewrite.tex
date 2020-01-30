@@ -683,10 +683,12 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	\[0\to T_pA \to A_\infty \to A\to 0.\]
 	Using the language of diamonds from \cite{etale_cohomology_of_diamonds}, we then have:
 	\begin{corollary}
-		The diamond $A^{\diamond}$ associated to $A$ has a canonical presentation
+		The diamond $A^{\diamond}$ associated to $A$ has a natural presentation
 		\[A^{\diamond} = A_\infty/T_pA \]
 		given by the perfectoid space $A_\infty$ and the pro-\'etale subgroup $T_pA$.
 	\end{corollary}
+	Here we think of $T_pA=H^{\et}_1(A,\Z_p)$ as the analogue of $H_1(A,\Z)$ in the complex setting.
+
 	Of course this $p$-adic uniformisation of $A$ is very closely related to the uniformisation of the associated $p$-divisible group $A[p^\infty]$ described in \cite{SW} and \cite[\S4]{survey}: Indeed, in the language used there, we have a morphism of short exact sequences
 	
 	\begin{center}
@@ -695,8 +697,10 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 			0 \arrow[r] & T_pA \arrow[r] & A_\infty \arrow[r] & A\arrow[r] & 0.
 		\end{tikzcd}
 	\end{center}
-
+	\begin{remark}
 	We note that for two abelian varieties $A$ and $B$ of dimension $d$, the universal covers $A_\infty$ and $B_\infty$ are different in general, so that this is only a ``uniformisation'' in a rather weak sense. However, they are canonically isomorphic if $A$ and $B$ are abelian varieties of good reduction with the same special fibre, or if $A$ and $B$ are $p$-power isogeneous, so that in these cases we can really think of $T_pA$ as a a $2d$-dimension $\mathbb Z_p$-lattice determining $A$.
+	\end{remark}
+	 There is a second closely related uniformisation which we discuss in \S5.3 below.
 	\subsection{Stein property}
 	As a second application, we can combine our main theorem with work of Reineke to deduce the following Artin vanishing result:
 	\begin{corollary}[Reineke]
@@ -743,7 +747,7 @@ Parts (2) and (3) say that we may reasonably regard $\tilde{C}\to C$ as the ``un
 \end{remark}
 The proof also works in the case that $C$ is an abelian variety. In this case, the \'etale fundamental group is simply the absolute Tate module  $\pi_1(A,x)=TA:=\varprojlim_{N\in \N} A[N](K)$. We then have:
 \begin{corollary}\label{c:universal-covers-of-abelian-varieties}
-	Let $A$ be an abelian variety over $K$, then there is a perfectoid tilde-limit $\tilde{A}\sim \varprojlim_{{N}}A$ and the analogous statements of Corollary~\ref{c:universal-covers-of-abelian-varieties}.2 and 3 hold for the $TA$-torsor $\tilde{A}\to A$. In particular, we have a second canonical diamond uniformisation
+	Let $A$ be an abelian variety over $K$, then there is a perfectoid tilde-limit $\tilde{A}\sim \varprojlim_{{N}}A$ and the analogous statements of Corollary~\ref{c:universal-covers-of-abelian-varieties}.2 and 3 hold for the $TA$-torsor $\tilde{A}\to A$. In particular, we also have a natural uniformisation
 	\[A^{\diamond}=\tilde{A}/TA =\tilde{A}/\pi_1(A,x).\]
 \end{corollary}
 \begin{proof}[Proof of Cor.~\ref{c:universal-covers-of-curves} and Cor.~\ref{c:universal-covers-of-abelian-varieties}]
