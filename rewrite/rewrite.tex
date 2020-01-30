@@ -713,7 +713,7 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	
 As a third application, we describe how one can obtain universal perfectoid pro-\'etale covers of curves over $K$. This was first observed by Hansen \cite{Hansen-blog}.
 	
-	Let $C$ be a connected smooth projective curve of genus $g\geq 1$ over $K$, which we consider as an analytic adic space. By \cite[Theorem 3.1]{LutRiemann}, GAGA induces an equivalence of categories between finite \'etale covers of the scheme $C$ and finite \'etale covers of the adic space $C$. We can therefore fix a geometric base point $x:\Spa(\overline{K},\O_{\overline{K}})\to C$ and study the usual \'etale fundamental group $\pi_1(C,x)$ using the language of adic spaces. 
+	We start by recalling some background in a more general setting: Let $C$ be a connected smooth projective scheme over $K$, which we consider as an analytic adic space. By \cite[Theorem 3.1]{LutRiemann}, GAGA induces an equivalence of categories between finite \'etale covers of the scheme $C$ and finite \'etale covers of the adic space $C$. We can therefore fix a geometric base point $x:\Spa(\overline{K},\O_{\overline{K}})\to C$ and study the usual \'etale fundamental group $\pi_1(C,x)$ using the language of adic spaces. 
 	
 	To prepare our discussion, we recall from \cite[\S3]{p-adic_Hodge} a few facts on the pro-finite-\'etale site of $C$: This is the category $C_{\profet}=\mathrm{pro-}C_{\fet}$ of small cofiltered inverse systems $(X_i)_{i\in I}$ in the finite \'etale site $C_{\fet}$. An object in $C_{\profet}$ is called perfectoid if there is a perfectoid tilde-limit $X_\infty\sim \varprojlim X_i$. Let $C_{\profet}^{\perf}$ be the full subcategory of perfectoid objects, and let $\mathrm{Perf}_C$ be the category of perfectoid spaces over $C$. Then the argument in the proof of \cite[Lemma 8.2.3]{berkeley} shows:
 \begin{lemma}\label{l:profet-perf-tilde-limit-fully-faithful}
@@ -727,8 +727,9 @@ As a third application, we describe how one can obtain universal perfectoid pro-
 		from the pro-finite-\'etale site of $C$ to the category of profinite sets with continuous $\pi_{1}(C,x)$-action.
 	\end{proposition}
 	This restricts to the usual equivalence of finite \'etale covers to finite sets with continuous $\pi_{1}(C,x)$-action. 
-	In particular, for every open subgroup $H\subseteq \pi_1(C,x)$, there is a corresponding finite \'etale morphism $C_H\to C$ from a connected curve $C_H$, considered as an analytic adic space. For any two open subgroups $H_1\subseteq H_2\subseteq \pi_1(C,x)$, there is a natural morphism $C_{H_1}\to C_{H_2}$. For varying $H$, one therefore has a filtered inverse system $(C_H)_{H\subseteq \pi_1(C,x)}$ which we may regard as an object in $C_{\text{pro\'et}}$.
+	In particular, for every open subgroup $H\subseteq \pi_1(C,x)$, there is a corresponding finite \'etale morphism $C_H\to C$ from a connected scheme $C_H$, considered as an analytic adic space. For any two open subgroups $H_1\subseteq H_2\subseteq \pi_1(C,x)$, there is a natural map $C_{H_1}\to C_{H_2}$. For varying $H$, one therefore has a filtered inverse system $(C_H)_{H\subseteq \pi_1(C,x)}$ which we may regard as an object in $C_{\text{pro\'et}}$.
 	\begin{corollary}[Hansen,\cite{Hansen-blog}]\label{c:universal-covers-of-curves}
+		Let $C$ be a connected smooth projective curve of genus $g\geq 1$ over $K$, considered as an analytic adic space.
 		\begin{enumerate}
 		\item There is a perfectoid tilde-limit $\tilde{C} \sim \varprojlim_{H}C_H$ where $H$ ranges over the open subgroups of $ \pi_1(C,x)$. 
 		\item The morphism $\tilde{C}\to C$ is a pro-\'etale $\pi_1(C,x)$-torsor. It is universal with this property in the sense that it represents the functor sending	 pro-finite-\'etale perfectoid covers $X\to C$ to the $\pi_1(C,x)$-module $F(X)=\mathrm{Hom}_C(x,X)$.
@@ -740,10 +741,12 @@ As a third application, we describe how one can obtain universal perfectoid pro-
 \begin{remark}
 Parts (2) and (3) say that we may reasonably regard $\tilde{C}\to C$ as the ``universal cover'' of $C$, in analogy with this notion in topology.
 \end{remark}
-\begin{example}
-If $C=E$ is an elliptic curve, then $\pi_1(C,x)=\varprojlim_{N\in \N} E[N](K)$, and thus \[\tilde{E}\sim\varprojlim_{[N]}E\] is the tilde-limit over multiplication by $N$ for all $N\in \N$, in contrast to $E_\infty\sim \varprojlim_{[p]} E$.
-\end{example}
-\begin{proof}
+The proof also works in the case that $C$ is an abelian variety. In this case, the \'etale fundamental group is simply the absolute Tate module  $\pi_1(A,x)=TA:=\varprojlim_{N\in \N} A[N](K)$. We then have:
+\begin{corollary}\label{c:universal-covers-of-abelian-varieties}
+	Let $A$ be an abelian variety over $K$, then there is a perfectoid tilde-limit $\tilde{A}\sim \varprojlim_{{N}}A$ and the analogous statements of Corollary~\ref{c:universal-covers-of-abelian-varieties}.2 and 3 hold for the $TA$-torsor $\tilde{A}\to A$. In particular, we have a second canonical diamond uniformisation
+	\[A^{\diamond}=\tilde{A}/TA =\tilde{A}/\pi_1(A,x).\]
+\end{corollary}
+\begin{proof}[Proof of Cor.~\ref{c:universal-covers-of-curves} and Cor.~\ref{c:universal-covers-of-abelian-varieties}]
 To ease notation, let us abbreviate $G:=\pi_1(C,x)$.
 	
 We construct $\tilde{C}$ in two steps. 
