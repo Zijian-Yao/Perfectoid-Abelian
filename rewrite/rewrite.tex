@@ -142,7 +142,7 @@ The primary goal of this article is to show that the ``inverse limit'' of this t
 	$A_\infty \sim \varprojlim_{[p]} A$ is a tilde-limit.
 \end{mainthm}
 
-The possibility of results in this direction is mentioned in \S 7 and \S 13 of \cite{scholzeICMproceedings}, and in the case of abelian varieties with good reduction, this theorem was proven already in \cite[Lemme~A.16]{Pilloni-Stroh} (Lemme A.16). We recall the argument in Lemma~\ref{tilde-limit exists and is perfectoid in the good reduction case} below. 
+The possibility of results in this direction is mentioned in \S 7 and \S 13 of \cite{scholzeICMproceedings}, and in the case of abelian varieties with good reduction, this theorem was proven already in \cite[Lemme~A.16]{Pilloni-Stroh}. We recall the argument in Lemma~\ref{tilde-limit exists and is perfectoid in the good reduction case} below. 
 
 On the other hand, if $A$ does not have good reduction, the assumption that $K$ is algebraically closed assures that $A$ has semi-stable reduction.
 In this case, the theory of Raynaud extensions provides us with a short exact sequence 
@@ -162,11 +162,38 @@ by taking generic fibres and forming the pushout with respect to the open immers
 
 In \S4 we finish the proof of Theorem~\ref{thm:main_thm_intro} by constructing $A_\infty$ from $E_\infty$ as follows: After choosing lattices $M\subset M_n\subset E$ that map isomorphically to $M$ under $[p^n]\colon E\rightarrow E$, the $[p]$-multiplication tower of $A=E/M$ naturally factors into two separate towers: One is the tower of maps $E/M_{n+1}\rightarrow E/M_n$ induced from $[p]$-multiplication of $E$, and the other is induced from the projection maps $v^n\colon E/M\rightarrow E/M_n$. Using local splittings, one can construct a perfectoid tilde-limit $A'_\infty\sim \varprojlim_n E/M_n$ of the first tower from $E_\infty$. It fits into a short exact sequence
 \[0\to M\to E_\infty\to A'_\infty\to 0. \]
- The desired space $A_\infty\sim \varprojlim_{[p]}A$ can then be constructed from this using that the quotient maps $v^n\colon E/M\rightarrow E/M_n$ are locally split in the analytic topology. This construction also gives the following analogue of Raynaud uniformisation for $A_\infty$: Write $D_n$ for the kernel of $v^n$. Then there is a profinite perfectoid tilde-limit $D_\infty\sim \varprojlim_{[p]} D_n$ and a short exact sequence of perfectoid groups
+ The existence of $A_\infty\sim \varprojlim_{[p]}A$ then follows as the quotient maps $v^n\colon E/M\rightarrow E/M_n$ are \'etale. In fact, they are locally split in the analytic topology, from which one can deduce the following analogue of Raynaud uniformisation for $A_\infty$: Write $D_n$ for the kernel of $v^n$. Then there is a profinite perfectoid tilde-limit $D_\infty\sim \varprojlim_{[p]} D_n$ and a short exact sequence of perfectoid groups
 \[0\rightarrow M\rightarrow D_\infty \times E_\infty \rightarrow A_\infty\rightarrow 0,\]
 which we regard as an analogue of the sequence $0\rightarrow M\rightarrow E\rightarrow A\rightarrow 0$.
 
-We give three applications of Theorem~\ref{thm:main_thm_intro} in \S 5. The paper ends with an appendix on fibre bundles and associated fibre bundle constructions in the context of adic spaces.
+We give three applications of Theorem~\ref{thm:main_thm_intro} in \S 5:
+As observed by Hansen, one can deduce from Theorem~\ref{thm:main_thm_intro} the existence of certain universal covers of curves by embedding them into their Jacobian:
+	\begin{corollary}[Hansen,\cite{Hansen-blog}]
+	Let $C$ be a connected smooth projective curve of genus $g\geq 1$ over $K$, considered as an analytic adic space. Fix a geometric base point $x:\Spa(K)\to C$ and consider the pro-\'etale fundamental group $\pi_1(C,x)$.
+	\begin{enumerate}
+		\item There is a perfectoid tilde-limit $\tilde{C} \sim \varprojlim_{H}C_H$ where $H$ ranges over the open subgroups of $ \pi_1(C,x)$. 
+		\item The morphism $\tilde{C}\to C$ is a pro-\'etale $\pi_1(C,x)$-torsor. It is universal with this property in the sense that it represents the fibre functor sending	 pro-finite-\'etale perfectoid covers $X\to C$ to the $\pi_1(C,x)$-module $F(X)=\mathrm{Hom}_C(x,X)$.
+		\item For any pro-finite-\'etale morphism $X\to C$, there is a natural isomorphism
+		\[ X = \underline{F(X)}\times^{\pi_1(C,x)}\tilde{C}:=(\underline{F(X)}\times \tilde{C})/\pi_1(C,x).\]
+		Here the right hand side is the categorical quotient in adic spaces for the antidiagonal action.
+	\end{enumerate}
+\end{corollary}
+
+Second, we note that the analogue of this corollary also works for $C$ replaced by an abelian variety, in which case the pro-\'etale fundamental group is isomorphic to the absolute Tate module $TA:=\varprojlim_{N\in \N}A[N]$. In particular, one obtains from this two different natural ways to uniformise the diamond $A^{\diamond}$ attached to $A$: First, as an immediate consequence of Theorem~\ref{thm:main_thm_intro}, we can write
+\[ A^{\diamond}=A_\infty/T_pA.\]
+Second, one also obtains a perfectoid tilde-limit $\tilde{A}\sim \varprojlim_{[N]} A$ together with a natural isomorphism
+\[ A^{\diamond}=\tilde{A}/T A.\]
+Here the second equation describes $A$ in terms of the universal connected pro-finite-\'etale cover $\tilde{A}\to A$, whereas the first uses the universal connected pro-finite-\'etale pro-$p$-cover.
+Either may be seen as a sort of analogue of Riemann uniformisation of abelian varieties over $\C$. 
+
+Our third application of Theorem~\ref{thm:main_thm_intro} states that in line with this analogy to the complex case, the cohomology of constructible $\F_p$-sheaves on $A_\infty$ behaves like that of a Stein space: This follows in combination with a result of Reinecke:
+\begin{corollary}[Reinecke]
+	Let $L$ be a constructible sheaf of $\mathbb F_p$-modules on $A_{\et}$. Then for $i>\dim A$,
+	\[\textstyle\varinjlim_{n\in \mathbb N}H_{\et}^i(A,[p^n]^{\ast}L)=0.\]
+\end{corollary}
+
+
+ The paper ends with an appendix on fibre bundles and associated fibre bundle constructions in the context of adic spaces, which develops some language that we need in the construction of $A_\infty$.
 
  \begin{comment}
 Now we end the introduction by describing the content of each section. 
@@ -685,7 +712,7 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	\begin{corollary}
 		The diamond $A^{\diamond}$ associated to $A$ has a natural presentation
 		\[A^{\diamond} = A_\infty/T_pA \]
-		given by the perfectoid space $A_\infty$ and the pro-\'etale subgroup $T_pA$.
+		given by the perfectoid space $A_\infty$ with its pro-\'etale subgroup $T_pA$.
 	\end{corollary}
 	Here we think of $T_pA=H^{\et}_1(A,\Z_p)$ as the analogue of $H_1(A,\Z)$ in the complex setting.
 
@@ -747,7 +774,7 @@ Parts (2) and (3) say that we may reasonably regard $\tilde{C}\to C$ as the ``un
 \end{remark}
 The proof also works in the case that $C$ is an abelian variety. In this case, the \'etale fundamental group is simply the absolute Tate module  $\pi_1(A,x)=TA:=\varprojlim_{N\in \N} A[N](K)$. We then have:
 \begin{corollary}\label{c:universal-covers-of-abelian-varieties}
-	Let $A$ be an abelian variety over $K$, then there is a perfectoid tilde-limit $\tilde{A}\sim \varprojlim_{{N}}A$ and the analogous statements of Corollary~\ref{c:universal-covers-of-abelian-varieties}.2 and 3 hold for the $TA$-torsor $\tilde{A}\to A$. In particular, we also have a natural uniformisation
+	Let $A$ be an abelian variety over $K$, then there is a perfectoid tilde-limit $\tilde{A}\sim \varprojlim_{[N]}A$ and the analogous statements of Corollary~\ref{c:universal-covers-of-abelian-varieties}.2 and 3 hold for the $TA$-torsor $\tilde{A}\to A$. In particular, we also have a natural uniformisation
 	\[A^{\diamond}=\tilde{A}/TA =\tilde{A}/\pi_1(A,x).\]
 \end{corollary}
 \begin{proof}[Proof of Cor.~\ref{c:universal-covers-of-curves} and Cor.~\ref{c:universal-covers-of-abelian-varieties}]
