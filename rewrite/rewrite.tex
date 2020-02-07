@@ -739,8 +739,9 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	Due to Theorem~\ref{thm:main_thm_intro}, we can apply \cite[Theorem 3.3]{Reinecke} to the system $\dots \rightarrow A\xrightarrow{[p]}A$.
 	\end{proof}
 	A theorem of Artin and Grothendieck states if $X$ is an affine algebraic variety over $K$, then $H_{\et}^i(X,L)=0$ for any constructible $\mathbb F_p$-module $L$ and any $i>\dim A$. However, the rigid analogue of this statement is false in general. The point of the Corollary is that an analogue of this vanishing statement is true for the pullback of $L$ to $A_\infty$ in the following sense: Consider the morphism of sites $\nu\colon A_{\proet}\to A_{\et}$. Then by regarding $A_\infty$ as an object in $A_{\proet}$ via the pro-\'etale morphism $A_\infty\to A$, one can show
-	\[H^i_{\proet}(A_\infty,\nu^{\ast}L)=\varinjlim_{n\in\N} H^i_{\et}(A,[p^n]^{\ast}L). \]
-	By results from \cite{p-adic_Hodge}, the space $A_\infty$ has a ``Stein space''-like property in the sense that we have $H^j(V,\nu^{\ast}L)=0$ for any affinoid perfectoid $V\subseteq A_\infty$ and any $j>0$. One can use this to reduce to a computation in \v{C}ech cohomology, which shows that the left hand side vanishes for $i>\dim A$.
+	\[H^i_{\proet}(A_\infty,\nu^{\ast}L)=\textstyle\varinjlim_{n\in\N} H^i_{\et}(A,[p^n]^{\ast}L). \]
+	Let us sketch a proof that the left hand side vanishes  for $i>\dim A$:
+	Since $A$ is proper and smooth, one can use the Primitive Comparison Theorem \cite[Theorem~5.1]{p-adic_Hodge} \cite[Theorem~3.13]{survey} to reduce to showing that $H^i_{\proet}(A_\infty,\nu^{\ast}L\otimes_{\F_p} \O_{A_{\et}}^+/p)$ is almost zero for $i>d$. For this one can use that $H^j(V,\nu^{\ast}L\otimes_{\F_p} \O_{A_{\et}}^+/p)^a=0$ for any affinoid perfectoid $V\subseteq A_\infty$ and any $j>0$. This reduces the desired statement to a computation in \v{C}ech cohomology, which indeed vanishes in degree $>\dim A$.
 	\subsection{Universal perfectoid covers of curves}
 	
 As a third application, we describe how one can obtain universal perfectoid pro-\'etale covers of curves over $K$. This was first observed by Hansen \cite{Hansen-blog}.
