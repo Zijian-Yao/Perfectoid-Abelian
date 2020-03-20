@@ -481,14 +481,44 @@ making $E\rightarrow E/M=A$ a rigid group homomorphism.
 	\begin{definition}
 		We call a sequence of adic groups $0\to T\to E\xrightarrow{\pi} B\to 0$ an analytic-locally split short exact sequence if $T$ is the kernel of $\pi$ and $\pi:E\to B$ is a principal $T$-torsor in the analytic topology. This implies that $B$ is the categorial quotient in adic groups of $T\to E$.
 	\end{definition}
-	In particular, any Raynaud extension is an analytic-locally split short exact sequence. We can use this to prove the main result of this section, namely that $E_\infty$ is perfectoid. More generally:
-	\begin{proposition}[Existence of $G_\infty$ closed under extensions]\label{p-F-formal tower exists for E}
-		
-		Let $0\to T\to E\to B\to 0$ be any analytic-locally split short exact sequence of adic groups over $K$. Assume that there are perfectoid tilde-limits $T_\infty \sim \varprojlim_{[p]} T$ and $B_\infty\sim \varprojlim_{[p]}B$. Then
-		there is a perfectoid tilde-limit $E_\infty\sim \varprojlim_{[p]}E$. It fits into an analytic-locally split short exact sequence of perfectoid groups 
-		\[0\to T_\infty\to E_\infty\to B_\infty\to 0.\]
+	In particular, any Raynaud extension is an analytic-locally split short exact sequence.  This stays true after applying $\varprojlim_{[p]}$, as we shall now discuss:
+	\begin{proposition}
+		Let $0\to \overline{T}\to \overline{E}\to \overline{B}\to 0$ be any formal Raynaud extension. Then applying $\varprojlim_{[p]}$ on the generic fibre gives an analytic-locally split short exact sequence
+		\[0\to \overline{T}_{\eta,\infty}\to \overline{E}_{\eta,\infty}\to B_\infty\to 0.\]
 	\end{proposition}
 	\begin{proof}
+		We first consider the case that $K$ is of characteristic $p$, and deduce the case of characteristic $0$ by untilting. 
+		If $K$ is of characteristic $p$, then $[p]:\overline{B}\to \overline{B}$ decomposes into the Verschiebung $V:\overline{B}\to \overline{B}^{(p^{-1})}$ and the Frobenius morphism $F:\overline{B}^{(p^{-1})}\to \overline{B}$, and we can thus write
+		\[ \varprojlim_{[p]}\overline{B}=\varprojlim_{V}\varprojlim_F \overline{B}^{p^{-n}}.\]
+		and similarly for $\overline{E}$. Here the limit $\varprojlim_F$ amounts to the perfection functor, which exists more generally on formal schemes over $\O_K$. For this reason, we see that by functoriality, the sequence
+		\[0\to \overline{T}^{\perf}\to \overline{E}^{\perf}\to \overline{B}^{\perf}\to 0 \]
+		is again formal-locally split, and thus exact. Note that $ \overline{T}^{\perf}=\varprojlim_{[p]}\overline{T}=\overline{T}_\infty$. Consequently, we obtain a diagram
+		\begin{center}
+			\begin{tikzcd}
+			0 \arrow[r] & \overline{T}_\infty \arrow[d,equal] \arrow[r] & \overline{E}_\infty \arrow[r] \arrow[d] & \overline{B}_\infty \arrow[r] \arrow[d] & 0 \\
+			0 \arrow[r] & \overline{T}^{\perf} \arrow[r] \arrow[d] & \overline{E}^{\perf} \arrow[d] \arrow[r] & \overline{B}^{\perf} \arrow[d] \arrow[r] & 0 \\
+			0 \arrow[r] & \overline{T} \arrow[r] & \overline{E} \arrow[r] & \overline{B} \arrow[r] & 0
+			\end{tikzcd}
+		\end{center}
+		in which the top morphism of sequences is a pull-back along $\overline{B}_\infty\to \overline{B}^{\perf}$. In particular, the top morphism is again Zariski-locally split. The result follows by passing to generic fibres.
+		
+		To deduce the case of characteristic $0$, it suffices to prove that the desired sequence is the untilt of a sequence in characteristic $p$: For this, we first take any Raynaud extension $0\to \overline{T}'\to \overline{E}'\to \overline{B}'\to 0$ over $\O_{K^{\flat}}$ such that over $\O_{K^{\flat}}/t=\O_K/p$, the two sequences agree. Then in particular, we have an identification
+		\begin{center}
+			\begin{tikzcd}
+			0 \arrow[r] & \overline{T}_\infty/p \arrow[d,equal] \arrow[r] & \overline{E}_\infty/p \arrow[r] \arrow[d,equal] & \overline{B}_\infty/p \arrow[r] \arrow[d,equal] & 0 \\
+			0 \arrow[r] & \overline{T}'_\infty/t \arrow[r] & \overline{E}'_\infty/t \arrow[r] & \overline{B}'_\infty/t \arrow[r] & 0 
+			\end{tikzcd}
+		\end{center}
+		It now follows from the tilting equivalence that the sequence stated in the Proposition is analytic-locally split exact, as desired.
+	\end{proof}
+	
+	
+	 We can use this to prove the main result of this section, namely that $E_\infty$ is perfectoid. More generally:
+	\begin{proposition}\label{p-F-formal tower exists for E}
+		Let $0\to T\to E\to B\to 0$ be a rigid Raynaud extension. Then there is a perfectoid tilde-limit $E_\infty\sim \varprojlim_{[p]}E$. It fits into an analytic-locally split short exact sequence of perfectoid groups 
+		\[0\to T_\infty\to E_\infty\to B_\infty\to 0.\]
+	\end{proposition}
+	\begin{proof}[Proof of Proposition~\ref{p-F-formal tower exists for E}]
 	We can split $[p^n]:E\to E$ into two morphisms as follows:
 			\begin{center}
 				\begin{tikzcd}
@@ -499,29 +529,53 @@ making $E\rightarrow E/M=A$ a rigid group homomorphism.
 				\end{center}
 			Here the bottom morphism of short exact sequences is the base-change of the $T$-bundle $E\to B$ along $[p^n]:B\to B$, whereas the top morphism of short exact sequences is the change of fibre along $[p^n]:T\to T$. It is clear that the vertical maps in the middle compose to $[p^n]:E\to E$.
 			
-			Let now $U\subseteq B$ be an open subspace on which $E\to B$ is split, then $E|_U=T\times U$. Let $U_n$ be the pullback of $U$ along $[p^n]$. Then it follows from the universal property of the fibre product that $E\times_{B,[p^n]}B|_{U_n}\to U_n$ is again split. Consequently, the pullback of the entire diagram to $U$ becomes
-					\begin{center}
-							\begin{tikzcd}
-							0 \arrow[r] & T \arrow[r] \arrow[d, "{[p]}"] & T\times U_n \arrow[r, "\pi"] \arrow[d, "{[p]\times \id}"] & U_n \arrow[d,equal] \arrow[r] & 0 \\
-							0 \arrow[r] & T \arrow[r] \arrow[d,equal] & T\times U_n \arrow[r] \arrow[d, "{\id \times [p]}"] & U_n \arrow[d, "{[p]}"] \arrow[r] & 0 \\
-							0 \arrow[r] & T \arrow[r] & T\times U \arrow[r] & U \arrow[r] & 0.
-							\end{tikzcd}
-						\end{center}
-				It follows that the inverse system \[\cdots \xrightarrow{[p]}E\xrightarrow{[p]}E\]
-			 	restricts over the open $E|_U\subseteq E$ on the base to the inverse system
-				\[\xrightarrow{[p]\times [p]}T\times U_n\xrightarrow{[p]\times [p]}T\times U_{n-1}\xrightarrow{[p]\times [p]}\cdots \xrightarrow{[p]\times [p]}E_{|U}. \]
-				To prove the theorem, it suffices to show that this system has a perfectoid tilde-limit.
-				As there is a perfectoid tilde-limit $B_\infty\sim \varprojlim_{[p]} B$, by pullback to $U$ there is also a perfectoid tilde-limit $U_\infty\sim \varprojlim U_n$. Since there is also a perfectoid tilde-limit $T_\infty\sim \varprojlim_{[p]} T$,  Lemma~\ref{affinoid tilde-limits commute with fibre products} says that the above system has perfectoid tilde-limit $T_\infty\times U_\infty$, as desired.
-				
-				By Proposition~\ref{SW Proposition 2.4.5}, the maps $0\to T\to E\to B\to 0$ in the limit over $[p]$ now produces maps $0\to T_\infty \to E_\infty\to B_\infty\to 0$. By the above local description of $E_\infty$, the latter is an analytic-locally split short exact sequence.
+			For varying $n$, we can thus split the $[p]$-multiplication tower into two towers
+			\begin{center}
+			\begin{tikzcd}[row sep={1.5cm,between origins},column sep={2.5cm,between origins}]
+			E \arrow[r, "{[p]\times \id}"] \arrow[rd, "{[p]}"] & {E\times_{B,[p]}B} \arrow[d, "{\id\times [p]}"] \arrow[r, "{[p]\times \id}"] & {E\times_{B,[p^2]}B} \arrow[d, "{\id \times [p]}"] \\
+			& E \arrow[r, "{[p]\times \id}"] \arrow[rd, "{[p]}"] & {E\times_{B,[p]}B} \arrow[d, "{\id\times [p]}"] \\
+			&  & E
+			\end{tikzcd}
+			\end{center}
+			
+			We now first take the limit over the vertical tower on the right: Let $\mathfrak U$ be a cover of $B$ of opens $U$ over which $E\to B$ is split, and let $U_n$ be the pullback of along $[p^n]$. Then by the universal property of the fibre product, the section of $E|_U=T\times U$ induces a section of  $E\times_{B,[p^n]}B|_{U_n}\to U_n$ that fits into a commutative diagram
+			\begin{center}
+			\begin{tikzcd}
+			0 \arrow[r] & T \arrow[r] \arrow[d,equal] & T\times U_n \arrow[r] \arrow[d, "{\id \times [p]}"] & U_n \arrow[d, "{[p]}"] \arrow[r] & 0 \\
+			0 \arrow[r] & T \arrow[r] & T\times U \arrow[r] & U \arrow[r] & 0.
+			\end{tikzcd}
+			\end{center}
+			We conclude that in the tilde-limit, we obtain an analytic locally split short exact sequence
+			\[ 0\to T\to E\times_{B}B_\infty\to B_\infty\to 0.\]
+			Since locally over $U$, we have 
+			\[ E\times_{B}B_\infty|_{U_\infty}=T\times U_\infty \sim \varprojlim T\times U_n,\]
+			we moreover have $E\times_{B}B_\infty\sim E\times_{B,[p^n]}B$.
+			
+			We now \textit{define} $E_\infty$ to be the change-of-fibre of $\overline{E}_{\eta,\infty}$ along the morphism $\overline{T}_{\eta,\infty}\to T_\infty$, i.e.
+			\[E_\infty:=T_\infty\times^{\overline{T}_\infty}\overline{E}_\infty, \]
+			this is well-defined by the last Proposition.
+			It fits into an inverse system
+			\begin{center}
+				\begin{tikzcd}
+				0 \arrow[r] & T_\infty \arrow[r] \arrow[d] & E_\infty \arrow[r] \arrow[d] & B_\infty \arrow[d,equal] \arrow[r] & 0 \\
+				0 \arrow[r] & T \arrow[r] \arrow[d,"{[p]}"] & E\times_B B_\infty \arrow[r] \arrow[d, "{[p]\times\id }"] & B_\infty \arrow[d, equal] \arrow[r] & 0 \\
+				0 \arrow[r] & T \arrow[r] & E\times_B B_\infty \arrow[r] & B_\infty \arrow[r] & 0.
+				\end{tikzcd}
+			\end{center}
+			which we may think of being the limiting horizontal tower of the above diagonal diagram.
+			These sequences are now again locally compatibly split, but for a different reason: These sequences are all push-outs for the various projections $T_\infty=\varprojlim_{[p]}T\to T$. Since we know that the sequence on top is analytic-locally split, we get compatible splittings at each level. After refining $\mathfrak U$, we can assume that these splitting exist over the opens $U_\infty$ from above. Like before this give a tilde-limit relation
+			\[E_\infty\sim \varprojlim_{[p]\times \id} E\times_BB_\infty.\]
+			We now conclude since a horizontal tilde-limit of vertical tilde-limits is a diagonal tilde-limit, as long as the affine opens on which the density property holds can be taken compatibly: This follows from pointwise sequential approximation.
 	\end{proof}
 	
 	\begin{remark}
-		In the case of Raynaud extensions, there is an alternative proof that also constructs a formal model $\mathfrak E_\infty$ of $E_\infty$, like in Lemma~\ref{tilde-limit exists and is perfectoid in the good reduction case}. For this, one first takes a sequence of formal models 
+		There is an alternative proof of the tilde-limit property that also constructs a formal model $\mathfrak E_\infty$ of $E_\infty$, like in Lemma~\ref{tilde-limit exists and is perfectoid in the good reduction case}. For this, one first takes a sequence of formal models 
 		\[\cdots \to \mathfrak T_{2}\xrightarrow{[\mathfrak p]_1}\mathfrak T_1\xrightarrow{[\mathfrak p]_1} \mathfrak T_0\]
 		of $\cdots\xrightarrow{[p]} T\xrightarrow{[p]} T$. This can be done in such a way that each $[\mathfrak p]_i$ reduces to the relative Frobenius mod $p$. Then $\mathfrak T_\infty:=\varprojlim_{[\mathfrak p]_i}\mathfrak T_i$ is a formal model of the perfectoid space $T_\infty$ (giving an alternative proof that $T_\infty$ is a perfectoid tilde-limit). When we set $\mathfrak E_i:=\mathfrak T_i\times^{\overline{T}}\overline{E}$, we get an inverse system
 		\[\cdots \to \mathfrak E_{2}\xrightarrow{[\mathfrak p]_1}\mathfrak E_1\xrightarrow{[\mathfrak p]_1} \mathfrak E_0\]
 		with transition maps that factor through the relative Frobenius map mod $p$. Thus the generic fibre of $\mathfrak E_\infty:=\varprojlim_{[\mathfrak p]_i}\mathfrak E_i$ is a perfectoid tilde-limit of $\cdots \xrightarrow{[p]}E\xrightarrow{[p]}E$.
+		
+		However, this construction does not give the local splittings in Proposition 3.9.
 	\end{remark}
 	
 	\begin{remark}\label{general fields for E}
