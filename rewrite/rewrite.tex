@@ -260,11 +260,17 @@ During the preparation of this work, Koji Shimizu was partially supported by NSF
 		
 	Inverse limits often do not exist in the category of adic spaces, and neither do they in rigid spaces. Instead we use the notion of tilde-limits from \cite[Definition 2.4.2]{huber2013etale}:	
 	\begin{definition} 
-Let $(X_i)_{i\in I}$ be a filtered inverse system of adic spaces with quasi-compact and quasi-separated transition maps, and let $X$ be an adic space with a compatible system of morphisms $f_i\colon X \rightarrow X_i$. We write $X \sim \varprojlim X_i$ and say that $X$ is a \textbf{tilde-limit} of the inverse system $(X_i)_{i\in I}$ if the map of underlying topological spaces $|X| \rightarrow \varprojlim |X_i|$ is a homeomorphism, and there exists an open cover of $X$ by affinoids $\operatorname{Spa} (A, A^+) \subset X$ such that the map 
+Let $(X_i)_{i\in I}$ be a filtered inverse system of adic spaces with quasi-compact and quasi-separated transition maps, and let $X$ be an adic space with a compatible system of morphisms $f_i\colon X \rightarrow X_i$. We write $X \sim \varprojlim X_i$ and say that $X$ is a \textbf{tilde-limit} of the inverse system $(X_i)_{i\in I}$ if 
+\begin{enumerate}
+	\item the map of underlying topological spaces $|X| \rightarrow \varprojlim |X_i|$ is a homeomorphism, and
+	\item there exists an open cover of $X$ by affinoids $\operatorname{Spa} (A, A^+) \subset X$ such that the map 
 $$ \varinjlim_{\operatorname{Spa}(A_i, A_i^+) \subset X_i} A_i \rightarrow A$$
 has dense image, where the direct limit runs over all $i\in I$ and all open affinoid subspaces $\operatorname{Spa}(A_i, A_i^+) \subset X_i$ through which the morphism $\operatorname{Spa}(A, A^+) \subseteq X\rightarrow X_i$ factors.
-	\end{definition}
-	
+\end{enumerate}
+\end{definition}
+\begin{definition}
+Suppose that there is an adic space $S$ with compatible maps $f_i:X_i\to S$, giving rise to a map $f:X\to S$, and a cover $\mathfrak U$ of open subspaces of $S$ such that for each $U\in \mathfrak U$, the $f_i^{-1}(U)$ and $f^{-1}(U)$ are all affine. Then if condition (2) above is satisfied with respect to the cover of $X$ by the $f^{-1}(U)$, we shall say that $X\sim_{\mathfrak U} \varprojlim X_i$  is a tilde-limit with respect ot $\mathfrak U$. We say that it is a perfectoid tilde-limit with respect to $\mathfrak U$ if the $f^{-1}(U)$ are even affinoid perfectoid.
+\end{definition}
 	\begin{remark} \label{remark:tilde_limit_non_unique}
 As pointed out after Proposition 2.4.4 of \cite{SW}, tilde-limits (if they exist) are in general not unique. However, Corollary~\ref{corollary: perfectoid tilde limit is unique} below says that perfectoid tilde-limits are unique.
 	\end{remark}
@@ -312,8 +318,30 @@ We will need the following basic lemma later on.
 		
 		It remains to check that if $\varinjlim A_i \rightarrow A$ has dense image and $\varinjlim B_i \rightarrow B$ has dense image, then $\varinjlim (A_i\otimes B_i) \rightarrow A\otimes B$ has dense image. As direct limits commute with tensor products, we have $\varinjlim (A_i\otimes B_i) = (\varinjlim A_i)\otimes (\varinjlim B_i)$. Now density can be checked directly on elements. 
 	\end{proof}
-
-
+\begin{lemma}\label{l:diagonal-tilde-limits}
+	Let $(X_{i,j})_{i\leq j\in \N}$ be an inverse system of adic spaces of the form
+	\begin{center}
+	\begin{tikzcd}[row sep={1cm,between origins},column sep={1.5cm,between origins}]
+	{} \arrow[rd, dotted] & {} \arrow[d, dotted]           & {} \arrow[d, dotted]           & {} \arrow[d, dotted]    \\
+	& {X_{3,3}} \arrow[r] \arrow[rd] & {X_{2,3}} \arrow[d] \arrow[r]  & {X_{1,3}} \arrow[d]     \\
+	&                                & {X_{2,2}} \arrow[r] \arrow[rd] & {X_{1,2}} \arrow[d, ""] \\
+	&                                &                                & {X_{1,1}.}              
+\end{tikzcd}
+	\end{center}
+	Suppose that there exists a cover $\mathfrak U$ of $X_{1,1}$ for which there are tilde-limits $X_{i,\infty}\sim_{\mathfrak U} \varprojlim_{j}X_{i,j}$ with respect to $\mathfrak U$. Suppose moreover that there is a tilde-limit $X_\infty\sim_{\mathfrak U} \varprojlim_{i}X_{i,\infty}$ with respect to $\mathfrak U$. Then this is also a tilde-limit for the diagonal tower,
+	\[ X_{\infty,\infty}\sim_{\mathfrak U} \varprojlim_{n\in\N}X_{n,n}.\]
+\end{lemma}
+\begin{proof}
+	By the assumption that the tilde-limits exist with respect to $\mathfrak U$, we may without loss of generality assume that each $X_{i,j}=\Spa(A_{i,j})$ is affinoid and that $\mathfrak U=\{X_{1,1}\}$. By assumption, we have a system
+	\[\dots \to\Spa(A_{2,\infty})\to \Spa(A_{2,\infty})\to \Spa(A_{1,\infty}). \]
+	With tilde-limit $X_{\infty,\infty}=\Spa(A_\infty,A_{\infty})\sim \Spa(A_{i,\infty})$ with respect to $\mathfrak U$. 
+	To see that $X_{\infty,\infty}\sim \varprojlim X_{n,n}$, we note that the first condition follows from $\varprojlim_{n}|X_{n,n}|=\varprojlim_{i}\varprojlim_{j}|X_{i,j}|$. To check the second, it suffices to prove that the image of
+	\[\varinjlim_n A_{n,n}\to A_{\infty,\infty}\]
+	is dense. This follows from a straight-forward pointwise approximation argument using that all tilde-limit properties hold with respect to $\mathfrak U$. 
+	\begin{comment}
+	Let $x_{\infty,\infty}\in A_{\infty}$ and let $\epsilon>0$, then for every $\epsilon$ we can find $i\gg 0$ auch that there is $x_{i,\infty}\in A_{i,\infty}$ whose image in $A_{\infty,\infty}$ is in $B_{\epsilon}(x_{\infty,\infty})$. By the horizontal tilde-limit properties, we can find $j\gg i$ for which there is $x_{j,i}\in A_{i,j}$ such that the image of $x_{i,j}$ in $A_{i,\infty}$ is in $B_{\epsilon}(x_{i,\infty})$. Let $x_{j,j}$ be the image of $x_{j,i}$ in $A_{j,j}$, then the image of $x_{j,j}$ in $A_{\infty,\infty}$ is in $B_{\epsilon}(x_{\infty,\infty})$, as desired.
+	\end{comment}
+\end{proof}
 \subsection{Perfectoid tilde-limits for rigid groups}
 
 One reason why perfectoid tilde-limits along group homomorphisms are particularly interesting is that these again have a group structure:
@@ -468,7 +496,7 @@ making $E\rightarrow E/M=A$ a rigid group homomorphism.
 		The short exact sequence (\ref{formal Raynaud extension}) admits local sections, that is there is a cover of $\overline{B}$ by formal open subschemes $\overline{U}_i$ such that there exist local sections $s:\overline{U}_i\rightarrow \overline{E}$ of $\pi$. In particular, one can cover $\overline{E}$ by formal open subschemes of the form $\overline{T}\times \overline{U}_i\hookrightarrow \overline{E}$.
 	\end{lemma}
 	\begin{proof}
-		This is proved in Proposition A.2.5 in~\cite{Lut}, where it is fomulated in terms of the group $\operatorname{Ext}(B,T)$. Also see \cite{BL}, \S 1.
+		This is proved in Proposition A.2.5 in~\cite{Lut}, where it is fomulated in terms of the group $\operatorname{Ext}^1(B,T)$. Also see \cite{BL}, \S 1.
 	\end{proof}
 
 	
@@ -481,20 +509,28 @@ making $E\rightarrow E/M=A$ a rigid group homomorphism.
 	\begin{definition}
 		We call a sequence of adic groups $0\to T\to E\xrightarrow{\pi} B\to 0$ an analytic-locally split short exact sequence if $T$ is the kernel of $\pi$ and $\pi:E\to B$ is a principal $T$-torsor in the analytic topology. This implies that $B$ is the categorial quotient in adic groups of $T\to E$.
 	\end{definition}
-	In particular, any Raynaud extension is an analytic-locally split short exact sequence.  This stays true after applying $\varprojlim_{[p]}$, as we shall now discuss:
-	\begin{proposition}
+	In particular, any Raynaud extension is an analytic-locally split short exact sequence. The main goal of this section is to use this to deduce from the following from the existence of perfectoid tilde-limits $B_\infty\sim \varprojlim_{[p]}B$ and $T_\infty\sim \varprojlim_{[p]}T$:
+	\begin{proposition}\label{p-F-formal tower exists for E}
+		Let $0\to T\to E\to B\to 0$ be a rigid Raynaud extension. Then there is a perfectoid tilde-limit $E_\infty\sim \varprojlim_{[p]}E$. It fits into an analytic-locally split short exact sequence of perfectoid groups 
+		\[0\to T_\infty\to E_\infty\to B_\infty\to 0.\]
+	\end{proposition}
+	
+	Our strategy of proof is as follows: Recall that $E=T\times^{\overline{T}_{\eta}}\overline{E}_\eta$. We would first like to \textit{define} 
+	\[E_{\infty}:=T_{\infty}\times^{\overline{T}_{\eta,\infty}}\overline{E}_{\eta,\infty}.\]
+	We then use local splitting to argue that locally over affinoid opens $U_\infty\subseteq B_\infty$ this of the form $T_\infty\times U_\infty$ and thus perfectoid. However, note that for $E_\infty$ to be well-defined, we need to know that $\overline{E}\to \overline{B}_{\infty}$ is a fibre bundle. This is guaranteed by the following  Proposition:
+	\begin{proposition}\label{p:local-splitting-of-limit-of-formal-Raynaud-extension}
 		Let $0\to \overline{T}\to \overline{E}\to \overline{B}\to 0$ be any formal Raynaud extension. Then applying $\varprojlim_{[p]}$ on the generic fibre gives an analytic-locally split short exact sequence
 		\[0\to \overline{T}_{\eta,\infty}\to \overline{E}_{\eta,\infty}\to B_\infty\to 0.\]
 	\end{proposition}
 	\begin{proof}
 		We first consider the case that $K$ is of characteristic $p$, and deduce the case of characteristic $0$ by untilting. 
 		If $K$ is of characteristic $p$, then $[p]:\overline{B}\to \overline{B}$ decomposes into the Verschiebung $V:\overline{B}\to \overline{B}^{(p^{-1})}$ and the Frobenius morphism $F:\overline{B}^{(p^{-1})}\to \overline{B}$, and we can thus write
-		\[ \varprojlim_{[p]}\overline{B}=\varprojlim_{V}\varprojlim_F \overline{B}^{p^{-n}}.\]
-		and similarly for $\overline{E}$. Here the limit $\varprojlim_F$ amounts to the perfection functor, which exists more generally on formal schemes over $\O_K$. For this reason, we see that by functoriality, the sequence
+		\[ \varprojlim_{[p]}\overline{B}=\varprojlim_{V}\varprojlim_F \overline{B}^{(p^{-n})}.\]
+		and similarly for $\overline{E}$. Here the limit $\varprojlim_F$ amounts to the perfection functor, which is defined more generally on formal schemes over $\O_K$. For this reason, we see that by functoriality, the sequence
 		\[0\to \overline{T}^{\perf}\to \overline{E}^{\perf}\to \overline{B}^{\perf}\to 0 \]
-		is again formal-locally split, and thus exact. Note that $ \overline{T}^{\perf}=\varprojlim_{[p]}\overline{T}=\overline{T}_\infty$. Consequently, we obtain a diagram
+		is again locally split exact. Note that $ \overline{T}^{\perf}=\varprojlim_{[p]}\overline{T}=\overline{T}_\infty$. Consequently, we obtain a diagram
 		\begin{center}
-			\begin{tikzcd}
+			\begin{tikzcd}[row sep = {1.2cm,between origins}]
 			0 \arrow[r] & \overline{T}_\infty \arrow[d,equal] \arrow[r] & \overline{E}_\infty \arrow[r] \arrow[d] & \overline{B}_\infty \arrow[r] \arrow[d] & 0 \\
 			0 \arrow[r] & \overline{T}^{\perf} \arrow[r] \arrow[d] & \overline{E}^{\perf} \arrow[d] \arrow[r] & \overline{B}^{\perf} \arrow[d] \arrow[r] & 0 \\
 			0 \arrow[r] & \overline{T} \arrow[r] & \overline{E} \arrow[r] & \overline{B} \arrow[r] & 0
@@ -502,59 +538,65 @@ making $E\rightarrow E/M=A$ a rigid group homomorphism.
 		\end{center}
 		in which the top morphism of sequences is a pull-back along $\overline{B}_\infty\to \overline{B}^{\perf}$. In particular, the top morphism is again Zariski-locally split. The result follows by passing to generic fibres.
 		
-		To deduce the case of characteristic $0$, it suffices to prove that the desired sequence is the untilt of a sequence in characteristic $p$: For this, we first take any Raynaud extension $0\to \overline{T}'\to \overline{E}'\to \overline{B}'\to 0$ over $\O_{K^{\flat}}$ such that over $\O_{K^{\flat}}/t=\O_K/p$, the two sequences agree. Then in particular, we have an identification
+		To deduce the case of characteristic $0$, it suffices to prove that the desired sequence is the untilt of a sequence in characteristic $p$: Recall that we have a canonical identification $\O_{K^{\flat}}/t=\O_K/p$. Via this identification, one can always lift the reduction \[0\to \overline{T}/p\to \overline{E}/p\to \overline{B}/p\to 0\]
+		over $\O_{K}/p$ to a Raynaud extension $0\to \overline{T}'\to \overline{E}'\to \overline{B}'\to 0$ over $\O_{K^{\flat}}$: For this, one first lifts the abelian scheme $\overline{B}/p$ along $\O_{K^{\flat}}\to \O_K/p$, and then the fibre bundle $\overline{E}'$: To see that this is possible, one reduces to the case of line bundles by considering characters $T\to \mathbb G_m$. But such line-bundles are parametrised by the Picard group $\mathrm{Pic}^0(\overline{B'})$ which is a smooth $\O_K$-scheme, and thus translation-invariant line bundles can always be lifted.
+		
+		By applying $\varprojlim_{[p]}$, we see that in particular, we have an identification
+		
 		\begin{center}
 			\begin{tikzcd}
 			0 \arrow[r] & \overline{T}_\infty/p \arrow[d,equal] \arrow[r] & \overline{E}_\infty/p \arrow[r] \arrow[d,equal] & \overline{B}_\infty/p \arrow[r] \arrow[d,equal] & 0 \\
 			0 \arrow[r] & \overline{T}'_\infty/t \arrow[r] & \overline{E}'_\infty/t \arrow[r] & \overline{B}'_\infty/t \arrow[r] & 0 
 			\end{tikzcd}
 		\end{center}
-		It now follows from the tilting equivalence that the sequence stated in the Proposition is analytic-locally split exact, as desired.
+		Arguing like in the proof of \cite[Corollary III.2.19]{torsion}, it now follows from the tilting equivalence that the sequence stated in the Proposition is analytic-locally split exact, as desired.
 	\end{proof}
 	
 	
-	 We can use this to prove the main result of this section, namely that $E_\infty$ is perfectoid. More generally:
-	\begin{proposition}\label{p-F-formal tower exists for E}
-		Let $0\to T\to E\to B\to 0$ be a rigid Raynaud extension. Then there is a perfectoid tilde-limit $E_\infty\sim \varprojlim_{[p]}E$. It fits into an analytic-locally split short exact sequence of perfectoid groups 
-		\[0\to T_\infty\to E_\infty\to B_\infty\to 0.\]
-	\end{proposition}
+
 	\begin{proof}[Proof of Proposition~\ref{p-F-formal tower exists for E}]
 	We can split $[p^n]:E\to E$ into two morphisms as follows:
-			\begin{center}
-				\begin{tikzcd}
+			\begin{equation}\label{eq:split-diag}
+				\begin{tikzcd}[row sep = {1.2cm,between origins}]
 				0 \arrow[r] & T \arrow[r] \arrow[d, "{[p^n]}"] & E \arrow[r, "\pi"] \arrow[d, "{[p^n]\times \pi}"] & B \arrow[d,equal] \arrow[r] & 0 \\
 				0 \arrow[r] & T \arrow[r] \arrow[d,equal] & {E\times_{B,[p^n]} B} \arrow[r] \arrow[d] & B \arrow[d, "{[p^n]}"] \arrow[r] & 0 \\
 				0 \arrow[r] & T \arrow[r] & E \arrow[r] & B \arrow[r] & 0
 				\end{tikzcd}
-				\end{center}
+				\end{equation}
 			Here the bottom morphism of short exact sequences is the base-change of the $T$-bundle $E\to B$ along $[p^n]:B\to B$, whereas the top morphism of short exact sequences is the change of fibre along $[p^n]:T\to T$. It is clear that the vertical maps in the middle compose to $[p^n]:E\to E$.
 			
-			For varying $n$, we can thus split the $[p]$-multiplication tower into two towers
+			The basic idea is now to trace local splittings of $\pi$ through the diagram: Let $\mathfrak U$ be a cover of $B$ of opens $U$ over which $E\to B$ is split, and let $U_n$ be the pullback of $U$ along $[p^n]$. Then by the universal property of the fibre product, the section of $E|_U=T\times U$ induces a section of  $E\times_{B,[p^n]}B|_{U_n}\to U_n$. The pullback of the above diagram to $U$ is thus of the form
 			\begin{center}
-			\begin{tikzcd}[row sep={1.5cm,between origins},column sep={2.5cm,between origins}]
+				\begin{tikzcd}[row sep = {1.2cm,between origins}]
+				0 \arrow[r] & T \arrow[r] \arrow[d,equal] & E_{|U_n} \arrow[r] \arrow[d] & U_n \arrow[d, "{[p]}"] \arrow[r] & 0 \\
+				0 \arrow[r] & T \arrow[r] \arrow[d,equal] & T\times U_n \arrow[r] \arrow[d, "{\id \times [p]}"] & U_n \arrow[d, "{[p]}"] \arrow[r] & 0 \\
+				0 \arrow[r] & T \arrow[r] & T\times U \arrow[r] & U \arrow[r] & 0.
+				\end{tikzcd}
+			\end{center}
+			If we knew that the morphism on the top right was again split over $U_n$, this would prove the Proposition using Lemma~\ref{affinoid tilde-limits commute with fibre products}. However, while we know that this map is locally split, it is not clear that a splitting exists over $U_n$. Of course one could refine $\mathfrak U$, but it is not a priori clear that this refinement stabilises for $n\to \infty$. To circumvent this problem, we will instead use that by Proposition~\ref{p:local-splitting-of-limit-of-formal-Raynaud-extension}, such a splitting always exists in the limit.
+			
+			For varying $n$, we can split the $[p]$-multiplication tower into two towers
+			\begin{center}
+			\begin{tikzcd}[row sep={1.2cm,between origins},column sep={2.5cm,between origins}]
 			E \arrow[r, "{[p]\times \id}"] \arrow[rd, "{[p]}"] & {E\times_{B,[p]}B} \arrow[d, "{\id\times [p]}"] \arrow[r, "{[p]\times \id}"] & {E\times_{B,[p^2]}B} \arrow[d, "{\id \times [p]}"] \\
 			& E \arrow[r, "{[p]\times \id}"] \arrow[rd, "{[p]}"] & {E\times_{B,[p]}B} \arrow[d, "{\id\times [p]}"] \\
 			&  & E
 			\end{tikzcd}
 			\end{center}
 			
-			We now first take the limit over the vertical tower on the right: Let $\mathfrak U$ be a cover of $B$ of opens $U$ over which $E\to B$ is split, and let $U_n$ be the pullback of along $[p^n]$. Then by the universal property of the fibre product, the section of $E|_U=T\times U$ induces a section of  $E\times_{B,[p^n]}B|_{U_n}\to U_n$ that fits into a commutative diagram
-			\begin{center}
-			\begin{tikzcd}
-			0 \arrow[r] & T \arrow[r] \arrow[d,equal] & T\times U_n \arrow[r] \arrow[d, "{\id \times [p]}"] & U_n \arrow[d, "{[p]}"] \arrow[r] & 0 \\
-			0 \arrow[r] & T \arrow[r] & T\times U \arrow[r] & U \arrow[r] & 0.
-			\end{tikzcd}
-			\end{center}
+			We now first take the limit over the vertical tower on the right: 
 			We conclude that in the tilde-limit, we obtain an analytic locally split short exact sequence
-			\[ 0\to T\to E\times_{B}B_\infty\to B_\infty\to 0.\]
-			Since locally over $U$, we have 
-			\[ E\times_{B}B_\infty|_{U_\infty}=T\times U_\infty \sim \varprojlim T\times U_n,\]
-			we moreover have $E\times_{B}B_\infty\sim E\times_{B,[p^n]}B$.
+			\[ 0\to T\to E\times_{B}B_\infty\to B_\infty\to 0\]
+			of sousperfectoid adic spaces.
+			Since over $U$, we have 
+			\[ E\times_{B}B_\infty|_{U_\infty}=T\times U_\infty \sim \varprojlim_n T\times U_n,\]
+			we moreover have $E\times_{B}B_\infty\sim \varprojlim E\times_{B,[p^n]}B$ with respect to $\mathfrak U$.
 			
-			We now \textit{define} $E_\infty$ to be the change-of-fibre of $\overline{E}_{\eta,\infty}$ along the morphism $\overline{T}_{\eta,\infty}\to T_\infty$, i.e.
-			\[E_\infty:=T_\infty\times^{\overline{T}_\infty}\overline{E}_\infty, \]
-			this is well-defined by the last Proposition.
-			It fits into an inverse system
+			At this point we have constructed tilde-limits for the vertical towers in the above diagram. These fit into a horizontal tower
+			\[\dots \xrightarrow{[p]\times \id}E\times_{B}B_\infty\xrightarrow{[p]\times \id} E\times_{B}B_\infty.\]
+			
+			Recall that by definition, we have $E_\infty:=T_\infty\times^{\overline{T}_\infty}\overline{E}_\infty$.
+			This fits into an inverse system of analytic-locally split exact sequences
 			\begin{center}
 				\begin{tikzcd}
 				0 \arrow[r] & T_\infty \arrow[r] \arrow[d] & E_\infty \arrow[r] \arrow[d] & B_\infty \arrow[d,equal] \arrow[r] & 0 \\
@@ -563,9 +605,10 @@ making $E\rightarrow E/M=A$ a rigid group homomorphism.
 				\end{tikzcd}
 			\end{center}
 			which we may think of being the limiting horizontal tower of the above diagonal diagram.
-			These sequences are now again locally compatibly split, but for a different reason: These sequences are all push-outs for the various projections $T_\infty=\varprojlim_{[p]}T\to T$. Since we know that the sequence on top is analytic-locally split, we get compatible splittings at each level. After refining $\mathfrak U$, we can assume that these splitting exist over the opens $U_\infty$ from above. Like before this give a tilde-limit relation
-			\[E_\infty\sim \varprojlim_{[p]\times \id} E\times_BB_\infty.\]
-			We now conclude since a horizontal tilde-limit of vertical tilde-limits is a diagonal tilde-limit, as long as the affine opens on which the density property holds can be taken compatibly: This follows from pointwise sequential approximation.
+			These sequences are now again locally compatibly split, but for a different reason: They are all push-outs for the various projection maps $T_\infty=\varprojlim_{[p]}T\to T$. Since we know that the sequence on top is analytic-locally split, we get compatible splittings at each level. After refining $\mathfrak U$, we can assume that these splitting exist over the opens $U_\infty$ from above. Arguing as in the first part of the proof, this give a tilde-limit relation
+			\[E_\infty\sim \varprojlim_{[p]\times \id} E\times_BB_\infty\]
+			with respect to $\mathfrak U$.
+			We now conclude by applying Lemma~\ref{l:diagonal-tilde-limits} to the above diagonal diagram.
 	\end{proof}
 	
 	\begin{remark}
@@ -575,7 +618,7 @@ making $E\rightarrow E/M=A$ a rigid group homomorphism.
 		\[\cdots \to \mathfrak E_{2}\xrightarrow{[\mathfrak p]_1}\mathfrak E_1\xrightarrow{[\mathfrak p]_1} \mathfrak E_0\]
 		with transition maps that factor through the relative Frobenius map mod $p$. Thus the generic fibre of $\mathfrak E_\infty:=\varprojlim_{[\mathfrak p]_i}\mathfrak E_i$ is a perfectoid tilde-limit of $\cdots \xrightarrow{[p]}E\xrightarrow{[p]}E$.
 		
-		However, this construction does not give the local splittings in Proposition 3.9.
+		However, this construction does not give the local splittings in Proposition~\ref{p-F-formal tower exists for E}.
 	\end{remark}
 	
 	\begin{remark}\label{general fields for E}
@@ -615,13 +658,11 @@ into two partial towers. For this we make some auxiliary choices: Since $K$ is a
 	
 	Following the remark, denote by $D_n$ the torsion subgroup $M_n/M\subset A$. The quotient $A_n:=A/D_n = E/M_n$ is then another abeloid variety over $K$ and the quotient map $v^n\colon A=E/M\rightarrow A_n=E/M_n$ is an isogeny of degree $p^{rn}$  through which  $[p^n]\colon A\rightarrow A$ factors. The $[p]$-multiplication tower now splits into two towers, one written vertically, the other horizontally:
 		\begin{equation}\label{p-multiplication tower of E/M splits into vertical and horizontal tower}
-		\begin{tikzcd}[column sep={1.1cm,between origins},row sep={0.6cm,between origins}]
-			\ddots \arrow[rd] &  &  & \vdots &  & \vdots \\
-			& A \arrow[rr,"v"] \arrow[rrdd, "{[p]}"'] &  & A_1 \arrow[rr,"v"] \arrow[dd,"{[p]_E}"] &  & A_2 \arrow[dd,"{[p]_E}"] \\
-			&  &  &  &  &  \\
-			&  &  & A \arrow[rrdd, "{[p]}"'] \arrow[rr,"v"] &  & A_1 \arrow[dd,"{[p]_E}"] \\
-			&  &  &  &  &  \\
-			&  &  &  &  & A.
+		\begin{tikzcd}[row sep={1cm,between origins},column sep={1.5cm,between origins}]
+		{} \arrow[rd, dotted] & {} \arrow[d, dotted]           & {} \arrow[d, dotted]           & {} \arrow[d, dotted]    \\
+		& A \arrow[r,"v"] \arrow[rd,"{[p]}"'] & {A_1} \arrow[d,"{[p]_E}"] \arrow[r,"v"]  & {A_2} \arrow[d,"{[p]_E}"]     \\
+		&                                & A_1\arrow[r,"v"] \arrow[rd,"{[p]}"'] & {A_1} \arrow[d, ,"{[p]_E}"] \\
+		&                                &                                & {A.}              
 		\end{tikzcd}
 		\end{equation}
 		Since each $D_n=M_n/M$ is finite \'etale, all horizontal maps are finite \'etale. The vertical tower on the other hand fits into a commutative diagram which compares it to the $[p]$-tower of $E$:
@@ -729,14 +770,12 @@ We keep the notation from the proof of Proposition~\ref{M_infty->E_infty->A'_inf
 	 
 By Lemma~\ref{horizontal map is covering map}, the restriction of diagram~(\ref{p-multiplication tower of E/M splits into vertical and horizontal tower}) to the open $U$ of the bottom $A$ becomes
 \begin{equation*}
-		\begin{tikzcd}[column sep={1.1cm,between origins},row sep={0.6cm,between origins}]
-			\ddots  &  &  & \vdots &  & \vdots \\
-			& D_2\times U_2 \arrow[rr,"v"] \arrow[rrdd, "{[p]}"'] &  & v^{-1}(U_2) \arrow[rr,"v"] \arrow[dd,"{[p]_E}"] &  & U_2 \arrow[dd,"{[p]_E}"] \\
-			&  &  &  &  &  \\
-			&  &  & D_1\times U_1 \arrow[rrdd, "{[p]}"'] \arrow[rr,"v"] &  & U_1 \arrow[dd,"{[p]_E}"] \\
-			&  &  &  &  &  \\
-			&  &  &  &  & U.
-		\end{tikzcd}
+		\begin{tikzcd}[row sep={1cm,between origins},column sep={2.0cm,between origins}]
+{} \arrow[rd, dotted] & {} \arrow[d, dotted]           & {} \arrow[d, dotted]           & {} \arrow[d, dotted]    \\
+& D_2\times U_2 \arrow[r,"v"] \arrow[rd,"{[p]}"'] & {v^{-1}(U_2)} \arrow[d,"{[p]_E}"] \arrow[r,"v"]  & { U_2} \arrow[d,"{[p]_E}"]     \\
+&                                &  D_1\times U_1\arrow[r,"v"] \arrow[rd,"{[p]}"'] & { U_1} \arrow[d, ,"{[p]_E}"] \\
+&                                &                                & {U.}              
+\end{tikzcd}
 \end{equation*}
 Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\xrightarrow{[p]}A$ to $U$ becomes the inverse system 
 	 \[\cdots\rightarrow D_{n+1}\times U_{n+1}\rightarrow D_{n}\times U_n\rightarrow \cdots.\]
