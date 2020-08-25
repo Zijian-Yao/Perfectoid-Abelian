@@ -266,7 +266,7 @@ has dense image, where the direct limit runs over all $i\in I$ and all open affi
 \end{enumerate}
 \end{definition}
 \begin{definition}
-Suppose that there is an adic space $S$ with compatible maps $f_i:X_i\to S$, giving rise to a map $f:X\to S$, and a cover $\mathfrak U$ of open subspaces of $S$ such that for each $U\in \mathfrak U$, the $f_i^{-1}(U)$ and $f^{-1}(U)$ are all affine. Then if condition (2) above is satisfied with respect to the cover of $X$ by the $f^{-1}(U)$, we shall say that $X\sim_{\mathfrak U} \varprojlim X_i$  is a tilde-limit with respect ot $\mathfrak U$. We say that it is a perfectoid tilde-limit with respect to $\mathfrak U$ if the $f^{-1}(U)$ are even affinoid perfectoid.
+Suppose, moreover, that there is an adic space $S$ with compatible maps $f_i:X_i\to S$, giving rise to a map $f:X\to S$, and a cover $\mathfrak U$ of open subspaces of $S$ such that for each $U\in \mathfrak U$, the $f_i^{-1}(U)$ and $f^{-1}(U)$ are all affine. Then if condition (2) above is satisfied with respect to the cover of $X$ by the $f^{-1}(U)$, we shall say that $X\sim_{\mathfrak U} \varprojlim X_i$  is a tilde-limit with respect to $\mathfrak U$. We say that it is a perfectoid tilde-limit with respect to $\mathfrak U$ if the $f^{-1}(U)$ are even affinoid perfectoid.
 \end{definition}
 	\begin{remark} \label{remark:tilde_limit_non_unique}
 As pointed out after Proposition 2.4.4 of \cite{SW}, tilde-limits (if they exist) are in general not unique. However, Corollary~\ref{corollary: perfectoid tilde limit is unique} below says that perfectoid tilde-limits are unique.
@@ -514,6 +514,7 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 		\[0\to T_\infty\to E_\infty\to B_\infty\to 0.\]
 	\end{proposition}
 	
+	\begin{comment}
 	Our strategy of proof is as follows: Recall that $E$ is the pushout of $\overline{E}_\eta$ along $\overline{T}_{\eta}\to T$. We would first like to \textit{define} $E_{\infty}$ as the pushout
 	\[
 \begin{tikzcd}
@@ -541,15 +542,11 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 		\end{center}
 		in which the top morphism of sequences is a pull-back along $\overline{B}_\infty\to \overline{B}^{\perf}$. In particular, the top morphism is again Zariski-locally split. The result follows by passing to generic fibres.
 		
-		To deduce the case of characteristic $0$,  we show that if $E\to B$ is split over $U\subseteq B$, it is also split over $U_n:=[p^n]^{-1}(U)$. To see this, we use the above argument to see that after reducing to $\mathcal O_K/p$, the morphism $\overline{E}/p\to \overline{B}/p$ becomes split over $U_n/p$. Since $\pi:\overline E\to \overline B$ is formally smooth, this lifts to the desired splitting
-\[\begin{tikzcd}
-\overline E_{U_n} \arrow[d, "\pi"] & \overline E_{|U_n}/p \arrow[r] \arrow[l] &  U_n/p \arrow[l, bend right] \arrow[d]\\
-U_n \arrow[rr,equal]                     &                                          & U_n. \arrow[llu, dotted]
-\end{tikzcd}\]
+		To deduce the case of characteristic $0$,  we show that if $E\to B$ is split over $U\subseteq B$, it is also split over $U_n:=[p^n]^{-1}(U)$. To see this, we use the above argument to see that after reducing to $\mathcal O_K/p$, the morphism $\overline{E}/p\to \overline{B}/p$ becomes split over $U_n/p$. 
 		The various local splittings of $\overline E\to \overline B$ can therefore be chosen compatibly in the limit over $[p]$ and give rise to local splittings of $\overline{E}_\infty\to B_\infty$, as desired. 
 		
 		Alternatively, one could also deduce the case of characteristic $0$ via untilting.
-		\begin{comment}
+		
 		It suffices to prove that the desired sequence is the untilt of a sequence in characteristic $p$: Recall that we have a canonical identification $\O_{K^{\flat}}/t=\O_K/p$. Via this identification, one can always lift the reduction \[0\to \overline{T}/p\to \overline{E}/p\to \overline{B}/p\to 0\]
 		over $\O_{K}/p$ to a Raynaud extension $0\to \overline{T}'\to \overline{E}'\to \overline{B}'\to 0$ over $\O_{K^{\flat}}$: For this, one first lifts the abelian scheme $\overline{B}/p$ along $\O_{K^{\flat}}\to \O_K/p$, and then the extension $\overline{E}'$: To see that this is possible, one reduces to the case of line bundles by considering characters $T\to \mathbb G_m$. But such line-bundles are parametrised by the Picard group $\mathrm{Pic}^0(\overline{B'})$ which is a smooth $\O_K$-scheme, and thus translation-invariant line bundles can always be lifted.
 		
@@ -562,12 +559,12 @@ U_n \arrow[rr,equal]                     &                                      
 			\end{tikzcd}
 		\end{center}
 		Arguing like in the proof of \cite[Corollary III.2.19]{torsion}, it now follows from the tilting equivalence that the sequence stated in the Proposition is analytic-locally split exact, as desired.
-		\end{comment}
 	\end{proof}
+	\end{comment}
 	
 	
 
-	\begin{proof}[Proof of Proposition~\ref{p-F-formal tower exists for E}]
+	\begin{proof}
 	The morphism $[p^n]:E\to E$ induces a morphism of short exact sequences of Raynaud extensions. When we consider $E$ as an extension of $B$ by $T$, this means more precisely that we can split up $[p^n]:E\to E$ into two morphisms of short exact sequences
 			\begin{equation}\label{eq:split-diag}
 				\begin{tikzcd}[row sep = {1.2cm,between origins}]
@@ -578,50 +575,44 @@ U_n \arrow[rr,equal]                     &                                      
 				\end{equation}
 			where the middle row is both the base-change of the bottom row along $[p^n]:B\to B$, as well as the pushout of the top row along $[p^n]:T\to T$.
 			
-			The basic idea is now to trace local splittings of $\pi$ through the diagram: Let $\mathfrak U$ be a cover of $B$ of opens $U$ over which $E\to B$ is split, and let $U_n$ be the pullback of $U$ along $[p^n]$. Then by the universal property of the fibre product, the section of $E|_U=T\times U$ induces a section of  $E\times_{B,[p^n]}B|_{U_n}\to U_n$. The pullback of the above diagram to $U$ is thus of the form
+			The basic idea is now to trace local splittings of $\pi$ through the diagram: Let $\mathfrak U$ be a cover of $B$ of opens $U$ over which $E\to B$ is split. Since $E$ arises via pushout from the formal model $\overline{E}$, such a cover already exists in the formal topology on $B$. Let $U_n$ be the pullback of $U$ along $[p^n]$. 
+		We now use the following Lemma:
+		\begin{lemma}
+			For any $U\in \mathfrak U$, the morphism $\pi:E\to B$ is still split over $U_n=[p^n]^{-1}(U)$.
+		\end{lemma}
+		\begin{proof}
+			We may reduce to the case of $n=1$.
+			Since $\mathfrak U$ is by assumption a formal open cover, it suffices to prove this for the morphism of formal schemes $\overline{E}\to \overline{B}$.
+			
+			We first claim that the reduction $\overline{E}/p\to \overline{B}/p$ over $\O_K/p$ admits a splitting over $U_n/p$ (here we emphasize that we really mean $p$, not $\varpi$: in particular, if $K$ has characteristic $p$, we have $\O_K/p=\O_K$). To see this, we use that in characteristic $p$, the morphism $[p]:\overline{B}/p\to \overline{B}/p$ decomposes into the Verschiebung $V:(\overline{B}/p)^{(p)}\to \overline{B}/p$ and the Frobenius morphism $F:\overline{B}/p\to (\overline{B}/p)^{(p)}$.
+			
+			 Note that we have $(T/p)^{(p)}=T/p$, and Verschiebung is the identity on $T/p$. The multiplication by $[p]$ on $\overline{E}/p$ therefore gives rise to a commutative diagram
 			\begin{center}
 				\begin{tikzcd}[row sep = {1.2cm,between origins}]
-				0 \arrow[r] & T \arrow[r] \arrow[d,equal] & E_{|U_n} \arrow[r] \arrow[d] & U_n \arrow[d, "{[p^n]}"] \arrow[r] & 0 \\
-				0 \arrow[r] & T \arrow[r] \arrow[d,equal] & T\times U_n \arrow[r] \arrow[d, "{\id \times [p^n]}"] & U_n \arrow[d, "{[p^n]}"] \arrow[r] & 0 \\
+					0 \arrow[r] & \overline{T}/p \arrow[d,"F"] \arrow[r] & \overline{E}/p \arrow[r] \arrow[d,"F"] & \overline{B}/p \arrow[r] \arrow[d,"F"] & 0 \\
+					0 \arrow[r] &(\overline{T}/p)^{(p)} \arrow[r] \arrow[d,"V",equal] & (\overline{E}/p)^{(p)} \arrow[d,"V"] \arrow[r] & (\overline{B}/p)^{(p)} \arrow[d,"V"] \arrow[r] & 0 \\
+					0 \arrow[r] & \overline{T}/p \arrow[r] & \overline{E}/p \arrow[r] & \overline{B}/p \arrow[r] & 0.
+				\end{tikzcd}
+			\end{center}
+			The splitting over $U/p$ in the bottom row lifts to a splitting in the middle row by the universal property of the fibre product, since the middle row is obtained from the bottom row via pullback along $V:(\overline{B}/p)^{(p)}\to \overline{B}/p$.  The splitting can then be further lifted to the top row since by functoriality of the relative Frobenius morphism $F$. This shows that $\overline{E}/p\to \overline{B}/p$ is indeed split over $[p]^{-1}(U/p)=[p]^{-1}(U)/p=U_n/p$.
+			
+			It remains to lift this splitting to $\pi:\overline{E}\to \overline{B}$. For this  we use that $\pi$ is formally smooth, and thus we get the desired lift of the splitting from the formal lifting diagram
+			\[\begin{tikzcd}
+				\overline E_{U_n} \arrow[d, "\pi"] & \overline E_{|U_n}/p \arrow[r] \arrow[l] &  U_n/p \arrow[l, bend right] \arrow[d]\\
+				U_n \arrow[rr,equal]                     &                                          & U_n. \arrow[llu, dotted]
+			\end{tikzcd}\]
+		This shows that $\overline{E}\to \overline{B}$ is split over $U_n$, and thus so is $E\to B$.
+		\end{proof}
+		We conclude from the Lemma that locally over $U$, the diagram~\eqref{eq:split-diag} is of the form
+		\begin{center}
+			\begin{tikzcd}[row sep = {1.2cm,between origins}]
+				0 \arrow[r] & T \arrow[r] \arrow[d,"{[p^n]}"] & T\times U_n \arrow[r] \arrow[d, "{[p^n] \times [p^n]}"] & U_n \arrow[d, "{[p^n]}"] \arrow[r] & 0 \\
 				0 \arrow[r] & T \arrow[r] & T\times U \arrow[r] & U \arrow[r] & 0.
-				\end{tikzcd}
-			\end{center}
-			If we knew that the morphism on the top right was again split over $U_n$, this would prove the Proposition using Lemma~\ref{affinoid tilde-limits commute with fibre products}. However, while we know that this map is locally split, it is not clear that a splitting exists over $U_n$. Of course one could refine $\mathfrak U$, but it is not a priori clear that this refinement stabilises for $n\to \infty$. To circumvent this problem, we will instead use that by Proposition~\ref{p:local-splitting-of-limit-of-formal-Raynaud-extension}, such a splitting always exists in the limit.
-			
-			For varying $n$, we can split the $[p]$-multiplication tower into two towers
-			\begin{center}
-			\begin{tikzcd}[row sep={1.2cm,between origins},column sep={2.5cm,between origins}]
-			E \arrow[r, "{[p]\times \id}"] \arrow[rd, "{[p]}"] & {E\times_{B,[p]}B} \arrow[d, "{\id\times [p]}"] \arrow[r, "{[p]\times \id}"] & {E\times_{B,[p^2]}B} \arrow[d, "{\id \times [p]}"] \\
-			& E \arrow[r, "{[p]\times \id}"] \arrow[rd, "{[p]}"] & {E\times_{B,[p]}B} \arrow[d, "{\id\times [p]}"] \\
-			&  & E
 			\end{tikzcd}
-			\end{center}
-			
-			We now first take the limit over the vertical tower on the right: 
-			We conclude that in the tilde-limit, we obtain an analytic locally split short exact sequence
-			\[ 0\to T\to E\times_{B}B_\infty\to B_\infty\to 0\]
-			of sousperfectoid adic spaces.
-			Since over $U$, we have 
-			\[ E\times_{B}B_\infty|_{U_\infty}=T\times U_\infty \sim \varprojlim_n T\times U_n,\]
-			we moreover have $E\times_{B}B_\infty\sim \varprojlim E\times_{B,[p^n]}B$ with respect to $\mathfrak U$.
-			
-			At this point we have constructed tilde-limits for the vertical towers in the above diagram. These fit into a horizontal tower
-			\[\dots \xrightarrow{[p]\times \id}E\times_{B}B_\infty\xrightarrow{[p]\times \id} E\times_{B}B_\infty.\]
-			
-			Recall that by definition, we have $E_\infty:=T_\infty\times^{\overline{T}_\infty}\overline{E}_\infty$.
-			This fits into an inverse system of analytic-locally split exact sequences
-			\begin{center}
-				\begin{tikzcd}
-				0 \arrow[r] & T_\infty \arrow[r] \arrow[d] & E_\infty \arrow[r] \arrow[d] & B_\infty \arrow[d,equal] \arrow[r] & 0 \\
-				0 \arrow[r] & T \arrow[r] \arrow[d,"{[p]}"] & E\times_B B_\infty \arrow[r] \arrow[d, "{[p]\times\id }"] & B_\infty \arrow[d, equal] \arrow[r] & 0 \\
-				0 \arrow[r] & T \arrow[r] & E\times_B B_\infty \arrow[r] & B_\infty \arrow[r] & 0.
-				\end{tikzcd}
-			\end{center}
-			which we may think of being the limiting horizontal tower of the above diagonal diagram.
-			These sequences are now again locally compatibly split, but for a different reason: They are all push-outs for the various projection maps $T_\infty=\varprojlim_{[p]}T\to T$. Since we know that the sequence on top is analytic-locally split, we get compatible splittings at each level. After refining $\mathfrak U$, we can assume that these splitting exist over the opens $U_\infty$ from above. Arguing as in the first part of the proof, this give a tilde-limit relation
-			\[E_\infty\sim \varprojlim_{[p]\times \id} E\times_BB_\infty\]
-			with respect to $\mathfrak U$.
-			We now conclude by applying Lemma~\ref{l:diagonal-tilde-limits} to the above diagonal diagram.
+		\end{center}
+	Let $U_\infty\sim \varprojlim U_n$ be the perfectoid tilde-limit that exists by Lemma~\ref{SW Proposition 2.4.3}. Then by Lemma~\ref{affinoid tilde-limits commute with fibre products}, the system in the middle has perfectoid tilde-limit $T_\infty\times U_\infty$. Glueing these for all $U\in\mathfrak U$ produces the desired space $E_\infty\sim \varprojlim_{[p]} E$ which by construction fits into an analytic-locally split short exact sequence
+	\[0\to T_\infty\to E_\infty\to B_\infty\to 0 \]
+	as desired.
 	\end{proof}
 	
 	\begin{remark}
@@ -838,7 +829,7 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	\end{center}
 	In particular, we recover the statement that $\widetilde{G}$ is perfectoid. 
 	
-	Conversely, however, we note that the translates of $\widetilde{G}$ do not cover all of $A_\infty$, and therefore the fact that $\widetilde{G}$ is perfectoid does not show immediately that $A_\infty$ is perfectoid.  The issue is points of rank 2: Indeed, there are infinitely many disjoint translates of $\widetilde G$, but $A_\infty$ is quasi-compact.
+	However, we note that the translates of $\widetilde{G}$ do not cover all of $A_\infty$, and therefore the fact that $\widetilde{G}$ is perfectoid does not show immediately that $A_\infty$ is perfectoid.  The issue is points of rank 2: Indeed, there are infinitely many disjoint translates of $\widetilde G$, but $A_\infty$ is quasi-compact.
 \end{remark}
 	\begin{remark}
 	We note that for two abelian varieties $A$ and $B$ of dimension $d$, the universal covers $A_\infty$ and $B_\infty$ are different in general, so that this is only a ``uniformisation'' in a rather weak sense. However, they are canonically isomorphic if $A$ and $B$ are abelian varieties of good reduction with the same special fibre, or if $A$ and $B$ are $p$-power isogeneous, so that in these cases we can really think of $T_pA$ as a $2d$-dimension $\mathbb Z_p$-lattice determining $A$.
