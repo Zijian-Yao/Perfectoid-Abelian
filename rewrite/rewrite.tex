@@ -409,7 +409,7 @@ We shall omit the proof of this equivalence, as this will not be relevant in the
 		
 As we have already mentioned in the introduction, Question~\ref{qu:tilde-limits-of-adic-groups} has an affirmative answer in the case of abelian varieties of good reduction by \cite[Lemme~A.16]{Pilloni-Stroh}. More generally:
 \begin{lemma}\label{tilde-limit exists and is perfectoid in the good reduction case}
-		Let $\mathfrak G$ be a $\varpi$-adic flat commutative formal group scheme over $\O_K$ such that the morphism $[p]:\mathfrak G\to\mathfrak G$ is affine. Let $G=\mathfrak G^{\ad}_{\eta}$ be the adic generic fibre. Then $G_\infty := (\varprojlim_{[p]}\mathfrak G)^{\ad}_\eta$ is a perfectoid tilde-limit
+		Let $\mathfrak G$ be a  commutative flat $\varpi$-adic formal group scheme over $\O_K$ such that the morphism $[p]:\mathfrak G\to\mathfrak G$ is affine. Let $G=\mathfrak G^{\ad}_{\eta}$ be the adic generic fibre. Then $G_\infty := (\varprojlim_{[p]}\mathfrak G)^{\ad}_\eta$ is a perfectoid tilde-limit
 		\[G_\infty\sim \varprojlim_{[p]} G. \]
 		In particular, if $B$ is an abelian variety of good reduction over $K$, there is a perfectoid tilde-limit $B_\infty\sim \varprojlim B$.
 	\end{lemma}
@@ -680,7 +680,7 @@ into two partial towers. For this we make some auxiliary choices: Since $K$ is a
 		\begin{tikzcd}[row sep={1cm,between origins},column sep={1.5cm,between origins}]
 		{} \arrow[rd, dotted] & {} \arrow[d, dotted]           & {} \arrow[d, dotted]           & {} \arrow[d, dotted]    \\
 		& A \arrow[r,"v"] \arrow[rd,"{[p]}"'] & {A_1} \arrow[d,"{[p]_E}"] \arrow[r,"v"]  & {A_2} \arrow[d,"{[p]_E}"]     \\
-		&                                & A_1\arrow[r,"v"] \arrow[rd,"{[p]}"'] & {A_1} \arrow[d, ,"{[p]_E}"] \\
+		&                                & A\arrow[r,"v"] \arrow[rd,"{[p]}"'] & {A_1} \arrow[d, ,"{[p]_E}"] \\
 		&                                &                                & {A.}              
 		\end{tikzcd}
 		\end{equation}
@@ -861,7 +861,7 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	\end{proof}
 	A theorem of Artin and Grothendieck states if $X$ is an affine algebraic variety over $K$, then $H_{\et}^i(X,L)=0$ for any constructible $\mathbb F_p$-module $L$ and any $i>\dim A$. However, the rigid analogue of this statement is false in general. The point of the Corollary is that an analogue of this vanishing statement is true for the pullback of $L$ to $A_\infty$ in the following sense: Consider the morphism of sites $\nu\colon A_{\proet}\to A_{\et}$. Then by regarding $A_\infty$ as an object in $A_{\proet}$ via the pro-\'etale morphism $A_\infty\to A$, one can show
 	\[H^i_{\proet}(A_\infty,\nu^{\ast}L)=\textstyle\varinjlim_{n\in\N} H^i_{\et}(A,[p^n]^{\ast}L). \]
-	Let us sketch a proof that the left hand side vanishes  for $i>\dim A$: One first reduced to the case that $L$ is locally constant.
+	Let us sketch a proof that the left hand side vanishes  for $i>\dim A$: One first reduces to the case that $L$ is locally constant.
 	Since $A$ is proper and smooth, one can use the Primitive Comparison Theorem \cite[Theorem~5.1]{p-adic_Hodge} \cite[Theorem~3.13]{survey} to reduce to showing that $H^i_{\proet}(A_\infty,\nu^{\ast}L\otimes_{\F_p} \O_{A_{\et}}^+/p)$ is almost zero for $i>d$. For this one can use that $H^j(V,\nu^{\ast}L\otimes_{\F_p} \O_{A_{\et}}^+/p)^a=0$ for any small enough affinoid perfectoid open $V\subseteq A_\infty$ and any $j>0$. This reduces the desired statement to a computation in \v{C}ech cohomology, which indeed vanishes in degree $>\dim A$.
 	\subsection{Universal perfectoid covers of curves}
 	
@@ -875,7 +875,7 @@ As a third application, we describe how one can obtain universal perfectoid pro-
 	\[C_{\profet}^{\perf}\to  \mathrm{Perf}_{C},\quad (X_i)_{i\in I}\mapsto X_\infty\sim \varprojlim_{i\in I} X_i.\]
 \end{lemma}
 	We call the objects $X_\infty \to C$ in the essential image the pro-finite-\'etale perfectoid covers of $C$.
-	\begin{proposition}[Proposition~3.5, \cite{p-adic_Hodge}]
+	\begin{proposition}[{ \cite[Proposition~3.5]{p-adic_Hodge}}]
 		There is an equivalence of categories
 		\[ F:C_{\mathrm{prof\acute{e}t}}\to \pi_{1}(C,x)\mathrm{-pfSets},\quad (Y_i)_{i\in I} \mapsto F(X):=\varprojlim_{i\in I}|Y_i\times_{C}x|=\varprojlim_{i\in I}\Hom_C(x,Y_i)\]
 		from the pro-finite-\'etale site of $C$ to the category of profinite sets with continuous $\pi_{1}(C,x)$-action.
