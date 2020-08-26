@@ -153,7 +153,7 @@ The possibility of results in this direction is mentioned in \S 7 and \S 13 of \
 In general, $A$ has semi-stable reduction by the assumption that $K$ is algebraically closed.
 Consequently, the theory of Raynaud extensions provides us with a short exact sequence 
 \[ 0 \rightarrow T \rightarrow E  \rightarrow  B  \rightarrow  0\]
-of rigid groups, where $T = (\mathbb G_m^{\text{an}})^{d}$ is a split rigid torus and $B$ is the analytification of an abelian variety with good reduction, such that $A = E/M$ for a discrete lattice $M \subset E$. This short exact sequence is split locally on $B$, allowing us to locally write $E$ as a product of $T$ and an open subspace of $B$.
+of rigid groups, where $T = (\mathbb G_m^{\text{an}})^{r}$ is a split rigid torus and $B$ is the analytification of an abelian variety with good reduction, such that $A = E/M$ for a discrete lattice $M \subset E$. This short exact sequence is split locally on $B$ in the analytic topology, allowing us to locally write $E$ as a product of $T$ and an open subspace of $B$.
 Our strategy for the proof of Theorem \ref{thm:main_thm_intro}, which more generally applies to any abeloid variety over $K$, is now similar to the good reduction case:
 \begin{enumerate}
 \item Construct a perfectoid tilde-limit $T_\infty\sim\varprojlim_{[p]} T$. This is easy.
@@ -163,7 +163,7 @@ Our strategy for the proof of Theorem \ref{thm:main_thm_intro}, which more gener
 
 More precisely, this article is organised as follows: In \S2 we recall the definition of tilde-limits and collect some useful lemmas about tilde-limits and perfectoid spaces. In particular, we construct the perfectoid tilde-limit $T_\infty$. In \S3 we use local splittings to construct a perfectoid tilde-limit $E_\infty$: The Raynaud extension of $A$ mentioned earlier arises from a short exact sequence of formal group schemes over $\O_K$
 \[0\rightarrow \overline{T}\rightarrow \overline{E}\rightarrow \overline{B}\rightarrow 0\]
-by taking generic fibres and forming the pushout with respect to the open immersion $\overline{T}_\eta\rightarrow T$. Since the sequence is locally split, we can see $\overline{E}\rightarrow \overline{B}$ as a principal $\overline{T}$-bundle and formation of $E$ amounts to pushout along $\overline{T}_\eta\to T$. We get the desired tilde-limit by tracing the local splitting through the tower of multiplication by $[p]$. This will also show that there is a short exact sequence of perfectoid groups
+by taking generic fibres and forming the pushout with respect to the open immersion $\overline{T}_\eta\rightarrow T$. We get the desired tilde-limit by tracing the local splitting through the tower of multiplication by $[p]$. This will also show that there is a short exact sequence of perfectoid groups in the analytic topology
 \[ 0\to T_\infty \to E_\infty \to B_\infty \to 0.\]
 
 In \S4 we finish the proof of Theorem~\ref{thm:main_thm_intro} by constructing $A_\infty$ from $E_\infty$ as follows: After choosing lattices $M\subset M_n\subset E$ that map isomorphically to $M$ under $[p^n]\colon E\rightarrow E$, the $[p]$-multiplication tower of $A=E/M$ naturally factors into two separate towers: One is the tower of maps $E/M_{n+1}\rightarrow E/M_n$ induced from $[p]$-multiplication of $E$, and the other is induced from the projection maps $v^n\colon E/M\rightarrow E/M_n$. Using local splittings, one can construct a perfectoid tilde-limit $A'_\infty\sim \varprojlim_n E/M_n$ of the first tower from $E_\infty$. It fits into a short exact sequence
@@ -185,7 +185,7 @@ As observed by Hansen, one can deduce from Theorem~\ref{thm:main_thm_intro} the 
 	\end{enumerate}
 \end{corollary}
 
-Second, we note that the analogue of this corollary also works for $C$ replaced by an abelian variety, in which case the pro-\'etale fundamental group is isomorphic to the absolute Tate module $TA:=\varprojlim_{N\in \N}A[N]$. In particular, one obtains from this two different natural ways to uniformise the diamond $A^{\diamondsuit}$ attached to $A$: On the one hand, as a consequence of Theorem~\ref{thm:main_thm_intro}, we can write
+Second, we note that the analogue of this corollary also works for $C$ replaced by an abelian variety, in which case the pro-\'etale fundamental group is isomorphic to the adelic Tate module $TA:=\varprojlim_{N\in \N}A[N]$. In particular, one obtains from this two different natural ways to uniformise the diamond $A^{\diamondsuit}$ attached to $A$: On the one hand, as a consequence of Theorem~\ref{thm:main_thm_intro}, we can write
 \[ A^{\diamondsuit}=A_\infty/T_pA.\]
 On the other hand, one can deduce from Theorem~\ref{thm:main_thm_intro} that there is also a perfectoid tilde-limit $\widetilde{A}\sim \varprojlim_{[N]} A$ which gives rise to a natural isomorphism
 \[ A^{\diamondsuit}=\widetilde{A}/T A.\]
@@ -265,25 +265,23 @@ $$ \varinjlim_{\operatorname{Spa}(A_i, A_i^+) \subset X_i} A_i \rightarrow A$$
 has dense image, where the direct limit runs over all $i\in I$ and all open affinoid subspaces $\operatorname{Spa}(A_i, A_i^+) \subset X_i$ through which the morphism $\operatorname{Spa}(A, A^+) \subseteq X\rightarrow X_i$ factors.
 \end{enumerate}
 \end{definition}
+\begin{comment}
 \begin{definition}
 Suppose, moreover, that there is an adic space $S$ with compatible maps $f_i:X_i\to S$, giving rise to a map $f:X\to S$, and a cover $\mathfrak U$ of open subspaces of $S$ such that for each $U\in \mathfrak U$, the $f_i^{-1}(U)$ and $f^{-1}(U)$ are all affine. Then if condition (2) above is satisfied with respect to the cover of $X$ by the $f^{-1}(U)$, we shall say that $X\sim_{\mathfrak U} \varprojlim X_i$  is a tilde-limit with respect to $\mathfrak U$. We say that it is a perfectoid tilde-limit with respect to $\mathfrak U$ if the $f^{-1}(U)$ are even affinoid perfectoid.
 \end{definition}
+\end{comment}
 	\begin{remark} \label{remark:tilde_limit_non_unique}
 As pointed out after Proposition 2.4.4 of \cite{SW}, tilde-limits (if they exist) are in general not unique. However, Corollary~\ref{corollary: perfectoid tilde limit is unique} below says that perfectoid tilde-limits are unique.
 	\end{remark}
 
 We recall a few results from \cite{SW}, \S2.4 on tilde-limits that we will use frequently throughout:
 
-\begin{proposition}[\cite{SW}, Proposition 2.4.2]\label{SW Proposition 2.4.2}
-	Let $(A_i,A_i^{+})$ be a direct system of affinoids over $(K,\mathcal O_K)$ with compatible rings of definition $A_{i,0}$ carrying the $\varpi$-adic topology. Let $(A,A^{+})=(\varinjlim A_i,\varinjlim A_i^{+})$ be the affinoid algebra equipped with the topology making $\varinjlim A_{i,0}$ with the $\varpi$-adic topology a ring of definition. Then
-	\[\operatorname{Spa}(A,A^{+})\sim \textstyle\varprojlim \operatorname{Spa}(A_i,A_i^{+}).\]
-\end{proposition}
-\begin{proposition}[\cite{SW}, Proposition 2.4.3]\label{SW Proposition 2.4.3}
+\begin{proposition}[{\cite[Proposition 2.4.3]{SW}} ]\label{SW Proposition 2.4.3}
 	Let $X\sim \varprojlim_{i\in I} X_i$ be a tilde-limit and let $U_i\hookrightarrow X_i$ be an open immersion for some $i\in I$. Set $U_j:=U_i\times_{X_i}X_j$ for $j\geq i$ and $U:=U_i\times_{X_i}X$. Then 
 	\[U\sim \textstyle\varprojlim_{j\geq i} U_j.\]
 \end{proposition}
 
-\begin{proposition}[\cite{SW}, Proposition 2.4.5]\label{SW Proposition 2.4.5}
+\begin{proposition}[{\cite[Proposition 2.4.5]{SW}} ]\label{SW Proposition 2.4.5}
 	Let $(X_i)_{i\in I}$ be an inverse system of adic spaces over $(K,\mathcal O_K)$ and assume that there is a perfectoid space $X$ such that $X\sim \varprojlim_{i\in I} X_i$. Then for any perfectoid $K$-algebra $(B,B^{+})$, 
 	\[X(B,B^{+})  = \textstyle\varprojlim_{i\in I}X_i(B,B^{+}).\]
 \end{proposition}
@@ -292,19 +290,19 @@ We recall a few results from \cite{SW}, \S2.4 on tilde-limits that we will use f
 \end{corollary}
 In the situation of the corollary, we will also refer to such a perfectoid space as \textit{the} perfectoid tilde-limit of the inverse system. Of course perfectoid tilde-limits do not always exist. An example of a basic situation in which they do is the following:
 \begin{lemma}\label{l:pro-finite-perfectoid-spaces}
-	Let $(S_i)_{i\in I}$ be an inverse system of finite sets. Let $S=\varprojlim_{i\in I} S_i$. Then the system of constant groups $\underline{S_i}=\mathrm{Spa}(\mathrm{Map}_{\mathrm{cts}}(S_i,K),\mathrm{Map}_{\mathrm{cts}}(S_i,\O_K))$ has a perfectoid tilde-limit	\[\underline{S}:=\mathrm{Spa}(\mathrm{Map}_{\mathrm{cts}}(S,K),\mathrm{Map}_{\mathrm{cts}}(S,\O_K))\sim\textstyle\varprojlim_{i\in I} \underline{S_i}.\]
+	Let $(S_i)_{i\in I}$ be an inverse system of finite sets. Let $S=\varprojlim_{i\in I} S_i$. Then the system of adic spaces $\underline{S_i}:=\mathrm{Spa}(\mathrm{Map}(S_i,K),\mathrm{Map}(S_i,\O_K))$ has a perfectoid tilde-limit	\[\underline{S}:=\mathrm{Spa}(\mathrm{Map}_{\mathrm{cts}}(S,K),\mathrm{Map}_{\mathrm{cts}}(S,\O_K))\sim\textstyle\varprojlim_{i\in I} \underline{S_i}.\]
 \end{lemma}
 \begin{proof}
-	Since $S$ is compact, $\mathrm{Map}_{\mathrm{cts}}(S,K)=\mathrm{Map}_{\mathrm{cts}}(S,\O_K)[\tfrac{1}{\varpi}]$. Perfectoidness now follows from $\mathrm{Map}_{\mathrm{cts}}(S,\O_K)/\varpi=\mathrm{Map}_{\mathrm{lc}}(S,\O_K/\varpi)$. The tilde-limit property follows from Proposition~\ref{SW Proposition 2.4.2}.
+	Since $S$ is compact, $\mathrm{Map}_{\mathrm{cts}}(S,K)=\mathrm{Map}_{\mathrm{cts}}(S,\O_K)[\tfrac{1}{\varpi}]$. This is perfectoid since we have $\mathrm{Map}_{\mathrm{cts}}(S,\O_K)/\varpi=\varinjlim_{i\in I}\mathrm{Map}(S_i,\O_K/\varpi)$. The tilde-limit property follows from \cite[Proposition 2.4.2]{SW}.
 \end{proof}
 We will need the following basic lemma later on.
 
 	\begin{lemma}\label{affinoid tilde-limits commute with fibre products}
-		Let $(A_i, A_i^+)$ and $(B_i, B_i^+)$ be direct systems of affinoids over $(K, \mathcal O_K)$ with compatible rings of definition $A_{i,0}$ and $B_{i,0}$ carrying the $\varpi$-adic topology. Assume that there are perfectoid tilde-limits $\operatorname{Spa}(A, A^+)\sim \varprojlim \operatorname{Spa}(A_i, A_i^+)$ and $\operatorname{Spa}(B, B^+)\sim \varprojlim \operatorname{Spa}(B_i, B_i^+)$. Then \[\operatorname{Spa}(A, A^+)\times_{\operatorname{Spa}(K, \mathcal O_K)}\operatorname{Spa}(B, B^+)\sim\varprojlim (\operatorname{Spa}(A_i, A_i^+)\times_{\operatorname{Spa}(K, \mathcal O_K)} \operatorname{Spa}(B_i, B_i^+))\]
+		Let $(A_i, A_i^+)_{i\in I}$ and $(B_i, B_i^+)_{i\in I}$ be direct systems of affinoids over $(K, \mathcal O_K)$ with compatible rings of definition $A_{i,0}$ and $B_{i,0}$ carrying the $\varpi$-adic topology. Assume that there are perfectoid tilde-limits $\operatorname{Spa}(A, A^+)\sim \varprojlim \operatorname{Spa}(A_i, A_i^+)$ and $\operatorname{Spa}(B, B^+)\sim \varprojlim \operatorname{Spa}(B_i, B_i^+)$. Then \[\operatorname{Spa}(A, A^+)\times_{\operatorname{Spa}(K, \mathcal O_K)}\operatorname{Spa}(B, B^+)\sim\varprojlim_{i\in I} (\operatorname{Spa}(A_i, A_i^+)\times_{\operatorname{Spa}(K, \mathcal O_K)} \operatorname{Spa}(B_i, B_i^+))\]
 		is also a perfectoid tilde-limit.
 	\end{lemma}
 	\begin{proof}
-		The fibre product $\operatorname{Spa}(A, A^+)\times_{\operatorname{Spa}(K, \mathcal O_K)}\operatorname{Spa}(B, B^+)$ exists and is perfectoid by \cite[Proposition 6.18]{perfectoid}. In fact, it is represented by $\operatorname{Spa}(C,C^+)$, where $C=A\widehat{\otimes}_KB$ and $C^+$ is the $\varpi$-adic completion of the integral closure of the image of $A^+\otimes_{\mathcal O_K}B^+$.
+		The fibre product $\operatorname{Spa}(A, A^+)\times_{\operatorname{Spa}(K, \mathcal O_K)}\operatorname{Spa}(B, B^+)$ exists and is perfectoid by \cite[Proposition 6.18]{perfectoid}. In fact, it is represented by $\operatorname{Spa}(C,C^+)$, where $C=A\widehat{\otimes}_KB$ and $C^+$ is the $\varpi$-adic completion of the integral closure of the image of $A^+\otimes_{\mathcal O_K}B^+$ in $C$.
 		
 		We first check the condition on topological spaces:
 		 Since fibre products commute with limits in the category of sheaves, it follows from Proposition~\ref{SW Proposition 2.4.5} that for any perfectoid field $(D,D^+)$ over $(K,\O_K)$, we have 
@@ -315,6 +313,7 @@ We will need the following basic lemma later on.
 		
 		It remains to check that if $\varinjlim A_i \rightarrow A$ has dense image and $\varinjlim B_i \rightarrow B$ has dense image, then $\varinjlim (A_i\otimes B_i) \rightarrow A\otimes B$ has dense image. As direct limits commute with tensor products, we have $\varinjlim (A_i\otimes B_i) = (\varinjlim A_i)\otimes (\varinjlim B_i)$. Now density can be checked directly on elements. 
 	\end{proof}
+\begin{comment}
 \begin{lemma}\label{l:diagonal-tilde-limits}
 	Let $(X_{i,j})_{i\leq j\in \N}$ be an inverse system of adic spaces of the form
 	\begin{center}
@@ -337,8 +336,8 @@ We will need the following basic lemma later on.
 	is dense. This follows from a straight-forward pointwise approximation argument using that all tilde-limit properties hold with respect to $\mathfrak U$. 
 	\begin{comment}
 	Let $x_{\infty,\infty}\in A_{\infty}$ and let $\epsilon>0$, then for every $\epsilon$ we can find $i\gg 0$ auch that there is $x_{i,\infty}\in A_{i,\infty}$ whose image in $A_{\infty,\infty}$ is in $B_{\epsilon}(x_{\infty,\infty})$. By the horizontal tilde-limit properties, we can find $j\gg i$ for which there is $x_{j,i}\in A_{i,j}$ such that the image of $x_{i,j}$ in $A_{i,\infty}$ is in $B_{\epsilon}(x_{i,\infty})$. Let $x_{j,j}$ be the image of $x_{j,i}$ in $A_{j,j}$, then the image of $x_{j,j}$ in $A_{\infty,\infty}$ is in $B_{\epsilon}(x_{\infty,\infty})$, as desired.
-	\end{comment}
 \end{proof}
+\end{comment}
 \subsection{Perfectoid tilde-limits for rigid groups}
 
 One reason why perfectoid tilde-limits along group homomorphisms are particularly interesting is that these again have a group structure:
@@ -352,7 +351,7 @@ The category of perfectoid spaces over $K$ has finite products, so this is a wel
 	Let $(G_i)_{i\in I}$ be an inverse system of adic groups such that the transition maps are homomorphisms of adic groups. Assune that there is a perfectoid tilde-limit $G_\infty\sim \varprojlim_{i\in I}G_i$.
 	\begin{enumerate}
 		\item  There is a unique way to endow $G_\infty$ with the structure of a perfectoid group in such a way that all projections $G_\infty\rightarrow G$ are group homomorphisms
-		\item Given a morphism of inverse systems of adic groups $(G_i)_{i\in I}\to (H_j)_{j\in J}$ and a perfectoid tilde-limit $H_\infty\sim\varprojlim_{j\in J}H_j$, there is a unique morphism of perfectoid groups $G_\infty\rightarrow H_\infty$
+		\item Given a homomorphism of inverse systems of adic groups $(G_i)_{i\in I}\to (H_j)_{j\in J}$ and a perfectoid tilde-limit $H_\infty\sim\varprojlim_{j\in J}H_j$, there is a unique homomorphism of perfectoid groups $G_\infty\rightarrow H_\infty$
 		commuting with all projection maps.
 	\end{enumerate}
 \end{lemma}
@@ -362,12 +361,16 @@ The category of perfectoid spaces over $K$ has finite products, so this is a wel
 
 Let $G$ be an adic group locally of finite type over $(K,\O_K)$, that is, a group object in the category of rigid spaces over $\Spa(K,\O_K)$. Throughout we will always consider commutative groups. The main topic of study of this work is the $[p]$-multiplication tower
 \[ \cdots\xrightarrow{[p]}G\xrightarrow{[p]}G.\]
-We will usually assume that $G$ is $p$-divisible, i.e.\ that $[p]\colon G\to G$ is surjective.
+We will usually assume that $[p]\colon G\to G$ is surjective.
 \begin{question}\label{qu:tilde-limits-of-adic-groups}
 	When is there a perfectoid space $G_\infty$ such that $G_\infty \sim \varprojlim_{[p]} G$ is a tilde-limit?
 \end{question}
 
-We are primarily interested in the following examples:
+\begin{example}
+	If $[p]:G\to G$ is not surjective, $\varprojlim_{[p]}G$ might have a tilde-limit for trivial reasons: For example, let $\mathfrak G_a$  be the $p$-adic completion of the affine group scheme $\mathbb G_a$ over $\mathcal O_K$. Then the trivial group $\operatorname{Spa}(K,\mathcal O_K)\sim \varprojlim_{[p]}(\mathfrak G_a)^{\ad}_{\eta}$ is a perfectoid tilde-limit.
+\end{example}
+
+Regarding Question~\ref{qu:tilde-limits-of-adic-groups}, we are primarily interested in the following examples:
 \begin{enumerate}	 
 	\item Analytifications over $\Spa(K,\O_K)$ of finite type group schemes over $K$. Examples include analytifications of abelian varieties $A$ over $K$ and of tori $T$ over $K$.
 	\item Generic fibres of locally topologically finite type formal group schemes over $\mathcal O_K$.
@@ -382,6 +385,7 @@ We are primarily interested in the following examples:
 	\item There is a perfectoid tilde-limit $X_{\infty}\sim \varprojlim_{i \in I}X_{i}$. 
 	\item There is a perfectoid tilde-limit $X_{\infty,\eta}\sim \varprojlim_{i \in I}X_{i,\eta}$.
 	\end{enumerate}
+
 We shall omit the proof of this equivalence, as this will not be relevant in the following. Instead, we simply take it as a motivation to restrict attention to the case of  $K^+=\O_K$.
 \end{remark}
 \begin{comment}
@@ -413,11 +417,11 @@ As we have already mentioned in the introduction, Question~\ref{qu:tilde-limits-
 	This holds by the same proof as in \cite[Lemme~A.16]{Pilloni-Stroh}, (see also Exercise 4 -- 6 in \cite{Bhatt}):
 	 Let $\varpi\in\mathcal O_K$ be a pseudo-uniformiser such that $p\in \varpi\mathcal O_K$. The assumption that $[p]:\mathfrak G\to \mathfrak G$ is affine ensures that the limit $\mathfrak G_{\infty}:=\varprojlim_{[p]}\mathfrak G$ exists.
 	 
-	The mod $\varpi$ special fibre $\widetilde{G} = \mathfrak G\times \Spec(\O_K/\varpi)$ is a group scheme over $\mathcal O_K/\varpi$, so the map $[p]\colon\widetilde{G}\rightarrow \widetilde{G}$ factors through the relative Frobenius map \cite[Exp. VII, 4.3]{SGA}. Consequently, the fibre $\varprojlim_{[p]}\widetilde{G}$ of $\mathfrak G_{\infty}$  over $\mathcal O_K/\varpi$ is relatively perfect: Indeed, we have a commutative diagram
+	The mod $\varpi$ special fibre $\mathfrak G/\varpi: = \mathfrak G\times \Spec(\O_K/\varpi)$ is a group scheme over $\mathcal O_K/\varpi$, so the map $[p]\colon\mathfrak G/\varpi\rightarrow \mathfrak G/\varpi$ factors through the relative Frobenius map \cite[Exp. VII, 4.3]{SGA}. Consequently, the fibre $\varprojlim_{[p]}\mathfrak G/\varpi$ of $\mathfrak G_{\infty}$  over $\mathcal O_K/\varpi$ is relatively perfect: Indeed, we have a commutative diagram
 	\[
 \begin{tikzcd}
-                                                           & {\varprojlim_{[p]}G} \arrow[rd, "F"] \arrow[rr, "{[p]}","\sim"'] &                                        & {\varprojlim_{[p]}G} \\
-{\varprojlim_{[p]} G^{(p)}} \arrow[ru] \arrow[rr, "{[p]}","\sim"'] &                                                          & {\varprojlim_{[p]} G^{(p)}} \arrow[ru] &
+                                                           & {\varprojlim_{[p]}\mathfrak G/\varpi} \arrow[rd, "F"] \arrow[rr, "{[p]}","\sim"'] &                                        & {\varprojlim_{[p]}\mathfrak G/\varpi} \\
+{\varprojlim_{[p]} (\mathfrak G/\varpi)^{(p)}} \arrow[ru] \arrow[rr, "{[p]}","\sim"'] &                                                          & {\varprojlim_{[p]} (\mathfrak G/\varpi)^{(p)}} \arrow[ru] &
 \end{tikzcd}\]
 	in which the horizontal maps are isomorphisms. Thus also $F$ is an isomorphism.
 	This implies that the adic generic fibre of $\mathfrak G_{\infty}$ is perfectoid by \cite[Theorem~5.2]{perfectoid}.
@@ -426,16 +430,13 @@ As we have already mentioned in the introduction, Question~\ref{qu:tilde-limits-
 	Let $T$ be a torus over $K$. Then there is a perfectoid tilde-limit $T_\infty\sim \varprojlim_{[p]} T$.
 \end{lemma}
 \begin{proof}
-Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\mathbb{G}_m^{\an})^d$ for some $d\in \N$. By Lemma~\ref{affinoid tilde-limits commute with fibre products}, it suffices to consider the case of $d=1$. For this, we may use the open embedding $\mathbb G_m^{\an}= \mathbb P^{1,\an}\setminus\{0, \infty\}\subseteq \mathbb P^{1,\an}$. Sending $(x:y)\mapsto (x^p:y^p)$ defines a morphism $\varphi:\mathbb P^{1,\an}\to \mathbb P^{1,\an}$. The pullback of $\varphi$ to $\mathbb G_m^{\an}$ is precisely $[p]:\mathbb G_m^{\an}\to \mathbb G_m^{\an}$. We can therefore apply Proposition \ref{SW Proposition 2.4.3} to the perfectoid tilde-limit $\mathbb P_1^{\text{perf}}\sim \varprojlim_{\varphi} \mathbb P^{1,\an}$ introduced in \cite{perfectoid}. 
+Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\mathbb{G}_m^{\an})^r$ for some $r\in \N$. By Lemma~\ref{affinoid tilde-limits commute with fibre products}, it suffices to consider the case of $r=1$. For this, we may use the open embedding $\mathbb G_m^{\an}= \mathbb P^{1,\an}\setminus\{0, \infty\}\subseteq \mathbb P^{1,\an}$. Sending $(x:y)\mapsto (x^p:y^p)$ defines a morphism $\varphi:\mathbb P^{1,\an}\to \mathbb P^{1,\an}$. The pullback of $\varphi$ to $\mathbb G_m^{\an}$ is precisely $[p]:\mathbb G_m^{\an}\to \mathbb G_m^{\an}$. We can therefore apply Proposition \ref{SW Proposition 2.4.3} to the perfectoid tilde-limit $\mathbb P_1^{\text{perf}}\sim \varprojlim_{\varphi} \mathbb P^{1,\an}$ introduced in \cite{perfectoid}. 
 \end{proof}
 
 %\begin{remark} What we aim to prove in the rest of this write-up is that for a Raynaud extension $0\rightarrow T\rightarrow E\rightarrow B\rightarrow 0$, there is a $[p]$-$F$-model for $T$ which induces a $[p]$-$F$-model for $E$. This will prove that tilde-limits $T_\infty$ and $E_\infty$ exist and are perfectoid if $K$ is perfectoid.  
 %\end{remark}
 			
-	\begin{example}
-		Regarding Question~\ref{qu:tilde-limits-of-adic-groups}, we note
-		that if $G$ is not $p$-divisible, $\varprojlim_{[p]}G$ might have a tilde-limit for trivial reasons: For example, let $\mathfrak G_a$  be the $p$-adic completion of the affine group scheme $\mathbb G_a$ over $\mathcal O_K$. Then the trivial group $\operatorname{Spa}(K,\mathcal O_K)\sim \varprojlim_{[p]}(\mathfrak G_a)^{\ad}_{\eta}$ is a perfectoid tilde-limit.
-	\end{example}
+
 	
  
  %%%%%%%%%%%%%%%%%
@@ -448,7 +449,7 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 	
 
 	\section{Perfectoid tilde-limits of Raynaud extensions}\label{Raynaud extensions as principal bundles of formal and rigid spaces}
-	In this section we study the $p$-multiplication tower of the Raynaud extensions associated to abeloid varieties over an algebraically closed perfectoid field $K$. The main result of this section is Proposition \ref{p-F-formal tower exists for E}, which shows that the existence of perfectoid tilde-limits is closed under analytic-locally split extensions, and thus there exists a perfectoid tilde-limit $E_\infty \sim \varprojlim_{[p]} E$.  
+	In this section we study the $p$-multiplication tower of the Raynaud extensions associated to abeloid varieties over an algebraically closed perfectoid field $K$. The main result of this section is Proposition \ref{p-F-formal tower exists for E}, which shows that there exists a perfectoid tilde-limit $E_\infty \sim \varprojlim_{[p]} E$, which itself has an extension structure that one could call a ``perfectoid Raynaud extension''.  
 	
 	
 	\begin{remark}\label{Remark on dealing with general perfectoid fields by Galois descent}
@@ -481,7 +482,7 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 	\end{definition}
 	
 	\begin{theorem}[Bosch--L\"utkebohmert, {\cite[Theorem~1.2]{BL}}]\label{Raynaud uniformisation}
-	    With setup as in the previous paragraph, there exists a lattice $M \subset E$ of rank equal to the rank $r$ of the torus such that the quotient $E/M$ exists as a rigid space and such that there is a natural isomorphism of rigid groups
+	    With setup as in the previous paragraph, there exists a lattice $M \subset E$ of rank equal to the rank $r$ of the torus $T$ such that the quotient $E/M$ exists as a rigid space and such that there is a natural isomorphism of rigid groups
 		\[A=E/M.\]
 	\end{theorem}
 	
@@ -492,14 +493,13 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 	
 	In the situation of Raynaud uniformisation, since $M$ is discrete, the local geometry of $A$ is determined by the local geometry of $E$. We will therefore first study the $[p]$-multiplication tower of $E$ in the rest of this section and will then deduce properties of the $[p]$-multiplication tower of $A$ in the next section.
 
-	 Our strategy is to study the local geometry of $E$ and $\overline{E}$ via $T$ and $B$. An obstacle in doing this is that the categories of formal or rigid groups are not abelian, which makes working with short exact sequences a subtle issue. Another issue is that we would like to work locally on $B$, but the notion of short exact sequences does not make sense if we replace $B$ by an open $U\subseteq B$ which might not itself have a group structure.
-	Instead, we have the following crucial lemma, which says that one may regard Raynaud extensions as $T$-torsors of formal schemes.
+	 Our strategy is to study the local geometry of $E$ and $\overline{E}$ via $T$ and $B$. In order to put ourselves in a situation where we can work in an abelian category, we shall do so in the category of abelian sheaves on the site of sheafy adic spaces with the analytic topology. The following crucial lemma says that Raynaud extensions are locally split in this topology:
 
 	\begin{lemma}\label{formal Raynaud sequence is locally split}
 		The short exact sequence (\ref{formal Raynaud extension}) admits local sections, that is there is a cover of $\overline{B}$ by formal open subschemes $\overline{U}_i$ such that there exist local sections $s:\overline{U}_i\rightarrow \overline{E}$ of $\pi$. In particular, one can cover $\overline{E}$ by formal open subschemes of the form $\overline{T}\times \overline{U}_i\hookrightarrow \overline{E}$.
 	\end{lemma}
 	\begin{proof}
-		This is proved in Proposition A.2.5 in~\cite{Lut}, where it is fomulated in terms of the group $\operatorname{Ext}^1(B,T)$. Also see \cite{BL}, \S 1.
+		This is proved in Proposition A.2.5 in~\cite{Lut}, where it is fomulated in terms of the group $\operatorname{Ext}^1(\overline{B},\overline{T})$. Also see \cite{BL}, \S 1.
 	\end{proof}
 	
 	As a consequence, in more topological terms, diagram~\eqref{Raynaud diagram} can be interpreted as follows: We may regard
@@ -565,26 +565,29 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 	
 
 	\begin{proof}
-	The morphism $[p^n]:E\to E$ induces a morphism of short exact sequences of Raynaud extensions. When we consider $E$ as an extension of $B$ by $T$, this means more precisely that we can split up $[p^n]:E\to E$ into two morphisms of short exact sequences
+	The morphism $[p^n]:E\to E$ induces a morphism of short exact sequences
 			\begin{equation}\label{eq:split-diag}
 				\begin{tikzcd}[row sep = {1.2cm,between origins}]
-				0 \arrow[r] & T \arrow[r] \arrow[d, "{[p^n]}"] & E \arrow[r, "\pi"] \arrow[d, "{[p^n]\times \pi}"] & B \arrow[d,equal] \arrow[r] & 0 \\
-				0 \arrow[r] & T \arrow[r] \arrow[d,equal] & {E\times_{B,[p^n]} B} \arrow[r] \arrow[d] & B \arrow[d, "{[p^n]}"] \arrow[r] & 0 \\
-				0 \arrow[r] & T \arrow[r] & E \arrow[r] & B \arrow[r] & 0
+				0 \arrow[r] & T \arrow[r] \arrow[d, "{[p^n]}"] & E \arrow[r,"\pi"] \arrow[d, "{[p^n]}"] & B \arrow[d,"{[p^n]}"] \arrow[r] & 0 \\
+				0 \arrow[r] & T \arrow[r] & E \arrow[r,"\pi"] & B \arrow[r] & 0
 				\end{tikzcd}
 				\end{equation}
-			where the middle row is both the base-change of the bottom row along $[p^n]:B\to B$, as well as the pushout of the top row along $[p^n]:T\to T$.
+			The basic idea is now to lift local splittings of $\pi$ in this diagram:
 			
-			The basic idea is now to trace local splittings of $\pi$ through the diagram: Let $\mathfrak U$ be a cover of $B$ of opens $U$ over which $E\to B$ is split. Since $E$ arises via pushout from the formal model $\overline{E}$, such a cover already exists in the formal topology on $B$. Let $U_n$ be the pullback of $U$ along $[p^n]$. 
-		We now use the following Lemma:
+			 Let $\mathfrak U$ be a cover of $\overline{B}$ by formal opens $U$ over which $\overline{E}\to \overline{B}$ is split, this exists by Lemma~\ref{formal Raynaud sequence is locally split}. In particular, $E\to B$ is then also split over (the generic fibre of) $U$.
+			 Let $U_n$ be the pullback of $U$ along $[p^n]$. 
+		We now use the following Lemma, which is the main input in the proof of the Proposition.
 		\begin{lemma}
 			For any $U\in \mathfrak U$, the morphism $\pi:E\to B$ is still split over $U_n=[p^n]^{-1}(U)$.
 		\end{lemma}
 		\begin{proof}
 			We may reduce to the case of $n=1$.
-			Since $\mathfrak U$ is by assumption a formal open cover, it suffices to prove this for the morphism of formal schemes $\overline{E}\to \overline{B}$.
+			Since $\mathfrak U$ is by assumption a formal open cover, it suffices to prove the Lemma for the morphism of formal schemes $\overline{E}\to \overline{B}$.
 			
-			We first claim that the reduction $\overline{E}/p\to \overline{B}/p$ over $\O_K/p$ admits a splitting over $U_n/p$ (here we emphasize that we really mean $p$, not $\varpi$: in particular, if $K$ has characteristic $p$, we have $\O_K/p=\O_K$). To see this, we use that in characteristic $p$, the morphism $[p]:\overline{B}/p\to \overline{B}/p$ decomposes into the Verschiebung $V:(\overline{B}/p)^{(p)}\to \overline{B}/p$ and the Frobenius morphism $F:\overline{B}/p\to (\overline{B}/p)^{(p)}$.
+			Choose $s\in \O_K$ such that $(s^p)=(p)$. In particular, if $K$ has characteristic $p$, we have $s=0$.
+			
+			We first claim that the reduction $\overline{E}/s\to \overline{B}/s$ over $\O_K/s$ admits a splitting over $U_n/s$.
+			To see this, we first reduce mod $p$ and use that in characteristic $p$, the morphism $[p]:\overline{B}/p\to \overline{B}/p$ decomposes into the Verschiebung $V:(\overline{B}/p)^{(p)}\to \overline{B}/p$ and the relative Frobenius $F:\overline{B}/p\to (\overline{B}/p)^{(p)}$.
 			
 			 Note that we have $(T/p)^{(p)}=T/p$, and Verschiebung is the identity on $T/p$. The multiplication by $[p]$ on $\overline{E}/p$ therefore gives rise to a commutative diagram
 			\begin{center}
@@ -594,14 +597,26 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 					0 \arrow[r] & \overline{T}/p \arrow[r] & \overline{E}/p \arrow[r] & \overline{B}/p \arrow[r] & 0.
 				\end{tikzcd}
 			\end{center}
-			The splitting over $U/p$ in the bottom row lifts to a splitting in the middle row by the universal property of the fibre product, since the middle row is obtained from the bottom row via pullback along $V:(\overline{B}/p)^{(p)}\to \overline{B}/p$.  The splitting can then be further lifted to the top row since by functoriality of the relative Frobenius morphism $F$. This shows that $\overline{E}/p\to \overline{B}/p$ is indeed split over $[p]^{-1}(U/p)=[p]^{-1}(U)/p=U_n/p$.
+			Since the bottom left vertical morphism is an isomorphism, the middle row is obtained from the bottom row via pullback along $V:(\overline{B}/p)^{(p)}\to \overline{B}/p$. Consequently, the bottom right square is Cartesian, and the splitting over $U/p\subseteq \overline{B}/p$ in the bottom row therefore lifts to a splitting $V^{-1}(U/p)\to (\overline{E}/p)^{(p)}$ in the middle row by the universal property of the fibre product.
 			
-			It remains to lift this splitting to $\pi:\overline{E}\to \overline{B}$. For this  we use that $\pi$ is formally smooth, and thus we get the desired lift of the splitting from the formal lifting diagram
+			Recall now that  the absolute Frobenius on $\O_K/p$ factors into the reduction $\O_K/p\to \O_K/s$ and
+			\[ f:\O_K/s\xrightarrow{\sim} \O_K/p,\quad x\mapsto x^p\] 
+			which is an isomorphism since $K$ is perfectoid. Base change along this isomorphism induces an isomorphism $g:\overline{B}/s\to (\overline{B}/p)^{(p)}$, and similarly for $\overline{E}$ and $\overline{T}$. In particular, after base-change along the isomorphism $f$, the middle row of the diagram becomes
+			\[ 0\to \overline{T}/s\to \overline{E}/s\to \overline{B}/s\to 0.\]
+			We claim that under this identification, the open subset $V^{-1}(U/p)\subseteq (\overline{B}/p)^{(p)}$ becomes $U_n/s$, showing that indeed $\overline{E}/s\to \overline{B}/s$ is split over $U_n/s$.
+			To see this, consider the commutative diagram 
 			\[\begin{tikzcd}
-				\overline E_{U_n} \arrow[d, "\pi"] & \overline E_{|U_n}/p \arrow[r] \arrow[l] &  U_n/p \arrow[l, bend right] \arrow[d]\\
+				\overline{B}/p \arrow[r, "F"] & (\overline{B}/p)^{(p)} \arrow[r, "V"] & \overline{B}/p \\
+				\overline{B}/s \arrow[r, "F_{\mathrm{abs}}"] \arrow[u, hook] & \overline{B}/s. \arrow[u,"g"] & 
+			\end{tikzcd}\]
+			By definition, the pullback of $U/p$ along first $V\circ F=[p]$ and then the reduction to $\overline{B}/s$ is $U_n/s$. Since the absolute Frobenius is the identity on the underlying topological spaces, this shows that the pullback of $U/p$ along first $V$ and then $g$ is also equal to $U_n$, as we needed to see.
+			
+			It remains to lift this splitting from the special fibre over $\O_K/s$ to $\O_K$. For this  we use that $\pi:\overline{E}\to \overline{B}$ is formally smooth. The formal lifting diagram
+			\[\begin{tikzcd}
+				\overline E_{U_n} \arrow[d, "\pi"] & \overline E_{|U_n}/s \arrow[r] \arrow[l] &  U_n/s \arrow[l, bend right] \arrow[d]\\
 				U_n \arrow[rr,equal]                     &                                          & U_n. \arrow[llu, dotted]
 			\end{tikzcd}\]
-		This shows that $\overline{E}\to \overline{B}$ is split over $U_n$, and thus so is $E\to B$.
+		therefore produces the splitting $U_n\to \overline{E}$. In particular, $\overline{E}\to \overline{B}$ is split over $U_n$.
 		\end{proof}
 		We conclude from the Lemma that locally over $U$, the diagram~\eqref{eq:split-diag} is of the form
 		\begin{center}
@@ -610,7 +625,7 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 				0 \arrow[r] & T \arrow[r] & T\times U \arrow[r] & U \arrow[r] & 0.
 			\end{tikzcd}
 		\end{center}
-	Let $U_\infty\sim \varprojlim U_n$ be the perfectoid tilde-limit that exists by Lemma~\ref{SW Proposition 2.4.3}. Then by Lemma~\ref{affinoid tilde-limits commute with fibre products}, the system in the middle has perfectoid tilde-limit $T_\infty\times U_\infty$. Glueing these for all $U\in\mathfrak U$ produces the desired space $E_\infty\sim \varprojlim_{[p]} E$ which by construction fits into an analytic-locally split short exact sequence
+	Let $U_\infty\sim \varprojlim U_n$ be the perfectoid tilde-limit that exists by Lemma~\ref{SW Proposition 2.4.3}. Then by Lemma~\ref{affinoid tilde-limits commute with fibre products}, the inverse system in the middle has perfectoid tilde-limit $T_\infty\times U_\infty$. Glueing these for all $U\in\mathfrak U$ produces the desired space $E_\infty\sim \varprojlim_{[p]} E$ which by construction fits into an analytic-locally split short exact sequence
 	\[0\to T_\infty\to E_\infty\to B_\infty\to 0 \]
 	as desired.
 	\end{proof}
