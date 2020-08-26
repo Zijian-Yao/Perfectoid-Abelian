@@ -625,9 +625,8 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 				0 \arrow[r] & T \arrow[r] & T\times U \arrow[r] & U \arrow[r] & 0.
 			\end{tikzcd}
 		\end{center}
-	Let $U_\infty\sim \varprojlim U_n$ be the perfectoid tilde-limit that exists by Lemma~\ref{SW Proposition 2.4.3}. Then by Lemma~\ref{affinoid tilde-limits commute with fibre products}, the inverse system in the middle has perfectoid tilde-limit $T_\infty\times U_\infty$. Glueing these for all $U\in\mathfrak U$ produces the desired space $E_\infty\sim \varprojlim_{[p]} E$ which by construction fits into an analytic-locally split short exact sequence
-	\[0\to T_\infty\to E_\infty\to B_\infty\to 0 \]
-	as desired.
+	Let $U_\infty\sim \varprojlim U_n$ be the perfectoid tilde-limit that exists by Lemma~\ref{SW Proposition 2.4.3}. Then by Lemma~\ref{affinoid tilde-limits commute with fibre products}, the inverse system in the middle has perfectoid tilde-limit $T_\infty\times U_\infty$. Glueing these for all $U\in\mathfrak U$ produces the desired space $E_\infty\sim \varprojlim_{[p]} E$ which by construction fits into the desired analytic-locally split short exact sequence
+	\[0\to T_\infty\to E_\infty\to B_\infty\to 0.\qedhere \]
 	\end{proof}
 	
 	\begin{remark}
@@ -658,7 +657,7 @@ By Proposition~\ref{Raynaud uniformisation for abeloids}, the quotient map $\pi\
 We fix from now on a cover $\mathfrak U$ of $A$ by opens $U$ of this form.
 
 The pullback of $U'$ along $[p]\colon A\to A$ will in general be bigger than the pullback of $U$ along $[p]:E\to E$: e.g. in characteristic 0, the first is an \'etale $A[p]$-torsor, whereas  the latter is an \'etale $E[p]$-torsor, and by the Snake Lemma we have a short exact sequence
-\[0\to E[p]\to A[p]\to M/pM\to 0\]
+\[0\to E[p]\to A[p]\to M/pM\to 0.\]
 
 To relate the pullbacks, we subdivide the tower 
 \[
@@ -675,7 +674,8 @@ into two partial towers. For this we make some auxiliary choices: Since $K$ is a
 		One might call the choice of $D_n$ for all $n$ a partial anticanonical $\Gamma_0(p^\infty)$-structure, because if $B$ admits a canonical subgroup (that is, if it satisfies a condition on its Hasse invariant), the choice of a (full) anticanonical $\Gamma_0(p^\infty)$-structure on $A$ is equivalent to the choice of a partial anticanonical $\Gamma_0(p^\infty)$-structure on $A$ and an anticanonical $\Gamma_0(p^\infty)$-structure on $B$. Note however that $A$ always has a partial anticanonical subgroup even if $B$ does not have a canonical subgroup.
 	\end{remark}
 	
-	Following the remark, denote by $D_n$ the torsion subgroup $M_n/M\subset A$. The quotient $A_n:=A/D_n = E/M_n$ is then another abeloid variety over $K$ and the quotient map $v^n\colon A=E/M\rightarrow A_n=E/M_n$ is an isogeny of degree $p^{rn}$  through which  $[p^n]\colon A\rightarrow A$ factors. The $[p]$-multiplication tower now splits into two towers, one written vertically, the other horizontally:
+	Following the remark, denote by $D_n$ the torsion subgroup $M_n/M\subset A$. The quotient $A_n:=A/D_n = E/M_n$ is then another abeloid variety over $K$ and the quotient map 
+	\[v^n\colon A=E/M\rightarrow A_n=E/M_n\] is an isogeny of degree $p^{rn}$  through which  $[p^n]\colon A\rightarrow A$ factors. The $[p]$-multiplication tower now splits into two towers, one written vertically, the other horizontally:
 		\begin{equation}\label{p-multiplication tower of E/M splits into vertical and horizontal tower}
 		\begin{tikzcd}[row sep={1cm,between origins},column sep={1.5cm,between origins}]
 		{} \arrow[rd, dotted] & {} \arrow[d, dotted]           & {} \arrow[d, dotted]           & {} \arrow[d, dotted]    \\
@@ -713,7 +713,7 @@ into two partial towers. For this we make some auxiliary choices: Since $K$ is a
 			Let $U_\infty$ be the pullback of $U'$ along $E_\infty\to E$. We have $U_\infty\sim \varprojlim U'_n\cong \varprojlim U_n$. The system $(U_n)_{n\in \mathbb{N}}$ thus has a perfectoid tilde-limit. This shows that $\varprojlim A_n$ has a perfectoid tilde-limit. We can therefore apply Proposition \ref{SW Proposition 2.4.5} to get a morphism $E_\infty\rightarrow A'_\infty$, obtaining the desired short exact sequence in the limit over diagram \eqref{F-tower for E/M} since the transition maps in \eqref{F-tower for E/M-local} respect the splitting. 
 		\end{proof}
 	
-We will keep the notation introduced in the above proof: $U'$ is an open of $E$ mapping isomorphically to $U\subset A$. The open $U'_n:=[p^n]^{-1}(U')\subset E$ maps isomorphically to its image $U_n\subset A_n$ and we have a commutative diagram with exact rows
+We will keep the notation introduced above: $U'$ is an open of $E$ mapping isomorphically to $U\subset A$. The open $U'_n:=[p^n]^{-1}(U')\subset E$ maps isomorphically to its image $U_n\subset A_n$ and we have a commutative diagram with exact rows
 \[
  		\begin{tikzcd}
 		0 \arrow[r] & M_n \arrow[d, equal] \arrow[r] & M_n\times U'_n \arrow[d,hook] \arrow[r] &  U_n\arrow[d, hook] \arrow[r] & 0 \\
@@ -721,7 +721,7 @@ We will keep the notation introduced in the above proof: $U'$ is an open of $E$ 
 		\end{tikzcd}
 \]
 	
-	To construct a tilde-limit for $\varprojlim A$, we use the fact that the horizontal maps in diagram~(\ref{p-multiplication tower of E/M splits into vertical and horizontal tower}) are all finite \'etale. They are even finite covering maps, in the following sense:
+	To construct a tilde-limit of $\varprojlim_{[p]} A$, we now use the fact that the horizontal maps in diagram~(\ref{p-multiplication tower of E/M splits into vertical and horizontal tower}) are all finite \'etale. They are even finite covering maps, in the following sense:
 	\begin{lemma}\label{horizontal map is covering map}
 		For any $n\geq 0$, the preimage of $U_n\subset A_n$ under the horizontal map $v^{n}\colon A\rightarrow A_n$ is isomorphic to $p^{rn}$ disjoint copies of $U_n$. More canonically, it is isomorphic to $D_{n}\times U_n$, where $D_n=M_n/M$ (see Remark~\ref{remark: Definition of the D_n}).
 	\end{lemma}
@@ -740,7 +740,7 @@ We will keep the notation introduced in the above proof: $U'$ is an open of $E$ 
 		0 \arrow[r] & M_n \arrow[r] & M_n\times U'_n \arrow[r] & U_n \arrow[r] & 0
 		\end{tikzcd}
 		\end{equation}
-	and the claim follows the fact that $M$ is a discrete lattice of rank $r$, and from $U_n'\cong U_n$.
+	and the claim follows from the fact that $M$ is a discrete lattice of rank $r$, and from $U_n'\cong U_n$.
 	\end{proof}
 	\begin{definition}
 The $[p]$-multiplication on $E$ maps $M_{n+1}$ onto $M_n$ and therefore the $[p]$-multiplication tower of $A$ induces a tower
@@ -774,15 +774,15 @@ Theorem~\ref{thm:main_thm_intro} is now part of the following theorem:
 	\begin{remark}
 	We think of part (5) as the analogue of the Raynaud uniformisation
 		\[0\to M\to E\to A\to 0.\]
-	Here we note that while the map $E\to A$ is a quotient, in the limit over $[p]$ it becomes an immersion $E_\infty\hookrightarrow A_\infty$: The reason is that the projective system $(M,[p])$ has vanishing $\lim$ but non-vanishing $\mathrm{Rlim}^1$, for instance, when considered as abelian sheaves on perfectoid spaces for the pro-\'etale topology in the sense of \cite{etale_cohomology_of_diamonds} (assuming that $K$ is of characteristic $0$). A toy example of this phenomenon would be the inverse system over $[p]$ on the short exact sequence of groups 
+	Here we note that while the map $E\to A$ is a quotient, in the limit over $[p]$ it becomes an injection $E_\infty\hookrightarrow A_\infty$: The reason is that the projective system $(M,[p])$ has vanishing $\varprojlim$ but non-vanishing $\mathrm{R}^1\varprojlim$, for instance when considered as abelian sheaves on perfectoid spaces for the pro-\'etale topology in the sense of \cite{etale_cohomology_of_diamonds} (assuming that $K$ is of characteristic $0$). A toy example of this phenomenon would be the inverse system over $[p]$ on the short exact sequence of groups 
 	$0 \to\mathbb Z \to\mathbb R \to \mathbb R/\mathbb Z \to 0$
 	whose limit yields an exact sequence
 	\begin{center}
 		\begin{tikzcd}
-			0 \arrow[r] & 0 \arrow[r] & \mathbb R \arrow[r] & \varprojlim_{[p]}\mathbb R/\mathbb Z \arrow[r] & \varprojlim^1_{[p]}\mathbb Z = \mathbb Z_p/\mathbb Z\arrow[r] & 0.
+			0 \arrow[r] & 0 \arrow[r] & \mathbb R \arrow[r] & \varprojlim_{[p]}\mathbb R/\mathbb Z \arrow[r] & \mathrm{R}^1\varprojlim_{[p]}\mathbb Z = \mathbb Z_p/\mathbb Z\arrow[r] & 0.
 		\end{tikzcd}
 	\end{center}
-	We therefore think the quotient $D_\infty/M_\infty=M_\infty\otimes_{\Z}(\Z_p/\Z)$ implicit in part (5) as being an incarnation of $\mathrm{R}^1\mathrm{lim}_{[p]}M_\infty$.
+	We therefore think of the quotient $D_\infty/M_\infty=M_\infty\otimes_{\Z}(\Z_p/\Z)$ implicit in part (5) as being an incarnation of $\mathrm{R}^1\varprojlim_{[p]}M_\infty$.
 \end{remark}
 	\begin{proof}[Proof of Theorem~\ref{tilde-limit of tilde-limits of partial towers is tilde-limit of whole tower}]
 We keep the notation from the proof of Proposition~\ref{M_infty->E_infty->A'_infty}: We have a cover of $A_n$ by open subsets $U_n$ and a  perfectoid open subspace $U_\infty\subseteq E_\infty$ for which $U_\infty\sim \varprojlim U_n$.
@@ -829,13 +829,13 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	\[0\to T_pA \to A_\infty \to A\to 0.\]
 	Using the language of diamonds from \cite{etale_cohomology_of_diamonds}, we then have:
 	\begin{corollary}
-		The diamond $A^{\diamondsuit}$ associated to $A$ has a natural presentation
+		The diamond $A^{\diamondsuit}$ associated to $A$ has the natural presentation
 		\[A^{\diamondsuit} = A_\infty/T_pA \]
 		given by the perfectoid space $A_\infty$ with its pro-\'etale subgroup $T_pA$.
 	\end{corollary}
 	Here we think of $T_pA=H^{\et}_1(A,\Z_p)$ as the analogue of $H_1(A,\Z)$ in the complex setting.
 \begin{remark}
-	Of course this $p$-adic uniformisation of $A$ is very closely related to the uniformisation of the associated rigid analytic $p$-divisible group $A[p^\infty]$ in the sense of Fargues \cite{Fargues-groupes-analytiques}, as described in \cite{SW} and \cite[\S4]{survey}. The precise connection is as follows: Using the Raynaud uniformisation, one can attach to $A$ a unique $p$-divisible group over $\mathcal O_K$ with generic fibre $A[p^\infty]$ whose associated rigid analytic $p$-divisible group $G$ in the sense of Fargues \cite{Fargues-groupes-analytiques} is canonically an open subgroup $G\subseteq A$. The universal cover of $G$ in the sense of \cite[\S 3.1]{SW} fits into a pullback diagram of open adic subgroups
+	This $p$-adic uniformisation of $A$ is very closely related to the uniformisation of the associated rigid analytic $p$-divisible group $A[p^\infty]$ in the sense of Fargues \cite{Fargues-groupes-analytiques}, as described in \cite{SW} and \cite[\S4]{survey}. The precise connection is as follows: Using the Raynaud uniformisation, one can attach to $A$ a unique $p$-divisible group over $\mathcal O_K$ with generic fibre $A[p^\infty]$ whose associated rigid analytic $p$-divisible group $G$ in the sense of Fargues \cite{Fargues-groupes-analytiques} is canonically an open subgroup $G\subseteq A$. The universal cover of $G$ in the sense of \cite[\S 3.1]{SW} fits into a pullback diagram of open adic subgroups
 	\begin{center}
 		\begin{tikzcd}
 			0 \arrow[r] & T_pG \arrow[r] \arrow[d, equal] & \widetilde{G} \arrow[d, hook] \arrow[r] & G \arrow[d,hook] \arrow[r] & 0 \\
@@ -847,7 +847,7 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	However, we note that the translates of $\widetilde{G}$ do not cover all of $A_\infty$, and therefore the fact that $\widetilde{G}$ is perfectoid does not show immediately that $A_\infty$ is perfectoid.  The issue is points of rank 2: Indeed, there are infinitely many disjoint translates of $\widetilde G$, but $A_\infty$ is quasi-compact.
 \end{remark}
 	\begin{remark}
-	We note that for two abelian varieties $A$ and $B$ of dimension $d$, the universal covers $A_\infty$ and $B_\infty$ are different in general, so that this is only a ``uniformisation'' in a rather weak sense. However, they are canonically isomorphic if $A$ and $B$ are abelian varieties of good reduction with the same special fibre, or if $A$ and $B$ are $p$-power isogeneous, so that in these cases we can really think of $T_pA$ as a $2d$-dimension $\mathbb Z_p$-lattice determining $A$.
+	We note that for two abelian varieties $A$ and $B$ of dimension $d$, the universal covers $A_\infty$ and $B_\infty$ are different in general, so that this is only a ``uniformisation'' in a rather weak sense. However, in upcoming work of the third author, it is shown that $A_\infty$ and $B_\infty$ are isomorphic whenever $A$ and $B$ are ``$p$-adically close'' in some precise sense,  so that at least locally in the moduli space of abelian varieties we can really think of $T_pA$ as a $2d$-dimension $\mathbb Z_p$-lattice determining $A$.
 	\end{remark}
 	 There is a second closely related uniformisation which we discuss in \S5.3 below.
 	\subsection{Stein property}
@@ -881,7 +881,7 @@ As a third application, we describe how one can obtain universal perfectoid pro-
 		from the pro-finite-\'etale site of $C$ to the category of profinite sets with continuous $\pi_{1}(C,x)$-action.
 	\end{proposition}
 	This restricts to the usual equivalence of finite \'etale covers to finite sets with continuous $\pi_{1}(C,x)$-action. 
-	In particular, for every open subgroup $H\subseteq \pi_1(C,x)$, there is a corresponding finite \'etale morphism $C_H\to C$ from a connected scheme $C_H$, considered as an analytic adic space. For any two open subgroups $H_1\subseteq H_2\subseteq \pi_1(C,x)$, there is a natural map $C_{H_1}\to C_{H_2}$. For varying $H$, one therefore has a filtered inverse system $(C_H)_{H\subseteq \pi_1(C,x)}$ which we may regard as an object in $C_{\text{pro\'et}}$.
+	In particular, for every open subgroup $H\subseteq \pi_1(C,x)$, there is a corresponding finite \'etale morphism $C_H\to C$ from a connected curve $C_H$, considered as an analytic adic space. For any two open subgroups $H_1\subseteq H_2\subseteq \pi_1(C,x)$, there is a natural map $C_{H_1}\to C_{H_2}$. For varying $H$, one therefore has a filtered inverse system $(C_H)_{H\subseteq \pi_1(C,x)}$ which we may regard as an object in $C_{\text{pro\'et}}$.
 	\begin{corollary}[Hansen,\cite{Hansen-blog}]\label{c:universal-covers-of-curves}
 		Let $C$ be a connected smooth projective curve of genus $g\geq 1$ over $K$, considered as an analytic adic space.
 		\begin{enumerate}
@@ -909,7 +909,7 @@ The proof also works in the case that $C$ is an abelian variety. In this case, t
 To ease notation, let us abbreviate $G:=\pi_1(C,x)$.
 	
 We construct $\widetilde{C}$ in two steps. 
-The choice of the base point $x$ gives an embedding $\iota\colon C\rightarrow A$ of $C$ into its Jacobian. We can now argue like in \cite[IV.1]{torsion} to obtain a perfectoid pro-\'etale cover of $C$ via pull-back: Let $C_n$ be the pullback of $C$ along the map $[p^n]\colon A\rightarrow A$. Combining our main theorem with \cite[Lemma II.2.2]{torsion}, we obtain a strongly Zariski-closed subspace $C_\infty\to A_\infty$ that is the pullback of $C\to A$. It is then clear on affinoid subspaces that we have \[C_\infty\sim \varprojlim C_n\]
+The choice of the base point $x$ gives an embedding $\iota\colon C\rightarrow A$ of $C$ into its Jacobian. We can now argue like in \cite[IV.1]{torsion} to obtain a perfectoid pro-\'etale cover of $C$ via pull-back: Let $C_n$ be the pullback of $C$ along the map $[p^n]\colon A\rightarrow A$. Combining our main theorem with \cite[Lemma II.2.2]{torsion}, we obtain a strongly Zariski-closed subspace $C_\infty\to A_\infty$ that is the pullback of $C\to A$. It is then clear on affinoid subspaces that we have \[C_\infty\sim \varprojlim C_n.\]
 Indeed, the condition on topological spaces is immediate from \cite[Lemma II.2.2]{torsion}. The approximation condition follows since affinoid locally, $\mathcal O_{A_\infty}\to \mathcal O_{C_\infty}$ is surjective, hence any function $f\in \mathcal O_{C_\infty}$ can be lifted to $g\in \mathcal O_{A_\infty}$, and approximated by a convergent sequence of $g_n\in\varinjlim_{[p]}\mathcal O_{A}$. The images of the $g_n$ in $\varinjlim_n\mathcal O_{C_n}$ then converge to $f$. This proves the displayed tilde-limit property.
 
 We now use the fact that pro-\'etale covers of perfectoid spaces are again perfectoid to construct a perfectoid cover $\widetilde{C}$ of $C_\infty$ that packages up the entire \'etale fundamental group of $C$. The exact same argument can be used to construct the tower $\widetilde{A}\to A_\infty$, proving Corollary~\ref{c:universal-covers-of-abelian-varieties}.
@@ -935,7 +935,7 @@ By \cite[Lemma 4.6]{p-adic_Hodge}, pro-finite-\'etale covers of perfectoid objec
 \[ \widetilde{C}\sim\varprojlim_{H\rightarrow 1} C_H.\]
 This completes the construction of $\widetilde{C}$, and thus proves part (1).
 
-To see part (2), we note that we can write $G=\varprojlim_N G/N$ where $N$ ranges through the normal open subgroups. These are precisely the subgroups for which $C_N\to C$ is already a finite \'etale $G/N$-torsor. Concretely, this means that the following natural morphism is already an isomorphism:
+To see part (2), we write $G=\varprojlim_N G/N$ where $N$ ranges through the normal open subgroups. These are precisely the subgroups for which $C_N\to C$ is already a finite \'etale $G/N$-torsor. Concretely, this means that the following natural morphism is already an isomorphism:
 \[G/N\times_C C_N\to C_N\times_CC_N.\]
 We note that we also have $\widetilde{C} \sim \varprojlim_NC_N$, as normal open subgroups are cofinal in the inverse system of all open subgroups. In the limit, this shows that $\widetilde{C}$ is a pro-finite-\'etale $G$-torsor.
 
