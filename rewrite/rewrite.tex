@@ -609,10 +609,10 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 			\end{tikzcd}\]
 			By definition, the pullback of $U/p$ along first $V\circ F=[p]$ and then the reduction to $\overline{B}/s$ is $U_n/s$. Since the absolute Frobenius is the identity on the underlying topological spaces, this shows that the pullback of $U/p$ along first $V$ and then $g$ is also equal to $U_n$, as we needed to see.
 			
-			It remains to lift this splitting from the special fibre over $\O_K/s$ to $\O_K$. For this  we use that $\pi:\overline{E}\to \overline{B}$ is formally smooth. The formal lifting diagram
+			It remains to lift this splitting from the special fibre over $\O_K/s$ to $\O_K$. For this  we use that $\pi:\overline{E}\to \overline{B}$ is formally smooth. The lifting diagram
 			\[\begin{tikzcd}
-				\overline E_{U_n} \arrow[d, "\pi"] & \overline E_{|U_n}/s \arrow[r] \arrow[l] &  U_n/s \arrow[l, bend right] \arrow[d]\\
-				U_n \arrow[rr,equal]                     &                                          & U_n \arrow[llu, dotted]
+				\overline E \arrow[d, "\pi"'] & \overline E_{|U_n}/s \arrow[r] \arrow[l] &  U_n/s \arrow[l, bend right] \arrow[d]\\
+				\overline{B}                      &                                          & U_n \arrow[llu, dotted]\arrow[ll,hook']
 			\end{tikzcd}\]
 		therefore produces the splitting $U_n\to \overline{E}$. This shows that $\overline{E}\to \overline{B}$ is split over $U_n$.
 		\end{proof}
