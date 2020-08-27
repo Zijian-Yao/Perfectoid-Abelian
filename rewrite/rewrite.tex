@@ -426,7 +426,7 @@ As we have already mentioned in the introduction, Question~\ref{qu:tilde-limits-
 	in which the horizontal maps are isomorphisms. Thus also $F$ is an isomorphism.
 	This implies that the adic generic fibre of $\mathfrak G_{\infty}$ is perfectoid by \cite[Theorem~5.2]{perfectoid}.
 \end{proof}
-\begin{lemma}
+\begin{lemma}\label{l:tilde-limit-of-torus}
 	Let $T$ be a torus over $K$. Then there is a perfectoid tilde-limit $T_\infty\sim \varprojlim_{[p]} T$.
 \end{lemma}
 \begin{proof}
@@ -569,21 +569,19 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 			\begin{equation}\label{eq:split-diag}
 				\begin{tikzcd}[row sep = {1.2cm,between origins}]
 				0 \arrow[r] & T \arrow[r] \arrow[d, "{[p^n]}"] & E \arrow[r,"\pi"] \arrow[d, "{[p^n]}"] & B \arrow[d,"{[p^n]}"] \arrow[r] & 0 \\
-				0 \arrow[r] & T \arrow[r] & E \arrow[r,"\pi"] & B \arrow[r] & 0
+				0 \arrow[r] & T \arrow[r] & E \arrow[r,"\pi"] & B \arrow[r] & 0.
 				\end{tikzcd}
 				\end{equation}
 			The basic idea is now to lift local splittings of $\pi$ in this diagram:
 			
-			 Let $\mathfrak U$ be a cover of $\overline{B}$ by formal opens $U$ over which $\overline{E}\to \overline{B}$ is split, this exists by Lemma~\ref{formal Raynaud sequence is locally split}. In particular, $E\to B$ is then also split over (the generic fibre of) $U$.
+			 Let $\mathfrak U$ be a cover of $\overline{B}$ by formal opens $U$ over which $\overline{E}\to \overline{B}$ is split; this exists by Lemma~\ref{formal Raynaud sequence is locally split}. In particular, $E\to B$ is then also split over (the generic fibre of) $U$.
 			 Let $U_n$ be the pullback of $U$ along $[p^n]$. 
 		We now use the following Lemma, which is the main input in the proof of the Proposition.
 		\begin{lemma}
-			For any $U\in \mathfrak U$, the morphism $\pi:E\to B$ is still split over $U_n=[p^n]^{-1}(U)$.
+			For any $U\in \mathfrak U$, the morphism $\pi:\overline{E}\to \overline{B}$ is still split over $U_n=[p^n]^{-1}(U)$.
 		\end{lemma}
 		\begin{proof}
 			We may reduce to the case of $n=1$.
-			Since $\mathfrak U$ is by assumption a formal open cover, it suffices to prove the Lemma for the morphism of formal schemes $\overline{E}\to \overline{B}$.
-			
 			Choose $s\in \O_K$ such that $(s^p)=(p)$. In particular, if $K$ has characteristic $p$, we have $s=0$.
 			
 			We first claim that the reduction $\overline{E}/s\to \overline{B}/s$ over $\O_K/s$ admits a splitting over $U_n/s$.
@@ -614,18 +612,19 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 			It remains to lift this splitting from the special fibre over $\O_K/s$ to $\O_K$. For this  we use that $\pi:\overline{E}\to \overline{B}$ is formally smooth. The formal lifting diagram
 			\[\begin{tikzcd}
 				\overline E_{U_n} \arrow[d, "\pi"] & \overline E_{|U_n}/s \arrow[r] \arrow[l] &  U_n/s \arrow[l, bend right] \arrow[d]\\
-				U_n \arrow[rr,equal]                     &                                          & U_n. \arrow[llu, dotted]
+				U_n \arrow[rr,equal]                     &                                          & U_n \arrow[llu, dotted]
 			\end{tikzcd}\]
-		therefore produces the splitting $U_n\to \overline{E}$. In particular, $\overline{E}\to \overline{B}$ is split over $U_n$.
+		therefore produces the splitting $U_n\to \overline{E}$. This shows that $\overline{E}\to \overline{B}$ is split over $U_n$.
 		\end{proof}
-		We conclude from the Lemma that locally over $U$, the diagram~\eqref{eq:split-diag} is of the form
+	
+		Let us now also denote by $U$ and $U_n$ the respective generic fibres, then it follows from the Lemma that also $\pi:E\to B$ is split over $U_n$. Locally over $U$, the diagram~\eqref{eq:split-diag} is therefore of the form
 		\begin{center}
 			\begin{tikzcd}[row sep = {1.2cm,between origins}]
 				0 \arrow[r] & T \arrow[r] \arrow[d,"{[p^n]}"] & T\times U_n \arrow[r] \arrow[d, "{[p^n] \times [p^n]}"] & U_n \arrow[d, "{[p^n]}"] \arrow[r] & 0 \\
 				0 \arrow[r] & T \arrow[r] & T\times U \arrow[r] & U \arrow[r] & 0.
 			\end{tikzcd}
 		\end{center}
-	Let $U_\infty\sim \varprojlim U_n$ be the perfectoid tilde-limit that exists by Lemma~\ref{SW Proposition 2.4.3}. Then by Lemma~\ref{affinoid tilde-limits commute with fibre products}, the inverse system in the middle has perfectoid tilde-limit $T_\infty\times U_\infty$. Glueing these for all $U\in\mathfrak U$ produces the desired space $E_\infty\sim \varprojlim_{[p]} E$ which by construction fits into the desired analytic-locally split short exact sequence
+	Let $U_\infty\sim \varprojlim U_n$ be the perfectoid tilde-limit that exists by Lemma~\ref{tilde-limit exists and is perfectoid in the good reduction case} and Lemma~\ref{SW Proposition 2.4.3}. Then by Lemma~\ref{l:tilde-limit-of-torus} and Lemma~\ref{affinoid tilde-limits commute with fibre products}, the inverse system in the middle has perfectoid tilde-limit $T_\infty\times U_\infty$. Glueing these for all $U\in\mathfrak U$ produces the desired space $E_\infty\sim \varprojlim_{[p]} E$ which by construction fits into the desired analytic-locally split short exact sequence
 	\[0\to T_\infty\to E_\infty\to B_\infty\to 0.\qedhere \]
 	\end{proof}
 	
@@ -693,6 +692,7 @@ into two partial towers. For this we make some auxiliary choices: Since $K$ is a
 			0 \arrow[r] & M \arrow[r] & E \arrow[r] & A \arrow[r] & 0.
 		\end{tikzcd}
 		\end{equation}
+		By Proposition~\ref{p-F-formal tower exists for E}, the middle row has a perfectoid tilde-limit $E_\infty\sim \varprojlim_{[p]}E$.
 		\begin{definition}
 			Let $M_\infty:=\varprojlim_{n\in\N} M_n$ be the limit of the left vertical tower. 
 		\end{definition}
