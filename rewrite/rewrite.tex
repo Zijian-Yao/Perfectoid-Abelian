@@ -192,7 +192,7 @@ On the other hand, one can deduce from Theorem~\ref{thm:main_thm_intro} that the
 Here the second equation describes $A$ in terms of the universal connected pro-finite-\'etale cover $\widetilde{A}\to A$, whereas the first uses the universal connected pro-finite-\'etale pro-$p$-cover.
 Either may be seen as a sort of analogue of Riemann uniformisation of abelian varieties over $\C$. 
 
-Our third application of Theorem~\ref{thm:main_thm_intro} states that in line with this analogy to the complex case, the cohomology of constructible $\F_p$-sheaves on $A_\infty$ behaves like that of a Stein space: This follows in combination with a result of Reinecke:
+Our third application of Theorem~\ref{thm:main_thm_intro} states that in line with this analogy to the complex case, the cohomology of constructible $\F_p$-sheaves on $A_\infty$ behaves like that of a Stein space: This follows in combination with a result of Reinecke \cite{Reinecke}:
 \begin{corollary}[Reinecke]
 	Let $L$ be a constructible sheaf of $\mathbb F_p$-modules on $A_{\et}$. Then for $i>\dim A$,
 	\[\textstyle\varinjlim_{n\in \mathbb N}H_{\et}^i(A,[p^n]^{\ast}L)=0.\]
@@ -614,7 +614,7 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 				\overline E \arrow[d, "\pi"'] & \overline E_{|U_n}/s \arrow[r] \arrow[l] &  U_n/s \arrow[l, bend right] \arrow[d]\\
 				\overline{B}                      &                                          & U_n \arrow[llu, dotted]\arrow[ll,hook']
 			\end{tikzcd}\]
-		therefore produces the splitting $U_n\to \overline{E}$. This shows that $\overline{E}\to \overline{B}$ is split over $U_n$.
+		therefore produces a splitting $U_n\to \overline{E}$. This shows that $\overline{E}\to \overline{B}$ is split over $U_n$.
 		\end{proof}
 	
 		Let us now also denote by $U$ and $U_n$ the respective generic fibres, then it follows from the Lemma that also $\pi:E\to B$ is split over $U_n$. Locally over $U$, the diagram~\eqref{eq:split-diag} is therefore of the form
@@ -852,12 +852,12 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	 There is a second closely related uniformisation which we discuss in \S5.3 below.
 	\subsection{Stein property}
 	As a second application, we can combine our main theorem with work of Reinecke to deduce the following Artin vanishing result:
-	\begin{corollary}[Reinecke]
+	\begin{corollary}[Reinecke, \cite{Reinecke}]
 		Let $A$ be an abeloid variety over $K$. Let $L$ be a constructible sheaf of $\mathbb F_p$-modules on $A_{\et}$. Then for any $i>\dim A$,
 		\[\textstyle\varinjlim_{n\in \mathbb N}H_{\et}^i(A,[p^n]^{\ast}L)=0.\]
 	\end{corollary}
 	\begin{proof}
-	Due to Theorem~\ref{thm:main_thm_intro}, we can apply \cite[Theorem 3.3]{Reinecke} to the system $\dots \rightarrow A\xrightarrow{[p]}A$.
+	Due to Theorem~\ref{thm:main_thm_intro}, we can apply \cite[Theorem~3.3]{Reinecke} to the system $\dots \rightarrow A\xrightarrow{[p]}A$.
 	\end{proof}
 	A theorem of Artin and Grothendieck states if $X$ is an affine algebraic variety over $K$, then $H_{\et}^i(X,L)=0$ for any constructible $\mathbb F_p$-module $L$ and any $i>\dim A$. However, the rigid analogue of this statement is false in general. The point of the Corollary is that an analogue of this vanishing statement is true for the pullback of $L$ to $A_\infty$ in the following sense: Consider the morphism of sites $\nu\colon A_{\proet}\to A_{\et}$. Then by regarding $A_\infty$ as an object in $A_{\proet}$ via the pro-\'etale morphism $A_\infty\to A$, one can show
 	\[H^i_{\proet}(A_\infty,\nu^{\ast}L)=\textstyle\varinjlim_{n\in\N} H^i_{\et}(A,[p^n]^{\ast}L). \]
