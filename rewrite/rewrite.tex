@@ -1,5 +1,5 @@
 \documentclass[10pt,oneside]{amsart}
-\usepackage[foot]{amsaddr}
+%\usepackage[foot]{amsaddr}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amsfonts}
@@ -105,6 +105,15 @@
 \title[perfectoid covers of abelian varieties]{perfectoid  covers of abelian varieties} 
 %\date{August 2017}
 \author{
+	Clifford Blakestad\and
+	Dami\'an Gvirtz\and
+	Ben Heuer \and 
+	Daria Shchedrina \and
+	Koji Shimizu \and 
+	Peter Wear \and
+	Zijian Yao}
+\begin{comment}
+\author{
 	Clifford Blakestad$^1$\and
 	Dami\'an Gvirtz$^2$\and
 	Ben Heuer$^3$ \and 
@@ -113,10 +122,11 @@
 	Peter Wear$^6$ \and
 	Zijian Yao$^7$}
 \address{1 University of Colorado Boulder, 2 Leibniz University Hannover, 3 University of Bonn, 4 University of Nottingham, 5 University of California, Berkeley, 6 University of Utah, 7 Harvard University}
+\end{comment}
 \begin{document}
 	\maketitle
 	\begin{abstract}
-For an abelian variety $A$ over an algebraically closed non-archimedean field of residue characteristic $p$, we show that there exists a perfectoid space which is the tilde-limit of $\varprojlim_{[p]}A$. Our proof also works for the larger class of abeloid varieties.
+For an abeloid variety $A$ over an algebraically closed non-archimedean field of residue characteristic $p$, we show that there exists a perfectoid space which is the tilde-limit of $\varprojlim_{[p]}A$. Our proof also works for the larger class of abeloid varieties.
 	\end{abstract}
 	\smallskip
 	\noindent \textbf{Keywords:} abelian varieties, abeloid varieties, universal covers, perfectoid spaces
@@ -136,7 +146,7 @@ Let $p$ be a prime and let $K$ be an algebraically closed non-archimedean field 
 For an abelian variety $A$ over $K$ we consider the inverse system of $A$ under the $p$-multiplication morphism:
 \[\cdots\xrightarrow{[p]}A\xrightarrow{[p]}A\xrightarrow{[p]}A.\]
 Via the adic analytification functor, we may see this as an inverse system of analytic adic spaces over $\operatorname{Spa}(K,\mathcal O_K)$, where $\mathcal O_K$ is the ring of integers of $K$.
-The primary goal of this article is to show that the ``inverse limit'' of this tower exists in some way and is a perfectoid space: Since inverse limits rarely exist in the category of adic spaces, in \cite{huber2013etale} Huber introduced the weaker notion of tilde-limits to remedy this problem. This is the notion of ``limits" we are going to use. More precisely, we prove the following slightly more general result:
+The primary goal of this article is to show that the ``inverse limit'' of this tower exists in some way and is a perfectoid space: Since inverse limits rarely exist in the category of adic spaces, in \cite[Definition 2.4.2]{huber2013etale} Huber introduced the weaker notion of tilde-limits to remedy this problem. This is the notion of ``limits" we are going to use. More precisely, we prove the following slightly more general result:
 
  %Before we state the precise version of the theorem, we remark that the main assertion already implicitly appeared in [?] [?] without justification. Nevertheless we decide to fill in this gap in the literature, since the proof, despite being straight-forward, is quite subtle to spell out. 
  
@@ -147,7 +157,7 @@ The primary goal of this article is to show that the ``inverse limit'' of this t
 	$A_\infty \sim \varprojlim_{[p]} A$ is a tilde-limit.
 \end{mainthm}
 
-The possibility of results in this direction is mentioned in \S 7 and \S 13 of \cite{scholzeICMproceedings}, and in the case of abelian varieties with good reduction, this theorem was proven already in \cite[Lemme~A.16]{Pilloni-Stroh}. We recall the argument in Lemma~\ref{tilde-limit exists and is perfectoid in the good reduction case} below. 
+In the special case of abelian varieties of good reduction, the possibility of result in this direction is already mentioned in \cite[\S 7 and \S 13]{survey}, and was proven in \cite[Lemme~A.16]{Pilloni-Stroh}. We recall the argument in Lemma~\ref{tilde-limit exists and is perfectoid in the good reduction case} below. 
 
 In general, $A$ has semi-stable reduction by the assumption that $K$ is algebraically closed.
 Consequently, the theory of Raynaud extensions provides us with a short exact sequence 
@@ -191,9 +201,9 @@ On the other hand, one can deduce from Theorem~\ref{thm:main_thm_intro} that the
 Here the second equation describes $A$ in terms of the universal connected pro-finite-\'etale cover $\widetilde{A}\to A$, whereas the first uses the universal connected pro-finite-\'etale pro-$p$-cover.
 Either may be seen as a sort of analogue of Riemann uniformisation of abelian varieties over $\C$. 
 
-Our third application of Theorem~\ref{thm:main_thm_intro} states that in line with this analogy to the complex case, the cohomology of constructible $\F_p$-sheaves on $A_\infty$ behaves like that of a Stein space: This follows in combination with a result of Reinecke \cite{Reinecke}:
+Our third application of Theorem~\ref{thm:main_thm_intro} states that in line with this analogy to the complex case, the cohomology of constructible $\F_p$-sheaves on $A_\infty$ behaves like that of a Stein space: This follows in combination with a result of Reinecke \cite[Theorem 3.3]{Reinecke}:
 \begin{corollary}[Reinecke]
-	Let $L$ be a constructible sheaf of $\mathbb F_p$-modules on $A_{\et}$. Then for $i>\dim A$,
+	Let $A$ be an abeloid variety and let $L$ be a constructible sheaf of $\mathbb F_p$-modules on $A_{\et}$. Then for any $i>\dim(\supp L)$,
 	\[\textstyle\varinjlim_{n\in \mathbb N}H_{\et}^i(A,[p^n]^{\ast}L)=0.\]
 \end{corollary}
 
@@ -234,12 +244,12 @@ During the preparation of this work, Clifford Blakestad was partially supported 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % end hack
 	Let $K$ be an algebraically closed non-archimedean field, let $\mathcal O_K$ be the ring of integers of $K$ and fix a pseudo-uniformiser $\varpi\in \mathcal O_K$ such that $p\in\varpi\mathcal O_K$. 
 	
-	We will use adic spaces over $\operatorname{Spa}(K,\O_K)$ in the sense of Huber, and perfectoid spaces over $\operatorname{Spa}(K,\O_K)$ in the sense of Scholze \cite{perfectoid}. We denote by $X\mapsto X^{\an}$ the analytification functor from schemes of finite type over $X$ to analytic adic spaces over $(K,\O_K)$.
+	We will use adic spaces over $\operatorname{Spa}(K,\O_K)$ in the sense of Huber, and perfectoid spaces over $\operatorname{Spa}(K,\O_K)$ in the sense of Scholze \cite[\S6]{perfectoid}. We denote by $X\mapsto X^{\an}$ the analytification functor from schemes of finite type over $X$ to analytic adic spaces over $(K,\O_K)$.
 	
 	By a rigid space, we shall always mean an analytic adic space of topologically finite type over $\operatorname{Spa}(K,\mathcal O_K)$. 
 	In particular, by an open cover of a rigid space we shall always mean a cover of the associated adic space, so that we do not need the notion of admissible covers.
 	
-	For a $\varpi$-adic formal scheme $\mathfrak X$ over $\operatorname{Spf}(\mathcal O_K)$, we denote by $\mathfrak X_\eta:=\mathfrak X^{\mathrm{ad}}\times_{\operatorname{Spa}(\mathcal O_K,\mathcal O_K)}\operatorname{Spa}(K,\mathcal O_K)$ its adic generic fibre. This is the adic space representing the functor which is denoted by  $\mathfrak X^{\mathrm{ad}}_{\eta}$ in \cite{SW}.
+	For a $\varpi$-adic formal scheme $\mathfrak X$ over $\operatorname{Spf}(\mathcal O_K)$, we denote by $\mathfrak X_\eta:=\mathfrak X^{\mathrm{ad}}\times_{\operatorname{Spa}(\mathcal O_K,\mathcal O_K)}\operatorname{Spa}(K,\mathcal O_K)$ its adic generic fibre. This is the adic space representing the functor  denoted by  $\mathfrak X^{\mathrm{ad}}_{\eta}$ in \cite[\S 2.2]{SW}.
 
 
 %%%%%%%%%%%%
@@ -273,7 +283,7 @@ Suppose, moreover, that there is an adic space $S$ with compatible maps $f_i:X_i
 As pointed out after Proposition 2.4.4 of \cite{SW}, tilde-limits (if they exist) are in general not unique. However, Corollary~\ref{corollary: perfectoid tilde limit is unique} below says that perfectoid tilde-limits are unique.
 	\end{remark}
 
-We recall a few results from \cite{SW}, \S2.4 on tilde-limits that we will use frequently throughout:
+We recall a few results from \cite[\S2.4]{SW}  on tilde-limits that we will use frequently throughout:
 
 \begin{proposition}[{\cite[Proposition 2.4.3]{SW}} ]\label{SW Proposition 2.4.3}
 	Let $X\sim \varprojlim_{i\in I} X_i$ be a tilde-limit and let $U_i\hookrightarrow X_i$ be an open immersion for some $i\in I$. Set $U_j:=U_i\times_{X_i}X_j$ for $j\geq i$ and $U:=U_i\times_{X_i}X$. Then 
@@ -347,7 +357,7 @@ One reason why perfectoid tilde-limits along group homomorphisms are particularl
 The category of perfectoid spaces over $K$ has finite products, so this is a well-defined notion.
 
 \begin{lemma}\label{perfectoid tilde-limit is perfectoid group in a functorial way}
-	Let $(G_i)_{i\in I}$ be an inverse system of adic groups such that the transition maps are homomorphisms of adic groups. Assune that there is a perfectoid tilde-limit $G_\infty\sim \varprojlim_{i\in I}G_i$.
+	Let $(G_i)_{i\in I}$ be an inverse system of adic groups such that the transition maps are homomorphisms of adic groups. Assume that there is a perfectoid tilde-limit $G_\infty\sim \varprojlim_{i\in I}G_i$.
 	\begin{enumerate}
 		\item  There is a unique way to endow $G_\infty$ with the structure of a perfectoid group in such a way that all projections $G_\infty\rightarrow G$ are group homomorphisms
 		\item Given a homomorphism of inverse systems of adic groups $(G_i)_{i\in I}\to (H_j)_{j\in J}$ and a perfectoid tilde-limit $H_\infty\sim\varprojlim_{j\in J}H_j$, there is a unique homomorphism of perfectoid groups $G_\infty\rightarrow H_\infty$
@@ -413,7 +423,7 @@ As we have already mentioned in the introduction, Question~\ref{qu:tilde-limits-
 		In particular, if $B$ is an abelian variety of good reduction over $K$, there is a perfectoid tilde-limit $B_\infty\sim \varprojlim B$.
 	\end{lemma}
 \begin{proof}
-	This holds by the same proof as in \cite[Lemme~A.16]{Pilloni-Stroh}, (see also Exercise 4 -- 6 in \cite{Bhatt}):
+	This holds by the same proof as in \cite[Lemme~A.16]{Pilloni-Stroh}, (see also \cite[Exercise 4 -- 6]{Bhatt}):
 	 Let $\varpi\in\mathcal O_K$ be a pseudo-uniformiser such that $p\in \varpi\mathcal O_K$. The assumption that $[p]:\mathfrak G\to \mathfrak G$ is affine ensures that the limit $\mathfrak G_{\infty}:=\varprojlim_{[p]}\mathfrak G$ exists.
 	 
 	The mod $\varpi$ special fibre $\mathfrak G/\varpi: = \mathfrak G\times \Spec(\O_K/\varpi)$ is a group scheme over $\mathcal O_K/\varpi$, so the map $[p]\colon\mathfrak G/\varpi\rightarrow \mathfrak G/\varpi$ factors through the relative Frobenius map \cite[Exp. VII, 4.3]{SGA}. Consequently, the fibre $\varprojlim_{[p]}\mathfrak G/\varpi$ of $\mathfrak G_{\infty}$  over $\mathcal O_K/\varpi$ is relatively perfect: Indeed, we have a commutative diagram
@@ -429,7 +439,7 @@ As we have already mentioned in the introduction, Question~\ref{qu:tilde-limits-
 	Let $T$ be a torus over $K$. Then there is a perfectoid tilde-limit $T_\infty\sim \varprojlim_{[p]} T$.
 \end{lemma}
 \begin{proof}
-Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\mathbb{G}_m^{\an})^r$ for some $r\in \N$. By Lemma~\ref{affinoid tilde-limits commute with fibre products}, it suffices to consider the case of $r=1$. For this, we may use the open embedding $\mathbb G_m^{\an}= \mathbb P^{1,\an}\setminus\{0, \infty\}\subseteq \mathbb P^{1,\an}$. Sending $(x:y)\mapsto (x^p:y^p)$ defines a morphism $\varphi:\mathbb P^{1,\an}\to \mathbb P^{1,\an}$. The pullback of $\varphi$ to $\mathbb G_m^{\an}$ is precisely $[p]:\mathbb G_m^{\an}\to \mathbb G_m^{\an}$. We can therefore apply Proposition \ref{SW Proposition 2.4.3} to the perfectoid tilde-limit $\mathbb P_1^{\text{perf}}\sim \varprojlim_{\varphi} \mathbb P^{1,\an}$ introduced in \cite{perfectoid}. 
+Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\mathbb{G}_m^{\an})^r$ for some $r\in \N$. By Lemma~\ref{affinoid tilde-limits commute with fibre products}, it suffices to consider the case of $r=1$. For this, we may use the open embedding $\mathbb G_m^{\an}= \mathbb P^{1,\an}\setminus\{0, \infty\}\subseteq \mathbb P^{1,\an}$. Sending $(x:y)\mapsto (x^p:y^p)$ defines a morphism $\varphi:\mathbb P^{1,\an}\to \mathbb P^{1,\an}$. The pullback of $\varphi$ to $\mathbb G_m^{\an}$ is precisely $[p]:\mathbb G_m^{\an}\to \mathbb G_m^{\an}$. We can therefore apply Proposition \ref{SW Proposition 2.4.3} to the perfectoid tilde-limit $\mathbb P_1^{\text{perf}}\sim \varprojlim_{\varphi} \mathbb P^{1,\an}$ introduced in \cite[end of \S1]{perfectoid}. 
 \end{proof}
 
 %\begin{remark} What we aim to prove in the rest of this write-up is that for a Raynaud extension $0\rightarrow T\rightarrow E\rightarrow B\rightarrow 0$, there is a $[p]$-$F$-model for $T$ which induces a $[p]$-$F$-model for $E$. This will prove that tilde-limits $T_\infty$ and $E_\infty$ exist and are perfectoid if $K$ is perfectoid.  
@@ -458,7 +468,7 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 	
 	\subsection{Raynaud extensions}
 	
-        We briefly sketch the theory of Raynaud extensions here, and refer the readers to \cite{Bosch-Lut,BL, Lut-survey, Lut} for more details on the setup.
+        We briefly sketch the theory of Raynaud extensions here, and refer the readers to \cite[\S8]{Bosch-Lut}, \cite[\S1]{BL}, \cite[\S8]{Lut-survey}\cite[\S6.1]{Lut} for more details on the setup.
 
 	Let $A$ be an abelian variety over $K$. Then by \cite[Theorem~1.1]{BL} there exists a unique open rigid analytic subgroup of $A$ that admits a formal model $\overline E$ that is a connected smooth $\mathcal O_K$-group scheme fitting into a short exact sequence of formal group schemes
 	\begin{equation}\label{formal Raynaud extension}
@@ -498,7 +508,7 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 		The short exact sequence (\ref{formal Raynaud extension}) admits local sections, that is there is a cover of $\overline{B}$ by formal open subschemes $\overline{U}_i$ such that there exist local sections $s:\overline{U}_i\rightarrow \overline{E}$ of $\pi$. In particular, one can cover $\overline{E}$ by formal open subschemes of the form $\overline{T}\times \overline{U}_i\hookrightarrow \overline{E}$.
 	\end{lemma}
 	\begin{proof}
-		This is proved in Proposition A.2.5 in~\cite{Lut}, where it is fomulated in terms of the group $\operatorname{Ext}^1(\overline{B},\overline{T})$. Also see \cite{BL}, \S 1.
+		This is proved in~\cite[Proposition A.2.5]{Lut}, where it is fomulated in terms of the group $\operatorname{Ext}^1(\overline{B},\overline{T})$. Also see \cite[ \S 1]{BL}.
 	\end{proof}
 	
 	As a consequence, in more topological terms, diagram~\eqref{Raynaud diagram} can be interpreted as follows: We may regard
@@ -638,7 +648,7 @@ Since we assume $K$ algebraically closed, we may choose a splitting $T\cong (\ma
 	\end{remark}
 	
 	\begin{remark}\label{general fields for E}
-	With some work, the arguments in this section can be extended to any perfectoid base field. For instance, the Raynaud uniformisation of Theorem \ref{Raynaud uniformisation} might only be defined over a finite extension $L$ of $K$. Our argument then gives a perfectoid space over the (necessarily perfectoid) field $L$. We can then use Galois descent to get a perfectoid space over our original field $K$. This uses that the quotient of a perfectoid space by a finite group often remains perfectoid: see Theorem 1.4 of \cite{Hansen_quotients} for details. Finally, one checks that this Galois descent commutes with tilde-limits. 
+	With some work, the arguments in this section can be extended to any perfectoid base field. For instance, the Raynaud uniformisation of Theorem \ref{Raynaud uniformisation} might only be defined over a finite extension $L$ of $K$. Our argument then gives a perfectoid space over the (necessarily perfectoid) field $L$. We can then use Galois descent to get a perfectoid space over our original field $K$. This uses that the quotient of a perfectoid space by a finite group often remains perfectoid: see \cite[Theorem~1.4]{Hansen_quotients} for details. Finally, one checks that this Galois descent commutes with tilde-limits. 
 	\end{remark}
 
 %%%%%%%%%%%%%%%%%
@@ -826,7 +836,7 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	\[ 0\to A[p^n]\to A\to A\to 0\]
 	give rise to a short exact sequence of sheaves on perfectoid $K$-algebras with the pro-\'etale topology
 	\[0\to T_pA \to A_\infty \to A\to 0.\]
-	Using the language of diamonds from \cite{etale_cohomology_of_diamonds}, we then have:
+	Using the language of diamonds from \cite[\S11]{etale_cohomology_of_diamonds}, we then have:
 	\begin{corollary}
 		The diamond $A^{\diamondsuit}$ associated to $A$ has the natural presentation
 		\[A^{\diamondsuit} = A_\infty/T_pA \]
@@ -834,7 +844,7 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	\end{corollary}
 	Here we think of $T_pA=H^{\et}_1(A,\Z_p)$ as the analogue of $H_1(A,\Z)$ in the complex setting.
 \begin{remark}
-	This $p$-adic uniformisation of $A$ is very closely related to the uniformisation of the associated rigid analytic $p$-divisible group $A[p^\infty]$ in the sense of Fargues \cite{Fargues-groupes-analytiques}, as described in \cite{SW} and \cite[\S4]{survey}. The precise connection is as follows: Using the Raynaud uniformisation, one can attach to $A$ a unique $p$-divisible group over $\mathcal O_K$ with generic fibre $A[p^\infty]$ whose associated rigid analytic $p$-divisible group $G$ in the sense of Fargues \cite{Fargues-groupes-analytiques} is canonically an open subgroup $G\subseteq A$. The universal cover of $G$ in the sense of \cite[\S 3.1]{SW} fits into a pullback diagram of open adic subgroups
+	This $p$-adic uniformisation of $A$ is very closely related to the uniformisation of the associated rigid analytic $p$-divisible group $A[p^\infty]$ in the sense of Fargues \cite{Fargues-groupes-analytiques}, as described in \cite[\S4.4]{survey} and \cite[Proposition 3.1.3]{SW}. The precise connection is as follows: Using the Raynaud uniformisation, one can attach to $A$ a unique $p$-divisible group over $\mathcal O_K$ with generic fibre $A[p^\infty]$ whose associated rigid analytic $p$-divisible group $G$ in the sense of Fargues is canonically an open subgroup $G\subseteq A$. The universal cover of $G$ in the sense of \cite[\S 3.1]{SW} fits into a pullback diagram of open adic subgroups
 	\begin{center}
 		\begin{tikzcd}
 			0 \arrow[r] & T_pG \arrow[r] \arrow[d, equal] & \widetilde{G} \arrow[d, hook] \arrow[r] & G \arrow[d,hook] \arrow[r] & 0 \\
@@ -846,17 +856,26 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	However, we note that the translates of $\widetilde{G}$ do not cover all of $A_\infty$, and therefore the fact that $\widetilde{G}$ is perfectoid does not show immediately that $A_\infty$ is perfectoid.  The issue is points of rank 2: Indeed, there are infinitely many disjoint translates of $\widetilde G$, but $A_\infty$ is quasi-compact.
 \end{remark}
 	\begin{remark}
-	We note that for two abelian varieties $A$ and $B$ of dimension $d$, the universal covers $A_\infty$ and $B_\infty$ are different in general, so that this is only a ``uniformisation'' in a rather weak sense. However, in upcoming work of the third author, it is shown that $A_\infty$ and $B_\infty$ are isomorphic whenever $A$ and $B$ are ``$p$-adically close'' in some precise sense,  so that at least locally in the moduli space of abelian varieties we can really think of $T_pA$ as a $2d$-dimension $\mathbb Z_p$-lattice determining $A$.
+	In upcoming work \cite{heuer-isoclasses}, it is shown that this is a  ``uniformisation'' also in the stronger sense that for two abelian varieties $A$ and $A'$, the perfectoid covers $A_\infty$ and $A'_\infty$ are isomorphic whenever $A$ and $A'$ are ``$p$-adically close'' in some precise sense. In particular, at least locally in the moduli space of abelian varieties we can really think of $T_pA$ as a $2d$-dimension $\mathbb Z_p$-sublattice of a fixed perfectoid space determining $A$, in analogy to the complex uniformisation of abelian varieties.
 	\end{remark}
-	 There is a second closely related uniformisation which we discuss in \S5.3 below.
+	 There is a second closely related uniformisation which we discuss in Corollary~\ref{c:universal-covers-of-abelian-varieties} below.
 	\subsection{Stein property}
 	As a second application, we can combine our main theorem with work of Reinecke to deduce the following Artin vanishing result:
-	\begin{corollary}[Reinecke, \cite{Reinecke}]
-		Let $A$ be an abeloid variety over $K$. Let $L$ be a constructible sheaf of $\mathbb F_p$-modules on $A_{\et}$. Then for any $i>\dim A$,
+	\begin{corollary}[{Reinecke, \cite[Theorem~3.3]{Reinecke}}]
+		Let $A$ be an abeloid variety over $K$. Let $L$ be a constructible sheaf of $\mathbb F_p$-modules on $A_{\et}$. Then for any $i>\dim(\supp L)$,
 		\[\textstyle\varinjlim_{n\in \mathbb N}H_{\et}^i(A,[p^n]^{\ast}L)=0.\]
 	\end{corollary}
+	This is a generalisation to the rigid analytic setting of abeloids from the algebraic case of abelian varieties, which follows from the case of complex tori proved by Bhatt--Schnell--Scholze \cite[Corollary~1.2]{BSS_VanishingTheorems}. The strategy is similar to the one in the complex case. This is in turn inspired by \cite[Theorem~17.3]{PerfectoidApplications}, which is a similar statement for general projective varieties.
 	\begin{proof}
-	Due to Theorem~\ref{thm:main_thm_intro}, we can apply \cite[Theorem~3.3]{Reinecke} to the system $\dots \rightarrow A\xrightarrow{[p]}A$.
+		Let $\iota_0:Z_0\subseteq A$ be the Zariski-closed subspace where $L$ is supported. Consider the pullback of $Z_0$ along the tower of multiplication by $[p]$:
+		\[
+		\begin{tikzcd}
+			\dots \arrow[r, "{[p]}"] & Z_1 \arrow[d] \arrow[r, "{[p]}"] & Z_0 \arrow[d] \\
+			\dots \arrow[r, "{[p]}"] & A \arrow[r, "{[p]}"]             & A.            
+		\end{tikzcd}\]
+	Then by \cite[Lemma II.2.2]{torsion}, our main theorem implies that the pre-image of $Z_0$ in $A_\infty$ has a unique structure of a Zariski-closed perfectoid subspace $Z_\infty$ such that $Z_\infty^{\diamondsuit}=\varprojlim_{[p]} Z_i^{\diamondsuit}$. We can therefore apply \cite[Theorem~3.3]{Reinecke} to the system $\dots \rightarrow Z_1\xrightarrow{[p]}Z_0$, which says that
+	\[ \varinjlim_{i\in \N}H^i_{\et}(A,[p^n]^{\ast}L)=\varinjlim_{i\in \N}H^i_{\et}(Z,[p^n]^{\ast}\iota_0^{\ast}L)\]
+	vanishes for $i>\dim Z$.
 	\end{proof}
 	A theorem of Artin and Grothendieck states if $X$ is an affine algebraic variety over $K$, then $H_{\et}^i(X,L)=0$ for any constructible $\mathbb F_p$-module $L$ and any $i>\dim A$. However, the rigid analogue of this statement is false in general. The point of the Corollary is that an analogue of this vanishing statement is true for the pullback of $L$ to $A_\infty$ in the following sense: Consider the morphism of sites $\nu\colon A_{\proet}\to A_{\et}$. Then by regarding $A_\infty$ as an object in $A_{\proet}$ via the pro-\'etale morphism $A_\infty\to A$, one can show
 	\[H^i_{\proet}(A_\infty,\nu^{\ast}L)=\textstyle\varinjlim_{n\in\N} H^i_{\et}(A,[p^n]^{\ast}L). \]
@@ -864,7 +883,7 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	Since $A$ is proper and smooth, one can use the Primitive Comparison Theorem \cite[Theorem~5.1]{p-adic_Hodge} \cite[Theorem~3.13]{survey} to reduce to showing that $H^i_{\proet}(A_\infty,\nu^{\ast}L\otimes_{\F_p} \O_{A_{\et}}^+/p)$ is almost zero for $i>d$. For this one can use that $H^j(V,\nu^{\ast}L\otimes_{\F_p} \O_{A_{\et}}^+/p)^a=0$ for any small enough affinoid perfectoid open $V\subseteq A_\infty$ and any $j>0$. This reduces the desired statement to a computation in \v{C}ech cohomology, which indeed vanishes in degree $>\dim A$.
 	\subsection{Universal perfectoid covers of curves}
 	
-As a third application, we describe how one can obtain universal perfectoid pro-\'etale covers of curves over $K$. This was first observed by Hansen \cite{Hansen-blog}, who on his blog sketched a strategy to prove this in the case that the Jacobian has good reduction. Due to our Theorem~\ref{thm:main_thm_intro}, this assumption can be removed, as we shall now demonstrate:
+As a third application, we describe how one can obtain universal perfectoid pro-\'etale covers of curves over $K$. This was first observed by Hansen, who on his blog sketched a strategy to prove this in the case that the Jacobian has good reduction. Due to our Theorem~\ref{thm:main_thm_intro}, this assumption can be removed, as we shall now demonstrate:
 	
 	We start by recalling some background in a more general setting: Let $C$ be a connected smooth proper rigid analytic curve over $K$. Any such curve arises as the analytification of some schematic smooth projective curve over $K$ \cite[Theorem 1.8.1]{Lut}, and by \cite[Theorem 3.1]{LutRiemann}, GAGA induces an equivalence of categories between finite \'etale covers of $C$ considered as a scheme and as a rigid  space, respectively. We can therefore fix a geometric base point $x:\Spa({K},\O_{{K}})\to C$ and study the usual \'etale fundamental group $\pi_1(C,x)$ using the language of adic spaces. 
 	
