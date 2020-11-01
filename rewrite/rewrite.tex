@@ -201,12 +201,12 @@ On the other hand, one can deduce from Theorem~\ref{thm:main_thm_intro} that the
 Here the second equation describes $A$ in terms of the universal connected pro-finite-\'etale cover $\widetilde{A}\to A$, whereas the first uses the universal connected pro-finite-\'etale pro-$p$-cover.
 Either may be seen as a sort of analogue of Riemann uniformisation of abelian varieties over $\C$. 
 
-Our third application of Theorem~\ref{thm:main_thm_intro} states that in line with this analogy to the complex case, the cohomology of constructible $\F_p$-sheaves on $A_\infty$ behaves like that of a Stein space: This follows in combination with a result of Reinecke \cite[Theorem 3.3]{Reinecke}:
+Our third application of Theorem~\ref{thm:main_thm_intro} states that, in line with this analogy to the complex case, the cohomology of Zariski-constructible $\F_p$-sheaves (in the sense of \cite[before \S3.1]{Reinecke}) on $A$ behaves like that of a Stein space: This follows in combination with a result of Reinecke \cite[Theorem 3.3]{Reinecke}:
 \begin{corollary}[Reinecke]
-	Let $A$ be an abeloid variety and let $L$ be a constructible sheaf of $\mathbb F_p$-modules on $A_{\et}$. Then for any $i>\dim(\supp L)$,
+	Let $A$ be an abeloid variety and let $L$ be a Zariski-constructible sheaf of $\mathbb F_p$-modules on $A_{\et}$. Then for any $i>\dim(\supp L)$,
 	\[\textstyle\varinjlim_{n\in \mathbb N}H_{\et}^i(A,[p^n]^{\ast}L)=0.\]
 \end{corollary}
-
+	This is a generalisation to the rigid analytic setting of abeloids from the algebraic case of abelian varieties: The latter follows from the case of complex tori proved by Bhatt--Schnell--Scholze \cite[Corollary~1.2]{BSS_VanishingTheorems}. The strategy is similar to the one in the complex case, and the role of the complex universal cover is replaced by the $p$-adic universal cover $A_\infty$. We note that the complex case is in turn inspired by \cite[Theorem~17.3]{PerfectoidApplications}, which has a similar approach for general projective varieties.
  \begin{comment}
 Now we end the introduction by describing the content of each section. 
 
@@ -858,29 +858,29 @@ Hence the restriction of the tower $\cdots\xrightarrow{[p]}A \xrightarrow{[p]}A\
 	\begin{remark}
 	In upcoming work \cite{heuer-isoclasses}, it is shown that this is a  ``uniformisation'' also in the stronger sense that for two abelian varieties $A$ and $A'$, the perfectoid covers $A_\infty$ and $A'_\infty$ are isomorphic whenever $A$ and $A'$ are ``$p$-adically close'' in some precise sense. In particular, at least locally in the moduli space of abelian varieties we can really think of $T_pA$ as a $2d$-dimension $\mathbb Z_p$-sublattice of a fixed perfectoid space determining $A$, in analogy to the complex uniformisation of abelian varieties.
 	\end{remark}
-	 There is a second closely related uniformisation which we discuss in Corollary~\ref{c:universal-covers-of-abelian-varieties} below.
 	\subsection{Stein property}
 	As a second application, we can combine our main theorem with work of Reinecke to deduce the following Artin vanishing result:
-	\begin{corollary}[{Reinecke, \cite[Theorem~3.3]{Reinecke}}]
-		Let $A$ be an abeloid variety over $K$. Let $L$ be a constructible sheaf of $\mathbb F_p$-modules on $A_{\et}$. Then for any $i>\dim(\supp L)$,
+	\begin{corollary}[{Reinecke, \cite[Theorem~3.3]{Reinecke}}]\label{c:Reinecke}
+		Let $A$ be an abeloid variety over $K$. Let $L$ be a Zariski-constructible sheaf of $\mathbb F_p$-modules on $A_{\et}$. Then for any $i>\dim(\supp L)$,
 		\[\textstyle\varinjlim_{n\in \mathbb N}H_{\et}^i(A,[p^n]^{\ast}L)=0.\]
 	\end{corollary}
-	This is a generalisation to the rigid analytic setting of abeloids from the algebraic case of abelian varieties, which follows from the case of complex tori proved by Bhatt--Schnell--Scholze \cite[Corollary~1.2]{BSS_VanishingTheorems}. The strategy is similar to the one in the complex case. This is in turn inspired by \cite[Theorem~17.3]{PerfectoidApplications}, which is a similar statement for general projective varieties.
 	\begin{proof}
 		Let $\iota_0:Z_0\subseteq A$ be the Zariski-closed subspace where $L$ is supported. Consider the pullback of $Z_0$ along the tower of multiplication by $[p]$:
 		\[
 		\begin{tikzcd}
-			\dots \arrow[r, "{[p]}"] & Z_1 \arrow[d] \arrow[r, "{[p]}"] & Z_0 \arrow[d] \\
-			\dots \arrow[r, "{[p]}"] & A \arrow[r, "{[p]}"]             & A.            
+			\cdots \arrow[r, "{[p]}"] & Z_1 \arrow[d,hook'] \arrow[r, "{[p]}"] & Z_0 \arrow[d,hook'] \\
+			\cdots \arrow[r, "{[p]}"] & A \arrow[r, "{[p]}"]             & A.            
 		\end{tikzcd}\]
-	Then by \cite[Lemma II.2.2]{torsion}, our main theorem implies that the pre-image of $Z_0$ in $A_\infty$ has a unique structure of a Zariski-closed perfectoid subspace $Z_\infty$ such that $Z_\infty^{\diamondsuit}=\varprojlim_{[p]} Z_i^{\diamondsuit}$. We can therefore apply \cite[Theorem~3.3]{Reinecke} to the system $\dots \rightarrow Z_1\xrightarrow{[p]}Z_0$, which says that
-	\[ \varinjlim_{i\in \N}H^i_{\et}(A,[p^n]^{\ast}L)=\varinjlim_{i\in \N}H^i_{\et}(Z,[p^n]^{\ast}\iota_0^{\ast}L)\]
-	vanishes for $i>\dim Z$.
+	Then by \cite[Lemma II.2.2]{torsion}, our main theorem implies that the pre-image of $Z_0$ in $A_\infty$ has a unique structure of a Zariski-closed perfectoid subspace $Z_\infty\hookrightarrow A_\infty$ such that $Z_\infty^{\diamondsuit}=\varprojlim_{[p]} Z_i^{\diamondsuit}$. We can therefore apply \cite[Theorem~3.3]{Reinecke} to the system $\dots \rightarrow Z_1\xrightarrow{[p]}Z_0$, which says that for $i>\dim Z_0$,
+	\[ \varinjlim_{i\in \N}H^i_{\et}(A,[p^n]^{\ast}L)=\varinjlim_{i\in \N}H^i_{\et}(Z,[p^n]^{\ast}\iota_0^{\ast}L)=0.\qedhere\]
 	\end{proof}
-	A theorem of Artin and Grothendieck states if $X$ is an affine algebraic variety over $K$, then $H_{\et}^i(X,L)=0$ for any constructible $\mathbb F_p$-module $L$ and any $i>\dim A$. However, the rigid analogue of this statement is false in general. The point of the Corollary is that an analogue of this vanishing statement is true for the pullback of $L$ to $A_\infty$ in the following sense: Consider the morphism of sites $\nu\colon A_{\proet}\to A_{\et}$. Then by regarding $A_\infty$ as an object in $A_{\proet}$ via the pro-\'etale morphism $A_\infty\to A$, one can show
-	\[H^i_{\proet}(A_\infty,\nu^{\ast}L)=\textstyle\varinjlim_{n\in\N} H^i_{\et}(A,[p^n]^{\ast}L). \]
+	A theorem of Artin and Grothendieck states if $X$ is an affine algebraic variety over $K$, then $H_{\et}^i(X,L)=0$ for any constructible $\mathbb F_p$-module $L$ and any $i>\dim A$. However, the rigid analogue of this statement is false in general. The point of Corollary~\ref{c:Reinecke} is that an analogue of this vanishing statement is true for the pullback of $L$ to $A_\infty$: By \cite[Proposition 14.9]{etale_cohomology_of_diamonds}, we have
+\[H^i_{\et}(A_\infty,\nu^{\ast}L)=\textstyle\varinjlim_{n\in\N} H^i_{\et}(A,[p^n]^{\ast}L),\]
+and thus the cohomology of $\nu^{\ast}L$ vanishes in degree $i>\dim(A)$.
+	\begin{comment}
 	Let us sketch a proof that the left hand side vanishes  for $i>\dim A$: One first reduces to the case that $L$ is locally constant.
 	Since $A$ is proper and smooth, one can use the Primitive Comparison Theorem \cite[Theorem~5.1]{p-adic_Hodge} \cite[Theorem~3.13]{survey} to reduce to showing that $H^i_{\proet}(A_\infty,\nu^{\ast}L\otimes_{\F_p} \O_{A_{\et}}^+/p)$ is almost zero for $i>d$. For this one can use that $H^j(V,\nu^{\ast}L\otimes_{\F_p} \O_{A_{\et}}^+/p)^a=0$ for any small enough affinoid perfectoid open $V\subseteq A_\infty$ and any $j>0$. This reduces the desired statement to a computation in \v{C}ech cohomology, which indeed vanishes in degree $>\dim A$.
+	\end{comment}
 	\subsection{Universal perfectoid covers of curves}
 	
 As a third application, we describe how one can obtain universal perfectoid pro-\'etale covers of curves over $K$. This was first observed by Hansen, who on his blog sketched a strategy to prove this in the case that the Jacobian has good reduction. Due to our Theorem~\ref{thm:main_thm_intro}, this assumption can be removed, as we shall now demonstrate:
@@ -903,7 +903,7 @@ As a third application, we describe how one can obtain universal perfectoid pro-
 	\begin{corollary}[Hansen,\cite{Hansen-blog}]\label{c:universal-covers-of-curves}
 		Let $C$ be a connected smooth projective curve of genus $g\geq 1$ over $K$, considered as an analytic adic space.
 		\begin{enumerate}
-		\item There is a perfectoid tilde-limit $\widetilde{C} \sim \varprojlim_{H}C_H$ where $H$ ranges over the open subgroups of $ \pi_1(C,x)$. 
+		\item There is a perfectoid tilde-limit $\widetilde{C} \sim \varprojlim_{H\subseteq \pi_1(C,x)}C_H$, where $H$ ranges over open subgroups.
 		\item The morphism $\widetilde{C}\to C$ is a pro-\'etale $\pi_1(C,x)$-torsor. It is universal with this property in the sense that it represents the functor sending	 pro-finite-\'etale perfectoid covers $X\to C$ to the $\pi_1(C,x)$-module $F(X)=\mathrm{Hom}_C(x,X)$.
 		\item For any $X\in C_{\mathrm{prof\acute{e}t}}$, for example for any finite \'etale $X\to C$, there is a natural isomorphism
 		\[ X = \underline{F(X)}\times^{\pi_1(C,x)}\widetilde{C}:=(\underline{F(X)}\times \widetilde{C})/\pi_1(C,x).\]
@@ -962,7 +962,7 @@ To see that $F(X)=\Hom_C(\widetilde{C},X)$, we recall that for any Galois cover 
 But this follows from Lemma~\ref{l:profet-perf-tilde-limit-fully-faithful}.
 
 For (3), write $S=F(X)$, then it suffices to prove that the natural morphism \[\rho:\underline{S}\times\widetilde{C}\to X\]
-is a pro-finite-\'etale $G$-torsor for the antidiagonal action. Indeed, this implies that $X$ is the categorical quotient by the action of $G$: This is because the torsor property implies $\O_X = (\rho_{\ast}\O_{\underline{S}\times\widetilde{C}})^{G}$ by combining \cite[{Lemma~2.24}]{CHJ} and \cite[{Theorem~8.2.3}]{KedlayaLiu-II}.
+is a pro-finite-\'etale $G$-torsor for the antidiagonal action. Indeed, this implies that $X$ is the categorical quotient by the action of $G$: This is because the torsor property implies $\O_X = (\rho_{\ast}\O_{\underline{S}\times\widetilde{C}})^{G}$ due to the fact that the (completed) structure sheaf on $X_{\proet}$ is a sheaf.
 
  Since connected components of $X$ correspond to $G$-orbits of $S$, we may reduce to the case where $X$ is connected and $G$ acts transitively on $\underline{S}$. By writing $X$ as a system of finite \'etale covers, we may further reduce to the case that $S$ is finite.  Fix $s\in S$ and let $H\subseteq G$ be the stabiliser of $s$, then $X=C_H$. It now suffices to show that for any normal open subgroup $N\subseteq G$ with $N\subseteq H$, the natural morphism
 \[G/H\times C_N\to C_H\]
